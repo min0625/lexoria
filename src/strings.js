@@ -1,0 +1,20 @@
+// UI 文案集中表（docs/word-puzzle-ui-screens.md §6）——換語言只改這個檔，不做 i18n 框架。
+export const strings = {
+  levelTitle: (n) => `第 ${n} 關`,
+  alreadyFound: '已找到',
+  levelClear: '過關！',
+  nextLevel: '下一關',
+  bonusFound: (n) => `額外單字 +${n}`,
+  hintCost: '−25',
+  noCoins: '金幣不足',
+  tutorial: '滑過字母，連成單字',
+  rotateDevice: '請轉直畫面',
+  allClear: '更多關卡即將推出',
+  backToLevels: '關卡選擇',
+  settings: '設定',
+  sound: '音效',
+  haptic: '震動',
+  about: '關於',
+  replayNote: '重玩不再獲得金幣',
+  clearWordsHint: '點單字查看解釋',
+};

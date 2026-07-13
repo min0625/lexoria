@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lexoria</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+  <!-- A. 遊戲主畫面 -->
+  <section id="screen-game" class="screen">
+    <header class="topbar">
+      <button id="btn-level" class="chip"></button>
+      <span id="coin-count" class="chip coin"></span>
+      <button id="btn-settings" class="chip" aria-label="設定"><span class="icon icon-gear"></span></button>
+    </header>
+    <div id="grid" class="grid-area"></div>
+    <div id="preview" class="preview" aria-live="polite"></div>
+    <div class="wheel-row">
+      <button id="btn-hint" class="hint-btn" aria-label="提示"><span class="icon icon-bulb"></span><small>−25</small></button>
+      <div id="wheel" class="wheel"></div>
+    </div>
+  </section>
+
+  <!-- B. 關卡選擇 -->
+  <section id="screen-levels" class="screen" hidden>
+    <header class="topbar">
+      <button id="btn-back" class="chip" aria-label="返回"><span class="icon icon-back"></span></button>
+      <span id="coin-count-b" class="chip coin"></span>
+    </header>
+    <div id="level-list" class="level-list"></div>
+  </section>
+
+  <!-- G. 全破 -->
+  <section id="screen-allclear" class="screen center-screen" hidden>
+    <h1 id="allclear-text"></h1>
+    <button id="btn-allclear-back" class="btn-primary"></button>
+  </section>
+
+  <!-- C. 過關 overlay -->
+  <div id="overlay-clear" class="overlay" hidden>
+    <div class="card">
+      <h2 id="clear-title"></h2>
+      <p id="clear-bonus"></p>
+      <p id="clear-words-hint" class="clear-words-hint"></p>
+      <div id="clear-words" class="clear-words"></div>
+      <button id="btn-next" class="btn-primary"></button>
+    </div>
+  </div>
+
+  <!-- D. 設定 overlay -->
+  <div id="overlay-settings" class="overlay" hidden>
+    <div class="card">
+      <h2 id="settings-title"></h2>
+      <label><span id="label-sound"></span><input type="checkbox" id="opt-sound"></label>
+      <label><span id="label-haptic"></span><input type="checkbox" id="opt-haptic"></label>
+      <details><summary id="label-about"></summary>
+        <p class="about-text">Lexoria v0.1.0<br>
+        Definitions: WordNet® (Princeton University) — used under the WordNet License.<br>
+        Chinese translations: ECDICT by Wei Lin (MIT License), converted with OpenCC (Apache-2.0).<br>
+        Word list: ENABLE (public domain).<br>
+        Word frequency data: wordfreq by Robyn Speer (MIT License).<br>
+        Sound effects: "Interface Sounds" by Kenney (kenney.nl, CC0).</p>
+      </details>
+    </div>
+  </div>
+
+  <!-- F. 教學 overlay（不攔截操作） -->
+  <div id="overlay-tutorial" class="tutorial" hidden>
+    <p id="tutorial-text"></p>
+  </div>
+
+  <!-- E. 查詞卡片（動態定位） -->
+  <div id="dict-card" class="dict-card" hidden></div>
+
+  <!-- 橫式遮罩（純 CSS media query 顯示） -->
+  <div id="rotate-mask" class="rotate-mask"><p id="rotate-text"></p></div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

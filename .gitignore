@@ -1,0 +1,7 @@
+# Local configuration files
+*.local.*
+*.local/
+*.local
+
+# Downloaded generator inputs (mise run fetch-data)
+tools/data/
