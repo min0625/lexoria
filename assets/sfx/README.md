@@ -1,0 +1,12 @@
+# 音效素材來源（設計文件 §7、§14）
+
+出處：Kenney「Interface Sounds」1.0（https://kenney.nl/assets/interface-sounds），CC0。
+原始為 OGG，因 iOS Safari 不支援 OGG Vorbis，轉為 mono 16-bit WAV（soundfile 轉檔，未重採樣）。
+
+| 檔案 | 原始檔 | 用途 |
+|------|--------|------|
+| tick.wav | tick_001.ogg | 選字 |
+| target.wav | confirmation_001.ogg | 命中目標字 |
+| invalid.wav | error_004.ogg | 無效字 |
+| coin.wav | glass_002.ogg | 拼出 bonus 字得金幣 |
+| clear.wav | confirmation_002.ogg | 過關 |

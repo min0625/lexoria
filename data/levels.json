@@ -1,0 +1,634 @@
+[
+  {
+    "id": 1,
+    "letters": ["D","T","I","E"],
+    "words": [
+      {"word":"TIED","row":1,"col":0,"dir":"across","def":"fasten or secure with a rope, string, or cord","zh":"v. 系（tie的過去式和過去分詞）"},
+      {"word":"DIET","row":0,"col":1,"dir":"down","def":"a prescribed selection of foods","zh":"n. 日常飲食, 議會"},
+      {"word":"TIE","row":3,"col":1,"dir":"across","def":"neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front","zh":"n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"},
+      {"word":"DIE","row":1,"col":3,"dir":"down","def":"a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers","zh":"vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"}
+    ],
+    "bonus": ["DIT","TED","DITE","EDIT","TIDE"]
+  },
+  {
+    "id": 2,
+    "letters": ["L","O","P","O"],
+    "words": [
+      {"word":"POLO","row":0,"col":0,"dir":"across","def":"Venetian traveler who explored Asia in the 13th century and served Kublai Khan (1254-1324)","zh":"n. 馬球, 水球"},
+      {"word":"POOL","row":0,"col":0,"dir":"down","def":"an excavation that is (usually) filled with water","zh":"n. 池, 水塘, 石油層, 聯營"},
+      {"word":"LOOP","row":0,"col":2,"dir":"down","def":"fastener consisting of a metal ring for lining a small hole to permit the attachment of cords or lines","zh":"n. 環, 圈, 彎曲部分, 迴圈"}
+    ],
+    "bonus": ["LOO","LOP","POL"]
+  },
+  {
+    "id": 3,
+    "letters": ["R","E","D","A"],
+    "words": [
+      {"word":"DARE","row":2,"col":0,"dir":"across","def":"a challenge to do something dangerous or foolhardy","zh":"n. 挑戰, 挑動, 大膽"},
+      {"word":"READ","row":0,"col":1,"dir":"down","def":"something that is read","zh":"v. 讀, 閱讀, 理解"},
+      {"word":"ARE","row":0,"col":3,"dir":"down","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"}
+    ],
+    "bonus": ["EAR","ERA","RAD","RED","DEAR"]
+  },
+  {
+    "id": 4,
+    "letters": ["O","U","P","S"],
+    "words": [
+      {"word":"SOUP","row":0,"col":0,"dir":"across","def":"liquid food especially of meat or fish or vegetable stock often containing pieces of solid food","zh":"n. 湯, 馬力"},
+      {"word":"UPS","row":0,"col":2,"dir":"down","def":"raise","zh":"不間斷電源"},
+      {"word":"OPS","row":2,"col":0,"dir":"across","def":"(Roman mythology) goddess of abundance and fertility; wife of Saturn; counterpart of Greek Rhea and Cybele of ancient Asia Minor","zh":"abbr. （美國）物價管制局（Office of Price Stabilization）；管道安全處（Office of Pipeline Safety）"}
+    ],
+    "bonus": ["PUS","SOP","SOU","SUP","UPO","OPUS"]
+  },
+  {
+    "id": 5,
+    "letters": ["W","O","T","N"],
+    "words": [
+      {"word":"TOWN","row":2,"col":0,"dir":"across","def":"an urban area with a fixed boundary that is smaller than a city","zh":"n. 城鎮, 市, 鎮"},
+      {"word":"NOW","row":0,"col":2,"dir":"down","def":"the momentary present","zh":"adv. 現在, 剛才, 目前"},
+      {"word":"NOT","row":0,"col":0,"dir":"down","def":"negation of a word or group of words","zh":"adv. 不, 非, 未"}
+    ],
+    "bonus": ["OWN","TON","TOW","TWO","WON","WOT","NOWT","WONT"]
+  },
+  {
+    "id": 6,
+    "letters": ["I","E","P","L"],
+    "words": [
+      {"word":"PILE","row":0,"col":0,"dir":"across","def":"a collection of objects laid on top of each other","zh":"n. 堆, 大堆, 大廈, 建築群, 電池, 大量, 橋樁, 軟毛, 痔瘡"},
+      {"word":"LIE","row":0,"col":2,"dir":"down","def":"a statement that deviates from or perverts the truth","zh":"n. 謊言, 假象, 位置"},
+      {"word":"PIE","row":0,"col":0,"dir":"down","def":"dish baked in pastry-lined pan often with a pastry top","zh":"n. 餡餅, 財富, 總額, 貪汙受賄, 雜亂, 喜鵲"}
+    ],
+    "bonus": ["LEI","LIP","PLIE"]
+  },
+  {
+    "id": 7,
+    "letters": ["S","R","A","S","G"],
+    "words": [
+      {"word":"GRASS","row":2,"col":0,"dir":"across","def":"narrow-leaved green herbage: grown as lawns; used as pasture for grazing animals; cut and dried as hay","zh":"n. 草, 草原, 牧場"},
+      {"word":"GAS","row":1,"col":2,"dir":"down","def":"the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container","zh":"n. 氣體, 汽油, 瓦斯"},
+      {"word":"RAG","row":0,"col":0,"dir":"down","def":"a small piece of cloth or paper","zh":"n. 碎布, 抹布, 碎片, 碎屑, 少量, 破舊衣服"},
+      {"word":"ASS","row":0,"col":4,"dir":"down","def":"the fleshy part of the human body that you sit on","zh":"n. 驢, 傻瓜, 笨蛋, 屁股"}
+    ],
+    "bonus": ["ARS","GAR","RAS","SAG","GARS","RAGS","SAGS"]
+  },
+  {
+    "id": 8,
+    "letters": ["C","L","U","R","E"],
+    "words": [
+      {"word":"CRUEL","row":2,"col":0,"dir":"across","def":"(of persons or their actions) able or disposed to inflict pain or suffering","zh":"a. 殘酷的, 令人極痛苦的"},
+      {"word":"CLUE","row":0,"col":2,"dir":"down","def":"a slight indication","zh":"n. 線索, 暗示"},
+      {"word":"RULE","row":0,"col":4,"dir":"down","def":"a principle or condition that customarily governs behavior","zh":"n. 規則, 統治, 控制, 支配, 規律, 標準, 章程, 破折號, 鉛線"},
+      {"word":"CURE","row":0,"col":2,"dir":"across","def":"a medicine or therapy that cures disease or relieve pain","zh":"n. 治療, 治癒, 治療法"}
+    ],
+    "bonus": ["CEL","CUE","CUR","ECU","LEU","REC","RUE","CURL","ECRU","LUCE","LURE","LUCRE","ULCER"]
+  },
+  {
+    "id": 9,
+    "letters": ["U","I","N","M","S"],
+    "words": [
+      {"word":"MINUS","row":2,"col":0,"dir":"across","def":"an arithmetic operation in which the difference between two numbers is calculated","zh":"n. 負號, 不足"},
+      {"word":"SIN","row":0,"col":2,"dir":"down","def":"estrangement from god","zh":"n. 罪, 犯罪, 過失, 失禮"},
+      {"word":"SUM","row":0,"col":0,"dir":"down","def":"a quantity of money","zh":"n. 總數, 總和, 金額, 概要, 頂點"},
+      {"word":"SUN","row":0,"col":2,"dir":"across","def":"the star that is the source of light and heat for the planets in the solar system","zh":"n. 太陽, 日, 日光, 陽光"}
+    ],
+    "bonus": ["INS","ISM","MIS","MUN","MUS","NIM","NUS","SIM","UNS","MUNI","MUNS","NIMS","MUNIS"]
+  },
+  {
+    "id": 10,
+    "letters": ["E","M","N","A","S"],
+    "words": [
+      {"word":"MEANS","row":3,"col":0,"dir":"across","def":"how a result is obtained or an end is achieved","zh":"n. 方法, 手段, 工具, 財產, 收入"},
+      {"word":"MEAN","row":0,"col":3,"dir":"down","def":"an average of n numbers computed by adding some function of the numbers and dividing by some function of n","zh":"a. 低劣的, 卑賤的, 簡陋的, 吝嗇的, 慚愧的, 平均的, 中間的, 普通的"},
+      {"word":"SAME","row":0,"col":1,"dir":"down","def":"a member of an indigenous nomadic people living in northern Scandinavia and herding reindeer","zh":"a. 相同的, 同樣的"},
+      {"word":"NAME","row":1,"col":0,"dir":"across","def":"a language unit by which a person or thing is known","zh":"n. 名字, 名稱, 姓名, 名義, 名譽, 檔名"},
+      {"word":"MAN","row":0,"col":3,"dir":"across","def":"an adult person who is male (as opposed to a woman)","zh":"n. 男人, 人類, 人"}
+    ],
+    "bonus": ["ANE","EMS","ENS","MAE","MAS","MEN","NAE","NAM","SAE","SEA","SEN","AMEN","ANES","MAES","MANE","MANS","MESA","NEMA","SANE","SEAM","AMENS","MANES","MANSE","MENSA","NAMES","NEMAS"]
+  },
+  {
+    "id": 11,
+    "letters": ["C","O","H","S","A"],
+    "words": [
+      {"word":"CHAOS","row":4,"col":0,"dir":"across","def":"a state of extreme confusion and disorder","zh":"n. 大混亂, 混沌"},
+      {"word":"CASH","row":2,"col":4,"dir":"down","def":"money in the form of bills or coins","zh":"n. 現金"},
+      {"word":"ASH","row":2,"col":1,"dir":"down","def":"the residue that remains when something is burned","zh":"n. 灰, 灰燼"},
+      {"word":"HAS","row":2,"col":0,"dir":"across","def":"(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day","zh":"have的第三人稱單數現在式"},
+      {"word":"COS","row":0,"col":2,"dir":"down","def":"ratio of the adjacent side to the hypotenuse of a right-angled triangle","zh":"n. 餘弦"}
+    ],
+    "bonus": ["HAO","OCA","OHS","SAC","SHA","CHAO","COSH","OCAS"]
+  },
+  {
+    "id": 12,
+    "letters": ["U","D","L","I","G"],
+    "words": [
+      {"word":"GUILD","row":2,"col":0,"dir":"across","def":"a formal association of people with similar interests","zh":"n. 團體, 協會, 行業協會"},
+      {"word":"DUG","row":0,"col":0,"dir":"down","def":"an udder or breast or teat","zh":"dig的過去式和過去分詞"},
+      {"word":"LID","row":0,"col":4,"dir":"down","def":"either of two folds of skin that can be moved to cover or open the eye","zh":"n. 蓋子, 限制, 眼瞼"},
+      {"word":"DIG","row":0,"col":0,"dir":"across","def":"the site of an archeological exploration","zh":"vt. 挖, 翻土, 發掘"}
+    ],
+    "bonus": ["DUI","GID","GUL","LUG","GILD","GUID","IGLU"]
+  },
+  {
+    "id": 13,
+    "letters": ["S","I","E","T","R"],
+    "words": [
+      {"word":"TRIES","row":2,"col":0,"dir":"across","def":"earnest and conscientious activity intended to do or accomplish something","zh":"n. 嘗試, 試驗（try的複數）"},
+      {"word":"REST","row":0,"col":4,"dir":"down","def":"something left after other parts have been taken away","zh":"n. 休息, 睡眠, 安息, 稍息, 靜止, 支架, 休息處, 其餘者, 剩餘部分"},
+      {"word":"SITE","row":0,"col":0,"dir":"down","def":"the piece of land on which something is located (or is to be located)","zh":"n. 位置, 場所, 地點"},
+      {"word":"SET","row":0,"col":0,"dir":"across","def":"a group of things of the same kind that belong together and are so used","zh":"n. 日落, 同夥, 組合, 集合, 裝置"},
+      {"word":"ITS","row":2,"col":2,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"}
+    ],
+    "bonus": ["ERS","IRE","REI","RES","RET","SEI","SER","SIR","SIT","SRI","TIE","TIS","ERST","IRES","REIS","RETS","RISE","RITE","SIRE","STIR","TIER","TIES","TIRE","RITES","TIERS","TIRES"]
+  },
+  {
+    "id": 14,
+    "letters": ["K","S","P","E","I"],
+    "words": [
+      {"word":"SPIKE","row":3,"col":0,"dir":"across","def":"a transient variation in voltage or current","zh":"n. 長釘, 鞋釘, 釘狀物, 尖峰狀物, 穗"},
+      {"word":"SKIP","row":0,"col":1,"dir":"down","def":"a gait in which steps and hops alternate","zh":"n. 跳躍, 跳讀"},
+      {"word":"SKI","row":1,"col":0,"dir":"across","def":"narrow wood or metal or plastic runners used in pairs for gliding over snow","zh":"n. 滑雪橇"},
+      {"word":"PIE","row":1,"col":4,"dir":"down","def":"dish baked in pastry-lined pan often with a pastry top","zh":"n. 餡餅, 財富, 總額, 貪汙受賄, 雜亂, 喜鵲"}
+    ],
+    "bonus": ["KEP","KIP","PES","PIS","PSI","SEI","SIP","KEPI","KEPS","KIPS","PIES","PIKE","SIKE","SIPE","SKEP","SPIK","KEPIS","PIKES"]
+  },
+  {
+    "id": 15,
+    "letters": ["S","W","K","O","R"],
+    "words": [
+      {"word":"WORKS","row":0,"col":0,"dir":"across","def":"buildings for carrying on industrial labor","zh":"n. 工程, 工廠, 工事, 活動部件, 機件, 著作, 作品, 善行, 德行"},
+      {"word":"ROWS","row":0,"col":2,"dir":"down","def":"an arrangement of objects or people side by side in a line","zh":"n. 返回引用中的行數；行（row的複數形式）"},
+      {"word":"WORK","row":0,"col":0,"dir":"down","def":"activity directed toward making or doing something","zh":"n. 工作, 勞動, 職業, 行為, 功, 作品, 成果, 產品, 工程"},
+      {"word":"ROW","row":2,"col":0,"dir":"across","def":"an arrangement of objects or people side by side in a line","zh":"n. 排, 行, 街道, 划船, 吵鬧"}
+    ],
+    "bonus": ["KOR","KOS","ORS","SOW","WOK","WOS","KORS","WOKS"]
+  },
+  {
+    "id": 16,
+    "letters": ["E","E","C","S","H","R"],
+    "words": [
+      {"word":"CHEERS","row":4,"col":0,"dir":"across","def":"a cry or shout of approval","zh":"interj. 乾杯, 再見"},
+      {"word":"CHEER","row":0,"col":4,"dir":"down","def":"a cry or shout of approval","zh":"n. 愉快, 振奮, 歡呼"},
+      {"word":"HERE","row":2,"col":1,"dir":"across","def":"the present location; this place","zh":"adv. 在這裡, 此時, 這裡"},
+      {"word":"SEE","row":0,"col":2,"dir":"down","def":"the seat within a bishop's diocese where his cathedral is located","zh":"vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"},
+      {"word":"SEC","row":0,"col":2,"dir":"across","def":"1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites","zh":"[計] 秒, 輔助"}
+    ],
+    "bonus": ["CEE","ERE","ERS","HER","HES","REC","REE","RES","SER","SHE","CEES","CERE","ECHE","HERS","RECS","REES","RESH","SEER","SERE","CERES","ECHES","HERES","SCREE","SHEER","CREESH"]
+  },
+  {
+    "id": 17,
+    "letters": ["E","L","N","K","R","E"],
+    "words": [
+      {"word":"KERNEL","row":3,"col":0,"dir":"across","def":"the inner and usually edible part of a seed or grain or nut or fruit stone","zh":"n. 核心, 中心, 精髓, 核心"},
+      {"word":"REEL","row":0,"col":5,"dir":"down","def":"a roll of photographic film holding a series of frames to be projected by a movie projector","zh":"n. 卷軸, 一卷, 紡車, 旋轉, 蹣跚"},
+      {"word":"KNEE","row":2,"col":3,"dir":"down","def":"hinge joint in the human leg connecting the tibia and fibula with the femur and protected in front by the patella","zh":"n. 膝, 膝蓋"},
+      {"word":"KEEN","row":1,"col":1,"dir":"down","def":"a funeral lament sung with loud wailing","zh":"a. 鋒利的, 敏銳的, 強烈的, 敏捷的, 熱心的, 渴望的"},
+      {"word":"LEE","row":5,"col":2,"dir":"across","def":"United States filmmaker whose works explore the richness of black culture in America (born in 1957)","zh":"n. 背風處, 避風處, 下風處, 保護, 庇護"},
+      {"word":"KEN","row":1,"col":4,"dir":"across","def":"range of what one can know or understand","zh":"n. 視野範圍, 知識範圍, 見地"}
+    ],
+    "bonus": ["EEL","EKE","ELK","ERE","ERN","LEK","NEE","REE","ERNE","KEEL","KERN","LEEK","LEER","LEKE","REEK","KERNE","KNEEL"]
+  },
+  {
+    "id": 18,
+    "letters": ["S","R","T","G","A","N"],
+    "words": [
+      {"word":"GRANTS","row":1,"col":0,"dir":"across","def":"any monetary aid","zh":"[經] 補助金, 撥款, 津貼"},
+      {"word":"STAR","row":0,"col":4,"dir":"down","def":"(astronomy) a celestial body of hot gases that radiates energy derived from thermonuclear reactions in the interior","zh":"n. 星, 恆星, 星形物, 運氣, 明星"},
+      {"word":"RAN","row":0,"col":2,"dir":"down","def":"move fast by using one's feet, with one foot off the ground at any given time","zh":"run的過去式"},
+      {"word":"ART","row":3,"col":3,"dir":"across","def":"the products of human creativity; works of art collectively","zh":"n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"},
+      {"word":"GAS","row":1,"col":0,"dir":"down","def":"the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container","zh":"n. 氣體, 汽油, 瓦斯"}
+    ],
+    "bonus": ["ANT","ARS","GAN","GAR","GAT","NAG","RAG","RAS","RAT","SAG","SAT","TAG","TAN","TAR","TAS","ANTS","ARTS","GARS","GAST","GATS","GNAR","GNAT","GRAN","GRAT","NAGS","RAGS","RANG","RANT","RATS","SANG","SNAG","STAG","TAGS","TANG","TANS","TARN","TARS","TSAR","ANGST","GNARS","GNATS","GRANS","GRANT","RANTS","STANG","TANGS","TARNS","TRANS","STRANG"]
+  },
+  {
+    "id": 19,
+    "letters": ["T","I","L","U","S","N"],
+    "words": [
+      {"word":"INSULT","row":2,"col":0,"dir":"across","def":"a rude expression intended to offend or hurt","zh":"n. 侮辱, 無禮, 損害"},
+      {"word":"LIST","row":0,"col":2,"dir":"down","def":"a database containing an ordered array of items (names or topics)","zh":"n. 目錄, 名單, 明細表, 布條, 條紋, 列表, 序列, 資料清單"},
+      {"word":"UNIT","row":0,"col":0,"dir":"down","def":"any division of quantity accepted as a standard of measurement or exchange","zh":"n. 單位, 分隊, 部隊, 單元, 部件, 裝置"},
+      {"word":"ITS","row":1,"col":5,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"},
+      {"word":"SUN","row":3,"col":5,"dir":"across","def":"the star that is the source of light and heat for the planets in the solar system","zh":"n. 太陽, 日, 日光, 陽光"}
+    ],
+    "bonus": ["INS","LIN","LIS","LIT","NIL","NIT","NUS","NUT","SIN","SIT","TIL","TIN","TIS","TUI","TUN","UNS","UTS","LINS","LINT","LITS","LITU","LUNT","LUST","NILS","NITS","NUTS","SILT","SLIT","SLUT","SNIT","STUN","SUIT","TILS","TINS","TUIS","TUNS","LINTS","LUNTS","SUINT","UNITS","UNLIT","UNTIL","SUNLIT"]
+  },
+  {
+    "id": 20,
+    "letters": ["E","M","T","E","D","L"],
+    "words": [
+      {"word":"MELTED","row":2,"col":0,"dir":"across","def":"reduce or cause to be reduced from a solid to a liquid state, usually by heating","zh":"melt的過去式和過去分詞"},
+      {"word":"MEET","row":1,"col":4,"dir":"down","def":"a meeting at which a number of athletic contests are held","zh":"n. 會, 集會"},
+      {"word":"LET","row":2,"col":2,"dir":"down","def":"a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India","zh":"vt. 讓, 假設, 出租, 排放, 妨礙"},
+      {"word":"LEE","row":0,"col":1,"dir":"down","def":"United States filmmaker whose works explore the richness of black culture in America (born in 1957)","zh":"n. 背風處, 避風處, 下風處, 保護, 庇護"},
+      {"word":"MET","row":2,"col":0,"dir":"down","def":"come together","zh":"meet的過去式和過去分詞"},
+      {"word":"LED","row":0,"col":1,"dir":"across","def":"diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used","zh":"lead的過去式和過去分詞"}
+    ],
+    "bonus": ["DEE","DEL","EEL","ELD","ELM","EME","MED","MEL","TED","TEE","TEL","DEEM","DEET","DELE","DEME","LEET","MEED","MELD","MELT","METE","TEED","TEEL","TEEM","TELE","METED"]
+  },
+  {
+    "id": 21,
+    "letters": ["B","R","B","E","A","R"],
+    "words": [
+      {"word":"BARBER","row":2,"col":0,"dir":"across","def":"United States composer (1910-1981)","zh":"n. 理髮師"},
+      {"word":"RARE","row":1,"col":1,"dir":"down","def":"not widely known; especially valued for its uncommonness","zh":"a. 稀罕的, 罕有的, 珍奇的, 稀薄的, 半熟的, 非常好的"},
+      {"word":"BEAR","row":4,"col":0,"dir":"across","def":"massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws","zh":"n. 熊"},
+      {"word":"BAR","row":2,"col":3,"dir":"down","def":"a room or establishment where alcoholic drinks are served over a counter","zh":"n. 條, 棒, 酒吧, 柵, 障礙物"},
+      {"word":"ARE","row":0,"col":4,"dir":"down","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"}
+    ],
+    "bonus": ["ARB","BRA","BRR","EAR","EBB","ERA","ERR","REB","ABBE","BABE","BARB","BARE","BRAE","REAR","BARBE","BARER","BARRE","REBAR"]
+  },
+  {
+    "id": 22,
+    "letters": ["I","R","F","V","Y","E"],
+    "words": [
+      {"word":"VERIFY","row":3,"col":0,"dir":"across","def":"confirm the truth of","zh":"vt. 證明, 查證, 證實, 檢驗, 校驗"},
+      {"word":"FIRE","row":1,"col":2,"dir":"down","def":"the event of something burning (often destructive)","zh":"n. 火, 爐火, 電爐, 火災, 閃光體, 炮火, 熱情"},
+      {"word":"VERY","row":0,"col":5,"dir":"down","def":"precisely as stated","zh":"a. 真正的, 恰好的, 十足的, 特有的"},
+      {"word":"FIVE","row":1,"col":2,"dir":"across","def":"the cardinal number that is the sum of four and one","zh":"num. 五, 五個"},
+      {"word":"REF","row":2,"col":5,"dir":"across","def":"(sports) the chief official (as in boxing or American football) who is expected to ensure fair play","zh":"n. 裁判員"},
+      {"word":"REV","row":1,"col":0,"dir":"down","def":"rate of revolution of a motor","zh":"n. 一次迴轉"}
+    ],
+    "bonus": ["FER","FEY","FIE","FIR","FRY","IRE","IVY","REI","RIF","RYE","VIE","REIF","RIFE","RIVE","VIER","FIERY","FIVER","REIFY"]
+  },
+  {
+    "id": 23,
+    "letters": ["N","X","S","A","Y","T"],
+    "words": [
+      {"word":"SYNTAX","row":2,"col":0,"dir":"across","def":"the grammatical arrangement of words in sentences","zh":"n. 句法, 語法, 句子構造"},
+      {"word":"STAY","row":1,"col":3,"dir":"down","def":"continuing or remaining in a place or state","zh":"n. 停留, 逗留, 制止, 延緩, 停止, 支柱, 支撐物, 支索"},
+      {"word":"ANY","row":4,"col":1,"dir":"across","def":"one or some or every or all without specification","zh":"a. 任何的"},
+      {"word":"SAY","row":0,"col":1,"dir":"down","def":"the chance to speak","zh":"vt. 說, 講, 念, 說明, 指明"},
+      {"word":"TAX","row":0,"col":5,"dir":"down","def":"charge against a citizen's person or property or activity for the support of government","zh":"n. 稅, 稅款, 重負, 會費"}
+    ],
+    "bonus": ["ANT","AYS","NAY","SAT","SAX","STY","SYN","TAN","TAS","ANTS","NAYS","TANS","XYST","ANTSY","NASTY","TANSY"]
+  },
+  {
+    "id": 24,
+    "letters": ["N","D","E","T","I","R"],
+    "words": [
+      {"word":"TINDER","row":0,"col":0,"dir":"across","def":"material for starting a fire","zh":"n. 火絨盒"},
+      {"word":"TRIED","row":0,"col":0,"dir":"down","def":"make an effort or attempt","zh":"a. 試驗過的, 可靠的"},
+      {"word":"RED","row":0,"col":5,"dir":"down","def":"red color or pigment; the chromatic color resembling the hue of blood","zh":"a. 紅的, 紅色的, 紅腫的, 流血的"},
+      {"word":"DIE","row":0,"col":3,"dir":"down","def":"a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers","zh":"vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"},
+      {"word":"END","row":2,"col":3,"dir":"across","def":"either extremity of something that has length","zh":"n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"}
+    ],
+    "bonus": ["DEN","DIN","DIT","ERN","IRE","NET","NIT","REI","RET","RID","RIN","TED","TEN","TIE","TIN","DENT","DIET","DINE","DINT","DIRE","DIRT","DITE","EDIT","IRED","NERD","NIDE","NITE","REIN","REND","RENT","RIDE","RIND","RITE","TEND","TERN","TIDE","TIED","TIER","TINE","TIRE","DINER","INERT","INTER","NITER","NITRE","TEIND","TINED","TIRED","TREND","TRINE","RIDENT","TRINED"]
+  },
+  {
+    "id": 25,
+    "letters": ["R","N","D","S","O","E"],
+    "words": [
+      {"word":"DRONES","row":3,"col":0,"dir":"across","def":"stingless male bee in a colony of social bees (especially honeybees) whose sole function is to mate with the queen","zh":"n. 雄蜂( drone的名詞複數 ); 嗡嗡聲; 持續的低音或和音; 不務正業而依賴他人為生者"},
+      {"word":"DONE","row":2,"col":2,"dir":"down","def":"engage in","zh":"a. 完成了的, 好了的"},
+      {"word":"DOES","row":0,"col":5,"dir":"down","def":"the federal department responsible for maintaining a national energy policy of the United States; created in 1977","zh":"v. 做；工作；有用（do的第三人稱單數形式）"},
+      {"word":"RED","row":1,"col":0,"dir":"down","def":"red color or pigment; the chromatic color resembling the hue of blood","zh":"a. 紅的, 紅色的, 紅腫的, 流血的"},
+      {"word":"ONE","row":5,"col":0,"dir":"across","def":"the smallest whole number or a numeral representing this number","zh":"n. 一(個)"},
+      {"word":"END","row":3,"col":4,"dir":"down","def":"either extremity of something that has length","zh":"n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"}
+    ],
+    "bonus": ["DEN","DOE","DON","DOR","DOS","ENS","EON","ERN","ERS","NOD","NOR","NOS","ODE","ODS","OES","ONS","ORE","ORS","OSE","RES","ROD","ROE","SEN","SER","SOD","SON","DENS","DOER","DONS","DORE","DORS","DOSE","ENDS","EONS","ERNS","EROS","NERD","NODE","NODS","NOES","NOSE","ODES","ONES","ORES","REDO","REDS","REND","RODE","RODS","ROES","ROSE","SEND","SNED","SONE","SORD","SORE","SORN","DOERS","DOSER","DRONE","NERDS","NODES","NOSED","REDON","REDOS","RENDS","RESOD","ROSED","SENOR","SNORE","SONDE","REDONS","SNORED","SONDER","SORNED"]
+  },
+  {
+    "id": 26,
+    "letters": ["T","O","N","G","T","E"],
+    "words": [
+      {"word":"GOTTEN","row":2,"col":0,"dir":"across","def":"come into the possession of something concrete or abstract","zh":"get的過去分詞"},
+      {"word":"GONE","row":1,"col":1,"dir":"down","def":"change location; move, travel, or proceed, also metaphorically","zh":"a. 離去的, 死去的, 用完的"},
+      {"word":"ONE","row":0,"col":4,"dir":"down","def":"the smallest whole number or a numeral representing this number","zh":"n. 一(個)"},
+      {"word":"GOT","row":0,"col":3,"dir":"across","def":"come into the possession of something concrete or abstract","zh":"get的過去式和過去分詞"},
+      {"word":"NOT","row":2,"col":5,"dir":"down","def":"negation of a word or group of words","zh":"adv. 不, 非, 未"},
+      {"word":"GET","row":4,"col":0,"dir":"across","def":"a return on a shot that seemed impossible to reach and would normally have resulted in a point for the opponent","zh":"vt. 得到, 獲得, 變成, 使得, 收穫, 接通, 抓住, 染上"}
+    ],
+    "bonus": ["EGO","ENG","EON","GEN","NET","NOG","TEG","TEN","TET","TOE","TOG","TON","TOT","GENT","NETT","NOTE","TENT","TONE","TONG","TOTE"]
+  },
+  {
+    "id": 27,
+    "letters": ["T","P","U","I","D","S"],
+    "words": [
+      {"word":"STUPID","row":2,"col":0,"dir":"across","def":"a person who is not very bright","zh":"a. 愚蠢的, 麻木的"},
+      {"word":"SUIT","row":1,"col":2,"dir":"down","def":"a set of garments (usually including a jacket and trousers or skirt) for outerwear all of the same fabric and color","zh":"n. 套裝, 訴訟, 請求, 起訴, 套, 組"},
+      {"word":"SIT","row":1,"col":4,"dir":"down","def":"be seated","zh":"vi. 坐, 就座, 坐落"},
+      {"word":"PUT","row":4,"col":0,"dir":"across","def":"the option to sell a given stock (or stock index or commodity future) at a given price before a given date","zh":"vt. 放, 擺, 安置, 移動, 發射, 投擲, 寫上, 表達, 使從事, 使受到, 驅使, 賦予"},
+      {"word":"ITS","row":0,"col":0,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"}
+    ],
+    "bonus": ["DIP","DIS","DIT","DUI","DUP","IDS","PIS","PIT","PIU","PSI","PUD","PUS","SIP","SUP","TIP","TIS","TUI","TUP","UPS","UTS","DIPS","DIPT","DITS","DUIT","DUPS","DUST","PITS","PUDS","PUTS","SPIT","SPUD","STUD","TIPS","TUIS","TUPS","DUITS","SITUP"]
+  },
+  {
+    "id": 28,
+    "letters": ["O","H","F","U","R","T"],
+    "words": [
+      {"word":"FOURTH","row":3,"col":0,"dir":"across","def":"following the third position; number four in a countable series","zh":"num. 第四, 四分之一"},
+      {"word":"HOUR","row":2,"col":1,"dir":"down","def":"a period of time equal to 1/24th of a day","zh":"n. 小時, 鐘頭, 時間, ...點鐘, 課時"},
+      {"word":"FOUR","row":0,"col":3,"dir":"down","def":"the cardinal number that is the sum of three and one","zh":"num. 四, 四個"},
+      {"word":"OUT","row":1,"col":3,"dir":"across","def":"(baseball) a failure by a batter or runner to reach a base safely in baseball","zh":"a. 外面的, 熄滅的, 結束的"},
+      {"word":"HOT","row":3,"col":5,"dir":"down","def":"used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning","zh":"a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"}
+    ],
+    "bonus": ["FOH","FOR","FOU","FRO","FUR","HUT","OFT","ORT","OUR","RHO","ROT","RUT","THO","TOR","FORT","HURT","ROUT","RUTH","THOU","THRO","THRU","TOFU","TOUR","TURF","FORTH","FROTH","ROUTH"]
+  },
+  {
+    "id": 29,
+    "letters": ["E","S","I","S","H","T"],
+    "words": [
+      {"word":"THESIS","row":4,"col":0,"dir":"across","def":"an unproved statement put forward as a premise in an argument","zh":"n. 論題, 論文"},
+      {"word":"SHIT","row":1,"col":0,"dir":"down","def":"obscene terms for feces","zh":"vi. 拉屎"},
+      {"word":"HIT","row":2,"col":0,"dir":"across","def":"(baseball) a successful stroke in an athletic contest (especially in baseball)","zh":"n. 打擊, 打, 衝撞, 諷刺"},
+      {"word":"ITS","row":2,"col":5,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"},
+      {"word":"SET","row":0,"col":2,"dir":"down","def":"a group of things of the same kind that belong together and are so used","zh":"n. 日落, 同夥, 組合, 集合, 裝置"}
+    ],
+    "bonus": ["ESS","ETH","HES","HET","HIE","HIS","SEI","SHE","SIS","SIT","THE","TIE","TIS","ETHS","HEST","HETS","HIES","HISS","HIST","HITS","SEIS","SETS","SHES","SITE","SITH","SITS","THIS","TIES","HEIST","HESTS","HISTS","SHIES","SHIST","SHITS","SITES","STIES","HEISTS","SHIEST"]
+  },
+  {
+    "id": 30,
+    "letters": ["A","E","D","H","R","N"],
+    "words": [
+      {"word":"HARDEN","row":2,"col":0,"dir":"across","def":"become hard or harder","zh":"vt. 使變硬, 使堅強, 使冷酷"},
+      {"word":"HARD","row":2,"col":0,"dir":"down","def":"not easy; requiring great physical or mental effort to accomplish or comprehend or endure","zh":"a. 堅硬的, 硬的, 難的, 艱苦的, 困難的, 堅固的, 猛烈的, 艱難的, 結實的, 確實的"},
+      {"word":"READ","row":2,"col":2,"dir":"down","def":"something that is read","zh":"v. 讀, 閱讀, 理解"},
+      {"word":"HAD","row":0,"col":3,"dir":"down","def":"have or possess, either in a concrete or an abstract sense","zh":"have的過去式和過去分詞"},
+      {"word":"ARE","row":4,"col":2,"dir":"across","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"},
+      {"word":"END","row":4,"col":4,"dir":"down","def":"either extremity of something that has length","zh":"n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"}
+    ],
+    "bonus": ["AND","ANE","DAH","DEN","EAR","EDH","ERA","ERN","HAE","HEN","HER","NAE","NAH","RAD","RAH","RAN","RED","DARE","DARN","DEAN","DEAR","EARN","HADE","HAED","HAEN","HAND","HARE","HEAD","HEAR","HERD","HERN","NARD","NEAR","NERD","RAND","REND","RHEA","HARED","HEARD","REDAN"]
+  },
+  {
+    "id": 31,
+    "letters": ["C","S","C","U","S","E","S"],
+    "words": [
+      {"word":"SUCCESS","row":1,"col":0,"dir":"across","def":"an event that accomplishes its intended purpose","zh":"n. 成功, 成就, 勝利"},
+      {"word":"SECS","row":1,"col":0,"dir":"down","def":"1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites","zh":"abbr. 半導體裝置通訊標準（SEMI Equipment Communication Standard）"},
+      {"word":"CUES","row":3,"col":0,"dir":"across","def":"an actor's line that immediately precedes and serves as a reminder for some action or speech","zh":"n. 開端, 線索；球杆；提示, 關鍵；誘因（cue的複數形式）"},
+      {"word":"USES","row":0,"col":6,"dir":"down","def":"the act of using","zh":"abbr. 美國就業局（United States Employment Service）"},
+      {"word":"SEC","row":0,"col":4,"dir":"down","def":"1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites","zh":"[計] 秒, 輔助"},
+      {"word":"USE","row":3,"col":5,"dir":"across","def":"the act of using","zh":"n. 使用, 習慣, 使用價值, 用法, 使用權"},
+      {"word":"CUE","row":1,"col":2,"dir":"down","def":"an actor's line that immediately precedes and serves as a reminder for some action or speech","zh":"n. 提示, 線索"},
+      {"word":"SUE","row":3,"col":3,"dir":"down","def":"French writer whose novels described the sordid side of city life (1804-1857)","zh":"vt. 控告, 起訴, 請求"}
+    ],
+    "bonus": ["ECU","ESS","CESS","CUSS","ECUS","SUES","SUSS","CUSEC","CUSECS","CUSSES"]
+  },
+  {
+    "id": 32,
+    "letters": ["D","H","R","N","L","A","E"],
+    "words": [
+      {"word":"HANDLER","row":2,"col":0,"dir":"across","def":"one who trains or exhibits animals","zh":"n. 處理者, 操作者, 拳擊教練"},
+      {"word":"HARD","row":2,"col":0,"dir":"down","def":"not easy; requiring great physical or mental effort to accomplish or comprehend or endure","zh":"a. 堅硬的, 硬的, 難的, 艱苦的, 困難的, 堅固的, 猛烈的, 艱難的, 結實的, 確實的"},
+      {"word":"REAL","row":2,"col":6,"dir":"down","def":"any rational or irrational number","zh":"a. 真的, 真實的, 實際的, 實在的, 不動(產)的, 實數的"},
+      {"word":"READ","row":4,"col":4,"dir":"across","def":"something that is read","zh":"v. 讀, 閱讀, 理解"},
+      {"word":"END","row":1,"col":2,"dir":"down","def":"either extremity of something that has length","zh":"n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"},
+      {"word":"ARE","row":0,"col":5,"dir":"down","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"},
+      {"word":"HAD","row":0,"col":4,"dir":"across","def":"have or possess, either in a concrete or an abstract sense","zh":"have的過去式和過去分詞"}
+    ],
+    "bonus": ["ALE","AND","ANE","DAH","DAL","DEL","DEN","EAR","EDH","ELD","ERA","ERN","HAE","HEN","HER","LAD","LAR","LEA","LED","NAE","NAH","RAD","RAH","RAN","RED","DAHL","DALE","DARE","DARN","DEAL","DEAN","DEAR","DHAL","EARL","EARN","ELAN","HADE","HAED","HAEN","HALE","HAND","HARE","HARL","HEAD","HEAL","HEAR","HELD","HERD","HERL","HERN","LADE","LAND","LANE","LARD","LEAD","LEAN","LEAR","LEHR","LEND","NARD","NEAR","NERD","RALE","RAND","REND","RHEA","ALDER","ELAND","HALED","HALER","HARED","HEARD","LADEN","LADER","LEARN","NALED","REDAN","RENAL","DARNEL","HANDLE","HARDEN","HERALD","LANDER"]
+  },
+  {
+    "id": 33,
+    "letters": ["R","T","E","W","S","E","E"],
+    "words": [
+      {"word":"SWEETER","row":3,"col":2,"dir":"across","def":"having or denoting the characteristic taste of sugar","zh":"n. 全景分析器"},
+      {"word":"SWEET","row":1,"col":4,"dir":"down","def":"English phonetician; one of the founders of modern phonetics (1845-1912)","zh":"n. 甜蜜, 糖果, 情人"},
+      {"word":"REST","row":1,"col":2,"dir":"down","def":"something left after other parts have been taken away","zh":"n. 休息, 睡眠, 安息, 稍息, 靜止, 支架, 休息處, 其餘者, 剩餘部分"},
+      {"word":"WERE","row":1,"col":8,"dir":"down","def":"have the quality of being; (copula, used with an adjective or a predicate noun)","zh":"be的過去式"},
+      {"word":"WEST","row":0,"col":6,"dir":"down","def":"the countries of (originally) Europe and (now including) North America and South America","zh":"n. 西方, 西部"},
+      {"word":"SEE","row":1,"col":4,"dir":"across","def":"the seat within a bishop's diocese where his cathedral is located","zh":"vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"},
+      {"word":"SET","row":4,"col":0,"dir":"across","def":"a group of things of the same kind that belong together and are so used","zh":"n. 日落, 同夥, 組合, 集合, 裝置"}
+    ],
+    "bonus": ["ERE","ERS","EWE","REE","RES","RET","SER","SEW","TEE","TEW","WEE","WET","ERST","EWER","EWES","REES","RETE","RETS","SEER","SERE","STEW","TEES","TEWS","TREE","TWEE","WEER","WEES","WEET","WERT","WETS","ESTER","ETWEE","EWERS","REEST","RESEE","RESET","RESEW","REWET","SEWER","STEER","STERE","STREW","SWEER","TERSE","TREES","TREWS","WEEST","WEETS","WREST","ETWEES","REWETS","WESTER"]
+  },
+  {
+    "id": 34,
+    "letters": ["N","I","R","S","T","S","G"],
+    "words": [
+      {"word":"STRINGS","row":2,"col":1,"dir":"across","def":"the section of an orchestra that plays stringed instruments","zh":"n. 附帶條件, 絃樂部分, 絃樂器"},
+      {"word":"SIGNS","row":0,"col":6,"dir":"down","def":"a perceptible indication of something not immediately apparent (as a visible clue that something has happened)","zh":"n. 標誌；符號（sign的複數）"},
+      {"word":"RING","row":1,"col":4,"dir":"down","def":"a characteristic sound","zh":"n. 環, 環形物, 拳擊場, 戒指, 角逐, 小集團, 鈴聲, 鐘聲, 聲調"},
+      {"word":"SIGN","row":0,"col":6,"dir":"across","def":"a perceptible indication of something not immediately apparent (as a visible clue that something has happened)","zh":"n. 符號, 招牌, 徵兆, 正負號, 手勢"},
+      {"word":"ITS","row":0,"col":1,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"},
+      {"word":"SIT","row":4,"col":6,"dir":"across","def":"be seated","zh":"vi. 坐, 就座, 坐落"},
+      {"word":"SIR","row":0,"col":0,"dir":"across","def":"term of address for a man","zh":"n. 先生, 閣下"}
+    ],
+    "bonus": ["GIN","GIT","INS","NIT","RIG","RIN","SIN","SIS","SRI","TIN","TIS","GINS","GIRN","GIRT","GIST","GITS","GRIN","GRIT","NITS","RIGS","RINS","SING","SINS","SIRS","SITS","SNIT","SRIS","STIR","TING","TINS","TRIG","GIRNS","GIRTS","GISTS","GRINS","GRIST","GRITS","RINGS","SINGS","SNITS","STING","STIRS","TINGS","TRIGS","GRISTS","STINGS","STRING"]
+  },
+  {
+    "id": 35,
+    "letters": ["Y","G","T","I","L","T","H"],
+    "words": [
+      {"word":"TIGHTLY","row":4,"col":0,"dir":"across","def":"in a tight or constricted manner","zh":"adv. 緊緊地, 堅固地"},
+      {"word":"LIGHT","row":0,"col":4,"dir":"down","def":"(physics) electromagnetic radiation that can produce a visual sensation","zh":"n. 光, 光亮, 燈, 日光, 發光體, 光源, 傑出人物, 火花, 眼光"},
+      {"word":"TIGHT","row":3,"col":1,"dir":"down","def":"closely constrained or constricted or constricting","zh":"a. 緊的, 密封的, 吝嗇的, 嚴厲的"},
+      {"word":"TILT","row":7,"col":1,"dir":"across","def":"a combat between two mounted knights tilting against each other with blunted lances","zh":"n. 傾斜, 傾向, 船篷, 車篷"},
+      {"word":"LIT","row":4,"col":5,"dir":"down","def":"the humanistic study of a body of literature","zh":"light的過去式和過去分詞"},
+      {"word":"HIT","row":1,"col":3,"dir":"across","def":"(baseball) a successful stroke in an athletic contest (especially in baseball)","zh":"n. 打擊, 打, 衝撞, 諷刺"}
+    ],
+    "bonus": ["GHI","GIT","THY","TIL","TIT","GILT","HILT","TILTH"]
+  },
+  {
+    "id": 36,
+    "letters": ["E","R","D","G","D","O","S"],
+    "words": [
+      {"word":"DODGERS","row":2,"col":3,"dir":"across","def":"a shifty deceptive person","zh":"n. 躲閃者, 欺瞞者( dodger的複數形式 )"},
+      {"word":"DOGS","row":2,"col":5,"dir":"down","def":"a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds","zh":"n. 瘦狗類；狗（dog的複數）"},
+      {"word":"GOES","row":4,"col":5,"dir":"across","def":"a time for working (after which you will be relieved by someone else)","zh":"v. 前進；行走（go的第三人稱單數形式）"},
+      {"word":"ROSE","row":0,"col":9,"dir":"down","def":"any of many shrubs of the genus Rosa that bear roses","zh":"n. 玫瑰, 薔薇, 玫瑰色"},
+      {"word":"DOES","row":5,"col":2,"dir":"across","def":"the federal department responsible for maintaining a national energy policy of the United States; created in 1977","zh":"v. 做；工作；有用（do的第三人稱單數形式）"},
+      {"word":"GOD","row":3,"col":2,"dir":"down","def":"the supernatural being conceived as the perfect and omnipotent and omniscient originator and ruler of the universe; the object of worship in monotheistic religions","zh":"n. 上帝, 神像, 偶像"},
+      {"word":"DOG","row":3,"col":0,"dir":"across","def":"a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds","zh":"n. 狗, 壞蛋"},
+      {"word":"RED","row":0,"col":3,"dir":"down","def":"red color or pigment; the chromatic color resembling the hue of blood","zh":"a. 紅的, 紅色的, 紅腫的, 流血的"}
+    ],
+    "bonus": ["DOE","DOR","DOS","EGO","ERG","ERS","GED","GOR","ODD","ODE","ODS","OES","ORE","ORS","OSE","REG","RES","ROD","ROE","SEG","SER","SOD","DOER","DOGE","DORE","DORS","DOSE","DREG","EDDO","EGOS","ERGO","ERGS","EROS","GEDS","GODS","GOER","GORE","ODDS","ODES","OGRE","ORES","REDD","REDO","REDS","REGS","RODE","RODS","ROES","SEGO","SORD","SORE","DODGE","DOERS","DOGES","DOSED","DOSER","DREGS","GOERS","GORED","GORES","GORSE","ODDER","OGRES","REDDS","REDOS","RESOD","ROSED","DODGER","DODGES"]
+  },
+  {
+    "id": 37,
+    "letters": ["O","S","H","E","O","C","S"],
+    "words": [
+      {"word":"CHOOSES","row":6,"col":0,"dir":"across","def":"pick out, select, or choose from a number of alternatives","zh":"v. 挑選( choose的第三人稱單數 ); 選擇; 選定; 喜歡"},
+      {"word":"CHOOSE","row":4,"col":2,"dir":"down","def":"pick out, select, or choose from a number of alternatives","zh":"vt. 選擇, 寧願, 欲"},
+      {"word":"CHOSE","row":4,"col":2,"dir":"across","def":"pick out, select, or choose from a number of alternatives","zh":"n. 動產"},
+      {"word":"SHOES","row":2,"col":4,"dir":"down","def":"a particular situation","zh":"n. 鞋子（shoe的複數）"},
+      {"word":"SHOE","row":8,"col":2,"dir":"across","def":"footwear shaped to fit the foot (below the ankle) with a flexible upper of leather or plastic and a sole and heel of heavier material","zh":"n. 鞋, 靴, 外胎"},
+      {"word":"COS","row":2,"col":2,"dir":"across","def":"ratio of the adjacent side to the hypotenuse of a right-angled triangle","zh":"n. 餘弦"},
+      {"word":"SEC","row":0,"col":2,"dir":"down","def":"1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites","zh":"[計] 秒, 輔助"}
+    ],
+    "bonus": ["COO","ESS","HES","HOE","OES","OHO","OHS","OOH","OSE","SHE","SOS","CESS","COHO","COOS","COSH","COSS","ECHO","HOES","HOSE","OOHS","OSES","SECS","SHES","SHOO","CHESS","COHOS","COSES","ECHOS","HOSES","SHOOS","CHOSES","COSHES"]
+  },
+  {
+    "id": 38,
+    "letters": ["T","S","E","L","T","S","E"],
+    "words": [
+      {"word":"SETTLES","row":2,"col":0,"dir":"across","def":"a long wooden bench with a back","zh":"v. 安排( settle的第三人稱單數 ); 安放; 安家; （使）安定"},
+      {"word":"STEEL","row":1,"col":3,"dir":"down","def":"an alloy of iron with small amounts of carbon; widely used in construction; mechanical properties can be varied over a wide range","zh":"n. 鋼, 鋼製品, 鋼鐵, 堅硬, 堅固"},
+      {"word":"LESS","row":1,"col":1,"dir":"down","def":"(comparative of `little' usually used with mass nouns) a quantifier meaning not as great in amount or degree","zh":"n. 較少, 較小"},
+      {"word":"TEST","row":0,"col":6,"dir":"down","def":"trying something to find out about it","zh":"n. 測試, 試驗, 化驗, 檢驗, 考驗, 甲殼"},
+      {"word":"SEE","row":4,"col":1,"dir":"across","def":"the seat within a bishop's diocese where his cathedral is located","zh":"vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"},
+      {"word":"LEE","row":5,"col":3,"dir":"across","def":"United States filmmaker whose works explore the richness of black culture in America (born in 1957)","zh":"n. 背風處, 避風處, 下風處, 保護, 庇護"},
+      {"word":"SET","row":0,"col":4,"dir":"across","def":"a group of things of the same kind that belong together and are so used","zh":"n. 日落, 同夥, 組合, 集合, 裝置"},
+      {"word":"LET","row":4,"col":5,"dir":"down","def":"a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India","zh":"vt. 讓, 假設, 出租, 排放, 妨礙"}
+    ],
+    "bonus": ["EEL","ELS","ESS","SEL","TEE","TEL","TET","EELS","ELSE","ESES","LEES","LEET","LEST","LETS","SEEL","SEES","SELS","SETS","SETT","STET","TEEL","TEES","TELE","TELS","TETS","LEETS","SEELS","SETTS","SLEET","STELE","STETS","TEELS","TELES","TESTS","SESTET","SETTLE","SLEETS","STEELS","STELES","TESTES","TSETSE"]
+  },
+  {
+    "id": 39,
+    "letters": ["R","U","O","A","F","M","L"],
+    "words": [
+      {"word":"FORMULA","row":2,"col":1,"dir":"across","def":"a group of symbols that make a mathematical statement","zh":"n. 客套語, 公式, 準則"},
+      {"word":"FARM","row":1,"col":7,"dir":"down","def":"workplace consisting of farm buildings and cultivated land as a unit","zh":"n. 農場, 農田"},
+      {"word":"FOUR","row":1,"col":2,"dir":"down","def":"the cardinal number that is the sum of three and one","zh":"num. 四, 四個"},
+      {"word":"FORM","row":4,"col":4,"dir":"across","def":"the phonological or orthographic sound or appearance of a word that can be used to describe or identify something","zh":"n. 形狀, 形體, 型別, 方式, 表格, 形式"},
+      {"word":"ARM","row":0,"col":4,"dir":"down","def":"a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb","zh":"n. 手臂, 袖子, 狹長港灣, 武器"},
+      {"word":"FAR","row":4,"col":0,"dir":"across","def":"a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again","zh":"a. 遠的, 久遠的, 遙遠的"}
+    ],
+    "bonus": ["AMU","ARF","FLU","FOR","FOU","FRO","FUR","LAM","LAR","LUM","MAR","MOA","MOL","MOR","OAF","OAR","ORA","OUR","RAM","ROM","RUM","ALUM","ARUM","FARL","FARO","FLAM","FOAL","FOAM","FORA","FOUL","FROM","FURL","LOAF","LOAM","LOUR","MARL","MAUL","MOLA","MORA","MURA","ORAL","ROAM","ROLF","AFOUL","AMOUR","FLORA","FLOUR","FLUOR","FORAM","FORUM","LARUM","MOLAR","MORAL","MURAL","ARMFUL","FORMAL","FULMAR","MORULA"]
+  },
+  {
+    "id": 40,
+    "letters": ["M","R","T","N","E","I","I"],
+    "words": [
+      {"word":"INTERIM","row":1,"col":2,"dir":"across","def":"the time between one event, process, or period and another","zh":"a. 暫時的, 臨時的, 間歇的"},
+      {"word":"TIME","row":0,"col":7,"dir":"down","def":"an instance or single occasion for some event","zh":"n. 時間, 時侯, 時機, 時期, 期限, 次數, 節拍, 暫停, 規定時間"},
+      {"word":"TERM","row":1,"col":4,"dir":"down","def":"a word or expression used for some particular thing","zh":"n. 術語, 專有名詞, 期限, 學期, 任期, 條件, 價錢, 關係, 地位, 項, 界石"},
+      {"word":"MINE","row":0,"col":2,"dir":"down","def":"excavation in the earth from which ores and minerals are extracted","zh":"n. 礦, 礦藏, 地雷"},
+      {"word":"TEN","row":3,"col":6,"dir":"across","def":"the cardinal number that is the sum of nine and one; the base of the decimal system","zh":"num. 十, 十個"},
+      {"word":"MEN","row":2,"col":0,"dir":"across","def":"the force of workers available","zh":"pl. man的複數"},
+      {"word":"MET","row":2,"col":0,"dir":"down","def":"come together","zh":"meet的過去式和過去分詞"}
+    ],
+    "bonus": ["ERN","IRE","MIR","NET","NIM","NIT","REI","REM","RET","RIM","RIN","TIE","TIN","EMIR","EMIT","INTI","ITEM","MIEN","MINI","MINT","MIRE","MIRI","MITE","NITE","REIN","RENT","RIME","RITE","TERN","TIER","TINE","TIRE","TRIM","IMINE","INERT","INTER","MERIT","MINER","MITER","MITRE","NITER","NITRE","REMIT","TIMER","TRINE","INTIME","MINTER","MITIER","REMINT","TINIER","MINTIER","TERMINI"]
+  },
+  {
+    "id": 41,
+    "letters": ["L","A","U","G","G","E","G"],
+    "words": [
+      {"word":"LUGGAGE","row":3,"col":1,"dir":"across","def":"cases used to carry belongings when traveling","zh":"n. 行李, 皮箱"},
+      {"word":"GAUGE","row":0,"col":4,"dir":"down","def":"a measuring instrument for measuring and indicating a quantity such as the thickness of wire or the amount of rain etc.","zh":"n. 標準度量, 計量器"},
+      {"word":"GLUE","row":1,"col":2,"dir":"down","def":"cement consisting of a sticky substance that is used as an adhesive","zh":"n. 膠, 粘性物"},
+      {"word":"GEL","row":0,"col":4,"dir":"across","def":"a colloid in a more solid form than a sol","zh":"n. 膠化體, 凝膠"},
+      {"word":"GAL","row":3,"col":6,"dir":"down","def":"United States liquid unit equal to 4 quarts or 3.785 liters","zh":"[化] 伽(重力加速度單位,等於1釐米/秒,2)"},
+      {"word":"AGE","row":1,"col":7,"dir":"down","def":"how long something has existed","zh":"n. 年齡, 老年, 成年, 壽命, 時代, 時期"},
+      {"word":"EGG","row":1,"col":0,"dir":"across","def":"animal reproductive body consisting of an ovum or embryo together with nutritive and protective envelopes; especially the thin-shelled reproductive body laid by e.g. female birds","zh":"n. 蛋, 卵"},
+      {"word":"LEG","row":0,"col":0,"dir":"down","def":"a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle","zh":"n. 腿, 假腿, 路程"}
+    ],
+    "bonus": ["ALE","EAU","GAE","GAG","GUL","LAG","LEA","LEU","LUG","AGUE","EGAL","GAGE","GALE","GLEG","GLUG","LUGE","GULAG","GAGGLE","GUGGLE"]
+  },
+  {
+    "id": 42,
+    "letters": ["N","E","O","M","S","Y","K"],
+    "words": [
+      {"word":"MONKEYS","row":3,"col":0,"dir":"across","def":"any of various long-tailed primates (excluding the prosimians)","zh":"n. 猴子（monkey的複數）"},
+      {"word":"MONEY","row":1,"col":2,"dir":"down","def":"the most common medium of exchange; functions as legal tender","zh":"n. 金錢, 一筆款, 財富, 貨幣, 金額"},
+      {"word":"SOME","row":0,"col":4,"dir":"down","def":"quantifier; used with either mass nouns or plural count nouns to indicate an unspecified number or quantity","zh":"pron. 一些, 一部分, 若干"},
+      {"word":"MEN","row":3,"col":0,"dir":"down","def":"the force of workers available","zh":"pl. man的複數"},
+      {"word":"ONE","row":1,"col":4,"dir":"across","def":"the smallest whole number or a numeral representing this number","zh":"n. 一(個)"},
+      {"word":"YES","row":5,"col":2,"dir":"across","def":"an affirmative","zh":"adv. 是"},
+      {"word":"SON","row":3,"col":6,"dir":"down","def":"a male human offspring","zh":"n. 兒子, 女婿, 子孫"}
+    ],
+    "bonus": ["EMS","ENS","EON","KEN","KEY","KOS","MON","MOS","NOM","NOS","OES","OKE","OMS","ONS","OSE","SEN","SKY","SOY","SYN","YEN","YOK","YOM","YON","EONS","KENO","KENS","KEYS","MENO","MOKE","MONK","MONS","MONY","MOSK","NOES","NOME","NOMS","NOSE","NOSY","OKES","OMEN","ONES","OYES","SNYE","SOKE","SONE","SYKE","SYNE","YENS","YOKE","YOKS","ENSKY","KENOS","MESON","MOKES","MONKS","MOSEY","NOMES","NOSEY","OMENS","SMOKE","SMOKY","YOKES","MONEYS","MONKEY","SKYMEN","SMOKEY"]
+  },
+  {
+    "id": 43,
+    "letters": ["Y","T","A","I","Q","L","U"],
+    "words": [
+      {"word":"QUALITY","row":4,"col":0,"dir":"across","def":"an essential and distinguishing attribute of something or someone; --Shakespeare","zh":"n. 品質, 特性, 才能, 質量"},
+      {"word":"QUIT","row":4,"col":0,"dir":"down","def":"put an end to a state or an activity","zh":"vi. 離開, 辭職, 停止"},
+      {"word":"TAIL","row":3,"col":2,"dir":"down","def":"the posterior part of the body of a vertebrate especially when elongated and extending beyond the trunk or main part of the body","zh":"n. 尾部, 後部, 辮子, 隨員, 特務, 燕尾服, 蹤跡, 限定繼承(權)"},
+      {"word":"QUAY","row":1,"col":6,"dir":"down","def":"wharf usually built parallel to the shoreline","zh":"n. 碼頭, 駁岸"},
+      {"word":"LAY","row":6,"col":2,"dir":"across","def":"a narrative song with a recurrent refrain","zh":"vt. 放置, 產, 鋪設, 佈置, 提出, 平息"},
+      {"word":"TAU","row":2,"col":4,"dir":"across","def":"the 19th letter of the Greek alphabet","zh":"n. 希臘字母第19字"},
+      {"word":"LIT","row":0,"col":4,"dir":"down","def":"the humanistic study of a body of literature","zh":"light的過去式和過去分詞"},
+      {"word":"ALT","row":0,"col":3,"dir":"across","def":"angular distance above the horizon (especially of a celestial object)","zh":"n. 高音調"}
+    ],
+    "bonus": ["AIL","AIT","LAT","QAT","QUA","TIL","TUI","UTA","ALIT","LATI","LITU","QUAI","TALI","LAITY","QUAIL","QUILT"]
+  },
+  {
+    "id": 44,
+    "letters": ["A","L","R","C","E","N","U"],
+    "words": [
+      {"word":"NUCLEAR","row":3,"col":0,"dir":"across","def":"(weapons) deriving destructive energy from the release of atomic energy","zh":"a. 核子的, 原子能的, 核的, 中心的"},
+      {"word":"NEAR","row":1,"col":5,"dir":"down","def":"move towards","zh":"a. 近的, 近親的, 近似的"},
+      {"word":"CARE","row":3,"col":2,"dir":"down","def":"the work of providing treatment for or attending to someone or something","zh":"n. 小心, 照料, 憂慮"},
+      {"word":"REAL","row":0,"col":3,"dir":"down","def":"any rational or irrational number","zh":"a. 真的, 真實的, 實際的, 實在的, 不動(產)的, 實數的"},
+      {"word":"ARE","row":6,"col":0,"dir":"across","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"},
+      {"word":"CAN","row":5,"col":0,"dir":"down","def":"airtight sealed metal container for food or drink or paint etc.","zh":"vt. 裝罐"},
+      {"word":"CAR","row":0,"col":1,"dir":"across","def":"a motor vehicle with four wheels; usually propelled by an internal combustion engine","zh":"n. 汽車, 客車"},
+      {"word":"RUN","row":5,"col":2,"dir":"across","def":"a score in baseball made by a runner touching all four bases safely","zh":"n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"}
+    ],
+    "bonus": ["ACE","ALE","ANE","ARC","CEL","CUE","CUR","EAR","EAU","ECU","ERA","ERN","LAC","LAR","LEA","LEU","NAE","RAN","REC","RUE","URN","ACNE","ACRE","ALEC","CANE","CARL","CARN","CAUL","CLAN","CLUE","CURE","CURL","CURN","EARL","EARN","ECRU","ELAN","LACE","LANE","LEAN","LEAR","LUCE","LUNA","LUNE","LURE","NARC","NURL","RACE","RALE","RULE","RUNE","ULAN","ULNA","UREA","CANER","CARLE","CLEAN","CLEAR","CRANE","CRUEL","LACER","LANCE","LEARN","LUCRE","LUNAR","NACRE","RANCE","RENAL","ULCER","ULNAE","ULNAR","UNCLE","UREAL","CUNEAL","LACUNE","LANCER","LAUNCE","LUCERN","NEURAL","UNLACE","UNREAL","LUCARNE","UNCLEAR"]
+  },
+  {
+    "id": 45,
+    "letters": ["N","C","F","R","O","O","M"],
+    "words": [
+      {"word":"CONFORM","row":1,"col":2,"dir":"across","def":"be similar, be in line with","zh":"vt. 使一致, 使遵守, 使符合"},
+      {"word":"MOON","row":1,"col":8,"dir":"down","def":"the natural satellite of the Earth","zh":"n. 月亮, 月球, 月光"},
+      {"word":"ROOF","row":0,"col":6,"dir":"down","def":"a protective covering that covers or forms the top of a building","zh":"n. 屋頂, 室頂"},
+      {"word":"ROOM","row":0,"col":3,"dir":"down","def":"an area within a building enclosed by walls and floor and ceiling","zh":"n. 房間, 空位, 場所"},
+      {"word":"FORM","row":3,"col":0,"dir":"across","def":"the phonological or orthographic sound or appearance of a word that can be used to describe or identify something","zh":"n. 形狀, 形體, 型別, 方式, 表格, 形式"},
+      {"word":"CON","row":2,"col":1,"dir":"down","def":"an argument opposed to a proposal","zh":"vt. 精讀, 仔細研究, 默記"}
+    ],
+    "bonus": ["COO","COR","FON","FOR","FRO","MOC","MON","MOO","MOR","NOM","NOO","NOR","ORC","ROC","ROM","COOF","COON","CORF","CORM","CORN","FROM","MONO","MOOR","MORN","NORM","CROON","MORON"]
+  },
+  {
+    "id": 46,
+    "letters": ["E","X","S","E","U","C","S"],
+    "words": [
+      {"word":"EXCUSES","row":2,"col":0,"dir":"across","def":"a defense of some offensive behavior or some failure to keep a promise etc.","zh":"n. 理由( excuse的名詞複數 ); 歉意; 拙劣樣品"},
+      {"word":"USES","row":0,"col":0,"dir":"down","def":"the act of using","zh":"abbr. 美國就業局（United States Employment Service）"},
+      {"word":"SEES","row":1,"col":5,"dir":"down","def":"the seat within a bishop's diocese where his cathedral is located","zh":"abbr. 擴充套件企業應用套件（Sage Extended Enterprise Suite）"},
+      {"word":"SEX","row":4,"col":5,"dir":"across","def":"activities associated with sexual intercourse","zh":"n. 性別, 性慾"},
+      {"word":"USE","row":2,"col":3,"dir":"down","def":"the act of using","zh":"n. 使用, 習慣, 使用價值, 用法, 使用權"},
+      {"word":"SEE","row":4,"col":1,"dir":"across","def":"the seat within a bishop's diocese where his cathedral is located","zh":"vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"}
+    ],
+    "bonus": ["CEE","CUE","ECU","ESS","SEC","SUE","CEES","CESS","CUES","CUSS","ECUS","ESES","EXEC","EXES","SECS","SUES","EXECS","SEXES","EXCESS","EXCUSE"]
+  },
+  {
+    "id": 47,
+    "letters": ["G","N","A","I","N","I","G"],
+    "words": [
+      {"word":"GAINING","row":3,"col":0,"dir":"across","def":"obtain","zh":"n. 增進單向開槽；單向開槽"},
+      {"word":"AGING","row":1,"col":2,"dir":"down","def":"acquiring desirable qualities by being left undisturbed for some time","zh":"n. 老化, 變陳"},
+      {"word":"GANG","row":3,"col":0,"dir":"down","def":"an association of criminals","zh":"n. 隊, 群, 幫"},
+      {"word":"GAIN","row":0,"col":5,"dir":"down","def":"a quantity that is added","zh":"n. 增益, 獲得, 利潤, 收穫, 增加"},
+      {"word":"GIG","row":3,"col":6,"dir":"down","def":"long and light rowing boat; especially for racing","zh":"n. 旋轉物, 輕便雙輪馬車, 賽艇, 魚叉, 記過, 爵士樂演奏會"},
+      {"word":"GIN","row":5,"col":2,"dir":"across","def":"strong liquor flavored with juniper berries","zh":"n. 杜松子酒, 軋棉機, 陷阱"},
+      {"word":"INN","row":5,"col":3,"dir":"down","def":"a hotel providing overnight lodging for travelers","zh":"n. 旅館, 客棧"}
+    ],
+    "bonus": ["AIN","ANI","GAG","GAN","NAG","NAN","AGIN","GIGA","INIA"]
+  },
+  {
+    "id": 48,
+    "letters": ["T","I","R","S","P","E","S"],
+    "words": [
+      {"word":"PERSIST","row":4,"col":0,"dir":"across","def":"continue to exist","zh":"vi. 堅持, 固執, 持續, 堅稱"},
+      {"word":"PRESS","row":0,"col":5,"dir":"down","def":"the state of demanding notice or attention","zh":"n. 壓, 撳, 按, 人群, 印刷機, 壓力, 出版社, 記者, 報刊, 新聞輿論, 緊迫"},
+      {"word":"STEP","row":0,"col":2,"dir":"across","def":"any maneuver made as part of progress toward a goal","zh":"n. 步驟, 步, 步幅, 腳步聲, 踏級, 步伐, 短距離, 步態, 手段, 等級"},
+      {"word":"REST","row":4,"col":2,"dir":"down","def":"something left after other parts have been taken away","zh":"n. 休息, 睡眠, 安息, 稍息, 靜止, 支架, 休息處, 其餘者, 剩餘部分"},
+      {"word":"SITE","row":1,"col":1,"dir":"down","def":"the piece of land on which something is located (or is to be located)","zh":"n. 位置, 場所, 地點"},
+      {"word":"SIR","row":6,"col":2,"dir":"across","def":"term of address for a man","zh":"n. 先生, 閣下"},
+      {"word":"ITS","row":2,"col":3,"dir":"down","def":"the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information","zh":"pron. 它的"},
+      {"word":"SET","row":7,"col":0,"dir":"across","def":"a group of things of the same kind that belong together and are so used","zh":"n. 日落, 同夥, 組合, 集合, 裝置"}
+    ],
+    "bonus": ["ERS","ESS","IRE","PER","PES","PET","PIE","PIS","PIT","PSI","REI","REP","RES","RET","RIP","SEI","SER","SIP","SIS","SIT","SRI","TIE","TIP","TIS","ERST","IRES","PERI","PERT","PEST","PETS","PIER","PIES","PISS","PITS","PSIS","PSST","REIS","REPS","RETS","RIPE","RIPS","RISE","RITE","SEIS","SEPT","SERS","SETS","SIPE","SIPS","SIRE","SIRS","SITS","SPIT","SRIS","STIR","TIER","TIES","TIPS","TIRE","TRIP","PERIS","PESTS","PIERS","PISTE","PREST","PRIES","PRISE","PRISS","RESTS","RIPES","RISES","RITES","SEPTS","SIPES","SIRES","SITES","SPEIR","SPIER","SPIES","SPIRE","SPIRT","SPITE","SPITS","SPRIT","STEPS","STIES","STIPE","STIRP","STIRS","STREP","STRIP","TIERS","TIRES","TRESS","TRIES","TRIPE","TRIPS","ESPRIT","PISSER","PISTES","PRESTS","PRIEST","PRISES","RESIST","RIPEST","SISTER","SPEIRS","SPIERS","SPIRES","SPIRTS","SPITES","SPRITE","SPRITS","STIPES","STIRPS","STREPS","STRIPE","STRIPS","TRIPES","ESPRITS","PRIESTS","SPRIEST","SPRITES","STIRPES","STRIPES"]
+  },
+  {
+    "id": 49,
+    "letters": ["E","E","A","N","R","L","W"],
+    "words": [
+      {"word":"RENEWAL","row":1,"col":0,"dir":"across","def":"the conversion of wasteland into land suitable for use of habitation or cultivation","zh":"n. 更新, 革新, 復興, 恢復, 修補, 補充, 繼續, 重訂, 重申, 續借"},
+      {"word":"WERE","row":0,"col":1,"dir":"down","def":"have the quality of being; (copula, used with an adjective or a predicate noun)","zh":"be的過去式"},
+      {"word":"REAL","row":3,"col":0,"dir":"across","def":"any rational or irrational number","zh":"a. 真的, 真實的, 實際的, 實在的, 不動(產)的, 實數的"},
+      {"word":"WAR","row":0,"col":5,"dir":"down","def":"the waging of armed conflict against an enemy","zh":"n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"},
+      {"word":"LAW","row":3,"col":3,"dir":"down","def":"the collection of rules imposed by authority","zh":"n. 法律, 法則, 定律, 法律的制約, 法學, 司法界, 訴訟"},
+      {"word":"NEW","row":5,"col":1,"dir":"across","def":"not of long duration; having just (or relatively recently) come into being or been made or acquired or discovered","zh":"a. 新的, 陌生的, 最近的, 不熟悉的"},
+      {"word":"ARE","row":4,"col":3,"dir":"across","def":"a unit of surface area equal to 100 square meters","zh":"be的現在時複數或第二人稱單數"}
+    ],
+    "bonus": ["ALE","ANE","AWE","AWL","AWN","EAR","EEL","ERA","ERE","ERN","EWE","LAR","LEA","LEE","NAE","NAW","NEE","RAN","RAW","REE","WAE","WAN","WEE","WEN","ALEE","ANEW","AWEE","EARL","EARN","ELAN","ERNE","EWER","LANE","LAWN","LEAN","LEAR","LEER","NEAR","RALE","REEL","WALE","WANE","WARE","WARN","WEAL","WEAN","WEAR","WEEL","WEEN","WEER","WREN","ANELE","LAREE","LEARN","NEWEL","NEWER","RANEE","RENAL","RENEW","REWAN","WALER","LEANER","WEANER"]
+  },
+  {
+    "id": 50,
+    "letters": ["A","M","N","I","G","L","C"],
+    "words": [
+      {"word":"CALMING","row":2,"col":0,"dir":"across","def":"the act of appeasing (as by acceding to the demands of)","zh":"a. 平靜的"},
+      {"word":"CLAIM","row":0,"col":1,"dir":"down","def":"an assertion of a right (as to money or property)","zh":"n. 要求, 要求權, 斷言, 權利"},
+      {"word":"MAGIC","row":0,"col":6,"dir":"down","def":"any art that invokes supernatural powers","zh":"n. 魔術, 魔法"},
+      {"word":"MAIN","row":0,"col":6,"dir":"across","def":"any very large body of (salt) water","zh":"n. 主要部分, 幹線, 體力, 力量, 主群組"},
+      {"word":"GAIN","row":0,"col":4,"dir":"down","def":"a quantity that is added","zh":"n. 增益, 獲得, 利潤, 收穫, 增加"},
+      {"word":"CAN","row":4,"col":6,"dir":"across","def":"airtight sealed metal container for food or drink or paint etc.","zh":"vt. 裝罐"},
+      {"word":"MAN","row":4,"col":1,"dir":"across","def":"an adult person who is male (as opposed to a woman)","zh":"n. 男人, 人類, 人"}
+    ],
+    "bonus": ["AIL","AIM","AIN","AMI","ANI","CAM","GAL","GAM","GAN","GIN","LAC","LAG","LAM","LIN","MAC","MAG","MIG","MIL","NAG","NAM","NIL","NIM","AGIN","AMIN","ANIL","CAIN","CALM","CLAG","CLAM","CLAN","GLIA","GLIM","LAIC","LAIN","LANG","LIMA","LIMN","LING","MAGI","MAIL","MICA","MINA","NAIL","ACING","ALGIN","ALIGN","AMNIC","CLANG","CLING","GAMIC","GAMIN","LIANG","LIGAN","LIMAN","LINAC","LINGA","MALIC","MANIC","LACING","LAMING","LINGAM","MACING","MALIGN"]
+  }
+]
