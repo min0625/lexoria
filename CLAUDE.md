@@ -16,13 +16,13 @@ The two design documents are the source of truth and code comments cite their se
 Tasks are defined in [mise.toml](mise.toml):
 
 ```sh
-mise run test        # unit tests: node --test 'tests/**/*.test.mjs' (same as npm test)
+mise run test        # unit tests: bun test (same as bun run test)
 mise run serve       # dev server on :8080 (ES modules need http; opening index.html from file:// won't work)
 mise run fetch-data  # download generator inputs → tools/data/ (ENABLE word list; wordfreq+WordNet via uv/python)
 mise run gen         # regenerate data/levels.json (requires fetch-data first)
 ```
 
-Run a single test: `node --test --test-name-pattern='<name>' tests/game.test.mjs`. There is no linter or build step.
+Run a single test: `bun test --test-name-pattern='<name>' tests/game.test.mjs`. There is no linter or build step. Runtime is Bun, not Node — `node:*` built-ins (fs, child_process, url) still work since Bun implements them natively.
 
 ## Architecture
 
@@ -34,7 +34,7 @@ Run a single test: `node --test --test-name-pattern='<name>' tests/game.test.mjs
 wheel.js ──gesture ends(word)──▶ game.submit(word) ──result object──▶ main.js dispatches to grid / HUD / sfx
 ```
 
-- [game.js](src/game.js) — all level state and win logic, **pure logic, no DOM** (this is what makes it unit-testable). `submit(word)` returns a discriminated result object (`target` / `bonus` / `duplicate` / `invalid`) — the shape is specified in design doc §10. Economy constants live in the `ECONOMY` object at the top; never scatter coin values elsewhere.
+- [game.js](src/game.js) — all level state and win logic, **pure logic, no DOM** (this is what makes it unit-testable). `submit(word)` returns a discriminated result object (`target` / `bonus` / `duplicate` / `invalid`) — the shape is specified in design doc §10. `createGame` accepts an injectable `rng` (default `Math.random`) so hint-cell selection is deterministic in tests. Economy constants live in the `ECONOMY` object at the top; never scatter coin values elsewhere.
 - [wheel.js](src/wheel.js) — letter wheel + pointer gestures. Hit-testing (`hitIndex`) and selection (`applyHit`) are exported pure functions for testing. Selection is bound to button *index*, not letter value, because wheels can contain duplicate letters.
 - [grid.js](src/grid.js), [dictionary-card.js](src/dictionary-card.js) — DOM rendering only.
 - [storage.js](src/storage.js) — single-key JSON save. `normalizeSave` is pure: any corrupt/unrecognized data resets to a fresh save.
@@ -45,14 +45,29 @@ Screens are `<section>` elements toggled with `hidden` in [index.html](index.htm
 
 ### Level data pipeline (tools/)
 
-`data/levels.json` is **generated — do not hand-edit it**. Pipeline: `fetch-data` downloads `tools/data/enable1.txt` (bonus dictionary) and `tools/data/ecdict.csv` (Chinese translations), then builds `tools/data/wordinfo.json` (frequency + WordNet English definitions + ECDICT Traditional Chinese translations via OpenCC, via [build-wordinfo.py](tools/build-wordinfo.py) run through `uv`), then [generate-levels.mjs](tools/generate-levels.mjs) picks base words per difficulty band, finds subwords via an alphagram index, backtracks a crossword layout (20 attempts per level, best-scored kept), and embeds each target word's definition. RNG is seeded by level id, so output is fully deterministic and diffable. A built-in validator runs last — any invalid level fails the whole batch.
+`data/levels.json` is **generated — do not hand-edit it**. Pipeline: `fetch-data` downloads `tools/data/enable1.txt` (bonus dictionary) and `tools/data/ecdict.csv` (Chinese translations), then builds `tools/data/wordinfo.json` (frequency + WordNet English definitions + ECDICT Traditional Chinese translations via OpenCC, via [build-wordinfo.py](tools/build-wordinfo.py) run through `uv`), then [generate-levels.mjs](tools/generate-levels.mjs) picks base words per difficulty band, finds subwords via an alphagram index, backtracks a crossword layout (20 attempts per level, best-scored kept), and embeds each target word's definition. RNG is seeded by level id, so output is fully deterministic and diffable. A built-in validator runs last — any invalid level fails the whole batch. Difficulty curve and frequency thresholds live in `BANDS` in generate-levels.mjs.
 
 ### Testing split (design doc §12)
 
 Only pure logic is auto-tested (`tests/game.test.mjs`): game rules, wheel hit/selection math, save normalization, plus a validator pass over `levels.json`. Unit tests use inline fixtures — never assert on `levels.json` contents, which change on regeneration. UI, animation, and touch feel are manually tested against the §17 acceptance checklist on real devices. Desktop keyboard input in the wheel (letter keys / Backspace / Enter) exists for dev iteration, not for players.
+
+## Doc sync map
+
+Before finishing any change, update the docs that describe what you touched (a Stop hook in `.claude/settings.json` reminds you once per turn). Each fact has one source of truth; the other files named in its row carry only a short summary or pointer that must be kept in sync — never a second full copy:
+
+| You changed | Update |
+|---|---|
+| Gameplay rules, economy, level algorithm, licensing | design doc section first (source of truth), then CLAUDE.md/README if they summarize it |
+| Commands / tasks (mise.toml, package.json) | CLAUDE.md Commands + README 快速開始 |
+| Module added/renamed/responsibility moved (src/) | CLAUDE.md Architecture + README 專案結構 |
+| Generator pipeline (tools/) | CLAUDE.md pipeline section + README 關卡資料 |
+| Project status (deployed, phase done) | `.serena/memories/project-overview.md` only |
+
+`.serena/memories/*` must stay a thin pointer to CLAUDE.md plus status deltas — if you're writing architecture there, it belongs in CLAUDE.md instead.
 
 ## Constraints worth remembering
 
 - Everything must work fully offline from local files — no runtime network calls, no dictionary/pronunciation APIs, no CDN assets. Pronunciation uses the browser's built-in `speechSynthesis`.
 - Data/asset licensing is tracked in design doc §14; the attribution text lives in the About section of index.html. TWL/SOWPODS word lists and the COCA frequency table are prohibited (proprietary/paid).
 - Animations should use `transform`/`opacity` only, and respect `prefers-reduced-motion`.
+- Sound effects are WAV files in `assets/sfx/` (iOS Safari won't play OGG; source mapping in assets/sfx/README.md), played via Web Audio `decodeAudioData` in main.js with `resume()` inside a user gesture.
