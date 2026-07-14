@@ -4,5 +4,6 @@
 
 此檔只記 CLAUDE.md/文件沒有的狀態：
 
-- 尚未做：部署靜態託管 + 真機測試（設計文件 §15 Phase 1 規劃第 7 項，需使用者操作）；Capacitor 嵌入（Phase 2）。
+- Phase 1 已完成：GitHub Pages 已部署（main 分支根目錄，legacy build），網址 http://min0625.com/lexoria/；§17 驗收清單 18 項已全數真機測過並打勾。
+- 下一步：Phase 2 — Capacitor 嵌入 iOS / Android（設計文件 §15），存檔需換掉 `bridge.save/load` 的 native 實作。
 - `mise run fetch-data` 只需跑一次（輸出在 tools/data/，已 gitignore）；之後只需 `mise run gen`。
