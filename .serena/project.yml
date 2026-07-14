@@ -34,6 +34,7 @@ project_name: "lexoria"
 languages:
 - typescript
 - bash
+- python
 
 # the encoding used by text files in the project
 # For a list of possible encodings, see https://docs.python.org/3.11/library/codecs.html#standard-encodings
