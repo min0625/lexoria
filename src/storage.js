@@ -15,14 +15,20 @@ export const defaultSave = () => ({
 // 讀到壞掉或無法辨識的資料 → 重置成初始存檔（§9）。
 export function normalizeSave(raw) {
   if (
-    !raw || typeof raw !== 'object' ||
+    !raw ||
+    typeof raw !== 'object' ||
     raw.version !== 1 ||
-    !Number.isInteger(raw.currentLevel) || raw.currentLevel < 1 ||
-    !Number.isFinite(raw.coins) || raw.coins < 0 ||
-    typeof raw.foundBonusWords !== 'object' || raw.foundBonusWords === null ||
-    !raw.levelState || !Array.isArray(raw.levelState.foundWords) ||
+    !Number.isInteger(raw.currentLevel) ||
+    raw.currentLevel < 1 ||
+    !Number.isFinite(raw.coins) ||
+    raw.coins < 0 ||
+    typeof raw.foundBonusWords !== 'object' ||
+    raw.foundBonusWords === null ||
+    !raw.levelState ||
+    !Array.isArray(raw.levelState.foundWords) ||
     !Array.isArray(raw.levelState.revealedCells) ||
-    !raw.settings || typeof raw.settings !== 'object'
+    !raw.settings ||
+    typeof raw.settings !== 'object'
   ) {
     return defaultSave();
   }

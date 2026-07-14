@@ -18,8 +18,11 @@ const BANDS = [
 
 // ---- 資料載入與 alphagram 索引（§5 步驟 2：不要枚舉排列）----
 
+const VALID_WORD = /^[a-z]{3,7}$/;
 const enable = readFileSync(new URL('./data/enable1.txt', import.meta.url), 'utf8')
-  .split('\n').map((w) => w.trim()).filter((w) => /^[a-z]{3,7}$/.test(w));
+  .split('\n')
+  .map((w) => w.trim())
+  .filter((w) => VALID_WORD.test(w));
 const wordinfo = JSON.parse(readFileSync(new URL('./data/wordinfo.json', import.meta.url), 'utf8'));
 
 const alphagram = (w) => [...w].sort().join('');
@@ -49,9 +52,10 @@ function subwords(base) {
 // ---- 確定性亂數 ----
 
 const mulberry32 = (seed) => () => {
-  seed |= 0; seed = (seed + 0x6d2b79f5) | 0;
+  seed |= 0;
+  seed = (seed + 0x6d2b79f5) | 0;
   let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
   return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
 };
 
@@ -73,9 +77,9 @@ function tryLayout(words, rng) {
   let crossings = 0;
 
   const cellsOf = (word, row, col, dir) =>
-    [...word].map((letter, i) => (dir === 'across'
-      ? { r: row, c: col + i, letter }
-      : { r: row + i, c: col, letter }));
+    [...word].map((letter, i) =>
+      dir === 'across' ? { r: row, c: col + i, letter } : { r: row + i, c: col, letter }
+    );
 
   // 合法 = 每格空白或字母相同，且頭尾外側一格是空的，
   // 且每個非交叉格的垂直向鄰格是空的（漏了會拼出不在題目裡的相鄰字串）
@@ -87,7 +91,10 @@ function tryLayout(words, rng) {
         if (cur !== letter) return -1;
         cross++;
       } else {
-        const sides = dir === 'across' ? [`${r - 1},${c}`, `${r + 1},${c}`] : [`${r},${c - 1}`, `${r},${c + 1}`];
+        const sides =
+          dir === 'across'
+            ? [`${r - 1},${c}`, `${r + 1},${c}`]
+            : [`${r},${c - 1}`, `${r},${c + 1}`];
         if (sides.some((k) => grid.has(k))) return -1;
       }
     }
@@ -101,7 +108,10 @@ function tryLayout(words, rng) {
     const added = [];
     for (const { r, c, letter } of cellsOf(word, row, col, dir)) {
       const key = `${r},${c}`;
-      if (!grid.has(key)) { grid.set(key, letter); added.push(key); }
+      if (!grid.has(key)) {
+        grid.set(key, letter);
+        added.push(key);
+      }
     }
     placements.push({ word, row, col, dir });
     return added;
@@ -116,9 +126,11 @@ function tryLayout(words, rng) {
       for (let i = 0; i < w.length; i++) {
         for (let j = 0; j < p.word.length; j++) {
           if (w[i] !== p.word[j]) continue;
-          cands.push(dir === 'down'
-            ? { row: p.row - i, col: p.col + j, dir }
-            : { row: p.row + j, col: p.col - i, dir });
+          cands.push(
+            dir === 'down'
+              ? { row: p.row - i, col: p.col + j, dir }
+              : { row: p.row + j, col: p.col - i, dir }
+          );
         }
       }
     }
@@ -142,7 +154,8 @@ function tryLayout(words, rng) {
   // 平移到 (0,0) 起點的 bounding box
   const rs = placements.flatMap((p) => cellsOf(p.word, p.row, p.col, p.dir).map((c) => c.r));
   const cs = placements.flatMap((p) => cellsOf(p.word, p.row, p.col, p.dir).map((c) => c.c));
-  const minR = Math.min(...rs); const minC = Math.min(...cs);
+  const minR = Math.min(...rs);
+  const minC = Math.min(...cs);
   return {
     placements: placements.map((p) => ({ ...p, row: p.row - minR, col: p.col - minC })),
     crossings,
@@ -157,8 +170,10 @@ function bestLayout(words, levelId) {
   for (let a = 0; a < ATTEMPTS; a++) {
     const layout = tryLayout(words, mulberry32(levelId * 100 + a));
     if (!layout) continue;
-    const score = layout.crossings * 10 - layout.rows * layout.cols
-      - Math.abs(layout.rows / layout.cols - 1.4) * 8;
+    const score =
+      layout.crossings * 10 -
+      layout.rows * layout.cols -
+      Math.abs(layout.rows / layout.cols - 1.4) * 8;
     if (!best || score > best.score) best = { ...layout, score };
   }
   return best;
@@ -184,9 +199,16 @@ function buildLevel(id, base, band, rng) {
       return {
         id,
         letters: shuffle([...base.toUpperCase()], rng), // 打亂，別讓初始轉盤直接排出基底字
-        words: layout.placements
-          .map((p) => ({ word: p.word.toUpperCase(), row: p.row, col: p.col, dir: p.dir, def: wordinfo[p.word].def, zh: wordinfo[p.word].zh })),
-        bonus: subs.filter((w) => !targets.has(w))
+        words: layout.placements.map((p) => ({
+          word: p.word.toUpperCase(),
+          row: p.row,
+          col: p.col,
+          dir: p.dir,
+          def: wordinfo[p.word].def,
+          zh: wordinfo[p.word].zh,
+        })),
+        bonus: subs
+          .filter((w) => !targets.has(w))
           .sort((a, b) => a.length - b.length || (a < b ? -1 : 1))
           .map((w) => w.toUpperCase()),
       };
@@ -202,7 +224,9 @@ function buildLevel(id, base, band, rng) {
 
 function validate(level) {
   const ctx = `level ${level.id}`;
-  const fail = (msg) => { throw new Error(`${ctx}: ${msg}`); };
+  const fail = (msg) => {
+    throw new Error(`${ctx}: ${msg}`);
+  };
 
   const targets = level.words.map((w) => w.word);
   if (new Set(targets).size !== targets.length) fail('目標字重複');
@@ -248,7 +272,11 @@ function validate(level) {
     grew = false;
     for (const { words } of grid.values()) {
       if (words.some((w) => reached.has(w))) {
-        for (const w of words) if (!reached.has(w)) { reached.add(w); grew = true; }
+        for (const w of words)
+          if (!reached.has(w)) {
+            reached.add(w);
+            grew = true;
+          }
       }
     }
   }
@@ -261,10 +289,12 @@ function validate(level) {
 // ---- 主流程 ----
 
 // 每個 band 的基底字候選（固定種子洗牌一次 → 整批輸出確定性）
-const bandCands = BANDS.map((band, bi) => shuffle(
-  Object.keys(wordinfo).filter((w) => w.length === band.len && wordinfo[w].z >= band.baseZipf),
-  mulberry32(1000 + bi),
-));
+const bandCands = BANDS.map((band, bi) =>
+  shuffle(
+    Object.keys(wordinfo).filter((w) => w.length === band.len && wordinfo[w].z >= band.baseZipf),
+    mulberry32(1000 + bi)
+  )
+);
 const bandCursor = BANDS.map(() => 0);
 const usedAlpha = new Set(); // 同一組字母不出兩關
 
@@ -285,18 +315,27 @@ for (let id = 1; id <= N_LEVELS; id++) {
 }
 
 // 與手刻版相同的排版：words 一行一字、bonus 單行，diff 才好讀
-const json = `[\n${levels.map((l) => [
-  '  {',
-  `    "id": ${l.id},`,
-  `    "letters": ${JSON.stringify(l.letters)},`,
-  '    "words": [',
-  l.words.map((w) => `      ${JSON.stringify(w)}`).join(',\n'),
-  '    ],',
-  `    "bonus": ${JSON.stringify(l.bonus)}`,
-  '  }',
-].join('\n')).join(',\n')}\n]\n`;
+const json = `[\n${levels
+  .map((l) =>
+    [
+      '  {',
+      `    "id": ${l.id},`,
+      `    "letters": ${JSON.stringify(l.letters)},`,
+      '    "words": [',
+      l.words.map((w) => `      ${JSON.stringify(w)}`).join(',\n'),
+      '    ],',
+      `    "bonus": ${JSON.stringify(l.bonus)}`,
+      '  }',
+    ].join('\n')
+  )
+  .join(',\n')}\n]\n`;
 writeFileSync(new URL('../data/levels.json', import.meta.url), json);
 
-const stat = (f) => { const v = levels.map(f); return `${Math.min(...v)}–${Math.max(...v)}`; };
+const stat = (f) => {
+  const v = levels.map(f);
+  return `${Math.min(...v)}–${Math.max(...v)}`;
+};
 console.log(`levels.json：${levels.length} 關`);
-console.log(`目標字數 ${stat((l) => l.words.length)}、bonus 數 ${stat((l) => l.bonus.length)}、格盤 ${stat((l) => Math.max(...l.words.map((w) => w.dir === 'down' ? w.row + w.word.length : w.row + 1)))}×${stat((l) => Math.max(...l.words.map((w) => w.dir === 'across' ? w.col + w.word.length : w.col + 1)))}`);
+console.log(
+  `目標字數 ${stat((l) => l.words.length)}、bonus 數 ${stat((l) => l.bonus.length)}、格盤 ${stat((l) => Math.max(...l.words.map((w) => (w.dir === 'down' ? w.row + w.word.length : w.row + 1))))}×${stat((l) => Math.max(...l.words.map((w) => (w.dir === 'across' ? w.col + w.word.length : w.col + 1))))}`
+);

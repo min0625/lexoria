@@ -4,8 +4,7 @@
 let hasEnglishVoice = false;
 function refreshVoices() {
   hasEnglishVoice =
-    'speechSynthesis' in window &&
-    speechSynthesis.getVoices().some((v) => v.lang.startsWith('en'));
+    'speechSynthesis' in window && speechSynthesis.getVoices().some((v) => v.lang.startsWith('en'));
 }
 if ('speechSynthesis' in window) {
   refreshVoices();

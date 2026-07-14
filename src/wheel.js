@@ -1,6 +1,8 @@
 // 字母轉盤 + 手勢（設計文件 §4）。
 // 命中與選取邏輯是純函式（hitIndex / applyHit），與 DOM 分離以便單元測試（§12）。
 
+const LETTER_KEY = /^[a-zA-Z]$/;
+
 // 命中判斷：手指座標與每個字母圓心的距離 < 半徑 × factor（不用 elementFromPoint）。
 export function hitIndex(x, y, spots, factor = 1.2) {
   for (const s of spots) {
@@ -43,7 +45,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   container.appendChild(shuffleBtn);
 
   // slot[i] = 按鈕 i 目前在圓周上的位置編號；洗牌只改這個映射。
-  let slots = letters.map((_, i) => i);
+  const slots = letters.map((_, i) => i);
 
   function layout() {
     const rect = container.getBoundingClientRect();
@@ -69,7 +71,9 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   const word = () => selected.map((i) => letters[i]).join('');
 
   function render() {
-    buttons.forEach((b, i) => b.classList.toggle('selected', selected.includes(i)));
+    buttons.forEach((b, i) => {
+      b.classList.toggle('selected', selected.includes(i));
+    });
     const pts = selected.map((i) => {
       const b = buttons[i];
       return `${b.offsetLeft + b.offsetWidth / 2},${b.offsetTop + b.offsetHeight / 2}`;
@@ -82,7 +86,12 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     const base = container.getBoundingClientRect();
     spots = buttons.map((b, i) => {
       const r = b.getBoundingClientRect();
-      return { i, x: r.left - base.left + r.width / 2, y: r.top - base.top + r.height / 2, r: r.width / 2 };
+      return {
+        i,
+        x: r.left - base.left + r.width / 2,
+        y: r.top - base.top + r.height / 2,
+        r: r.width / 2,
+      };
     });
   }
 
@@ -144,7 +153,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     } else if (ev.key === 'Backspace') {
       selected = selected.slice(0, -1);
       render();
-    } else if (/^[a-zA-Z]$/.test(ev.key)) {
+    } else if (LETTER_KEY.test(ev.key)) {
       const L = ev.key.toUpperCase();
       const i = letters.findIndex((l, idx) => l === L && !selected.includes(idx));
       if (i !== -1) {

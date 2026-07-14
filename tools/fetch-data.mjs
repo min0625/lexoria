@@ -1,8 +1,9 @@
 // 下載產生器輸入資料（設計文件 §5、§14）——只在建置期跑，遊戲執行期不碰網路。
 // 產出 tools/data/enable1.txt 與 tools/data/wordinfo.json，供 generate-levels.mjs 離線讀取。
-import { mkdirSync, writeFileSync, existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
+
 import { execFileSync } from 'node:child_process';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 const dataDir = new URL('./data/', import.meta.url);
 mkdirSync(dataDir, { recursive: true });
@@ -28,7 +29,16 @@ if (!existsSync(ecdictPath)) {
 // 字頻（wordfreq，MIT）+ 英文釋義（WordNet via NLTK）+ 中文翻譯（ECDICT + OpenCC 轉繁）→ wordinfo.json
 execFileSync(
   'uv',
-  ['run', '--with', 'wordfreq', '--with', 'nltk', '--with', 'opencc',
-    'python', fileURLToPath(new URL('build-wordinfo.py', import.meta.url))],
-  { stdio: 'inherit' },
+  [
+    'run',
+    '--with',
+    'wordfreq',
+    '--with',
+    'nltk',
+    '--with',
+    'opencc',
+    'python',
+    fileURLToPath(new URL('build-wordinfo.py', import.meta.url)),
+  ],
+  { stdio: 'inherit' }
 );

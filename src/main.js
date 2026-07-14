@@ -1,12 +1,13 @@
 // 進入點與接線（設計文件 §10）：模組之間不互相溝通，資料流一條——
 // wheel → game.submit(word) → 結果物件 → 這裡分派給 grid / HUD / 特效。
-import { strings } from './strings.js';
-import { ECONOMY, createGame } from './game.js';
-import { createGrid } from './grid.js';
-import { createWheel } from './wheel.js';
-import { createDictionaryCard } from './dictionary-card.js';
-import { loadSave, persist } from './storage.js';
+
 import { bridge } from './bridge.js';
+import { createDictionaryCard } from './dictionary-card.js';
+import { createGame, ECONOMY } from './game.js';
+import { createGrid } from './grid.js';
+import { loadSave, persist } from './storage.js';
+import { strings } from './strings.js';
+import { createWheel } from './wheel.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -24,7 +25,7 @@ $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
 
 // ---- 狀態 ----
-let save = loadSave();
+const save = loadSave();
 let levels = [];
 let game = null;
 let grid = null;
@@ -46,7 +47,9 @@ for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
     fetch(`assets/sfx/${name}.wav`)
       .then((r) => r.arrayBuffer())
       .then((buf) => audioCtx.decodeAudioData(buf))
-      .then((audio) => { sfxBuffers[name] = audio; })
+      .then((audio) => {
+        sfxBuffers[name] = audio;
+      })
       .catch(() => {}); // 音檔載入失敗 → 靜音即可，不影響遊戲
   }
 }
@@ -173,9 +176,7 @@ function onWin() {
   $('clear-title').innerHTML = replay
     ? strings.levelClear
     : `${strings.levelClear} +${ECONOMY.clearCoins} <span class="icon icon-coin"></span>`;
-  $('clear-bonus').textContent = replay
-    ? strings.replayNote
-    : strings.bonusFound(bonusCount);
+  $('clear-bonus').textContent = replay ? strings.replayNote : strings.bonusFound(bonusCount);
   dictCard.hide(); // 換一批單字前先收掉舊卡片，避免錨點指向已消失的格子
   renderClearWords();
   $('overlay-clear').hidden = false;
@@ -235,17 +236,30 @@ function renderLevelList() {
   for (const level of levels) {
     const b = document.createElement('button');
     b.className = 'level-btn';
-    if (level.id < save.currentLevel) b.innerHTML = `<span class="icon icon-check"></span>${level.id}`;
-    else if (level.id === save.currentLevel) { b.innerHTML = `<span class="icon icon-play"></span>${level.id}`; b.classList.add('current'); }
-    else { b.innerHTML = `<span class="icon icon-lock"></span>${level.id}`; b.disabled = true; }
+    if (level.id < save.currentLevel)
+      b.innerHTML = `<span class="icon icon-check"></span>${level.id}`;
+    else if (level.id === save.currentLevel) {
+      b.innerHTML = `<span class="icon icon-play"></span>${level.id}`;
+      b.classList.add('current');
+    } else {
+      b.innerHTML = `<span class="icon icon-lock"></span>${level.id}`;
+      b.disabled = true;
+    }
     b.addEventListener('click', () => startLevel(level.id));
     list.appendChild(b);
   }
 }
 
-$('btn-level').addEventListener('click', () => { renderLevelList(); updateCoins(); showScreen('levels'); });
+$('btn-level').addEventListener('click', () => {
+  renderLevelList();
+  updateCoins();
+  showScreen('levels');
+});
 $('btn-back').addEventListener('click', () => startLevel(currentLevelId));
-$('btn-allclear-back').addEventListener('click', () => { renderLevelList(); showScreen('levels'); });
+$('btn-allclear-back').addEventListener('click', () => {
+  renderLevelList();
+  showScreen('levels');
+});
 
 // ---- 設定 overlay ----
 $('btn-settings').addEventListener('click', () => {
@@ -254,8 +268,14 @@ $('btn-settings').addEventListener('click', () => {
   $('opt-haptic').checked = save.settings.haptic;
   $('overlay-settings').hidden = false;
 });
-$('opt-sound').addEventListener('change', (e) => { save.settings.sound = e.target.checked; persist(save); });
-$('opt-haptic').addEventListener('change', (e) => { save.settings.haptic = e.target.checked; persist(save); });
+$('opt-sound').addEventListener('change', (e) => {
+  save.settings.sound = e.target.checked;
+  persist(save);
+});
+$('opt-haptic').addEventListener('change', (e) => {
+  save.settings.haptic = e.target.checked;
+  persist(save);
+});
 $('overlay-settings').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
 });

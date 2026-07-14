@@ -1,10 +1,11 @@
 // 純邏輯單元測試（設計文件 §12）：node --test tests/
-import test from 'node:test';
+
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { createGame, cellsOf, ECONOMY } from '../src/game.js';
-import { hitIndex, applyHit } from '../src/wheel.js';
-import { normalizeSave, defaultSave } from '../src/storage.js';
+import test from 'node:test';
+import { cellsOf, createGame, ECONOMY } from '../src/game.js';
+import { defaultSave, normalizeSave } from '../src/storage.js';
+import { applyHit, hitIndex } from '../src/wheel.js';
 
 const levels = JSON.parse(await readFile(new URL('../data/levels.json', import.meta.url)));
 
@@ -16,7 +17,13 @@ const fixtures = {
     letters: ['C', 'A', 'T'],
     words: [
       { word: 'CAT', row: 0, col: 0, dir: 'across', def: 'a small domesticated feline animal' },
-      { word: 'ACT', row: 0, col: 1, dir: 'down', def: 'something that a person does; to take action' },
+      {
+        word: 'ACT',
+        row: 0,
+        col: 1,
+        dir: 'down',
+        def: 'something that a person does; to take action',
+      },
     ],
     bonus: [],
   },
@@ -26,7 +33,13 @@ const fixtures = {
     words: [
       { word: 'NEAR', row: 0, col: 0, dir: 'across', def: 'close to; not far away' },
       { word: 'EARN', row: 0, col: 1, dir: 'down', def: 'to receive money in return for work' },
-      { word: 'RAN', row: 2, col: 1, dir: 'across', def: 'moved quickly on foot (past tense of run)' },
+      {
+        word: 'RAN',
+        row: 2,
+        col: 1,
+        dir: 'across',
+        def: 'moved quickly on foot (past tense of run)',
+      },
     ],
     bonus: ['EAR', 'ERA', 'ARE'],
   },
@@ -114,7 +127,10 @@ test('拼字填入交叉格後，被提示補到只剩交叉格的字也算找�
   const g = createGame(lvl(1), { revealedCells: ['1,1', '2,1'] });
   const r = g.submit('CAT');
   assert.equal(r.type, 'target');
-  assert.deepEqual(r.completedWords.map((w) => w.word), ['ACT']);
+  assert.deepEqual(
+    r.completedWords.map((w) => w.word),
+    ['ACT']
+  );
   assert.equal(r.won, true);
 });
 
@@ -144,9 +160,15 @@ test('applyHit：滑回上一顆 = 取消最後一顆；滑到更早的已選字
 // ---- storage.js ----
 
 test('normalizeSave：壞資料一律重置成初始存檔', () => {
-  for (const bad of [null, 'junk', 42, {}, { version: 2 },
+  for (const bad of [
+    null,
+    'junk',
+    42,
+    {},
+    { version: 2 },
     { ...defaultSave(), coins: -5 },
-    { ...defaultSave(), levelState: { foundWords: 'x', revealedCells: [] } }]) {
+    { ...defaultSave(), levelState: { foundWords: 'x', revealedCells: [] } },
+  ]) {
     assert.deepEqual(normalizeSave(bad), defaultSave());
   }
 });
@@ -215,7 +237,11 @@ test('levels.json：每關通過完整驗證', () => {
       grew = false;
       for (const { words } of grid.values()) {
         if (words.some((w) => reached.has(w))) {
-          for (const w of words) if (!reached.has(w)) { reached.add(w); grew = true; }
+          for (const w of words)
+            if (!reached.has(w)) {
+              reached.add(w);
+              grew = true;
+            }
         }
       }
     }

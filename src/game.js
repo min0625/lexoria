@@ -53,8 +53,7 @@ export function createGame(level, saved = {}, rng = Math.random) {
     }
   }
 
-  const isComplete = (entry) =>
-    cellsOf(entry).every((c) => cells.get(keyOf(c)).state !== 'empty');
+  const isComplete = (entry) => cellsOf(entry).every((c) => cells.get(keyOf(c)).state !== 'empty');
 
   const won = () => level.words.every((w) => foundWords.has(w.word));
 
