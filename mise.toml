@@ -6,6 +6,14 @@ uv = "latest"
 description = "跑純邏輯單元測試（設計文件 §12）"
 run = "bun test"
 
+[tasks.lint]
+description = "Biome 靜態檢查 + 格式檢查"
+run = "bun run lint"
+
+[tasks.check]
+description = "lint + test（PR Check 執行的完整檢查）"
+run = "bun run check"
+
 [tasks.fetch-data]
 description = "下載產生器輸入資料：ENABLE 字表 + wordfreq 字頻 + WordNet 釋義（設計文件 §5/§14）"
 run = "bun tools/fetch-data.mjs"

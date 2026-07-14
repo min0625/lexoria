@@ -17,12 +17,14 @@ Tasks are defined in [mise.toml](mise.toml):
 
 ```sh
 mise run test        # unit tests: bun test (same as bun run test)
+mise run lint        # Biome lint + format check (biome.json): bun run lint
+mise run check       # lint + test — what CI's PR Check job runs: bun run check
 mise run serve       # dev server on :8080 (ES modules need http; opening index.html from file:// won't work)
 mise run fetch-data  # download generator inputs → tools/data/ (ENABLE word list; wordfreq+WordNet via uv/python)
 mise run gen         # regenerate data/levels.json (requires fetch-data first)
 ```
 
-Run a single test: `bun test --test-name-pattern='<name>' tests/game.test.mjs`. There is no linter or build step. Runtime is Bun, not Node — `node:*` built-ins (fs, child_process, url) still work since Bun implements them natively.
+Run a single test: `bun test --test-name-pattern='<name>' tests/game.test.mjs`. There is no build step. Runtime is Bun, not Node — `node:*` built-ins (fs, child_process, url) still work since Bun implements them natively.
 
 ## Architecture
 

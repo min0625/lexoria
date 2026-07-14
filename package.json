@@ -2,8 +2,14 @@
   "name": "lexoria",
   "version": "0.1.0",
   "private": true,
-  "type": "module",
   "scripts": {
-    "test": "bun test"
+    "test": "bun test",
+    "lint": "biome check .",
+    "fix": "biome check --write .",
+    "check": "bun run lint && bun run test"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.3"
   }
 }

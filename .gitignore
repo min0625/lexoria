@@ -3,5 +3,7 @@
 *.local/
 *.local
 
+node_modules/
+
 # Downloaded generator inputs (mise run fetch-data)
 tools/data/

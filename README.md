@@ -9,9 +9,11 @@ Wordscapes 風格的英文單字拼圖遊戲：從字母轉盤滑選字母拼出
 ```sh
 mise run serve   # 開發伺服器 http://localhost:8080（ES modules 需經 http，直接開 index.html 不行）
 mise run test    # 單元測試（= bun test）
+mise run lint    # Biome 靜態檢查 + 格式檢查（= bun run lint；bun run fix 可自動修正）
+mise run check   # lint + test，PR Check 會跑這個（= bun run check）
 ```
 
-跑單一測試：`bun test --test-name-pattern='<名稱>' tests/game.test.mjs`。沒有 linter、沒有 build step。
+跑單一測試：`bun test --test-name-pattern='<名稱>' tests/game.test.mjs`。沒有 build step。
 
 ## 關卡資料
 
