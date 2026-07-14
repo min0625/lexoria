@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -qE '\"stop_hook_active\"[[:space:]]*:[[:space:]]*true' && exit 0; git -C \"${CLAUDE_PROJECT_DIR:-.}\" status --porcelain 2>/dev/null | grep -qE '^.. (src/|tools/|docs/|tests/|assets/|mise\\.toml$|package\\.json$|index\\.html$)' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"Stop\",\"additionalContext\":\"工作樹有程式／設定／設計文件改動：收尾前依 CLAUDE.md 的 Doc sync map 檢查 CLAUDE.md、README.md、docs/*、.serena/memories/* 是否需同步（不需要就不用動）。\"}}' || true"
+          }
+        ]
+      }
+    ]
+  }
+}

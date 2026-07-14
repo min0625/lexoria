@@ -1,20 +1,19 @@
 [tools]
 bun = "1.3.14"
-node = "latest"
 uv = "latest"
 
 [tasks.test]
 description = "跑純邏輯單元測試（設計文件 §12）"
-run = "node --test 'tests/**/*.test.mjs'"
+run = "bun test"
 
 [tasks.fetch-data]
 description = "下載產生器輸入資料：ENABLE 字表 + wordfreq 字頻 + WordNet 釋義（設計文件 §5/§14）"
-run = "node tools/fetch-data.mjs"
+run = "bun tools/fetch-data.mjs"
 
 [tasks.gen]
 description = "產生 data/levels.json（設計文件 §5；需先跑過 fetch-data）"
-run = "node tools/generate-levels.mjs"
+run = "bun tools/generate-levels.mjs"
 
 [tasks.serve]
 description = "本地開發伺服器（手機同網段可連測真機）"
-run = "npx -y serve -l 8080 ."
+run = "bunx serve -l 8080 ."
