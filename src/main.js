@@ -153,7 +153,7 @@ function onSubmit(word) {
       if (save.settings.haptic) bridge.haptic();
       // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
       // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
-      const spoken = save.settings.sound && speak(word, SFX.target);
+      const spoken = save.settings.sound && speak(word, SFX.target, dbg);
       if (!spoken) SFX.target();
       if (!save.settings.tutorialDone) {
         save.settings.tutorialDone = true; // 完成第一個字即收掉教學（UI 文件 §4-F）
