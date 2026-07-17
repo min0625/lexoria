@@ -16,5 +16,9 @@ export const strings = {
   haptic: '震動',
   about: '關於',
   replayNote: '重玩不再獲得金幣',
+  share: '分享進度',
+  shareText: (n) => `我在 Lexoria 正在挑戰第 ${n} 關！`,
+  shareCopied: '已複製！',
+  shareImageTitle: (n) => `Lexoria · 第 ${n} 關`,
   clearWordsHint: '點單字查看解釋',
 };

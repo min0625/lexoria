@@ -4,7 +4,7 @@
 import { bridge } from './bridge.js';
 import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
 import { createGame, ECONOMY } from './game.js';
-import { createGrid } from './grid.js';
+import { createGrid, snapshotBlob } from './grid.js';
 import { loadSave, persist } from './storage.js';
 import { strings } from './strings.js';
 import { createWheel } from './wheel.js';
@@ -23,6 +23,7 @@ $('settings-title').textContent = strings.settings;
 $('label-sound').textContent = strings.sound;
 $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
+$('btn-share').textContent = strings.share;
 
 // ---- 狀態 ----
 const save = loadSave();
@@ -55,11 +56,19 @@ for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
 }
 function playSfx(name) {
   if (!save.settings.sound || !sfxBuffers[name]) return;
-  if (audioCtx.state === 'suspended') audioCtx.resume();
-  const src = audioCtx.createBufferSource();
-  src.buffer = sfxBuffers[name];
-  src.connect(audioCtx.destination);
-  src.start();
+  const start = () => {
+    const src = audioCtx.createBufferSource();
+    src.buffer = sfxBuffers[name];
+    src.connect(audioCtx.destination);
+    src.start();
+  };
+  // iOS Safari 的 resume() 是非同步的；沒等它完成就 start() 會讓第一次手勢的
+  // 那次播放被靜音丟棄（症狀：第一次滑動沒聲音，之後才有）。
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume().then(start, () => {}); // resume() 極少數情況會 reject（context 已 close），靜默即可
+  } else {
+    start();
+  }
 }
 
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
@@ -284,6 +293,29 @@ $('opt-haptic').addEventListener('change', (e) => {
 });
 $('overlay-settings').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
+});
+// 分享進度：文字寫整體進度（save.currentLevel）、快照畫目前畫面這一關（wheel 目前排列，含洗牌）——重玩舊關時各自誠實
+let shareTimer = 0;
+$('btn-share').addEventListener('click', async () => {
+  if (!game || !wheel) return; // boot() 尚未完成（fetch levels.json 中）
+  try {
+    const blob = await snapshotBlob(
+      game.getCells(),
+      wheel.getLetters(),
+      strings.shareImageTitle(currentLevelId)
+    );
+    const files = [new File([blob], 'lexoria.png', { type: 'image/png' })];
+    const mode = await bridge.share(strings.shareText(save.currentLevel), location.href, files);
+    if (mode === 'copied') {
+      $('btn-share').textContent = strings.shareCopied;
+      clearTimeout(shareTimer);
+      shareTimer = setTimeout(() => {
+        $('btn-share').textContent = strings.share;
+      }, 1500);
+    }
+  } catch {
+    // 使用者取消分享，或非 secure context 下剪貼簿不可用——靜默即可
+  }
 });
 
 // ---- 啟動 ----

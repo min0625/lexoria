@@ -554,6 +554,10 @@ button {
   margin-top: 8px;
   line-height: 1.5;
 }
+.about-text a {
+  color: var(--accent-ink); /* 珊瑚墨：兩套主題皆 ≥4.5:1（AA），取代瀏覽器預設藍 */
+  text-decoration: underline;
+}
 .btn-primary {
   font-family: var(--font-display);
   background: linear-gradient(var(--grid-filled-hi), var(--grid-filled));
