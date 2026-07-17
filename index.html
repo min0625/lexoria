@@ -83,6 +83,26 @@
   <!-- 橫式遮罩（純 CSS media query 顯示） -->
   <div id="rotate-mask" class="rotate-mask"><p id="rotate-text"></p></div>
 
+  <!-- 音效除錯面板：只在網址帶 ?debug 時顯示，診斷用，非正式功能 -->
+  <div
+    id="debug-panel"
+    hidden
+    style="
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 9999;
+      max-height: 40vh;
+      overflow: auto;
+      background: #000;
+      color: #0f0;
+      font: 11px monospace;
+      padding: 8px;
+    "
+  >
+    <button id="debug-copy" type="button">複製</button>
+    <pre id="debug-log" style="white-space: pre-wrap; margin: 4px 0 0"></pre>
+  </div>
+
   <script type="module" src="src/main.js"></script>
 </body>
 </html>
