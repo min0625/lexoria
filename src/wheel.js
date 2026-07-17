@@ -21,8 +21,39 @@ export function applyHit(selected, i) {
   return selected;
 }
 
+// 洗牌不是隨機:把 0..n!-1 的第 k 個排列用階乘進位制(Lehmer code)解碼出來。
+// 每按一次 k 前進一個與 n! 互質的步距,保證 n! 次內每種排列恰好出現一次、
+// 之後回到 k=0 的初始盤面,且相鄰兩次盤面必不同(§1)。
+// 步距取最接近 0.618·n! 的互質數(黃金比例跳距):固定小步距在小輪會退化成
+// 排名逐格走,一次只換尾端兩顆字母,看起來像沒洗。例外:n=3 與 6 互質只有 ±1
+// 無法避免退化,但 3 顆中任何重排必動 2 顆,體感仍明顯(§1)。
+const gcd = (a, b) => (b ? gcd(b, a % b) : a);
+
+export function shuffleStep(nFact) {
+  let s = Math.round(nFact * 0.618) || 1;
+  while (gcd(s, nFact) > 1) s++; // 最遠爬到 n!-1(必與 n! 互質)
+  return s;
+}
+
+export function permutationAt(k, n) {
+  const avail = Array.from({ length: n }, (_, i) => i);
+  let f = 1;
+  for (let i = 2; i < n; i++) f *= i; // f = (n-1)!
+  const out = [];
+  for (let i = n - 1; i >= 1; f /= i, i--) {
+    out.push(avail.splice(Math.floor(k / f), 1)[0]);
+    k %= f;
+  }
+  if (n > 0) out.push(avail[0]);
+  return out;
+}
+
 export function createWheel(container, letters, { onChange, onSubmit }) {
   container.innerHTML = '';
+  // 監聽器都掛在 container / window 上，換關重建時必須全部收掉：
+  // 殘留的舊 pointerdown 會 setPointerCapture，把新洗牌鈕的 click 吃掉。
+  const ac = new AbortController();
+  const opts = { signal: ac.signal };
   const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   svg.classList.add('wheel-lines');
   const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
@@ -44,10 +75,14 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   shuffleBtn.setAttribute('aria-label', 'shuffle');
   container.appendChild(shuffleBtn);
 
-  // slot[i] = 按鈕 i 目前在圓周上的位置編號；洗牌只改這個映射。
-  const slots = letters.map((_, i) => i);
+  // 盤面唯一的洗牌狀態:排列編號 k。按鈕 i 的圓周位置 = permutationAt(k)[i],
+  // k=0 是恆等排列;換關重建 wheel 自然歸零回初始盤面。
+  let shuffleK = 0;
+  const nFact = letters.reduce((f, _, i) => f * (i + 1), 1);
+  const step = shuffleStep(nFact);
 
   function layout() {
+    const slots = permutationAt(shuffleK, buttons.length);
     const rect = container.getBoundingClientRect();
     const R = rect.width / 2;
     const r = Math.max(22, R * 0.22);
@@ -62,7 +97,8 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     svg.setAttribute('viewBox', `0 0 ${rect.width} ${rect.height}`);
   }
   layout();
-  new ResizeObserver(layout).observe(container);
+  const ro = new ResizeObserver(layout);
+  ro.observe(container);
 
   let selected = [];
   let dragging = false;
@@ -100,27 +136,35 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     return { x: ev.clientX - base.left, y: ev.clientY - base.top };
   }
 
-  container.addEventListener('pointerdown', (ev) => {
-    if (shuffleBtn.contains(ev.target)) return; // 點到的常是鈕內的 icon span，=== 比對會漏
-    dragging = true;
-    selected = [];
-    // 手指滑出轉盤、畫面外放開，pointerup 仍會送回來（§4）。
-    container.setPointerCapture(ev.pointerId);
-    snapshotSpots();
-    const { x, y } = toLocal(ev);
-    selected = applyHit(selected, hitIndex(x, y, spots));
-    render();
-  });
-
-  container.addEventListener('pointermove', (ev) => {
-    if (!dragging) return;
-    const { x, y } = toLocal(ev);
-    const next = applyHit(selected, hitIndex(x, y, spots));
-    if (next !== selected) {
-      selected = next;
+  container.addEventListener(
+    'pointerdown',
+    (ev) => {
+      if (shuffleBtn.contains(ev.target)) return; // 點到的常是鈕內的 icon span，=== 比對會漏
+      dragging = true;
+      selected = [];
+      // 手指滑出轉盤、畫面外放開，pointerup 仍會送回來（§4）。
+      container.setPointerCapture(ev.pointerId);
+      snapshotSpots();
+      const { x, y } = toLocal(ev);
+      selected = applyHit(selected, hitIndex(x, y, spots));
       render();
-    }
-  });
+    },
+    opts
+  );
+
+  container.addEventListener(
+    'pointermove',
+    (ev) => {
+      if (!dragging) return;
+      const { x, y } = toLocal(ev);
+      const next = applyHit(selected, hitIndex(x, y, spots));
+      if (next !== selected) {
+        selected = next;
+        render();
+      }
+    },
+    opts
+  );
 
   function finish() {
     if (!dragging) return;
@@ -131,20 +175,18 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     // 長度 < 3 直接吞掉，不進判定（§1、§10）。
     if (w.length >= 3) onSubmit(w);
   }
-  container.addEventListener('pointerup', finish);
-  container.addEventListener('pointercancel', finish);
+  container.addEventListener('pointerup', finish, opts);
+  container.addEventListener('pointercancel', finish, opts);
 
-  shuffleBtn.addEventListener('click', () => {
-    if (dragging) return; // 手勢進行中洗牌不生效（§1）
-    const before = slots.join();
-    do {
-      for (let i = slots.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [slots[i], slots[j]] = [slots[j], slots[i]];
-      }
-    } while (slots.length > 1 && slots.join() === before); // 洗回原樣看起來像沒反應，重洗到至少換一個位置
-    layout();
-  });
+  shuffleBtn.addEventListener(
+    'click',
+    () => {
+      if (dragging) return; // 手勢進行中洗牌不生效（§1）
+      shuffleK = (shuffleK + step) % nFact;
+      layout();
+    },
+    opts
+  );
 
   // 開發期鍵盤輸入（§12）：字母鍵選字、Backspace 取消最後一個、Enter 送出。非玩家功能。
   function onKey(ev) {
@@ -165,11 +207,12 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
       }
     }
   }
-  window.addEventListener('keydown', onKey);
+  window.addEventListener('keydown', onKey, opts);
 
   return {
     destroy() {
-      window.removeEventListener('keydown', onKey);
+      ac.abort();
+      ro.disconnect();
       container.innerHTML = '';
     },
   };

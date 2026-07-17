@@ -33,7 +33,7 @@ index.html          畫面骨架（<section> 以 hidden 切換，無 router）
 src/
   main.js           唯一接線點：wheel → game.submit(word) → 結果分派給 grid/HUD/音效
   game.js           關卡狀態與規則，純邏輯無 DOM（可單元測試）；經濟數值在 ECONOMY
-  wheel.js          字母轉盤與指標手勢（hitIndex/applyHit 為純函式）
+  wheel.js          字母轉盤與指標手勢（hitIndex/applyHit/permutationAt 為純函式）
   grid.js           字謎格渲染
   dictionary-card.js 查詢單字卡片
   storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）
