@@ -2,7 +2,7 @@
 // wheel → game.submit(word) → 結果物件 → 這裡分派給 grid / HUD / 特效。
 
 import { bridge } from './bridge.js';
-import { createDictionaryCard } from './dictionary-card.js';
+import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
 import { createGame, ECONOMY } from './game.js';
 import { createGrid } from './grid.js';
 import { loadSave, persist } from './storage.js';
@@ -136,13 +136,16 @@ function onSubmit(word) {
     case 'target': {
       grid.update(game.getCells());
       if (save.settings.haptic) bridge.haptic();
-      SFX.target();
+      // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
+      // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
+      const spoken = save.settings.sound && speak(word, SFX.target);
+      if (!spoken) SFX.target();
       if (!save.settings.tutorialDone) {
         save.settings.tutorialDone = true; // 完成第一個字即收掉教學（UI 文件 §4-F）
         $('overlay-tutorial').hidden = true;
       }
       persistProgress();
-      if (result.won) onWin();
+      if (result.won) onWin(spoken);
       break;
     }
     case 'bonus': {
@@ -163,8 +166,10 @@ function onSubmit(word) {
   }
 }
 
-function onWin() {
-  SFX.clear();
+function onWin(spoken) {
+  // 最後一字有發音時不播過關音效（接在人聲後很突兀），慶祝感交給過關卡片；
+  // 無發音的過關（提示鍵直接過關、無英文語音）才播 jingle
+  if (!spoken) SFX.clear();
   const bonusCount = game.getState().foundBonusWords.length;
   if (!replay) {
     save.coins += ECONOMY.clearCoins;
@@ -215,10 +220,11 @@ $('btn-hint').addEventListener('click', () => {
   }
   save.coins -= result.cost;
   grid.update(game.getCells());
+  stopSpeech(); // 上一個字可能還在念，先停掉再播音效（§6.1 不疊播）
   SFX.target();
   persistProgress();
   updateCoins();
-  if (result.won) onWin();
+  if (result.won) onWin(false);
 });
 
 // ---- 查詞卡片（§6）：只有已找到的字能查 ----
