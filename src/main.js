@@ -24,6 +24,7 @@ $('label-sound').textContent = strings.sound;
 $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
 $('btn-share').textContent = strings.share;
+$('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 ECONOMY（設計文件 §8）
 
 // ---- 狀態 ----
 const save = loadSave();

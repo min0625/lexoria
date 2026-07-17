@@ -5,7 +5,6 @@ export const strings = {
   levelClear: '過關！',
   nextLevel: '下一關',
   bonusFound: (n) => `額外單字 +${n}`,
-  hintCost: '−25',
   noCoins: '金幣不足',
   tutorial: '滑過字母，連成單字',
   rotateDevice: '請轉直畫面',
