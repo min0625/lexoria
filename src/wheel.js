@@ -215,5 +215,14 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
       ro.disconnect();
       container.innerHTML = '';
     },
+    // 目前畫面上的字母排列（依洗牌後的視覺位置），供分享快照使用，避免快照跟畫面對不上。
+    getLetters() {
+      const slots = permutationAt(shuffleK, buttons.length);
+      const order = [];
+      slots.forEach((pos, i) => {
+        order[pos] = letters[i];
+      });
+      return order;
+    },
   };
 }
