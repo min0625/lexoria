@@ -60,6 +60,8 @@
       <!-- biome-ignore lint/a11y/noLabelWithoutControl: span 文字由 strings.js 在執行期填入，input 已是 label 的子元素 -->
       <label><span id="label-haptic"></span><input type="checkbox" id="opt-haptic"></label>
       <button id="btn-share" class="btn-primary" type="button"></button>
+      <!-- 除錯用：只在網址帶 ?debug 時顯示，複製音效診斷紀錄（非正式功能） -->
+      <button id="btn-debug-copy" type="button" hidden>複製除錯紀錄</button>
       <details><summary id="label-about"></summary>
         <p class="about-text">Lexoria v0.1.0<br>
         Source code: <a href="https://github.com/min0625/lexoria" target="_blank" rel="noopener">github.com/min0625/lexoria</a><br>
@@ -82,26 +84,6 @@
 
   <!-- 橫式遮罩（純 CSS media query 顯示） -->
   <div id="rotate-mask" class="rotate-mask"><p id="rotate-text"></p></div>
-
-  <!-- 音效除錯面板：只在網址帶 ?debug 時顯示，診斷用，非正式功能 -->
-  <div
-    id="debug-panel"
-    hidden
-    style="
-      position: fixed;
-      inset: auto 0 0 0;
-      z-index: 9999;
-      max-height: 40vh;
-      overflow: auto;
-      background: #000;
-      color: #0f0;
-      font: 11px monospace;
-      padding: 8px;
-    "
-  >
-    <button id="debug-copy" type="button">複製</button>
-    <pre id="debug-log" style="white-space: pre-wrap; margin: 4px 0 0"></pre>
-  </div>
 
   <script type="module" src="src/main.js"></script>
 </body>

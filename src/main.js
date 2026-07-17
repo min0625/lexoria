@@ -11,18 +11,21 @@ import { createWheel } from './wheel.js';
 
 const $ = (id) => document.getElementById(id);
 
-// ---- 除錯面板：網址帶 ?debug 才顯示，診斷用（非正式功能）----
+// ---- 除錯紀錄：網址帶 ?debug 才收集，設定裡多一顆「複製除錯紀錄」（非正式功能）----
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const debugLog = [];
 function dbg(msg) {
   if (!DEBUG) return;
   debugLog.push(`[${(performance.now() / 1000).toFixed(2)}s] ${msg}`);
-  $('debug-log').textContent = debugLog.join('\n');
 }
 if (DEBUG) {
-  $('debug-panel').hidden = false;
-  $('debug-copy').addEventListener('click', () => {
-    navigator.clipboard.writeText(debugLog.join('\n')).catch(() => {});
+  $('btn-debug-copy').hidden = false;
+  $('btn-debug-copy').addEventListener('click', async () => {
+    await navigator.clipboard.writeText(debugLog.join('\n')).catch(() => {});
+    $('btn-debug-copy').textContent = '已複製';
+    setTimeout(() => {
+      $('btn-debug-copy').textContent = '複製除錯紀錄';
+    }, 1500);
   });
 }
 
