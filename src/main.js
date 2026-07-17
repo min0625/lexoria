@@ -40,6 +40,10 @@ const dictCard = createDictionaryCard($('dict-card'));
 // AudioContext 建立在載入時（suspended 狀態也能 decode），播放時才 resume——
 // 行動瀏覽器要求首次手勢後才能出聲（§13），而播放全都發生在手勢事件內。
 const audioCtx = 'AudioContext' in window ? new AudioContext() : null;
+// 音檔用 fetch+decode 非同步載入，第一次手勢當下可能還沒解完，playSfx 會因為
+// buffer 未就緒直接 return、連 resume() 都沒叫到——iOS 只認手勢當下的 resume()，
+// 這次沒叫到就再也叫不到了。所以 resume 獨立在第一個手勢就先做，不等 buffer。
+if (audioCtx) document.addEventListener('pointerdown', () => audioCtx.resume(), { once: true });
 const sfxBuffers = {};
 const SFX = {};
 for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
@@ -217,6 +221,7 @@ $('btn-next').addEventListener('click', () => {
 
 // ---- 提示（§8）----
 $('btn-hint').addEventListener('click', () => {
+  if (!game) return; // boot() 尚未完成（fetch levels.json 中），同 btn-share 的守衛
   const result = game.useHint(save.coins);
   if (!result.ok) {
     // 金幣不足 → 按鈕抖動並強調價格，不彈購買視窗
