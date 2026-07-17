@@ -41,10 +41,20 @@ const dictCard = createDictionaryCard($('dict-card'));
 // AudioContext 建立在載入時（suspended 狀態也能 decode），播放時才 resume——
 // 行動瀏覽器要求首次手勢後才能出聲（§13），而播放全都發生在手勢事件內。
 const audioCtx = 'AudioContext' in window ? new AudioContext() : null;
-// 音檔用 fetch+decode 非同步載入，第一次手勢當下可能還沒解完，playSfx 會因為
-// buffer 未就緒直接 return、連 resume() 都沒叫到——iOS 只認手勢當下的 resume()，
-// 這次沒叫到就再也叫不到了。所以 resume 獨立在第一個手勢就先做，不等 buffer。
-if (audioCtx) document.addEventListener('pointerdown', () => audioCtx.resume(), { once: true });
+// iOS 只有在手勢當下「實際播出一段 buffer」才會啟用音訊 session——光 resume()
+// 不夠（症狀：轉盤全程無聲，直到手動點發音鈕，speechSynthesis 幫忙啟用了 session
+// 才有聲）。所以在第一個手勢同步播一段 1 sample 的靜音 buffer 解鎖，不等 wav 載入。
+// capture 階段掛載，確保在轉盤的 setPointerCapture / 事件處理之前先跑到。
+if (audioCtx) {
+  const unlock = () => {
+    const src = audioCtx.createBufferSource();
+    src.buffer = audioCtx.createBuffer(1, 1, 22050);
+    src.connect(audioCtx.destination);
+    src.start(0);
+    audioCtx.resume();
+  };
+  document.addEventListener('pointerdown', unlock, { once: true, capture: true });
+}
 const sfxBuffers = {};
 const SFX = {};
 for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
