@@ -30,15 +30,15 @@ export function speak(word, onError, onDebug) {
     // 自己 cancel 掉的不算失敗，補播音效反而蓋到下一個字的人聲
     if (onError && e.error !== 'interrupted' && e.error !== 'canceled') onError();
   };
-  // Chrome 的 cancel() 內部是非同步的，同一 tick 接著 speak() 可能連新句子一起丟掉 → 延後一拍；
+  // 曾經延後一拍呼叫（setTimeout 0ms）來閃避 Chrome cancel() 非同步造成的丟句問題，
+  // 但實測 iOS Safari 需要 speak() 跟觸發手勢同一個 tick 呼叫，延後一拍會讓語音引擎
+  // 整個不出聲、不觸發 onstart 也不觸發 onerror（症狀：答對字完全沒有發音）。
   // resume() 防引擎卡在 paused（分頁背景化後會發生），等同 playSfx 對 audioCtx 的 resume
-  setTimeout(() => {
-    log(
-      `speak(${word}) about to call speechSynthesis.speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
-    );
-    speechSynthesis.resume();
-    speechSynthesis.speak(u);
-  }, 0);
+  log(
+    `speak(${word}) about to call speechSynthesis.speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
+  );
+  speechSynthesis.resume();
+  speechSynthesis.speak(u);
   return true;
 }
 

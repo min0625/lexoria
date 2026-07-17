@@ -69,6 +69,30 @@ for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
   sfxAudio[name] = el;
   SFX[name] = () => playSfx(name);
 }
+// iOS 對「手勢內播放才允許自動播放」的解鎖是分別針對每個 <audio> 元素算的，不是整頁一次
+// 就全解鎖——只有最常播的 tick 因為第一次觸發本身就在手勢內而順利解鎖，其餘幾顆較少
+// 觸發的音效第一次要等到之後才被叫到，那時已經不在手勢當下，會被 NotAllowedError 擋掉
+// （症狀：tick 一直有聲，invalid/target/coin/clear 偶爾被吃掉）。所以第一個手勢裡把每
+// 顆音效都靜音播一次再馬上暫停歸零，一次把全部解鎖。
+document.addEventListener(
+  'pointerdown',
+  () => {
+    for (const el of Object.values(sfxAudio)) {
+      el.muted = true;
+      el.play().then(
+        () => {
+          el.pause();
+          el.currentTime = 0;
+          el.muted = false;
+        },
+        () => {
+          el.muted = false;
+        }
+      );
+    }
+  },
+  { once: true, capture: true }
+);
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
