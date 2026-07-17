@@ -12,20 +12,30 @@ if ('speechSynthesis' in window) {
 }
 
 // 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
-export function speak(word, onError) {
+// onDebug 是選用的除錯 log callback（見 main.js 的 dbg()），非正式功能
+export function speak(word, onError, onDebug) {
+  const log = onDebug || (() => {});
+  log(
+    `speak(${word}) called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in window ? speechSynthesis.getVoices().length : 'n/a'}`
+  );
   if (!hasEnglishVoice) return false;
   speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
   // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
   const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
-  if (onError)
-    u.onerror = (e) => {
-      // 自己 cancel 掉的不算失敗，補播音效反而蓋到下一個字的人聲
-      if (e.error !== 'interrupted' && e.error !== 'canceled') onError();
-    };
+  u.onstart = () => log(`speak(${word}) onstart`);
+  u.onend = () => log(`speak(${word}) onend`);
+  u.onerror = (e) => {
+    log(`speak(${word}) onerror: ${e.error}`);
+    // 自己 cancel 掉的不算失敗，補播音效反而蓋到下一個字的人聲
+    if (onError && e.error !== 'interrupted' && e.error !== 'canceled') onError();
+  };
   // Chrome 的 cancel() 內部是非同步的，同一 tick 接著 speak() 可能連新句子一起丟掉 → 延後一拍；
   // resume() 防引擎卡在 paused（分頁背景化後會發生），等同 playSfx 對 audioCtx 的 resume
   setTimeout(() => {
+    log(
+      `speak(${word}) about to call speechSynthesis.speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
+    );
     speechSynthesis.resume();
     speechSynthesis.speak(u);
   }, 0);
