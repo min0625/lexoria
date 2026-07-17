@@ -255,7 +255,7 @@ button {
 /* ---- 拼字串顯示區：高度固定預留，不跳動 ---- */
 .preview {
   font-family: var(--font-display);
-  height: 2.2em;
+  height: 3.3rem; /* 固定用 rem，不用 em——避免 .dup 縮小字體時連帶縮高度造成版面跳動 */
   text-align: center;
   font-size: 1.5rem;
   font-weight: 800;
@@ -294,6 +294,7 @@ button {
 
 /* ---- 字母轉盤：下 1/3 拇指區。整頁的招牌件（signature）---- */
 .wheel-row {
+  --wheel-d: min(70vw, 38vh, 330px);
   position: relative;
   display: flex;
   align-items: center;
@@ -301,8 +302,11 @@ button {
   padding: 8px 0 24px;
 }
 .hint-btn {
+  /* 用 right（而非 left）定位，讓按鈕左緣交給內容自然撐開——不必猜按鈕寬度，
+     轉盤變大/變小時兩者永遠不會疊到；second min() 分支保底螢幕邊界最少 4px
+     （52px 是目前按鈕實際寬度，本專案無 i18n，內容固定不會變寬，設計文件 §4）*/
   position: absolute;
-  left: 16px;
+  right: min(calc(50% + var(--wheel-d) / 2 + 8px), calc(100% - 56px));
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -320,6 +324,23 @@ button {
 .hint-btn:active {
   transform: translateY(-50%) scale(0.94);
 }
+.hint-btn.shake {
+  /* .hint-btn 靠 translateY(-50%) 垂直置中，共用的 .shake 只設 translateX 會蓋掉它，
+     導致抖動時整顆按鈕往下掉半個身位，所以這裡疊加專屬 keyframes 保留置中位移 */
+  animation: hint-shake 0.35s;
+}
+@keyframes hint-shake {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  25% {
+    transform: translateY(-50%) translateX(-6px);
+  }
+  75% {
+    transform: translateY(-50%) translateX(6px);
+  }
+}
 .hint-btn small {
   font-family: var(--font-display);
   font-variant-numeric: tabular-nums;
@@ -329,8 +350,8 @@ button {
 }
 .wheel {
   position: relative;
-  width: min(62vw, 34vh, 300px);
-  height: min(62vw, 34vh, 300px);
+  width: var(--wheel-d);
+  height: var(--wheel-d);
   /* 立體圓盤：頂端受光的暖白面 */
   background: radial-gradient(circle at 50% 34%, var(--surface-hi), var(--surface) 72%);
   border: 1px solid var(--line);
@@ -366,7 +387,7 @@ button {
   position: absolute;
   border-radius: 50%;
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--text);
   background: var(--surface-hi);
@@ -396,12 +417,15 @@ button {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 1.2rem;
   opacity: 0.55;
-  padding: 10px;
+  padding: 16px;
   transition:
     transform 0.15s ease,
     opacity 0.15s ease;
+}
+.wheel-shuffle .icon {
+  width: 42px;
+  height: 42px;
 }
 .wheel-shuffle:active {
   transform: translate(-50%, -50%) rotate(90deg);
