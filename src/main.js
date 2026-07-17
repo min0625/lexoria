@@ -41,12 +41,17 @@ const dictCard = createDictionaryCard($('dict-card'));
 // AudioContext 建立在載入時（suspended 狀態也能 decode），播放時才 resume——
 // 行動瀏覽器要求首次手勢後才能出聲（§13），而播放全都發生在手勢事件內。
 const audioCtx = 'AudioContext' in window ? new AudioContext() : null;
-// iOS 只有在手勢當下「實際播出一段 buffer」才會啟用音訊 session——光 resume()
-// 不夠（症狀：轉盤全程無聲，直到手動點發音鈕，speechSynthesis 幫忙啟用了 session
-// 才有聲）。所以在第一個手勢同步播一段 1 sample 的靜音 buffer 解鎖，不等 wav 載入。
+// iOS 硬體靜音鍵會讓 Web Audio API（createBufferSource/createOscillator）整個靜音，
+// 即使 resume() 成功也一樣；但 <audio>/<video> 元素的播放不受靜音鍵影響（WebKit bug
+// 237322，症狀：轉盤全程無聲，直到手動點發音鈕，speechSynthesis 走的是媒體 session
+// 而非 Web Audio，才把整頁的音訊 session 一併解鎖）。所以第一個手勢裡除了摸 Web
+// Audio 的 resume()，還要真的播一段 <audio> 靜音音檔，才能繞過靜音鍵。
 // capture 階段掛載，確保在轉盤的 setPointerCapture / 事件處理之前先跑到。
+const SILENT_WAV =
+  'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
 if (audioCtx) {
   const unlock = () => {
+    new Audio(SILENT_WAV).play().catch(() => {});
     const src = audioCtx.createBufferSource();
     src.buffer = audioCtx.createBuffer(1, 1, 22050);
     src.connect(audioCtx.destination);
