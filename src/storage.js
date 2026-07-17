@@ -24,6 +24,7 @@ export function normalizeSave(raw) {
     raw.coins < 0 ||
     typeof raw.foundBonusWords !== 'object' ||
     raw.foundBonusWords === null ||
+    !Object.values(raw.foundBonusWords).every(Array.isArray) ||
     !raw.levelState ||
     !Array.isArray(raw.levelState.foundWords) ||
     !Array.isArray(raw.levelState.revealedCells) ||

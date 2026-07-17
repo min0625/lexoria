@@ -192,6 +192,7 @@ test('normalizeSave：壞資料一律重置成初始存檔', () => {
     { version: 2 },
     { ...defaultSave(), coins: -5 },
     { ...defaultSave(), levelState: { foundWords: 'x', revealedCells: [] } },
+    { ...defaultSave(), foundBonusWords: { 1: 42 } }, // 值不是陣列 → createGame 的 new Set() 會炸
   ]) {
     assert.deepEqual(normalizeSave(bad), defaultSave());
   }
