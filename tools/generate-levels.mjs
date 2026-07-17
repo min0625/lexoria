@@ -10,6 +10,7 @@ const ATTEMPTS = 20; // 同一組字跑 20 版挑最好看的（§5）
 // 難度曲線（§5 步驟 5）：前期字母少、字都很常見；後期字母多、字頻門檻放寬。
 // zipf：目標字最低字頻；baseZipf：基底字（轉盤字母來源）最低字頻；targets：目標字數範圍。
 const BANDS = [
+  { upTo: 2, len: 3, targets: [2, 3], zipf: 4.0, baseZipf: 4.5 },
   { upTo: 6, len: 4, targets: [3, 4], zipf: 3.6, baseZipf: 4.0 },
   { upTo: 15, len: 5, targets: [4, 5], zipf: 3.4, baseZipf: 3.8 },
   { upTo: 30, len: 6, targets: [5, 6], zipf: 3.2, baseZipf: 3.5 },
