@@ -85,7 +85,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     const slots = permutationAt(shuffleK, buttons.length);
     const rect = container.getBoundingClientRect();
     const R = rect.width / 2;
-    const r = Math.max(22, R * 0.22);
+    const r = Math.max(26, R * 0.26);
     buttons.forEach((b, i) => {
       const angle = (Math.PI * 2 * slots[i]) / buttons.length - Math.PI / 2;
       const x = R + Math.cos(angle) * (R - r);
