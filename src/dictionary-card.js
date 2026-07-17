@@ -11,10 +11,29 @@ if ('speechSynthesis' in window) {
   speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
 }
 
-export function speak(word) {
-  const u = new SpeechSynthesisUtterance(word);
+// 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
+export function speak(word, onError) {
+  if (!hasEnglishVoice) return false;
+  speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
+  // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
+  const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
-  speechSynthesis.speak(u);
+  if (onError)
+    u.onerror = (e) => {
+      // 自己 cancel 掉的不算失敗，補播音效反而蓋到下一個字的人聲
+      if (e.error !== 'interrupted' && e.error !== 'canceled') onError();
+    };
+  // Chrome 的 cancel() 內部是非同步的，同一 tick 接著 speak() 可能連新句子一起丟掉 → 延後一拍；
+  // resume() 防引擎卡在 paused（分頁背景化後會發生），等同 playSfx 對 audioCtx 的 resume
+  setTimeout(() => {
+    speechSynthesis.resume();
+    speechSynthesis.speak(u);
+  }, 0);
+  return true;
+}
+
+export function stopSpeech() {
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 
 export function createDictionaryCard(cardEl) {

@@ -101,7 +101,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   }
 
   container.addEventListener('pointerdown', (ev) => {
-    if (ev.target === shuffleBtn) return;
+    if (shuffleBtn.contains(ev.target)) return; // 點到的常是鈕內的 icon span，=== 比對會漏
     dragging = true;
     selected = [];
     // 手指滑出轉盤、畫面外放開，pointerup 仍會送回來（§4）。
@@ -136,10 +136,13 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
 
   shuffleBtn.addEventListener('click', () => {
     if (dragging) return; // 手勢進行中洗牌不生效（§1）
-    for (let i = slots.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [slots[i], slots[j]] = [slots[j], slots[i]];
-    }
+    const before = slots.join();
+    do {
+      for (let i = slots.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slots[i], slots[j]] = [slots[j], slots[i]];
+      }
+    } while (slots.length > 1 && slots.join() === before); // 洗回原樣看起來像沒反應，重洗到至少換一個位置
     layout();
   });
 
