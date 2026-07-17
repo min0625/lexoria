@@ -5,7 +5,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { cellsOf, createGame, ECONOMY } from '../src/game.js';
 import { defaultSave, normalizeSave } from '../src/storage.js';
-import { applyHit, hitIndex } from '../src/wheel.js';
+import { applyHit, hitIndex, permutationAt, shuffleStep } from '../src/wheel.js';
 
 const levels = JSON.parse(await readFile(new URL('../data/levels.json', import.meta.url)));
 
@@ -155,6 +155,30 @@ test('applyHit：滑回上一顆 = 取消最後一顆；滑到更早的已選字
   assert.deepEqual(applyHit([0, 1, 2], 1), [0, 1]); // 滑回倒數第二顆
   assert.deepEqual(applyHit([0, 1, 2], 0), [0, 1, 2]); // 更早的已選 → 不變
   assert.deepEqual(applyHit([0, 1], -1), [0, 1]); // 沒命中 → 不變
+});
+
+test('permutationAt：k=0 是恆等排列，0..n!-1 是 bijection', () => {
+  const n = 4;
+  assert.deepEqual(permutationAt(0, n), [0, 1, 2, 3]);
+  const seen = new Set();
+  for (let k = 0; k < 24; k++) seen.add(permutationAt(k, n).join());
+  assert.equal(seen.size, 24); // 每個 k 對到不同排列
+});
+
+test('shuffleStep：走 n! 步遍歷全部並回到初始，且不退化成排名 ±1 逐格走', () => {
+  for (const n of [3, 4, 7]) {
+    const nFact = Array.from({ length: n }, (_, i) => i + 1).reduce((a, b) => a * b);
+    const step = shuffleStep(nFact);
+    const seen = new Set();
+    let k = 0;
+    for (let i = 0; i < nFact; i++) {
+      k = (k + step) % nFact;
+      seen.add(permutationAt(k, n).join());
+    }
+    assert.equal(seen.size, nFact); // 全部排列各出現一次（step 與 n! 互質）⇒ 週期恰為 n!，之後回到初始盤面
+    // 排名 ±1 逐格走一次只換尾端兩顆字母，看起來像沒洗；n=3 與 6 互質只有 ±1，豁免（§1）
+    if (n >= 4) assert.ok(step > 1 && step < nFact - 1);
+  }
 });
 
 // ---- storage.js ----
