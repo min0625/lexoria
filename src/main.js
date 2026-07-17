@@ -11,6 +11,24 @@ import { createWheel } from './wheel.js';
 
 const $ = (id) => document.getElementById(id);
 
+// ---- 除錯紀錄：網址帶 ?debug 才收集，設定裡多一顆「複製除錯紀錄」（非正式功能）----
+const DEBUG = new URLSearchParams(location.search).has('debug');
+const debugLog = [];
+function dbg(msg) {
+  if (!DEBUG) return;
+  debugLog.push(`[${(performance.now() / 1000).toFixed(2)}s] ${msg}`);
+}
+if (DEBUG) {
+  $('btn-debug-copy').hidden = false;
+  $('btn-debug-copy').addEventListener('click', async () => {
+    await navigator.clipboard.writeText(debugLog.join('\n')).catch(() => {});
+    $('btn-debug-copy').textContent = '已複製';
+    setTimeout(() => {
+      $('btn-debug-copy').textContent = '複製除錯紀錄';
+    }, 1500);
+  });
+}
+
 // ---- 靜態文案 ----
 $('tutorial-text').textContent = strings.tutorial;
 $('rotate-text').textContent = strings.rotateDevice;
@@ -41,6 +59,7 @@ const dictCard = createDictionaryCard($('dict-card'));
 // AudioContext 建立在載入時（suspended 狀態也能 decode），播放時才 resume——
 // 行動瀏覽器要求首次手勢後才能出聲（§13），而播放全都發生在手勢事件內。
 const audioCtx = 'AudioContext' in window ? new AudioContext() : null;
+dbg(`audioCtx created, state=${audioCtx?.state} sampleRate=${audioCtx?.sampleRate}`);
 // iOS 硬體靜音鍵會讓 Web Audio API（createBufferSource/createOscillator）整個靜音，
 // 即使 resume() 成功也一樣；但 <audio>/<video> 元素的播放不受靜音鍵影響（WebKit bug
 // 237322，症狀：轉盤全程無聲，直到手動點發音鈕，speechSynthesis 走的是媒體 session
@@ -51,12 +70,19 @@ const SILENT_WAV =
   'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
 if (audioCtx) {
   const unlock = () => {
-    new Audio(SILENT_WAV).play().catch(() => {});
+    dbg(`unlock() fired, state before=${audioCtx.state}`);
+    new Audio(SILENT_WAV).play().then(
+      () => dbg('silent <audio> play() resolved'),
+      (e) => dbg(`silent <audio> play() REJECTED: ${e}`)
+    );
     const src = audioCtx.createBufferSource();
     src.buffer = audioCtx.createBuffer(1, 1, 22050);
     src.connect(audioCtx.destination);
     src.start(0);
-    audioCtx.resume();
+    audioCtx.resume().then(
+      () => dbg(`resume() resolved, state=${audioCtx.state}`),
+      (e) => dbg(`resume() REJECTED: ${e}, state=${audioCtx.state}`)
+    );
   };
   document.addEventListener('pointerdown', unlock, { once: true, capture: true });
 }
@@ -70,13 +96,18 @@ for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
       .then((buf) => audioCtx.decodeAudioData(buf))
       .then((audio) => {
         sfxBuffers[name] = audio;
+        dbg(`${name}.wav decoded ok`);
       })
-      .catch(() => {}); // 音檔載入失敗 → 靜音即可，不影響遊戲
+      .catch((e) => dbg(`${name}.wav load/decode FAILED: ${e}`)); // 音檔載入失敗 → 靜音即可，不影響遊戲
   }
 }
 function playSfx(name) {
+  dbg(
+    `playSfx(${name}) called, sound=${save.settings.sound} buffered=${!!sfxBuffers[name]} ctxState=${audioCtx?.state}`
+  );
   if (!save.settings.sound || !sfxBuffers[name]) return;
   const start = () => {
+    dbg(`playSfx(${name}) start(), ctxState=${audioCtx.state}`);
     const src = audioCtx.createBufferSource();
     src.buffer = sfxBuffers[name];
     src.connect(audioCtx.destination);
@@ -85,7 +116,7 @@ function playSfx(name) {
   // iOS Safari 的 resume() 是非同步的；沒等它完成就 start() 會讓第一次手勢的
   // 那次播放被靜音丟棄（症狀：第一次滑動沒聲音，之後才有）。
   if (audioCtx.state === 'suspended') {
-    audioCtx.resume().then(start, () => {}); // resume() 極少數情況會 reject（context 已 close），靜默即可
+    audioCtx.resume().then(start, (e) => dbg(`playSfx(${name}) resume() REJECTED: ${e}`));
   } else {
     start();
   }
