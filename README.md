@@ -37,10 +37,11 @@ src/
   grid.js           字謎格渲染（含分享用 canvas 快照 snapshotBlob）
   dictionary-card.js 查詢單字卡片
   storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）
+  redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發）
   bridge.js         平台抽象層（存檔/震動/分享/廣告/IAP）— Phase 2 換 native 實作
   strings.js        所有 UI 文案
   style.css         全站樣式
-tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）
+tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發
 tests/              純邏輯單元測試 + levels.json 驗證器
 docs/               設計文件（單一事實來源，程式註解引用其章節如 §10）
 ```

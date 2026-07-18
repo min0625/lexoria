@@ -39,6 +39,7 @@ wheel.js ──gesture ends(word)──▶ game.submit(word) ──result object
 - [game.js](src/game.js) — all level state and win logic, **pure logic, no DOM** (this is what makes it unit-testable). `submit(word)` returns a discriminated result object (`target` / `bonus` / `duplicate` / `invalid`) — the shape is specified in design doc §10. `createGame` accepts an injectable `rng` (default `Math.random`) so hint-cell selection is deterministic in tests. Economy constants live in the `ECONOMY` object at the top; never scatter coin values elsewhere.
 - [wheel.js](src/wheel.js) — letter wheel + pointer gestures. Hit-testing (`hitIndex`), selection (`applyHit`), and shuffle permutation (`permutationAt` + `shuffleStep`, Lehmer-code unranking stepped by a golden-ratio coprime step for a deterministic full cycle back to the initial layout) are exported pure functions for testing. Selection is bound to button *index*, not letter value, because wheels can contain duplicate letters.
 - [grid.js](src/grid.js), [dictionary-card.js](src/dictionary-card.js) — DOM rendering only. grid.js also exports `snapshotBlob` (canvas PNG for the share feature: board as spoiler-free colored blocks plus the letter wheel; colors read from CSS variables so it follows the theme). dictionary-card.js also owns `speechSynthesis` pronunciation (`speak`/`stopSpeech`), used by both its speaker button and main.js's auto-pronounce on target hit (§6.1).
+- [redeem.js](src/redeem.js) — redemption-code verification: JWT (alg pinned to ES256) checked with WebCrypto against the `PUBLIC_KEYS` kid→JWK whitelist; single-use tracked by `jti` in the save. Codes are minted locally with `tools/make-code.mjs` (private keys in gitignored `tools/keys/` — never commit them).
 - [storage.js](src/storage.js) — single-key JSON save. `normalizeSave` is pure: any corrupt/unrecognized data resets to a fresh save.
 - [bridge.js](src/bridge.js) — platform abstraction (save/load/haptics/share/ads/IAP). **Game code must go through `bridge`, never touch `localStorage` or native APIs directly** — this is the one module that gets swapped for native implementations in Phase 2.
 - [strings.js](src/strings.js) — all UI copy in one object. No i18n framework.
@@ -51,7 +52,7 @@ Screens are `<section>` elements toggled with `hidden` in [index.html](index.htm
 
 ### Testing split (design doc §12)
 
-Only pure logic is auto-tested (`tests/game.test.mjs`): game rules, wheel hit/selection math, save normalization, plus a validator pass over `levels.json`. Unit tests use inline fixtures — never assert on `levels.json` contents, which change on regeneration. UI, animation, and touch feel are manually tested against the §17 acceptance checklist on real devices. Desktop keyboard input in the wheel (letter keys / Backspace / Enter) exists for dev iteration, not for players.
+Only pure logic is auto-tested (`tests/*.test.mjs`): game rules, wheel hit/selection math, save normalization, redemption-code verification, plus a validator pass over `levels.json`. Unit tests use inline fixtures — never assert on `levels.json` contents, which change on regeneration. UI, animation, and touch feel are manually tested against the §17 acceptance checklist on real devices. Desktop keyboard input in the wheel (letter keys / Backspace / Enter) exists for dev iteration, not for players.
 
 ## Doc sync map
 

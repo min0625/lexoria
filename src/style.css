@@ -547,6 +547,26 @@ button {
   height: 20px;
   accent-color: var(--grid-filled); /* 開關染成綠墨，不用系統藍 */
 }
+.redeem-row {
+  display: flex;
+  gap: 8px;
+}
+.redeem-row input {
+  flex: 1;
+  min-width: 0; /* flex 子元素預設 min-width:auto，長 token 會撐爆卡片 */
+  font: inherit;
+  font-size: 0.85rem;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 15px;
+}
+.redeem-msg {
+  font-size: 0.8rem;
+  color: var(--text-soft);
+  margin: -6px 0 0; /* 貼近上方輸入列，抵掉卡片的 gap */
+}
 .about-text {
   font-size: 0.75rem;
   color: var(--text-soft);

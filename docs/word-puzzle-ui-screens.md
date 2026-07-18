@@ -119,6 +119,14 @@
 | `shareText` | 我在 Lexoria 已經破到第 {n} 關了！ |
 | `shareCopied` | 已複製！ |
 | `shareImageTitle` | Lexoria · 第 {n} 關 |
+| `redeemPlaceholder` | 貼上兌換碼 |
+| `redeemAction` | 兌換 |
+| `redeemInvalid` | 無效的兌換碼 |
+| `redeemExpired` | 兌換碼已過期 |
+| `redeemUsed` | 此兌換碼已使用過 |
+| `redeemBehind` | 進度已超過此兌換碼的關卡 |
+| `redeemCoins` | 兌換成功，金幣 +{n} |
+| `redeemLevel` | 兌換成功，已解鎖至第 {n} 關 |
 
 全部文案就這十幾條——集中一個物件，不做 i18n 框架（主文件 §19-1）。
 

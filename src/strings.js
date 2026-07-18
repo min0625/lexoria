@@ -20,4 +20,12 @@ export const strings = {
   shareCopied: '已複製！',
   shareImageTitle: (n) => `Lexoria · 第 ${n} 關`,
   clearWordsHint: '點單字查看解釋',
+  redeemPlaceholder: '貼上兌換碼',
+  redeemAction: '兌換',
+  redeemInvalid: '無效的兌換碼',
+  redeemExpired: '兌換碼已過期',
+  redeemUsed: '此兌換碼已使用過',
+  redeemBehind: '進度已超過此兌換碼的關卡',
+  redeemCoins: (n) => `兌換成功，金幣 +${n}`,
+  redeemLevel: (n) => `兌換成功，已解鎖至第 ${n} 關`,
 };
