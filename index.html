@@ -21,6 +21,8 @@
   <link rel="icon" type="image/png" sizes="180x180" href="assets/icon-180.png">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="stylesheet" href="src/style.css">
+  <!-- 與 JS 模組並行下載關卡資料，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中） -->
+  <link rel="preload" href="data/levels.json" as="fetch" crossorigin>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
