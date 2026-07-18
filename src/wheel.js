@@ -4,11 +4,19 @@
 const LETTER_KEY = /^[a-zA-Z]$/;
 
 // 命中判斷：手指座標與每個字母圓心的距離 < 半徑 × factor（不用 elementFromPoint）。
+// 7 顆字母的小輪盤上命中圓會重疊，取「範圍內最近」而非「第一個符合」，
+// 讓重疊區以中垂線分界，手指靠近誰就選誰，避免誤觸隔壁字母。
 export function hitIndex(x, y, spots, factor = 1.2) {
+  let best = -1;
+  let bestD = Infinity;
   for (const s of spots) {
-    if (Math.hypot(x - s.x, y - s.y) < s.r * factor) return s.i;
+    const d = Math.hypot(x - s.x, y - s.y);
+    if (d < s.r * factor && d < bestD) {
+      bestD = d;
+      best = s.i;
+    }
   }
-  return -1;
+  return best;
 }
 
 // 選取更新：選取狀態綁「按鈕實例」而非字母值（重複字母各算一顆，§1）。
