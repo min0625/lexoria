@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Lexoria</title>
+  <rect width="1024" height="1024" fill="#f6f2ea"/>
+  <rect x="287" y="167" width="210" height="210" rx="34" fill="#3e7a55"/>
+  <rect x="287" y="407" width="210" height="210" rx="34" fill="#3e7a55"/>
+  <rect x="287" y="647" width="210" height="210" rx="34" fill="#3e7a55"/>
+  <rect x="527" y="647" width="210" height="210" rx="34" fill="#e0a232"/>
+</svg>
