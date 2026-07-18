@@ -132,32 +132,22 @@
 
 ## 7. 色票草案（主文件 §19-3 的拍板素材）
 
-給一版可以直接開工的預設值；視覺定案時只改這組變數，元件不動：
+給一版可以直接開工的預設值；視覺定案時只改這組變數，元件不動。
+只做深色一套（主文件 §19-3）——不跟隨 `prefers-color-scheme`，不做淺色主題：
 
 ```css
 :root {
-  --bg: #f6f2ea;            /* 米白底 */
-  --surface: #ffffff;       /* 卡片/轉盤底 */
-  --grid-empty: #d9d2c4;    /* 未填格 */
-  --grid-filled: #3e7a55;   /* 已填格底（filled 與 revealed 同色，主文件 §10）*/
+  color-scheme: dark;
+  --bg: #10201f;            /* 深青墨黑底 */
+  --surface: #1b2c2b;       /* 卡片/轉盤底 */
+  --grid-empty: #2a3b39;    /* 未填格 */
+  --grid-filled: #1c8f88;   /* 已填格底（filled 與 revealed 同色，主文件 §10）*/
   --letter-on-fill: #ffffff;
-  --text: #2d2a24;
-  --accent: #e0a232;        /* 金幣、強調、選中字母 */
-  --wheel-line: #e0a232;    /* 手勢連線 */
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1e1c18;
-    --surface: #2a2723;
-    --grid-empty: #3a362f;
-    --grid-filled: #4e9068;
-    --letter-on-fill: #ffffff;
-    --text: #ece7dd;
-    --accent: #e8b04e;
-    --wheel-line: #e8b04e;
-  }
+  --text: #e6ede9;
+  --accent: #ff7a52;        /* 亮珊瑚：金幣、強調、選中字母 */
+  --wheel-line: #ff7a52;    /* 手勢連線 */
 }
 ```
 
-- 已填格的綠底白字對比 > 4.5:1，深淺兩套都符合 WCAG AA。
+- 已填格的青墨底白字（大字粗體）對比 ≥ 3:1，達 WCAG AA-large；完整定案色票（含陰影、次要文字等）在 `src/style.css` 的 `:root`。
 - 標題字體：系統字型堆疊（`system-ui`）先開工，品牌字體是視覺定案的事，不擋路。
