@@ -184,16 +184,27 @@ button {
   justify-content: center;
   min-height: 0;
   padding: 8px;
+  container-type: size; /* 讓 .grid 用 cq 單位量「實際分到的空間」而非視窗 */
 }
 .grid {
   display: grid;
   grid-template-rows: repeat(var(--rows), 1fr);
   grid-template-columns: repeat(var(--cols), 1fr);
-  gap: 6px;
-  /* 格子尺寸 = 可用寬高取小除以行列數（設計文件 §7）*/
-  --cell: min(88vw / var(--cols), 46vh / var(--rows), 56px);
-  width: calc(var(--cell) * var(--cols));
-  height: calc(var(--cell) * var(--rows));
+  --gap: 6px;
+  gap: var(--gap);
+  /* 格子尺寸 = 實際可用寬高（扣掉格間距）取小除以行列數（設計文件 §7）。
+     用 cqw/cqh 而非 vw/vh：矮螢幕上 46vh 會超過 flex 分到的高度，溢出蓋住頂欄與預覽列 */
+  --cell: min(
+    (100cqw - (var(--cols) - 1) * var(--gap)) /
+    var(--cols),
+    (100cqh - (var(--rows) - 1) * var(--gap)) /
+    var(--rows),
+    56px
+  );
+  /* 總尺寸要把 gap 加回來，否則 1fr 軌道會比 --cell 小（gap 被扣兩次），
+     .cell 的 font-size 也會對不上實際格寬 */
+  width: calc(var(--cell) * var(--cols) + (var(--cols) - 1) * var(--gap));
+  height: calc(var(--cell) * var(--rows) + (var(--rows) - 1) * var(--gap));
 }
 .cell {
   font-family: var(--font-display);
