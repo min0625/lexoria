@@ -190,6 +190,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
 
   // 開發期鍵盤輸入（§12）：字母鍵選字、Backspace 取消最後一個、Enter 送出。非玩家功能。
   function onKey(ev) {
+    if (ev.target.matches?.('input, textarea')) return; // 打字目標是表單欄位（如兌換碼框）就不搶
     if (ev.key === 'Enter') {
       const w = word();
       selected = [];

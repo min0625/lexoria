@@ -9,6 +9,7 @@ export const defaultSave = () => ({
   coins: ECONOMY.initialCoins,
   foundBonusWords: {}, // { [levelId]: [word, ...] }——按關卡記錄（§1）
   levelState: { foundWords: [], revealedCells: [] }, // 只屬於 currentLevel
+  redeemedCodes: [], // 已兌換碼的 jti 清單（.local.feature-evaluation.md §2）
   settings: { sound: true, haptic: true, tutorialDone: false },
 });
 
@@ -28,6 +29,8 @@ export function normalizeSave(raw) {
     !raw.levelState ||
     !Array.isArray(raw.levelState.foundWords) ||
     !Array.isArray(raw.levelState.revealedCells) ||
+    // 舊存檔沒有 redeemedCodes 是合法的（spread 會補預設值），有但不是陣列才算壞
+    (raw.redeemedCodes !== undefined && !Array.isArray(raw.redeemedCodes)) ||
     !raw.settings ||
     typeof raw.settings !== 'object'
   ) {

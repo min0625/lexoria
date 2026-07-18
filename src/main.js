@@ -5,6 +5,7 @@ import { bridge } from './bridge.js';
 import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
 import { createGame, ECONOMY } from './game.js';
 import { createGrid, snapshotBlob } from './grid.js';
+import { verifyCode } from './redeem.js';
 import { loadSave, persist } from './storage.js';
 import { strings } from './strings.js';
 import { createWheel } from './wheel.js';
@@ -42,6 +43,8 @@ $('label-sound').textContent = strings.sound;
 $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
 $('btn-share').textContent = strings.share;
+$('redeem-input').placeholder = strings.redeemPlaceholder;
+$('btn-redeem').textContent = strings.redeemAction;
 $('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 ECONOMY（設計文件 §8）
 
 // ---- 狀態 ----
@@ -312,6 +315,7 @@ $('btn-settings').addEventListener('click', () => {
   dictCard.hide(); // 同時只留一個互動 overlay（UI 文件 §4）
   $('opt-sound').checked = save.settings.sound;
   $('opt-haptic').checked = save.settings.haptic;
+  $('redeem-msg').hidden = true; // 上次的兌換結果不留到下次開卡
   $('overlay-settings').hidden = false;
 });
 $('opt-sound').addEventListener('change', (e) => {
@@ -349,8 +353,52 @@ $('btn-share').addEventListener('click', async () => {
   }
 });
 
+// ---- 兌換碼（.local.feature-evaluation.md §2）：JWT 驗簽在 redeem.js，這裡只套用效果 ----
+function showRedeemMsg(text) {
+  $('redeem-msg').textContent = text;
+  $('redeem-msg').hidden = false;
+}
+$('btn-redeem').addEventListener('click', async () => {
+  const token = $('redeem-input').value.trim();
+  if (!token) return;
+  const result = await verifyCode(token, { redeemed: save.redeemedCodes }).catch(() => ({
+    ok: false,
+    reason: 'invalid',
+  }));
+  if (!result.ok) {
+    const msg = { expired: strings.redeemExpired, used: strings.redeemUsed }[result.reason];
+    showRedeemMsg(msg ?? strings.redeemInvalid);
+    return;
+  }
+  const { jti, effect } = result;
+  if (effect.type === 'level' && effect.id <= save.currentLevel) {
+    showRedeemMsg(strings.redeemBehind); // 沒有效果就不消耗碼（評估文件 §3-3）
+    return;
+  }
+  if (effect.type === 'coins') {
+    save.coins += effect.amount;
+    showRedeemMsg(strings.redeemCoins(effect.amount));
+  } else {
+    save.currentLevel = effect.id;
+    save.levelState = { foundWords: [], revealedCells: [] }; // 換關即作廢，同過關語意（§9）
+    showRedeemMsg(strings.redeemLevel(effect.id));
+  }
+  save.redeemedCodes.push(jti);
+  persist(save);
+  SFX.coin();
+  updateCoins();
+  $('redeem-input').value = '';
+  if (effect.type === 'level' && levels.length) startLevel(effect.id);
+});
+
 // ---- 啟動 ----
 (async function boot() {
   levels = await (await fetch('data/levels.json')).json();
   startLevel(save.currentLevel);
+  // 兌換連結（?code=…）：自動帶入兌換碼並打開設定卡，玩家只要按「兌換」
+  const code = new URLSearchParams(location.search).get('code');
+  if (code) {
+    $('redeem-input').value = code;
+    $('btn-settings').click();
+  }
 })();
