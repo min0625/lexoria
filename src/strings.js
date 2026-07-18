@@ -28,4 +28,10 @@ export const strings = {
   redeemBehind: '進度已超過此兌換碼的關卡',
   redeemCoins: (n) => `兌換成功，金幣 +${n}`,
   redeemLevel: (n) => `兌換成功，已解鎖至第 ${n} 關`,
+  claimLabel: '領取金幣',
+  claimReady: (n) => `+${n}`,
+  claimSeconds: (s) => `${s} 秒`,
+  claimSuccess: (n) => `已領取金幣 +${n}`,
+  claimWait: (h, m) => (h > 0 ? `${h} 小時 ${m} 分後可領取金幣` : `${m} 分鐘後可領取金幣`),
+  claimAlmost: '就快好了！',
 };

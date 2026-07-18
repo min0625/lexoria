@@ -3,7 +3,7 @@
 
 import { bridge } from './bridge.js';
 import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
-import { createGame, ECONOMY } from './game.js';
+import { claimStatus, createGame, ECONOMY } from './game.js';
 import { createGrid, snapshotBlob } from './grid.js';
 import { verifyCode } from './redeem.js';
 import { loadSave, persist } from './storage.js';
@@ -284,6 +284,70 @@ $('btn-hint').addEventListener('click', () => {
   updateCoins();
   if (result.won) onWin(false);
 });
+
+// ---- 定時領取金幣（§8）：每 4 小時一份、不累積，邏輯在 game.js 的 claimStatus ----
+// 倒數顯示的分鐘數：剛領完（剩恰好 4 小時整）要顯示 3:59 而非 4:00，
+// 純 floor 在整分邊界會多顯示一分鐘，ceil−1 讓邊界也落在下一格（最後一分鐘走秒級顯示，不經這裡）
+const claimMinutes = (remainingMs) => Math.ceil(remainingMs / 60_000) - 1;
+const CLAIM_FINAL_MS = 60_000; // 最後一分鐘逐秒倒數——守著歸零領獎的儀式感窗口
+let claimTimer = 0;
+let claimWasReady = null; // 上次刷新是否可領：偵測「歸零瞬間」才播彈跳，開頁初次刷新不播
+function updateClaim() {
+  const { ready, remainingMs } = claimStatus(save.lastClaimAt);
+  const btn = $('btn-claim');
+  btn.classList.toggle('cooling', !ready); // 冷卻中仍可點——點了會解釋倒數的意思
+  clearTimeout(claimTimer);
+  if (ready) {
+    btn.textContent = strings.claimReady(ECONOMY.claimCoins);
+    btn.setAttribute('aria-label', strings.claimLabel); // 「+25」對螢幕閱讀器太隱晦，補上動作名
+    if (claimWasReady === false) {
+      // 從倒數翻成可領（守到歸零，或切回分頁時剛好過期）→ 彈跳登場
+      btn.classList.remove('pop');
+      void btn.offsetWidth;
+      btn.classList.add('pop');
+    }
+  } else if (remainingMs <= CLAIM_FINAL_MS) {
+    btn.textContent = strings.claimSeconds(Math.ceil(remainingMs / 1000));
+    btn.setAttribute('aria-label', strings.claimWait(0, 1));
+    claimTimer = setTimeout(updateClaim, remainingMs % 1000 || 1000); // 對齊秒界
+  } else {
+    const m = claimMinutes(remainingMs);
+    btn.textContent = `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`;
+    btn.setAttribute('aria-label', strings.claimWait(Math.floor(m / 60), m % 60)); // 「3:59」讀不出倒數意涵
+    // 平常每分鐘醒一次就好；快進最後一分鐘時提早醒來銜接秒級倒數
+    claimTimer = setTimeout(updateClaim, Math.min(60_000, remainingMs - CLAIM_FINAL_MS));
+  }
+  claimWasReady = ready;
+}
+$('btn-claim').addEventListener('click', () => {
+  const { ready, remainingMs } = claimStatus(save.lastClaimAt);
+  if (!ready) {
+    // 同提示鈕金幣不足的模式：抖動 + 說明訊息，讓倒數不會被誤讀成限時
+    const btn = $('btn-claim');
+    btn.classList.remove('shake');
+    void btn.offsetWidth;
+    btn.classList.add('shake');
+    if (remainingMs <= CLAIM_FINAL_MS) {
+      flashPreview(strings.claimAlmost, 'good'); // 最後一分鐘：承認他在等，不再報時
+    } else {
+      const m = claimMinutes(remainingMs);
+      flashPreview(strings.claimWait(Math.floor(m / 60), m % 60), 'dup');
+    }
+    return;
+  }
+  save.lastClaimAt = Date.now();
+  save.coins += ECONOMY.claimCoins;
+  persist(save);
+  SFX.coin();
+  flashPreview(strings.claimSuccess(ECONOMY.claimCoins), 'good');
+  updateCoins();
+  updateClaim();
+});
+// 分頁退到背景時計時器被凍結，切回來可能顯示過期倒數（甚至其實已可領）——回前景立刻補刷一次
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) updateClaim();
+});
+updateClaim();
 
 // ---- 查詞卡片（§6）：只有已找到的字能查 ----
 function onCellTap(words, cellEl) {
