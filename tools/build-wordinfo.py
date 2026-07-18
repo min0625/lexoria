@@ -16,14 +16,20 @@ from nltk.corpus import wordnet as wn
 
 here = os.path.dirname(__file__)
 
-# ECDICT 的 translation 欄以字面 "\n" 分隔多個詞性義項，取第一行短釋義即可（§6.3 同一原則）
+# ECDICT 的 translation 欄以字面 "\n" 分隔多個詞性義項，取第一個非縮寫義項的短釋義（§6.3）。
+# 跳過 "abbr." 行：像 ages/acts/tho 這類字形的第一行是專有名詞縮寫（如「聲控遙測系統」），
+# 顯示在查詞卡上完全誤導；整欄都是縮寫義的字形直接不收，等同「查不到中文」而退出目標字候選。
 cc = OpenCC("s2twp")
 zh_trans = {}
 with open(os.path.join(here, "data", "ecdict.csv"), newline="") as f:
     for row in csv.DictReader(f):
         w = row["word"].lower()
-        if row["translation"] and w not in zh_trans:
-            zh_trans[w] = cc.convert(row["translation"].split("\\n")[0].strip())
+        if w in zh_trans:
+            continue
+        lines = [s.strip() for s in (row["translation"] or "").split("\\n")]
+        line = next((s for s in lines if s and not s.startswith("abbr.")), None)
+        if line:
+            zh_trans[w] = cc.convert(line)
 
 info = {}
 with open(os.path.join(here, "data", "enable1.txt")) as f:

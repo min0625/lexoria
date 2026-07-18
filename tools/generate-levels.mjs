@@ -4,18 +4,31 @@
 // 亂數種子固定為關卡 id：重跑輸出完全相同，關卡才能進版控、diff 才有意義。
 import { readFileSync, writeFileSync } from 'node:fs';
 
-const N_LEVELS = 50;
+const N_LEVELS = 500;
 const ATTEMPTS = 20; // 同一組字跑 20 版挑最好看的（§5）
+const MIX_FROM = 301; // 這關起不再單調變難，改為混合難度（§5 步驟 5）
 
 // 難度曲線（§5 步驟 5）：前期字母少、字都很常見；後期字母多、字頻門檻放寬。
 // zipf：目標字最低字頻；baseZipf：基底字（轉盤字母來源）最低字頻；targets：目標字數範圍。
 const BANDS = [
-  { upTo: 2, len: 3, targets: [2, 3], zipf: 4.0, baseZipf: 4.5 },
-  { upTo: 6, len: 4, targets: [3, 4], zipf: 3.6, baseZipf: 4.0 },
-  { upTo: 15, len: 5, targets: [4, 5], zipf: 3.4, baseZipf: 3.8 },
-  { upTo: 30, len: 6, targets: [5, 6], zipf: 3.2, baseZipf: 3.5 },
-  { upTo: N_LEVELS, len: 7, targets: [6, 8], zipf: 3.0, baseZipf: 3.3 },
+  // 3 字母的目標字只能是基底字的異位構詞，常見字裡可出題的組合僅 20 出頭 → 上限 15 關
+  { upTo: 15, len: 3, targets: [2, 3], zipf: 4.0, baseZipf: 4.5 },
+  { upTo: 100, len: 4, targets: [3, 4], zipf: 3.6, baseZipf: 4.0 },
+  { upTo: 200, len: 5, targets: [4, 5], zipf: 3.4, baseZipf: 3.8 },
+  { upTo: 300, len: 6, targets: [5, 6], zipf: 3.2, baseZipf: 3.5 },
+  { upTo: Infinity, len: 7, targets: [6, 8], zipf: 3.0, baseZipf: 3.3 },
 ];
+
+// 前段照 upTo 遞增爬坡；MIX_FROM 起改擲骰（種子仍是關卡 id，輸出照樣確定性）：
+// 約 30% 抽到 4–5 字母的喘息關，其餘在 6–7 字母之間交替。
+function bandFor(id, rng) {
+  if (id < MIX_FROM) return BANDS.findIndex((b) => id <= b.upTo);
+  const r = rng();
+  if (r < 0.1) return 1;
+  if (r < 0.3) return 2;
+  if (r < 0.65) return 3;
+  return 4;
+}
 
 // ---- 資料載入與 alphagram 索引（§5 步驟 2：不要枚舉排列）----
 
@@ -301,8 +314,8 @@ const usedAlpha = new Set(); // 同一組字母不出兩關
 
 const levels = [];
 for (let id = 1; id <= N_LEVELS; id++) {
-  const bi = BANDS.findIndex((b) => id <= b.upTo);
   const rng = mulberry32(id);
+  const bi = bandFor(id, rng);
   let level = null;
   while (!level) {
     if (bandCursor[bi] >= bandCands[bi].length) throw new Error(`level ${id}: 基底字候選用罄`);
