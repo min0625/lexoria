@@ -51,7 +51,8 @@ body {
   font-family: var(--font-body);
   /* 暖紙不是扁平單色：極淡的暖暈染做出深度，仍在同一識別內 */
   background: radial-gradient(120% 90% at 50% -10%, var(--bg-tint), transparent 60%), var(--bg);
-  /* 避免長按選字、iOS 放大鏡（設計文件 §4）*/
+  /* 避免長按選字、iOS 放大鏡、連點兩下縮放（設計文件 §4）*/
+  touch-action: manipulation;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;

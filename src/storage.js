@@ -46,9 +46,19 @@ export function loadSave() {
   } catch {
     // JSON 壞掉一樣走重置
   }
-  return normalizeSave(raw);
+  const save = normalizeSave(raw);
+  // 首次開啟時間：舊存檔或壞值就以現在補上（無法回溯），立即落盤以免玩家沒操作就流失
+  if (!Number.isFinite(save.firstOpenAt)) {
+    save.firstOpenAt = Date.now();
+    persist(save);
+  }
+  return save;
 }
 
 export function persist(save) {
-  bridge.save(save);
+  try {
+    bridge.save(save);
+  } catch {
+    // 寫入失敗（隱私模式/配額）→ 本次改玩記憶體存檔，不讓遊戲掛掉；loadSave 開機就會寫，這裡不接會白屏
+  }
 }
