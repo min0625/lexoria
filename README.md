@@ -53,7 +53,7 @@ docs/               設計文件（單一事實來源，程式註解引用其章
 
 ## 開發階段
 
-- **Phase 1**：純 Web MVP，50 關，完全離線。
+- **Phase 1**：純 Web MVP，500 關，完全離線。
 - **Phase 2**：以 Capacitor 嵌入 iOS / Android，替換 `bridge.js` 為 native 實作。
 
 ## 授權
