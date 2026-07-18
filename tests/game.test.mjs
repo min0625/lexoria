@@ -142,6 +142,16 @@ test('hitIndex：距離 < 半徑×1.2 才命中', () => {
   assert.equal(hitIndex(0, 13, spots), -1);
 });
 
+test('hitIndex：命中圓重疊時選最近的，不是 index 較小的', () => {
+  // 圓心距 20 < 命中半徑合計 24，中間有重疊帶
+  const spots = [
+    { i: 0, x: 0, y: 0, r: 10 },
+    { i: 1, x: 20, y: 0, r: 10 },
+  ];
+  assert.equal(hitIndex(11, 0, spots), 1); // 在 0 的命中圓內，但離 1 較近
+  assert.equal(hitIndex(9, 0, spots), 0);
+});
+
 test('applyHit：重複字母綁按鈕實例，各選一次', () => {
   // APPLE：index 1、2 都是 P，兩顆各可選一次
   let sel = [];

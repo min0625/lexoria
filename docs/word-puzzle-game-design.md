@@ -63,7 +63,7 @@
 - `pointerdown` 時對轉盤容器 `setPointerCapture`：手指滑出轉盤範圍、甚至在畫面外放開，`pointerup` 仍會送到轉盤，手勢才能正確收尾（不做這個會出現「字母卡在選取狀態」的鬼 bug）。
 - 轉盤容器設 `touch-action: none`，否則滑動會觸發頁面捲動/下拉刷新。
 - 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡。
-- 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 半徑」自己算，命中範圍可以調大一點（實際按鈕的 1.2 倍），手感會好很多。
+- 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 半徑」自己算，命中範圍可以調大一點（實際按鈕的 1.2 倍），手感會好很多。放大後 7 字母小輪盤的命中圓會重疊，重疊時取**最近**的圓心（等於以中垂線分界），不能取「第一個符合的」，否則會誤觸隔壁字母。
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 
