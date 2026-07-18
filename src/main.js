@@ -96,6 +96,21 @@ document.addEventListener(
   },
   { once: true, capture: true }
 );
+// iOS Safari 連續快速點擊仍會叫出文字選取放大鏡，CSS（user-select / touch-action）擋不掉，
+// 只能對第二次 touchend preventDefault（設計文件 §4）。跳過互動元素：preventDefault 會吃掉
+// 它們的 click/focus/toggle，連點提示鈕會漏拍、勾選框會少切一次；轉盤走 pointer events，不受影響。
+let lastTouchEnd = 0;
+document.addEventListener(
+  'touchend',
+  (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd < 350 && !e.target.closest('button, input, label, a, summary'))
+      e.preventDefault();
+    lastTouchEnd = now;
+  },
+  { passive: false }
+);
+
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
@@ -245,7 +260,7 @@ function renderClearWords() {
 $('btn-next').addEventListener('click', () => {
   $('overlay-clear').hidden = true;
   dictCard.hide();
-  startLevel(replay ? save.currentLevel : currentLevelId + 1);
+  startLevel(currentLevelId + 1);
 });
 
 // ---- 提示（§8）----

@@ -62,7 +62,7 @@
 - 用 **Pointer Events**（`pointerdown` / `pointermove` / `pointerup`），一套 API 同時涵蓋滑鼠與觸控。
 - `pointerdown` 時對轉盤容器 `setPointerCapture`：手指滑出轉盤範圍、甚至在畫面外放開，`pointerup` 仍會送到轉盤，手勢才能正確收尾（不做這個會出現「字母卡在選取狀態」的鬼 bug）。
 - 轉盤容器設 `touch-action: none`，否則滑動會觸發頁面捲動/下拉刷新。
-- 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡；`touch-action: manipulation` 避免行動端連點兩下觸發縮放。
+- 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡；`touch-action: manipulation` 避免行動端連點兩下觸發縮放。iOS Safari 連續快速點擊仍會叫出文字選取放大鏡，CSS 擋不掉，需在 JS 對第二次 `touchend` `preventDefault()`（跳過 button/input/label/a/summary 等互動元素，否則會吃掉它們的 click/focus/toggle）。
 - 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 命中半徑」自己算。命中半徑 = 按鈕半徑 × 1.2（放大手感較好），但**上限夾在最近字母圓心間距的 0.35 倍**：3–4 字母的大間距輪盤維持寬鬆手感，6–7 字母的擁擠輪盤命中圓自動縮小，任兩顆字母間永遠留 ≥ 30% 間距的死區，手指掃過兩顆字母中間不會誤觸隔壁。範圍內同時符合多顆時取**最近**的圓心，不能取「第一個符合的」。
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
