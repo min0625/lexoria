@@ -3,10 +3,21 @@
 // 數值全部集中在這裡（設計文件 §8）。
 export const ECONOMY = {
   bonusCoins: 2,
+  claimCoins: 25,
+  claimCooldownMs: 4 * 60 * 60 * 1000, // 定時領取：每 4 小時一次（§8）
   clearCoins: 10,
   hintCost: 25,
   initialCoins: 50,
 };
+
+// 定時領取（§8）：不能累積——領取當下重設起點，離線多天回來也只有一份。
+// lastClaimAt 是壞值或在未來（時鐘倒轉）→ 一律視同可領，避免冷卻永不結束；
+// 調時鐘作弊不防，同「改 localStorage 本來就行」的既有取捨。
+export function claimStatus(lastClaimAt, now = Date.now()) {
+  if (!(lastClaimAt > 0) || lastClaimAt > now) return { ready: true, remainingMs: 0 };
+  const remainingMs = ECONOMY.claimCooldownMs - (now - lastClaimAt);
+  return { ready: remainingMs <= 0, remainingMs: Math.max(0, remainingMs) };
+}
 
 const MIN_WORD_LENGTH = 3;
 

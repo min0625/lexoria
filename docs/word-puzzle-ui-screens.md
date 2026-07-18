@@ -23,7 +23,7 @@
 
 ```
 ┌──────────────────────────┐
-│ [第42關]      🪙128   ⚙  │ ← 頂列：關卡鈕(進B)、金幣、設定鈕(開D)
+│ [第42關] 🪙128 [+25] ⚙  │ ← 頂列：關卡鈕(進B)、金幣、定時領取鈕(可領時顯示+25；冷卻中壓暗顯示 h:mm 倒數，仍可點——點了抖動並顯示「X 小時 Y 分後可領取金幣」，避免倒數被誤讀成限時。最後一分鐘改逐秒顯示「59 秒」，此時點擊訊息改「就快好了！」；歸零翻成+25 的瞬間播彈跳動畫)、設定鈕(開D)
 │                          │
 │     ┌─┬─┬─┬─┬─┐         │
 │     │P│L│A│N│E│         │
@@ -119,6 +119,12 @@
 | `shareText` | 我在 Lexoria 已經破到第 {n} 關了！ |
 | `shareCopied` | 已複製！ |
 | `shareImageTitle` | Lexoria · 第 {n} 關 |
+| `claimLabel` | 領取金幣（僅 aria-label，冷卻中換成 claimWait 文案） |
+| `claimReady` | +{n} |
+| `claimSeconds` | {s} 秒 |
+| `claimSuccess` | 已領取金幣 +{n} |
+| `claimWait` | {h} 小時 {m} 分後可領取金幣（不足 1 小時：{m} 分鐘後可領取金幣） |
+| `claimAlmost` | 就快好了！ |
 | `redeemPlaceholder` | 貼上兌換碼 |
 | `redeemAction` | 兌換 |
 | `redeemInvalid` | 無效的兌換碼 |

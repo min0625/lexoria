@@ -166,6 +166,15 @@ button {
   align-items: center;
   gap: 5px;
 }
+#btn-claim.cooling {
+  /* 領取鈕冷卻中：壓暗但保持可點——點擊會顯示剩餘時間說明 */
+  opacity: 0.55;
+  box-shadow: none;
+}
+#btn-claim.pop {
+  /* 倒數歸零翻成可領的瞬間：重用格子字母的登場動畫 */
+  animation: pop 0.3s ease-out;
+}
 .chip.coin::before {
   /* 金幣圖示，跟著文字上琥珀色 */
   content: "";
@@ -706,6 +715,7 @@ button {
 /* prefers-reduced-motion：跳過動畫與過場，直接顯示結果（設計文件 §7）*/
 @media (prefers-reduced-motion: reduce) {
   .cell.pop,
+  #btn-claim.pop,
   .preview.shake,
   .shake,
   .tutorial,

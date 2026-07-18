@@ -197,10 +197,12 @@ function speak(word) {
 | 拼出一個 bonus 字 | +2 |
 | 過關 | +10 |
 | 使用提示（揭示一格） | −25 |
+| 定時領取（每 4 小時一次） | +25 |
 | 新玩家初始 | 50（夠用兩次提示，教學關順便教用法） |
 
 - 數值全部集中成一個常數物件（放 `game.js` 頂部即可），不要散在程式各處。
 - 原則：正常遊玩下每 3–4 關能存到一次提示——卡關有救，但不會氾濫到無腦點提示。
+- 定時領取**不可累積**：領取當下重設計時起點（存檔記 `lastClaimAt`），離線多天回來也只有一份——沒有錯過懲罰、沒有囤積誘因。時鐘倒轉或壞值一律視同可領（調時鐘作弊不防，同改 localStorage 的既有取捨）。這是遊戲唯一的計時元素，只獎不罰，不違反 §1「沒有計時、沒有失敗狀態」——那指的是解謎過程本身。
 
 ### 提示的具體行為（邊界情況最多的功能）
 
@@ -211,7 +213,7 @@ function speak(word) {
 
 ## 9. 狀態與進度儲存
 
-- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound, haptic }, firstOpenAt }`，一個 key、一個 JSON，夠了。`firstOpenAt`（首次開啟的 timestamp）在缺漏時於載入當下補記——這種資料不記就無法回溯，先記下來，統計系統等真的要做再說（§16 精神）。
+- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound, haptic }, firstOpenAt, lastClaimAt }`，一個 key、一個 JSON，夠了。`firstOpenAt`（首次開啟的 timestamp）在缺漏時於載入當下補記——這種資料不記就無法回溯，先記下來，統計系統等真的要做再說（§16 精神）。
 - `levelState` 是**進行中關卡**的進度（已找到的目標字、提示揭示過的格子）：玩家中途關掉頁面不該歸零——提示是花金幣買的，丟了等於扣錢沒拿到東西。過關進下一關時清空。
 - `version` 欄位第一天就放：日後存檔格式變更才有辦法寫遷移；讀到壞掉或無法辨識的資料時，重置成初始存檔（Phase 1 沒有付費資產，重置的代價可以接受）。
 - **重要**：把存檔讀寫包成一個小模組（`storage.js`，約 20 行），第二階段嵌入 App 時只要換掉這一個模組改走 native bridge（§13），遊戲邏輯完全不動。這是唯一值得預留的抽象層。
