@@ -3,15 +3,20 @@
 
 const LETTER_KEY = /^[a-zA-Z]$/;
 
-// 命中判斷：手指座標與每個字母圓心的距離 < 半徑 × factor（不用 elementFromPoint）。
-// 7 顆字母的小輪盤上命中圓會重疊，取「範圍內最近」而非「第一個符合」，
-// 讓重疊區以中垂線分界，手指靠近誰就選誰，避免誤觸隔壁字母。
+// 命中判斷：手指座標與每個字母圓心的距離 < 命中半徑（不用 elementFromPoint）。
+// 命中半徑 = 視覺半徑 × factor，但夾在「最近字母圓心間距 × 0.35」以下：
+// 3–4 顆的大間距輪盤維持寬鬆手感，6–7 顆的擁擠輪盤命中圓自動縮小，
+// 任兩顆字母之間永遠留 ≥ 30% 間距的死區，手指掃過中間不會誤觸隔壁；
+// 範圍內仍取最近的圓心保險。
 export function hitIndex(x, y, spots, factor = 1.2) {
+  let gap = Infinity;
+  for (const a of spots)
+    for (const b of spots) if (a !== b) gap = Math.min(gap, Math.hypot(a.x - b.x, a.y - b.y));
   let best = -1;
   let bestD = Infinity;
   for (const s of spots) {
     const d = Math.hypot(x - s.x, y - s.y);
-    if (d < s.r * factor && d < bestD) {
+    if (d < Math.min(s.r * factor, gap * 0.35) && d < bestD) {
       bestD = d;
       best = s.i;
     }

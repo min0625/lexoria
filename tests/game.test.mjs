@@ -3,8 +3,9 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { bridge } from '../src/bridge.js';
 import { cellsOf, createGame, ECONOMY } from '../src/game.js';
-import { defaultSave, normalizeSave } from '../src/storage.js';
+import { defaultSave, normalizeSave, persist } from '../src/storage.js';
 import { applyHit, hitIndex, permutationAt, shuffleStep } from '../src/wheel.js';
 
 const levels = JSON.parse(await readFile(new URL('../data/levels.json', import.meta.url)));
@@ -142,14 +143,16 @@ test('hitIndex：距離 < 半徑×1.2 才命中', () => {
   assert.equal(hitIndex(0, 13, spots), -1);
 });
 
-test('hitIndex：命中圓重疊時選最近的，不是 index 較小的', () => {
-  // 圓心距 20 < 命中半徑合計 24，中間有重疊帶
+test('hitIndex：字母擁擠時命中半徑縮到間距×0.35，中間留死區', () => {
+  // 圓心距 20 → 命中半徑被夾成 7（而非 10×1.2=12），7~13 的中間帶不命中
   const spots = [
     { i: 0, x: 0, y: 0, r: 10 },
     { i: 1, x: 20, y: 0, r: 10 },
   ];
-  assert.equal(hitIndex(11, 0, spots), 1); // 在 0 的命中圓內，但離 1 較近
-  assert.equal(hitIndex(9, 0, spots), 0);
+  assert.equal(hitIndex(6, 0, spots), 0);
+  assert.equal(hitIndex(14, 0, spots), 1);
+  assert.equal(hitIndex(10, 0, spots), -1); // 兩顆正中間 = 死區
+  assert.equal(hitIndex(8, 0, spots), -1);
 });
 
 test('applyHit：重複字母綁按鈕實例，各選一次', () => {
@@ -215,6 +218,20 @@ test('normalizeSave：合法存檔保留內容並補齊缺漏 settings', () => {
   assert.equal(n.currentLevel, 3);
   assert.equal(n.settings.sound, false);
   assert.equal(n.settings.haptic, true); // 缺漏欄位補預設
+  // firstOpenAt 這類額外欄位要原樣保留（loadSave 靠這點沿用舊值而非重寫成現在）
+  assert.equal(normalizeSave({ ...defaultSave(), firstOpenAt: 123 }).firstOpenAt, 123);
+});
+
+test('persist：寫入失敗不往外丟（loadSave 開機就寫，丟出去會白屏）', () => {
+  const original = bridge.save;
+  bridge.save = () => {
+    throw new Error('QuotaExceededError');
+  };
+  try {
+    assert.doesNotThrow(() => persist(defaultSave()));
+  } finally {
+    bridge.save = original;
+  }
 });
 
 // ---- 關卡資料驗證器（設計文件 §5 步驟 6）：任何一關不合法就讓測試失敗 ----

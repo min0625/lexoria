@@ -62,8 +62,8 @@
 - 用 **Pointer Events**（`pointerdown` / `pointermove` / `pointerup`），一套 API 同時涵蓋滑鼠與觸控。
 - `pointerdown` 時對轉盤容器 `setPointerCapture`：手指滑出轉盤範圍、甚至在畫面外放開，`pointerup` 仍會送到轉盤，手勢才能正確收尾（不做這個會出現「字母卡在選取狀態」的鬼 bug）。
 - 轉盤容器設 `touch-action: none`，否則滑動會觸發頁面捲動/下拉刷新。
-- 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡。
-- 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 半徑」自己算，命中範圍可以調大一點（實際按鈕的 1.2 倍），手感會好很多。放大後 7 字母小輪盤的命中圓會重疊，重疊時取**最近**的圓心（等於以中垂線分界），不能取「第一個符合的」，否則會誤觸隔壁字母。
+- 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡；`touch-action: manipulation` 避免行動端連點兩下觸發縮放。
+- 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 命中半徑」自己算。命中半徑 = 按鈕半徑 × 1.2（放大手感較好），但**上限夾在最近字母圓心間距的 0.35 倍**：3–4 字母的大間距輪盤維持寬鬆手感，6–7 字母的擁擠輪盤命中圓自動縮小，任兩顆字母間永遠留 ≥ 30% 間距的死區，手指掃過兩顆字母中間不會誤觸隔壁。範圍內同時符合多顆時取**最近**的圓心，不能取「第一個符合的」。
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 
@@ -211,7 +211,7 @@ function speak(word) {
 
 ## 9. 狀態與進度儲存
 
-- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound, haptic } }`，一個 key、一個 JSON，夠了。
+- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound, haptic }, firstOpenAt }`，一個 key、一個 JSON，夠了。`firstOpenAt`（首次開啟的 timestamp）在缺漏時於載入當下補記——這種資料不記就無法回溯，先記下來，統計系統等真的要做再說（§16 精神）。
 - `levelState` 是**進行中關卡**的進度（已找到的目標字、提示揭示過的格子）：玩家中途關掉頁面不該歸零——提示是花金幣買的，丟了等於扣錢沒拿到東西。過關進下一關時清空。
 - `version` 欄位第一天就放：日後存檔格式變更才有辦法寫遷移；讀到壞掉或無法辨識的資料時，重置成初始存檔（Phase 1 沒有付費資產，重置的代價可以接受）。
 - **重要**：把存檔讀寫包成一個小模組（`storage.js`，約 20 行），第二階段嵌入 App 時只要換掉這一個模組改走 native bridge（§13），遊戲邏輯完全不動。這是唯一值得預留的抽象層。
