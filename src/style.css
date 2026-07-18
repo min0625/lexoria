@@ -3,63 +3,38 @@
    色票沿用「暖紙＋森林墨綠＋琥珀」的識別，但把預設的扁平米白做深、
    給它層次與觸感（§7 只是草案值，定案時只改這組變數即可）。 */
 :root {
-  /* 色票：深青墨字磚 + 暖珊瑚強調，鋪在中性暖紙上。
-     刻意放掉通用的「綠+金」預設，改一組有主張、切合「墨水/字典」主題的雙色。*/
-  --bg: #f4efe8; /* 中性暖紙底（較不偏黃）*/
-  --bg-tint: #efe8dd; /* 背景漸層的另一端（微暈染，非扁平單色）*/
-  --surface: #fffdf9; /* 卡片／轉盤底（暖白，非純白）*/
-  --surface-hi: #ffffff; /* 立體件的高光面（emboss 頂端）*/
-  --grid-empty: #ddd6ca; /* 未填格（凹槽）*/
-  --grid-filled: #0f6d6e; /* 已填格底：深青墨。filled 與 revealed 同色（§10）；白字 6.1:1 AA */
-  --grid-filled-hi: #148486; /* 已填格頂端高光（僅漸層用，仍屬同一狀態）*/
-  --letter-on-fill: #ffffff;
-  --text: #23282a;
-  --text-soft: #6a6f6e; /* 次要文字（釋義、授權）*/
-  --line: #e7ded0; /* 立體件的細邊框，取代硬陰影邊緣 */
-  --accent: #e5613e; /* 暖珊瑚：選中字母底／手勢連線／強調光暈（填色與發光用）*/
-  --accent-rgb: 229 97 62; /* 同色的 RGB 分量，供半透明光暈 rgb(var(--accent-rgb)/α) */
-  --accent-ink: #a63417; /* 珊瑚墨色（文字用）：16px 粗體在珊瑚淡底/暖白上皆 ≥4.5:1（AA）*/
-  --accent-soft: #fbe0d3; /* 珊瑚淡底（金幣膠囊、目前關）*/
-  --on-accent: #3a1608; /* 珊瑚底上的字（選中字母）：深色比白字清楚，兩套主題皆 ≥4.5:1 */
+  color-scheme: dark; /* 固定深色（主文件 §19-3）：表單控件、捲軸也走深色 */
 
-  /* depth：一組分層陰影，色調改中性冷灰以配青／珊瑚（取代扁平 0 1px 3px）*/
-  --shadow-sm: 0 1px 2px rgb(28 40 40 / 0.16);
-  --shadow-md: 0 1px 2px rgb(28 40 40 / 0.12), 0 4px 12px rgb(28 40 40 / 0.14);
-  --shadow-lg: 0 4px 10px rgb(28 40 40 / 0.16), 0 16px 40px rgb(28 40 40 / 0.22);
-  --emboss: inset 0 1px 0 rgb(255 255 255 / 0.65); /* 立體件頂端內高光 */
-  --deboss: inset 0 2px 4px rgb(28 40 40 / 0.18); /* 凹槽（未填格）*/
+  /* 色票：深青墨字磚 + 暖珊瑚強調，鋪在深青墨黑底上。
+     刻意放掉通用的「綠+金」預設，改一組有主張、切合「墨水/字典」主題的雙色。*/
+  --bg: #10201f; /* 深青墨黑底 */
+  --bg-tint: #16302c; /* 背景漸層的另一端（微暈染，非扁平單色）*/
+  --surface: #1b2c2b; /* 卡片／轉盤底 */
+  --surface-hi: #223634; /* 深色靠亮面差＋細邊做層次，不靠黑陰影 */
+  --grid-empty: #2a3b39; /* 未填格（凹槽）*/
+  --grid-filled: #1c8f88; /* 已填格：亮青墨。filled 與 revealed 同色（§10）；白字（大字粗體）達 AA-large */
+  --grid-filled-hi: #29a69d; /* 已填格頂端高光（僅漸層用，仍屬同一狀態）*/
+  --letter-on-fill: #ffffff;
+  --text: #e6ede9;
+  --text-soft: #9aa5a1; /* 次要文字（釋義、授權）*/
+  --line: rgb(255 255 255 / 0.09); /* 立體件的細邊框，取代硬陰影邊緣 */
+  --accent: #ff7a52; /* 亮珊瑚：選中字母底／手勢連線／強調光暈（填色與發光用）*/
+  --accent-rgb: 255 122 82; /* 同色的 RGB 分量，供半透明光暈 rgb(var(--accent-rgb)/α) */
+  --accent-ink: #ff8f63; /* 珊瑚墨色（文字用）：深底上亮珊瑚本身即達 AA */
+  --accent-soft: rgb(255 122 82 / 0.16); /* 珊瑚淡底（金幣膠囊、目前關），疊在深 surface 上 */
+  --on-accent: #3a1608; /* 珊瑚底上的字（選中字母）：深色比白字清楚，≥4.5:1 */
+
+  /* depth：黑陰影在深底幾乎看不見 → 加深陰影＋用細亮邊當接觸線 */
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-md: 0 2px 6px rgb(0 0 0 / 0.44), 0 1px 0 rgb(255 255 255 / 0.04) inset;
+  --shadow-lg: 0 8px 20px rgb(0 0 0 / 0.55), 0 1px 0 rgb(255 255 255 / 0.05) inset;
+  --emboss: inset 0 1px 0 rgb(255 255 255 / 0.06); /* 立體件頂端內高光 */
+  --deboss: inset 0 2px 5px rgb(0 0 0 / 0.45); /* 凹槽（未填格）*/
 
   /* 字型：圓體 display 給遊戲件（字磚、轉盤字、標題）＝親切、玩具感；
      內文用乾淨系統字。全離線，不引入 CDN 字檔（主文件約束）。 */
   --font-display: ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", system-ui, sans-serif;
   --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #10201f; /* 深青墨黑底 */
-    --bg-tint: #16302c;
-    --surface: #1b2c2b;
-    --surface-hi: #223634; /* 深色靠亮面差＋細邊做層次，不靠黑陰影 */
-    --grid-empty: #2a3b39;
-    --grid-filled: #1c8f88; /* 已填格：亮青墨；白字（大字粗體）達 AA-large */
-    --grid-filled-hi: #29a69d;
-    --letter-on-fill: #ffffff;
-    --text: #e6ede9;
-    --text-soft: #9aa5a1;
-    --line: rgb(255 255 255 / 0.09);
-    --accent: #ff7a52; /* 亮珊瑚 */
-    --accent-rgb: 255 122 82;
-    --accent-ink: #ff8f63; /* 深底上亮珊瑚本身即達 AA */
-    --accent-soft: rgb(255 122 82 / 0.16); /* 半透明珊瑚，疊在深 surface 上 */
-    --on-accent: #3a1608; /* 珊瑚底上仍用深字，與淺色主題一致 */
-
-    /* 深色 depth：黑陰影在深底幾乎看不見 → 加深陰影＋用細亮邊當接觸線 */
-    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-    --shadow-md: 0 2px 6px rgb(0 0 0 / 0.44), 0 1px 0 rgb(255 255 255 / 0.04) inset;
-    --shadow-lg: 0 8px 20px rgb(0 0 0 / 0.55), 0 1px 0 rgb(255 255 255 / 0.05) inset;
-    --emboss: inset 0 1px 0 rgb(255 255 255 / 0.06);
-    --deboss: inset 0 2px 5px rgb(0 0 0 / 0.45);
-  }
 }
 
 * {
@@ -405,7 +380,7 @@ button {
 }
 .wheel-letter.selected {
   background: var(--accent);
-  color: var(--on-accent); /* 珊瑚底上用深字，比白字清楚（兩套主題皆 AA）*/
+  color: var(--on-accent); /* 珊瑚底上用深字，比白字清楚（AA）*/
   border-color: transparent;
   transform: scale(1.09);
   box-shadow:
@@ -575,7 +550,7 @@ button {
   line-height: 1.5;
 }
 .about-text a {
-  color: var(--accent-ink); /* 珊瑚墨：兩套主題皆 ≥4.5:1（AA），取代瀏覽器預設藍 */
+  color: var(--accent-ink); /* 珊瑚墨：≥4.5:1（AA），取代瀏覽器預設藍 */
   text-decoration: underline;
 }
 .btn-primary {
