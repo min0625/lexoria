@@ -5,6 +5,7 @@
 //   bun tools/make-code.mjs keygen [kid]                          產生金鑰對（kid 預設隨機 6 碼 hex），印出要貼進 src/redeem.js 的公鑰
 //   bun tools/make-code.mjs coins <amount> [--exp 2026-08-31] [--kid <kid>]
 //   bun tools/make-code.mjs level <id>     [--exp 2026-08-31] [--kid <kid>]
+// --exp 省略時預設 1 天後過期；--exp none 為永久有效。
 // --kid 省略時，tools/keys/ 只有一把私鑰就用那把。
 import { createPrivateKey, generateKeyPairSync, randomBytes, randomUUID, sign } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -48,7 +49,7 @@ const effect =
       : null;
 if (!effect)
   die(
-    '用法：make-code.mjs keygen [kid] | coins <amount> | level <id>  （選項：--exp 2026-08-31 --kid <kid>）'
+    '用法：make-code.mjs keygen [kid] | coins <amount> | level <id>  （選項：--exp 2026-08-31|none，省略預設 1 天；--kid <kid>）'
   );
 const value = effect.amount ?? effect.id;
 if (!Number.isInteger(value) || value <= 0) die(`數值必須是正整數，收到：${arg}`);
@@ -61,13 +62,17 @@ if (effect.type === 'level') {
 }
 
 let exp;
-if (flags.exp) {
+if (flags.exp === 'none') {
+  // 永久有效
+} else if (flags.exp) {
   // 純日期視為台灣時區當日結束——「限 2026-08-31 前兌換」的自然語意
   const iso = /^\d{4}-\d{2}-\d{2}$/.test(flags.exp) ? `${flags.exp}T23:59:59+08:00` : flags.exp;
   const ms = Date.parse(iso);
   if (Number.isNaN(ms)) die(`看不懂的日期：${flags.exp}`);
   if (ms < Date.now()) die(`過期日在過去：${flags.exp}`);
   exp = Math.floor(ms / 1000);
+} else {
+  exp = Math.floor(Date.now() / 1000) + 86400; // 預設 1 天
 }
 
 function soleKid() {

@@ -38,6 +38,7 @@ const keyOf = (cell) => `${cell.r},${cell.c}`;
  * @param saved  進行中進度 { foundWords, revealedCells, foundBonusWords }（皆為陣列）
  * @param rng    亂數來源，測試時可注入固定值
  */
+// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: 16 vs 上限 15，只超一分——關卡狀態集中在單一 closure 是刻意設計（§10），不為 lint 拆散
 export function createGame(level, saved = {}, rng = Math.random) {
   const foundWords = new Set(saved.foundWords ?? []);
   const foundBonusWords = new Set(saved.foundBonusWords ?? []);
