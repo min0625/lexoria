@@ -34,4 +34,6 @@ export const strings = {
   claimSuccess: (n) => `已領取金幣 +${n}`,
   claimWait: (h, m) => (h > 0 ? `${h} 小時 ${m} 分後可領取金幣` : `${m} 分鐘後可領取金幣`),
   claimAlmost: '就快好了！',
+  loadFailed: '關卡資料載入失敗，請檢查網路連線',
+  retry: '重新載入',
 };

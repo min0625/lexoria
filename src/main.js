@@ -135,10 +135,12 @@ function updateCoins() {
 
 // ---- 拼字串顯示區與提示訊息 ----
 let previewTimer = 0;
+let prevWordLen = 0; // 上一次拼字長度——flash 訊息佔著 textContent 的期間拿它比長度會漏掉 tick
 function showPreview(word) {
   clearTimeout(previewTimer);
   const el = $('preview');
-  if (word.length > el.textContent.length) SFX.tick();
+  if (word.length > prevWordLen) SFX.tick();
+  prevWordLen = word.length;
   el.className = 'preview';
   el.textContent = word;
 }
@@ -378,16 +380,16 @@ function renderLevelList() {
   }
 }
 
-$('btn-level').addEventListener('click', () => {
+function showLevels() {
   renderLevelList();
   updateCoins();
   showScreen('levels');
-});
+  // 直接捲到目前關卡——玩到後期每次從第 1 關捲下來太折騰；全破時沒有 current 鈕，留在頂部
+  $('level-list').querySelector('.current')?.scrollIntoView({ block: 'center' });
+}
+$('btn-level').addEventListener('click', showLevels);
 $('btn-back').addEventListener('click', () => startLevel(currentLevelId));
-$('btn-allclear-back').addEventListener('click', () => {
-  renderLevelList();
-  showScreen('levels');
-});
+$('btn-allclear-back').addEventListener('click', showLevels);
 
 // ---- 設定 overlay ----
 $('btn-settings').addEventListener('click', () => {
@@ -472,7 +474,17 @@ $('btn-redeem').addEventListener('click', async () => {
 
 // ---- 啟動 ----
 (async function boot() {
-  levels = await (await fetch('data/levels.json')).json();
+  try {
+    levels = await (await fetch('data/levels.json')).json();
+  } catch {
+    // 取不到關卡資料（斷網、部署中 404）→ 顯示重試畫面，不留白屏
+    $('error-text').textContent = strings.loadFailed;
+    $('btn-reload').textContent = strings.retry;
+    $('btn-reload').addEventListener('click', () => location.reload());
+    $('screen-game').hidden = true;
+    $('screen-error').hidden = false;
+    return;
+  }
   startLevel(save.currentLevel);
   // 兌換連結（?code=…）：自動帶入兌換碼並打開設定卡，玩家只要按「兌換」
   const code = new URLSearchParams(location.search).get('code');
