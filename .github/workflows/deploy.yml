@@ -27,10 +27,16 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # 只發佈執行期需要的檔案——docs/、tests/、tools/ 等開發用內容不上正式站
+      - name: Stage site files
+        run: |
+          mkdir _site
+          cp -r index.html src data assets _site/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment

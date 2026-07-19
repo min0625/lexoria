@@ -74,6 +74,13 @@
     <button id="btn-allclear-back" class="btn-primary" type="button"></button>
   </section>
 
+  <!-- H. 載入失敗（levels.json 取不到時由 boot() 顯示，不留白屏） -->
+  <section id="screen-error" class="screen center-screen" hidden>
+    <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
+    <h1 id="error-text"></h1>
+    <button id="btn-reload" class="btn-primary" type="button"></button>
+  </section>
+
   <!-- C. 過關 overlay -->
   <div id="overlay-clear" class="overlay" hidden>
     <div class="card">
