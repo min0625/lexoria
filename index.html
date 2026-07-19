@@ -50,7 +50,8 @@
       <button id="btn-claim" class="chip coin" type="button"></button>
       <button id="btn-settings" class="chip" type="button" aria-label="設定"><span class="icon icon-gear"></span></button>
     </header>
-    <div id="grid" class="grid-area"></div>
+    <!-- 載入提示（靜態文字，不經 strings.js——JS 下載與 levels.json 取得期間就要可見）：startLevel 建格盤時清掉 -->
+    <div id="grid" class="grid-area"><p class="loading-text">載入中…</p></div>
     <div id="preview" class="preview" aria-live="polite"></div>
     <div class="wheel-row">
       <button id="btn-hint" class="hint-btn" type="button" aria-label="提示"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>

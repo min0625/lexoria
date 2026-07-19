@@ -195,6 +195,19 @@ button {
   padding: 8px;
   container-type: size; /* 讓 .grid 用 cq 單位量「實際分到的空間」而非視窗 */
 }
+/* 開站載入提示（index.html 靜態內容）：慢網下不留死畫面；boot() 完成後被 createGrid 清掉 */
+.loading-text {
+  color: var(--text-soft);
+  animation: loading-pulse 1.2s ease-in-out infinite alternate;
+}
+@keyframes loading-pulse {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.35;
+  }
+}
 .grid {
   display: grid;
   grid-template-rows: repeat(var(--rows), 1fr);
@@ -719,7 +732,8 @@ button {
   .preview.shake,
   .shake,
   .tutorial,
-  .card {
+  .card,
+  .loading-text {
     animation: none;
   }
   .chip,
