@@ -131,6 +131,9 @@ document.addEventListener(
           el.muted = false;
         },
         (e) => {
+          // playSfx 在同一個手勢裡接手時會 pause()，把這個 play() 中止成 AbortError——
+          // 那不是解鎖失敗（已經在手勢內播過就算解鎖），別在 debug 面板謊報。
+          if (e.name === 'AbortError') return;
           dbg(`unlock(${name}) FAILED: ${e}`); // 這顆之後很可能整場都放不出聲音
           el.muted = false;
         }
@@ -160,13 +163,17 @@ function playSfx(name) {
   const el = sfxAudio[name];
   // seek 和 play() 分開量：合在一起量會分不出是倒帶貴還是播放貴（實測全部是 play()）。
   const t0 = performance.now();
-  el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
+  // 先 pause 再倒帶：解鎖的靜音播放可能還在跑（第一個手勢內 pointerdown 解鎖、pointerup 播音效），
+  // 直接 muted=false 等於從半途解除靜音，而 currentTime 的 seek 是非同步的、來不及生效——
+  // 聽到的是尾巴，症狀就是第一次載入時音效延遲／變小聲／整個沒聲音。暫停後 seek 才會確實歸零。
+  el.pause();
   el.currentTime = 0;
+  el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
   const t1 = performance.now();
   el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
   const t2 = performance.now();
   dbg(
-    `playSfx(${name}) seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
+    `playSfx(${name}) stop+seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
       `paused=${el.paused} ready=${el.readyState} muted=${el.muted} vol=${el.volume}`
   );
 }
