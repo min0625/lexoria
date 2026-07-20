@@ -42,7 +42,6 @@ $('settings-title').textContent = strings.settings;
 $('label-sound').textContent = strings.sound;
 $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
-$('btn-share').textContent = strings.share;
 $('btn-download').textContent = strings.download;
 $('redeem-input').placeholder = strings.redeemPlaceholder;
 $('btn-redeem').textContent = strings.redeemAction;
@@ -412,30 +411,38 @@ $('overlay-settings').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
 });
 // 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實
-let shareTimer = 0;
-// 分享面板關閉後才開始計時；文案較長，給足閱讀時間
-function flashShare(msg) {
-  $('btn-share').textContent = msg;
-  clearTimeout(shareTimer);
-  shareTimer = setTimeout(() => {
-    $('btn-share').textContent = strings.share;
-  }, 2500);
+// 過關卡片與設定各掛一顆，文案不同、分享內容相同
+function wireShare(btn, label) {
+  btn.textContent = label;
+  // timer 逐顆各自持有：兩顆雖不會同時顯示，但閃字會活過 overlay 關閉，
+  // 共用一個 timer 時後點的那顆會取消前一顆的還原，把它永久卡在提示文案上
+  let timer = 0;
+  // 分享面板關閉後才開始計時；文案較長，給足閱讀時間
+  const flash = (msg) => {
+    btn.textContent = msg;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      btn.textContent = label;
+    }, 2500);
+  };
+  btn.addEventListener('click', async () => {
+    if (!game || !wheel) return; // boot() 尚未完成（fetch levels.json 中）
+    try {
+      const text = strings.shareText(
+        currentLevelId,
+        wheel.getLetters(),
+        snapshotText(game.getCells())
+      );
+      const mode = await bridge.share(text, location.href);
+      if (mode === 'copied') flash(strings.shareCopied);
+      else if (mode === 'failed') flash(strings.shareFailed); // 剪貼簿與分享面板都不可用
+    } catch {
+      // bridge.share 不會 throw（剪貼簿／取消都在裡面吞掉），這裡只兜底文案組裝出錯
+    }
+  });
 }
-$('btn-share').addEventListener('click', async () => {
-  if (!game || !wheel) return; // boot() 尚未完成（fetch levels.json 中）
-  try {
-    const text = strings.shareText(
-      currentLevelId,
-      wheel.getLetters(),
-      snapshotText(game.getCells())
-    );
-    const mode = await bridge.share(text, location.href);
-    if (mode === 'copied') flashShare(strings.shareCopied);
-    else if (mode === 'failed') flashShare(strings.shareFailed); // 剪貼簿與分享面板都不可用
-  } catch {
-    // bridge.share 不會 throw（剪貼簿／取消都在裡面吞掉），這裡只兜底文案組裝出錯
-  }
-});
+wireShare($('btn-share'), strings.share);
+wireShare($('btn-share-clear'), strings.shareScore);
 // 快照圖（含 wheel 目前排列）改為手動下載——帶檔分享時多數目標會丟 text，圖只給想要的人
 $('btn-download').addEventListener('click', async () => {
   if (!game || !wheel) return;
