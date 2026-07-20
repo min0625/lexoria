@@ -24,14 +24,16 @@ if ('speechSynthesis' in window) {
   // （click）念過一次後，後續轉盤答對就都念得出來。
   // 實機測過的：拖曳結束的 touchend 叫不醒（連解鎖那句自己都被丟掉），click 可以。解鎖那
   // 句同樣是 volume 0 卻念得出來，所以音量不是變因，只有手勢種類是。
-  // pointerdown 還沒試過，而它很可能才是關鍵：同一支 app 解鎖 <audio> 用的就是 pointerdown
-  // （main.js），代表 iOS 認這個事件給播放權限；HTML 規範的 activation triggering events 也
-  // 列了 pointerdown 而沒列 touchstart。掛上去的話第一次手指按下轉盤就解鎖，不必等到玩家
-  // 碰巧點到按鈕——app 開頁直接進遊戲畫面，沒有任何保證會發生的點擊。
-  // 三個事件都掛，每個手勢都試到有一句 onstart 為止：叫不醒的那幾次本來就是無聲丟棄，
-  // 重試不花成本，也不必在 code 裡分辨哪種手勢算數。
-  // ponytail: 若 pointerdown 也叫不醒，純拖曳的玩家在第一次點擊前只會聽到命中音效
-  // （speak() 裡 300ms 檢查的退路）。那就是這條路的天花板，不要再往下試第五種事件。
+  // pointerdown 也實機測過了：叫不醒。無痕分頁開場連拖兩個字都沒有 onstart，第一次點擊
+  // （切關卡按鈕）當下才 onstart，之後拖曳就正常念。曾懷疑是 speak() 開頭的 cancel() 砍掉
+  // pointerdown 排入的解鎖句，試著只在 unlocked 後才 cancel——行為完全沒變，且 log 顯示
+  // 解鎖句排入後 pending 仍為 false，表示它根本沒進佇列就被丟棄，沒有東西可砍。已還原。
+  // 所以只有 click 算數。三個事件都掛著不動：叫不醒的那幾次本來就是無聲丟棄，重試不花成本，
+  // 也不必在 code 裡分辨哪種手勢算數。
+  // ponytail: 純拖曳的玩家在第一次點擊前只會聽到命中音效（speak() 裡 300ms 檢查的退路）。
+  // 解鎖是「每次載入頁面」重算的，重新整理／分頁還原都要重來，不是首次遊玩一次就永久有效；
+  // 但過關卡片的下一關、切關卡、查詞卡都是 click，所以缺口通常止於該次載入的那一關。
+  // 這就是這條路的天花板，不要再往下試第五種事件。
   const unlock = () => {
     if (unlocked || speechSynthesis.speaking || speechSynthesis.pending) return;
     const u = new SpeechSynthesisUtterance('a'); // 空字串沒東西可念，會連解鎖自己一起被丟掉
@@ -55,10 +57,7 @@ export function speak(word, onError, src = '?') {
     `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in window ? speechSynthesis.getVoices().length : 'n/a'}`
   );
   if (!hasEnglishVoice) return false;
-  // 連續呼叫時不排隊，直接改念最新的字。但引擎還沒醒時不能 cancel：pointerdown 排入的解鎖句
-  // 要等引擎醒才會念，而一次拖曳從 pointerdown 到答對只隔幾百 ms，這裡的 cancel 會把它砍掉，
-  // 拖曳因此永遠解鎖不了自己。醒之前沒有聲音可蓋，cancel 沒有好處。
-  if (unlocked) speechSynthesis.cancel();
+  speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
   // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
   const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
