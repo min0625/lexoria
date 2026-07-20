@@ -2,7 +2,7 @@
 // wheel → game.submit(word) → 結果物件 → 這裡分派給 grid / HUD / 特效。
 
 import { bridge } from './bridge.js';
-import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
+import { createDictionaryCard, setSpeechDebug, speak, stopSpeech } from './dictionary-card.js';
 import { claimStatus, createGame, ECONOMY } from './game.js';
 import { createGrid, snapshotBlob, snapshotText } from './grid.js';
 import { verifyCode } from './redeem.js';
@@ -56,6 +56,7 @@ let currentLevelId = save.currentLevel;
 let replay = false; // 重玩已完成關卡：不存 levelState、過關不給金幣（UI 文件 §3）
 
 const dictCard = createDictionaryCard($('dict-card'));
+setSpeechDebug(dbg);
 
 // ---- 音效：Kenney Interface Sounds（CC0），本地 wav（§7、§14）----
 // 原本走 Web Audio API（AudioContext + decodeAudioData），但實機診斷（?debug 面板）
@@ -195,7 +196,7 @@ function onSubmit(word) {
       grid.update(game.getCells());
       // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
       // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
-      const spoken = save.settings.sound && speak(word, SFX.target, dbg);
+      const spoken = save.settings.sound && speak(word, SFX.target, 'wheel');
       if (!spoken) SFX.target();
       if (!save.settings.tutorialDone) {
         save.settings.tutorialDone = true; // 完成第一個字即收掉教學（UI 文件 §4-F）
