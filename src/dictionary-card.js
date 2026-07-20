@@ -30,11 +30,12 @@ if ('speechSynthesis' in window) {
   // 解鎖句排入後 pending 仍為 false，表示它根本沒進佇列就被丟棄，沒有東西可砍。已還原。
   // 所以只有 click 算數。三個事件都掛著不動：叫不醒的那幾次本來就是無聲丟棄，重試不花成本，
   // 也不必在 code 裡分辨哪種手勢算數。
-  // ponytail: 純拖曳的玩家在第一次點擊前只會聽到命中音效（speak() 裡 300ms 檢查的退路）。
-  // 解鎖是「每次載入頁面」重算的，重新整理／分頁還原都要重來，不是首次遊玩一次就永久有效；
-  // 但過關卡片的下一關、切關卡、查詞卡都是 click，所以缺口通常止於該次載入的那一關。
-  // 那就是這條路的天花板，不要再往下試第四種事件。真要根治得靠開場閘門（實作見 tts-unlock-gate
-  // 分支，尚未採用）——遊戲畫面上沒有任何非點不可的按鈕，一次拖曳也不產生 click。
+  // 解鎖是「每次載入頁面」重算的，重新整理／分頁還原都要重來，不是首次遊玩一次就永久有效。
+  // 遊戲畫面上沒有任何非點不可的按鈕（一次拖曳從 pointerdown 到 pointerup 不產生 click），
+  // 所以由 index.html 的開場閘門（#gate）負責製造這一下 click——那是它存在的理由之一
+  // （另一半是 main.js 的音效暖機，見設計文件 §7）。
+  // 這三個 listener 仍留著：閘門被繞過（例如日後改流程）時還有機會靠玩家隨手點的按鈕解鎖。
+  // 這就是這條路的天花板，不要再往下試第四種事件。
   const unlock = () => {
     if (unlocked || speechSynthesis.speaking || speechSynthesis.pending) return;
     const u = new SpeechSynthesisUtterance('a'); // 空字串沒東西可念，會連解鎖自己一起被丟掉

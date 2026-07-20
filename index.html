@@ -43,6 +43,16 @@
   <noscript>
     <p>Lexoria 是英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。需要啟用 JavaScript 才能遊玩。</p>
   </noscript>
+  <!-- I. 開場閘門：載入後蓋住全畫面，點一下才進遊戲（UI 文件 §1-I）。這一層扛兩件事，缺一不可，
+       不是裝飾也不是標題畫面（設計文件 §7）：(1) iOS Safari 的 TTS 引擎只有 click 叫得醒，純拖曳
+       解不了鎖；(2) main.js 的音效暖機要在手勢裡付掉 191ms 的首次出聲成本，落在轉盤上會凍住第一次
+       拖曳。「點擊繼續」寫死在 HTML 不經 strings.js——JS 還在下載時就要看得見；上面的關卡數是
+       boot() 才填的，所以 .gate-level 先留白，別把它也當成靜態文案。 -->
+  <button id="gate" class="gate" type="button">
+    <span id="gate-level" class="gate-level"></span>
+    <span class="gate-hint">點擊繼續</span>
+  </button>
+
   <!-- A. 遊戲主畫面 -->
   <section id="screen-game" class="screen">
     <header class="topbar">
