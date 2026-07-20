@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { bridge } from '../src/bridge.js';
 import { cellsOf, claimStatus, createGame, ECONOMY } from '../src/game.js';
+import { snapshotText } from '../src/grid.js';
 import { defaultSave, normalizeSave, persist } from '../src/storage.js';
 import { applyHit, hitIndex, permutationAt, shuffleStep } from '../src/wheel.js';
 
@@ -318,5 +319,41 @@ test('levels.json：每關通過完整驗證', () => {
     // 每個目標字都有 def 與 zh（查詞功能，§6.3）
     for (const w of level.words) assert.ok(w.def, `${ctx}: ${w.word} 缺釋義`);
     for (const w of level.words) assert.ok(w.zh, `${ctx}: ${w.word} 缺中文釋義`);
+  }
+});
+
+test('snapshotText：emoji 格盤——可填的格 ⬜、非格 ⬛', () => {
+  const cells = [
+    { r: 0, c: 0 },
+    { r: 0, c: 1 },
+    { r: 1, c: 1 },
+  ];
+  assert.equal(snapshotText(cells), '⬜⬜\n⬛⬜');
+});
+
+// 只畫形狀不畫進度：同一關無論填到哪，分享出去的格盤都必須一模一樣
+test('snapshotText：不洩漏進度——state 不影響輸出', () => {
+  const shape = [
+    { r: 0, c: 0 },
+    { r: 0, c: 1 },
+    { r: 1, c: 1 },
+  ];
+  const blank = snapshotText(shape.map((c) => ({ ...c, state: 'empty' })));
+  const solved = snapshotText(shape.map((c) => ({ ...c, state: 'filled' })));
+  assert.equal(blank, solved);
+});
+
+// 每列對齊全靠「兩個字元同屬一個 Unicode 區塊」，混入 U+1F7Ex 色塊族就會壞（見 snapshotText 註解）
+test('snapshotText：兩個字元都落在 U+2B1x 區塊', () => {
+  const out = snapshotText([
+    { r: 0, c: 0 },
+    { r: 1, c: 1 },
+  ]);
+  for (const ch of [...out].filter((c) => c !== '\n')) {
+    const cp = ch.codePointAt(0);
+    assert.ok(
+      cp >= 0x2b1b && cp <= 0x2b1c,
+      `${ch} (U+${cp.toString(16).toUpperCase()}) 不在 U+2B1x 區塊，與另一色寬度會不一致`
+    );
   }
 });

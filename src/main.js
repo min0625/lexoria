@@ -4,7 +4,7 @@
 import { bridge } from './bridge.js';
 import { createDictionaryCard, speak, stopSpeech } from './dictionary-card.js';
 import { claimStatus, createGame, ECONOMY } from './game.js';
-import { createGrid, snapshotBlob } from './grid.js';
+import { createGrid, snapshotBlob, snapshotText } from './grid.js';
 import { verifyCode } from './redeem.js';
 import { loadSave, persist } from './storage.js';
 import { strings } from './strings.js';
@@ -43,6 +43,7 @@ $('label-sound').textContent = strings.sound;
 $('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
 $('btn-share').textContent = strings.share;
+$('btn-download').textContent = strings.download;
 $('redeem-input').placeholder = strings.redeemPlaceholder;
 $('btn-redeem').textContent = strings.redeemAction;
 $('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 ECONOMY（設計文件 §8）
@@ -410,27 +411,49 @@ $('opt-haptic').addEventListener('change', (e) => {
 $('overlay-settings').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
 });
-// 分享進度：文字寫整體進度（save.currentLevel）、快照畫目前畫面這一關（wheel 目前排列，含洗牌）——重玩舊關時各自誠實
+// 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實
 let shareTimer = 0;
+// 分享面板關閉後才開始計時；文案較長，給足閱讀時間
+function flashShare(msg) {
+  $('btn-share').textContent = msg;
+  clearTimeout(shareTimer);
+  shareTimer = setTimeout(() => {
+    $('btn-share').textContent = strings.share;
+  }, 2500);
+}
 $('btn-share').addEventListener('click', async () => {
   if (!game || !wheel) return; // boot() 尚未完成（fetch levels.json 中）
+  try {
+    const text = strings.shareText(
+      currentLevelId,
+      wheel.getLetters(),
+      snapshotText(game.getCells())
+    );
+    const mode = await bridge.share(text, location.href);
+    if (mode === 'copied') flashShare(strings.shareCopied);
+    else if (mode === 'failed') flashShare(strings.shareFailed); // 剪貼簿與分享面板都不可用
+  } catch {
+    // bridge.share 不會 throw（剪貼簿／取消都在裡面吞掉），這裡只兜底文案組裝出錯
+  }
+});
+// 快照圖（含 wheel 目前排列）改為手動下載——帶檔分享時多數目標會丟 text，圖只給想要的人
+$('btn-download').addEventListener('click', async () => {
+  if (!game || !wheel) return;
   try {
     const blob = await snapshotBlob(
       game.getCells(),
       wheel.getLetters(),
       strings.shareImageTitle(currentLevelId)
     );
-    const files = [new File([blob], 'lexoria.png', { type: 'image/png' })];
-    const mode = await bridge.share(strings.shareText(save.currentLevel), location.href, files);
-    if (mode === 'copied') {
-      $('btn-share').textContent = strings.shareCopied;
-      clearTimeout(shareTimer);
-      shareTimer = setTimeout(() => {
-        $('btn-share').textContent = strings.share;
-      }, 1500);
-    }
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `lexoria-${currentLevelId}.png`;
+    document.body.append(a); // Firefox 不會觸發未掛進文件的 <a> 的下載
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000); // 立即 revoke 可能搶在下載開始前
   } catch {
-    // 使用者取消分享，或非 secure context 下剪貼簿不可用——靜默即可
+    // canvas.toBlob 失敗——靜默即可
   }
 });
 

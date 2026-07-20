@@ -104,6 +104,8 @@
       <!-- biome-ignore lint/a11y/noLabelWithoutControl: span 文字由 strings.js 在執行期填入，input 已是 label 的子元素 -->
       <label><span id="label-haptic"></span><input type="checkbox" id="opt-haptic"></label>
       <button id="btn-share" class="btn-primary" type="button"></button>
+      <!-- 暫時隱藏：下載快照圖的程式碼保留備用（main.js / grid.js snapshotBlob），拿掉 hidden 即可復活 -->
+      <button id="btn-download" class="chip" type="button" hidden></button>
       <div class="redeem-row">
         <input id="redeem-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false">
         <button id="btn-redeem" class="chip" type="button"></button>
