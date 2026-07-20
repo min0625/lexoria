@@ -10,3 +10,4 @@
 | invalid.wav | error_004.ogg | 無效字 |
 | coin.wav | glass_002.ogg | 拼出 bonus 字得金幣 |
 | clear.wav | confirmation_002.ogg | 過關 |
+| silence.wav | 無（`tools/` 外以 python `wave` 產生） | 250ms 數位靜音，只用來在第一個手勢裡暖機音訊輸出。**格式必須與上面四顆一致**（44.1kHz/16-bit/mono），對不上會讓最初幾次音效被吃掉或衰減，原因見設計文件 §7 |

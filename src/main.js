@@ -103,10 +103,15 @@ setSpeechDebug(dbg);
 // 期間所有音效都被吞掉；相同裝置上 <audio> 元素的 play() 卻是手勢當下就立刻 resolve。
 // 這款遊戲的音效都是獨立短音、不需要 Web Audio 的混音圖，所以直接改用 <audio>
 // 元素——不必自己管 AudioContext 狀態機，也不受這個 resume() 延遲影響。
-// 0.05 秒的 8kHz 8-bit mono 數位靜音（8-bit PCM 的靜音是 128 不是 0），內嵌成 data URI 免得
-// 為了一段無聲多一個資產檔和一次 fetch。只用來暖機，見下面 pointerdown 解鎖裡的說明。
-const SILENT_WAV =
-  'data:audio/wav;base64,UklGRrQBAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YZABAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA';
+// 暖機用的無聲音檔，格式**必須跟四顆音效完全一致**（44.1kHz / 16-bit / mono）。之前是內嵌
+// data URI 的 8kHz / 8-bit，實機症狀是解鎖後最初幾次 invalid「沒聲音 → 很小聲 → 延遲 → 正常」：
+// 推測是暖機先把 iOS 的音訊輸出路由設定成 8kHz，第一批 44.1kHz 的音效要重新協商取樣率，
+// 那段期間輸出被吃掉或衰減。invalid.wav 只有 103ms（全場最短），被吃掉幾十毫秒就少一大半，
+// 所以只有拼錯聽得出來，target(290ms)／clear(539ms) 只是起音軟一點（設計文件 §7）。
+// 用檔案而不是 data URI：同格式的 250ms 靜音 base64 會膨脹到 20KB 以上，不適合塞進原始碼；
+// 存成資產檔還能比照其他音效 preload。模組層級持有這個參考，別讓它播完就被回收。
+const silenceAudio = new Audio('assets/sfx/silence.wav');
+silenceAudio.preload = 'auto';
 
 const sfxAudio = {};
 const SFX = {};
@@ -127,9 +132,10 @@ document.addEventListener(
     // 阻塞主執行緒 191ms（之後每次都只要 4~6ms，且當下 readyState 已經是 4、不是緩衝問題），
     // 因為系統音訊輸出要到這時才真的啟用，靜音播放付不到這筆帳。結果那 191ms 就落在玩家第一次
     // 拼錯的瞬間（答對時 TTS 出聲的話 <audio> 根本不會被呼叫，所以帳單通常由 invalid 承擔）。
-    // 這裡在同一個手勢裡「不靜音」播一段真正無聲的 wav，把這筆帳挪到手勢當下付掉——那一刻玩家
-    // 才剛按下、沒有任何畫面等著更新，191ms 看不出來（設計文件 §7）。
-    new Audio(SILENT_WAV).play().catch((e) => dbg(`warmup FAILED: ${e}`));
+    // 這裡在同一個手勢裡「不靜音」播一段真正無聲的 wav，把這筆帳挪到手勢當下付掉。開場閘門
+    // （index.html #gate）保證這個 pointerdown 落在閘門上而不是轉盤上，那一刻畫面上什麼都
+    // 沒在動，191ms 才藏得住——閘門與這段暖機是綁在一起的，拿掉閘門會讓轉盤凍住（設計文件 §7）。
+    silenceAudio.play().catch((e) => dbg(`warmup FAILED: ${e}`));
     for (const [name, el] of Object.entries(sfxAudio)) {
       el.muted = true;
       el.play().then(
