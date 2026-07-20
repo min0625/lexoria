@@ -616,11 +616,18 @@ $('btn-redeem').addEventListener('click', async () => {
 function showLoadError() {
   $('error-text').textContent = strings.loadFailed;
   $('btn-reload').textContent = strings.retry;
+  $('gate').hidden = true; // 錯誤要馬上看得到，別讓閘門壓著；重試鈕本身也是 click，解鎖不會漏
   showScreen('error');
 }
 $('btn-reload').addEventListener('click', () => location.reload());
+// 閘門的 click 本身就是解鎖手勢（TTS 與 <audio> 的 listener 都掛在 document 上），這裡只管收掉
+$('gate').addEventListener('click', () => {
+  $('gate').hidden = true;
+});
 
 (async function boot() {
+  // 開場閘門（UI 文件 §1-I）：關卡載入照常在背後跑，閘門只是等一下 click，不拖慢首屏。
+  $('gate-level').textContent = strings.levelTitle(save.currentLevel);
   // 當前關卡 id 從存檔就知道，不必等 index.json 回來——兩支同時發，首屏省一趟 RTT。
   // 這裡只負責把檔案暖進 HTTP 快取，真正的取用還是 startLevel() 自己那次 fetch。
   prefetchLevel(save.currentLevel);
