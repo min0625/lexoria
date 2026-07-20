@@ -94,7 +94,13 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   const nFact = letters.reduce((f, _, i) => f * (i + 1), 1);
   const step = shuffleStep(nFact);
 
+  let selected = [];
+  let dragging = false;
+  let spots = []; // 手勢開始時快照各按鈕圓心（container 座標）
+  let base = null; // 同一份快照裡的 container 位置，換算指標座標用
+
   function layout() {
+    spots = []; // 按鈕移位了，舊快照作廢
     const slots = permutationAt(shuffleK, buttons.length);
     const rect = container.getBoundingClientRect();
     const R = rect.width / 2;
@@ -113,26 +119,22 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   const ro = new ResizeObserver(layout);
   ro.observe(container);
 
-  let selected = [];
-  let dragging = false;
-  let spots = []; // 手勢開始時快照各按鈕圓心（container 座標）
-
   const word = () => selected.map((i) => letters[i]).join('');
 
   function render() {
     buttons.forEach((b, i) => {
       b.classList.toggle('selected', selected.includes(i));
     });
-    const pts = selected.map((i) => {
-      const b = buttons[i];
-      return `${b.offsetLeft + b.offsetWidth / 2},${b.offsetTop + b.offsetHeight / 2}`;
-    });
+    // 圓心用 spots 的快照，不要在這裡讀 offsetLeft/offsetWidth：上一行剛改完 class，
+    // 緊接著讀版面屬性會強制同步 reflow，每次選到新字母都付一次。
+    if (selected.length && !spots.length) snapshotSpots(); // 鍵盤輸入沒有 pointerdown 快照
+    const pts = selected.map((i) => `${spots[i].x},${spots[i].y}`);
     line.setAttribute('points', pts.join(' '));
     onChange(word());
   }
 
   function snapshotSpots() {
-    const base = container.getBoundingClientRect();
+    base = container.getBoundingClientRect();
     spots = buttons.map((b, i) => {
       const r = b.getBoundingClientRect();
       return {
@@ -144,8 +146,10 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
     });
   }
 
+  // 沿用手勢開始時的 base：每個 pointermove 都呼叫 getBoundingClientRect() 會強制同步
+  // reflow，那是拖曳過程中唯一逐事件付出的成本。轉盤是 touch-action: none，手勢進行中
+  // 頁面不會捲動，快照不會過期。
   function toLocal(ev) {
-    const base = container.getBoundingClientRect();
     return { x: ev.clientX - base.left, y: ev.clientY - base.top };
   }
 
