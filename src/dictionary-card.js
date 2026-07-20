@@ -39,6 +39,9 @@ export function speak(word, onError, onDebug) {
   );
   speechSynthesis.resume();
   speechSynthesis.speak(u);
+  log(
+    `speak(${word}) after speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
+  );
   return true;
 }
 

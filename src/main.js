@@ -110,6 +110,17 @@ document.addEventListener(
   { passive: false }
 );
 
+// iOS：<audio> 還在播的時候 speechSynthesis.speak() 會被整個吞掉（不出聲、onstart 和
+// onerror 都不觸發）。念單字前先把音效停掉，把音訊工作階段讓給語音引擎。
+function stopSfx() {
+  for (const el of Object.values(sfxAudio)) {
+    if (!el.paused) {
+      el.pause();
+      el.currentTime = 0;
+    }
+  }
+}
+
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
@@ -195,6 +206,7 @@ function onSubmit(word) {
       grid.update(game.getCells());
       // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
       // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
+      stopSfx(); // 剛剛滑動的 tick 可能還在播，iOS 會因此吞掉發音
       const spoken = save.settings.sound && speak(word, SFX.target, dbg);
       if (!spoken) SFX.target();
       if (!save.settings.tutorialDone) {
