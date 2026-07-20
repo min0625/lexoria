@@ -112,17 +112,17 @@ for (const name of ['target', 'invalid', 'coin', 'clear']) {
   SFX[name] = () => playSfx(name);
 }
 // iOS 對「手勢內播放才允許自動播放」的解鎖是分別針對每個 <audio> 元素算的，不是整頁一次
-// 就全解鎖——只有最常播的 tick 因為第一次觸發本身就在手勢內而順利解鎖，其餘幾顆較少
-// 觸發的音效第一次要等到之後才被叫到，那時已經不在手勢當下，會被 NotAllowedError 擋掉
-// （症狀：tick 一直有聲，invalid/target/coin/clear 偶爾被吃掉）。所以第一個手勢裡把每
-// 顆音效都靜音播一次再馬上暫停歸零，一次把全部解鎖。
+// 就全解鎖——沒有在手勢當下播過的元素，第一次真的要播時已經不在手勢裡，會被 NotAllowedError
+// 擋掉（症狀：invalid/target/coin/clear 偶爾被吃掉）。所以第一個手勢裡把每顆音效都靜音播
+// 一次再馬上暫停歸零，一次把全部解鎖。
 document.addEventListener(
   'pointerdown',
   () => {
-    for (const el of Object.values(sfxAudio)) {
+    for (const [name, el] of Object.entries(sfxAudio)) {
       el.muted = true;
       el.play().then(
         () => {
+          dbg(`unlock(${name}) ok`);
           // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
           // muted 設回 false 就代表這顆被真的播放接手了，這裡再 pause 會把聲音掐掉。
           if (!el.muted) return;
@@ -130,7 +130,8 @@ document.addEventListener(
           el.currentTime = 0;
           el.muted = false;
         },
-        () => {
+        (e) => {
+          dbg(`unlock(${name}) FAILED: ${e}`); // 這顆之後很可能整場都放不出聲音
           el.muted = false;
         }
       );
@@ -167,7 +168,7 @@ function playSfx(name) {
   const t2 = performance.now();
   dbg(
     `playSfx(${name}) seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
-      `paused=${el.paused} ready=${el.readyState}`
+      `paused=${el.paused} ready=${el.readyState} muted=${el.muted} vol=${el.volume}`
   );
 }
 
@@ -264,20 +265,22 @@ function onSubmit(word) {
       if (result.won) onWin(spoken);
       break;
     }
+    // 音效一律排在畫面更新「之後」：play() 在 iOS 上會同步阻塞主執行緒最多百餘毫秒，
+    // 先播再畫等於把那段阻塞插在玩家與視覺回饋之間，動畫看起來就慢半拍（§7）。
     case 'bonus': {
       save.coins += result.coins;
-      SFX.coin();
       flashPreview(strings.bonusFound(result.coins), 'good');
       persistProgress();
       updateCoins();
+      SFX.coin();
       break;
     }
     case 'duplicate':
       flashPreview(strings.alreadyFound, 'dup'); // 不重播動畫、不重複給金幣（§1）
       break;
     case 'invalid':
-      SFX.invalid();
       flashPreview(word, 'shake');
+      SFX.invalid();
       break;
   }
 }
