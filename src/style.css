@@ -390,7 +390,8 @@ button {
   stroke-width: 7;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 0 5px rgb(var(--accent-rgb) / 0.5)); /* 手勢連線微發光 */
+  /* 這裡本來有 drop-shadow 微發光。SVG filter 在 iOS Safari 走的是非合成的重繪路徑，
+     每次選到新字母改 points 都要對整個轉盤大小的區域重跑一次濾鏡，是拖曳時最貴的一筆。 */
 }
 .wheel-letter {
   position: absolute;
@@ -406,11 +407,9 @@ button {
   align-items: center;
   justify-content: center;
   pointer-events: none; /* 命中判斷用座標計算，不靠按鈕事件（§4）*/
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    color 0.12s ease,
-    box-shadow 0.12s ease;
+  /* 只補間 transform（合成器可獨立處理）。background / box-shadow / color 是繪製屬性，
+     補間等於在轉盤的漸層底上連續重繪 120ms；快速滑過時好幾顆同時在重繪。直接切換即可。 */
+  transition: transform 0.08s ease;
 }
 .wheel-letter.selected {
   background: var(--accent);

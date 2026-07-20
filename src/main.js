@@ -28,6 +28,45 @@ if (DEBUG) {
       $('btn-debug-copy').textContent = '複製除錯紀錄';
     }, 1500);
   });
+
+  // 轉盤拖曳量測：每個手勢結束時記一行。分辨「延遲來自我們的程式」還是「來自繪製 / Safari
+  // 自己的輸入管線」——lag 是事件進得慢（rate 低）、事件排隊久（queue 高）、還是畫面畫不動
+  // （frame 長）。掛在 window 上被動監聽，不介入轉盤自己的手勢處理。
+  let g = null;
+  const frameTick = (t) => {
+    if (!g) return;
+    if (g.lastFrame) g.maxFrame = Math.max(g.maxFrame, t - g.lastFrame);
+    g.lastFrame = t;
+    g.frames++;
+    requestAnimationFrame(frameTick);
+  };
+  $('wheel').addEventListener('pointerdown', (ev) => {
+    g = { t0: ev.timeStamp, moves: 0, maxQueue: 0, maxGap: 0, frames: 0, maxFrame: 0 };
+    requestAnimationFrame(frameTick);
+  });
+  window.addEventListener(
+    'pointermove',
+    (ev) => {
+      if (!g) return;
+      g.maxQueue = Math.max(g.maxQueue, performance.now() - ev.timeStamp);
+      if (g.lastMove) g.maxGap = Math.max(g.maxGap, ev.timeStamp - g.lastMove);
+      g.lastMove = ev.timeStamp;
+      g.moves++;
+    },
+    { passive: true }
+  );
+  for (const type of ['pointerup', 'pointercancel'])
+    window.addEventListener(type, (ev) => {
+      if (!g) return;
+      const ms = ev.timeStamp - g.t0;
+      const n = (v) => v.toFixed(1);
+      dbg(
+        `drag ${n(ms)}ms moves=${g.moves} rate=${n((g.moves / ms) * 1000)}/s ` +
+          `gap.max=${n(g.maxGap)}ms queue.max=${n(g.maxQueue)}ms ` +
+          `frames=${g.frames} frame.max=${n(g.maxFrame)}ms`
+      );
+      g = null;
+    });
 }
 
 // ---- 靜態文案 ----
