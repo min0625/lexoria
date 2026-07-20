@@ -1,0 +1,94 @@
+{
+  "id": 347,
+  "letters": [
+    "A",
+    "E",
+    "G",
+    "R",
+    "R",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "RANGER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a member of the Texas state highway patrol; formerly a mounted lawman who maintained order on the frontier",
+      "zh": "n. 王室守林人, 騎警, 漫遊者"
+    },
+    {
+      "word": "RANGE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an area in which something acts or operates or has power or control:",
+      "zh": "n. 排, 行, 山脈, 範圍, 行列, 射程"
+    },
+    {
+      "word": "NEAR",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "move towards",
+      "zh": "a. 近的, 近親的, 近似的"
+    },
+    {
+      "word": "AGE",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "ARE",
+      "row": 2,
+      "col": 5,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "RAN",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "move fast by using one's feet, with one foot off the ground at any given time",
+      "zh": "run的過去式"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "EAR",
+    "ENG",
+    "ERA",
+    "ERG",
+    "ERN",
+    "ERR",
+    "GAE",
+    "GAN",
+    "GAR",
+    "GEN",
+    "NAE",
+    "NAG",
+    "RAG",
+    "REG",
+    "AGER",
+    "EARN",
+    "GAEN",
+    "GANE",
+    "GEAR",
+    "GNAR",
+    "GRAN",
+    "RAGE",
+    "RANG",
+    "RARE",
+    "REAR",
+    "ANGER",
+    "GNARR",
+    "REGNA",
+    "RERAN",
+    "GARNER"
+  ]
+}

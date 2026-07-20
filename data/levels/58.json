@@ -1,0 +1,43 @@
+{
+  "id": 58,
+  "letters": [
+    "E",
+    "L",
+    "K",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "LEAK",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "an accidental hole that allows something (fluid or light etc.) to enter or escape",
+      "zh": "n. 漏洞, 漏處, 漏出, 洩漏"
+    },
+    {
+      "word": "LAKE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a body of (usually fresh) water surrounded by land",
+      "zh": "n. 湖, 池, 色澱"
+    },
+    {
+      "word": "ALE",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a general name for beer made with a top fermenting yeast; in some of the United States an ale is (by law) a brew of more than 4% alcohol by volume",
+      "zh": "n. 麥芽酒"
+    }
+  ],
+  "bonus": [
+    "ELK",
+    "KAE",
+    "KEA",
+    "LEA",
+    "LEK",
+    "KALE"
+  ]
+}

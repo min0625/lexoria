@@ -1,0 +1,73 @@
+{
+  "id": 340,
+  "letters": [
+    "E",
+    "H",
+    "N",
+    "V",
+    "A",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "HEAVEN",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "any place of complete bliss and delight and peace",
+      "zh": "n. 天堂, 上帝, 天空"
+    },
+    {
+      "word": "HAVE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a person who possesses great material wealth",
+      "zh": "vt. 有, 懷有, 拿, 進行"
+    },
+    {
+      "word": "EVEN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the latter part of the day (the period of decreasing daylight from late afternoon until nightfall)",
+      "zh": "a. 平坦的, 相等的, 連貫的, 均等的, 公平的, 偶數的, 平均的, 平衡的, 恰好的"
+    },
+    {
+      "word": "VAN",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "any creative group active in the innovation and application of new concepts and techniques in a given field (especially in the arts)",
+      "zh": "n. 貨車, 篷車, 先鋒, 前驅, 前衛"
+    },
+    {
+      "word": "EVE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "(Old Testament) Adam's wife in Judeo-Christian mythology: the first woman and mother of the human race; God created Eve from Adam's rib and placed Adam and Eve in the Garden of Eden",
+      "zh": "n. 前夕, 前夜"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "AVE",
+    "HAE",
+    "HEN",
+    "NAE",
+    "NAH",
+    "NEE",
+    "VEE",
+    "EAVE",
+    "HAEN",
+    "NAVE",
+    "NEVE",
+    "VANE",
+    "VENA",
+    "HAVEN",
+    "HEAVE",
+    "VEENA",
+    "VENAE"
+  ]
+}

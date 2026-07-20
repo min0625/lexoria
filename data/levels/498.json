@@ -1,0 +1,115 @@
+{
+  "id": 498,
+  "letters": [
+    "Y",
+    "F",
+    "L",
+    "T",
+    "I",
+    "S",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "FIRSTLY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "before anything else",
+      "zh": "adv. 第一, 首先"
+    },
+    {
+      "word": "FIRST",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the first or highest in an ordering or series",
+      "zh": "adv. 首先, 第一, 優先"
+    },
+    {
+      "word": "LIST",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "a database containing an ordered array of items (names or topics)",
+      "zh": "n. 目錄, 名單, 明細表, 布條, 條紋, 列表, 序列, 資料清單"
+    },
+    {
+      "word": "ITS",
+      "row": 5,
+      "col": 4,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "TRY",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "earnest and conscientious activity intended to do or accomplish something",
+      "zh": "n. 嘗試, 試驗, 審理, 審判"
+    },
+    {
+      "word": "SIR",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "FIT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a display of bad temper",
+      "zh": "n. 適宜, 合身, 發作, 痙攣"
+    }
+  ],
+  "bonus": [
+    "FIL",
+    "FIR",
+    "FLY",
+    "FRY",
+    "IFS",
+    "LIS",
+    "LIT",
+    "RIF",
+    "SIT",
+    "SLY",
+    "SRI",
+    "STY",
+    "TIL",
+    "TIS",
+    "FILS",
+    "FIRS",
+    "FIST",
+    "FITS",
+    "FLIT",
+    "FRIT",
+    "LIFT",
+    "LITS",
+    "RIFS",
+    "RIFT",
+    "SIFT",
+    "SILT",
+    "SLIT",
+    "STIR",
+    "SYLI",
+    "TILS",
+    "TIRL",
+    "FITLY",
+    "FLIRT",
+    "FLITS",
+    "FRITS",
+    "LIFTS",
+    "RIFTS",
+    "SILTY",
+    "STYLI",
+    "TIRLS",
+    "FLIRTS",
+    "FLIRTY",
+    "LYRIST"
+  ]
+}

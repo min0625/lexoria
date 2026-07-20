@@ -1,0 +1,50 @@
+{
+  "id": 309,
+  "letters": [
+    "N",
+    "T",
+    "S",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "NEST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a structure in which animals lay eggs or give birth to their young",
+      "zh": "n. 巢, 窩, 休息所, 隱匿處"
+    },
+    {
+      "word": "SENT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "100 senti equal 1 kroon in Estonia",
+      "zh": "send的過去式和過去分詞"
+    },
+    {
+      "word": "TEN",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "NET",
+    "SEN",
+    "NETS",
+    "TENS"
+  ]
+}

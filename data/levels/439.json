@@ -1,0 +1,57 @@
+{
+  "id": 439,
+  "letters": [
+    "D",
+    "E",
+    "S",
+    "E",
+    "E",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "SEEDED",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "go to seed; shed seeds",
+      "zh": "a. 已播種了的；去籽的"
+    },
+    {
+      "word": "DEEDS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "performance of moral or religious acts",
+      "zh": "n. 行為( deed的複數形式 ); 行動; <律>契約; 證書"
+    },
+    {
+      "word": "SEED",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a small hard fruit",
+      "zh": "n. 種子, 籽, 萌芽, 子孫, 精液"
+    },
+    {
+      "word": "DEED",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a legal document signed and sealed and delivered to effect a transfer of property and to show the legal right to possess it",
+      "zh": "n. 行為, 實行, 契約"
+    },
+    {
+      "word": "SEE",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEES"
+  ]
+}

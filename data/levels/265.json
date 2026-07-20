@@ -1,0 +1,70 @@
+{
+  "id": 265,
+  "letters": [
+    "P",
+    "U",
+    "P",
+    "E",
+    "L",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "PURPLE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a purple color or pigment",
+      "zh": "n. 紫色, 帝位"
+    },
+    {
+      "word": "UPPER",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the higher of two berths",
+      "zh": "a. 上面的, 較高的, 上級的, 上院的, 穿在外面的, 北部的, 地表的, 後期的"
+    },
+    {
+      "word": "RULE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則, 統治, 控制, 支配, 規律, 標準, 章程, 破折號, 鉛線"
+    },
+    {
+      "word": "PURE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "free of extraneous elements of any kind",
+      "zh": "a. 純的, 純淨的, 純潔的, 清白的, 完美的, 無瑕的, 抽象的"
+    },
+    {
+      "word": "REP",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "informal abbreviation of `representative'",
+      "zh": "n. 稜紋平布, 浪蕩子, 名聲"
+    }
+  ],
+  "bonus": [
+    "LEU",
+    "PEP",
+    "PER",
+    "PUL",
+    "PUP",
+    "PUR",
+    "RUE",
+    "LURE",
+    "PREP",
+    "PULE",
+    "PULP",
+    "PURL",
+    "REPP",
+    "PULER",
+    "PULPER"
+  ]
+}

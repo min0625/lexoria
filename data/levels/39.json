@@ -1,0 +1,50 @@
+{
+  "id": 39,
+  "letters": [
+    "L",
+    "B",
+    "E",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "BALE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a large bundle bound for storage or transport",
+      "zh": "n. 包, 捆, 貨物, 災難"
+    },
+    {
+      "word": "ABLE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "(usually followed by `to') having the necessary means or skill or know-how or authority to do something",
+      "zh": "a. 能幹的, 能夠的"
+    },
+    {
+      "word": "LAB",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a workplace for the conduct of scientific research",
+      "zh": "n. 實驗室, 研究室"
+    },
+    {
+      "word": "ALE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a general name for beer made with a top fermenting yeast; in some of the United States an ale is (by law) a brew of more than 4% alcohol by volume",
+      "zh": "n. 麥芽酒"
+    }
+  ],
+  "bonus": [
+    "ALB",
+    "BAL",
+    "BEL",
+    "LEA",
+    "BLAE"
+  ]
+}

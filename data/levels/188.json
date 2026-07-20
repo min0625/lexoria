@@ -1,0 +1,62 @@
+{
+  "id": 188,
+  "letters": [
+    "F",
+    "W",
+    "L",
+    "S",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "FLAWS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an imperfection in an object or machine",
+      "zh": "n. 缺點( flaw的名詞複數 ); 錯誤; 裂痕"
+    },
+    {
+      "word": "LAWS",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the first of three divisions of the Hebrew Scriptures comprising the first five books of the Hebrew Bible considered as a unit",
+      "zh": "n. 法律；規章（law的複數）"
+    },
+    {
+      "word": "WAS",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a state in northwestern United States on the Pacific",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "SAW",
+      "row": 4,
+      "col": 3,
+      "dir": "down",
+      "def": "a condensed but memorable saying embodying some important fact of experience that is taken as true by many people",
+      "zh": "n. 鋸子, 諺語"
+    },
+    {
+      "word": "LAW",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the collection of rules imposed by authority",
+      "zh": "n. 法律, 法則, 定律, 法律的制約, 法學, 司法界, 訴訟"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "AWL",
+    "FAS",
+    "LAS",
+    "SAL",
+    "AWLS",
+    "FLAW",
+    "SLAW"
+  ]
+}

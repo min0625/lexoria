@@ -1,0 +1,97 @@
+{
+  "id": 212,
+  "letters": [
+    "H",
+    "N",
+    "I",
+    "T",
+    "G",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "THINGS",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "any movable possession (especially articles of clothing)",
+      "zh": "n. 所有物, 財產, 用具, 用品, 局面, 形勢, 情況"
+    },
+    {
+      "word": "NIGHTS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the time after sunset and before sunrise while it is dark outside",
+      "zh": "n. 每夜, 在任何夜晚"
+    },
+    {
+      "word": "NIGHT",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "the time after sunset and before sunrise while it is dark outside",
+      "zh": "n. 夜, 夜晚, 晚上, 黑暗, 夜晚的工作"
+    },
+    {
+      "word": "THING",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "a special situation",
+      "zh": "n. 事物, 東西, 物, 用品, 事, 事件, 情況, 行為, 特徵"
+    },
+    {
+      "word": "ITS",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "GHI",
+    "GIN",
+    "GIT",
+    "HIN",
+    "HIS",
+    "HIT",
+    "INS",
+    "NIT",
+    "NTH",
+    "SIN",
+    "SIT",
+    "TIN",
+    "TIS",
+    "GHIS",
+    "GINS",
+    "GIST",
+    "GITS",
+    "HINS",
+    "HINT",
+    "HISN",
+    "HIST",
+    "HITS",
+    "NIGH",
+    "NITS",
+    "SHIN",
+    "SHIT",
+    "SIGH",
+    "SIGN",
+    "SING",
+    "SINH",
+    "SITH",
+    "SNIT",
+    "THIN",
+    "THIS",
+    "TING",
+    "TINS",
+    "HINTS",
+    "NIGHS",
+    "SIGHT",
+    "STING",
+    "THINS",
+    "TINGS"
+  ]
+}

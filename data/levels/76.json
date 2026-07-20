@@ -1,0 +1,39 @@
+{
+  "id": 76,
+  "letters": [
+    "U",
+    "R",
+    "H",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "RUTH",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "United States professional baseball player famous for hitting home runs (1895-1948)",
+      "zh": "n. 憐憫, 悲哀"
+    },
+    {
+      "word": "HURT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "any physical damage to the body caused by violence or accident or fracture etc.",
+      "zh": "n. 傷害, 創傷, 損害"
+    },
+    {
+      "word": "HUT",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "temporary military shelter",
+      "zh": "n. 小屋, 茅舍, 臨時軍營"
+    }
+  ],
+  "bonus": [
+    "RUT",
+    "THRU"
+  ]
+}

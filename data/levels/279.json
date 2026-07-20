@@ -1,0 +1,74 @@
+{
+  "id": 279,
+  "letters": [
+    "A",
+    "T",
+    "T",
+    "E",
+    "N",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "TENANT",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "someone who pays rent to use land or a building or a car that is owned by someone else",
+      "zh": "n. 承租人, 房客, 居住者"
+    },
+    {
+      "word": "EAT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "NET",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "zh": "n. 網, 網狀物, 羅網, 淨利, 淨價"
+    },
+    {
+      "word": "TEN",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    },
+    {
+      "word": "TEA",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a beverage made by steeping tea leaves in water",
+      "zh": "n. 茶, 茶葉"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "ANT",
+    "ATE",
+    "ATT",
+    "ETA",
+    "NAE",
+    "NAN",
+    "TAE",
+    "TAN",
+    "TAT",
+    "TET",
+    "ANTE",
+    "ETNA",
+    "NEAT",
+    "NETT",
+    "TATE",
+    "TEAT",
+    "TENT",
+    "ANENT"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": 422,
+  "letters": [
+    "S",
+    "V",
+    "E",
+    "A",
+    "W"
+  ],
+  "words": [
+    {
+      "word": "WAVES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "one of a series of ridges that moves across the surface of a liquid (especially across a large body of water)",
+      "zh": "n. 波（wave的複數形式）"
+    },
+    {
+      "word": "SAVE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(sports) the act of preventing the opposition from scoring",
+      "zh": "n. 救球"
+    },
+    {
+      "word": "WAS",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a state in northwestern United States on the Pacific",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "SAW",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a condensed but memorable saying embodying some important fact of experience that is taken as true by many people",
+      "zh": "n. 鋸子, 諺語"
+    }
+  ],
+  "bonus": [
+    "AVE",
+    "AWE",
+    "SAE",
+    "SEA",
+    "SEW",
+    "VAS",
+    "VAW",
+    "WAE",
+    "AVES",
+    "AWES",
+    "VASE",
+    "VAWS",
+    "WAES",
+    "WAVE"
+  ]
+}

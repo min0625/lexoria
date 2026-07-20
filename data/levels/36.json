@@ -1,0 +1,46 @@
+{
+  "id": 36,
+  "letters": [
+    "A",
+    "S",
+    "C",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "CASH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "money in the form of bills or coins",
+      "zh": "n. 現金"
+    },
+    {
+      "word": "SAC",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an enclosed space",
+      "zh": "n. 囊, 液囊, (美)戰略空軍司令部"
+    },
+    {
+      "word": "HAS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "ASH",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the residue that remains when something is burned",
+      "zh": "n. 灰, 灰燼"
+    }
+  ],
+  "bonus": [
+    "SHA"
+  ]
+}

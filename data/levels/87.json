@@ -1,0 +1,41 @@
+{
+  "id": 87,
+  "letters": [
+    "A",
+    "L",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LEAN",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the property possessed by a line or surface that departs from the vertical",
+      "zh": "n. 瘦肉, 傾斜, 傾斜度"
+    },
+    {
+      "word": "LANE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a narrow way or road",
+      "zh": "n. 小路, 巷, 弄, 單行道"
+    },
+    {
+      "word": "ALE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a general name for beer made with a top fermenting yeast; in some of the United States an ale is (by law) a brew of more than 4% alcohol by volume",
+      "zh": "n. 麥芽酒"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "LEA",
+    "NAE",
+    "ELAN"
+  ]
+}

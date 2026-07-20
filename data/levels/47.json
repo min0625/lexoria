@@ -1,0 +1,45 @@
+{
+  "id": 47,
+  "letters": [
+    "L",
+    "S",
+    "T",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "LIST",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a database containing an ordered array of items (names or topics)",
+      "zh": "n. 目錄, 名單, 明細表, 布條, 條紋, 列表, 序列, 資料清單"
+    },
+    {
+      "word": "SIT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "LIS",
+    "LIT",
+    "TIL",
+    "TIS",
+    "LITS",
+    "SILT",
+    "SLIT",
+    "TILS"
+  ]
+}

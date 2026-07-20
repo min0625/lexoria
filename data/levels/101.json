@@ -1,0 +1,63 @@
+{
+  "id": 101,
+  "letters": [
+    "S",
+    "G",
+    "R",
+    "A",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "GRAMS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a metric unit of weight equal to one thousandth of a kilogram",
+      "zh": "n. 克（gram的複數形式）"
+    },
+    {
+      "word": "ARMS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "weapons considered collectively",
+      "zh": "n. 武器, 軍事行動"
+    },
+    {
+      "word": "ARM",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    },
+    {
+      "word": "GAS",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container",
+      "zh": "n. 氣體, 汽油, 瓦斯"
+    }
+  ],
+  "bonus": [
+    "ARS",
+    "GAM",
+    "GAR",
+    "MAG",
+    "MAR",
+    "MAS",
+    "RAG",
+    "RAM",
+    "RAS",
+    "SAG",
+    "GAMS",
+    "GARS",
+    "GRAM",
+    "MAGS",
+    "MARS",
+    "RAGS",
+    "RAMS"
+  ]
+}

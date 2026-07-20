@@ -1,0 +1,84 @@
+{
+  "id": 402,
+  "letters": [
+    "G",
+    "O",
+    "C",
+    "I",
+    "N",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "CODING",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "act of writing in code or cipher",
+      "zh": "n. 譯碼"
+    },
+    {
+      "word": "DOING",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "n. 行為, 活動"
+    },
+    {
+      "word": "DOC",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a licensed medical practitioner",
+      "zh": "[計] 通訊部, 數字輸出控制, 文件"
+    },
+    {
+      "word": "DOG",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds",
+      "zh": "n. 狗, 壞蛋"
+    },
+    {
+      "word": "GOD",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the supernatural being conceived as the perfect and omnipotent and omniscient originator and ruler of the universe; the object of worship in monotheistic religions",
+      "zh": "n. 上帝, 神像, 偶像"
+    },
+    {
+      "word": "DON",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "a Spanish gentleman or nobleman",
+      "zh": "n. 西班牙貴族(或紳士), 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "COD",
+    "COG",
+    "CON",
+    "DIG",
+    "DIN",
+    "GID",
+    "GIN",
+    "ION",
+    "NOD",
+    "NOG",
+    "CION",
+    "COIN",
+    "CONI",
+    "DING",
+    "DONG",
+    "ICON",
+    "NODI",
+    "ODIC",
+    "COIGN",
+    "DINGO",
+    "INCOG"
+  ]
+}

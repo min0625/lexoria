@@ -1,0 +1,97 @@
+{
+  "id": 451,
+  "letters": [
+    "N",
+    "D",
+    "P",
+    "A",
+    "O",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "PARDON",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of excusing a mistake or offense",
+      "zh": "n. 原諒, 赦免"
+    },
+    {
+      "word": "DROP",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a shape that is spherical and small",
+      "zh": "n. 滴, 微量, 落下, 空投"
+    },
+    {
+      "word": "ROAD",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an open way (generally public) for travel or transportation",
+      "zh": "n. 路, 道路, 公路, 途徑, 方法"
+    },
+    {
+      "word": "PRO",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    },
+    {
+      "word": "RAN",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "move fast by using one's feet, with one foot off the ground at any given time",
+      "zh": "run的過去式"
+    },
+    {
+      "word": "DON",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a Spanish gentleman or nobleman",
+      "zh": "n. 西班牙貴族(或紳士), 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "ADO",
+    "AND",
+    "DAP",
+    "DOR",
+    "NAP",
+    "NOD",
+    "NOR",
+    "OAR",
+    "ORA",
+    "PAD",
+    "PAN",
+    "PAR",
+    "POD",
+    "RAD",
+    "RAP",
+    "ROD",
+    "APOD",
+    "DARN",
+    "DONA",
+    "DOPA",
+    "DORP",
+    "NARD",
+    "ORAD",
+    "PARD",
+    "POND",
+    "PORN",
+    "PRAO",
+    "PROA",
+    "PROD",
+    "RAND",
+    "ROAN",
+    "ADORN",
+    "APRON",
+    "RADON"
+  ]
+}

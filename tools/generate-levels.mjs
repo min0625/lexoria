@@ -1,8 +1,10 @@
 // 關卡產生器（設計文件 §5）——建置期離線產生，執行期不算關卡。
 // 輸入：tools/data/enable1.txt（bonus 判定字典）+ tools/data/wordinfo.json（字頻+釋義，見 fetch-data.mjs）
-// 輸出：data/levels.json。最後一步驗證器：任何一關不合法 → 整批建置失敗。
+// 輸出：data/levels/<id>.json（每關一份，前端按需 fetch，首次載入不用整批下載）+
+// data/levels/index.json（僅 { "count" }，前端用來畫關卡選單、判斷最後一關）。
+// 最後一步驗證器：任何一關不合法 → 整批建置失敗。
 // 亂數種子固定為關卡 id：重跑輸出完全相同，關卡才能進版控、diff 才有意義。
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 
 const N_LEVELS = 500;
 const ATTEMPTS = 20; // 同一組字跑 20 版挑最好看的（§5）
@@ -328,28 +330,19 @@ for (let id = 1; id <= N_LEVELS; id++) {
   levels.push(level);
 }
 
-// 與手刻版相同的排版：words 一行一字、bonus 單行，diff 才好讀
-const json = `[\n${levels
-  .map((l) =>
-    [
-      '  {',
-      `    "id": ${l.id},`,
-      `    "letters": ${JSON.stringify(l.letters)},`,
-      '    "words": [',
-      l.words.map((w) => `      ${JSON.stringify(w)}`).join(',\n'),
-      '    ],',
-      `    "bonus": ${JSON.stringify(l.bonus)}`,
-      '  }',
-    ].join('\n')
-  )
-  .join(',\n')}\n]\n`;
-writeFileSync(new URL('../data/levels.json', import.meta.url), json);
+// 每關一個檔案，前端 startLevel() 按需 fetch——首次載入只需 index.json + 當前那一關。
+const levelsDir = new URL('../data/levels/', import.meta.url);
+rmSync(levelsDir, { recursive: true, force: true }); // 關卡數可能變動，先清空舊檔避免殘留
+mkdirSync(levelsDir, { recursive: true });
+for (const l of levels)
+  writeFileSync(new URL(`${l.id}.json`, levelsDir), `${JSON.stringify(l, null, 2)}\n`);
+writeFileSync(new URL('index.json', levelsDir), `${JSON.stringify({ count: levels.length })}\n`);
 
 const stat = (f) => {
   const v = levels.map(f);
   return `${Math.min(...v)}–${Math.max(...v)}`;
 };
-console.log(`levels.json：${levels.length} 關`);
+console.log(`data/levels/：${levels.length} 關`);
 console.log(
   `目標字數 ${stat((l) => l.words.length)}、bonus 數 ${stat((l) => l.bonus.length)}、格盤 ${stat((l) => Math.max(...l.words.map((w) => (w.dir === 'down' ? w.row + w.word.length : w.row + 1))))}×${stat((l) => Math.max(...l.words.map((w) => (w.dir === 'across' ? w.col + w.word.length : w.col + 1))))}`
 );

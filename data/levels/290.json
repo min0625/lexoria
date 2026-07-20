@@ -1,0 +1,93 @@
+{
+  "id": 290,
+  "letters": [
+    "O",
+    "L",
+    "I",
+    "P",
+    "S",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "POLISH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the property of being smooth and shiny",
+      "zh": "a. 波蘭的"
+    },
+    {
+      "word": "SHOP",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a mercantile establishment for the retail sale of goods or services",
+      "zh": "n. 商店, 工廠, 車間"
+    },
+    {
+      "word": "SHIP",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a vessel that carries passengers or freight",
+      "zh": "n. 船, 艦"
+    },
+    {
+      "word": "OIL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油, 石油, 油畫顏料"
+    },
+    {
+      "word": "HIP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "either side of the body below the waist and above the thigh",
+      "zh": "n. 臀部, 薔薇果, 憂鬱"
+    }
+  ],
+  "bonus": [
+    "HIS",
+    "HOP",
+    "LIP",
+    "LIS",
+    "LOP",
+    "OHS",
+    "OPS",
+    "PHI",
+    "PIS",
+    "POH",
+    "POI",
+    "POL",
+    "PSI",
+    "SIP",
+    "SOL",
+    "SOP",
+    "HIPS",
+    "HOLP",
+    "HOLS",
+    "HOPS",
+    "LIPS",
+    "LISP",
+    "LOPS",
+    "OILS",
+    "PHIS",
+    "PISH",
+    "PISO",
+    "POIS",
+    "POLS",
+    "POSH",
+    "SILO",
+    "SLIP",
+    "SLOP",
+    "SOIL",
+    "SOLI",
+    "SOPH",
+    "POLIS",
+    "SPOIL"
+  ]
+}

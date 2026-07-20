@@ -1,0 +1,40 @@
+{
+  "id": 44,
+  "letters": [
+    "L",
+    "O",
+    "W",
+    "B"
+  ],
+  "words": [
+    {
+      "word": "BOWL",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a round vessel that is open at the top; used chiefly for holding food or liquids",
+      "zh": "n. 碗, 木球, 大酒杯"
+    },
+    {
+      "word": "BLOW",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a powerful stroke with the fist or a weapon",
+      "zh": "n. 吹, 打擊, 毆打, 花開"
+    },
+    {
+      "word": "LOW",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an air mass of lower pressure; often brings precipitation",
+      "zh": "n. 低點, 低價, 低, 牛叫聲"
+    }
+  ],
+  "bonus": [
+    "BOW",
+    "LOB",
+    "OWL"
+  ]
+}

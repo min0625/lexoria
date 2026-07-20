@@ -1,0 +1,101 @@
+{
+  "id": 475,
+  "letters": [
+    "R",
+    "E",
+    "U",
+    "D",
+    "L",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "LOUDER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "characterized by or producing sound of great volume or intensity",
+      "zh": "adv. 大聲一點"
+    },
+    {
+      "word": "ROLE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the actions and activities assigned to or required or expected of a person or group",
+      "zh": "n. 角色, 職責, 任務"
+    },
+    {
+      "word": "DUE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "that which is deserved or owed",
+      "zh": "n. 應得的東西, 應付款"
+    },
+    {
+      "word": "OLD",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "past times (especially in the phrase `in days of old')",
+      "zh": "n. 以前, 往昔"
+    },
+    {
+      "word": "RED",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEL",
+    "DOE",
+    "DOL",
+    "DOR",
+    "DUO",
+    "ELD",
+    "LED",
+    "LEU",
+    "ODE",
+    "OLE",
+    "ORE",
+    "OUD",
+    "OUR",
+    "ROD",
+    "ROE",
+    "RUE",
+    "UDO",
+    "URD",
+    "DOER",
+    "DOLE",
+    "DORE",
+    "DOUR",
+    "DUEL",
+    "DURE",
+    "DURO",
+    "EURO",
+    "LEUD",
+    "LODE",
+    "LORD",
+    "LORE",
+    "LOUD",
+    "LOUR",
+    "LUDE",
+    "LURE",
+    "ORLE",
+    "REDO",
+    "RODE",
+    "ROUE",
+    "RUDE",
+    "RUED",
+    "RULE",
+    "LURED",
+    "OLDER",
+    "RULED",
+    "UREDO",
+    "LOURED"
+  ]
+}

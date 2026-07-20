@@ -1,0 +1,107 @@
+{
+  "id": 471,
+  "letters": [
+    "K",
+    "C",
+    "A",
+    "C",
+    "O",
+    "E",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PEACOCK",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "European butterfly having reddish-brown wings each marked with a purple eyespot",
+      "zh": "n. 孔雀, 好炫耀的人"
+    },
+    {
+      "word": "CAKE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a block of solid substance (such as soap or wax)",
+      "zh": "n. 蛋糕, 塊, 餅"
+    },
+    {
+      "word": "CAPE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "a strip of land projecting into a body of water",
+      "zh": "n. 岬, 海角, 披肩, 鬥蓬"
+    },
+    {
+      "word": "PACE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the rate of moving (especially walking or running)",
+      "zh": "n. 速度, 步調, 步法"
+    },
+    {
+      "word": "PACK",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "a large indefinite number",
+      "zh": "n. 包裹, 一夥, 一副, 背包, 包裝"
+    },
+    {
+      "word": "PEAK",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "the most extreme possible amount or value",
+      "zh": "n. 山峰, 巔, 山頂, 頂點, 尖峰, 帽舌"
+    },
+    {
+      "word": "CAP",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "a tight-fitting headdress",
+      "zh": "n. 蓋子, 帽子"
+    },
+    {
+      "word": "COP",
+      "row": 3,
+      "col": 5,
+      "dir": "down",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "APE",
+    "CEP",
+    "KAE",
+    "KEA",
+    "KEP",
+    "KOA",
+    "KOP",
+    "OAK",
+    "OCA",
+    "OKA",
+    "OKE",
+    "OPE",
+    "PAC",
+    "PEA",
+    "PEC",
+    "CAPO",
+    "CECA",
+    "COCA",
+    "COCK",
+    "COKE",
+    "COPE",
+    "PECK",
+    "POCK",
+    "POKE",
+    "ACOCK",
+    "COPECK"
+  ]
+}

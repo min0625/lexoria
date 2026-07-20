@@ -1,0 +1,85 @@
+{
+  "id": 154,
+  "letters": [
+    "P",
+    "A",
+    "S",
+    "H",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "PHASE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "any distinct time period in a sequence of events",
+      "zh": "n. 時期, 局面, 方面, 位相, 相, 階段"
+    },
+    {
+      "word": "SHAPE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "any spatial attributes (especially as defined by outline)",
+      "zh": "n. 形狀, 形態, 外形, 形式, 身材"
+    },
+    {
+      "word": "HAS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "SEA",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    },
+    {
+      "word": "ASH",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "the residue that remains when something is burned",
+      "zh": "n. 灰, 灰燼"
+    }
+  ],
+  "bonus": [
+    "APE",
+    "ASP",
+    "HAE",
+    "HAP",
+    "HEP",
+    "HES",
+    "PAH",
+    "PAS",
+    "PEA",
+    "PEH",
+    "PES",
+    "SAE",
+    "SAP",
+    "SHA",
+    "SHE",
+    "SPA",
+    "APES",
+    "APSE",
+    "EPHA",
+    "HAES",
+    "HAPS",
+    "HASP",
+    "HEAP",
+    "PASE",
+    "PASH",
+    "PEAS",
+    "PEHS",
+    "SHEA",
+    "SPAE",
+    "EPHAS",
+    "HEAPS"
+  ]
+}

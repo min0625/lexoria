@@ -1,0 +1,99 @@
+{
+  "id": 294,
+  "letters": [
+    "R",
+    "P",
+    "A",
+    "S",
+    "H",
+    "G"
+  ],
+  "words": [
+    {
+      "word": "GRAPHS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a visual representation of the relations between certain quantities plotted with reference to a set of axes",
+      "zh": "n. 圖形, 圖表；曲線圖（graph的複數）"
+    },
+    {
+      "word": "SHARP",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a musical notation indicating one half step higher than the note named",
+      "zh": "n. 半升音調, 利刃, 騙子"
+    },
+    {
+      "word": "HAS",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "ASH",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "the residue that remains when something is burned",
+      "zh": "n. 灰, 灰燼"
+    },
+    {
+      "word": "GAS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container",
+      "zh": "n. 氣體, 汽油, 瓦斯"
+    },
+    {
+      "word": "GAP",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a conspicuous disparity or difference as between two figures",
+      "zh": "n. 縫隙, 缺口, 間斷, 間距, 通用匯程式設計序"
+    }
+  ],
+  "bonus": [
+    "ARS",
+    "ASP",
+    "GAR",
+    "HAG",
+    "HAP",
+    "PAH",
+    "PAR",
+    "PAS",
+    "RAG",
+    "RAH",
+    "RAP",
+    "RAS",
+    "SAG",
+    "SAP",
+    "SHA",
+    "SPA",
+    "GAPS",
+    "GARS",
+    "GASH",
+    "GASP",
+    "HAGS",
+    "HAPS",
+    "HARP",
+    "HASP",
+    "PARS",
+    "PASH",
+    "RAGS",
+    "RAPS",
+    "RASH",
+    "RASP",
+    "SHAG",
+    "SPAR",
+    "GRAPH",
+    "GRASP",
+    "HARPS",
+    "SPRAG"
+  ]
+}

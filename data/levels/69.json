@@ -1,0 +1,49 @@
+{
+  "id": 69,
+  "letters": [
+    "W",
+    "T",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "WENT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "change location; move, travel, or proceed, also metaphorically",
+      "zh": "go的過去式"
+    },
+    {
+      "word": "NEW",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "not of long duration; having just (or relatively recently) come into being or been made or acquired or discovered",
+      "zh": "a. 新的, 陌生的, 最近的, 不熟悉的"
+    },
+    {
+      "word": "NET",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "zh": "n. 網, 網狀物, 羅網, 淨利, 淨價"
+    },
+    {
+      "word": "TEN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    }
+  ],
+  "bonus": [
+    "TEW",
+    "WEN",
+    "WET",
+    "NEWT"
+  ]
+}

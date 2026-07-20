@@ -1,0 +1,49 @@
+{
+  "id": 86,
+  "letters": [
+    "L",
+    "I",
+    "E",
+    "V"
+  ],
+  "words": [
+    {
+      "word": "LIVE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "inhabit or live in; be an inhabitant of",
+      "zh": "a. 活的, 生動的, 精力充沛的, 實況轉播的"
+    },
+    {
+      "word": "EVIL",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "morally objectionable behavior",
+      "zh": "n. 邪惡, 不幸, 罪惡"
+    },
+    {
+      "word": "VEIL",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a garment that covers the head and face",
+      "zh": "n. 面紗, 面罩, 藉口, 幕, 帳, 遮蔽物"
+    },
+    {
+      "word": "LIE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "LEI",
+    "LEV",
+    "VIE",
+    "VILE"
+  ]
+}

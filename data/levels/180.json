@@ -1,0 +1,70 @@
+{
+  "id": 180,
+  "letters": [
+    "R",
+    "T",
+    "O",
+    "S",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "ROOTS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the condition of belonging to a particular place or group by virtue of social or ethnic or cultural lineage",
+      "zh": "n. 鄉土感情, 歸根之情"
+    },
+    {
+      "word": "ROOT",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "(botany) the usually underground organ that lacks buds or leaves or nodes; absorbs water and mineral salts; usually it anchors the plant to the ground",
+      "zh": "n. 根, 根本, 根源, 基礎, 底部"
+    },
+    {
+      "word": "SORT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a category of things distinguished by some common characteristic or quality",
+      "zh": "n. 種類, 方式, 品質, 態度, 舉止"
+    },
+    {
+      "word": "TOO",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "to a degree exceeding normal or proper limits",
+      "zh": "adv. 也, 非常, 太"
+    },
+    {
+      "word": "ROT",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a state of decay usually accompanied by an offensive odor",
+      "zh": "n. 腐爛, 腐蝕, 敗壞"
+    }
+  ],
+  "bonus": [
+    "OOT",
+    "ORS",
+    "ORT",
+    "SOT",
+    "TOR",
+    "OOTS",
+    "ORTS",
+    "ROTO",
+    "ROTS",
+    "SOOT",
+    "TORO",
+    "TORS",
+    "ROOST",
+    "ROTOS",
+    "TOROS",
+    "TORSO"
+  ]
+}

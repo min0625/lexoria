@@ -1,0 +1,36 @@
+{
+  "id": 337,
+  "letters": [
+    "F",
+    "E",
+    "C",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "CAFE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a small restaurant where drinks and snacks are sold",
+      "zh": "n. 咖啡館, 酒店"
+    },
+    {
+      "word": "FACE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the front of the human head from the forehead to the chin and ear to ear",
+      "zh": "n. 臉, 面容, 正面, 外觀"
+    },
+    {
+      "word": "ACE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 么點, 好手, 少許, 發球得分"
+    }
+  ],
+  "bonus": []
+}

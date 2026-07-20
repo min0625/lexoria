@@ -1,0 +1,60 @@
+{
+  "id": 199,
+  "letters": [
+    "W",
+    "L",
+    "F",
+    "N",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "FLOWN",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "travel through the air; be airborne",
+      "zh": "fly的過去分詞"
+    },
+    {
+      "word": "NOW",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the momentary present",
+      "zh": "adv. 現在, 剛才, 目前"
+    },
+    {
+      "word": "LOW",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "an air mass of lower pressure; often brings precipitation",
+      "zh": "n. 低點, 低價, 低, 牛叫聲"
+    },
+    {
+      "word": "WON",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "the basic unit of money in South Korea",
+      "zh": "win的過去式和過去分詞"
+    },
+    {
+      "word": "OWN",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "have ownership or possession of",
+      "zh": "n. 自己的"
+    }
+  ],
+  "bonus": [
+    "FON",
+    "OWL",
+    "FLOW",
+    "FOWL",
+    "LOWN",
+    "WOLF"
+  ]
+}

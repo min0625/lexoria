@@ -1,0 +1,78 @@
+{
+  "id": 485,
+  "letters": [
+    "O",
+    "A",
+    "G",
+    "L",
+    "N",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "GALLON",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "United States liquid unit equal to 4 quarts or 3.785 liters",
+      "zh": "n. 加侖"
+    },
+    {
+      "word": "ALONG",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "with a forward motion",
+      "zh": "adv. 平行地, 向前"
+    },
+    {
+      "word": "GOAL",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the state of affairs that a plan is intended to achieve and that (when achieved) terminates behavior intended to achieve it",
+      "zh": "n. 目標, 終點, 得分, 球門, 守門員"
+    },
+    {
+      "word": "LONG",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "desire strongly or persistently",
+      "zh": "a. 長的, 長久的, 冗長的, 做多頭的"
+    },
+    {
+      "word": "AGO",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "gone by; or in the past",
+      "zh": "adv. 以前"
+    },
+    {
+      "word": "ALL",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "quantifier; used with either mass or count nouns to indicate the whole number or amount of or every one of a class",
+      "zh": "a. 所有的, 全部的, 一切的"
+    }
+  ],
+  "bonus": [
+    "GAL",
+    "GAN",
+    "GOA",
+    "LAG",
+    "LOG",
+    "NAG",
+    "NOG",
+    "AGON",
+    "GALL",
+    "GAOL",
+    "LANG",
+    "LOAN",
+    "OLLA",
+    "LLANO",
+    "LOGAN"
+  ]
+}

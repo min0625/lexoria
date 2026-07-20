@@ -1,0 +1,46 @@
+{
+  "id": 313,
+  "letters": [
+    "S",
+    "I",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SITS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "be seated",
+      "zh": "v. 坐（sit的第三人稱單數形式）"
+    },
+    {
+      "word": "SIS",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a female person who has the same parents as another person",
+      "zh": "n. [美口]姐妹（等於sister）"
+    },
+    {
+      "word": "ITS",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "SIT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    }
+  ],
+  "bonus": [
+    "TIS"
+  ]
+}

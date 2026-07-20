@@ -1,0 +1,42 @@
+{
+  "id": 68,
+  "letters": [
+    "I",
+    "S",
+    "P",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LIPS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking",
+      "zh": "n. 嘴唇（lip的複數）"
+    },
+    {
+      "word": "SLIP",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a socially awkward or tactless act",
+      "zh": "n. 滑, 滑行, 事故, 溜, 差錯, 滑臺, 下降, 插條, 後裔, 板條, 瘦長的年輕人"
+    },
+    {
+      "word": "LIP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking",
+      "zh": "n. 唇, 口緣, 唇狀構造"
+    }
+  ],
+  "bonus": [
+    "LIS",
+    "PIS",
+    "PSI",
+    "SIP",
+    "LISP"
+  ]
+}

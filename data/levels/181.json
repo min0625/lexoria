@@ -1,0 +1,58 @@
+{
+  "id": 181,
+  "letters": [
+    "S",
+    "F",
+    "I",
+    "M",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "FIRMS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the members of a business organization that owns or operates one or more establishments",
+      "zh": "n. 公司, 廠商（firm的複數）"
+    },
+    {
+      "word": "FIRM",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the members of a business organization that owns or operates one or more establishments",
+      "zh": "n. 公司, 商號"
+    },
+    {
+      "word": "RIM",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the shape of a raised edge of a more or less circular object",
+      "zh": "n. 邊, 輪緣, 框"
+    },
+    {
+      "word": "SIR",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "FIR",
+    "IFS",
+    "ISM",
+    "MIR",
+    "MIS",
+    "RIF",
+    "SIM",
+    "SRI",
+    "FIRS",
+    "MIRS",
+    "RIFS",
+    "RIMS"
+  ]
+}

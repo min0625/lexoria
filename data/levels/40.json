@@ -1,0 +1,43 @@
+{
+  "id": 40,
+  "letters": [
+    "S",
+    "K",
+    "I",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "SINK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "plumbing fixture consisting of a water basin fixed to a wall or floor and having a drainpipe",
+      "zh": "n. 藏垢的場所, 溝渠, 汙水槽"
+    },
+    {
+      "word": "SKIN",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a natural protective body covering and site of the sense of touch",
+      "zh": "n. 皮膚, 皮"
+    },
+    {
+      "word": "SIN",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    }
+  ],
+  "bonus": [
+    "INK",
+    "INS",
+    "KIN",
+    "SKI",
+    "INKS",
+    "KINS"
+  ]
+}

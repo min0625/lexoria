@@ -1,0 +1,83 @@
+{
+  "id": 360,
+  "letters": [
+    "L",
+    "A",
+    "N",
+    "B",
+    "E",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "ENABLE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "render capable or able for some task",
+      "zh": "vt. 使能夠"
+    },
+    {
+      "word": "ABLE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "(usually followed by `to') having the necessary means or skill or know-how or authority to do something",
+      "zh": "a. 能幹的, 能夠的"
+    },
+    {
+      "word": "BEEN",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "zh": "be的過去分詞"
+    },
+    {
+      "word": "BEN",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a mountain or tall hill",
+      "zh": "n. 內室"
+    },
+    {
+      "word": "LEE",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    }
+  ],
+  "bonus": [
+    "ALB",
+    "ALE",
+    "ANE",
+    "BAL",
+    "BAN",
+    "BEE",
+    "BEL",
+    "EEL",
+    "LAB",
+    "LEA",
+    "NAB",
+    "NAE",
+    "NEB",
+    "NEE",
+    "ALEE",
+    "BALE",
+    "BANE",
+    "BEAN",
+    "BENE",
+    "BLAE",
+    "ELAN",
+    "LANE",
+    "LEAN",
+    "NABE",
+    "ABELE",
+    "ANELE",
+    "LEBEN",
+    "BALEEN"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "id": 415,
+  "letters": [
+    "S",
+    "S",
+    "U",
+    "E",
+    "S",
+    "O",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "SPOUSES",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a person's partner in marriage",
+      "zh": "n. 配偶, 夫或妻( spouse的複數形式 )"
+    },
+    {
+      "word": "SPOUSE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a person's partner in marriage",
+      "zh": "n. 配偶"
+    },
+    {
+      "word": "SOUP",
+      "row": 2,
+      "col": 3,
+      "dir": "across",
+      "def": "liquid food especially of meat or fish or vegetable stock often containing pieces of solid food",
+      "zh": "n. 湯, 馬力"
+    },
+    {
+      "word": "POSE",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "affected manners intended to impress others",
+      "zh": "n. 姿勢, 姿態, 裝模作樣, 偽裝"
+    },
+    {
+      "word": "USE",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    },
+    {
+      "word": "SUE",
+      "row": 6,
+      "col": 0,
+      "dir": "across",
+      "def": "French writer whose novels described the sordid side of city life (1804-1857)",
+      "zh": "vt. 控告, 起訴, 請求"
+    },
+    {
+      "word": "UPS",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "raise",
+      "zh": "不間斷電源"
+    }
+  ],
+  "bonus": [
+    "ESS",
+    "OES",
+    "OPE",
+    "OPS",
+    "OSE",
+    "PES",
+    "PUS",
+    "SOP",
+    "SOS",
+    "SOU",
+    "SUP",
+    "UPO",
+    "EPOS",
+    "OPES",
+    "OPUS",
+    "OSES",
+    "PESO",
+    "PUSS",
+    "SOPS",
+    "SOUS",
+    "SPUE",
+    "SUES",
+    "SUPE",
+    "SUPS",
+    "SUSS",
+    "USES",
+    "PESOS",
+    "POSES",
+    "POSSE",
+    "PUSES",
+    "SOUPS",
+    "SOUSE",
+    "SPUES",
+    "SUPES",
+    "OPUSES",
+    "POSSES",
+    "PUSSES",
+    "SOUSES"
+  ]
+}

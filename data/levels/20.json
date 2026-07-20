@@ -1,0 +1,52 @@
+{
+  "id": 20,
+  "letters": [
+    "A",
+    "M",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "NAME",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a language unit by which a person or thing is known",
+      "zh": "n. 名字, 名稱, 姓名, 名義, 名譽, 檔名"
+    },
+    {
+      "word": "MEAN",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "an average of n numbers computed by adding some function of the numbers and dividing by some function of n",
+      "zh": "a. 低劣的, 卑賤的, 簡陋的, 吝嗇的, 慚愧的, 平均的, 中間的, 普通的"
+    },
+    {
+      "word": "MEN",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the force of workers available",
+      "zh": "pl. man的複數"
+    },
+    {
+      "word": "MAN",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an adult person who is male (as opposed to a woman)",
+      "zh": "n. 男人, 人類, 人"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "MAE",
+    "NAE",
+    "NAM",
+    "AMEN",
+    "MANE",
+    "NEMA"
+  ]
+}

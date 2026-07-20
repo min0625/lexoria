@@ -1,0 +1,65 @@
+{
+  "id": 269,
+  "letters": [
+    "G",
+    "E",
+    "R",
+    "H",
+    "H",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "HIGHER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "advanced in complexity or elaboration",
+      "zh": "[經] 上揚"
+    },
+    {
+      "word": "HIRE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a newly hired employee",
+      "zh": "n. 租金, 租用, 僱用"
+    },
+    {
+      "word": "HIGH",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a lofty level or position or degree",
+      "zh": "n. 高度, 高處"
+    },
+    {
+      "word": "HEIR",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who is entitled by law or by the terms of a will to inherit the estate of another",
+      "zh": "n. 繼承人, 嗣子, 後嗣"
+    },
+    {
+      "word": "RIG",
+      "row": 3,
+      "col": 5,
+      "dir": "down",
+      "def": "gear (including necessary machinery) for a particular enterprise",
+      "zh": "n. 裝備, 帆裝"
+    }
+  ],
+  "bonus": [
+    "ERG",
+    "GHI",
+    "GIE",
+    "HEH",
+    "HER",
+    "HIE",
+    "IRE",
+    "REG",
+    "REI",
+    "HEIGH"
+  ]
+}

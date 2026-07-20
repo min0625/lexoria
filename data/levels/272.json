@@ -1,0 +1,58 @@
+{
+  "id": 272,
+  "letters": [
+    "I",
+    "D",
+    "G",
+    "V",
+    "I",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "DIVING",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an athletic competition that involves diving into water",
+      "zh": "n. 潛水, 跳水"
+    },
+    {
+      "word": "DING",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a ringing sound",
+      "zh": "vi. 響, 連響, 反覆告誡"
+    },
+    {
+      "word": "GIN",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "strong liquor flavored with juniper berries",
+      "zh": "n. 杜松子酒, 軋棉機, 陷阱"
+    },
+    {
+      "word": "DIN",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a loud harsh or strident noise",
+      "zh": "n. 喧囂"
+    },
+    {
+      "word": "DIG",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the site of an archeological exploration",
+      "zh": "vt. 挖, 翻土, 發掘"
+    }
+  ],
+  "bonus": [
+    "GID",
+    "VIG",
+    "NIDI"
+  ]
+}

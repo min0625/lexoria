@@ -1,0 +1,59 @@
+{
+  "id": 156,
+  "letters": [
+    "S",
+    "I",
+    "U",
+    "M",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "MUSIC",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an artistic form of auditory communication incorporating instrumental or vocal tones in a structured and continuous manner",
+      "zh": "n. 音樂, 樂曲"
+    },
+    {
+      "word": "SCUM",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "worthless people",
+      "zh": "n. 浮渣, 糟粕, 浮藻, 熔渣, 不起好作用的人"
+    },
+    {
+      "word": "CUM",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "the thick white fluid containing spermatozoa that is ejaculated by the male genital tract",
+      "zh": "prep. 和, 附有, 與"
+    },
+    {
+      "word": "SIC",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "urge to attack someone",
+      "zh": "adv. 原文如此"
+    },
+    {
+      "word": "SUM",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a quantity of money",
+      "zh": "n. 總數, 總和, 金額, 概要, 頂點"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "ISM",
+    "MIS",
+    "MUS",
+    "SIM"
+  ]
+}

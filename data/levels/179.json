@@ -1,0 +1,73 @@
+{
+  "id": 179,
+  "letters": [
+    "T",
+    "S",
+    "R",
+    "O",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "STORY",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a message that tells the particulars of an act or occurrence or course of events; presented in writing or drama or cinema or as a radio or television program",
+      "zh": "n. 故事, 小說, 傳奇, 描述, 閱歷, 經歷, 層"
+    },
+    {
+      "word": "TOYS",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an artifact designed to be played with",
+      "zh": "n. 玩具（toy的複數）"
+    },
+    {
+      "word": "SORT",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a category of things distinguished by some common characteristic or quality",
+      "zh": "n. 種類, 方式, 品質, 態度, 舉止"
+    },
+    {
+      "word": "TRY",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "earnest and conscientious activity intended to do or accomplish something",
+      "zh": "n. 嘗試, 試驗, 審理, 審判"
+    },
+    {
+      "word": "TOY",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "an artifact designed to be played with",
+      "zh": "n. 玩具, 小玩藝兒, 小型的東西, 消遣"
+    }
+  ],
+  "bonus": [
+    "ORS",
+    "ORT",
+    "ROT",
+    "SOT",
+    "SOY",
+    "STY",
+    "TOR",
+    "ORTS",
+    "ROSY",
+    "ROTS",
+    "RYOT",
+    "TORS",
+    "TORY",
+    "TROY",
+    "TYRO",
+    "RYOTS",
+    "STROY",
+    "TROYS",
+    "TYROS"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": 189,
+  "letters": [
+    "R",
+    "E",
+    "C",
+    "S",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "CURSE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "profane or obscene expression usually of surprise or anger",
+      "zh": "n. 咒罵, 詛咒"
+    },
+    {
+      "word": "SURE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "USER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who makes use of a thing; someone who uses or employs something",
+      "zh": "n. 使用者"
+    },
+    {
+      "word": "USE",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "CUE",
+    "CUR",
+    "ECU",
+    "ERS",
+    "REC",
+    "RES",
+    "RUE",
+    "SEC",
+    "SER",
+    "SUE",
+    "CRUS",
+    "CUES",
+    "CURE",
+    "CURS",
+    "ECRU",
+    "ECUS",
+    "RECS",
+    "RUES",
+    "RUSE",
+    "SUER",
+    "CRUSE",
+    "CURES",
+    "ECRUS",
+    "SUCRE"
+  ]
+}

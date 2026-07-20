@@ -1,0 +1,39 @@
+{
+  "id": 465,
+  "letters": [
+    "T",
+    "F",
+    "A",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "FACT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a piece of information about circumstances that exist or events that have occurred",
+      "zh": "n. 事實, 真實性, 真相, 細節, 論據"
+    },
+    {
+      "word": "FAT",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a soft greasy substance occurring in organic tissue and consisting of a mixture of lipids (mostly triglycerides)",
+      "zh": "n. 脂肪, 脂油, 肥肉"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    }
+  ],
+  "bonus": [
+    "AFT",
+    "CAT"
+  ]
+}

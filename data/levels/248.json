@@ -1,0 +1,69 @@
+{
+  "id": 248,
+  "letters": [
+    "O",
+    "R",
+    "M",
+    "H",
+    "U",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "HUMOUR",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a characteristic (habitual or relatively temporary) state of feeling",
+      "zh": "n. 幽默, 詼諧, 情緒, 體液"
+    },
+    {
+      "word": "HUMOR",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter",
+      "zh": "n. 幽默, 詼諧, 心情"
+    },
+    {
+      "word": "HOUR",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a period of time equal to 1/24th of a day",
+      "zh": "n. 小時, 鐘頭, 時間, ...點鐘, 課時"
+    },
+    {
+      "word": "RUM",
+      "row": 1,
+      "col": 7,
+      "dir": "down",
+      "def": "liquor distilled from fermented molasses",
+      "zh": "n. 朗姆酒"
+    },
+    {
+      "word": "HUM",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the state of being or appearing to be actively engaged in an activity",
+      "zh": "n. 嗡嗡聲, 哼聲, 雜聲"
+    },
+    {
+      "word": "ROM",
+      "row": 3,
+      "col": 5,
+      "dir": "across",
+      "def": "(computer science) memory whose contents can be accessed and read but cannot be changed",
+      "zh": "只讀儲存器"
+    }
+  ],
+  "bonus": [
+    "MHO",
+    "MOR",
+    "OHM",
+    "OUR",
+    "RHO",
+    "MOHUR"
+  ]
+}

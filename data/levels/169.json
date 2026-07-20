@@ -1,0 +1,79 @@
+{
+  "id": 169,
+  "letters": [
+    "N",
+    "A",
+    "S",
+    "I",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PAINS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an effortful attempt to attain a goal",
+      "zh": "n. 麻煩, 辛苦"
+    },
+    {
+      "word": "PAIN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a symptom of some physical hurt or disorder",
+      "zh": "n. 痛苦, 疼痛, 辛苦"
+    },
+    {
+      "word": "SPIN",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a swift whirling motion (usually of a missile)",
+      "zh": "n. 旋轉, 自旋, 疾馳, 情緒低落"
+    },
+    {
+      "word": "PAN",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "cooking utensil consisting of a wide metal vessel",
+      "zh": "n. 平鍋, 淺盤, 盆地, 硬土層, 拍攝全景"
+    }
+  ],
+  "bonus": [
+    "AIN",
+    "AIS",
+    "ANI",
+    "ASP",
+    "INS",
+    "NAP",
+    "NIP",
+    "PAS",
+    "PIA",
+    "PIN",
+    "PIS",
+    "PSI",
+    "SAP",
+    "SIN",
+    "SIP",
+    "SPA",
+    "AINS",
+    "ANIS",
+    "NAPS",
+    "NIPA",
+    "NIPS",
+    "PANS",
+    "PIAN",
+    "PIAS",
+    "PINA",
+    "PINS",
+    "SAIN",
+    "SNAP",
+    "SNIP",
+    "SPAN",
+    "NIPAS",
+    "PIANS",
+    "PINAS"
+  ]
+}

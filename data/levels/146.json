@@ -1,0 +1,54 @@
+{
+  "id": 146,
+  "letters": [
+    "F",
+    "T",
+    "I",
+    "F",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "STIFF",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "an ordinary man",
+      "zh": "a. 堅硬的, 嚴厲的, 呆板的, 生硬的, 剛強的, 強烈的, 粘的, 稠的, 艱難的"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "SIT",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "FIT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a display of bad temper",
+      "zh": "n. 適宜, 合身, 發作, 痙攣"
+    }
+  ],
+  "bonus": [
+    "IFF",
+    "IFS",
+    "TIS",
+    "FIST",
+    "FITS",
+    "SIFT",
+    "TIFF",
+    "TIFFS"
+  ]
+}

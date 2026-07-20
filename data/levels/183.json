@@ -1,0 +1,60 @@
+{
+  "id": 183,
+  "letters": [
+    "S",
+    "T",
+    "U",
+    "E",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "SUITE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a musical composition of several movements only loosely connected",
+      "zh": "n. 隨員, 套房, (一)組, (一)套, 組曲, 繼之而來的事"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "USE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "SEI",
+    "SIT",
+    "SUE",
+    "TIE",
+    "TIS",
+    "TUI",
+    "UTS",
+    "ETUI",
+    "SITE",
+    "SUET",
+    "SUIT",
+    "TIES",
+    "TUIS",
+    "ETUIS"
+  ]
+}

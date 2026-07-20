@@ -1,0 +1,105 @@
+{
+  "id": 203,
+  "letters": [
+    "D",
+    "E",
+    "I",
+    "S",
+    "S",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "SLIDES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a small flat rectangular piece of glass on which specimens can be mounted for microscopic study",
+      "zh": "v. 滑；徐徐而行；下跌（slide的三單形式）"
+    },
+    {
+      "word": "LESS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "(comparative of `little' usually used with mass nouns) a quantifier meaning not as great in amount or degree",
+      "zh": "n. 較少, 較小"
+    },
+    {
+      "word": "SIDE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a place within a region identified relative to a center or reference location",
+      "zh": "n. 旁邊, 側, 方面, 脅, 側邊, 血統"
+    },
+    {
+      "word": "LED",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "DIE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "LIE",
+      "row": 4,
+      "col": 1,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "DEL",
+    "DIS",
+    "ELD",
+    "ELS",
+    "ESS",
+    "IDS",
+    "LEI",
+    "LID",
+    "LIS",
+    "SEI",
+    "SEL",
+    "SIS",
+    "DEIL",
+    "DELI",
+    "DELS",
+    "DIEL",
+    "DIES",
+    "DISS",
+    "ELDS",
+    "IDES",
+    "IDLE",
+    "ISLE",
+    "LEIS",
+    "LIDS",
+    "LIED",
+    "LIES",
+    "SEIS",
+    "SELS",
+    "SILD",
+    "SLED",
+    "SLID",
+    "DEILS",
+    "DELIS",
+    "IDLES",
+    "ISLED",
+    "ISLES",
+    "SIDES",
+    "SIDLE",
+    "SILDS",
+    "SLEDS",
+    "SLIDE",
+    "SIDLES"
+  ]
+}

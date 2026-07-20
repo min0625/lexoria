@@ -1,0 +1,70 @@
+{
+  "id": 438,
+  "letters": [
+    "S",
+    "E",
+    "I",
+    "L",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "MILES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a unit of length equal to 1,760 yards or 5,280 feet; exactly 1609.344 meters",
+      "zh": "n. 英里（1英里約合1609米, mile的複數形式）"
+    },
+    {
+      "word": "SMILE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a facial expression characterized by turning up the corners of the mouth; usually shows pleasure or amusement",
+      "zh": "n. 微笑, 喜色, 笑容"
+    },
+    {
+      "word": "LIES",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "v. 躺臥（lie的第三人稱單數形式）"
+    },
+    {
+      "word": "LIE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELM",
+    "ELS",
+    "EMS",
+    "ISM",
+    "LEI",
+    "LIS",
+    "MEL",
+    "MIL",
+    "MIS",
+    "SEI",
+    "SEL",
+    "SIM",
+    "ELMS",
+    "ISLE",
+    "LEIS",
+    "LIME",
+    "MELS",
+    "MILE",
+    "MILS",
+    "MISE",
+    "SEMI",
+    "SLIM",
+    "LIMES",
+    "SLIME"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": 436,
+  "letters": [
+    "S",
+    "E",
+    "U",
+    "L",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "RULES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則；條例（rule的複數形式）"
+    },
+    {
+      "word": "RULE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則, 統治, 控制, 支配, 規律, 標準, 章程, 破折號, 鉛線"
+    },
+    {
+      "word": "SURE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "USE",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "ERS",
+    "LEU",
+    "RES",
+    "RUE",
+    "SEL",
+    "SER",
+    "SUE",
+    "LUES",
+    "LURE",
+    "RUES",
+    "RUSE",
+    "SLUE",
+    "SLUR",
+    "SUER",
+    "USER",
+    "LURES"
+  ]
+}

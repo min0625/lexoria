@@ -1,0 +1,68 @@
+{
+  "id": 490,
+  "letters": [
+    "N",
+    "R",
+    "T",
+    "B",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "BURNT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "destroy by fire",
+      "zh": "burn的過去式和過去分詞"
+    },
+    {
+      "word": "TURN",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a circular segment of a curve",
+      "zh": "n. 轉彎, 轉動, 旋轉, 翻轉, 一圈, 順次, 改動, 變化, 性格, 特色, 形狀, 轉折"
+    },
+    {
+      "word": "BURN",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "pain that feels hot as if it were on fire",
+      "zh": "vt. 燒, 燒燬, 燒傷"
+    },
+    {
+      "word": "RUN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"
+    },
+    {
+      "word": "BUT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    }
+  ],
+  "bonus": [
+    "BUN",
+    "BUR",
+    "NUB",
+    "NUT",
+    "RUB",
+    "RUT",
+    "TUB",
+    "TUN",
+    "URB",
+    "URN",
+    "BRUT",
+    "BUNT",
+    "RUNT",
+    "BRUNT"
+  ]
+}

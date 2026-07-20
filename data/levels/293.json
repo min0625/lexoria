@@ -1,0 +1,100 @@
+{
+  "id": 293,
+  "letters": [
+    "S",
+    "I",
+    "R",
+    "T",
+    "S",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "STAIRS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a flight of stairs or a flight of steps",
+      "zh": "n. 樓梯"
+    },
+    {
+      "word": "STAR",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "(astronomy) a celestial body of hot gases that radiates energy derived from thermonuclear reactions in the interior",
+      "zh": "n. 星, 恆星, 星形物, 運氣, 明星"
+    },
+    {
+      "word": "ART",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "AIR",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    }
+  ],
+  "bonus": [
+    "AIS",
+    "AIT",
+    "ARS",
+    "ASS",
+    "RAS",
+    "RAT",
+    "RIA",
+    "SAT",
+    "SIR",
+    "SIS",
+    "SIT",
+    "SRI",
+    "TAR",
+    "TAS",
+    "TIS",
+    "AIRS",
+    "AIRT",
+    "AITS",
+    "ARTS",
+    "RATS",
+    "RIAS",
+    "SARI",
+    "SATI",
+    "SIRS",
+    "SITS",
+    "SRIS",
+    "STIR",
+    "TARS",
+    "TASS",
+    "TSAR",
+    "AIRTS",
+    "ARSIS",
+    "ASTIR",
+    "SARIS",
+    "SATIS",
+    "SITAR",
+    "STAIR",
+    "STARS",
+    "STIRS",
+    "STRIA",
+    "TARSI",
+    "TRASS",
+    "TSARS",
+    "SISTRA",
+    "SITARS"
+  ]
+}

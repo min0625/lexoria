@@ -1,0 +1,65 @@
+{
+  "id": 333,
+  "letters": [
+    "H",
+    "P",
+    "S",
+    "I",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SHIPS",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a vessel that carries passengers or freight",
+      "zh": "n. 艦船（ship的複數）"
+    },
+    {
+      "word": "PISS",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "liquid excretory product",
+      "zh": "vi. 小便, 下大雨, 抱怨"
+    },
+    {
+      "word": "HIPS",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "either side of the body below the waist and above the thigh",
+      "zh": "[化] 高抗衝聚苯乙烯"
+    },
+    {
+      "word": "SHIP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a vessel that carries passengers or freight",
+      "zh": "n. 船, 艦"
+    },
+    {
+      "word": "HIP",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "either side of the body below the waist and above the thigh",
+      "zh": "n. 臀部, 薔薇果, 憂鬱"
+    }
+  ],
+  "bonus": [
+    "HIS",
+    "PHI",
+    "PIS",
+    "PSI",
+    "SIP",
+    "SIS",
+    "HISS",
+    "PHIS",
+    "PISH",
+    "PSIS",
+    "SIPS"
+  ]
+}

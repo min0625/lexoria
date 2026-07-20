@@ -1,0 +1,91 @@
+{
+  "id": 421,
+  "letters": [
+    "L",
+    "C",
+    "N",
+    "E",
+    "E",
+    "C",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "LICENCE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "excessive freedom; lack of due restraint; - Will Durant; - Edmund Burke",
+      "zh": "n. 執照, 許可證, 特許"
+    },
+    {
+      "word": "NIECE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a daughter of your brother or sister",
+      "zh": "n. 侄女, 甥女"
+    },
+    {
+      "word": "NICE",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a city in southeastern France on the Mediterranean; the leading resort on the French Riviera",
+      "zh": "a. 美好的, 和藹的, 正派的, 做得好的, 精密的, 細微的, 挑剔的, 謹慎的"
+    },
+    {
+      "word": "LINE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "a formation of people or things one beside another",
+      "zh": "n. 列, 線, 繩, 電線, 線路, 路線, 航線, 作業線, 界線, 戰線, 外形, 排, 家系"
+    },
+    {
+      "word": "LIE",
+      "row": 6,
+      "col": 2,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    },
+    {
+      "word": "LEE",
+      "row": 6,
+      "col": 2,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    },
+    {
+      "word": "LIN",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "United States sculptor and architect whose public works include the memorial to veterans of the Vietnam War in Washington (born in 1959)",
+      "zh": "n. 林"
+    },
+    {
+      "word": "ICE",
+      "row": 8,
+      "col": 0,
+      "dir": "across",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "CEL",
+    "EEL",
+    "LEI",
+    "NEE",
+    "NIL",
+    "CEIL",
+    "CINE",
+    "LICE",
+    "LIEN",
+    "CLINE"
+  ]
+}

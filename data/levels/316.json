@@ -1,0 +1,74 @@
+{
+  "id": 316,
+  "letters": [
+    "A",
+    "C",
+    "X",
+    "I",
+    "M",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "CLIMAX",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the highest point of anything conceived of as growing or developing or unfolding",
+      "zh": "n. 高潮, 極點, 層進法"
+    },
+    {
+      "word": "CLAIM",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an assertion of a right (as to money or property)",
+      "zh": "n. 要求, 要求權, 斷言, 權利"
+    },
+    {
+      "word": "MAIL",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the bags of letters and packages that are transported by the postal service",
+      "zh": "n. 郵件, 郵政, 郵遞, 盔甲"
+    },
+    {
+      "word": "MAX",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "street names for gamma hydroxybutyrate",
+      "zh": "[計] 最大"
+    },
+    {
+      "word": "MIX",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "a commercially prepared mixture of dry ingredients",
+      "zh": "n. 混合物, 混亂, 糊塗"
+    }
+  ],
+  "bonus": [
+    "AIL",
+    "AIM",
+    "AMI",
+    "CAM",
+    "LAC",
+    "LAM",
+    "LAX",
+    "MAC",
+    "MIL",
+    "AXIL",
+    "CALM",
+    "CALX",
+    "CLAM",
+    "LAIC",
+    "LIMA",
+    "MAXI",
+    "MICA",
+    "CALIX",
+    "MALIC"
+  ]
+}

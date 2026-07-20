@@ -1,0 +1,82 @@
+{
+  "id": 132,
+  "letters": [
+    "P",
+    "A",
+    "T",
+    "S",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "PARTS",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the local environment",
+      "zh": "n. 零件, 部件"
+    },
+    {
+      "word": "PART",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "something determined in relation to something that includes it",
+      "zh": "n. 部分, 區域性, 零件, 要素, 等分, 職責, 角色, 部位"
+    },
+    {
+      "word": "PAST",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "the time that has elapsed",
+      "zh": "n. 過去, 昔時, 往事, 早年經歷, 過去時"
+    },
+    {
+      "word": "ART",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    }
+  ],
+  "bonus": [
+    "APT",
+    "ARS",
+    "ASP",
+    "PAR",
+    "PAS",
+    "PAT",
+    "RAP",
+    "RAS",
+    "RAT",
+    "SAP",
+    "SAT",
+    "SPA",
+    "TAP",
+    "TAR",
+    "TAS",
+    "ARTS",
+    "PARS",
+    "PATS",
+    "PRAT",
+    "RAPS",
+    "RAPT",
+    "RASP",
+    "RATS",
+    "SPAR",
+    "SPAT",
+    "STAR",
+    "TAPS",
+    "TARP",
+    "TARS",
+    "TRAP",
+    "TSAR",
+    "PRATS",
+    "SPRAT",
+    "STRAP",
+    "TARPS",
+    "TRAPS"
+  ]
+}

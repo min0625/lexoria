@@ -1,0 +1,85 @@
+{
+  "id": 261,
+  "letters": [
+    "O",
+    "S",
+    "E",
+    "Y",
+    "N",
+    "J"
+  ],
+  "words": [
+    {
+      "word": "ENJOYS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "derive or receive pleasure from; get enjoyment from; take pleasure in",
+      "zh": "v. 享有( enjoy的第三人稱單數 ); 玩得快樂; 喜歡; enjoy yourself （祝願時說）玩痛快些"
+    },
+    {
+      "word": "ENJOY",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "derive or receive pleasure from; get enjoyment from; take pleasure in",
+      "zh": "vt. 享受, 喜歡, 欣賞"
+    },
+    {
+      "word": "SON",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    },
+    {
+      "word": "ONE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "YES",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "EON",
+    "JOE",
+    "JOY",
+    "NOS",
+    "OES",
+    "ONS",
+    "OSE",
+    "SEN",
+    "SOY",
+    "SYN",
+    "YEN",
+    "YON",
+    "EONS",
+    "JEON",
+    "JOES",
+    "JOEY",
+    "JOYS",
+    "NOES",
+    "NOSE",
+    "NOSY",
+    "ONES",
+    "OYES",
+    "SNYE",
+    "SONE",
+    "SYNE",
+    "YENS",
+    "JOEYS",
+    "JONES",
+    "NOSEY"
+  ]
+}

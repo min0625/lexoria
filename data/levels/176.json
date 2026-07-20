@@ -1,0 +1,50 @@
+{
+  "id": 176,
+  "letters": [
+    "E",
+    "T",
+    "S",
+    "S",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "STEMS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "(linguistics) the form of a word after all affixes are removed",
+      "zh": "n. 樹管；阻擋物；莖（stem的複數）"
+    },
+    {
+      "word": "SETS",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 集合, 設定（set的複數）"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "MET",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "come together",
+      "zh": "meet的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "EMS",
+    "ESS",
+    "MESS",
+    "STEM"
+  ]
+}

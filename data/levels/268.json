@@ -1,0 +1,84 @@
+{
+  "id": 268,
+  "letters": [
+    "P",
+    "I",
+    "E",
+    "D",
+    "K",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "PICKED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "select carefully from a group",
+      "zh": "a. 精選的, 採摘的, 已收穫的, 截出的, 已清除的, 有尖頭的, 多刺的"
+    },
+    {
+      "word": "DICK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "someone who is a detective",
+      "zh": "n. 傢伙, 詞典, 誓言(書)"
+    },
+    {
+      "word": "PICK",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the person or thing chosen or selected",
+      "zh": "n. 精選, 選擇, 掘, 精華, 牙籤, 鶴嘴鋤"
+    },
+    {
+      "word": "DIE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "ICE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "KID",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a young person of either sex",
+      "zh": "n. 小山羊, 小山羊肉, 小孩, 欺騙"
+    }
+  ],
+  "bonus": [
+    "CEP",
+    "DIP",
+    "ICK",
+    "KEP",
+    "KIP",
+    "PEC",
+    "PED",
+    "PIC",
+    "PIE",
+    "CEDI",
+    "DECK",
+    "DICE",
+    "DIKE",
+    "EPIC",
+    "ICED",
+    "KEPI",
+    "PECK",
+    "PICE",
+    "PIED",
+    "PIKE",
+    "PIKED"
+  ]
+}

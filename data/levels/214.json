@@ -1,0 +1,84 @@
+{
+  "id": 214,
+  "letters": [
+    "E",
+    "A",
+    "W",
+    "R",
+    "E",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "WEAKER",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "wanting in physical strength",
+      "zh": "[經] 下跌"
+    },
+    {
+      "word": "WEEK",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "any period of seven consecutive days",
+      "zh": "n. 星期, 周"
+    },
+    {
+      "word": "WERE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "ARE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "WAR",
+      "row": 1,
+      "col": 6,
+      "dir": "down",
+      "def": "the waging of armed conflict against an enemy",
+      "zh": "n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"
+    }
+  ],
+  "bonus": [
+    "ARK",
+    "AWE",
+    "EAR",
+    "EKE",
+    "ERA",
+    "ERE",
+    "EWE",
+    "KAE",
+    "KEA",
+    "RAW",
+    "REE",
+    "WAE",
+    "WEE",
+    "AKEE",
+    "AWEE",
+    "EWER",
+    "RAKE",
+    "REEK",
+    "WAKE",
+    "WARE",
+    "WARK",
+    "WEAK",
+    "WEAR",
+    "WEER",
+    "WEKA",
+    "RAKEE",
+    "WAKER",
+    "WREAK",
+    "REWAKE"
+  ]
+}

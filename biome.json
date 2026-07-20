@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!data/levels.json", "!node_modules"]
+    "includes": ["**", "!data/levels", "!node_modules"]
   },
   "formatter": {
     "enabled": true,

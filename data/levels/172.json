@@ -1,0 +1,55 @@
+{
+  "id": 172,
+  "letters": [
+    "E",
+    "N",
+    "H",
+    "O",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "HONEY",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a sweet yellow liquid produced by bees",
+      "zh": "n. 蜂蜜, 甜蜜, 愛人"
+    },
+    {
+      "word": "YEN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a yearning for something or to do something",
+      "zh": "n. 日元(日本貨幣單位), 渴望, 嗜好"
+    },
+    {
+      "word": "ONE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "HEN",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "adult female chicken",
+      "zh": "n. 母雞, 雌禽"
+    }
+  ],
+  "bonus": [
+    "EON",
+    "HEY",
+    "HOE",
+    "HON",
+    "HOY",
+    "NOH",
+    "YEH",
+    "YON",
+    "HONE"
+  ]
+}

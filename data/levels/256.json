@@ -1,0 +1,74 @@
+{
+  "id": 256,
+  "letters": [
+    "L",
+    "S",
+    "S",
+    "K",
+    "L",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "SKILLS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "an ability that has been acquired by training",
+      "zh": "n. 技術；技能；技巧（skill的複數形式）"
+    },
+    {
+      "word": "SKILL",
+      "row": 3,
+      "col": 5,
+      "dir": "down",
+      "def": "an ability that has been acquired by training",
+      "zh": "n. 技術, 技巧, 技能, 熟練, 熟練工人"
+    },
+    {
+      "word": "KILLS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the act of terminating a life",
+      "zh": "n. 殺戮；殺敵數；殲敵數（kill的複數形式）"
+    },
+    {
+      "word": "KISS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the act of caressing with the lips (or an instance thereof)",
+      "zh": "n. 吻"
+    },
+    {
+      "word": "KILL",
+      "row": 3,
+      "col": 1,
+      "dir": "down",
+      "def": "the act of terminating a life",
+      "zh": "n. 殺, 殺戮, 小河"
+    },
+    {
+      "word": "ILL",
+      "row": 6,
+      "col": 3,
+      "dir": "across",
+      "def": "an often persistent bodily disorder or disease; a cause for complaining",
+      "zh": "n. 疾病, 壞事, 罪惡, 災難"
+    }
+  ],
+  "bonus": [
+    "ILK",
+    "LIS",
+    "SIS",
+    "SKI",
+    "ILKS",
+    "ILLS",
+    "SILK",
+    "SILL",
+    "SKIS",
+    "SILKS",
+    "SILLS"
+  ]
+}

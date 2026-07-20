@@ -1,0 +1,51 @@
+{
+  "id": 82,
+  "letters": [
+    "D",
+    "N",
+    "O",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DONE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "engage in",
+      "zh": "a. 完成了的, 好了的"
+    },
+    {
+      "word": "END",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    },
+    {
+      "word": "ONE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "DON",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a Spanish gentleman or nobleman",
+      "zh": "n. 西班牙貴族(或紳士), 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DOE",
+    "EON",
+    "NOD",
+    "ODE",
+    "NODE"
+  ]
+}

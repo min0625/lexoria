@@ -1,0 +1,123 @@
+{
+  "id": 302,
+  "letters": [
+    "R",
+    "E",
+    "E",
+    "S",
+    "V",
+    "D",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DESERVE",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "be worthy or deserving",
+      "zh": "vt. 該得到, 值得"
+    },
+    {
+      "word": "SERVED",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "serve a purpose, role, or function",
+      "zh": "v. 招待；服役；發球；服務（serve的過去分詞）"
+    },
+    {
+      "word": "SEVERE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "intensely or extremely bad or unpleasant in degree or quality",
+      "zh": "a. 嚴格的, 尖銳的, 嚴肅的, 嚴重的, 嚴厲的, 樸素的"
+    },
+    {
+      "word": "SERVE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "(sports) a stroke that puts the ball in play",
+      "zh": "vt. 可作...用, 服務, 經歷, 招待, 供應, 送交, 對待"
+    },
+    {
+      "word": "SEED",
+      "row": 0,
+      "col": 7,
+      "dir": "across",
+      "def": "a small hard fruit",
+      "zh": "n. 種子, 籽, 萌芽, 子孫, 精液"
+    },
+    {
+      "word": "EVER",
+      "row": 0,
+      "col": 9,
+      "dir": "down",
+      "def": "at any time",
+      "zh": "adv. 曾經, 究竟, 永遠"
+    },
+    {
+      "word": "RED",
+      "row": 3,
+      "col": 9,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "SEE",
+      "row": 4,
+      "col": 6,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEV",
+    "ERE",
+    "ERS",
+    "EVE",
+    "REE",
+    "RES",
+    "REV",
+    "SER",
+    "VEE",
+    "DEER",
+    "DEES",
+    "DERE",
+    "DEVS",
+    "DREE",
+    "EVES",
+    "REDE",
+    "REDS",
+    "REED",
+    "REES",
+    "REVS",
+    "SEER",
+    "SERE",
+    "VEER",
+    "VEES",
+    "DEERS",
+    "DREES",
+    "REDES",
+    "REEDS",
+    "REEVE",
+    "RESEE",
+    "SEDER",
+    "SERED",
+    "SEVER",
+    "VEERS",
+    "VERSE",
+    "REEVED",
+    "REEVES",
+    "RESEED",
+    "SEEDER",
+    "VEERED",
+    "VERSED",
+    "SEVERED"
+  ]
+}

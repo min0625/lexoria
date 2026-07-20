@@ -1,0 +1,53 @@
+{
+  "id": 480,
+  "letters": [
+    "Y",
+    "I",
+    "R",
+    "K",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "RISKY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "involving risk or danger",
+      "zh": "a. 危險的"
+    },
+    {
+      "word": "RISK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a source of danger; a possibility of incurring loss or misfortune",
+      "zh": "n. 冒險, 危險, 保險額"
+    },
+    {
+      "word": "SIR",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "SKY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the atmosphere and outer space as viewed from the earth",
+      "zh": "n. 天空, 天色, 天堂"
+    }
+  ],
+  "bonus": [
+    "IRK",
+    "KIR",
+    "SKI",
+    "SRI",
+    "IRKS",
+    "KIRS",
+    "KRIS"
+  ]
+}

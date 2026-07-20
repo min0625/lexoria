@@ -1,0 +1,89 @@
+{
+  "id": 295,
+  "letters": [
+    "R",
+    "A",
+    "E",
+    "A",
+    "K",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "KARATE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a traditional Japanese system of unarmed combat; sharp blows and kicks are given to pressure-sensitive points on the body of the opponent",
+      "zh": "n. 空手道"
+    },
+    {
+      "word": "RATE",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "a magnitude or frequency relative to a time unit",
+      "zh": "n. 比率, 率, 速度, 價格, 費用, 等級"
+    },
+    {
+      "word": "AREA",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a particular geographical region of indefinite boundary (usually serving some special purpose or distinguished by its people or culture or geography)",
+      "zh": "n. 區域, 面積, 範圍, 空地"
+    },
+    {
+      "word": "TAKE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the income or profit arising from such transactions as the sale of land or other property",
+      "zh": "vt. 拿, 取, 抓, 帶領, 獲得, 就座, 接受, 吃, 吸引, 採取, 乘, 需要, 花費"
+    },
+    {
+      "word": "ARE",
+      "row": 6,
+      "col": 0,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "ART",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    }
+  ],
+  "bonus": [
+    "ARK",
+    "ATE",
+    "EAR",
+    "EAT",
+    "ERA",
+    "ETA",
+    "KAE",
+    "KAT",
+    "KEA",
+    "RAT",
+    "RET",
+    "TAE",
+    "TAR",
+    "TEA",
+    "ARAK",
+    "KART",
+    "KATA",
+    "RAKE",
+    "TAKA",
+    "TARE",
+    "TEAK",
+    "TEAR",
+    "TREK",
+    "KARAT",
+    "REATA",
+    "TAKER"
+  ]
+}

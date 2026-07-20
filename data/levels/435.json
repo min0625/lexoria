@@ -1,0 +1,133 @@
+{
+  "id": 435,
+  "letters": [
+    "T",
+    "H",
+    "U",
+    "P",
+    "A",
+    "M",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "MATCHUP",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the pairing of people or things as for comparison or competition",
+      "zh": "n. 火柴, 比賽, 競賽, 匹配, (足球, 捧球, 藍球)比賽"
+    },
+    {
+      "word": "MATCH",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "lighter consisting of a thin piece of wood or cardboard tipped with combustible chemical; ignites with friction",
+      "zh": "n. 比賽, 火柴, 對手"
+    },
+    {
+      "word": "MUCH",
+      "row": 4,
+      "col": 0,
+      "dir": "down",
+      "def": "a great amount or extent",
+      "zh": "n. 大量, 許多, 重要的事"
+    },
+    {
+      "word": "CAMP",
+      "row": 6,
+      "col": 0,
+      "dir": "across",
+      "def": "temporary living quarters specially built by the army for soldiers",
+      "zh": "n. 露營, 帳篷"
+    },
+    {
+      "word": "ACT",
+      "row": 1,
+      "col": 4,
+      "dir": "across",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "CUT",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a share of the profits",
+      "zh": "n. 切口, 割傷, 降低, 切, 割, 砍, 削, 傷口, 削減, 縮短, 刪節, 通路"
+    },
+    {
+      "word": "CUP",
+      "row": 4,
+      "col": 3,
+      "dir": "down",
+      "def": "a small open container usually used for drinking; usually has a handle",
+      "zh": "n. 杯子, 茶杯, 優勝杯"
+    },
+    {
+      "word": "PUT",
+      "row": 4,
+      "col": 6,
+      "dir": "down",
+      "def": "the option to sell a given stock (or stock index or commodity future) at a given price before a given date",
+      "zh": "vt. 放, 擺, 安置, 移動, 發射, 投擲, 寫上, 表達, 使從事, 使受到, 驅使, 賦予"
+    }
+  ],
+  "bonus": [
+    "AMP",
+    "AMU",
+    "APT",
+    "CAM",
+    "CAP",
+    "CAT",
+    "CUM",
+    "HAM",
+    "HAP",
+    "HAT",
+    "HUM",
+    "HUP",
+    "HUT",
+    "MAC",
+    "MAP",
+    "MAT",
+    "MUT",
+    "PAC",
+    "PAH",
+    "PAM",
+    "PAT",
+    "PHT",
+    "TAM",
+    "TAP",
+    "TAU",
+    "TUP",
+    "UMP",
+    "UTA",
+    "CAPH",
+    "CHAM",
+    "CHAP",
+    "CHAT",
+    "CHUM",
+    "HAUT",
+    "HUMP",
+    "MACH",
+    "MATH",
+    "MAUT",
+    "PACT",
+    "PATH",
+    "PHAT",
+    "PHUT",
+    "PUMA",
+    "TACH",
+    "TAMP",
+    "TUMP",
+    "CAPUT",
+    "CHAMP",
+    "CHAPT",
+    "CHUMP",
+    "MUTCH",
+    "PATCH",
+    "THUMP"
+  ]
+}

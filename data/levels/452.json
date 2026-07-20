@@ -1,0 +1,39 @@
+{
+  "id": 452,
+  "letters": [
+    "S",
+    "H",
+    "D",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "DISH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a piece of dishware normally used as a container for holding or serving food",
+      "zh": "n. 盤子, 碟, 菜餚"
+    },
+    {
+      "word": "HID",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "prevent from being seen or discovered",
+      "zh": "hide的過去式和過去分詞"
+    },
+    {
+      "word": "DIS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "god of the underworld; counterpart of Greek Pluto",
+      "zh": "n. 狄斯(陰間的神), 陰間, 冥府"
+    }
+  ],
+  "bonus": [
+    "HIS",
+    "IDS"
+  ]
+}

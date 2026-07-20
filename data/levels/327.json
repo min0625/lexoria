@@ -1,0 +1,76 @@
+{
+  "id": 327,
+  "letters": [
+    "F",
+    "E",
+    "S",
+    "L",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "FALSE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "not in accordance with the fact or reality or actuality",
+      "zh": "a. 錯誤的, 虛偽的, 假的, 不老實的"
+    },
+    {
+      "word": "SELF",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "your consciousness of your own identity",
+      "zh": "n. 自己, 自我, 本性, 本質, 私心, 本人"
+    },
+    {
+      "word": "SALE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a particular instance of selling",
+      "zh": "n. 出售, 賣, 拍賣, 銷售額, 廉價出售"
+    },
+    {
+      "word": "SAFE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "strongbox where valuables can be safely kept",
+      "zh": "n. 保險箱, 冷藏室"
+    },
+    {
+      "word": "SEA",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALS",
+    "EFS",
+    "ELF",
+    "ELS",
+    "FAS",
+    "LAS",
+    "LEA",
+    "SAE",
+    "SAL",
+    "SEL",
+    "ALEF",
+    "ALES",
+    "FEAL",
+    "FLEA",
+    "LASE",
+    "LEAF",
+    "LEAS",
+    "SEAL",
+    "ALEFS",
+    "FLEAS",
+    "LEAFS"
+  ]
+}

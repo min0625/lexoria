@@ -1,0 +1,98 @@
+{
+  "id": 335,
+  "letters": [
+    "S",
+    "A",
+    "U",
+    "G",
+    "H",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LAUGHS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the sound of laughing",
+      "zh": "n. 笑聲( laugh的名詞複數 ); 笑態; 笑料"
+    },
+    {
+      "word": "LAUGH",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the sound of laughing",
+      "zh": "n. 笑, 笑聲"
+    },
+    {
+      "word": "HUG",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a tight or amorous embrace",
+      "zh": "n. 緊抱, 擁抱"
+    },
+    {
+      "word": "ASH",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the residue that remains when something is burned",
+      "zh": "n. 灰, 灰燼"
+    },
+    {
+      "word": "HAS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "GAS",
+      "row": 4,
+      "col": 4,
+      "dir": "across",
+      "def": "the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container",
+      "zh": "n. 氣體, 汽油, 瓦斯"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "GAL",
+    "GUL",
+    "HAG",
+    "LAG",
+    "LAS",
+    "LUG",
+    "SAG",
+    "SAL",
+    "SAU",
+    "SHA",
+    "UGH",
+    "GALS",
+    "GASH",
+    "GULS",
+    "GUSH",
+    "HAGS",
+    "HAUL",
+    "HUGS",
+    "HULA",
+    "LAGS",
+    "LASH",
+    "LUGS",
+    "LUSH",
+    "SAUL",
+    "SHAG",
+    "SHUL",
+    "SLAG",
+    "SLUG",
+    "SUGH",
+    "UGHS",
+    "HAULS",
+    "HULAS",
+    "SAUGH",
+    "SHAUL"
+  ]
+}

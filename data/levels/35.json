@@ -1,0 +1,47 @@
+{
+  "id": 35,
+  "letters": [
+    "T",
+    "N",
+    "C",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "CANT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "stock phrases that have become nonsense through endless repetition",
+      "zh": "n. 偽善之言, 黑話, 斜面, 角落"
+    },
+    {
+      "word": "CAT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    },
+    {
+      "word": "CAN",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "airtight sealed metal container for food or drink or paint etc.",
+      "zh": "vt. 裝罐"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    }
+  ],
+  "bonus": [
+    "ANT",
+    "TAN"
+  ]
+}

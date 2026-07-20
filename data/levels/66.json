@@ -1,0 +1,40 @@
+{
+  "id": 66,
+  "letters": [
+    "L",
+    "E",
+    "E",
+    "F"
+  ],
+  "words": [
+    {
+      "word": "FEEL",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "an intuitive awareness;  or",
+      "zh": "vt. 感覺, 覺得, 觸控, 以為"
+    },
+    {
+      "word": "FEE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a fixed charge for a privilege or for professional services",
+      "zh": "n. 費用, 小費, 封地, 所有權"
+    },
+    {
+      "word": "LEE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    }
+  ],
+  "bonus": [
+    "EEL",
+    "ELF",
+    "FLEE"
+  ]
+}

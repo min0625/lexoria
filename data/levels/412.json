@@ -1,0 +1,50 @@
+{
+  "id": 412,
+  "letters": [
+    "T",
+    "A",
+    "E",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LATE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "being or occurring at an advanced period of time or after a usual or expected time",
+      "zh": "a. 遲的, 晚的, 已故的"
+    },
+    {
+      "word": "EAT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "LET",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALT",
+    "ATE",
+    "ETA",
+    "LAT",
+    "LEA",
+    "TAE",
+    "TEA",
+    "TEL",
+    "TAEL",
+    "TALE",
+    "TEAL",
+    "TELA"
+  ]
+}

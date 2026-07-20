@@ -1,0 +1,62 @@
+{
+  "id": 341,
+  "letters": [
+    "R",
+    "W",
+    "I",
+    "S",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "WRIST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a joint between the distal end of the radius and the proximal row of carpal bones",
+      "zh": "n. 手腕, 腕關節"
+    },
+    {
+      "word": "SIR",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "WIT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter",
+      "zh": "n. 機智, 智力, 頭腦, 理智, 妙語, 機智的人"
+    },
+    {
+      "word": "SIT",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "SRI",
+    "TIS",
+    "WIS",
+    "STIR",
+    "WIST",
+    "WITS",
+    "WRIT",
+    "WRITS"
+  ]
+}

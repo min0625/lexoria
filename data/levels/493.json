@@ -1,0 +1,104 @@
+{
+  "id": 493,
+  "letters": [
+    "S",
+    "I",
+    "M",
+    "A",
+    "C",
+    "S",
+    "F"
+  ],
+  "words": [
+    {
+      "word": "FASCISM",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a political theory advocating an authoritarian hierarchical government (as opposed to democracy or liberalism)",
+      "zh": "n. 法西斯主義, 極端國家主義"
+    },
+    {
+      "word": "MISS",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a young woman",
+      "zh": "n. 失誤, 避免, 失敗, 小姐"
+    },
+    {
+      "word": "MASS",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "the property of a body that causes it to have weight in a gravitational field",
+      "zh": "n. 塊, 大多數, 質量, 大量, 群眾, 彌撒"
+    },
+    {
+      "word": "AIMS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an anticipated outcome that is intended or that guides your planned actions",
+      "zh": "[計] 互動遷移系統體系結構, 自動自適應庫存管理系統"
+    },
+    {
+      "word": "MAC",
+      "row": 4,
+      "col": 6,
+      "dir": "down",
+      "def": "a waterproof raincoat made of rubberized fabric",
+      "zh": "n. 防水膠布, (英)雨衣, 老兄, 老弟"
+    },
+    {
+      "word": "ASS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the fleshy part of the human body that you sit on",
+      "zh": "n. 驢, 傻瓜, 笨蛋, 屁股"
+    },
+    {
+      "word": "AIM",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "an anticipated outcome that is intended or that guides your planned actions",
+      "zh": "n. 目標, 瞄準, 擊中目標的能力"
+    }
+  ],
+  "bonus": [
+    "AIS",
+    "AMI",
+    "CAM",
+    "CIS",
+    "FAS",
+    "IFS",
+    "ISM",
+    "MAS",
+    "MIS",
+    "SAC",
+    "SIC",
+    "SIM",
+    "SIS",
+    "AMIS",
+    "ASCI",
+    "CAMS",
+    "FISC",
+    "ISMS",
+    "MACS",
+    "MICA",
+    "SACS",
+    "SCAM",
+    "SICS",
+    "SIMA",
+    "SIMS",
+    "AMISS",
+    "FISCS",
+    "MAFIC",
+    "MICAS",
+    "SCAMS",
+    "SIMAS",
+    "MASSIF"
+  ]
+}

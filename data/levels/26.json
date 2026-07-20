@@ -1,0 +1,54 @@
+{
+  "id": 26,
+  "letters": [
+    "W",
+    "S",
+    "N",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "SNOW",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "precipitation falling from clouds in the form of ice crystals",
+      "zh": "n. 雪, 積雪, 下雪, 雪花形干擾"
+    },
+    {
+      "word": "SON",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    },
+    {
+      "word": "NOW",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the momentary present",
+      "zh": "adv. 現在, 剛才, 目前"
+    },
+    {
+      "word": "OWN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "have ownership or possession of",
+      "zh": "n. 自己的"
+    }
+  ],
+  "bonus": [
+    "NOS",
+    "ONS",
+    "SOW",
+    "WON",
+    "WOS",
+    "NOWS",
+    "OWNS",
+    "SOWN",
+    "WONS"
+  ]
+}

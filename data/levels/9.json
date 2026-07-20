@@ -1,0 +1,27 @@
+{
+  "id": 9,
+  "letters": [
+    "I",
+    "T",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "TIP",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the extreme end of something; especially something pointed",
+      "zh": "n. 頂, 尖端, 梢, 末端, 傾斜, 垃圾場, 小費, 輕擊, 指點, 秘密訊息"
+    },
+    {
+      "word": "PIT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a sizeable hole (usually in the ground)",
+      "zh": "n. 深坑, 礦井, 果核, 地窖, 深淵, 絕境, 陷阱"
+    }
+  ],
+  "bonus": []
+}

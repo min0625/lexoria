@@ -1,0 +1,44 @@
+{
+  "id": 78,
+  "letters": [
+    "L",
+    "S",
+    "E",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "SOLE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the underside of footwear or a golf club",
+      "zh": "n. 腳掌, 鞋底, 底部"
+    },
+    {
+      "word": "LOSE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "fail to keep or to maintain; cease to have, either physically or in an abstract sense",
+      "zh": "vt. 遺失, 損失, 丟失, 使失去, 錯過, 浪費, 迷失, 使迷路, 輸去, 使沉溺於"
+    },
+    {
+      "word": "SOL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a colloid that has a continuous liquid phase in which a solid is suspended in a liquid",
+      "zh": "n. 溶膠, 索爾(秘魯貨幣單位)"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "OES",
+    "OLE",
+    "OSE",
+    "SEL",
+    "OLES",
+    "SLOE"
+  ]
+}

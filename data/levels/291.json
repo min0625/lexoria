@@ -1,0 +1,101 @@
+{
+  "id": 291,
+  "letters": [
+    "S",
+    "R",
+    "E",
+    "T",
+    "E",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "SECRET",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "something that should remain hidden from others (especially information that is not to be passed on)",
+      "zh": "n. 秘密, 機密, 秘訣, 秘方"
+    },
+    {
+      "word": "TREES",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms",
+      "zh": "n. 樹木；喬木；樹狀結構（tree的複數）"
+    },
+    {
+      "word": "TREE",
+      "row": 1,
+      "col": 6,
+      "dir": "down",
+      "def": "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms",
+      "zh": "n. 樹, 木料, 樹狀物"
+    },
+    {
+      "word": "REST",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "something left after other parts have been taken away",
+      "zh": "n. 休息, 睡眠, 安息, 稍息, 靜止, 支架, 休息處, 其餘者, 剩餘部分"
+    },
+    {
+      "word": "SEE",
+      "row": 4,
+      "col": 4,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "ERE",
+    "ERS",
+    "REC",
+    "REE",
+    "RES",
+    "RET",
+    "SEC",
+    "SER",
+    "TEE",
+    "CEES",
+    "CERE",
+    "CETE",
+    "ERST",
+    "RECS",
+    "REES",
+    "RETE",
+    "RETS",
+    "SECT",
+    "SEER",
+    "SERE",
+    "TEES",
+    "CERES",
+    "CETES",
+    "CREST",
+    "ERECT",
+    "ESTER",
+    "REEST",
+    "RESET",
+    "SCREE",
+    "STEER",
+    "STERE",
+    "TERCE",
+    "TERSE",
+    "CERTES",
+    "ERECTS",
+    "RESECT",
+    "TERCES"
+  ]
+}

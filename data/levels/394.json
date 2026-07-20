@@ -1,0 +1,44 @@
+{
+  "id": 394,
+  "letters": [
+    "O",
+    "E",
+    "S",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "DOSE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a measured portion of medicine taken at any one time",
+      "zh": "n. 劑量, 服用量"
+    },
+    {
+      "word": "DOES",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the federal department responsible for maintaining a national energy policy of the United States; created in 1977",
+      "zh": "v. 做；工作；有用（do的第三人稱單數形式）"
+    },
+    {
+      "word": "DOE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the federal department responsible for maintaining a national energy policy of the United States; created in 1977",
+      "zh": "n. 母鹿, 雌兔"
+    }
+  ],
+  "bonus": [
+    "DOS",
+    "ODE",
+    "ODS",
+    "OES",
+    "OSE",
+    "SOD",
+    "ODES"
+  ]
+}

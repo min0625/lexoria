@@ -1,0 +1,89 @@
+{
+  "id": 450,
+  "letters": [
+    "D",
+    "A",
+    "V",
+    "I",
+    "S",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "AVOIDS",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "stay clear from; keep away from; keep out of the way of someone or something",
+      "zh": "v. 避開, 避免, 預防( avoid的第三人稱單數 ); [法律]宣佈（判決、抗辯等）無效; 使無效; 廢止, 撤銷"
+    },
+    {
+      "word": "AVOID",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "stay clear from; keep away from; keep out of the way of someone or something",
+      "zh": "vt. 避免, 防止, 撤消"
+    },
+    {
+      "word": "SAID",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "express in words",
+      "zh": "a. 上述的"
+    },
+    {
+      "word": "ADS",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a public promotion of some product or service",
+      "zh": "[計] 精確定義系統, 先進除錯系統, 模擬數字子系統, 應用設計服務"
+    },
+    {
+      "word": "AID",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a resource",
+      "zh": "n. 幫助, 外援, 助手"
+    },
+    {
+      "word": "SAD",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "experiencing or showing sorrow or unhappiness; ; - Christina Rossetti",
+      "zh": "a. 憂愁的, 悲哀的"
+    }
+  ],
+  "bonus": [
+    "ADO",
+    "AIS",
+    "AVO",
+    "DIS",
+    "DOS",
+    "IDS",
+    "ODS",
+    "OVA",
+    "SOD",
+    "VAS",
+    "VIA",
+    "VIS",
+    "ADOS",
+    "AIDS",
+    "AVID",
+    "AVOS",
+    "DAIS",
+    "DIVA",
+    "SADI",
+    "SODA",
+    "VISA",
+    "VOID",
+    "ADIOS",
+    "AVISO",
+    "DIVAS",
+    "VOIDS"
+  ]
+}

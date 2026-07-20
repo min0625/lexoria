@@ -1,0 +1,97 @@
+{
+  "id": 209,
+  "letters": [
+    "B",
+    "U",
+    "L",
+    "A",
+    "M",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "ALBUMS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "one or more recordings issued together; originally released on 12-inch phonograph records (usually with attractive record covers) and later on cassette audiotape and compact disc",
+      "zh": "n. 相簿, 相簿；專輯, 影集（album的複數形式）"
+    },
+    {
+      "word": "ALBUM",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "one or more recordings issued together; originally released on 12-inch phonograph records (usually with attractive record covers) and later on cassette audiotape and compact disc",
+      "zh": "n. 貼上簿, 唱片套"
+    },
+    {
+      "word": "SUB",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a large sandwich made of a long crusty roll split lengthwise and filled with meats and cheese (and tomato and onion and lettuce and condiments); different names are used in different sections of the United States",
+      "zh": "n. 補充人員, 部下, 潛水艇, 膠層, 訂戶, 傻子"
+    },
+    {
+      "word": "BUS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a vehicle carrying many passengers; used for public transport",
+      "zh": "n. 公共汽車"
+    },
+    {
+      "word": "LAB",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a workplace for the conduct of scientific research",
+      "zh": "n. 實驗室, 研究室"
+    }
+  ],
+  "bonus": [
+    "ABS",
+    "ALB",
+    "ALS",
+    "AMU",
+    "BAL",
+    "BAM",
+    "BAS",
+    "BUM",
+    "LAM",
+    "LAS",
+    "LUM",
+    "MAS",
+    "MUS",
+    "SAB",
+    "SAL",
+    "SAU",
+    "SUM",
+    "ALBS",
+    "ALMS",
+    "ALUM",
+    "AMUS",
+    "BALM",
+    "BALS",
+    "BAMS",
+    "BLAM",
+    "BUMS",
+    "LABS",
+    "LAMB",
+    "LAMS",
+    "LUMS",
+    "MAUL",
+    "SAUL",
+    "SLAB",
+    "SLAM",
+    "SLUB",
+    "SLUM",
+    "SUBA",
+    "ALUMS",
+    "BALMS",
+    "BLAMS",
+    "LAMBS",
+    "MAULS"
+  ]
+}

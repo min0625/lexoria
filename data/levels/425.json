@@ -1,0 +1,83 @@
+{
+  "id": 425,
+  "letters": [
+    "U",
+    "A",
+    "L",
+    "G",
+    "E",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LEAGUE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "an association of sports teams that organizes matches for its members",
+      "zh": "n. 同盟, 聯盟, 盟約"
+    },
+    {
+      "word": "EAGLE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "any of various large keen-sighted diurnal birds of prey noted for their broad wings and strong soaring flight",
+      "zh": "n. 鷹, 鷹狀標飾"
+    },
+    {
+      "word": "LEG",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle",
+      "zh": "n. 腿, 假腿, 路程"
+    },
+    {
+      "word": "AGE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "GEL",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "a colloid in a more solid form than a sol",
+      "zh": "n. 膠化體, 凝膠"
+    },
+    {
+      "word": "LEE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "EAU",
+    "EEL",
+    "GAE",
+    "GAL",
+    "GEE",
+    "GUL",
+    "LAG",
+    "LEA",
+    "LEU",
+    "LUG",
+    "AGEE",
+    "AGUE",
+    "ALEE",
+    "EGAL",
+    "GALE",
+    "GLEE",
+    "GLUE",
+    "LUGE",
+    "AGLEE"
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": 330,
+  "letters": [
+    "B",
+    "F",
+    "E",
+    "L",
+    "E",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "BELIEF",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "any cognitive content held as true",
+      "zh": "n. 信念, 相信, 信仰"
+    },
+    {
+      "word": "LIFE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a characteristic state or mode of living",
+      "zh": "n. 生活, 生命, 人生, 世事, 生物, 壽命, 一生, 生命力, 靈魂, 無期徒刑"
+    },
+    {
+      "word": "FEEL",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "an intuitive awareness;  or",
+      "zh": "vt. 感覺, 覺得, 觸控, 以為"
+    },
+    {
+      "word": "FILE",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a set of related records (either written or electronic) kept together",
+      "zh": "n. 檔案, 公文箱, 資料夾, 檔案, 卷宗, 銼刀"
+    },
+    {
+      "word": "LIE",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    },
+    {
+      "word": "LEE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    }
+  ],
+  "bonus": [
+    "BEE",
+    "BEL",
+    "EEL",
+    "ELF",
+    "FEE",
+    "FIB",
+    "FIE",
+    "FIL",
+    "LEI",
+    "LIB",
+    "BEEF",
+    "BILE",
+    "FLEE",
+    "LIEF",
+    "BELIE"
+  ]
+}

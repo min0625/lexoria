@@ -1,0 +1,41 @@
+{
+  "id": 62,
+  "letters": [
+    "E",
+    "R",
+    "I",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "TIRE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "hoop that covers a wheel",
+      "zh": "n. 輪胎, 頭飾"
+    },
+    {
+      "word": "TIER",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a relative position or degree of value in a graded group",
+      "zh": "n. 排, 層, 等級"
+    },
+    {
+      "word": "TIE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    }
+  ],
+  "bonus": [
+    "IRE",
+    "REI",
+    "RET",
+    "RITE"
+  ]
+}

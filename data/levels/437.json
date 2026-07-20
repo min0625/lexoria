@@ -1,0 +1,43 @@
+{
+  "id": 437,
+  "letters": [
+    "E",
+    "O",
+    "R",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "ROPE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a strong line",
+      "zh": "n. 繩, 索, 粗繩, 絞索, 決竅"
+    },
+    {
+      "word": "REP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "informal abbreviation of `representative'",
+      "zh": "n. 稜紋平布, 浪蕩子, 名聲"
+    },
+    {
+      "word": "PRO",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    }
+  ],
+  "bonus": [
+    "OPE",
+    "ORE",
+    "PER",
+    "ROE",
+    "PORE",
+    "REPO"
+  ]
+}

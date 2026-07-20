@@ -1,0 +1,51 @@
+{
+  "id": 159,
+  "letters": [
+    "S",
+    "S",
+    "U",
+    "Y",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PUSSY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "obscene terms for female genitals",
+      "zh": "n.〈非正式〉貓咪；〈侮辱〉女陰；〈侮辱〉娘娘腔"
+    },
+    {
+      "word": "SPY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "(military) a secret agent hired by a state to obtain information about its enemies or by a business to obtain industrial secrets from competitors",
+      "zh": "n. 間諜, 偵探, 偵察"
+    },
+    {
+      "word": "UPS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "raise",
+      "zh": "不間斷電源"
+    },
+    {
+      "word": "SUP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a small amount of liquid food",
+      "zh": "n. 一口"
+    }
+  ],
+  "bonus": [
+    "PUS",
+    "YUP",
+    "PUSS",
+    "SUPS",
+    "YUPS"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": 190,
+  "letters": [
+    "N",
+    "B",
+    "E",
+    "G",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "BEING",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the state or fact of existing",
+      "zh": "n. 存在, 性質, 生命, 人, 生物, be的現在分詞"
+    },
+    {
+      "word": "BEGIN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "Israeli statesman (born in Russia) who (as prime minister of Israel) negotiated a peace treaty with Anwar Sadat (then the president of Egypt) (1913-1992)",
+      "zh": "v. 開始"
+    },
+    {
+      "word": "GEN",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    },
+    {
+      "word": "BIG",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "above average in size or number or quantity or magnitude or extent",
+      "zh": "a. 大的, 重要的"
+    },
+    {
+      "word": "BEN",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a mountain or tall hill",
+      "zh": "n. 內室"
+    }
+  ],
+  "bonus": [
+    "BEG",
+    "BIN",
+    "ENG",
+    "GIB",
+    "GIE",
+    "GIN",
+    "NEB",
+    "NIB",
+    "BINE",
+    "GIBE",
+    "GIEN",
+    "BINGE"
+  ]
+}

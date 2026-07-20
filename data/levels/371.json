@@ -1,0 +1,117 @@
+{
+  "id": 371,
+  "letters": [
+    "E",
+    "T",
+    "S",
+    "U",
+    "H",
+    "L",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "SHUTTLE",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "badminton equipment consisting of a ball of cork or rubber with a crown of feathers",
+      "zh": "n. 穿梭, 梭子, 往返移動之物"
+    },
+    {
+      "word": "SHUT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "move so that an opening or passage is obstructed; make shut",
+      "zh": "n. 關閉"
+    },
+    {
+      "word": "THUS",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "an aromatic gum resin obtained from various Arabian or East African trees; formerly valued for worship and for embalming and fumigation",
+      "zh": "adv. 如此, 因此, 到如此程度"
+    },
+    {
+      "word": "TEST",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "trying something to find out about it",
+      "zh": "n. 測試, 試驗, 化驗, 檢驗, 考驗, 甲殼"
+    },
+    {
+      "word": "SET",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "USE",
+      "row": 3,
+      "col": 5,
+      "dir": "across",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    },
+    {
+      "word": "LET",
+      "row": 0,
+      "col": 8,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "ETH",
+    "HES",
+    "HET",
+    "HUE",
+    "HUT",
+    "LEU",
+    "SEL",
+    "SHE",
+    "SUE",
+    "TEL",
+    "TET",
+    "THE",
+    "TUT",
+    "UTS",
+    "ETHS",
+    "HEST",
+    "HETS",
+    "HUES",
+    "HUTS",
+    "LEST",
+    "LETS",
+    "LUES",
+    "LUSH",
+    "LUST",
+    "LUTE",
+    "SETT",
+    "SHUL",
+    "SLUE",
+    "SLUT",
+    "STET",
+    "SUET",
+    "TELS",
+    "TETH",
+    "TETS",
+    "TULE",
+    "TUSH",
+    "TUTS",
+    "LUTES",
+    "SHUTE",
+    "TETHS",
+    "TULES",
+    "HUSTLE",
+    "SHTETL",
+    "SLEUTH"
+  ]
+}

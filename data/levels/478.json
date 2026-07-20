@@ -1,0 +1,92 @@
+{
+  "id": 478,
+  "letters": [
+    "L",
+    "S",
+    "E",
+    "Y",
+    "W",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "WISELY",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "in a wise manner",
+      "zh": "adv. 聰明地, 精明地"
+    },
+    {
+      "word": "LEWIS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "United States rock star singer and pianist (born in 1935)",
+      "zh": "n. 吊楔"
+    },
+    {
+      "word": "LIES",
+      "row": 3,
+      "col": 4,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "v. 躺臥（lie的第三人稱單數形式）"
+    },
+    {
+      "word": "WISE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a way of doing or being",
+      "zh": "a. 明智的, 慎慮的, 聰明的, 博學的, 狡猾的, 機靈的"
+    },
+    {
+      "word": "YES",
+      "row": 1,
+      "col": 7,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    },
+    {
+      "word": "LIE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "LEI",
+    "LEY",
+    "LIS",
+    "LYE",
+    "SEI",
+    "SEL",
+    "SEW",
+    "SLY",
+    "WIS",
+    "WYE",
+    "YEW",
+    "ISLE",
+    "LEIS",
+    "LEYS",
+    "LWEI",
+    "LYES",
+    "LYSE",
+    "SLEW",
+    "SYLI",
+    "WILE",
+    "WILY",
+    "WYES",
+    "WYLE",
+    "YEWS",
+    "YWIS",
+    "LWEIS",
+    "WILES",
+    "WYLES"
+  ]
+}

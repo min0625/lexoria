@@ -1,0 +1,80 @@
+{
+  "id": 389,
+  "letters": [
+    "B",
+    "E",
+    "U",
+    "L",
+    "K",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "BUCKLE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "fastener that fastens together two ends of a belt or strap; often has loose prong",
+      "zh": "n. 皮帶扣, 釦子"
+    },
+    {
+      "word": "BULK",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "the property resulting from being or relating to the greater in number of two parts; the main part",
+      "zh": "n. 大小, 體積, 大塊, 大多數"
+    },
+    {
+      "word": "BLUE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "blue color or pigment; resembling the color of the clear sky in the daytime",
+      "zh": "n. 藍色"
+    },
+    {
+      "word": "LUCK",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "your overall circumstances or condition in life (including everything that happens to you)",
+      "zh": "n. 運氣, 幸運, 好運, 僥倖"
+    },
+    {
+      "word": "CLUB",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a team of professional baseball players who play and travel together",
+      "zh": "n. 俱樂部, 木棍, 球棒"
+    },
+    {
+      "word": "CLUE",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "a slight indication",
+      "zh": "n. 線索, 暗示"
+    }
+  ],
+  "bonus": [
+    "BEL",
+    "CEL",
+    "CUB",
+    "CUE",
+    "ECU",
+    "ELK",
+    "KUE",
+    "LEK",
+    "LEU",
+    "UKE",
+    "BECK",
+    "BUCK",
+    "CUBE",
+    "CUKE",
+    "LEKU",
+    "LUBE",
+    "LUCE"
+  ]
+}

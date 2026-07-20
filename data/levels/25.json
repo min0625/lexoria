@@ -1,0 +1,44 @@
+{
+  "id": 25,
+  "letters": [
+    "D",
+    "I",
+    "A",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "AIDE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an officer who acts as military assistant to a more senior officer",
+      "zh": "n. 助手, 副官"
+    },
+    {
+      "word": "IDEA",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the content of cognition; the main thing you are thinking about",
+      "zh": "n. 主意, 辦法, 理想, 思想, 概念, 意見"
+    },
+    {
+      "word": "AID",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a resource",
+      "zh": "n. 幫助, 外援, 助手"
+    },
+    {
+      "word": "DIE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": []
+}

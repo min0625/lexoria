@@ -34,7 +34,7 @@ const keyOf = (cell) => `${cell.r},${cell.c}`;
 
 /**
  * 建立一關的遊戲狀態。
- * @param level  levels.json 的一關
+ * @param level  data/levels/<id>.json 的內容
  * @param saved  進行中進度 { foundWords, revealedCells, foundBonusWords }（皆為陣列）
  * @param rng    亂數來源，測試時可注入固定值
  */

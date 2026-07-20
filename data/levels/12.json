@@ -1,0 +1,27 @@
+{
+  "id": 12,
+  "letters": [
+    "G",
+    "O",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "DOG",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a member of the genus Canis (probably descended from the common wolf) that has been domesticated by man since prehistoric times; occurs in many breeds",
+      "zh": "n. 狗, 壞蛋"
+    },
+    {
+      "word": "GOD",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the supernatural being conceived as the perfect and omnipotent and omniscient originator and ruler of the universe; the object of worship in monotheistic religions",
+      "zh": "n. 上帝, 神像, 偶像"
+    }
+  ],
+  "bonus": []
+}

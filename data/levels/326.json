@@ -1,0 +1,108 @@
+{
+  "id": 326,
+  "letters": [
+    "E",
+    "R",
+    "Y",
+    "T",
+    "U",
+    "L",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "UTTERLY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "completely and without qualification; used informally as intensifiers",
+      "zh": "adv. 完全地, 全然, 絕對"
+    },
+    {
+      "word": "TRULY",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "in accordance with truth or fact or reality",
+      "zh": "adv. 真實地, 不假"
+    },
+    {
+      "word": "RELY",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "have confidence or faith in",
+      "zh": "vi. 信賴, 依賴, 信任"
+    },
+    {
+      "word": "RULE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則, 統治, 控制, 支配, 規律, 標準, 章程, 破折號, 鉛線"
+    },
+    {
+      "word": "TRUE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "proper alignment; the property possessed by something that is in correct or proper alignment",
+      "zh": "a. 真實的, 正確的, 忠誠的, 可靠的, 純粹的, 正式的"
+    },
+    {
+      "word": "TRY",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "earnest and conscientious activity intended to do or accomplish something",
+      "zh": "n. 嘗試, 試驗, 審理, 審判"
+    },
+    {
+      "word": "LET",
+      "row": 5,
+      "col": 3,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    },
+    {
+      "word": "YET",
+      "row": 7,
+      "col": 1,
+      "dir": "across",
+      "def": "up to the present time",
+      "zh": "adv. 還, 尚, 仍然, 已經, 然而"
+    }
+  ],
+  "bonus": [
+    "LEU",
+    "LEY",
+    "LYE",
+    "RET",
+    "RUE",
+    "RUT",
+    "RYE",
+    "TEL",
+    "TET",
+    "TUT",
+    "TYE",
+    "LURE",
+    "LUTE",
+    "LYRE",
+    "RULY",
+    "TRET",
+    "TREY",
+    "TULE",
+    "TYER",
+    "TYRE",
+    "YETT",
+    "YULE",
+    "YURT",
+    "RUTTY",
+    "TUYER",
+    "UTTER",
+    "TETRYL",
+    "TURTLE"
+  ]
+}

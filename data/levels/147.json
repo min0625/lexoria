@@ -1,0 +1,66 @@
+{
+  "id": 147,
+  "letters": [
+    "S",
+    "A",
+    "L",
+    "O",
+    "G"
+  ],
+  "words": [
+    {
+      "word": "GOALS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the state of affairs that a plan is intended to achieve and that (when achieved) terminates behavior intended to achieve it",
+      "zh": "n. 目標, 目的；進球, 射中次數"
+    },
+    {
+      "word": "GOAL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the state of affairs that a plan is intended to achieve and that (when achieved) terminates behavior intended to achieve it",
+      "zh": "n. 目標, 終點, 得分, 球門, 守門員"
+    },
+    {
+      "word": "ALSO",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "in addition",
+      "zh": "adv. 也, 並且, 同樣地"
+    },
+    {
+      "word": "AGO",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "gone by; or in the past",
+      "zh": "adv. 以前"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "GAL",
+    "GAS",
+    "GOA",
+    "LAG",
+    "LAS",
+    "LOG",
+    "SAG",
+    "SAL",
+    "SOL",
+    "GALS",
+    "GAOL",
+    "GOAS",
+    "LAGS",
+    "LOGS",
+    "SAGO",
+    "SLAG",
+    "SLOG",
+    "SOLA",
+    "GAOLS"
+  ]
+}

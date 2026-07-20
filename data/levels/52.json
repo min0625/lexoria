@@ -1,0 +1,38 @@
+{
+  "id": 52,
+  "letters": [
+    "B",
+    "T",
+    "T",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "BUTT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "thick end of the handle",
+      "zh": "n. 粗大的一頭, 菸頭, 靶, 笑柄"
+    },
+    {
+      "word": "BUT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    },
+    {
+      "word": "TUB",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a relatively large open container that you fill with water and use to wash the body",
+      "zh": "n. 桶, 浴盆"
+    }
+  ],
+  "bonus": [
+    "TUT"
+  ]
+}

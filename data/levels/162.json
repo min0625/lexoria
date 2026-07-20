@@ -1,0 +1,69 @@
+{
+  "id": 162,
+  "letters": [
+    "V",
+    "A",
+    "I",
+    "R",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "RIVAL",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the contestant you hope to defeat",
+      "zh": "n. 對手, 競爭者"
+    },
+    {
+      "word": "VIRAL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "relating to or caused by a virus",
+      "zh": "a. 病毒的, 病毒引起的"
+    },
+    {
+      "word": "RAIL",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a barrier consisting of a horizontal bar and supports",
+      "zh": "n. 橫杆, 圍欄, 欄杆, 鐵軌, 扶手, 秧雞"
+    },
+    {
+      "word": "LIAR",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a person who has lied or who lies repeatedly",
+      "zh": "n. 說謊者"
+    },
+    {
+      "word": "AIR",
+      "row": 6,
+      "col": 2,
+      "dir": "across",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    }
+  ],
+  "bonus": [
+    "AIL",
+    "LAR",
+    "LAV",
+    "RIA",
+    "VAR",
+    "VIA",
+    "ARIL",
+    "LAIR",
+    "LARI",
+    "LIRA",
+    "RIAL",
+    "VAIL",
+    "VAIR",
+    "VIAL",
+    "VIRL"
+  ]
+}

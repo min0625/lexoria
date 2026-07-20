@@ -1,0 +1,85 @@
+{
+  "id": 484,
+  "letters": [
+    "A",
+    "E",
+    "S",
+    "B",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "BEATS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a United States youth subculture of the 1950s; rejected possessions or regular work or traditional dress; for communal living and psychedelic drugs and anarchism; favored modern forms of jazz (e.g., bebop)",
+      "zh": "n. 音樂節拍；差拍振動；心臟跳動（beat的複數）"
+    },
+    {
+      "word": "BEST",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "the supreme effort one can make",
+      "zh": "a. 最好的"
+    },
+    {
+      "word": "EAST",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the cardinal compass point that is at 90 degrees",
+      "zh": "n. 東方, 東"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ABS",
+    "ATE",
+    "BAS",
+    "BAT",
+    "BET",
+    "EAT",
+    "ETA",
+    "SAB",
+    "SAE",
+    "SAT",
+    "SEA",
+    "TAB",
+    "TAE",
+    "TAS",
+    "TEA",
+    "ABET",
+    "ATES",
+    "BASE",
+    "BAST",
+    "BATE",
+    "BATS",
+    "BEAT",
+    "BETA",
+    "BETS",
+    "EATS",
+    "ETAS",
+    "SABE",
+    "SATE",
+    "SEAT",
+    "SETA",
+    "STAB",
+    "TABS",
+    "TEAS",
+    "ABETS",
+    "BASTE",
+    "BATES",
+    "BEAST",
+    "BETAS",
+    "TABES"
+  ]
+}

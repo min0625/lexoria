@@ -1,0 +1,106 @@
+{
+  "id": 464,
+  "letters": [
+    "S",
+    "I",
+    "E",
+    "S",
+    "N",
+    "L",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "ILLNESS",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "impairment of normal physiological function affecting part or all of an organism",
+      "zh": "n. 疾病, 惡意"
+    },
+    {
+      "word": "LINES",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a formation of people or things one beside another",
+      "zh": "n. 臺詞"
+    },
+    {
+      "word": "LINE",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "a formation of people or things one beside another",
+      "zh": "n. 列, 線, 繩, 電線, 線路, 路線, 航線, 作業線, 界線, 戰線, 外形, 排, 家系"
+    },
+    {
+      "word": "SELL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the activity of persuading someone to buy",
+      "zh": "vt. 賣, 背叛, 銷售, 出賣"
+    },
+    {
+      "word": "LESS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "(comparative of `little' usually used with mass nouns) a quantifier meaning not as great in amount or degree",
+      "zh": "n. 較少, 較小"
+    },
+    {
+      "word": "LIE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELL",
+    "ELS",
+    "ENS",
+    "ESS",
+    "ILL",
+    "INS",
+    "LEI",
+    "LIN",
+    "LIS",
+    "NIL",
+    "SEI",
+    "SEL",
+    "SEN",
+    "SIN",
+    "SIS",
+    "ELLS",
+    "ILLS",
+    "ISLE",
+    "LEIS",
+    "LENS",
+    "LIEN",
+    "LIES",
+    "LINS",
+    "NESS",
+    "NILL",
+    "NILS",
+    "SEIS",
+    "SELS",
+    "SILL",
+    "SINE",
+    "SINS",
+    "ISLES",
+    "LENIS",
+    "LIENS",
+    "LISLE",
+    "NILLS",
+    "SELLS",
+    "SILLS",
+    "SINES",
+    "SNELL",
+    "LISLES",
+    "SNELLS"
+  ]
+}

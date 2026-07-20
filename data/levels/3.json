@@ -1,0 +1,27 @@
+{
+  "id": 3,
+  "letters": [
+    "T",
+    "O",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "NOT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "negation of a word or group of words",
+      "zh": "adv. 不, 非, 未"
+    },
+    {
+      "word": "TON",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a United States unit of weight equivalent to 2000 pounds",
+      "zh": "n. 噸"
+    }
+  ],
+  "bonus": []
+}

@@ -1,0 +1,62 @@
+{
+  "id": 225,
+  "letters": [
+    "D",
+    "P",
+    "I",
+    "E",
+    "D",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "DIPPED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "immerse briefly into a liquid so as to wet, coat, or saturate",
+      "zh": "v. 浸( dip的過去式和過去分詞 ); （把燭芯浸在融蠟裡）製造（蠟燭）; 把（汽車前燈）的遠光調為近光; 洗藥水浴"
+    },
+    {
+      "word": "DIED",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "pass from physical life and lose all bodily attributes and functions necessary to sustain life",
+      "zh": "v. 死亡, 消逝（die的過去式和過去分詞）"
+    },
+    {
+      "word": "PIPE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a tube with a small bowl at one end; used for smoking tobacco",
+      "zh": "n. 管, 導管, 輸送管, 管狀器官, 聲帶, 尖細的聲音, 菸斗, 笛, 管樂器"
+    },
+    {
+      "word": "DIE",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "DID",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "do的過去式"
+    }
+  ],
+  "bonus": [
+    "DIP",
+    "PED",
+    "PEP",
+    "PIE",
+    "PIP",
+    "PIED",
+    "PIPED"
+  ]
+}

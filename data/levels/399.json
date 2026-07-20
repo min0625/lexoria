@@ -1,0 +1,85 @@
+{
+  "id": 399,
+  "letters": [
+    "E",
+    "R",
+    "N",
+    "O",
+    "H",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "HEROIN",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a narcotic that is considered a hard drug; a highly addictive morphine derivative; intravenous injection provides the fastest and most intense rush",
+      "zh": "n. 海洛因, 嗎啡"
+    },
+    {
+      "word": "HERO",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a man distinguished by exceptional courage and nobility and strength",
+      "zh": "n. 英雄, 超越常人者, 男主角"
+    },
+    {
+      "word": "HIRE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a newly hired employee",
+      "zh": "n. 租金, 租用, 僱用"
+    },
+    {
+      "word": "IRON",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a heavy ductile magnetic metallic element; is silver-white in pure form but readily rusts; used in construction and tools and armament; plays a role in the transport of oxygen by the blood",
+      "zh": "n. 鐵, 熨斗, 鐵器, 堅強, 烙鐵, 鐐銬"
+    },
+    {
+      "word": "ONE",
+      "row": 6,
+      "col": 3,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    }
+  ],
+  "bonus": [
+    "EON",
+    "ERN",
+    "HEN",
+    "HER",
+    "HIE",
+    "HIN",
+    "HOE",
+    "HON",
+    "ION",
+    "IRE",
+    "NOH",
+    "NOR",
+    "ORE",
+    "REI",
+    "RHO",
+    "RIN",
+    "ROE",
+    "HEIR",
+    "HERN",
+    "HOER",
+    "HONE",
+    "HORN",
+    "INRO",
+    "NOIR",
+    "NORI",
+    "REIN",
+    "HERON",
+    "HONER",
+    "IRONE",
+    "RHINO"
+  ]
+}

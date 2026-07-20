@@ -1,0 +1,109 @@
+{
+  "id": 204,
+  "letters": [
+    "S",
+    "E",
+    "N",
+    "S",
+    "T",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "STONES",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a lump or mass of hard consolidated mineral matter",
+      "zh": "n. 小石頭；石子（stone的複數）"
+    },
+    {
+      "word": "SENT",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "100 senti equal 1 kroon in Estonia",
+      "zh": "send的過去式和過去分詞"
+    },
+    {
+      "word": "SON",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 3,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "NOT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "negation of a word or group of words",
+      "zh": "adv. 不, 非, 未"
+    },
+    {
+      "word": "ONE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "EON",
+    "ESS",
+    "NET",
+    "NOS",
+    "OES",
+    "ONS",
+    "OSE",
+    "SEN",
+    "SOS",
+    "SOT",
+    "TEN",
+    "TOE",
+    "TON",
+    "EONS",
+    "NESS",
+    "NEST",
+    "NETS",
+    "NOES",
+    "NOSE",
+    "NOTE",
+    "ONES",
+    "OSES",
+    "SETS",
+    "SNOT",
+    "SONE",
+    "SONS",
+    "SOTS",
+    "TENS",
+    "TOES",
+    "TONE",
+    "TONS",
+    "TOSS",
+    "NESTS",
+    "NOSES",
+    "NOTES",
+    "ONSET",
+    "SETON",
+    "SNOTS",
+    "SONES",
+    "STENO",
+    "STONE",
+    "TONES",
+    "ONSETS",
+    "SETONS",
+    "STENOS"
+  ]
+}

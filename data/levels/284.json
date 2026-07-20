@@ -1,0 +1,87 @@
+{
+  "id": 284,
+  "letters": [
+    "R",
+    "S",
+    "T",
+    "S",
+    "P",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "STRIPS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a relatively long narrow piece of something",
+      "zh": "n. 分割公債, 本息拆離；簡易機場；條（strip的複數）"
+    },
+    {
+      "word": "TRIP",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a journey for some purpose (usually including the return)",
+      "zh": "n. 旅行, 絆倒, 摔倒, 失足, 差錯, 旅程"
+    },
+    {
+      "word": "SIR",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "SIT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    }
+  ],
+  "bonus": [
+    "PIS",
+    "PIT",
+    "PSI",
+    "RIP",
+    "SIP",
+    "SIS",
+    "SRI",
+    "TIP",
+    "TIS",
+    "PISS",
+    "PITS",
+    "PSIS",
+    "PSST",
+    "RIPS",
+    "SIPS",
+    "SIRS",
+    "SITS",
+    "SPIT",
+    "SRIS",
+    "STIR",
+    "TIPS",
+    "PRISS",
+    "SPIRT",
+    "SPITS",
+    "SPRIT",
+    "STIRP",
+    "STIRS",
+    "STRIP",
+    "TRIPS",
+    "SPIRTS",
+    "SPRITS",
+    "STIRPS"
+  ]
+}

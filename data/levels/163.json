@@ -1,0 +1,61 @@
+{
+  "id": 163,
+  "letters": [
+    "E",
+    "T",
+    "S",
+    "E",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "TEENS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the time of life between the ages of 12 and 20",
+      "zh": "n. 十三歲到十九歲"
+    },
+    {
+      "word": "SEEN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "perceive by sight or have the power to perceive by sight",
+      "zh": "see的過去分詞"
+    },
+    {
+      "word": "SEE",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SET",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "NEE",
+    "NET",
+    "SEN",
+    "TEE",
+    "TEN",
+    "NEST",
+    "NETS",
+    "SENE",
+    "SENT",
+    "TEEN",
+    "TEES",
+    "TENS",
+    "SENTE",
+    "TENSE"
+  ]
+}

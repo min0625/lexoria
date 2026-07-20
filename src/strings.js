@@ -39,6 +39,7 @@ export const strings = {
   claimSuccess: (n) => `已領取金幣 +${n}`,
   claimWait: (h, m) => (h > 0 ? `${h} 小時 ${m} 分後可領取金幣` : `${m} 分鐘後可領取金幣`),
   claimAlmost: '就快好了！',
+  loading: '載入中…', // 首屏在 index.html 直接寫死同一句（JS 下載完成前就要可見），這裡給換關時重用
   loadFailed: '關卡資料載入失敗，請檢查網路連線',
   retry: '重新載入',
 };

@@ -1,0 +1,64 @@
+{
+  "id": 325,
+  "letters": [
+    "A",
+    "A",
+    "R",
+    "M",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "ALARM",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "fear resulting from the awareness of danger",
+      "zh": "n. 驚恐, 警報, 警鐘"
+    },
+    {
+      "word": "RAM",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the most common computer memory which can be used by programs to perform necessary tasks while the computer is on; an integrated circuit memory chip allows information to be stored or accessed in any order and all storage locations are equally accessible",
+      "zh": "n. 公羊, 撞錘"
+    },
+    {
+      "word": "MAR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the month following February and preceding April",
+      "zh": "vt. 損毀, 損傷, 糟蹋"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    },
+    {
+      "word": "ALA",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a flat wing-shaped process or winglike part of an organism",
+      "zh": "n. 翼, 翅"
+    }
+  ],
+  "bonus": [
+    "AAL",
+    "AMA",
+    "LAM",
+    "LAR",
+    "ALAR",
+    "ALMA",
+    "LAMA",
+    "MAAR",
+    "MARL",
+    "MALAR"
+  ]
+}

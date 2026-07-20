@@ -1,0 +1,94 @@
+{
+  "id": 474,
+  "letters": [
+    "E",
+    "G",
+    "E",
+    "D",
+    "T",
+    "E",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "GREETED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "express greetings upon meeting someone",
+      "zh": "v. 歡迎( greet的過去式和過去分詞 ); 迎接; 致意; （以某種方式）對…作出反應"
+    },
+    {
+      "word": "DEGREE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a position on a scale of intensity or amount or quality",
+      "zh": "n. 程度, 度數, 學位, 度"
+    },
+    {
+      "word": "TREE",
+      "row": 6,
+      "col": 1,
+      "dir": "across",
+      "def": "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms",
+      "zh": "n. 樹, 木料, 樹狀物"
+    },
+    {
+      "word": "EDGE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the boundary of a surface",
+      "zh": "n. 邊緣, 尖銳, 刀刃, 優勢"
+    },
+    {
+      "word": "GET",
+      "row": 4,
+      "col": 1,
+      "dir": "down",
+      "def": "a return on a shot that seemed impossible to reach and would normally have resulted in a point for the opponent",
+      "zh": "vt. 得到, 獲得, 變成, 使得, 收穫, 接通, 抓住, 染上"
+    },
+    {
+      "word": "RED",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "ERE",
+    "ERG",
+    "GED",
+    "GEE",
+    "REE",
+    "REG",
+    "RET",
+    "TED",
+    "TEE",
+    "TEG",
+    "DEER",
+    "DEET",
+    "DERE",
+    "DREE",
+    "DREG",
+    "EGER",
+    "GEED",
+    "GREE",
+    "REDE",
+    "REED",
+    "RETE",
+    "TEED",
+    "DETER",
+    "EDGER",
+    "EGRET",
+    "GREED",
+    "GREET",
+    "TREED",
+    "DETERGE"
+  ]
+}

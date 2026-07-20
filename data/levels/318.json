@@ -1,0 +1,48 @@
+{
+  "id": 318,
+  "letters": [
+    "M",
+    "A",
+    "D",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DAME",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "informal terms for a (young) woman",
+      "zh": "n. 夫人"
+    },
+    {
+      "word": "MADE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "a. 人工製成的, 成功的, 創造的"
+    },
+    {
+      "word": "DAM",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a barrier constructed to contain the flow of water or to keep out the sea",
+      "zh": "n. 水壩, 障礙"
+    },
+    {
+      "word": "MAD",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "roused to anger; - Mark Twain",
+      "zh": "a. 瘋狂的, 發瘋的, 生氣的, 愚蠢的, 狂歡的"
+    }
+  ],
+  "bonus": [
+    "MAE",
+    "MED",
+    "MEAD"
+  ]
+}

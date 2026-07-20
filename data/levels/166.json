@@ -1,0 +1,73 @@
+{
+  "id": 166,
+  "letters": [
+    "A",
+    "K",
+    "E",
+    "R",
+    "B"
+  ],
+  "words": [
+    {
+      "word": "BRAKE",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a restraint used to slow or stop a vehicle",
+      "zh": "n. 剎車, 阻礙, 叢林"
+    },
+    {
+      "word": "BREAK",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "some abrupt occurrence that interrupts an ongoing activity",
+      "zh": "n. 休息, 中斷, 破裂處, 絕交, 破曉, 突變"
+    },
+    {
+      "word": "BEAR",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws",
+      "zh": "n. 熊"
+    },
+    {
+      "word": "ARE",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "BAR",
+      "row": 3,
+      "col": 1,
+      "dir": "down",
+      "def": "a room or establishment where alcoholic drinks are served over a counter",
+      "zh": "n. 條, 棒, 酒吧, 柵, 障礙物"
+    }
+  ],
+  "bonus": [
+    "ARB",
+    "ARK",
+    "BRA",
+    "EAR",
+    "ERA",
+    "KAB",
+    "KAE",
+    "KEA",
+    "REB",
+    "BAKE",
+    "BARE",
+    "BARK",
+    "BEAK",
+    "BRAE",
+    "KBAR",
+    "KERB",
+    "RAKE",
+    "BAKER",
+    "KEBAR"
+  ]
+}

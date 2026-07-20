@@ -1,0 +1,40 @@
+{
+  "id": 65,
+  "letters": [
+    "F",
+    "R",
+    "M",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "FARM",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "workplace consisting of farm buildings and cultivated land as a unit",
+      "zh": "n. 農場, 農田"
+    },
+    {
+      "word": "FAR",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    }
+  ],
+  "bonus": [
+    "ARF",
+    "MAR",
+    "RAM"
+  ]
+}

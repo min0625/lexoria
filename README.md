@@ -17,12 +17,14 @@ mise run check   # lint + test，PR Check 會跑這個（= bun run check）
 
 ## 關卡資料
 
-`data/levels.json` 是產生出來的，**不要手改**；要改關卡就改產生器再重跑：
+`data/levels/`（每關一個 JSON 檔＋一份 `index.json` 索引）是產生出來的，**不要手改**；要改關卡就改產生器再重跑：
 
 ```sh
 mise run fetch-data  # 下載產生器輸入（ENABLE 字表、ECDICT、wordfreq、WordNet；只需跑一次，需 uv）
-mise run gen         # 重新產生 data/levels.json（以關卡 id 為種子，輸出完全可重現）
+mise run gen         # 重新產生 data/levels/（以關卡 id 為種子，輸出完全可重現）
 ```
+
+前端啟動時只抓 `index.json`（僅關卡數）與當前那一關（兩者並行），其餘關卡在切換過去時才按需 `fetch`，首次載入不必等 500 關資料下載完。
 
 難度曲線與字頻門檻在 [tools/generate-levels.mjs](tools/generate-levels.mjs) 的 `BANDS`。
 
@@ -42,7 +44,7 @@ src/
   strings.js        所有 UI 文案
   style.css         全站樣式
 tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發
-tests/              純邏輯單元測試 + levels.json 驗證器
+tests/              純邏輯單元測試 + data/levels/ 驗證器
 docs/               設計文件（單一事實來源，程式註解引用其章節如 §10）
 ```
 

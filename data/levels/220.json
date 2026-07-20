@@ -1,0 +1,79 @@
+{
+  "id": 220,
+  "letters": [
+    "M",
+    "N",
+    "I",
+    "O",
+    "C",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "INCOME",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "the financial gain (earned or unearned) accruing over a given period of time",
+      "zh": "n. 收入, 收益, 流入"
+    },
+    {
+      "word": "COME",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the thick white fluid containing spermatozoa that is ejaculated by the male genital tract",
+      "zh": "vi. 過來, 來, 到達, 出現, 開始"
+    },
+    {
+      "word": "ONCE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "on one occasion",
+      "zh": "adv. 一次, 曾經, 一旦"
+    },
+    {
+      "word": "ONE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "MEN",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "the force of workers available",
+      "zh": "pl. man的複數"
+    }
+  ],
+  "bonus": [
+    "CON",
+    "EON",
+    "ICE",
+    "ION",
+    "MOC",
+    "MON",
+    "NIM",
+    "NOM",
+    "CINE",
+    "CION",
+    "COIN",
+    "CONE",
+    "CONI",
+    "EMIC",
+    "ICON",
+    "MENO",
+    "MICE",
+    "MIEN",
+    "MINE",
+    "NICE",
+    "NOME",
+    "OMEN",
+    "MINCE",
+    "MONIE"
+  ]
+}

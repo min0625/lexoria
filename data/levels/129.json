@@ -1,0 +1,55 @@
+{
+  "id": 129,
+  "letters": [
+    "E",
+    "M",
+    "D",
+    "V",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "MOVED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "change location; move, travel, or proceed, also metaphorically",
+      "zh": "v. 移動, 移動到；感動（move的過去式, 過去分詞）"
+    },
+    {
+      "word": "DEMO",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a visual presentation showing how something works",
+      "zh": "n. 演示, 樣本唱片"
+    },
+    {
+      "word": "MOVE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the act of deciding to do something",
+      "zh": "n. 移動, 遷居, 步驟"
+    },
+    {
+      "word": "MODE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "how something is done or how it happens",
+      "zh": "n. 模態, 調式, 樣式, 文體, 狀態, 方式, 風尚"
+    }
+  ],
+  "bonus": [
+    "DEV",
+    "DOE",
+    "DOM",
+    "MED",
+    "MOD",
+    "ODE",
+    "VOE",
+    "DOME",
+    "DOVE"
+  ]
+}

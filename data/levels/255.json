@@ -1,0 +1,80 @@
+{
+  "id": 255,
+  "letters": [
+    "C",
+    "E",
+    "K",
+    "P",
+    "A",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "PACKED",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "arrange in a container",
+      "zh": "a. 充滿...的, 滿座的, 擠得滿滿的, 壓堅實的, 塞滿了...的, 擠滿了人的, 擁擠的"
+    },
+    {
+      "word": "CAKE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a block of solid substance (such as soap or wax)",
+      "zh": "n. 蛋糕, 塊, 餅"
+    },
+    {
+      "word": "PACK",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a large indefinite number",
+      "zh": "n. 包裹, 一夥, 一副, 背包, 包裝"
+    },
+    {
+      "word": "PEAK",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "the most extreme possible amount or value",
+      "zh": "n. 山峰, 巔, 山頂, 頂點, 尖峰, 帽舌"
+    },
+    {
+      "word": "CAP",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a tight-fitting headdress",
+      "zh": "n. 蓋子, 帽子"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "APE",
+    "CAD",
+    "CEP",
+    "DAK",
+    "DAP",
+    "KAE",
+    "KEA",
+    "KEP",
+    "PAC",
+    "PAD",
+    "PEA",
+    "PEC",
+    "PED",
+    "ACED",
+    "APED",
+    "CADE",
+    "CAPE",
+    "DACE",
+    "DECK",
+    "PACE",
+    "PECK",
+    "CAKED",
+    "CAPED",
+    "PACED"
+  ]
+}

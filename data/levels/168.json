@@ -1,0 +1,59 @@
+{
+  "id": 168,
+  "letters": [
+    "N",
+    "D",
+    "E",
+    "V",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "DEVON",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a county in southwestern England",
+      "zh": "n. 德文郡（等於Devon shire, 英國郡名）；德文島（加拿大北部）"
+    },
+    {
+      "word": "DONE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "a. 完成了的, 好了的"
+    },
+    {
+      "word": "ONE",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "END",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DEV",
+    "DOE",
+    "DON",
+    "EON",
+    "NOD",
+    "ODE",
+    "VOE",
+    "DOVE",
+    "NODE",
+    "OVEN",
+    "VEND",
+    "DOVEN"
+  ]
+}

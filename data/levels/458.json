@@ -1,0 +1,101 @@
+{
+  "id": 458,
+  "letters": [
+    "E",
+    "L",
+    "I",
+    "E",
+    "D",
+    "D",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "YIELDED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "be the cause or source of",
+      "zh": "vt. 屈服, 投降（yield的過去式與過去分詞形式）"
+    },
+    {
+      "word": "DIED",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "pass from physical life and lose all bodily attributes and functions necessary to sustain life",
+      "zh": "v. 死亡, 消逝（die的過去式和過去分詞）"
+    },
+    {
+      "word": "EYE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the organ of sight",
+      "zh": "n. 眼睛, 視力, 看"
+    },
+    {
+      "word": "DID",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "do的過去式"
+    },
+    {
+      "word": "LED",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "DIE",
+      "row": 2,
+      "col": 6,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEL",
+    "DEY",
+    "DYE",
+    "EEL",
+    "ELD",
+    "LEE",
+    "LEI",
+    "LEY",
+    "LID",
+    "LIE",
+    "LYE",
+    "YID",
+    "DEED",
+    "DEIL",
+    "DELE",
+    "DELI",
+    "DIDY",
+    "DIEL",
+    "DYED",
+    "EDDY",
+    "EELY",
+    "EIDE",
+    "EYED",
+    "IDLE",
+    "IDLY",
+    "IDYL",
+    "LIED",
+    "YELD",
+    "DEEDY",
+    "DELED",
+    "EDILE",
+    "ELIDE",
+    "IDLED",
+    "YIELD",
+    "ELIDED",
+    "EYELID"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": 350,
+  "letters": [
+    "S",
+    "G",
+    "N",
+    "I",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SIGNS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a perceptible indication of something not immediately apparent (as a visible clue that something has happened)",
+      "zh": "n. 標誌；符號（sign的複數）"
+    },
+    {
+      "word": "SINS",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "estrangement from god",
+      "zh": "n. 罪惡"
+    },
+    {
+      "word": "SING",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "deliver by singing",
+      "zh": "vi. 唱, 唱歌, 演唱, 鳴, 啼"
+    },
+    {
+      "word": "SIGN",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a perceptible indication of something not immediately apparent (as a visible clue that something has happened)",
+      "zh": "n. 符號, 招牌, 徵兆, 正負號, 手勢"
+    },
+    {
+      "word": "SIN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    }
+  ],
+  "bonus": [
+    "GIN",
+    "INS",
+    "SIS",
+    "GINS",
+    "SINGS"
+  ]
+}

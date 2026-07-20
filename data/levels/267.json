@@ -1,0 +1,70 @@
+{
+  "id": 267,
+  "letters": [
+    "E",
+    "E",
+    "T",
+    "D",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "TESTED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "put to the test, as for its quality, or give experimental use to",
+      "zh": "a. 經過試驗的, 經受過考驗的, 經驗定的, 檢驗無病的"
+    },
+    {
+      "word": "SEED",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a small hard fruit",
+      "zh": "n. 種子, 籽, 萌芽, 子孫, 精液"
+    },
+    {
+      "word": "TEST",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "trying something to find out about it",
+      "zh": "n. 測試, 試驗, 化驗, 檢驗, 考驗, 甲殼"
+    },
+    {
+      "word": "SET",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "TED",
+    "TEE",
+    "TET",
+    "DEES",
+    "DEET",
+    "SETT",
+    "STET",
+    "TEDS",
+    "TEED",
+    "TEES",
+    "TETS",
+    "DEETS",
+    "STEED",
+    "DETEST"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": 362,
+  "letters": [
+    "N",
+    "C",
+    "R",
+    "H",
+    "A",
+    "Y",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "ANARCHY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a state of lawlessness and disorder (usually resulting from a failure of government)",
+      "zh": "n. 無政府狀態, 政治混亂"
+    },
+    {
+      "word": "CAN",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "airtight sealed metal container for food or drink or paint etc.",
+      "zh": "vt. 裝罐"
+    },
+    {
+      "word": "ANY",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "one or some or every or all without specification",
+      "zh": "a. 任何的"
+    },
+    {
+      "word": "RAN",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "move fast by using one's feet, with one foot off the ground at any given time",
+      "zh": "run的過去式"
+    },
+    {
+      "word": "RAY",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a column of light (as from a beacon)",
+      "zh": "n. 光線, 射線, 閃爍, 光輝"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "CRY",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a loud utterance; often in protest or opposition",
+      "zh": "n. 叫聲, 哭聲, 大叫"
+    }
+  ],
+  "bonus": [
+    "AAH",
+    "AHA",
+    "ANA",
+    "ARC",
+    "CAY",
+    "HAY",
+    "NAH",
+    "NAY",
+    "RAH",
+    "RYA",
+    "YAH",
+    "YAR",
+    "ACHY",
+    "ARCH",
+    "AYAH",
+    "CARN",
+    "CHAR",
+    "CHAY",
+    "CYAN",
+    "HAAR",
+    "NARC",
+    "NARY",
+    "RACY",
+    "RAYA",
+    "YARN",
+    "CARNY",
+    "CHARY",
+    "RANCH",
+    "RAYAH",
+    "ANARCH",
+    "CANARY"
+  ]
+}

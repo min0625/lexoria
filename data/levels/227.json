@@ -1,0 +1,90 @@
+{
+  "id": 227,
+  "letters": [
+    "H",
+    "U",
+    "T",
+    "N",
+    "D",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "HUNTED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "pursue for food or sport (as of wild animals)",
+      "zh": "a. 被捕獵的；受迫害的"
+    },
+    {
+      "word": "THEN",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "that time; that moment",
+      "zh": "adv. 然後, 當時"
+    },
+    {
+      "word": "TEN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    },
+    {
+      "word": "DUE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "that which is deserved or owed",
+      "zh": "n. 應得的東西, 應付款"
+    },
+    {
+      "word": "END",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    },
+    {
+      "word": "NET",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "zh": "n. 網, 網狀物, 羅網, 淨利, 淨價"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DUN",
+    "EDH",
+    "ETH",
+    "HEN",
+    "HET",
+    "HUE",
+    "HUN",
+    "HUT",
+    "NTH",
+    "NUT",
+    "TED",
+    "THE",
+    "TUN",
+    "DENT",
+    "DUET",
+    "DUNE",
+    "DUNT",
+    "HENT",
+    "HUED",
+    "HUNT",
+    "NUDE",
+    "TEND",
+    "THUD",
+    "TUNE",
+    "UNDE",
+    "TUNED"
+  ]
+}

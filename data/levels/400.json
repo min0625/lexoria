@@ -1,0 +1,79 @@
+{
+  "id": 400,
+  "letters": [
+    "N",
+    "Y",
+    "O",
+    "H",
+    "T",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PYTHON",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "large Old World boas",
+      "zh": "n. 大蟒, 巨蟒"
+    },
+    {
+      "word": "NOT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "negation of a word or group of words",
+      "zh": "adv. 不, 非, 未"
+    },
+    {
+      "word": "HOT",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "zh": "a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"
+    },
+    {
+      "word": "POT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid",
+      "zh": "n. 盆, 罐, 壺, 坩堝, 獎盃"
+    },
+    {
+      "word": "TOP",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the upper part of anything",
+      "zh": "n. 頂部, 頂端, 極點, 上面, 上部, 頂篷, 最高地位, 首位, 陀螺"
+    }
+  ],
+  "bonus": [
+    "HON",
+    "HOP",
+    "HOY",
+    "HYP",
+    "NOH",
+    "NTH",
+    "OPT",
+    "PHT",
+    "POH",
+    "THO",
+    "THY",
+    "TON",
+    "TOY",
+    "YON",
+    "HYPO",
+    "PHON",
+    "PHOT",
+    "PONY",
+    "TONY",
+    "TOPH",
+    "TYPO",
+    "PHONY",
+    "PHYTON",
+    "TYPHON"
+  ]
+}

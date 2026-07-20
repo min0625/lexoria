@@ -1,0 +1,84 @@
+{
+  "id": 231,
+  "letters": [
+    "E",
+    "S",
+    "R",
+    "L",
+    "L",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "SELLER",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "someone who promotes or exchanges goods or services for money",
+      "zh": "n. 銷售者"
+    },
+    {
+      "word": "REEL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a roll of photographic film holding a series of frames to be projected by a movie projector",
+      "zh": "n. 卷軸, 一卷, 紡車, 旋轉, 蹣跚"
+    },
+    {
+      "word": "SELL",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the activity of persuading someone to buy",
+      "zh": "vt. 賣, 背叛, 銷售, 出賣"
+    },
+    {
+      "word": "RES",
+      "row": 1,
+      "col": 6,
+      "dir": "down",
+      "def": "a widely distributed system consisting of all the cells able to ingest bacteria or colloidal particles etc, except for certain white blood cells",
+      "zh": "[計] 遠端輸入服務"
+    },
+    {
+      "word": "SEE",
+      "row": 3,
+      "col": 6,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "LEE",
+      "row": 1,
+      "col": 8,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    }
+  ],
+  "bonus": [
+    "EEL",
+    "ELL",
+    "ELS",
+    "ERE",
+    "ERS",
+    "REE",
+    "SEL",
+    "SER",
+    "EELS",
+    "ELLS",
+    "ELSE",
+    "LEER",
+    "LEES",
+    "REES",
+    "SEEL",
+    "SEER",
+    "SERE",
+    "LEERS",
+    "REELS",
+    "SELLE",
+    "RESELL"
+  ]
+}

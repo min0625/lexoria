@@ -1,0 +1,85 @@
+{
+  "id": 441,
+  "letters": [
+    "R",
+    "N",
+    "E",
+    "G",
+    "U",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "HUNGER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a physiological need for food; the consequence of food deprivation",
+      "zh": "n. 飢餓, 渴望, 饑荒"
+    },
+    {
+      "word": "HUNG",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "be suspended or hanging",
+      "zh": "hang的過去式和過去分詞"
+    },
+    {
+      "word": "HUGE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "unusually great in size or amount or degree or especially extent or scope; ; ; ; ; ; ; ; ; - W.R.Inge",
+      "zh": "a. 極大的, 巨大的, 無限的"
+    },
+    {
+      "word": "RUN",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"
+    },
+    {
+      "word": "GEN",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    },
+    {
+      "word": "GUN",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "a weapon that discharges a missile at high velocity (especially from a metal tube or barrel)",
+      "zh": "n. 槍"
+    }
+  ],
+  "bonus": [
+    "ENG",
+    "ERG",
+    "ERN",
+    "GNU",
+    "HEN",
+    "HER",
+    "HUE",
+    "HUG",
+    "HUN",
+    "REG",
+    "RUE",
+    "RUG",
+    "UGH",
+    "URN",
+    "GENU",
+    "GRUE",
+    "HERN",
+    "RUNE",
+    "RUNG",
+    "URGE",
+    "HUGER",
+    "REHUNG"
+  ]
+}

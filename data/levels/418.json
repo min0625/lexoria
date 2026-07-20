@@ -1,0 +1,91 @@
+{
+  "id": 418,
+  "letters": [
+    "A",
+    "R",
+    "S",
+    "E",
+    "C",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "SCARCE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "deficient in quantity or number compared with the demand",
+      "zh": "a. 難得的, 稀罕的, 缺乏的"
+    },
+    {
+      "word": "CARE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the work of providing treatment for or attending to someone or something",
+      "zh": "n. 小心, 照料, 憂慮"
+    },
+    {
+      "word": "CASE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an occurrence of something",
+      "zh": "n. 情形, 情況, 箱, 容器, 事實, 病例, 案例, 框子"
+    },
+    {
+      "word": "CAR",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "ARC",
+    "ARS",
+    "EAR",
+    "ERA",
+    "ERS",
+    "RAS",
+    "REC",
+    "RES",
+    "SAC",
+    "SAE",
+    "SEA",
+    "SEC",
+    "SER",
+    "ACES",
+    "ACRE",
+    "ARCS",
+    "ARES",
+    "ARSE",
+    "CARS",
+    "CECA",
+    "EARS",
+    "ERAS",
+    "RACE",
+    "RASE",
+    "RECS",
+    "SCAR",
+    "SEAR",
+    "SERA",
+    "ACRES",
+    "CARES",
+    "CARSE",
+    "ESCAR",
+    "RACES",
+    "SCARE",
+    "SERAC"
+  ]
+}

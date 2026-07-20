@@ -1,0 +1,69 @@
+{
+  "id": 191,
+  "letters": [
+    "A",
+    "D",
+    "I",
+    "R",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "AIRED",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "expose to fresh air",
+      "zh": "通風"
+    },
+    {
+      "word": "READ",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "something that is read",
+      "zh": "v. 讀, 閱讀, 理解"
+    },
+    {
+      "word": "ARE",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "AIR",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    }
+  ],
+  "bonus": [
+    "AID",
+    "DIE",
+    "EAR",
+    "ERA",
+    "IRE",
+    "RAD",
+    "RED",
+    "REI",
+    "RIA",
+    "RID",
+    "AIDE",
+    "ARID",
+    "DARE",
+    "DEAR",
+    "DIRE",
+    "IDEA",
+    "IRED",
+    "RAID",
+    "RIDE",
+    "AIDER",
+    "DEAIR",
+    "IRADE",
+    "REDIA"
+  ]
+}

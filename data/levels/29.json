@@ -1,0 +1,40 @@
+{
+  "id": 29,
+  "letters": [
+    "E",
+    "M",
+    "T",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "ITEM",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a distinct part that can be specified separately in a group of things that could be enumerated on a list",
+      "zh": "n. 專案, 條款, 一則, 項"
+    },
+    {
+      "word": "TIME",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an instance or single occasion for some event",
+      "zh": "n. 時間, 時侯, 時機, 時期, 期限, 次數, 節拍, 暫停, 規定時間"
+    },
+    {
+      "word": "MET",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "come together",
+      "zh": "meet的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "TIE",
+    "EMIT",
+    "MITE"
+  ]
+}

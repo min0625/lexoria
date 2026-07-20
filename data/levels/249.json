@@ -1,0 +1,69 @@
+{
+  "id": 249,
+  "letters": [
+    "D",
+    "P",
+    "E",
+    "O",
+    "P",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "POPPED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "bulge outward",
+      "zh": "a. [美俚]被警察局拘押的；被逮捕的"
+    },
+    {
+      "word": "POPE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the head of the Roman Catholic Church",
+      "zh": "n. 羅馬教皇, 主教"
+    },
+    {
+      "word": "DOPE",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "street names for marijuana",
+      "zh": "n. 吸毒者, 笨蛋, 麻醉藥物, 粘稠物"
+    },
+    {
+      "word": "POP",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "an informal term for a father; probably derived from baby talk",
+      "zh": "n. 砰然聲, 槍擊, 含氣飲料, 流行音樂, 通俗藝術"
+    },
+    {
+      "word": "POD",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the vessel that contains the seeds of a plant (not the seeds themselves)",
+      "zh": "n. 豆莢, (豆莢狀的)保護性外殼, 扁豆形礦體"
+    },
+    {
+      "word": "DOE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "the federal department responsible for maintaining a national energy policy of the United States; created in 1977",
+      "zh": "n. 母鹿, 雌兔"
+    }
+  ],
+  "bonus": [
+    "ODE",
+    "OPE",
+    "PED",
+    "PEP",
+    "OPED",
+    "PEPO"
+  ]
+}

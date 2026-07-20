@@ -1,0 +1,53 @@
+{
+  "id": 443,
+  "letters": [
+    "H",
+    "S",
+    "A",
+    "L",
+    "F"
+  ],
+  "words": [
+    {
+      "word": "FLASH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a sudden intense burst of radiant energy",
+      "zh": "n. 閃光, 閃現, 一瞬間"
+    },
+    {
+      "word": "HALF",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "one of two equal parts of a divisible whole",
+      "zh": "n. 一半, 半場, 不完全"
+    },
+    {
+      "word": "ASH",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the residue that remains when something is burned",
+      "zh": "n. 灰, 灰燼"
+    },
+    {
+      "word": "HAS",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "FAS",
+    "LAS",
+    "SAL",
+    "SHA",
+    "FASH",
+    "LASH"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": 334,
+  "letters": [
+    "P",
+    "L",
+    "A",
+    "A",
+    "E",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "APPEAL",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "earnest or urgent request",
+      "zh": "n. 懇求, 訴請, 上訴, 吸引力"
+    },
+    {
+      "word": "APPLE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "fruit with red or yellow or green skin and sweet to tart crisp whitish flesh",
+      "zh": "n. 蘋果, 傢伙"
+    },
+    {
+      "word": "PLEA",
+      "row": 1,
+      "col": 7,
+      "dir": "down",
+      "def": "a humble request for help from someone in authority",
+      "zh": "n. 懇求, 辯解, 抗辯, 訴訟, 請願, 託詞"
+    },
+    {
+      "word": "PALE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a wooden strip forming part of a fence",
+      "zh": "n. 柵欄, 界線, 範圍"
+    },
+    {
+      "word": "PAL",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a close friend who accompanies his buddies in their activities",
+      "zh": "n. 朋友, 夥伴, 同志, 同謀"
+    },
+    {
+      "word": "LAP",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the upper side of the thighs of a seated person",
+      "zh": "n. 膝蓋, 舔, 一圈, 下襬, 衣兜, 山坳"
+    }
+  ],
+  "bonus": [
+    "AAL",
+    "ALA",
+    "ALE",
+    "ALP",
+    "APE",
+    "LEA",
+    "PAP",
+    "PEA",
+    "PEP",
+    "ALAE",
+    "LEAP",
+    "PALP",
+    "PAPA",
+    "PEAL",
+    "APPAL",
+    "APPEL",
+    "PALEA",
+    "PAPAL",
+    "PEPLA"
+  ]
+}

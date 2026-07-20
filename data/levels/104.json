@@ -1,0 +1,54 @@
+{
+  "id": 104,
+  "letters": [
+    "O",
+    "S",
+    "L",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SLOTS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a position in a grammatical linguistic construction in which a variety of alternative units are interchangeable",
+      "zh": "n. 插槽；老虎機（slot的複數）"
+    },
+    {
+      "word": "LOSS",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "something that is lost",
+      "zh": "n. 損失, 遺失, 失敗, 輸, 錯過, 傷亡"
+    },
+    {
+      "word": "LOST",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "people who are destined to die soon",
+      "zh": "a. 失去的, 遺失的, 迷惑的"
+    },
+    {
+      "word": "LOT",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "(often followed by `of') a large number or amount or extent",
+      "zh": "n. 運氣, 籤, 抽籤, 份額, 許多, 一堆"
+    }
+  ],
+  "bonus": [
+    "SOL",
+    "SOS",
+    "SOT",
+    "LOTS",
+    "SLOT",
+    "SOLS",
+    "SOTS",
+    "TOSS"
+  ]
+}

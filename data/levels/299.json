@@ -1,0 +1,106 @@
+{
+  "id": 299,
+  "letters": [
+    "E",
+    "R",
+    "D",
+    "I",
+    "F",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "FRIEND",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "a person you know well and regard with affection and trust",
+      "zh": "n. 朋友, 支持者, 贊助者"
+    },
+    {
+      "word": "FIND",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a productive insight",
+      "zh": "vt. 發現, 感到, 找到, 認為, 得到"
+    },
+    {
+      "word": "FIRE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "the event of something burning (often destructive)",
+      "zh": "n. 火, 爐火, 電爐, 火災, 閃光體, 炮火, 熱情"
+    },
+    {
+      "word": "FINE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "money extracted as a penalty",
+      "zh": "n. 罰款, 罰金, 晴天, 精細"
+    },
+    {
+      "word": "END",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    },
+    {
+      "word": "RED",
+      "row": 3,
+      "col": 3,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DIE",
+    "DIN",
+    "ERN",
+    "FED",
+    "FEN",
+    "FER",
+    "FID",
+    "FIE",
+    "FIN",
+    "FIR",
+    "IRE",
+    "REF",
+    "REI",
+    "RID",
+    "RIF",
+    "RIN",
+    "DEFI",
+    "DINE",
+    "DIRE",
+    "FEND",
+    "FERN",
+    "FIRN",
+    "IRED",
+    "NEIF",
+    "NERD",
+    "NIDE",
+    "REIF",
+    "REIN",
+    "REND",
+    "RIDE",
+    "RIFE",
+    "RIND",
+    "DINER",
+    "FIEND",
+    "FINED",
+    "FINER",
+    "FIRED",
+    "FRIED",
+    "INFER",
+    "FINDER",
+    "REDFIN",
+    "REFIND"
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "id": 488,
+  "letters": [
+    "N",
+    "I",
+    "W",
+    "D",
+    "W",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "WINDOW",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a framework of wood or metal that contains a glass windowpane and is built into a wall or roof to admit light or air",
+      "zh": "n. 窗戶, 窗子, 視窗"
+    },
+    {
+      "word": "DOWN",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "soft fine feathers",
+      "zh": "a. 向下的"
+    },
+    {
+      "word": "NOW",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "the momentary present",
+      "zh": "adv. 現在, 剛才, 目前"
+    },
+    {
+      "word": "WIN",
+      "row": 3,
+      "col": 4,
+      "dir": "across",
+      "def": "a victory (as in a race or other competition)",
+      "zh": "vt. 贏得, 打勝, 成功"
+    },
+    {
+      "word": "WON",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the basic unit of money in South Korea",
+      "zh": "win的過去式和過去分詞"
+    },
+    {
+      "word": "OWN",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "have ownership or possession of",
+      "zh": "n. 自己的"
+    }
+  ],
+  "bonus": [
+    "DIN",
+    "DON",
+    "DOW",
+    "ION",
+    "NOD",
+    "WOW",
+    "NODI",
+    "WIND",
+    "WINO",
+    "INDOW",
+    "WIDOW"
+  ]
+}

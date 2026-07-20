@@ -1,0 +1,108 @@
+{
+  "id": 398,
+  "letters": [
+    "A",
+    "E",
+    "D",
+    "S",
+    "D",
+    "C",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DECADES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a period of 10 years",
+      "zh": "n. 十年, 十年間( decade的複數形式 )"
+    },
+    {
+      "word": "DEAD",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "people who are no longer living",
+      "zh": "a. 死的, 不活潑的, 麻木的, 熄滅的"
+    },
+    {
+      "word": "CASE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "an occurrence of something",
+      "zh": "n. 情形, 情況, 箱, 容器, 事實, 病例, 案例, 框子"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "DAD",
+      "row": 5,
+      "col": 4,
+      "dir": "across",
+      "def": "an informal term for a father; probably derived from baby talk",
+      "zh": "n. 爸爸, 爹爹"
+    },
+    {
+      "word": "ADD",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a condition (mostly in boys) characterized by behavioral and learning disorders",
+      "zh": "vt. 增加, 新增, 附帶說明, 計算...總和"
+    },
+    {
+      "word": "SEA",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "ADS",
+    "CAD",
+    "CEE",
+    "DEE",
+    "SAC",
+    "SAD",
+    "SAE",
+    "SEC",
+    "ACED",
+    "ACES",
+    "ADDS",
+    "CADE",
+    "CADS",
+    "CEDE",
+    "CEES",
+    "DACE",
+    "DADS",
+    "DEED",
+    "DEES",
+    "EASE",
+    "SADE",
+    "SCAD",
+    "SEED",
+    "AEDES",
+    "CADES",
+    "CASED",
+    "CEASE",
+    "CEDED",
+    "CEDES",
+    "DACES",
+    "DEADS",
+    "DEEDS",
+    "EASED",
+    "CEASED",
+    "DECADE"
+  ]
+}

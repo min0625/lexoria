@@ -1,0 +1,62 @@
+{
+  "id": 127,
+  "letters": [
+    "F",
+    "E",
+    "R",
+    "A",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "FREAK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a person or animal that is markedly unusual or deformed",
+      "zh": "n. 畸形人, 畸形物, 不正常的事物, 反覆無常"
+    },
+    {
+      "word": "FEAR",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "zh": "n. 恐怖, 害怕, 擔心"
+    },
+    {
+      "word": "ARE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "FAR",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    }
+  ],
+  "bonus": [
+    "ARF",
+    "ARK",
+    "EAR",
+    "ERA",
+    "FER",
+    "KAE",
+    "KAF",
+    "KEA",
+    "KEF",
+    "REF",
+    "FAKE",
+    "FARE",
+    "FRAE",
+    "KERF",
+    "RAKE",
+    "FAKER"
+  ]
+}

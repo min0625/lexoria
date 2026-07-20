@@ -1,0 +1,38 @@
+{
+  "id": 63,
+  "letters": [
+    "O",
+    "U",
+    "P",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "COUP",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a sudden and decisive change of government illegally or by force",
+      "zh": "n. 砰然的一擊, 妙計, 出乎意料的行動, 政變"
+    },
+    {
+      "word": "CUP",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a small open container usually used for drinking; usually has a handle",
+      "zh": "n. 杯子, 茶杯, 優勝杯"
+    },
+    {
+      "word": "COP",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    }
+  ],
+  "bonus": [
+    "UPO"
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": 406,
+  "letters": [
+    "S",
+    "A",
+    "P",
+    "H",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "PATHS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a course of conduct",
+      "zh": "n. 路徑（path的複數）"
+    },
+    {
+      "word": "PATH",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a course of conduct",
+      "zh": "n. 路徑, 小路, 道路, 途徑, 路線, 軌道"
+    },
+    {
+      "word": "PAST",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the time that has elapsed",
+      "zh": "n. 過去, 昔時, 往事, 早年經歷, 過去時"
+    },
+    {
+      "word": "HAS",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    }
+  ],
+  "bonus": [
+    "APT",
+    "ASH",
+    "ASP",
+    "HAP",
+    "HAT",
+    "PAH",
+    "PAS",
+    "PAT",
+    "PHT",
+    "SAP",
+    "SAT",
+    "SHA",
+    "SPA",
+    "TAP",
+    "TAS",
+    "HAPS",
+    "HASP",
+    "HAST",
+    "HATS",
+    "PASH",
+    "PATS",
+    "PHAT",
+    "SHAT",
+    "SPAT",
+    "TAPS",
+    "STAPH"
+  ]
+}

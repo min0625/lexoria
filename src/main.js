@@ -87,7 +87,7 @@ $('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 
 
 // ---- 狀態 ----
 const save = loadSave();
-let levels = [];
+let levelCount = 0;
 let game = null;
 let grid = null;
 let wheel = null;
@@ -176,6 +176,13 @@ function showScreen(name) {
   $('screen-game').hidden = name !== 'game';
   $('screen-levels').hidden = name !== 'levels';
   $('screen-allclear').hidden = name !== 'allclear';
+  $('screen-error').hidden = name !== 'error'; // 錯誤畫面也走同一套，重試成功才收得掉
+  // 過關卡片／教學是 screen 的兄弟節點，不跟著 hidden 走——離開遊戲畫面時要自己收，
+  // 否則換關 fetch 失敗時它會浮在錯誤畫面上（UI 文件 §4：一次只開一層）
+  if (name !== 'game') {
+    $('overlay-clear').hidden = true;
+    $('overlay-tutorial').hidden = true;
+  }
   dictCard.hide();
 }
 
@@ -220,12 +227,41 @@ function persistProgress() {
 }
 
 // ---- 關卡流程 ----
-function startLevel(id) {
-  const level = levels.find((l) => l.id === id);
-  if (!level) {
+// 換關的流水號：fetch 期間玩家又點了別關時，舊的那次回來要整個作廢——
+// 兩關的檔案大小不同，回應順序不保證跟點擊順序一致，不擋就會停在先點的那關。
+let startSeq = 0;
+
+// 把關卡檔暖進瀏覽器 HTTP 快取。一定要把 body 讀完：只丟著不讀的 fetch 在 Safari 會被中止，
+// 快取也不見得寫得進去，預取就白做了。
+const prefetchLevel = (id) =>
+  fetch(`data/levels/${id}.json`)
+    .then((r) => r.blob())
+    .catch(() => {});
+
+async function startLevel(id) {
+  // 流水號要比全破的 early return 更早遞增：不然還在飛的上一次 fetch 回來時 seq 仍然相等，
+  // 會把剛切好的全破畫面蓋回遊戲畫面。
+  const seq = ++startSeq;
+  if (id > levelCount) {
     showScreen('allclear'); // 最後一關破完 → 全破畫面（§7）
     return;
   }
+  // 換關期間舊的 grid/wheel 還掛在畫面上但 game 已經不對應——先拆掉，避免 fetch 還沒回來時
+  // onCellTap/hint/share 摸到已經過期的狀態（它們都是靠 !game 判斷「還沒準備好」）。
+  game = null;
+  wheel?.destroy();
+  wheel = null;
+  $('grid').innerHTML = `<p class="loading-text">${strings.loading}</p>`;
+  let level;
+  try {
+    const res = await fetch(`data/levels/${id}.json`);
+    if (!res.ok) throw new Error(res.status); // 404 的內文未必是 JSON，靠 parse 失敗才發現太碰運氣
+    level = await res.json();
+  } catch {
+    if (seq === startSeq) showLoadError();
+    return;
+  }
+  if (seq !== startSeq) return; // 這次已被後來的換關取代
   currentLevelId = id;
   replay = id !== save.currentLevel;
   const state = replay
@@ -234,13 +270,14 @@ function startLevel(id) {
   game = createGame(level, state);
   grid = createGrid($('grid'), level, { onCellTap });
   grid.update(game.getCells(), false);
-  wheel?.destroy();
   wheel = createWheel($('wheel'), level.letters, { onChange: showPreview, onSubmit });
   $('btn-level').textContent = strings.levelTitle(id);
   updateCoins();
   $('overlay-clear').hidden = true;
   $('overlay-tutorial').hidden = !(id === 1 && !save.settings.tutorialDone);
   showScreen('game');
+  // 玩這關的期間先把下一關的檔案暖進瀏覽器快取，按「下一關」時 startLevel() 的 fetch 直接命中。
+  if (id + 1 <= levelCount) prefetchLevel(id + 1);
 }
 
 function onSubmit(word) {
@@ -326,7 +363,7 @@ $('btn-next').addEventListener('click', () => {
 
 // ---- 提示（§8）----
 $('btn-hint').addEventListener('click', () => {
-  if (!game) return; // boot() 尚未完成（fetch levels.json 中），同 btn-share 的守衛
+  if (!game) return; // 關卡資料還在 fetch 中（boot 或換關），同 btn-share 的守衛
   const result = game.useHint(save.coins);
   if (!result.ok) {
     // 金幣不足 → 按鈕抖動並強調價格，不彈購買視窗
@@ -422,19 +459,18 @@ function onCellTap(words, cellEl) {
 function renderLevelList() {
   const list = $('level-list');
   list.innerHTML = '';
-  for (const level of levels) {
+  for (let id = 1; id <= levelCount; id++) {
     const b = document.createElement('button');
     b.className = 'level-btn';
-    if (level.id < save.currentLevel)
-      b.innerHTML = `<span class="icon icon-check"></span>${level.id}`;
-    else if (level.id === save.currentLevel) {
-      b.innerHTML = `<span class="icon icon-play"></span>${level.id}`;
+    if (id < save.currentLevel) b.innerHTML = `<span class="icon icon-check"></span>${id}`;
+    else if (id === save.currentLevel) {
+      b.innerHTML = `<span class="icon icon-play"></span>${id}`;
       b.classList.add('current');
     } else {
-      b.innerHTML = `<span class="icon icon-lock"></span>${level.id}`;
+      b.innerHTML = `<span class="icon icon-lock"></span>${id}`;
       b.disabled = true;
     }
-    b.addEventListener('click', () => startLevel(level.id));
+    b.addEventListener('click', () => startLevel(id));
     list.appendChild(b);
   }
 }
@@ -480,7 +516,7 @@ function wireShare(btn, label) {
     }, 2500);
   };
   btn.addEventListener('click', async () => {
-    if (!game || !wheel) return; // boot() 尚未完成（fetch levels.json 中）
+    if (!game || !wheel) return; // 關卡資料還在 fetch 中（boot 或換關）
     try {
       const text = strings.shareText(
         currentLevelId,
@@ -553,20 +589,29 @@ $('btn-redeem').addEventListener('click', async () => {
   SFX.coin();
   updateCoins();
   $('redeem-input').value = '';
-  if (effect.type === 'level' && levels.length) startLevel(effect.id);
+  if (effect.type === 'level' && levelCount) startLevel(effect.id);
 });
 
 // ---- 啟動 ----
+// 取不到關卡資料（斷網、部署中 404）→ 顯示重試畫面，不留白屏；boot() 跟換關的 fetch 共用。
+function showLoadError() {
+  $('error-text').textContent = strings.loadFailed;
+  $('btn-reload').textContent = strings.retry;
+  showScreen('error');
+}
+$('btn-reload').addEventListener('click', () => location.reload());
+
 (async function boot() {
+  // 當前關卡 id 從存檔就知道，不必等 index.json 回來——兩支同時發，首屏省一趟 RTT。
+  // 這裡只負責把檔案暖進 HTTP 快取，真正的取用還是 startLevel() 自己那次 fetch。
+  prefetchLevel(save.currentLevel);
   try {
-    levels = await (await fetch('data/levels.json')).json();
+    const res = await fetch('data/levels/index.json');
+    if (!res.ok) throw new Error(res.status); // 同 startLevel：404 內文未必是 JSON
+    ({ count: levelCount } = await res.json());
+    if (!Number.isInteger(levelCount) || levelCount < 1) throw new Error('bad index');
   } catch {
-    // 取不到關卡資料（斷網、部署中 404）→ 顯示重試畫面，不留白屏
-    $('error-text').textContent = strings.loadFailed;
-    $('btn-reload').textContent = strings.retry;
-    $('btn-reload').addEventListener('click', () => location.reload());
-    $('screen-game').hidden = true;
-    $('screen-error').hidden = false;
+    showLoadError();
     return;
   }
   startLevel(save.currentLevel);

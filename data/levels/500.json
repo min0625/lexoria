@@ -1,0 +1,64 @@
+{
+  "id": 500,
+  "letters": [
+    "N",
+    "G",
+    "E",
+    "E",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "GREEN",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "green color or pigment; resembling the color of growing grass",
+      "zh": "n. 綠色, 綠色顏料"
+    },
+    {
+      "word": "GENRE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a kind of literary or artistic work",
+      "zh": "n. 型別, 流派"
+    },
+    {
+      "word": "GENE",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "(genetics) a segment of DNA that is involved in producing a polypeptide chain; it can include regions preceding and following the coding DNA as well as introns between the exons; it is considered a unit of heredity",
+      "zh": "n. 基因"
+    },
+    {
+      "word": "GEE",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a unit of force equal to the force exerted by gravity; used to indicate the force to which a body is subjected when it is accelerated",
+      "zh": "n. 馬, 傢伙"
+    },
+    {
+      "word": "GEN",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    }
+  ],
+  "bonus": [
+    "ENG",
+    "ERE",
+    "ERG",
+    "ERN",
+    "NEE",
+    "REE",
+    "REG",
+    "EGER",
+    "ERNE",
+    "GREE"
+  ]
+}

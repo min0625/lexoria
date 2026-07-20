@@ -1,0 +1,50 @@
+{
+  "id": 84,
+  "letters": [
+    "E",
+    "W",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "WEAR",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "impairment resulting from long use",
+      "zh": "n. 穿著, 戴, 使用, 耗損, 服裝, 耐久性"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "ERA",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a period marked by distinctive character or reckoned from a fixed point or event",
+      "zh": "n. 時代, 紀元, 時期"
+    },
+    {
+      "word": "WAR",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the waging of armed conflict against an enemy",
+      "zh": "n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"
+    }
+  ],
+  "bonus": [
+    "AWE",
+    "EAR",
+    "RAW",
+    "WAE",
+    "WARE"
+  ]
+}

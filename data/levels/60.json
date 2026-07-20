@@ -1,0 +1,38 @@
+{
+  "id": 60,
+  "letters": [
+    "N",
+    "A",
+    "K",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "TANK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an enclosed armored military vehicle; has a cannon and moves on caterpillar treads",
+      "zh": "n. 槽, 箱, 櫃, 罐, 池塘, 儲水池, 坦克"
+    },
+    {
+      "word": "TAN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a browning of the skin resulting from exposure to the rays of the sun",
+      "zh": "n. 黃褐色, 鞣料, 馬戲團"
+    },
+    {
+      "word": "ANT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "social insect living in organized colonies; characteristically the males and fertile queen have wings during breeding season; wingless sterile females are the workers",
+      "zh": "n. 螞蟻"
+    }
+  ],
+  "bonus": [
+    "KAT"
+  ]
+}

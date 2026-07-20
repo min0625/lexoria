@@ -1,0 +1,43 @@
+{
+  "id": 72,
+  "letters": [
+    "I",
+    "E",
+    "S",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "ISLE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a small island",
+      "zh": "n. 小島, 群島"
+    },
+    {
+      "word": "LIES",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "v. 躺臥（lie的第三人稱單數形式）"
+    },
+    {
+      "word": "LIE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "LEI",
+    "LIS",
+    "SEI",
+    "SEL",
+    "LEIS"
+  ]
+}

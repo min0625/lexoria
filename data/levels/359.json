@@ -1,0 +1,63 @@
+{
+  "id": 359,
+  "letters": [
+    "N",
+    "T",
+    "S",
+    "C",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "SCENT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a distinctive odor that is pleasant",
+      "zh": "n. 氣味, 香味, 香水, 蹤跡, 痕跡, 線索, 嗅覺"
+    },
+    {
+      "word": "CENT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a fractional monetary unit of several countries",
+      "zh": "n. 分"
+    },
+    {
+      "word": "SENT",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "100 senti equal 1 kroon in Estonia",
+      "zh": "send的過去式和過去分詞"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "TEN",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "NET",
+    "SEC",
+    "SEN",
+    "NEST",
+    "NETS",
+    "SECT",
+    "TENS",
+    "CENTS"
+  ]
+}

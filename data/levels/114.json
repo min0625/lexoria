@@ -1,0 +1,59 @@
+{
+  "id": 114,
+  "letters": [
+    "A",
+    "M",
+    "E",
+    "B",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "MAYBE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "by chance",
+      "zh": "adv. 也許, 大概"
+    },
+    {
+      "word": "BAY",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "an indentation of a shoreline larger than a cove but smaller than a gulf",
+      "zh": "n. 海灣, 狗吠聲, 月桂"
+    },
+    {
+      "word": "BYE",
+      "row": 3,
+      "col": 2,
+      "dir": "across",
+      "def": "you advance to the next round in a tournament without playing an opponent",
+      "zh": "interj. 再會, 回頭見"
+    },
+    {
+      "word": "MAY",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the month following April and preceding June",
+      "zh": "n. 五月"
+    }
+  ],
+  "bonus": [
+    "ABY",
+    "AYE",
+    "BAM",
+    "BEY",
+    "MAE",
+    "YAM",
+    "YEA",
+    "ABYE",
+    "BEAM",
+    "BEMA",
+    "MABE",
+    "BEAMY",
+    "EMBAY"
+  ]
+}

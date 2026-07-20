@@ -1,0 +1,62 @@
+{
+  "id": 234,
+  "letters": [
+    "C",
+    "E",
+    "F",
+    "H",
+    "R",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "FRENCH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the Romance language spoken in France and in countries colonized by France",
+      "zh": "n. 法國人, 法文, 法式"
+    },
+    {
+      "word": "FERN",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "any of numerous flowerless and seedless vascular plants having true roots from a rhizome and fronds that uncurl upward; reproduce by spores",
+      "zh": "n. 蕨類植物"
+    },
+    {
+      "word": "CHEF",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a professional cook",
+      "zh": "n. 廚師"
+    },
+    {
+      "word": "HEN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "adult female chicken",
+      "zh": "n. 母雞, 雌禽"
+    },
+    {
+      "word": "REF",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "(sports) the chief official (as in boxing or American football) who is expected to ensure fair play",
+      "zh": "n. 裁判員"
+    }
+  ],
+  "bonus": [
+    "ERN",
+    "FEH",
+    "FEN",
+    "FER",
+    "HER",
+    "REC",
+    "HERN"
+  ]
+}

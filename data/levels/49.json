@@ -1,0 +1,40 @@
+{
+  "id": 49,
+  "letters": [
+    "E",
+    "F",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "FEET",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the part of the leg of a human being below the ankle joint",
+      "zh": "pl. 腳"
+    },
+    {
+      "word": "FEE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a fixed charge for a privilege or for professional services",
+      "zh": "n. 費用, 小費, 封地, 所有權"
+    },
+    {
+      "word": "TEE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "the starting place for each hole on a golf course",
+      "zh": "n. T字形, T字形之物, 發球區, 球座, 目標"
+    }
+  ],
+  "bonus": [
+    "EFT",
+    "FET",
+    "FETE"
+  ]
+}

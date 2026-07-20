@@ -1,0 +1,41 @@
+{
+  "id": 61,
+  "letters": [
+    "I",
+    "L",
+    "O",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "OILS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油畫顏料"
+    },
+    {
+      "word": "SOIL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the state of being covered with unclean things",
+      "zh": "n. 土壤, 土地, 國家, 國土, 溫床, 汙物, 糞便, 水池"
+    },
+    {
+      "word": "OIL",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油, 石油, 油畫顏料"
+    }
+  ],
+  "bonus": [
+    "LIS",
+    "SOL",
+    "SILO",
+    "SOLI"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": 125,
+  "letters": [
+    "M",
+    "R",
+    "C",
+    "I",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "CRIME",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "(criminal law) an act punishable by law; usually considered an evil act",
+      "zh": "n. 犯罪, 罪行, 罪惡"
+    },
+    {
+      "word": "MICE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails",
+      "zh": "pl. 老鼠"
+    },
+    {
+      "word": "RICE",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "grains used as food either unpolished or more often polished",
+      "zh": "n. 米, 米飯, 稻"
+    },
+    {
+      "word": "RIM",
+      "row": 3,
+      "col": 1,
+      "dir": "down",
+      "def": "the shape of a raised edge of a more or less circular object",
+      "zh": "n. 邊, 輪緣, 框"
+    },
+    {
+      "word": "ICE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    }
+  ],
+  "bonus": [
+    "IRE",
+    "MIR",
+    "REC",
+    "REI",
+    "REM",
+    "CIRE",
+    "EMIC",
+    "EMIR",
+    "MIRE",
+    "RIME"
+  ]
+}

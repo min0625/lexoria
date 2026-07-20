@@ -1,0 +1,97 @@
+{
+  "id": 310,
+  "letters": [
+    "E",
+    "I",
+    "T",
+    "B",
+    "H",
+    "R",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "REBIRTH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "after death the soul begins a new cycle of existence in another human body",
+      "zh": "n. 再生, 復活, 新生"
+    },
+    {
+      "word": "BIRTH",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the time when something begins (especially life)",
+      "zh": "n. 出生, 起源"
+    },
+    {
+      "word": "TIE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    },
+    {
+      "word": "HIT",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "(baseball) a successful stroke in an athletic contest (especially in baseball)",
+      "zh": "n. 打擊, 打, 衝撞, 諷刺"
+    },
+    {
+      "word": "BIT",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a small piece or quantity of something",
+      "zh": "n. 少量, 馬嚼子, 輔幣"
+    },
+    {
+      "word": "BET",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "the money risked on a gamble",
+      "zh": "n. 打賭, 賭注"
+    }
+  ],
+  "bonus": [
+    "BRR",
+    "ERR",
+    "ETH",
+    "HER",
+    "HET",
+    "HIE",
+    "IRE",
+    "REB",
+    "REI",
+    "RET",
+    "RIB",
+    "THE",
+    "BETH",
+    "BIER",
+    "BIRR",
+    "BITE",
+    "BRIE",
+    "BRIT",
+    "HEIR",
+    "HERB",
+    "HIRE",
+    "RITE",
+    "THIR",
+    "TIER",
+    "TIRE",
+    "BERTH",
+    "BITER",
+    "BRIER",
+    "HIRER",
+    "ITHER",
+    "THEIR",
+    "TRIBE",
+    "TRIER"
+  ]
+}

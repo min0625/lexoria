@@ -1,0 +1,53 @@
+{
+  "id": 70,
+  "letters": [
+    "E",
+    "G",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "RAGE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a feeling of intense anger",
+      "zh": "n. 憤怒, 情緒激動, 狂暴"
+    },
+    {
+      "word": "ARE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "AGE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "ERA",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a period marked by distinctive character or reckoned from a fixed point or event",
+      "zh": "n. 時代, 紀元, 時期"
+    }
+  ],
+  "bonus": [
+    "EAR",
+    "ERG",
+    "GAE",
+    "GAR",
+    "RAG",
+    "REG",
+    "AGER",
+    "GEAR"
+  ]
+}

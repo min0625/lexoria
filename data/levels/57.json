@@ -1,0 +1,41 @@
+{
+  "id": 57,
+  "letters": [
+    "I",
+    "D",
+    "A",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LAID",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "put into a certain place or abstract location",
+      "zh": "lay的過去式和過去分詞"
+    },
+    {
+      "word": "DIAL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the face of a timepiece; graduated to show the hours",
+      "zh": "n. 刻度盤, 鐘面, 轉盤"
+    },
+    {
+      "word": "AID",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a resource",
+      "zh": "n. 幫助, 外援, 助手"
+    }
+  ],
+  "bonus": [
+    "AIL",
+    "DAL",
+    "LAD",
+    "LID"
+  ]
+}

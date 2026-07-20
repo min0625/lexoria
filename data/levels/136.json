@@ -1,0 +1,58 @@
+{
+  "id": 136,
+  "letters": [
+    "H",
+    "Y",
+    "A",
+    "R",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "HARDY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "United States slapstick comedian who played the pompous and overbearing member of the Laurel and Hardy duo who made many films (1892-1957)",
+      "zh": "a. 難的, 艱苦的, 堅硬的, 勇敢的"
+    },
+    {
+      "word": "HARD",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "not easy; requiring great physical or mental effort to accomplish or comprehend or endure",
+      "zh": "a. 堅硬的, 硬的, 難的, 艱苦的, 困難的, 堅固的, 猛烈的, 艱難的, 結實的, 確實的"
+    },
+    {
+      "word": "DAY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "time for Earth to make a complete rotation on its axis",
+      "zh": "n. 天, 日子, 白天, 工作日"
+    },
+    {
+      "word": "HAD",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "have or possess, either in a concrete or an abstract sense",
+      "zh": "have的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "DAH",
+    "DRY",
+    "HAY",
+    "RAD",
+    "RAH",
+    "RAY",
+    "RYA",
+    "YAH",
+    "YAR",
+    "DRAY",
+    "YARD",
+    "HYDRA"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "id": 314,
+  "letters": [
+    "O",
+    "B",
+    "R",
+    "I",
+    "E",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "BOILER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "sealed vessel where water is converted to steam",
+      "zh": "n. 煮器, 汽鍋, 鍋爐"
+    },
+    {
+      "word": "ROLE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the actions and activities assigned to or required or expected of a person or group",
+      "zh": "n. 角色, 職責, 任務"
+    },
+    {
+      "word": "OIL",
+      "row": 3,
+      "col": 1,
+      "dir": "down",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油, 石油, 油畫顏料"
+    },
+    {
+      "word": "ORE",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a mineral that contains metal that is valuable enough to be mined",
+      "zh": "n. 礦石"
+    },
+    {
+      "word": "LIE",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    },
+    {
+      "word": "ROB",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "take something away by force or without the consent of the owner",
+      "zh": "v. 搶奪, 搶掠, 剝奪"
+    }
+  ],
+  "bonus": [
+    "BEL",
+    "BIO",
+    "BRO",
+    "IRE",
+    "LEI",
+    "LIB",
+    "LOB",
+    "OBE",
+    "OBI",
+    "OLE",
+    "ORB",
+    "REB",
+    "REI",
+    "RIB",
+    "ROE",
+    "BIER",
+    "BILE",
+    "BIRL",
+    "BOIL",
+    "BOLE",
+    "BORE",
+    "BRIE",
+    "BRIO",
+    "LIER",
+    "LIRE",
+    "LOBE",
+    "LORE",
+    "ORLE",
+    "RIEL",
+    "RILE",
+    "ROBE",
+    "ROIL",
+    "BIRLE",
+    "BROIL",
+    "LIBER",
+    "OBELI",
+    "OILER",
+    "ORIEL",
+    "REOIL",
+    "ROBLE",
+    "REBOIL"
+  ]
+}

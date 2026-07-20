@@ -1,0 +1,86 @@
+{
+  "id": 409,
+  "letters": [
+    "R",
+    "E",
+    "N",
+    "T",
+    "C",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "RECENT",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "approximately the last 10,000 years",
+      "zh": "a. 最近的, 近代的, 最新的"
+    },
+    {
+      "word": "CENTRE",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a low-lying region in central France",
+      "zh": "n. 中心, 中心點, 中鋒"
+    },
+    {
+      "word": "CENTER",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an area that is approximately central within some larger region",
+      "zh": "n. 中心, 中心點, 中鋒"
+    },
+    {
+      "word": "TREE",
+      "row": 6,
+      "col": 3,
+      "dir": "across",
+      "def": "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms",
+      "zh": "n. 樹, 木料, 樹狀物"
+    },
+    {
+      "word": "CENT",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "a fractional monetary unit of several countries",
+      "zh": "n. 分"
+    },
+    {
+      "word": "TEN",
+      "row": 2,
+      "col": 4,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "ERE",
+    "ERN",
+    "NEE",
+    "NET",
+    "REC",
+    "REE",
+    "RET",
+    "TEE",
+    "CERE",
+    "CETE",
+    "ERNE",
+    "RENT",
+    "RETE",
+    "TEEN",
+    "TERN",
+    "ENTER",
+    "ERECT",
+    "RENTE",
+    "TERCE",
+    "TERNE",
+    "TREEN",
+    "TENREC"
+  ]
+}

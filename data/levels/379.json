@@ -1,0 +1,57 @@
+{
+  "id": 379,
+  "letters": [
+    "F",
+    "R",
+    "E",
+    "E",
+    "W"
+  ],
+  "words": [
+    {
+      "word": "FEWER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "(comparative of `few' used with count nouns) quantifier meaning a smaller number of",
+      "zh": "a. 較少的"
+    },
+    {
+      "word": "FREE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "people who are free",
+      "zh": "a. 自由的, 享受政治權力的, 允許的, 免費的, 豐富的"
+    },
+    {
+      "word": "WERE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "FEW",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a small elite group",
+      "zh": "a. 很少的, 不多的, 少數的"
+    }
+  ],
+  "bonus": [
+    "ERE",
+    "EWE",
+    "FEE",
+    "FER",
+    "REE",
+    "REF",
+    "WEE",
+    "EWER",
+    "FERE",
+    "REEF",
+    "WEER"
+  ]
+}

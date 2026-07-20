@@ -1,0 +1,101 @@
+{
+  "id": 242,
+  "letters": [
+    "A",
+    "E",
+    "D",
+    "B",
+    "R",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "BARRED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "prevent from entering; keep out",
+      "zh": "a. 上了閂的, 劃出線條的, 受阻的, 被禁止的"
+    },
+    {
+      "word": "READ",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "something that is read",
+      "zh": "v. 讀, 閱讀, 理解"
+    },
+    {
+      "word": "BAD",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "that which is below standard or expectations as of ethics or decency",
+      "zh": "a. 壞的"
+    },
+    {
+      "word": "ARE",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "RED",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "BED",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "a piece of furniture that provides a place to sleep",
+      "zh": "n. 床, 睡眠處, 河床, 底座, 路基, 一層"
+    }
+  ],
+  "bonus": [
+    "ARB",
+    "BAR",
+    "BRA",
+    "BRR",
+    "DAB",
+    "DEB",
+    "EAR",
+    "ERA",
+    "ERR",
+    "RAD",
+    "REB",
+    "ABED",
+    "BADE",
+    "BARD",
+    "BARE",
+    "BEAD",
+    "BEAR",
+    "BRAD",
+    "BRAE",
+    "BRED",
+    "DARB",
+    "DARE",
+    "DEAR",
+    "DRAB",
+    "RARE",
+    "REAR",
+    "ARDEB",
+    "BARDE",
+    "BARED",
+    "BARER",
+    "BARRE",
+    "BEARD",
+    "BREAD",
+    "DARER",
+    "DEBAR",
+    "DREAR",
+    "RARED",
+    "REBAR"
+  ]
+}

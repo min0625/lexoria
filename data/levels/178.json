@@ -1,0 +1,71 @@
+{
+  "id": 178,
+  "letters": [
+    "R",
+    "E",
+    "D",
+    "G",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "RIDGE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a long narrow natural elevation or striation",
+      "zh": "n. 脊, 山脊, 山脈"
+    },
+    {
+      "word": "RIDE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a journey in a vehicle (usually an automobile)",
+      "zh": "n. 騎馬, 乘坐, 乘車, 搭便車"
+    },
+    {
+      "word": "RED",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "DIE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "RID",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "relieve from",
+      "zh": "vt. 免除, 以...清除, 使獲自由, 使擺脫"
+    }
+  ],
+  "bonus": [
+    "DIG",
+    "ERG",
+    "GED",
+    "GID",
+    "GIE",
+    "IRE",
+    "REG",
+    "REI",
+    "RIG",
+    "DIRE",
+    "DREG",
+    "GIED",
+    "GIRD",
+    "GRID",
+    "IRED",
+    "DIRGE",
+    "GRIDE"
+  ]
+}

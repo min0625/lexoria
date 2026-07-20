@@ -1,0 +1,68 @@
+{
+  "id": 148,
+  "letters": [
+    "T",
+    "I",
+    "K",
+    "S",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "STICK",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "an implement consisting of a length of wood",
+      "zh": "n. 棍, 棒, 刺, 枯枝, 莖, 條狀物"
+    },
+    {
+      "word": "SICK",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "people who are sick",
+      "zh": "n. 病人"
+    },
+    {
+      "word": "KIT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a case for containing a set of articles",
+      "zh": "n. 裝備, 工具箱, 成套工具"
+    },
+    {
+      "word": "SIT",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "ICK",
+    "SIC",
+    "SKI",
+    "TIC",
+    "TIS",
+    "TSK",
+    "CIST",
+    "KIST",
+    "KITS",
+    "SKIT",
+    "TICK",
+    "TICS",
+    "TICKS"
+  ]
+}

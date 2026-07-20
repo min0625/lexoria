@@ -1,0 +1,56 @@
+{
+  "id": 151,
+  "letters": [
+    "E",
+    "C",
+    "A",
+    "S",
+    "F"
+  ],
+  "words": [
+    {
+      "word": "FACES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the front of the human head from the forehead to the chin and ear to ear",
+      "zh": "n. 臉面；臉色；表面（face的複數）"
+    },
+    {
+      "word": "FACE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the front of the human head from the forehead to the chin and ear to ear",
+      "zh": "n. 臉, 面容, 正面, 外觀"
+    },
+    {
+      "word": "CASE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "an occurrence of something",
+      "zh": "n. 情形, 情況, 箱, 容器, 事實, 病例, 案例, 框子"
+    },
+    {
+      "word": "SAFE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "strongbox where valuables can be safely kept",
+      "zh": "n. 保險箱, 冷藏室"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "EFS",
+    "FAS",
+    "SAC",
+    "SAE",
+    "SEA",
+    "SEC",
+    "ACES",
+    "CAFE",
+    "CAFES"
+  ]
+}

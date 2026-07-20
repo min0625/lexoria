@@ -1,0 +1,98 @@
+{
+  "id": 216,
+  "letters": [
+    "E",
+    "H",
+    "R",
+    "T",
+    "S",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "THERES",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a location other than here; that place",
+      "zh": "[地名] [德國] 泰勒斯"
+    },
+    {
+      "word": "THERE",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a location other than here; that place",
+      "zh": "adv. 在那裡"
+    },
+    {
+      "word": "THREE",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of one and one and one",
+      "zh": "num. 三, 三個"
+    },
+    {
+      "word": "HERE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the present location; this place",
+      "zh": "adv. 在這裡, 此時, 這裡"
+    },
+    {
+      "word": "SEE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "ERE",
+    "ERS",
+    "ETH",
+    "HER",
+    "HES",
+    "HET",
+    "REE",
+    "RES",
+    "RET",
+    "SER",
+    "SET",
+    "SHE",
+    "TEE",
+    "THE",
+    "ERST",
+    "ETHS",
+    "HERS",
+    "HEST",
+    "HETS",
+    "REES",
+    "RESH",
+    "REST",
+    "RETE",
+    "RETS",
+    "SEER",
+    "SERE",
+    "TEES",
+    "THEE",
+    "TREE",
+    "ESTER",
+    "ETHER",
+    "HERES",
+    "REEST",
+    "RESET",
+    "SHEER",
+    "SHEET",
+    "STEER",
+    "STERE",
+    "TERSE",
+    "THESE",
+    "TREES",
+    "ETHERS",
+    "THREES"
+  ]
+}

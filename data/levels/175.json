@@ -1,0 +1,74 @@
+{
+  "id": 175,
+  "letters": [
+    "E",
+    "F",
+    "L",
+    "R",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "RIFLE",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a shoulder firearm with a long barrel and a rifled bore",
+      "zh": "n. 來復槍, 步槍"
+    },
+    {
+      "word": "FIRE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the event of something burning (often destructive)",
+      "zh": "n. 火, 爐火, 電爐, 火災, 閃光體, 炮火, 熱情"
+    },
+    {
+      "word": "LIFE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a characteristic state or mode of living",
+      "zh": "n. 生活, 生命, 人生, 世事, 生物, 壽命, 一生, 生命力, 靈魂, 無期徒刑"
+    },
+    {
+      "word": "FILE",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a set of related records (either written or electronic) kept together",
+      "zh": "n. 檔案, 公文箱, 資料夾, 檔案, 卷宗, 銼刀"
+    },
+    {
+      "word": "LIE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELF",
+    "FER",
+    "FIE",
+    "FIL",
+    "FIR",
+    "IRE",
+    "LEI",
+    "REF",
+    "REI",
+    "RIF",
+    "LIEF",
+    "LIER",
+    "LIRE",
+    "REIF",
+    "RIEL",
+    "RIFE",
+    "RILE",
+    "FILER",
+    "FLIER",
+    "LIFER"
+  ]
+}

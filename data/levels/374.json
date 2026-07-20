@@ -1,0 +1,96 @@
+{
+  "id": 374,
+  "letters": [
+    "B",
+    "U",
+    "S",
+    "D",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BUSTED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "ruin completely",
+      "zh": "a. 破產了的, 失敗了的, 被降級的, 被逮捕的"
+    },
+    {
+      "word": "USED",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "put into service; make work or employ for a particular purpose or for its inherent or natural purpose",
+      "zh": "a. 使用過的, 二手的, 習慣的"
+    },
+    {
+      "word": "BEST",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the supreme effort one can make",
+      "zh": "a. 最好的"
+    },
+    {
+      "word": "USE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    },
+    {
+      "word": "BUT",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    }
+  ],
+  "bonus": [
+    "BED",
+    "BET",
+    "BUD",
+    "BUS",
+    "DEB",
+    "DUB",
+    "DUE",
+    "SET",
+    "SUB",
+    "SUE",
+    "TED",
+    "TUB",
+    "UTS",
+    "BEDS",
+    "BEDU",
+    "BETS",
+    "BUDS",
+    "BUST",
+    "BUTE",
+    "BUTS",
+    "DEBS",
+    "DEBT",
+    "DUBS",
+    "DUES",
+    "DUET",
+    "DUST",
+    "STUB",
+    "STUD",
+    "SUED",
+    "SUET",
+    "TEDS",
+    "TUBE",
+    "TUBS",
+    "BUSED",
+    "DEBTS",
+    "DEBUT",
+    "DUETS",
+    "TUBED",
+    "TUBES",
+    "BESTUD",
+    "DEBUTS"
+  ]
+}

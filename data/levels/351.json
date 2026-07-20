@@ -1,0 +1,85 @@
+{
+  "id": 351,
+  "letters": [
+    "S",
+    "C",
+    "T",
+    "U",
+    "R",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "TRUCKS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "an automotive vehicle suitable for hauling",
+      "zh": "n. 卡車（truck的複數）"
+    },
+    {
+      "word": "STUCK",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "put, fix, force, or implant",
+      "zh": "stick的過去式和過去分詞"
+    },
+    {
+      "word": "TRUCK",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an automotive vehicle suitable for hauling",
+      "zh": "n. 卡車, 貨車, 對...進行交易, 來往, 實物工資, (供應市場的)蔬菜, 廢物, 廢話"
+    },
+    {
+      "word": "CUTS",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a share of the profits",
+      "zh": "n. （分攤到的）份額；切口；近路（cut的複數）"
+    },
+    {
+      "word": "SUCK",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "the act of sucking",
+      "zh": "vt. 吸, 吮, 吸入, 吮吸, 吸收"
+    },
+    {
+      "word": "CUT",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a share of the profits",
+      "zh": "n. 切口, 割傷, 降低, 切, 割, 砍, 削, 傷口, 削減, 縮短, 刪節, 通路"
+    }
+  ],
+  "bonus": [
+    "CUR",
+    "RUT",
+    "TSK",
+    "UTS",
+    "CRUS",
+    "CURS",
+    "CURT",
+    "CUSK",
+    "RUCK",
+    "RUSK",
+    "RUST",
+    "RUTS",
+    "SCUT",
+    "TUCK",
+    "TURK",
+    "TUSK",
+    "CRUST",
+    "CURST",
+    "RUCKS",
+    "TUCKS",
+    "TURKS",
+    "STRUCK"
+  ]
+}

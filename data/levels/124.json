@@ -1,0 +1,56 @@
+{
+  "id": 124,
+  "letters": [
+    "L",
+    "S",
+    "L",
+    "A",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "SMALL",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the slender part of the back",
+      "zh": "a. 小的, 少的, 小型的, 低微的, 小氣的, 細微的"
+    },
+    {
+      "word": "MALL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a public area set aside as a pedestrian walk",
+      "zh": "n. 林蔭路"
+    },
+    {
+      "word": "SLAM",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "winning all or all but one of the tricks in bridge",
+      "zh": "n. 砰然聲, 猛然, 猛烈的抨擊"
+    },
+    {
+      "word": "ALL",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "quantifier; used with either mass or count nouns to indicate the whole number or amount of or every one of a class",
+      "zh": "a. 所有的, 全部的, 一切的"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "LAM",
+    "LAS",
+    "MAS",
+    "SAL",
+    "ALLS",
+    "ALMS",
+    "LAMS",
+    "SALL",
+    "MALLS"
+  ]
+}

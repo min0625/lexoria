@@ -1,0 +1,69 @@
+{
+  "id": 285,
+  "letters": [
+    "E",
+    "C",
+    "E",
+    "S",
+    "H",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "CHEESY",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "of very poor quality; flimsy",
+      "zh": "a. 乾酪質的, 俊俏的, 優秀的"
+    },
+    {
+      "word": "EYES",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "opinion or judgment",
+      "zh": "n. 眼睛（eye的複數）"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "EYE",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "the organ of sight",
+      "zh": "n. 眼睛, 視力, 看"
+    },
+    {
+      "word": "YES",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "HES",
+    "HEY",
+    "SEC",
+    "SHE",
+    "SHY",
+    "YEH",
+    "CEES",
+    "ECHE",
+    "SYCE",
+    "YECH",
+    "ECHES",
+    "SYCEE",
+    "YECHS"
+  ]
+}

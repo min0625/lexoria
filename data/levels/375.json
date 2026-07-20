@@ -1,0 +1,64 @@
+{
+  "id": 375,
+  "letters": [
+    "E",
+    "T",
+    "S",
+    "Y",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "TYPES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a subdivision of a particular kind of thing",
+      "zh": "v. 打字（type的第三人稱單數形式）"
+    },
+    {
+      "word": "YET",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "up to the present time",
+      "zh": "adv. 還, 尚, 仍然, 已經, 然而"
+    },
+    {
+      "word": "YES",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "PES",
+    "PET",
+    "PYE",
+    "SPY",
+    "STY",
+    "TYE",
+    "YEP",
+    "ESPY",
+    "PEST",
+    "PETS",
+    "PYES",
+    "SEPT",
+    "STEP",
+    "STEY",
+    "STYE",
+    "TYES",
+    "TYPE",
+    "PESTY"
+  ]
+}

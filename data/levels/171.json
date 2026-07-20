@@ -1,0 +1,69 @@
+{
+  "id": 171,
+  "letters": [
+    "O",
+    "R",
+    "A",
+    "M",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "MAYOR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the head of a city government",
+      "zh": "n. 市長"
+    },
+    {
+      "word": "ARMY",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a permanent organization of the military land forces of a nation or state",
+      "zh": "n. 軍隊, 陸軍"
+    },
+    {
+      "word": "MAY",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the month following April and preceding June",
+      "zh": "n. 五月"
+    },
+    {
+      "word": "RAY",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a column of light (as from a beacon)",
+      "zh": "n. 光線, 射線, 閃爍, 光輝"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    }
+  ],
+  "bonus": [
+    "MAR",
+    "MOA",
+    "MOR",
+    "OAR",
+    "ORA",
+    "RAM",
+    "ROM",
+    "RYA",
+    "YAM",
+    "YAR",
+    "YOM",
+    "MAYO",
+    "MORA",
+    "ROAM",
+    "MORAY"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "id": 411,
+  "letters": [
+    "G",
+    "A",
+    "K",
+    "O",
+    "N",
+    "K",
+    "B"
+  ],
+  "words": [
+    {
+      "word": "BANGKOK",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "the capital and largest city and chief port of Thailand; a leading city in southeastern Asia; noted for Buddhist architecture",
+      "zh": "n. 曼谷"
+    },
+    {
+      "word": "BANG",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "a vigorous blow",
+      "zh": "n. 重擊, 突然巨響, 劉海"
+    },
+    {
+      "word": "BANK",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "sloping land (especially the slope beside a body of water)",
+      "zh": "n. 銀行, 堤, 岸"
+    },
+    {
+      "word": "BONG",
+      "row": 2,
+      "col": 4,
+      "dir": "across",
+      "def": "a dull resonant sound as of a bell",
+      "zh": "n. 鑼, 大鐘等的當當聲"
+    },
+    {
+      "word": "OAK",
+      "row": 5,
+      "col": 5,
+      "dir": "down",
+      "def": "the hard durable wood of any oak; used especially for furniture and flooring",
+      "zh": "n. 橡樹, 橡木"
+    },
+    {
+      "word": "AGO",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "gone by; or in the past",
+      "zh": "adv. 以前"
+    },
+    {
+      "word": "BAN",
+      "row": 5,
+      "col": 0,
+      "dir": "down",
+      "def": "a decree that prohibits something",
+      "zh": "n. 禁令"
+    },
+    {
+      "word": "BAG",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "a flexible container with a single opening",
+      "zh": "n. 袋子, 袋狀物"
+    }
+  ],
+  "bonus": [
+    "ABO",
+    "BOA",
+    "BOG",
+    "GAB",
+    "GAN",
+    "GOA",
+    "GOB",
+    "KAB",
+    "KOA",
+    "KOB",
+    "NAB",
+    "NAG",
+    "NOB",
+    "NOG",
+    "OKA",
+    "AGON",
+    "BONK",
+    "KAON",
+    "KNOB",
+    "KOAN",
+    "KONK",
+    "BOGAN",
+    "GOBAN"
+  ]
+}

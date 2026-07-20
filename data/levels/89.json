@@ -1,0 +1,48 @@
+{
+  "id": 89,
+  "letters": [
+    "I",
+    "S",
+    "D",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "KIDS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a young person of either sex",
+      "zh": "n. 小山羊；兒童（kid的複數）"
+    },
+    {
+      "word": "DISK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "something with a round shape resembling a flat circular plate",
+      "zh": "n. 圓盤, 磁碟"
+    },
+    {
+      "word": "KID",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a young person of either sex",
+      "zh": "n. 小山羊, 小山羊肉, 小孩, 欺騙"
+    },
+    {
+      "word": "SKI",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "zh": "n. 滑雪橇"
+    }
+  ],
+  "bonus": [
+    "DIS",
+    "IDS",
+    "SKID"
+  ]
+}

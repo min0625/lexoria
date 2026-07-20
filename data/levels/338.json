@@ -1,0 +1,69 @@
+{
+  "id": 338,
+  "letters": [
+    "N",
+    "U",
+    "S",
+    "R",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "TURNS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a circular segment of a curve",
+      "zh": "n. 轉彎；匝數；圈數（turn的複數形式）；手動車床"
+    },
+    {
+      "word": "RUNS",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 順串；瀉肚子；流量（run的複數形式）"
+    },
+    {
+      "word": "TURN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a circular segment of a curve",
+      "zh": "n. 轉彎, 轉動, 旋轉, 翻轉, 一圈, 順次, 改動, 變化, 性格, 特色, 形狀, 轉折"
+    },
+    {
+      "word": "RUN",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"
+    },
+    {
+      "word": "SUN",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    }
+  ],
+  "bonus": [
+    "NUS",
+    "NUT",
+    "RUT",
+    "TUN",
+    "UNS",
+    "URN",
+    "UTS",
+    "NUTS",
+    "RUNT",
+    "RUST",
+    "RUTS",
+    "STUN",
+    "TUNS",
+    "URNS",
+    "RUNTS"
+  ]
+}

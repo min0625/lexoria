@@ -1,0 +1,57 @@
+{
+  "id": 177,
+  "letters": [
+    "D",
+    "R",
+    "N",
+    "K",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "DRINK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a single serving of a beverage",
+      "zh": "n. 飲料, 酒"
+    },
+    {
+      "word": "KIND",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a category of things distinguished by some common characteristic or quality",
+      "zh": "n. 種類, 性質, 方式"
+    },
+    {
+      "word": "KID",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a young person of either sex",
+      "zh": "n. 小山羊, 小山羊肉, 小孩, 欺騙"
+    },
+    {
+      "word": "RID",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "relieve from",
+      "zh": "vt. 免除, 以...清除, 使獲自由, 使擺脫"
+    }
+  ],
+  "bonus": [
+    "DIN",
+    "INK",
+    "IRK",
+    "KIN",
+    "KIR",
+    "RIN",
+    "DINK",
+    "DIRK",
+    "KIRN",
+    "RIND",
+    "RINK"
+  ]
+}

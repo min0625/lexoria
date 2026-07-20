@@ -1,0 +1,39 @@
+{
+  "id": 449,
+  "letters": [
+    "R",
+    "C",
+    "A",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "ARCH",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a curved shape in the vertical plane that spans an opening",
+      "zh": "n. 拱門, 拱形, 足弓"
+    },
+    {
+      "word": "ARC",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "electrical conduction through a gas in an applied electric field",
+      "zh": "n. 弧, 弧形, 弓形, 弧光"
+    },
+    {
+      "word": "CAR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    }
+  ],
+  "bonus": [
+    "RAH",
+    "CHAR"
+  ]
+}

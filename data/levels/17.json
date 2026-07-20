@@ -1,0 +1,48 @@
+{
+  "id": 17,
+  "letters": [
+    "A",
+    "W",
+    "R",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "DRAW",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a gully that is shallower than a ravine",
+      "zh": "vi. 拉, 拖, 拔劍"
+    },
+    {
+      "word": "WARD",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a person who is under the protection or in the custody of another",
+      "zh": "n. 病房, 守衛, 保衛, 保護, 監護, 牢房, 行政區, 鎖孔內的榫舌"
+    },
+    {
+      "word": "RAW",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "informal terms for nakedness",
+      "zh": "n. 擦傷處, 半成品"
+    },
+    {
+      "word": "WAR",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "the waging of armed conflict against an enemy",
+      "zh": "n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"
+    }
+  ],
+  "bonus": [
+    "DAW",
+    "RAD",
+    "WAD"
+  ]
+}

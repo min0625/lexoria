@@ -1,0 +1,86 @@
+{
+  "id": 270,
+  "letters": [
+    "T",
+    "E",
+    "L",
+    "F",
+    "N",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "FLUENT",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "smooth and unconstrained in movement",
+      "zh": "a. 流利的, 流暢的"
+    },
+    {
+      "word": "FELT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a fabric made of compressed matted animal fibers",
+      "zh": "n. 毛毯, 氈"
+    },
+    {
+      "word": "LEFT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "location near or direction toward the left side; i.e. the side to the north when a person or object faces east",
+      "zh": "a. 左邊的, 左傾的, 左側的, 左派的"
+    },
+    {
+      "word": "LET",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    },
+    {
+      "word": "TEN",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    },
+    {
+      "word": "FUN",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "activities that are enjoyable or amusing",
+      "zh": "n. 樂趣, 玩笑, 娛樂"
+    }
+  ],
+  "bonus": [
+    "EFT",
+    "ELF",
+    "FEN",
+    "FET",
+    "FEU",
+    "FLU",
+    "LEU",
+    "NET",
+    "NUT",
+    "TEL",
+    "TUN",
+    "FLUE",
+    "FUEL",
+    "LENT",
+    "LUNE",
+    "LUNT",
+    "LUTE",
+    "TULE",
+    "TUNE",
+    "FLUTE",
+    "LUNET",
+    "UNLET",
+    "UNFELT"
+  ]
+}

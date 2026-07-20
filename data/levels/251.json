@@ -1,0 +1,95 @@
+{
+  "id": 251,
+  "letters": [
+    "H",
+    "E",
+    "C",
+    "S",
+    "O",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "CHOSEN",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "one who is the object of choice; who is given preference",
+      "zh": "choose的過去分詞"
+    },
+    {
+      "word": "ONES",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 燒錄軟體"
+    },
+    {
+      "word": "ONCE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "on one occasion",
+      "zh": "adv. 一次, 曾經, 一旦"
+    },
+    {
+      "word": "ONE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "SON",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    }
+  ],
+  "bonus": [
+    "CON",
+    "COS",
+    "ENS",
+    "EON",
+    "HEN",
+    "HES",
+    "HOE",
+    "HON",
+    "NOH",
+    "NOS",
+    "OES",
+    "OHS",
+    "ONS",
+    "OSE",
+    "SEC",
+    "SEN",
+    "SHE",
+    "CHON",
+    "CONE",
+    "CONS",
+    "COSH",
+    "ECHO",
+    "EONS",
+    "HENS",
+    "HOES",
+    "HONE",
+    "HONS",
+    "HOSE",
+    "NOES",
+    "NOSE",
+    "NOSH",
+    "SHOE",
+    "SONE",
+    "CHOSE",
+    "CONES",
+    "ECHOS",
+    "HONES",
+    "HOSEN",
+    "SCONE",
+    "SHONE"
+  ]
+}

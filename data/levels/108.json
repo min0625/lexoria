@@ -1,0 +1,60 @@
+{
+  "id": 108,
+  "letters": [
+    "L",
+    "E",
+    "C",
+    "N",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "LANCE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a long pointed rod used as a tool or weapon",
+      "zh": "n. 長矛, 柳葉刀, 執矛戰士"
+    },
+    {
+      "word": "CLEAN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a weightlift in which the barbell is lifted to shoulder height and then jerked overhead",
+      "zh": "a. 乾淨的, 清白的, 簡潔的"
+    },
+    {
+      "word": "LANE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a narrow way or road",
+      "zh": "n. 小路, 巷, 弄, 單行道"
+    },
+    {
+      "word": "CAN",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "airtight sealed metal container for food or drink or paint etc.",
+      "zh": "vt. 裝罐"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "ALE",
+    "ANE",
+    "CEL",
+    "LAC",
+    "LEA",
+    "NAE",
+    "ACNE",
+    "ALEC",
+    "CANE",
+    "CLAN",
+    "ELAN",
+    "LACE",
+    "LEAN"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": 139,
+  "letters": [
+    "U",
+    "T",
+    "B",
+    "N",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "BLUNT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "make less intense",
+      "zh": "a. 鈍的, 坦率的, 麻痺的"
+    },
+    {
+      "word": "NUT",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "usually large hard-shelled seed",
+      "zh": "n. 堅果, 核心, 螺帽"
+    },
+    {
+      "word": "TUB",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a relatively large open container that you fill with water and use to wash the body",
+      "zh": "n. 桶, 浴盆"
+    },
+    {
+      "word": "BUT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    }
+  ],
+  "bonus": [
+    "BUN",
+    "NUB",
+    "TUN",
+    "BUNT",
+    "LUNT"
+  ]
+}

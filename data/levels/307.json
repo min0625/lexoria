@@ -1,0 +1,52 @@
+{
+  "id": 307,
+  "letters": [
+    "P",
+    "S",
+    "I",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "PINS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a piece of jewelry that is pinned onto the wearer's garment",
+      "zh": "n. 插腳, 針；精確的綜合導航系統"
+    },
+    {
+      "word": "SPIN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a swift whirling motion (usually of a missile)",
+      "zh": "n. 旋轉, 自旋, 疾馳, 情緒低落"
+    },
+    {
+      "word": "PIN",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a piece of jewelry that is pinned onto the wearer's garment",
+      "zh": "n. 大頭針, 針, 別針, 栓, 銷子, 圖釘, 插頭, 管腳, 品(液量單位)"
+    },
+    {
+      "word": "SIN",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    }
+  ],
+  "bonus": [
+    "INS",
+    "NIP",
+    "PIS",
+    "PSI",
+    "SIP",
+    "NIPS",
+    "SNIP"
+  ]
+}

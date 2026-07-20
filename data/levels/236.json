@@ -1,0 +1,97 @@
+{
+  "id": 236,
+  "letters": [
+    "P",
+    "R",
+    "E",
+    "R",
+    "Y",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "PRAYER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of communicating with a deity (especially as a petition or in adoration or contrition or thanksgiving)",
+      "zh": "n. 祈禱, 懇求, 禱辭, 祈禱者"
+    },
+    {
+      "word": "RARE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "not widely known; especially valued for its uncommonness",
+      "zh": "a. 稀罕的, 罕有的, 珍奇的, 稀薄的, 半熟的, 非常好的"
+    },
+    {
+      "word": "YEAR",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a period of time containing 365 (or 366) days",
+      "zh": "n. 年, 年度, 年齡"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "PAY",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "something that remunerates",
+      "zh": "n. 薪資, 付款, 補償"
+    }
+  ],
+  "bonus": [
+    "APE",
+    "AYE",
+    "EAR",
+    "ERA",
+    "ERR",
+    "PAR",
+    "PEA",
+    "PER",
+    "PRY",
+    "PYA",
+    "PYE",
+    "RAP",
+    "RAY",
+    "REP",
+    "RYA",
+    "RYE",
+    "YAP",
+    "YAR",
+    "YEA",
+    "YEP",
+    "AERY",
+    "APER",
+    "EYRA",
+    "PARE",
+    "PARR",
+    "PEAR",
+    "PRAY",
+    "PREY",
+    "PYRE",
+    "RAPE",
+    "REAP",
+    "REAR",
+    "YARE",
+    "APERY",
+    "PARER",
+    "PARRY",
+    "PAYER",
+    "PERRY",
+    "PRYER",
+    "RAPER",
+    "REPAY",
+    "YARER"
+  ]
+}

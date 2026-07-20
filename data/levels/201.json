@@ -1,0 +1,78 @@
+{
+  "id": 201,
+  "letters": [
+    "O",
+    "L",
+    "S",
+    "O",
+    "C",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "SCHOOL",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an educational institution",
+      "zh": "n. 學校, 魚群, 門派, 學派"
+    },
+    {
+      "word": "SOLO",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "any activity that is performed alone without assistance",
+      "zh": "n. 獨奏, 獨唱, 單獨表演"
+    },
+    {
+      "word": "COOL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the quality of being at a refreshingly low temperature",
+      "zh": "n. 涼爽, 涼爽的空氣"
+    },
+    {
+      "word": "COS",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "ratio of the adjacent side to the hypotenuse of a right-angled triangle",
+      "zh": "n. 餘弦"
+    },
+    {
+      "word": "COL",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a pass between mountain peaks",
+      "zh": "n. 出口, 山坳"
+    }
+  ],
+  "bonus": [
+    "COO",
+    "LOO",
+    "OHO",
+    "OHS",
+    "OOH",
+    "SOL",
+    "COHO",
+    "COLS",
+    "COOS",
+    "COSH",
+    "HOLS",
+    "LOCH",
+    "LOCO",
+    "LOOS",
+    "OOHS",
+    "SHOO",
+    "CHOLO",
+    "COHOS",
+    "COOLS",
+    "LOCHS",
+    "LOCOS",
+    "SHOOL",
+    "CHOLOS"
+  ]
+}

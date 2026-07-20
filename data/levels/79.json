@@ -1,0 +1,42 @@
+{
+  "id": 79,
+  "letters": [
+    "O",
+    "T",
+    "U",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "TOUR",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a journey or route all the way around a particular place or area",
+      "zh": "n. 旅遊, 觀光旅行, 任期"
+    },
+    {
+      "word": "ROT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a state of decay usually accompanied by an offensive odor",
+      "zh": "n. 腐爛, 腐蝕, 敗壞"
+    },
+    {
+      "word": "OUT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "(baseball) a failure by a batter or runner to reach a base safely in baseball",
+      "zh": "a. 外面的, 熄滅的, 結束的"
+    }
+  ],
+  "bonus": [
+    "ORT",
+    "OUR",
+    "RUT",
+    "TOR",
+    "ROUT"
+  ]
+}
