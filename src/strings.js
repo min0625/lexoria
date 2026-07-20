@@ -16,6 +16,7 @@ export const strings = {
   about: '關於',
   replayNote: '重玩不再獲得金幣',
   share: '分享',
+  shareScore: '分享戰績', // 過關卡片上那顆；設定裡的仍用中性的 share
   // 字母數 3–7，用中文數字才接得上前後文；超出範圍就退回阿拉伯數字（不會讀成 undefined）。
   // 結尾的 \n 是留給 bridge.share 接上的網址，讓它與盤面之間空一行。
   shareText: (n, letters, grid) =>
