@@ -494,13 +494,18 @@ button {
   transform: none;
 }
 
-/* 開場閘門：蓋過所有遊戲 UI，但讓橫式遮罩(99) 蓋過它 */
+/* 開場閘門：蓋過所有遊戲 UI，但讓橫式遮罩(99) 蓋過它。
+   半透明而非實心底——透出後面的盤面，讀起來才是「點一下回到你的關卡」而不是標題畫面
+   （UI 文件 §1 仍然沒有標題畫面）。用色與模糊跟 .overlay 同一套，只是更不透明一點，
+   讓「第 N 關 · 點擊繼續」壓在盤面上仍讀得清楚。 */
 .gate {
   position: fixed;
   inset: 0;
   z-index: 40;
   border: 0;
-  background: var(--bg);
+  background: rgb(16 32 31 / 0.82);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   color: var(--text);
   display: flex;
   flex-direction: column;
