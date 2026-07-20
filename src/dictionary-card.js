@@ -9,6 +9,20 @@ function refreshVoices() {
 if ('speechSynthesis' in window) {
   refreshVoices();
   speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
+  // iOS Safari 只在「它認得的手勢」handler 裡才真的送出 utterance，轉盤結束手勢用的
+  // pointerup 不算數：實機 log 顯示 speak() 之後 speaking/pending 都是 false，utterance
+  // 被直接丟棄，不出聲也不觸發 onstart/onerror（喇叭鈕是 click，所以一直正常）。
+  // 跟 main.js 解鎖 <audio> 同一招：第一次 touchend 先念一句無聲的把引擎解鎖，
+  // 之後非手勢當下的呼叫就有效。
+  document.addEventListener(
+    'touchend',
+    () => {
+      const u = new SpeechSynthesisUtterance('');
+      u.volume = 0;
+      speechSynthesis.speak(u);
+    },
+    { once: true, capture: true }
+  );
 }
 
 // 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
