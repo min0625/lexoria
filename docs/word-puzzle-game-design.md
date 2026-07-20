@@ -185,7 +185,7 @@ function speak(word) {
 - 教學：第 1 關用 3 字母 + 一次性的滑動手勢示意（手指軌跡 overlay），玩家完成第一個字就收掉、不再出現；不做多步驟教學精靈。
 - 關卡選擇：線性解鎖（最遠玩到 `currentLevel`）；已完成關卡可重玩，但不重複給金幣（獎勵已按關卡記錄）。
 - 已找到的目標字可點擊查看釋義與發音（見 §6），卡片位置貼著被點的格子彈出，點卡片外任意處關閉。
-- 音效只要 5 個短音：選字 tick、命中目標字、無效字、金幣、過關。用 Kenney / freesound 的 CC0 素材，Web Audio 播放，不放背景音樂。
+- 音效只要 5 個短音：選字 tick、命中目標字、無效字、金幣、過關。用 Kenney / freesound 的 CC0 素材，`<audio>` 元素播放（原訂 Web Audio，實機改用 `<audio>`，理由見 CLAUDE.md 的音效約束），不放背景音樂。
 - `prefers-reduced-motion` 開啟時跳過飛入/撒花動畫，直接顯示結果。
 - 設定入口（齒輪按鈕）：音效開關，存進存檔的 `settings`。
 - 關卡全數破完後顯示「更多關卡即將推出」畫面——關卡被玩完的速度比想像中快，別讓玩家點下一關時當掉。
@@ -316,7 +316,7 @@ export const bridge = {
 ### WebView 相關注意事項
 
 - iOS WKWebView 的 localStorage 在某些情境（App 被系統清理）可能丟失 → 嵌入後改由 native 端存檔（Capacitor Preferences / filesystem）。
-- 音效：行動瀏覽器要求「首次使用者手勢後」才能播音 → 在第一次 `pointerdown` 時初始化 Web Audio context。
+- 音效：行動瀏覽器要求「首次使用者手勢後」才能播音 → 在第一次 `pointerdown` 時把每個 `<audio>` 元素各解鎖一次（iOS 的解鎖是逐元素算的，不是整頁一次）。
 - 禁用 WebView 的縮放與長按選單（Capacitor 預設已處理大半）。
 - 效能：動畫只用 `transform` / `opacity`（compositor-only），避免觸發 layout；中低階 Android 機是效能底線。
 - **上架風險（Apple 審查準則 4.2「最低功能性」）**：純 WebView 包殼的 App 有被拒的前例。緩解：完全離線可玩（本來就是 §2 的硬需求）、接上 native haptics、完整的啟動畫面與 App icon、UI 不露出任何瀏覽器痕跡。Capacitor 遊戲過審前例很多，但第一次送審的時程要預留被拒一輪的緩衝。
