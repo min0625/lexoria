@@ -105,7 +105,7 @@ setSpeechDebug(dbg);
 // 元素——不必自己管 AudioContext 狀態機，也不受這個 resume() 延遲影響。
 const sfxAudio = {};
 const SFX = {};
-for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
+for (const name of ['target', 'invalid', 'coin', 'clear']) {
   const el = new Audio(`assets/sfx/${name}.wav`);
   el.preload = 'auto';
   sfxAudio[name] = el;
@@ -187,12 +187,14 @@ function updateCoins() {
 
 // ---- 拼字串顯示區與提示訊息 ----
 let previewTimer = 0;
-let prevWordLen = 0; // 上一次拼字長度——flash 訊息佔著 textContent 的期間拿它比長度會漏掉 tick
+// 這裡本來每選到一個字母就播一次 tick。實機量測（?debug）顯示 <audio> 的 play() 在 iOS 上
+// 會間歇性同步阻塞主執行緒 2~173ms（seek 是 0ms、readyState 一直是 4，所以不是倒帶也不是
+// 重新解碼，是音訊管線本身），而 tick 是拖曳期間唯一會響的音效：關掉音效時同一支裝置穩定
+// 60fps、queue.max 14~21ms，開著就掉到 30fps、queue.max 破百。拖曳的手感比這一顆音效重要，
+// 所以拿掉。手勢結束才響的其他音效不影響拖曳，維持原樣。
 function showPreview(word) {
   clearTimeout(previewTimer);
   const el = $('preview');
-  if (word.length > prevWordLen) SFX.tick();
-  prevWordLen = word.length;
   el.className = 'preview';
   el.textContent = word;
 }

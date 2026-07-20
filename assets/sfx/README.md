@@ -5,7 +5,7 @@
 
 | 檔案 | 原始檔 | 用途 |
 |------|--------|------|
-| tick.wav | tick_001.ogg | 選字 |
+| tick.wav | tick_001.ogg | 選字（**目前未使用**，見設計文件 §7；檔案保留） |
 | target.wav | confirmation_001.ogg | 命中目標字 |
 | invalid.wav | error_004.ogg | 無效字 |
 | coin.wav | glass_002.ogg | 拼出 bonus 字得金幣 |
