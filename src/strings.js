@@ -12,7 +12,6 @@ export const strings = {
   backToLevels: '關卡選擇',
   settings: '設定',
   sound: '音效',
-  haptic: '震動',
   about: '關於',
   replayNote: '重玩不再獲得金幣',
   share: '分享',

@@ -9,9 +9,6 @@ export const bridge = {
   load() {
     return JSON.parse(localStorage.getItem(SAVE_KEY) ?? 'null');
   },
-  haptic() {
-    navigator.vibrate?.(10);
-  },
   // 分享進度：先寫剪貼簿當保險，再開系統分享面板——兩者都做。
   // 部分分享目標（桌面 Windows 面板、Facebook）只收 url 丟掉 text，文案會不見；
   // 剪貼簿裡永遠有完整版，使用者可自行貼上。回傳 'copied' 讓呼叫端提示「可直接貼上」。

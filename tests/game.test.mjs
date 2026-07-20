@@ -233,8 +233,8 @@ test('normalizeSave：合法存檔保留內容並補齊缺漏 settings', () => {
   const n = normalizeSave(s);
   assert.equal(n.coins, 77);
   assert.equal(n.currentLevel, 3);
-  assert.equal(n.settings.sound, false);
-  assert.equal(n.settings.haptic, true); // 缺漏欄位補預設
+  // 缺漏欄位補預設，且不殘留已移除的舊欄位（settings 全部欄位都是 falsy 預設，逐一比對抓不到 undefined）
+  assert.deepEqual(n.settings, { sound: false, tutorialDone: false });
   // firstOpenAt 這類額外欄位要原樣保留（loadSave 靠這點沿用舊值而非重寫成現在）
   assert.equal(normalizeSave({ ...defaultSave(), firstOpenAt: 123 }).firstOpenAt, 123);
 });

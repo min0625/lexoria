@@ -40,7 +40,6 @@ $('clear-words-hint').textContent = strings.clearWordsHint;
 $('btn-next').textContent = strings.nextLevel;
 $('settings-title').textContent = strings.settings;
 $('label-sound').textContent = strings.sound;
-$('label-haptic').textContent = strings.haptic;
 $('label-about').textContent = strings.about;
 $('btn-download').textContent = strings.download;
 $('redeem-input').placeholder = strings.redeemPlaceholder;
@@ -194,7 +193,6 @@ function onSubmit(word) {
   switch (result.type) {
     case 'target': {
       grid.update(game.getCells());
-      if (save.settings.haptic) bridge.haptic();
       // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
       // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
       const spoken = save.settings.sound && speak(word, SFX.target, dbg);
@@ -395,16 +393,11 @@ $('btn-allclear-back').addEventListener('click', showLevels);
 $('btn-settings').addEventListener('click', () => {
   dictCard.hide(); // 同時只留一個互動 overlay（UI 文件 §4）
   $('opt-sound').checked = save.settings.sound;
-  $('opt-haptic').checked = save.settings.haptic;
   $('redeem-msg').hidden = true; // 上次的兌換結果不留到下次開卡
   $('overlay-settings').hidden = false;
 });
 $('opt-sound').addEventListener('change', (e) => {
   save.settings.sound = e.target.checked;
-  persist(save);
-});
-$('opt-haptic').addEventListener('change', (e) => {
-  save.settings.haptic = e.target.checked;
   persist(save);
 });
 $('overlay-settings').addEventListener('click', (e) => {

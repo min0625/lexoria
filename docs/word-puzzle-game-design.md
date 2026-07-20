@@ -179,7 +179,7 @@ function speak(word) {
   - 命中 bonus → 金幣 +N 動畫；
   - 重複的字 → 短暫「已找過」提示；
   - 無效字 → 字串抖動後消失。
-- Haptic（震動）在命中時給一下，嵌入 App 後體感差很多，值得做。
+- ~~Haptic（震動）在命中時給一下~~：已移除。web 的 `navigator.vibrate` 在 iOS Safari 完全不支援、Android 上 10ms 脈衝短到 LRA 馬達振不出來，實測兩邊都無感；一個永遠沒作用的設定開關比沒有更糟。Phase 2 若接上 Capacitor 原生 haptics 再視體感決定要不要加回來。
 - 主題：只做深色一套，用 CSS custom properties 定義色票；不跟隨 `prefers-color-scheme`，省掉淺色主題的對比與維護成本。
 - Web 版鎖不了螢幕方向：橫式時蓋一層「請轉直畫面」遮罩即可，不要為橫式做第二套排版。
 - 教學：第 1 關用 3 字母 + 一次性的滑動手勢示意（手指軌跡 overlay），玩家完成第一個字就收掉、不再出現；不做多步驟教學精靈。
@@ -187,7 +187,7 @@ function speak(word) {
 - 已找到的目標字可點擊查看釋義與發音（見 §6），卡片位置貼著被點的格子彈出，點卡片外任意處關閉。
 - 音效只要 5 個短音：選字 tick、命中目標字、無效字、金幣、過關。用 Kenney / freesound 的 CC0 素材，Web Audio 播放，不放背景音樂。
 - `prefers-reduced-motion` 開啟時跳過飛入/撒花動畫，直接顯示結果。
-- 設定入口（齒輪按鈕）：音效、震動開關，存進存檔的 `settings`。
+- 設定入口（齒輪按鈕）：音效開關，存進存檔的 `settings`。
 - 關卡全數破完後顯示「更多關卡即將推出」畫面——關卡被玩完的速度比想像中快，別讓玩家點下一關時當掉。
 
 ## 8. 金幣與提示經濟（初版數值，之後照數據調）
@@ -213,7 +213,7 @@ function speak(word) {
 
 ## 9. 狀態與進度儲存
 
-- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound, haptic }, firstOpenAt, lastClaimAt }`，一個 key、一個 JSON，夠了。`firstOpenAt`（首次開啟的 timestamp）在缺漏時於載入當下補記——這種資料不記就無法回溯，先記下來，統計系統等真的要做再說（§16 精神）。
+- 第一階段：`localStorage` 存 `{ version: 1, currentLevel, coins, foundBonusWords, levelState: { foundWords, revealedCells }, settings: { sound }, firstOpenAt, lastClaimAt }`，一個 key、一個 JSON，夠了。`firstOpenAt`（首次開啟的 timestamp）在缺漏時於載入當下補記——這種資料不記就無法回溯，先記下來，統計系統等真的要做再說（§16 精神）。
 - `levelState` 是**進行中關卡**的進度（已找到的目標字、提示揭示過的格子）：玩家中途關掉頁面不該歸零——提示是花金幣買的，丟了等於扣錢沒拿到東西。過關進下一關時清空。
 - `version` 欄位第一天就放：日後存檔格式變更才有辦法寫遷移；讀到壞掉或無法辨識的資料時，重置成初始存檔（Phase 1 沒有付費資產，重置的代價可以接受）。
 - **重要**：把存檔讀寫包成一個小模組（`storage.js`，約 20 行），第二階段嵌入 App 時只要換掉這一個模組改走 native bridge（§13），遊戲邏輯完全不動。這是唯一值得預留的抽象層。
@@ -269,7 +269,7 @@ word-game/
 │   ├── wheel.js         # 字母轉盤 + 手勢
 │   ├── grid.js          # 填字格渲染
 │   ├── dictionary-card.js  # 查詞卡片：顯示釋義 + 呼叫 speechSynthesis 發音
-│   ├── bridge.js        # 平台抽象層（存檔/震動/廣告）
+│   ├── bridge.js        # 平台抽象層（存檔/分享/廣告）
 │   └── style.css
 ├── data/
 │   ├── levels.json      # 產生器輸出，含每個目標字的 def 欄位（§6.3）
@@ -306,7 +306,6 @@ word-game/
 export const bridge = {
   save(data)      { localStorage.setItem('save', JSON.stringify(data)); },
   load()          { return JSON.parse(localStorage.getItem('save') ?? 'null'); },
-  haptic(type)    { navigator.vibrate?.(10); },
   showAd()        { return Promise.resolve(); },   // 之後接 AdMob
   buy(productId)  { return Promise.reject(); },     // 之後接 IAP
 };
