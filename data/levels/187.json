@@ -1,0 +1,67 @@
+{
+  "id": 187,
+  "letters": [
+    "L",
+    "T",
+    "P",
+    "O",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "PILOT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "someone who is licensed to operate an aircraft in flight",
+      "zh": "n. 飛行員, 領航員, 航船者, 導向器, 駕駛儀, 嚮導, 領導人"
+    },
+    {
+      "word": "PLOT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a secret scheme to do something (especially something underhand or illegal)",
+      "zh": "n. 小塊土地, 地區圖, 圖, 陰謀, 情節"
+    },
+    {
+      "word": "TOP",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "the upper part of anything",
+      "zh": "n. 頂部, 頂端, 極點, 上面, 上部, 頂篷, 最高地位, 首位, 陀螺"
+    },
+    {
+      "word": "OIL",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油, 石油, 油畫顏料"
+    },
+    {
+      "word": "LOT",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "(often followed by `of') a large number or amount or extent",
+      "zh": "n. 運氣, 籤, 抽籤, 份額, 許多, 一堆"
+    }
+  ],
+  "bonus": [
+    "LIP",
+    "LIT",
+    "LOP",
+    "OPT",
+    "PIT",
+    "POI",
+    "POL",
+    "POT",
+    "TIL",
+    "TIP",
+    "LOTI",
+    "TOIL",
+    "TOPI"
+  ]
+}

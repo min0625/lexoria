@@ -1,0 +1,95 @@
+{
+  "id": 252,
+  "letters": [
+    "R",
+    "D",
+    "I",
+    "R",
+    "S",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "RIDERS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a traveler who actively rides an animal (as a horse or camel)",
+      "zh": "n. 騎（馬、腳踏車等）的人( rider的名詞複數 ); 乘客; 附文; 附加條款"
+    },
+    {
+      "word": "RIDE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a journey in a vehicle (usually an automobile)",
+      "zh": "n. 騎馬, 乘坐, 乘車, 搭便車"
+    },
+    {
+      "word": "SIDE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "a place within a region identified relative to a center or reference location",
+      "zh": "n. 旁邊, 側, 方面, 脅, 側邊, 血統"
+    },
+    {
+      "word": "DIE",
+      "row": 5,
+      "col": 3,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "SIR",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "RED",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DIS",
+    "ERR",
+    "ERS",
+    "IDS",
+    "IRE",
+    "REI",
+    "RES",
+    "RID",
+    "SEI",
+    "SER",
+    "SRI",
+    "DIES",
+    "DIRE",
+    "ERRS",
+    "IDES",
+    "IRED",
+    "IRES",
+    "REDS",
+    "REIS",
+    "RIDS",
+    "RISE",
+    "SIRE",
+    "DIRER",
+    "DRIER",
+    "DRIES",
+    "RESID",
+    "RIDER",
+    "RIDES",
+    "RISER",
+    "SIRED",
+    "DERRIS",
+    "DRIERS"
+  ]
+}

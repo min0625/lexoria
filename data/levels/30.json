@@ -1,0 +1,50 @@
+{
+  "id": 30,
+  "letters": [
+    "D",
+    "E",
+    "T",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "TIED",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "fasten or secure with a rope, string, or cord",
+      "zh": "v. 系（tie的過去式和過去分詞）"
+    },
+    {
+      "word": "DIET",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a prescribed selection of foods",
+      "zh": "n. 日常飲食, 議會"
+    },
+    {
+      "word": "TIE",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    },
+    {
+      "word": "DIE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "DIT",
+    "TED",
+    "DITE",
+    "EDIT",
+    "TIDE"
+  ]
+}

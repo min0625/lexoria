@@ -1,0 +1,59 @@
+{
+  "id": 324,
+  "letters": [
+    "T",
+    "E",
+    "S",
+    "E",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "MEETS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a meeting at which a number of athletic contests are held",
+      "zh": "v. 相遇( meet的第三人稱單數 ); 相識; 開會; 接觸（某物）"
+    },
+    {
+      "word": "MEET",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a meeting at which a number of athletic contests are held",
+      "zh": "n. 會, 集會"
+    },
+    {
+      "word": "SEE",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "EME",
+    "EMS",
+    "MET",
+    "TEE",
+    "EMES",
+    "METE",
+    "SEEM",
+    "SEME",
+    "STEM",
+    "TEEM",
+    "TEES",
+    "METES",
+    "TEEMS"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": 283,
+  "letters": [
+    "T",
+    "R",
+    "E",
+    "B",
+    "E",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "BETTER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "something superior in quality or condition or effect",
+      "zh": "a. 較好的"
+    },
+    {
+      "word": "TREE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a tall perennial woody plant having a main trunk and branches forming a distinct elevated crown; includes both gymnosperms and angiosperms",
+      "zh": "n. 樹, 木料, 樹狀物"
+    },
+    {
+      "word": "BEER",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops",
+      "zh": "n. 啤酒"
+    },
+    {
+      "word": "TEE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "the starting place for each hole on a golf course",
+      "zh": "n. T字形, T字形之物, 發球區, 球座, 目標"
+    },
+    {
+      "word": "BEE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "any of numerous hairy-bodied insects including social and solitary species",
+      "zh": "n. 蜜蜂, 聚會"
+    },
+    {
+      "word": "BET",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "the money risked on a gamble",
+      "zh": "n. 打賭, 賭注"
+    }
+  ],
+  "bonus": [
+    "ERE",
+    "REB",
+    "REE",
+    "RET",
+    "TET",
+    "BEET",
+    "BREE",
+    "RETE",
+    "TRET",
+    "BERET"
+  ]
+}

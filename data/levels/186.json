@@ -1,0 +1,56 @@
+{
+  "id": 186,
+  "letters": [
+    "I",
+    "S",
+    "K",
+    "K",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "KICKS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of delivering a blow with the foot",
+      "zh": "n. 踢球；腿法；衝擊力（kick的複數）"
+    },
+    {
+      "word": "KICK",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the act of delivering a blow with the foot",
+      "zh": "n. 踢, 反衝, 後座力, 凹底"
+    },
+    {
+      "word": "SICK",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "people who are sick",
+      "zh": "n. 病人"
+    },
+    {
+      "word": "SIC",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "urge to attack someone",
+      "zh": "adv. 原文如此"
+    },
+    {
+      "word": "SKI",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "zh": "n. 滑雪橇"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "ICK"
+  ]
+}

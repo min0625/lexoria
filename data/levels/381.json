@@ -1,0 +1,87 @@
+{
+  "id": 381,
+  "letters": [
+    "A",
+    "T",
+    "R",
+    "Y",
+    "R",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "ROTARY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a road junction at which traffic streams circularly around a central island",
+      "zh": "a. 旋轉的, 輪流的"
+    },
+    {
+      "word": "ART",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "TRY",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "earnest and conscientious activity intended to do or accomplish something",
+      "zh": "n. 嘗試, 試驗, 審理, 審判"
+    },
+    {
+      "word": "RAY",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a column of light (as from a beacon)",
+      "zh": "n. 光線, 射線, 閃爍, 光輝"
+    },
+    {
+      "word": "TOY",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "an artifact designed to be played with",
+      "zh": "n. 玩具, 小玩藝兒, 小型的東西, 消遣"
+    },
+    {
+      "word": "RAT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "any of various long-tailed rodents similar to but larger than a mouse",
+      "zh": "n. 鼠, 卑鄙的人, 破壞者, 變節者"
+    }
+  ],
+  "bonus": [
+    "OAR",
+    "OAT",
+    "ORA",
+    "ORT",
+    "ROT",
+    "RYA",
+    "TAO",
+    "TAR",
+    "TOR",
+    "YAR",
+    "ARTY",
+    "ORRA",
+    "RATO",
+    "ROAR",
+    "ROTA",
+    "RYOT",
+    "TARO",
+    "TORA",
+    "TORR",
+    "TORY",
+    "TRAY",
+    "TROY",
+    "TYRO",
+    "TARRY"
+  ]
+}

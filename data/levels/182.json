@@ -1,0 +1,56 @@
+{
+  "id": 182,
+  "letters": [
+    "H",
+    "C",
+    "R",
+    "A",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "CHAIR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a seat for one person, with a support for the back",
+      "zh": "n. 椅子, 顯要的席位, 主席"
+    },
+    {
+      "word": "HAIR",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a covering for the body (or parts of it) consisting of a dense growth of threadlike structures (as on the human head); helps to prevent heat loss",
+      "zh": "n. 頭髮, 毛髮, 些微"
+    },
+    {
+      "word": "AIR",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    }
+  ],
+  "bonus": [
+    "ARC",
+    "CHI",
+    "HIC",
+    "ICH",
+    "RAH",
+    "RIA",
+    "ARCH",
+    "CHAR",
+    "CHIA",
+    "RICH"
+  ]
+}

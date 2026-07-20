@@ -1,0 +1,74 @@
+{
+  "id": 145,
+  "letters": [
+    "N",
+    "E",
+    "U",
+    "S",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "NURSE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "one skilled in caring for young children or the sick (usually under the supervision of a physician)",
+      "zh": "n. 護士, 保姆, 奶媽"
+    },
+    {
+      "word": "SURE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "USE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    },
+    {
+      "word": "RUN",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"
+    },
+    {
+      "word": "SUN",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "ERN",
+    "ERS",
+    "NUS",
+    "RES",
+    "RUE",
+    "SEN",
+    "SER",
+    "SUE",
+    "UNS",
+    "URN",
+    "ERNS",
+    "RUES",
+    "RUNE",
+    "RUNS",
+    "RUSE",
+    "SUER",
+    "URNS",
+    "USER",
+    "RUNES"
+  ]
+}

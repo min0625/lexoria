@@ -1,0 +1,72 @@
+{
+  "id": 297,
+  "letters": [
+    "I",
+    "N",
+    "V",
+    "G",
+    "A",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "VAGINA",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the lower part of the female reproductive tract; a moist canal in female mammals extending from the labia minora to the uterus",
+      "zh": "n. 陰道, 鞘, 葉鞘"
+    },
+    {
+      "word": "AGAIN",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "anew",
+      "zh": "adv. 再一次, 又, 到原處"
+    },
+    {
+      "word": "GAIN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a quantity that is added",
+      "zh": "n. 增益, 獲得, 利潤, 收穫, 增加"
+    },
+    {
+      "word": "ANA",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "mother of the ancient Irish gods; sometimes identified with Danu",
+      "zh": "n. 言論集, 語錄, 軼事"
+    },
+    {
+      "word": "VAN",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "any creative group active in the innovation and application of new concepts and techniques in a given field (especially in the arts)",
+      "zh": "n. 貨車, 篷車, 先鋒, 前驅, 前衛"
+    }
+  ],
+  "bonus": [
+    "AGA",
+    "AIN",
+    "ANI",
+    "AVA",
+    "GAN",
+    "GIN",
+    "NAG",
+    "VIA",
+    "VIG",
+    "AGIN",
+    "ANGA",
+    "VAGI",
+    "VAIN",
+    "VANG",
+    "VIGA",
+    "VINA",
+    "AVIAN"
+  ]
+}

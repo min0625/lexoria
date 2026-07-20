@@ -1,0 +1,66 @@
+{
+  "id": 499,
+  "letters": [
+    "A",
+    "L",
+    "N",
+    "U",
+    "C",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "LAUNCH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a motorboat with an open deck or a half deck",
+      "zh": "n. 下水, 汽艇, 發射"
+    },
+    {
+      "word": "LUNCH",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a midday meal",
+      "zh": "n. 午餐"
+    },
+    {
+      "word": "CLAN",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "group of people related by blood or marriage",
+      "zh": "n. 氏族, 宗族, 集團"
+    },
+    {
+      "word": "HAUL",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "the act of drawing or hauling something",
+      "zh": "n. 用力拖拉, 拖運, 強拉, 捕獲量, 拖運距離"
+    },
+    {
+      "word": "CAN",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "airtight sealed metal container for food or drink or paint etc.",
+      "zh": "vt. 裝罐"
+    }
+  ],
+  "bonus": [
+    "HUN",
+    "LAC",
+    "NAH",
+    "CAUL",
+    "HULA",
+    "LUNA",
+    "ULAN",
+    "ULNA",
+    "NUCHA",
+    "UHLAN",
+    "NUCHAL"
+  ]
+}

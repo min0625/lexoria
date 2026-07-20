@@ -1,0 +1,57 @@
+{
+  "id": 192,
+  "letters": [
+    "G",
+    "E",
+    "N",
+    "S",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "GENES",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "(genetics) a segment of DNA that is involved in producing a polypeptide chain; it can include regions preceding and following the coding DNA as well as introns between the exons; it is considered a unit of heredity",
+      "zh": "n. 基因（gene的複數形式）"
+    },
+    {
+      "word": "SEEN",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "perceive by sight or have the power to perceive by sight",
+      "zh": "see的過去分詞"
+    },
+    {
+      "word": "GENE",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "(genetics) a segment of DNA that is involved in producing a polypeptide chain; it can include regions preceding and following the coding DNA as well as introns between the exons; it is considered a unit of heredity",
+      "zh": "n. 基因"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "ENG",
+    "ENS",
+    "GEE",
+    "GEN",
+    "NEE",
+    "SEG",
+    "SEN",
+    "ENGS",
+    "GEES",
+    "GENS",
+    "SENE"
+  ]
+}

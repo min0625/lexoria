@@ -1,0 +1,53 @@
+{
+  "id": 155,
+  "letters": [
+    "S",
+    "T",
+    "S",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "TESTS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "trying something to find out about it",
+      "zh": "n. 測驗（test的複數）"
+    },
+    {
+      "word": "SETS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 集合, 設定（set的複數）"
+    },
+    {
+      "word": "TEST",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "trying something to find out about it",
+      "zh": "n. 測試, 試驗, 化驗, 檢驗, 考驗, 甲殼"
+    },
+    {
+      "word": "SET",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ESS",
+    "TET",
+    "SETT",
+    "STET",
+    "TETS",
+    "SETTS",
+    "STETS"
+  ]
+}

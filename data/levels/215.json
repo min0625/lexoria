@@ -1,0 +1,63 @@
+{
+  "id": 215,
+  "letters": [
+    "V",
+    "O",
+    "L",
+    "Y",
+    "E",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LOVELY",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a very pretty girl who works as a photographer's model",
+      "zh": "a. 可愛的, 有趣的"
+    },
+    {
+      "word": "VOLLEY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "rapid simultaneous discharge of firearms",
+      "zh": "n. 群射, 齊發, 迸發"
+    },
+    {
+      "word": "YELL",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a loud utterance; often in protest or opposition",
+      "zh": "vi. 叫喊, 大叫, (齊聲)吶喊歡呼"
+    },
+    {
+      "word": "LOVE",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a strong positive emotion of regard and affection",
+      "zh": "n. 愛, 戀愛, 愛情, 愛好, 性愛"
+    },
+    {
+      "word": "LEVY",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "a charge imposed and collected",
+      "zh": "n. 稅款, 所徵的人數, 徵收"
+    }
+  ],
+  "bonus": [
+    "ELL",
+    "LEV",
+    "LEY",
+    "LYE",
+    "OLE",
+    "VOE",
+    "LEVO",
+    "VOLE"
+  ]
+}

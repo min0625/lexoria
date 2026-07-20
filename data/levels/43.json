@@ -1,0 +1,48 @@
+{
+  "id": 43,
+  "letters": [
+    "N",
+    "I",
+    "K",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LINK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the means of connection between things linked in series",
+      "zh": "n. 環, 連結物, 連結, 火把"
+    },
+    {
+      "word": "INK",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a liquid used for printing or writing or drawing",
+      "zh": "n. 墨水, 墨汁"
+    },
+    {
+      "word": "KIN",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a person having kinship with another or others",
+      "zh": "n. 親戚, 同族, 血緣關係, 家族"
+    },
+    {
+      "word": "LIN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "United States sculptor and architect whose public works include the memorial to veterans of the Vietnam War in Washington (born in 1959)",
+      "zh": "n. 林"
+    }
+  ],
+  "bonus": [
+    "ILK",
+    "NIL",
+    "KILN"
+  ]
+}

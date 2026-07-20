@@ -1,0 +1,40 @@
+{
+  "id": 96,
+  "letters": [
+    "R",
+    "A",
+    "M",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "HARM",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "any physical damage to the body caused by violence or accident or fracture etc.",
+      "zh": "n. 傷害, 害處"
+    },
+    {
+      "word": "MAR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the month following February and preceding April",
+      "zh": "vt. 損毀, 損傷, 糟蹋"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    }
+  ],
+  "bonus": [
+    "HAM",
+    "RAH",
+    "RAM"
+  ]
+}

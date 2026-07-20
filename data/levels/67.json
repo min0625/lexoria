@@ -1,0 +1,40 @@
+{
+  "id": 67,
+  "letters": [
+    "O",
+    "C",
+    "R",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "CROP",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the yield from plants in a single growing season",
+      "zh": "n. 農作物, 產量, 平頭"
+    },
+    {
+      "word": "PRO",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    },
+    {
+      "word": "COP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    }
+  ],
+  "bonus": [
+    "COR",
+    "ORC",
+    "ROC"
+  ]
+}

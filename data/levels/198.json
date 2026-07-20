@@ -1,0 +1,69 @@
+{
+  "id": 198,
+  "letters": [
+    "S",
+    "E",
+    "D",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "NEEDS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a condition requiring relief",
+      "zh": "adv. （只與must連用）必須地"
+    },
+    {
+      "word": "NEED",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a condition requiring relief",
+      "zh": "n. 需要, 必須, 缺乏"
+    },
+    {
+      "word": "SEEN",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "perceive by sight or have the power to perceive by sight",
+      "zh": "see的過去分詞"
+    },
+    {
+      "word": "END",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEN",
+    "ENS",
+    "NEE",
+    "SEN",
+    "DEES",
+    "DENE",
+    "DENS",
+    "ENDS",
+    "SEED",
+    "SEND",
+    "SENE",
+    "SNED",
+    "DENES",
+    "DENSE"
+  ]
+}

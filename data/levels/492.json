@@ -1,0 +1,91 @@
+{
+  "id": 492,
+  "letters": [
+    "U",
+    "P",
+    "N",
+    "I",
+    "H",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "PUNISH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "impose a penalty on; inflict punishment on",
+      "zh": "vt. 處罰, 懲罰, 嚴厲對待"
+    },
+    {
+      "word": "PUSH",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the act of applying force in order to move something away",
+      "zh": "n. 推, 推動, 奮鬥, 攻擊, 進取心"
+    },
+    {
+      "word": "SHIP",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a vessel that carries passengers or freight",
+      "zh": "n. 船, 艦"
+    },
+    {
+      "word": "HIP",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "either side of the body below the waist and above the thigh",
+      "zh": "n. 臀部, 薔薇果, 憂鬱"
+    },
+    {
+      "word": "SUN",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    }
+  ],
+  "bonus": [
+    "HIN",
+    "HIS",
+    "HUN",
+    "HUP",
+    "INS",
+    "NIP",
+    "NUS",
+    "PHI",
+    "PIN",
+    "PIS",
+    "PIU",
+    "PSI",
+    "PUN",
+    "PUS",
+    "SIN",
+    "SIP",
+    "SUP",
+    "UNS",
+    "UPS",
+    "HINS",
+    "HIPS",
+    "HISN",
+    "HUNS",
+    "NIPS",
+    "PHIS",
+    "PINS",
+    "PISH",
+    "PUNS",
+    "SHIN",
+    "SHUN",
+    "SINH",
+    "SNIP",
+    "SPIN",
+    "SPUN",
+    "UNHIP",
+    "UNSHIP"
+  ]
+}

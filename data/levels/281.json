@@ -1,0 +1,67 @@
+{
+  "id": 281,
+  "letters": [
+    "U",
+    "A",
+    "L",
+    "A",
+    "N",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "ANNUAL",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "(botany) a plant that completes its entire life cycle within the space of a year",
+      "zh": "n. 年刊, 年報"
+    },
+    {
+      "word": "ANAL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "of or related to the anus",
+      "zh": "a. 肛門的, 肛門附近的"
+    },
+    {
+      "word": "ANNA",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a former copper coin of Pakistan and India",
+      "zh": "n. 安娜（女子名）"
+    },
+    {
+      "word": "NUN",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a woman religious",
+      "zh": "n. 修女, 尼姑"
+    },
+    {
+      "word": "ANA",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "mother of the ancient Irish gods; sometimes identified with Danu",
+      "zh": "n. 言論集, 語錄, 軼事"
+    }
+  ],
+  "bonus": [
+    "AAL",
+    "ALA",
+    "NAN",
+    "ALAN",
+    "LUNA",
+    "NAAN",
+    "NANA",
+    "ULAN",
+    "ULNA",
+    "ANNAL",
+    "ANNUL",
+    "LAUAN"
+  ]
+}

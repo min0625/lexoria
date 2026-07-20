@@ -1,0 +1,41 @@
+{
+  "id": 45,
+  "letters": [
+    "A",
+    "B",
+    "S",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BASE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "installation from which a military force initiates operations",
+      "zh": "n. 底部, 壘, 基礎, 基地"
+    },
+    {
+      "word": "ABS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "any of a class of composite plastics used to make car bodies and cases for computers and other appliances",
+      "zh": "[計] 絕對, 美國標準局"
+    },
+    {
+      "word": "SEA",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    }
+  ],
+  "bonus": [
+    "BAS",
+    "SAB",
+    "SAE",
+    "SABE"
+  ]
+}

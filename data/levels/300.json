@@ -1,0 +1,82 @@
+{
+  "id": 300,
+  "letters": [
+    "E",
+    "F",
+    "T",
+    "F",
+    "S",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "OFFSET",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "the time at which something is supposed to begin",
+      "zh": "n. 抵消, 把...並列, 旁系, 支管, 用膠印法印"
+    },
+    {
+      "word": "TOES",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "one of the digits of the foot",
+      "zh": "n. 腳趾（toe的複數）"
+    },
+    {
+      "word": "SOFT",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "yielding readily to pressure or weight",
+      "zh": "a. 軟的, 溫和的, 柔和的, 柔滑的, 溫柔的, 軟弱的, 坡度小的, 笨的, 紙幣的"
+    },
+    {
+      "word": "TOE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "one of the digits of the foot",
+      "zh": "n. 足趾, 趾部, 腳趾"
+    },
+    {
+      "word": "OFF",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "kill intentionally and with premeditation",
+      "zh": "a. 關著的, 不再生效的, 處於...境況的, 休假的, 空閒的"
+    },
+    {
+      "word": "SET",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "EFF",
+    "EFS",
+    "EFT",
+    "FET",
+    "FOE",
+    "OES",
+    "OFT",
+    "OSE",
+    "SOT",
+    "EFFS",
+    "EFTS",
+    "FETS",
+    "FOES",
+    "OFFS",
+    "TEFF",
+    "TOFF",
+    "TEFFS",
+    "TOFFS",
+    "SETOFF"
+  ]
+}

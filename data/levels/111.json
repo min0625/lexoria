@@ -1,0 +1,64 @@
+{
+  "id": 111,
+  "letters": [
+    "L",
+    "I",
+    "A",
+    "D",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "DAILY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a newspaper that is published every day",
+      "zh": "a. 每日的, 日常的"
+    },
+    {
+      "word": "LADY",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a polite name for any woman",
+      "zh": "n. 淑女, 夫人, 女士, 貴婦"
+    },
+    {
+      "word": "DAY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "time for Earth to make a complete rotation on its axis",
+      "zh": "n. 天, 日子, 白天, 工作日"
+    },
+    {
+      "word": "AID",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a resource",
+      "zh": "n. 幫助, 外援, 助手"
+    },
+    {
+      "word": "LAY",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a narrative song with a recurrent refrain",
+      "zh": "vt. 放置, 產, 鋪設, 佈置, 提出, 平息"
+    }
+  ],
+  "bonus": [
+    "AIL",
+    "DAL",
+    "LAD",
+    "LID",
+    "YID",
+    "DIAL",
+    "IDLY",
+    "IDYL",
+    "LAID",
+    "YALD"
+  ]
+}

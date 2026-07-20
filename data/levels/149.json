@@ -1,0 +1,54 @@
+{
+  "id": 149,
+  "letters": [
+    "E",
+    "R",
+    "R",
+    "E",
+    "F"
+  ],
+  "words": [
+    {
+      "word": "REFER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "make reference to",
+      "zh": "vt. 提交, 歸諸於, 把...提交, 使求助於"
+    },
+    {
+      "word": "FREE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "people who are free",
+      "zh": "a. 自由的, 享受政治權力的, 允許的, 免費的, 豐富的"
+    },
+    {
+      "word": "FEE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a fixed charge for a privilege or for professional services",
+      "zh": "n. 費用, 小費, 封地, 所有權"
+    },
+    {
+      "word": "REF",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "(sports) the chief official (as in boxing or American football) who is expected to ensure fair play",
+      "zh": "n. 裁判員"
+    }
+  ],
+  "bonus": [
+    "ERE",
+    "ERR",
+    "FER",
+    "REE",
+    "FERE",
+    "REEF",
+    "FREER",
+    "FRERE"
+  ]
+}

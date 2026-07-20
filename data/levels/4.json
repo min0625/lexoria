@@ -1,0 +1,29 @@
+{
+  "id": 4,
+  "letters": [
+    "T",
+    "O",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "TOP",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the upper part of anything",
+      "zh": "n. 頂部, 頂端, 極點, 上面, 上部, 頂篷, 最高地位, 首位, 陀螺"
+    },
+    {
+      "word": "POT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid",
+      "zh": "n. 盆, 罐, 壺, 坩堝, 獎盃"
+    }
+  ],
+  "bonus": [
+    "OPT"
+  ]
+}

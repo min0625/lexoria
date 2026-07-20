@@ -1,0 +1,65 @@
+{
+  "id": 396,
+  "letters": [
+    "S",
+    "M",
+    "O",
+    "E",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "HOMES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "where you live at a particular time",
+      "zh": "n. 房屋；家庭（home的複數形式）"
+    },
+    {
+      "word": "SHOE",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "footwear shaped to fit the foot (below the ankle) with a flexible upper of leather or plastic and a sole and heel of heavier material",
+      "zh": "n. 鞋, 靴, 外胎"
+    },
+    {
+      "word": "SOME",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "quantifier; used with either mass nouns or plural count nouns to indicate an unspecified number or quantity",
+      "zh": "pron. 一些, 一部分, 若干"
+    },
+    {
+      "word": "HOME",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "where you live at a particular time",
+      "zh": "n. 家, 避難所, 故鄉"
+    }
+  ],
+  "bonus": [
+    "EMS",
+    "HEM",
+    "HES",
+    "HOE",
+    "MHO",
+    "MOS",
+    "OES",
+    "OHM",
+    "OHS",
+    "OMS",
+    "OSE",
+    "SHE",
+    "HEMS",
+    "HOES",
+    "HOSE",
+    "MESH",
+    "MHOS",
+    "OHMS",
+    "SHMO"
+  ]
+}

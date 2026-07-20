@@ -1,0 +1,74 @@
+{
+  "id": 210,
+  "letters": [
+    "E",
+    "T",
+    "L",
+    "E",
+    "D",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DELETE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "remove or make invisible",
+      "zh": "vt. 刪除"
+    },
+    {
+      "word": "TED",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a tough youth of 1950's and 1960's wearing Edwardian style clothes",
+      "zh": "vt. 翻曬"
+    },
+    {
+      "word": "LED",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "TEE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the starting place for each hole on a golf course",
+      "zh": "n. T字形, T字形之物, 發球區, 球座, 目標"
+    },
+    {
+      "word": "LEE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    },
+    {
+      "word": "LET",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEL",
+    "EEL",
+    "ELD",
+    "TEL",
+    "DEET",
+    "DELE",
+    "LEET",
+    "TEED",
+    "TEEL",
+    "TELE"
+  ]
+}

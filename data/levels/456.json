@@ -1,0 +1,97 @@
+{
+  "id": 456,
+  "letters": [
+    "S",
+    "I",
+    "C",
+    "I",
+    "M",
+    "E",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SEISMIC",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "subject to or caused by an earthquake or earth vibration",
+      "zh": "a. 地震的"
+    },
+    {
+      "word": "MICE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "any of numerous small rodents typically resembling diminutive rats having pointed snouts and small ears on elongated bodies with slender usually hairless tails",
+      "zh": "pl. 老鼠"
+    },
+    {
+      "word": "SEMI",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "one of the two competitions in the next to the last round of an elimination tournament",
+      "zh": "[計] 半"
+    },
+    {
+      "word": "MISS",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a young woman",
+      "zh": "n. 失誤, 避免, 失敗, 小姐"
+    },
+    {
+      "word": "MESS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a state of confusion and disorderliness",
+      "zh": "n. 食堂, 伙食, 用膳, 一份食品, 混亂, 亂七八糟, 困境"
+    },
+    {
+      "word": "ICE",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "SEC",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites",
+      "zh": "[計] 秒, 輔助"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "EMS",
+    "ESS",
+    "ISM",
+    "MIS",
+    "SEI",
+    "SIC",
+    "SIM",
+    "SIS",
+    "CESS",
+    "EMIC",
+    "ICES",
+    "ISMS",
+    "MISE",
+    "SECS",
+    "SEIS",
+    "SICE",
+    "SICS",
+    "SIMS",
+    "ISSEI",
+    "MESIC",
+    "MISES",
+    "SEISM",
+    "SEMIS",
+    "SICES"
+  ]
+}

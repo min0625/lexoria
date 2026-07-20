@@ -1,0 +1,118 @@
+{
+  "id": 365,
+  "letters": [
+    "P",
+    "S",
+    "I",
+    "N",
+    "E",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "PENNIES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a fractional monetary unit of Ireland and the United Kingdom; equal to one hundredth of a pound",
+      "zh": "pl. (非正式)copper便士, (美)分, 分幣"
+    },
+    {
+      "word": "SEEN",
+      "row": 2,
+      "col": 6,
+      "dir": "down",
+      "def": "perceive by sight or have the power to perceive by sight",
+      "zh": "see的過去分詞"
+    },
+    {
+      "word": "SPIN",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a swift whirling motion (usually of a missile)",
+      "zh": "n. 旋轉, 自旋, 疾馳, 情緒低落"
+    },
+    {
+      "word": "NINE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of eight and one",
+      "zh": "num. 九, 九個"
+    },
+    {
+      "word": "PEN",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a writing implement with a point from which ink flows",
+      "zh": "n. 鋼筆, 筆, 筆調, 筆桿子, 作家, 圍欄, 柵欄, 禽畜"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SIN",
+      "row": 5,
+      "col": 4,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "INN",
+    "INS",
+    "NEE",
+    "NIP",
+    "PEE",
+    "PES",
+    "PIE",
+    "PIN",
+    "PIS",
+    "PSI",
+    "SEI",
+    "SEN",
+    "SIP",
+    "INNS",
+    "NEEP",
+    "NENE",
+    "NIPS",
+    "PEEN",
+    "PEES",
+    "PEIN",
+    "PENS",
+    "PIES",
+    "PINE",
+    "PINS",
+    "SEEP",
+    "SENE",
+    "SINE",
+    "SIPE",
+    "SNIP",
+    "NEEPS",
+    "NINES",
+    "PEENS",
+    "PEINS",
+    "PEISE",
+    "PENES",
+    "PENIS",
+    "PENNE",
+    "PENNI",
+    "PINES",
+    "SEINE",
+    "SNIPE",
+    "SPINE",
+    "PENNIS",
+    "PINENE",
+    "PINENES"
+  ]
+}

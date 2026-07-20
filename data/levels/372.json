@@ -1,0 +1,89 @@
+{
+  "id": 372,
+  "letters": [
+    "V",
+    "N",
+    "D",
+    "I",
+    "R",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DRIVEN",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "operate or control a vehicle",
+      "zh": "a. 有緊迫感的"
+    },
+    {
+      "word": "DRIVE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the act of applying force to propel something",
+      "zh": "n. 駕車, 快車道, 推進力, 驅動, 動力, 擊球, 驅動器"
+    },
+    {
+      "word": "RED",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "DIE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    },
+    {
+      "word": "END",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DEV",
+    "DIN",
+    "ERN",
+    "IRE",
+    "REI",
+    "REV",
+    "RID",
+    "RIN",
+    "VIE",
+    "DINE",
+    "DIRE",
+    "DIVE",
+    "IRED",
+    "NERD",
+    "NEVI",
+    "NIDE",
+    "REIN",
+    "REND",
+    "RIDE",
+    "RIND",
+    "RIVE",
+    "VEIN",
+    "VEND",
+    "VIDE",
+    "VIED",
+    "VIER",
+    "VINE",
+    "DINER",
+    "DIVER",
+    "RIVED",
+    "RIVEN",
+    "VINED",
+    "VERDIN"
+  ]
+}

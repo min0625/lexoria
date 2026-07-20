@@ -1,0 +1,72 @@
+{
+  "id": 207,
+  "letters": [
+    "N",
+    "W",
+    "S",
+    "I",
+    "G",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SWINGS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a state of steady vigorous action that is characteristic of an activity",
+      "zh": "n. （複數）鞦韆；搖擺, 改變, 衝力（swing的複數形式）"
+    },
+    {
+      "word": "SIGNS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a perceptible indication of something not immediately apparent (as a visible clue that something has happened)",
+      "zh": "n. 標誌；符號（sign的複數）"
+    },
+    {
+      "word": "SIGN",
+      "row": 3,
+      "col": 2,
+      "dir": "across",
+      "def": "a perceptible indication of something not immediately apparent (as a visible clue that something has happened)",
+      "zh": "n. 符號, 招牌, 徵兆, 正負號, 手勢"
+    },
+    {
+      "word": "WING",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a movable organ for flying (one of a pair)",
+      "zh": "n. 翅膀, 翼, 機翼, 派別"
+    },
+    {
+      "word": "WIN",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a victory (as in a race or other competition)",
+      "zh": "vt. 贏得, 打勝, 成功"
+    }
+  ],
+  "bonus": [
+    "GIN",
+    "INS",
+    "SIN",
+    "SIS",
+    "WIG",
+    "WIS",
+    "GINS",
+    "SING",
+    "SINS",
+    "SWIG",
+    "WIGS",
+    "WINS",
+    "WISS",
+    "SINGS",
+    "SWIGS",
+    "SWING",
+    "WINGS"
+  ]
+}

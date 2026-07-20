@@ -1,0 +1,79 @@
+{
+  "id": 112,
+  "letters": [
+    "N",
+    "R",
+    "A",
+    "G",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "ANGER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a strong emotion; a feeling that is oriented toward some real or supposed grievance",
+      "zh": "n. 忿怒"
+    },
+    {
+      "word": "RANGE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an area in which something acts or operates or has power or control:",
+      "zh": "n. 排, 行, 山脈, 範圍, 行列, 射程"
+    },
+    {
+      "word": "NEAR",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "move towards",
+      "zh": "a. 近的, 近親的, 近似的"
+    },
+    {
+      "word": "AGE",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "ARE",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "EAR",
+    "ENG",
+    "ERA",
+    "ERG",
+    "ERN",
+    "GAE",
+    "GAN",
+    "GAR",
+    "GEN",
+    "NAE",
+    "NAG",
+    "RAG",
+    "RAN",
+    "REG",
+    "AGER",
+    "EARN",
+    "GAEN",
+    "GANE",
+    "GEAR",
+    "GNAR",
+    "GRAN",
+    "RAGE",
+    "RANG",
+    "REGNA"
+  ]
+}

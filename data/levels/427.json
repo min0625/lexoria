@@ -1,0 +1,42 @@
+{
+  "id": 427,
+  "letters": [
+    "L",
+    "I",
+    "F",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LIFE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a characteristic state or mode of living",
+      "zh": "n. 生活, 生命, 人生, 世事, 生物, 壽命, 一生, 生命力, 靈魂, 無期徒刑"
+    },
+    {
+      "word": "FILE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a set of related records (either written or electronic) kept together",
+      "zh": "n. 檔案, 公文箱, 資料夾, 檔案, 卷宗, 銼刀"
+    },
+    {
+      "word": "LIE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    }
+  ],
+  "bonus": [
+    "ELF",
+    "FIE",
+    "FIL",
+    "LEI",
+    "LIEF"
+  ]
+}

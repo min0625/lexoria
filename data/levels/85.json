@@ -1,0 +1,36 @@
+{
+  "id": 85,
+  "letters": [
+    "D",
+    "D",
+    "A",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DEAD",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "people who are no longer living",
+      "zh": "a. 死的, 不活潑的, 麻木的, 熄滅的"
+    },
+    {
+      "word": "ADD",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a condition (mostly in boys) characterized by behavioral and learning disorders",
+      "zh": "vt. 增加, 新增, 附帶說明, 計算...總和"
+    },
+    {
+      "word": "DAD",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an informal term for a father; probably derived from baby talk",
+      "zh": "n. 爸爸, 爹爹"
+    }
+  ],
+  "bonus": []
+}

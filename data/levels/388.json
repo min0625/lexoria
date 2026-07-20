@@ -1,0 +1,67 @@
+{
+  "id": 388,
+  "letters": [
+    "E",
+    "H",
+    "O",
+    "M",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "HOMER",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a base hit on which the batter scores a run",
+      "zh": "n. 本壘打, 傳信鴿"
+    },
+    {
+      "word": "MORE",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "English statesman who opposed Henry VIII's divorce from Catherine of Aragon and was imprisoned and beheaded; recalled for his concept of Utopia, the ideal state",
+      "zh": "n. 更多"
+    },
+    {
+      "word": "HOME",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "where you live at a particular time",
+      "zh": "n. 家, 避難所, 故鄉"
+    },
+    {
+      "word": "HERO",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a man distinguished by exceptional courage and nobility and strength",
+      "zh": "n. 英雄, 超越常人者, 男主角"
+    },
+    {
+      "word": "ORE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a mineral that contains metal that is valuable enough to be mined",
+      "zh": "n. 礦石"
+    }
+  ],
+  "bonus": [
+    "HEM",
+    "HER",
+    "HOE",
+    "MHO",
+    "MOR",
+    "OHM",
+    "REM",
+    "RHO",
+    "ROE",
+    "ROM",
+    "HERM",
+    "HOER",
+    "OMER"
+  ]
+}

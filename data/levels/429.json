@@ -1,0 +1,58 @@
+{
+  "id": 429,
+  "letters": [
+    "L",
+    "S",
+    "K",
+    "A",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "LACKS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the state of needing something that is absent or unavailable",
+      "zh": "n. 缺乏, 不足, 沒有( lack的名詞複數 )"
+    },
+    {
+      "word": "LACK",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the state of needing something that is absent or unavailable",
+      "zh": "n. 缺乏, 無, 不足"
+    },
+    {
+      "word": "SACK",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a bag made of paper or plastic for holding customer's purchases",
+      "zh": "n. 麻布袋, 洗劫"
+    },
+    {
+      "word": "ASK",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "inquire about",
+      "zh": "vi. 問, 要求"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "KAS",
+    "LAC",
+    "LAS",
+    "SAC",
+    "SAL",
+    "SKA",
+    "CALK",
+    "CASK",
+    "LACS",
+    "CALKS",
+    "SLACK"
+  ]
+}

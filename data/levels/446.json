@@ -1,0 +1,58 @@
+{
+  "id": 446,
+  "letters": [
+    "E",
+    "S",
+    "R",
+    "F",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "FRESH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "recently made, produced, or harvested",
+      "zh": "a. 新鮮的, 新奇的, 另外的, 淡的, 精神飽滿的, 冒失的"
+    },
+    {
+      "word": "REFS",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "(sports) the chief official (as in boxing or American football) who is expected to ensure fair play",
+      "zh": "n. 裁判員( ref的複數形式 )"
+    },
+    {
+      "word": "RES",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a widely distributed system consisting of all the cells able to ingest bacteria or colloidal particles etc, except for certain white blood cells",
+      "zh": "[計] 遠端輸入服務"
+    },
+    {
+      "word": "REF",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "(sports) the chief official (as in boxing or American football) who is expected to ensure fair play",
+      "zh": "n. 裁判員"
+    }
+  ],
+  "bonus": [
+    "EFS",
+    "ERS",
+    "FEH",
+    "FER",
+    "HER",
+    "HES",
+    "SER",
+    "SHE",
+    "FEHS",
+    "HERS",
+    "RESH",
+    "SERF"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": 185,
+  "letters": [
+    "S",
+    "O",
+    "P",
+    "L",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "POLES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a long (usually round) rod of wood or metal or plastic",
+      "zh": "n. （南、北）極( pole的名詞複數 ); 地極; 柱; 截然相反的兩極之一"
+    },
+    {
+      "word": "POLE",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a long (usually round) rod of wood or metal or plastic",
+      "zh": "n. 波蘭人, 極點, 磁極, 電極, 杆, 竿, 相反的極端"
+    },
+    {
+      "word": "SOLE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the underside of footwear or a golf club",
+      "zh": "n. 腳掌, 鞋底, 底部"
+    },
+    {
+      "word": "LOSE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "fail to keep or to maintain; cease to have, either physically or in an abstract sense",
+      "zh": "vt. 遺失, 損失, 丟失, 使失去, 錯過, 浪費, 迷失, 使迷路, 輸去, 使沉溺於"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "LOP",
+    "OES",
+    "OLE",
+    "OPE",
+    "OPS",
+    "OSE",
+    "PES",
+    "POL",
+    "SEL",
+    "SOL",
+    "SOP",
+    "EPOS",
+    "LOPE",
+    "LOPS",
+    "OLES",
+    "OPES",
+    "PESO",
+    "POLS",
+    "POSE",
+    "SLOE",
+    "SLOP",
+    "LOPES",
+    "SLOPE"
+  ]
+}

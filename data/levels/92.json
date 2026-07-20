@@ -1,0 +1,39 @@
+{
+  "id": 92,
+  "letters": [
+    "C",
+    "H",
+    "T",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "CHAT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "an informal conversation",
+      "zh": "n. 閒談"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "CAT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    }
+  ],
+  "bonus": [
+    "HAT",
+    "TACH"
+  ]
+}

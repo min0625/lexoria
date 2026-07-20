@@ -1,0 +1,65 @@
+{
+  "id": 202,
+  "letters": [
+    "F",
+    "O",
+    "I",
+    "C",
+    "F",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "OFFICE",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "place of business where professional or clerical duties are performed",
+      "zh": "n. 辦公室, 部, 公職, 職責"
+    },
+    {
+      "word": "FOE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "an armed adversary (especially a member of an opposing military force)",
+      "zh": "n. 仇敵, 反對者, 敵人, 對手"
+    },
+    {
+      "word": "EFF",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "have sexual intercourse with",
+      "zh": "vt. [俚]弄糟"
+    },
+    {
+      "word": "ICE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "OFF",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "kill intentionally and with premeditation",
+      "zh": "a. 關著的, 不再生效的, 處於...境況的, 休假的, 空閒的"
+    }
+  ],
+  "bonus": [
+    "FIE",
+    "IFF",
+    "COFF",
+    "COIF",
+    "FICE",
+    "FICO",
+    "FIEF",
+    "FIFE",
+    "FOCI",
+    "COIFFE"
+  ]
+}

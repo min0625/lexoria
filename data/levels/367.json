@@ -1,0 +1,73 @@
+{
+  "id": 367,
+  "letters": [
+    "M",
+    "T",
+    "T",
+    "O",
+    "O",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "TOMATO",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "mildly acid red or yellow pulpy fruit eaten as a vegetable",
+      "zh": "n. 番茄, 西紅柿"
+    },
+    {
+      "word": "MATT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the property of having little or no contrast; lacking highlights or gloss",
+      "zh": "a. 表面暗淡的, 無光澤的, 表面粗糙的, 不光滑的"
+    },
+    {
+      "word": "TOM",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(ethnic slur) offensive and derogatory name for a Black man who is abjectly servile and deferential to Whites",
+      "zh": "n. 雄性動物, 雄貓"
+    },
+    {
+      "word": "MAT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a thick flat pad used as a floor covering",
+      "zh": "n. 墊, 叢, 襯邊"
+    },
+    {
+      "word": "TOO",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "to a degree exceeding normal or proper limits",
+      "zh": "adv. 也, 非常, 太"
+    }
+  ],
+  "bonus": [
+    "ATT",
+    "MOA",
+    "MOO",
+    "MOT",
+    "OAT",
+    "OOT",
+    "TAM",
+    "TAO",
+    "TAT",
+    "TOT",
+    "ATOM",
+    "MOAT",
+    "MOOT",
+    "MOTT",
+    "OTTO",
+    "TOOM",
+    "TOOT",
+    "MOTTO"
+  ]
+}

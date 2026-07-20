@@ -1,0 +1,78 @@
+{
+  "id": 274,
+  "letters": [
+    "P",
+    "C",
+    "I",
+    "A",
+    "A",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "CAPITA",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a headlike protuberance on an organ or structure",
+      "zh": "[醫] 頭"
+    },
+    {
+      "word": "TIP",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the extreme end of something; especially something pointed",
+      "zh": "n. 頂, 尖端, 梢, 末端, 傾斜, 垃圾場, 小費, 輕擊, 指點, 秘密訊息"
+    },
+    {
+      "word": "CAP",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a tight-fitting headdress",
+      "zh": "n. 蓋子, 帽子"
+    },
+    {
+      "word": "CAT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "TAP",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the sound made by a gentle blow",
+      "zh": "n. 輕打, 水龍頭"
+    }
+  ],
+  "bonus": [
+    "AIT",
+    "APT",
+    "PAC",
+    "PAT",
+    "PIA",
+    "PIC",
+    "PIT",
+    "TIC",
+    "ACTA",
+    "ATAP",
+    "PACA",
+    "PACT",
+    "PICA",
+    "PITA",
+    "TAPA"
+  ]
+}

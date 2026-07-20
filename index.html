@@ -21,8 +21,9 @@
   <link rel="icon" type="image/png" sizes="180x180" href="assets/icon-180.png">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="stylesheet" href="src/style.css">
-  <!-- 與 JS 模組並行下載關卡資料，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中） -->
-  <link rel="preload" href="data/levels.json" as="fetch" crossorigin>
+  <!-- 與 JS 模組並行下載關卡索引，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中）。
+       關卡本體（data/levels/<id>.json）按需載入，boot() 只需要這份 { count } 就能起步 -->
+  <link rel="preload" href="data/levels/index.json" as="fetch" crossorigin>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -51,11 +52,11 @@
       <button id="btn-settings" class="chip" type="button" aria-label="設定"><span class="icon icon-gear"></span></button>
     </header>
     <!-- 載入提示（靜態文字，不經 strings.js——JS 下載與 levels.json 取得期間就要可見）：startLevel 建格盤時清掉 -->
-    <div id="grid" class="grid-area"><p class="loading-text">載入中…</p></div>
+    <div id="grid" class="grid-area" translate="no"><p class="loading-text">載入中…</p></div>
     <div id="preview" class="preview" aria-live="polite"></div>
     <div class="wheel-row">
       <button id="btn-hint" class="hint-btn" type="button" aria-label="提示"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>
-      <div id="wheel" class="wheel"></div>
+      <div id="wheel" class="wheel" translate="no"></div>
     </div>
   </section>
 

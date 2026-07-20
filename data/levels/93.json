@@ -1,0 +1,45 @@
+{
+  "id": 93,
+  "letters": [
+    "B",
+    "A",
+    "S",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "BARS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "gymnastic apparatus consisting of two parallel wooden rods supported on uprights",
+      "zh": "n. 馬齒齦；（木、金屬等的）條；柵欄；酒吧（bar的複數形式）"
+    },
+    {
+      "word": "ABS",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "any of a class of composite plastics used to make car bodies and cases for computers and other appliances",
+      "zh": "[計] 絕對, 美國標準局"
+    },
+    {
+      "word": "BAR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a room or establishment where alcoholic drinks are served over a counter",
+      "zh": "n. 條, 棒, 酒吧, 柵, 障礙物"
+    }
+  ],
+  "bonus": [
+    "ARB",
+    "ARS",
+    "BAS",
+    "BRA",
+    "RAS",
+    "SAB",
+    "ARBS",
+    "BRAS"
+  ]
+}

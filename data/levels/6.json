@@ -1,0 +1,27 @@
+{
+  "id": 6,
+  "letters": [
+    "D",
+    "A",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "DAM",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a barrier constructed to contain the flow of water or to keep out the sea",
+      "zh": "n. 水壩, 障礙"
+    },
+    {
+      "word": "MAD",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "roused to anger; - Mark Twain",
+      "zh": "a. 瘋狂的, 發瘋的, 生氣的, 愚蠢的, 狂歡的"
+    }
+  ],
+  "bonus": []
+}

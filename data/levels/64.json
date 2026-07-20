@@ -1,0 +1,51 @@
+{
+  "id": 64,
+  "letters": [
+    "B",
+    "R",
+    "A",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BEAR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "massive plantigrade carnivorous or omnivorous mammals with long shaggy coats and strong claws",
+      "zh": "n. 熊"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "BAR",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a room or establishment where alcoholic drinks are served over a counter",
+      "zh": "n. 條, 棒, 酒吧, 柵, 障礙物"
+    },
+    {
+      "word": "ERA",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a period marked by distinctive character or reckoned from a fixed point or event",
+      "zh": "n. 時代, 紀元, 時期"
+    }
+  ],
+  "bonus": [
+    "ARB",
+    "BRA",
+    "EAR",
+    "REB",
+    "BARE",
+    "BRAE"
+  ]
+}

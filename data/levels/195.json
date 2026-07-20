@@ -1,0 +1,56 @@
+{
+  "id": 195,
+  "letters": [
+    "S",
+    "C",
+    "U",
+    "B",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "CLUBS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a team of professional baseball players who play and travel together",
+      "zh": "n. （撲克牌）梅花；俱樂部；社團（club的複數）"
+    },
+    {
+      "word": "CUBS",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "an awkward and inexperienced youth",
+      "zh": "n. 幼童軍"
+    },
+    {
+      "word": "CLUB",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a team of professional baseball players who play and travel together",
+      "zh": "n. 俱樂部, 木棍, 球棒"
+    },
+    {
+      "word": "BUS",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a vehicle carrying many passengers; used for public transport",
+      "zh": "n. 公共汽車"
+    },
+    {
+      "word": "SUB",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a large sandwich made of a long crusty roll split lengthwise and filled with meats and cheese (and tomato and onion and lettuce and condiments); different names are used in different sections of the United States",
+      "zh": "n. 補充人員, 部下, 潛水艇, 膠層, 訂戶, 傻子"
+    }
+  ],
+  "bonus": [
+    "CUB",
+    "SLUB"
+  ]
+}

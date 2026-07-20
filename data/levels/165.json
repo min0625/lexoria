@@ -1,0 +1,68 @@
+{
+  "id": 165,
+  "letters": [
+    "R",
+    "A",
+    "T",
+    "C",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "CHART",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a visual display of information",
+      "zh": "n. 圖表, 海圖"
+    },
+    {
+      "word": "CAR",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "ACT",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "ART",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "CAT",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    }
+  ],
+  "bonus": [
+    "ARC",
+    "HAT",
+    "RAH",
+    "RAT",
+    "TAR",
+    "ARCH",
+    "CART",
+    "CHAR",
+    "CHAT",
+    "HART",
+    "RATH",
+    "TACH",
+    "TAHR",
+    "RATCH"
+  ]
+}

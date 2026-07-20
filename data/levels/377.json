@@ -1,0 +1,103 @@
+{
+  "id": 377,
+  "letters": [
+    "E",
+    "N",
+    "H",
+    "D",
+    "A",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "HARDEN",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "become hard or harder",
+      "zh": "vt. 使變硬, 使堅強, 使冷酷"
+    },
+    {
+      "word": "HARD",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "not easy; requiring great physical or mental effort to accomplish or comprehend or endure",
+      "zh": "a. 堅硬的, 硬的, 難的, 艱苦的, 困難的, 堅固的, 猛烈的, 艱難的, 結實的, 確實的"
+    },
+    {
+      "word": "READ",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "something that is read",
+      "zh": "v. 讀, 閱讀, 理解"
+    },
+    {
+      "word": "END",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    },
+    {
+      "word": "ARE",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "HAD",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "have or possess, either in a concrete or an abstract sense",
+      "zh": "have的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "AND",
+    "ANE",
+    "DAH",
+    "DEN",
+    "EAR",
+    "EDH",
+    "ERA",
+    "ERN",
+    "HAE",
+    "HEN",
+    "HER",
+    "NAE",
+    "NAH",
+    "RAD",
+    "RAH",
+    "RAN",
+    "RED",
+    "DARE",
+    "DARN",
+    "DEAN",
+    "DEAR",
+    "EARN",
+    "HADE",
+    "HAED",
+    "HAEN",
+    "HAND",
+    "HARE",
+    "HEAD",
+    "HEAR",
+    "HERD",
+    "HERN",
+    "NARD",
+    "NEAR",
+    "NERD",
+    "RAND",
+    "REND",
+    "RHEA",
+    "HARED",
+    "HEARD",
+    "REDAN"
+  ]
+}

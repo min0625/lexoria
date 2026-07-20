@@ -1,0 +1,44 @@
+{
+  "id": 346,
+  "letters": [
+    "S",
+    "A",
+    "H",
+    "W"
+  ],
+  "words": [
+    {
+      "word": "WASH",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a thin coat of water-base paint",
+      "zh": "n. 洗, 洗滌, 沖洗, 洗的衣服, 沖積物, 窪地"
+    },
+    {
+      "word": "HAS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "WAS",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "a state in northwestern United States on the Pacific",
+      "zh": "be的過去式"
+    }
+  ],
+  "bonus": [
+    "ASH",
+    "HAW",
+    "SAW",
+    "SHA",
+    "WHA",
+    "HAWS",
+    "SHAW"
+  ]
+}

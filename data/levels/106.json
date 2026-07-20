@@ -1,0 +1,61 @@
+{
+  "id": 106,
+  "letters": [
+    "P",
+    "T",
+    "E",
+    "S",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "SPENT",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "pass time in a specific way",
+      "zh": "a. 用盡的, 精疲力竭的"
+    },
+    {
+      "word": "SENT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "100 senti equal 1 kroon in Estonia",
+      "zh": "send的過去式和過去分詞"
+    },
+    {
+      "word": "STEP",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "any maneuver made as part of progress toward a goal",
+      "zh": "n. 步驟, 步, 步幅, 腳步聲, 踏級, 步伐, 短距離, 步態, 手段, 等級"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "NET",
+    "PEN",
+    "PES",
+    "PET",
+    "SEN",
+    "TEN",
+    "NEST",
+    "NETS",
+    "PENS",
+    "PENT",
+    "PEST",
+    "PETS",
+    "SEPT",
+    "TENS"
+  ]
+}

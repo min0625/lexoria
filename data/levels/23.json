@@ -1,0 +1,53 @@
+{
+  "id": 23,
+  "letters": [
+    "S",
+    "P",
+    "T",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "POST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the position where someone (as a guard or sentry) stands or is assigned to stand",
+      "zh": "n. 柱, 杆, 準星, 郵件, 郵政, 標竿, 職位, 崗位, 哨所, 兵營"
+    },
+    {
+      "word": "TOPS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the upper part of anything",
+      "zh": "a. 第一流的, 最上等的"
+    },
+    {
+      "word": "STOP",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "the event of something ending",
+      "zh": "n. 停止, 車站, 逗留, 填塞, 障礙, (風琴的)音栓"
+    },
+    {
+      "word": "TOP",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the upper part of anything",
+      "zh": "n. 頂部, 頂端, 極點, 上面, 上部, 頂篷, 最高地位, 首位, 陀螺"
+    }
+  ],
+  "bonus": [
+    "OPS",
+    "OPT",
+    "POT",
+    "SOP",
+    "SOT",
+    "OPTS",
+    "POTS",
+    "SPOT"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": 90,
+  "letters": [
+    "U",
+    "S",
+    "H",
+    "B"
+  ],
+  "words": [
+    {
+      "word": "BUSH",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a low woody perennial plant usually having several major stems",
+      "zh": "n. 矮樹叢"
+    },
+    {
+      "word": "SUB",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a large sandwich made of a long crusty roll split lengthwise and filled with meats and cheese (and tomato and onion and lettuce and condiments); different names are used in different sections of the United States",
+      "zh": "n. 補充人員, 部下, 潛水艇, 膠層, 訂戶, 傻子"
+    },
+    {
+      "word": "BUS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a vehicle carrying many passengers; used for public transport",
+      "zh": "n. 公共汽車"
+    }
+  ],
+  "bonus": [
+    "HUB",
+    "HUBS"
+  ]
+}

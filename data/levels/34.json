@@ -1,0 +1,43 @@
+{
+  "id": 34,
+  "letters": [
+    "E",
+    "R",
+    "E",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "DEER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "distinguished from Bovidae by the male's having solid deciduous antlers",
+      "zh": "n. 鹿"
+    },
+    {
+      "word": "REED",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "tall woody perennial grasses with hollow slender stems especially of the genera Arundo and Phragmites",
+      "zh": "n. 蘆葦, 蘆笛, 簧舌, 纖弱的人"
+    },
+    {
+      "word": "RED",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "ERE",
+    "REE",
+    "DERE",
+    "DREE",
+    "REDE"
+  ]
+}

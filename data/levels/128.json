@@ -1,0 +1,60 @@
+{
+  "id": 128,
+  "letters": [
+    "I",
+    "D",
+    "E",
+    "R",
+    "W"
+  ],
+  "words": [
+    {
+      "word": "WEIRD",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "fate personified; any one of the three Weird Sisters",
+      "zh": "a. 怪異的, 超自然的, 不可思議的"
+    },
+    {
+      "word": "WIDE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "having great (or a certain) extent from one side to the other",
+      "zh": "a. 寬的, 廣闊的, 普遍的, 寬闊的, 廣泛的, 一般的"
+    },
+    {
+      "word": "RED",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "DIE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "DEW",
+    "IRE",
+    "REI",
+    "RID",
+    "WED",
+    "DIRE",
+    "DREW",
+    "IRED",
+    "RIDE",
+    "WEIR",
+    "WIRE",
+    "WIDER",
+    "WIRED",
+    "WRIED"
+  ]
+}

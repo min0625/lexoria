@@ -1,0 +1,62 @@
+{
+  "id": 194,
+  "letters": [
+    "G",
+    "W",
+    "N",
+    "O",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "WRONG",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "that which is contrary to the principles of justice or law",
+      "zh": "a. 錯誤的, 不正當的, 失常的"
+    },
+    {
+      "word": "GROW",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "pass into a condition gradually, take on a specific property or attribute; become",
+      "zh": "vt. 種植, 使長滿"
+    },
+    {
+      "word": "OWN",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "have ownership or possession of",
+      "zh": "n. 自己的"
+    },
+    {
+      "word": "NOW",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "the momentary present",
+      "zh": "adv. 現在, 剛才, 目前"
+    },
+    {
+      "word": "WON",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the basic unit of money in South Korea",
+      "zh": "win的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "GOR",
+    "NOG",
+    "NOR",
+    "ROW",
+    "WOG",
+    "GOWN",
+    "WORN",
+    "GROWN"
+  ]
+}

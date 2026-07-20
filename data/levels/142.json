@@ -1,0 +1,58 @@
+{
+  "id": 142,
+  "letters": [
+    "B",
+    "T",
+    "I",
+    "U",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "BUILT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "make by combining materials and parts",
+      "zh": "build的過去式和過去分詞"
+    },
+    {
+      "word": "BIT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a small piece or quantity of something",
+      "zh": "n. 少量, 馬嚼子, 輔幣"
+    },
+    {
+      "word": "BUT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    },
+    {
+      "word": "TUB",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a relatively large open container that you fill with water and use to wash the body",
+      "zh": "n. 桶, 浴盆"
+    },
+    {
+      "word": "LIT",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the humanistic study of a body of literature",
+      "zh": "light的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "LIB",
+    "TIL",
+    "TUI",
+    "LITU"
+  ]
+}

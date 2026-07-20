@@ -1,0 +1,100 @@
+{
+  "id": 345,
+  "letters": [
+    "L",
+    "T",
+    "A",
+    "D",
+    "S",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "ADULTS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a fully developed person from maturity onward",
+      "zh": "n. 成年人（adult的複數形式）"
+    },
+    {
+      "word": "ADULT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a fully developed person from maturity onward",
+      "zh": "n. 成人, 成蟲"
+    },
+    {
+      "word": "LAST",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "the temporal end; the concluding time",
+      "zh": "a. 最後的, 末尾的, 最近的"
+    },
+    {
+      "word": "SALT",
+      "row": 3,
+      "col": 5,
+      "dir": "down",
+      "def": "a compound formed by replacing hydrogen in an acid by a metal (or a radical that acts like a metal)",
+      "zh": "n. 鹽, 風趣, 刺激"
+    },
+    {
+      "word": "SAT",
+      "row": 6,
+      "col": 3,
+      "dir": "across",
+      "def": "the seventh and last day of the week; observed as the Sabbath by Jews and some Christians",
+      "zh": "n. 飽和度"
+    },
+    {
+      "word": "SAD",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "experiencing or showing sorrow or unhappiness; ; - Christina Rossetti",
+      "zh": "a. 憂愁的, 悲哀的"
+    }
+  ],
+  "bonus": [
+    "ADS",
+    "ALS",
+    "ALT",
+    "DAL",
+    "LAD",
+    "LAS",
+    "LAT",
+    "SAL",
+    "SAU",
+    "TAD",
+    "TAS",
+    "TAU",
+    "UTA",
+    "UTS",
+    "ALTS",
+    "AULD",
+    "DALS",
+    "DAUT",
+    "DUAL",
+    "DUST",
+    "LADS",
+    "LATS",
+    "LAUD",
+    "LUST",
+    "SAUL",
+    "SLAT",
+    "SLUT",
+    "STUD",
+    "TADS",
+    "TAUS",
+    "UTAS",
+    "ADUST",
+    "DAUTS",
+    "DUALS",
+    "LAUDS",
+    "SAULT",
+    "TALUS"
+  ]
+}

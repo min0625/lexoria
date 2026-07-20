@@ -1,0 +1,95 @@
+{
+  "id": 370,
+  "letters": [
+    "S",
+    "I",
+    "E",
+    "K",
+    "P",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SPIKES",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a transient variation in voltage or current",
+      "zh": "n. 釘鞋（spike的複數）"
+    },
+    {
+      "word": "SKIP",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a gait in which steps and hops alternate",
+      "zh": "n. 跳躍, 跳讀"
+    },
+    {
+      "word": "PISS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "liquid excretory product",
+      "zh": "vi. 小便, 下大雨, 抱怨"
+    },
+    {
+      "word": "KISS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the act of caressing with the lips (or an instance thereof)",
+      "zh": "n. 吻"
+    },
+    {
+      "word": "SKI",
+      "row": 1,
+      "col": 6,
+      "dir": "down",
+      "def": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "zh": "n. 滑雪橇"
+    },
+    {
+      "word": "PIE",
+      "row": 3,
+      "col": 5,
+      "dir": "across",
+      "def": "dish baked in pastry-lined pan often with a pastry top",
+      "zh": "n. 餡餅, 財富, 總額, 貪汙受賄, 雜亂, 喜鵲"
+    }
+  ],
+  "bonus": [
+    "ESS",
+    "KEP",
+    "KIP",
+    "PES",
+    "PIS",
+    "PSI",
+    "SEI",
+    "SIP",
+    "SIS",
+    "KEPI",
+    "KEPS",
+    "KIPS",
+    "PIES",
+    "PIKE",
+    "PSIS",
+    "SEIS",
+    "SIKE",
+    "SIPE",
+    "SIPS",
+    "SKEP",
+    "SKIS",
+    "SPIK",
+    "KEPIS",
+    "PIKES",
+    "SIKES",
+    "SIPES",
+    "SKEPS",
+    "SKIES",
+    "SKIPS",
+    "SPIES",
+    "SPIKE",
+    "SPIKS"
+  ]
+}

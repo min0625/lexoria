@@ -1,0 +1,74 @@
+{
+  "id": 426,
+  "letters": [
+    "T",
+    "A",
+    "S",
+    "P",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "PANTS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "underpants worn by women",
+      "zh": "n. 褲子, 長褲, 短襯褲, 女式運動短褲"
+    },
+    {
+      "word": "PAST",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the time that has elapsed",
+      "zh": "n. 過去, 昔時, 往事, 早年經歷, 過去時"
+    },
+    {
+      "word": "PAN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "cooking utensil consisting of a wide metal vessel",
+      "zh": "n. 平鍋, 淺盤, 盆地, 硬土層, 拍攝全景"
+    },
+    {
+      "word": "SAT",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "the seventh and last day of the week; observed as the Sabbath by Jews and some Christians",
+      "zh": "n. 飽和度"
+    },
+    {
+      "word": "TAP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the sound made by a gentle blow",
+      "zh": "n. 輕打, 水龍頭"
+    }
+  ],
+  "bonus": [
+    "ANT",
+    "APT",
+    "ASP",
+    "NAP",
+    "PAS",
+    "PAT",
+    "SAP",
+    "SPA",
+    "TAN",
+    "TAS",
+    "ANTS",
+    "NAPS",
+    "PANS",
+    "PANT",
+    "PATS",
+    "SNAP",
+    "SPAN",
+    "SPAT",
+    "TANS",
+    "TAPS"
+  ]
+}

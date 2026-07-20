@@ -1,0 +1,82 @@
+{
+  "id": 424,
+  "letters": [
+    "R",
+    "L",
+    "A",
+    "O",
+    "U",
+    "B"
+  ],
+  "words": [
+    {
+      "word": "LABOUR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a social class comprising those who do manual labor or work for wages",
+      "zh": "n. 勞動, 努力, 工作, 勞工, 分娩"
+    },
+    {
+      "word": "LABOR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a social class comprising those who do manual labor or work for wages",
+      "zh": "n. 勞動, 努力, 工作, 勞工, 分娩"
+    },
+    {
+      "word": "LAB",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a workplace for the conduct of scientific research",
+      "zh": "n. 實驗室, 研究室"
+    },
+    {
+      "word": "BAR",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a room or establishment where alcoholic drinks are served over a counter",
+      "zh": "n. 條, 棒, 酒吧, 柵, 障礙物"
+    },
+    {
+      "word": "ROB",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "take something away by force or without the consent of the owner",
+      "zh": "v. 搶奪, 搶掠, 剝奪"
+    }
+  ],
+  "bonus": [
+    "ABO",
+    "ALB",
+    "ARB",
+    "BAL",
+    "BOA",
+    "BRA",
+    "BRO",
+    "BUR",
+    "LAR",
+    "LOB",
+    "OAR",
+    "ORA",
+    "ORB",
+    "OUR",
+    "RUB",
+    "URB",
+    "BLUR",
+    "BOAR",
+    "BOLA",
+    "BORA",
+    "BURA",
+    "BURL",
+    "LOUR",
+    "ORAL",
+    "BOLAR",
+    "BORAL",
+    "LOBAR"
+  ]
+}

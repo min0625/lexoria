@@ -1,0 +1,95 @@
+{
+  "id": 447,
+  "letters": [
+    "D",
+    "L",
+    "E",
+    "I",
+    "A",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "ALLIED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "become an ally or associate, as by a treaty or marriage",
+      "zh": "a. 聯盟的, 聯姻的, 聯絡起來的"
+    },
+    {
+      "word": "LEAD",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "an advantage held by a competitor in a race",
+      "zh": "n. 鉛, 鉛條, 領導, 超前量, 領引, 榜樣, 主角, 導線"
+    },
+    {
+      "word": "IDEA",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the content of cognition; the main thing you are thinking about",
+      "zh": "n. 主意, 辦法, 理想, 思想, 概念, 意見"
+    },
+    {
+      "word": "DEAL",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "a particular instance of buying or selling",
+      "zh": "n. 交易, 協定, 數量, 買賣, 松木板"
+    },
+    {
+      "word": "LED",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "ALL",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "quantifier; used with either mass or count nouns to indicate the whole number or amount of or every one of a class",
+      "zh": "a. 所有的, 全部的, 一切的"
+    }
+  ],
+  "bonus": [
+    "AID",
+    "AIL",
+    "ALE",
+    "DAL",
+    "DEL",
+    "DIE",
+    "ELD",
+    "ELL",
+    "ILL",
+    "LAD",
+    "LEA",
+    "LEI",
+    "LID",
+    "LIE",
+    "AIDE",
+    "DALE",
+    "DEIL",
+    "DELI",
+    "DELL",
+    "DIAL",
+    "DIEL",
+    "DILL",
+    "IDLE",
+    "ILEA",
+    "LADE",
+    "LAID",
+    "LEAL",
+    "LIED",
+    "AILED",
+    "IDEAL",
+    "ILEAL",
+    "LADLE"
+  ]
+}

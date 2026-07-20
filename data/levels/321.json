@@ -1,0 +1,73 @@
+{
+  "id": 321,
+  "letters": [
+    "A",
+    "T",
+    "L",
+    "U",
+    "A",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "ACTUAL",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "presently existing in fact and not merely potential or possible",
+      "zh": "a. 真實的, 實際的, 現行的"
+    },
+    {
+      "word": "CULT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "followers of an exclusive system of religious beliefs and practices",
+      "zh": "n. 膜拜, 禮拜式, 祭儀, 一群信徒"
+    },
+    {
+      "word": "CAT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    },
+    {
+      "word": "CUT",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a share of the profits",
+      "zh": "n. 切口, 割傷, 降低, 切, 割, 砍, 削, 傷口, 削減, 縮短, 刪節, 通路"
+    },
+    {
+      "word": "ALT",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "angular distance above the horizon (especially of a celestial object)",
+      "zh": "n. 高音調"
+    },
+    {
+      "word": "ACT",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    }
+  ],
+  "bonus": [
+    "AAL",
+    "ALA",
+    "LAC",
+    "LAT",
+    "TAU",
+    "UTA",
+    "ACTA",
+    "CAUL",
+    "TALA",
+    "TALC"
+  ]
+}

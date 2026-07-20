@@ -1,0 +1,87 @@
+{
+  "id": 486,
+  "letters": [
+    "O",
+    "I",
+    "C",
+    "M",
+    "A",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "ATOMIC",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "of or relating to or comprising atoms",
+      "zh": "a. 原子的, 原子能的"
+    },
+    {
+      "word": "CAT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    },
+    {
+      "word": "TOM",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(ethnic slur) offensive and derogatory name for a Black man who is abjectly servile and deferential to Whites",
+      "zh": "n. 雄性動物, 雄貓"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "AIM",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "an anticipated outcome that is intended or that guides your planned actions",
+      "zh": "n. 目標, 瞄準, 擊中目標的能力"
+    },
+    {
+      "word": "MAC",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "a waterproof raincoat made of rubberized fabric",
+      "zh": "n. 防水膠布, (英)雨衣, 老兄, 老弟"
+    }
+  ],
+  "bonus": [
+    "AIT",
+    "AMI",
+    "CAM",
+    "COT",
+    "MAT",
+    "MOA",
+    "MOC",
+    "MOT",
+    "OAT",
+    "OCA",
+    "TAM",
+    "TAO",
+    "TIC",
+    "ATOM",
+    "CIAO",
+    "COAT",
+    "COMA",
+    "IOTA",
+    "MICA",
+    "MOAT",
+    "OMIT",
+    "OTIC",
+    "TACO",
+    "COATI"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": 164,
+  "letters": [
+    "S",
+    "A",
+    "T",
+    "E",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SEATS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "an area that includes places where several people can sit",
+      "zh": "n. 座椅, 座位（seat的複數形式）"
+    },
+    {
+      "word": "EAST",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the cardinal compass point that is at 90 degrees",
+      "zh": "n. 東方, 東"
+    },
+    {
+      "word": "EAT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "SET",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ASS",
+    "ATE",
+    "ESS",
+    "ETA",
+    "SAE",
+    "SAT",
+    "SEA",
+    "TAE",
+    "TAS",
+    "TEA",
+    "ATES",
+    "EATS",
+    "ETAS",
+    "SATE",
+    "SEAS",
+    "SEAT",
+    "SETA",
+    "SETS",
+    "TASS",
+    "TEAS",
+    "ASSET",
+    "EASTS",
+    "SATES",
+    "TASSE"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "id": 390,
+  "letters": [
+    "S",
+    "R",
+    "O",
+    "V",
+    "F",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "FAVORS",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "an act of gracious kindness",
+      "zh": "n. 好意；支援；幫忙（favor的複數）"
+    },
+    {
+      "word": "FAVOR",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "an act of gracious kindness",
+      "zh": "n. 好意, 喜愛"
+    },
+    {
+      "word": "SOFA",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "an upholstered seat for more than one person",
+      "zh": "n. 沙發"
+    },
+    {
+      "word": "FAR",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    },
+    {
+      "word": "VAR",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a unit of electrical power in an AC circuit equal to the power dissipated when 1 volt produces a current of 1 ampere",
+      "zh": "[計] 增值二手商"
+    }
+  ],
+  "bonus": [
+    "ARF",
+    "ARS",
+    "AVO",
+    "FAS",
+    "FOR",
+    "FRO",
+    "OAF",
+    "OAR",
+    "ORA",
+    "ORS",
+    "OVA",
+    "RAS",
+    "VAS",
+    "ARFS",
+    "ARVO",
+    "AVOS",
+    "FARO",
+    "FORA",
+    "OAFS",
+    "OARS",
+    "OSAR",
+    "SOAR",
+    "SORA",
+    "VARS",
+    "ARVOS",
+    "FAROS",
+    "SAVOR",
+    "SOFAR"
+  ]
+}

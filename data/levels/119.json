@@ -1,0 +1,76 @@
+{
+  "id": 119,
+  "letters": [
+    "E",
+    "S",
+    "O",
+    "T",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "STOLE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a wide scarf worn about their shoulders by women",
+      "zh": "n. 女用披肩, 聖衣"
+    },
+    {
+      "word": "LOST",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "people who are destined to die soon",
+      "zh": "a. 失去的, 遺失的, 迷惑的"
+    },
+    {
+      "word": "LET",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    },
+    {
+      "word": "LOT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "(often followed by `of') a large number or amount or extent",
+      "zh": "n. 運氣, 籤, 抽籤, 份額, 許多, 一堆"
+    },
+    {
+      "word": "SET",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "OES",
+    "OLE",
+    "OSE",
+    "SEL",
+    "SOL",
+    "SOT",
+    "TEL",
+    "TOE",
+    "LEST",
+    "LETS",
+    "LOSE",
+    "LOTS",
+    "OLES",
+    "SLOE",
+    "SLOT",
+    "SOLE",
+    "TELS",
+    "TOES",
+    "TOLE",
+    "TELOS",
+    "TOLES"
+  ]
+}

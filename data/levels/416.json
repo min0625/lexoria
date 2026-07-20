@@ -1,0 +1,97 @@
+{
+  "id": 416,
+  "letters": [
+    "E",
+    "E",
+    "T",
+    "N",
+    "W",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "NEWEST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "not of long duration; having just (or relatively recently) come into being or been made or acquired or discovered",
+      "zh": "最新"
+    },
+    {
+      "word": "SEEN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "perceive by sight or have the power to perceive by sight",
+      "zh": "see的過去分詞"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "NEW",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "not of long duration; having just (or relatively recently) come into being or been made or acquired or discovered",
+      "zh": "a. 新的, 陌生的, 最近的, 不熟悉的"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ENS",
+    "EWE",
+    "NEE",
+    "NET",
+    "SEN",
+    "SEW",
+    "TEE",
+    "TEN",
+    "TEW",
+    "WEE",
+    "WEN",
+    "WET",
+    "EWES",
+    "NEST",
+    "NETS",
+    "NEWS",
+    "NEWT",
+    "SENE",
+    "SENT",
+    "SEWN",
+    "STEW",
+    "TEEN",
+    "TEES",
+    "TENS",
+    "TEWS",
+    "TWEE",
+    "WEEN",
+    "WEES",
+    "WEET",
+    "WENS",
+    "WENT",
+    "WEST",
+    "WETS",
+    "NEWTS",
+    "SENTE",
+    "SWEET",
+    "TEENS",
+    "TENSE",
+    "TWEEN",
+    "WEENS",
+    "WEEST",
+    "WEETS"
+  ]
+}

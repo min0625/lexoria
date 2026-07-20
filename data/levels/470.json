@@ -1,0 +1,78 @@
+{
+  "id": 470,
+  "letters": [
+    "W",
+    "A",
+    "O",
+    "R",
+    "R",
+    "I",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "WARRIOR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "someone engaged in or experienced in warfare",
+      "zh": "n. 戰士, 勇士, 武士, 鼓吹戰爭的人, 戰鬥, 尚武"
+    },
+    {
+      "word": "ARROW",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a mark to indicate a direction or relation",
+      "zh": "n. 箭, 箭狀物, 箭頭記號"
+    },
+    {
+      "word": "ROAR",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a deep prolonged loud noise",
+      "zh": "n. 吼, 咆哮, 轟鳴"
+    },
+    {
+      "word": "WAR",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "the waging of armed conflict against an enemy",
+      "zh": "n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"
+    },
+    {
+      "word": "AIR",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    },
+    {
+      "word": "RAW",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "informal terms for nakedness",
+      "zh": "n. 擦傷處, 半成品"
+    },
+    {
+      "word": "ROW",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an arrangement of objects or people side by side in a line",
+      "zh": "n. 排, 行, 街道, 划船, 吵鬧"
+    }
+  ],
+  "bonus": [
+    "OAR",
+    "ORA",
+    "RIA",
+    "ORRA",
+    "WAIR",
+    "WIRRA"
+  ]
+}

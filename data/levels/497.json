@@ -1,0 +1,77 @@
+{
+  "id": 497,
+  "letters": [
+    "L",
+    "P",
+    "Y",
+    "S",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "PLAYS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a dramatic work intended for performance by actors on a stage",
+      "zh": "n. 戲劇集；戲劇（play的複數）"
+    },
+    {
+      "word": "PLAY",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a dramatic work intended for performance by actors on a stage",
+      "zh": "n. 遊戲, 遊玩, 玩笑, 運動, 比賽, 賭博, 跳動, 表演, 劇本"
+    },
+    {
+      "word": "PAY",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "something that remunerates",
+      "zh": "n. 薪資, 付款, 補償"
+    },
+    {
+      "word": "SAY",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "the chance to speak",
+      "zh": "vt. 說, 講, 念, 說明, 指明"
+    }
+  ],
+  "bonus": [
+    "ALP",
+    "ALS",
+    "ASP",
+    "AYS",
+    "LAP",
+    "LAS",
+    "LAY",
+    "PAL",
+    "PAS",
+    "PLY",
+    "PYA",
+    "SAL",
+    "SAP",
+    "SLY",
+    "SPA",
+    "SPY",
+    "YAP",
+    "ALPS",
+    "LAPS",
+    "LAYS",
+    "PALS",
+    "PALY",
+    "PAYS",
+    "PYAS",
+    "SALP",
+    "SLAP",
+    "SLAY",
+    "SPAY",
+    "YAPS",
+    "PALSY",
+    "SPLAY"
+  ]
+}

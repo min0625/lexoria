@@ -1,0 +1,50 @@
+{
+  "id": 343,
+  "letters": [
+    "R",
+    "K",
+    "I",
+    "C",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "TRICK",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a cunning or deceitful action or device",
+      "zh": "n. 詭計, 欺詐, 謀略, 惡作劇, 習慣, 決竅"
+    },
+    {
+      "word": "RICK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a painful muscle spasm especially in the neck or back (`rick' and `wrick' are British)",
+      "zh": "n. 草堆"
+    },
+    {
+      "word": "TICK",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a metallic tapping sound",
+      "zh": "n. 滴答聲, 一瞬間, 壁蝨, 褥套, 信用, 賒欠"
+    },
+    {
+      "word": "KIT",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a case for containing a set of articles",
+      "zh": "n. 裝備, 工具箱, 成套工具"
+    }
+  ],
+  "bonus": [
+    "ICK",
+    "IRK",
+    "KIR",
+    "TIC"
+  ]
+}

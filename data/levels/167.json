@@ -1,0 +1,61 @@
+{
+  "id": 167,
+  "letters": [
+    "N",
+    "C",
+    "U",
+    "O",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "COUNT",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "the total number counted",
+      "zh": "vt. 計算, 視為"
+    },
+    {
+      "word": "NOT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "negation of a word or group of words",
+      "zh": "adv. 不, 非, 未"
+    },
+    {
+      "word": "OUT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(baseball) a failure by a batter or runner to reach a base safely in baseball",
+      "zh": "a. 外面的, 熄滅的, 結束的"
+    },
+    {
+      "word": "CUT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a share of the profits",
+      "zh": "n. 切口, 割傷, 降低, 切, 割, 砍, 削, 傷口, 削減, 縮短, 刪節, 通路"
+    },
+    {
+      "word": "TON",
+      "row": 2,
+      "col": 4,
+      "dir": "across",
+      "def": "a United States unit of weight equivalent to 2000 pounds",
+      "zh": "n. 噸"
+    }
+  ],
+  "bonus": [
+    "CON",
+    "COT",
+    "NUT",
+    "TUN",
+    "CUNT",
+    "UNCO",
+    "UNTO"
+  ]
+}

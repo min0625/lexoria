@@ -1,0 +1,71 @@
+{
+  "id": 196,
+  "letters": [
+    "I",
+    "L",
+    "K",
+    "S",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "LINKS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a golf course that is built on sandy ground near a shore",
+      "zh": "n. 高爾夫球場"
+    },
+    {
+      "word": "SKIN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a natural protective body covering and site of the sense of touch",
+      "zh": "n. 皮膚, 皮"
+    },
+    {
+      "word": "SINK",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "plumbing fixture consisting of a water basin fixed to a wall or floor and having a drainpipe",
+      "zh": "n. 藏垢的場所, 溝渠, 汙水槽"
+    },
+    {
+      "word": "LINK",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "the means of connection between things linked in series",
+      "zh": "n. 環, 連結物, 連結, 火把"
+    },
+    {
+      "word": "SIN",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    }
+  ],
+  "bonus": [
+    "ILK",
+    "INK",
+    "INS",
+    "KIN",
+    "LIN",
+    "LIS",
+    "NIL",
+    "SKI",
+    "ILKS",
+    "INKS",
+    "KILN",
+    "KINS",
+    "LINS",
+    "NILS",
+    "SILK",
+    "KILNS",
+    "SLINK"
+  ]
+}

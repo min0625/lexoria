@@ -1,0 +1,92 @@
+{
+  "id": 273,
+  "letters": [
+    "R",
+    "P",
+    "E",
+    "H",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "HARPER",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "someone who plays the harp",
+      "zh": "n. 哈珀（英語姓氏）"
+    },
+    {
+      "word": "RAPE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "Eurasian plant cultivated for its seed and as a forage crop",
+      "zh": "n. 搶奪, 掠奪, 強姦, 葡萄渣, 蕓薹"
+    },
+    {
+      "word": "HEAR",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "perceive (sound) via the auditory sense",
+      "zh": "vt. 聽到, 傾聽, 聽說, 審理"
+    },
+    {
+      "word": "RARE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "not widely known; especially valued for its uncommonness",
+      "zh": "a. 稀罕的, 罕有的, 珍奇的, 稀薄的, 半熟的, 非常好的"
+    },
+    {
+      "word": "ARE",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "ERA",
+      "row": 4,
+      "col": 5,
+      "dir": "down",
+      "def": "a period marked by distinctive character or reckoned from a fixed point or event",
+      "zh": "n. 時代, 紀元, 時期"
+    }
+  ],
+  "bonus": [
+    "APE",
+    "EAR",
+    "ERR",
+    "HAE",
+    "HAP",
+    "HEP",
+    "HER",
+    "PAH",
+    "PAR",
+    "PEA",
+    "PEH",
+    "PER",
+    "RAH",
+    "RAP",
+    "REP",
+    "APER",
+    "EPHA",
+    "HARE",
+    "HARP",
+    "HEAP",
+    "PARE",
+    "PARR",
+    "PEAR",
+    "REAP",
+    "REAR",
+    "RHEA",
+    "PARER",
+    "RAPER",
+    "RAPHE"
+  ]
+}

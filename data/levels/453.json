@@ -1,0 +1,49 @@
+{
+  "id": 453,
+  "letters": [
+    "A",
+    "P",
+    "R",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "CRAP",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "obscene terms for feces",
+      "zh": "n. 廢物, 廢話"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "ARC",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "electrical conduction through a gas in an applied electric field",
+      "zh": "n. 弧, 弧形, 弓形, 弧光"
+    },
+    {
+      "word": "CAP",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a tight-fitting headdress",
+      "zh": "n. 蓋子, 帽子"
+    }
+  ],
+  "bonus": [
+    "PAC",
+    "PAR",
+    "RAP",
+    "CARP"
+  ]
+}

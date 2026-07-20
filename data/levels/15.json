@@ -1,0 +1,29 @@
+{
+  "id": 15,
+  "letters": [
+    "T",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "ART",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "RAT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "any of various long-tailed rodents similar to but larger than a mouse",
+      "zh": "n. 鼠, 卑鄙的人, 破壞者, 變節者"
+    }
+  ],
+  "bonus": [
+    "TAR"
+  ]
+}

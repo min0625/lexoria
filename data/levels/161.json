@@ -1,0 +1,51 @@
+{
+  "id": 161,
+  "letters": [
+    "P",
+    "T",
+    "Y",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "PETTY",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "larceny of property having a value less than some amount (the amount varies by locale)",
+      "zh": "a. 瑣碎的, 小規模的, 小氣的, 委瑣的"
+    },
+    {
+      "word": "TYPE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a subdivision of a particular kind of thing",
+      "zh": "n. 型別, 樣式, 典型, 榜樣, 標誌, 符號, 型, 式"
+    },
+    {
+      "word": "YET",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "up to the present time",
+      "zh": "adv. 還, 尚, 仍然, 已經, 然而"
+    },
+    {
+      "word": "PET",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a domesticated animal kept for companionship or amusement",
+      "zh": "n. 寵物, 受寵愛的人, 寵壞的孩子, 不悅, 生氣"
+    }
+  ],
+  "bonus": [
+    "PYE",
+    "TET",
+    "TYE",
+    "YEP",
+    "YETT"
+  ]
+}

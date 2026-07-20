@@ -1,0 +1,39 @@
+{
+  "id": 353,
+  "letters": [
+    "L",
+    "O",
+    "F",
+    "W"
+  ],
+  "words": [
+    {
+      "word": "WOLF",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "any of various predatory carnivorous canine mammals of North America and Eurasia that usually hunt in packs",
+      "zh": "n. 狼, 殘忍貪婪之人, 極度窮困"
+    },
+    {
+      "word": "FLOW",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the motion characteristic of fluids (liquids or gases)",
+      "zh": "n. 流程, 流動, 流量, 洋溢, 氾濫, 漲潮"
+    },
+    {
+      "word": "LOW",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "an air mass of lower pressure; often brings precipitation",
+      "zh": "n. 低點, 低價, 低, 牛叫聲"
+    }
+  ],
+  "bonus": [
+    "OWL",
+    "FOWL"
+  ]
+}

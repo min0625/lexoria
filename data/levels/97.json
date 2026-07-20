@@ -1,0 +1,40 @@
+{
+  "id": 97,
+  "letters": [
+    "G",
+    "E",
+    "W",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "WAGE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "something that remunerates",
+      "zh": "n. 工資, 報應, 報償"
+    },
+    {
+      "word": "AGE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "AWE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an overwhelming feeling of wonder or admiration",
+      "zh": "n. 敬畏"
+    }
+  ],
+  "bonus": [
+    "GAE",
+    "WAE",
+    "WAG"
+  ]
+}

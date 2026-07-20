@@ -1,0 +1,89 @@
+{
+  "id": 205,
+  "letters": [
+    "E",
+    "G",
+    "R",
+    "D",
+    "E",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "GREEDY",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "immoderately desirous of acquiring e.g. wealth",
+      "zh": "a. 貪婪的, 貪得的, 貪吃的"
+    },
+    {
+      "word": "EDGE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the boundary of a surface",
+      "zh": "n. 邊緣, 尖銳, 刀刃, 優勢"
+    },
+    {
+      "word": "EYE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "the organ of sight",
+      "zh": "n. 眼睛, 視力, 看"
+    },
+    {
+      "word": "DRY",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a reformer who opposes the use of intoxicating beverages",
+      "zh": "a. 乾的, 無酒的, 枯燥無味的, 乾燥的"
+    },
+    {
+      "word": "RED",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEE",
+    "DEY",
+    "DYE",
+    "ERE",
+    "ERG",
+    "GED",
+    "GEE",
+    "GEY",
+    "REE",
+    "REG",
+    "RYE",
+    "DEER",
+    "DERE",
+    "DREE",
+    "DREG",
+    "DYER",
+    "EDGY",
+    "EERY",
+    "EGER",
+    "EYED",
+    "EYER",
+    "EYRE",
+    "GEED",
+    "GREE",
+    "GREY",
+    "GYRE",
+    "REDE",
+    "REED",
+    "EDGER",
+    "GREED",
+    "GYRED",
+    "REDYE",
+    "REEDY",
+    "GREYED"
+  ]
+}

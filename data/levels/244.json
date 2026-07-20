@@ -1,0 +1,79 @@
+{
+  "id": 244,
+  "letters": [
+    "B",
+    "G",
+    "R",
+    "U",
+    "E",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "BURGER",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "United States jurist appointed chief justice of the United States Supreme Court by Richard Nixon (1907-1995)",
+      "zh": "n. 漢堡包（等於hamburger）"
+    },
+    {
+      "word": "URGE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "an instinctive motive",
+      "zh": "n. 衝動, 推動力, 迫切的要求"
+    },
+    {
+      "word": "BEG",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "call upon in supplication; entreat",
+      "zh": "v. 乞求, 乞討, 請求"
+    },
+    {
+      "word": "BUG",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "general term for any insect or similar creeping or crawling invertebrate",
+      "zh": "n. 錯誤, 蟲, 病菌, 缺陷, 竊聽器, 癖好, 防盜報警器, 雙座小汽車, 要人"
+    },
+    {
+      "word": "RUG",
+      "row": 1,
+      "col": 7,
+      "dir": "down",
+      "def": "floor covering consisting of a piece of thick heavy fabric (usually with nap or pile)",
+      "zh": "n. 小塊地毯, 揭露某人"
+    },
+    {
+      "word": "RUB",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "an unforeseen obstacle",
+      "zh": "n. 摩擦, 困難, 障礙, 磨損處"
+    }
+  ],
+  "bonus": [
+    "BRR",
+    "BUR",
+    "ERG",
+    "ERR",
+    "REB",
+    "REG",
+    "RUE",
+    "URB",
+    "BERG",
+    "BURG",
+    "BURR",
+    "GRUB",
+    "GRUE",
+    "RUBE",
+    "RUER",
+    "URGER"
+  ]
+}

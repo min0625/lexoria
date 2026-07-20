@@ -1,0 +1,90 @@
+{
+  "id": 218,
+  "letters": [
+    "R",
+    "E",
+    "E",
+    "T",
+    "M",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "REMOTE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a device that can be used to control a machine or apparatus from a distance",
+      "zh": "a. 遙遠的, 偏僻的, 疏遠的, 微少的"
+    },
+    {
+      "word": "TERM",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a word or expression used for some particular thing",
+      "zh": "n. 術語, 專有名詞, 期限, 學期, 任期, 條件, 價錢, 關係, 地位, 項, 界石"
+    },
+    {
+      "word": "MORE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "English statesman who opposed Henry VIII's divorce from Catherine of Aragon and was imprisoned and beheaded; recalled for his concept of Utopia, the ideal state",
+      "zh": "n. 更多"
+    },
+    {
+      "word": "MEET",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a meeting at which a number of athletic contests are held",
+      "zh": "n. 會, 集會"
+    },
+    {
+      "word": "MET",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "come together",
+      "zh": "meet的過去式和過去分詞"
+    }
+  ],
+  "bonus": [
+    "EME",
+    "ERE",
+    "MOR",
+    "MOT",
+    "ORE",
+    "ORT",
+    "REE",
+    "REM",
+    "RET",
+    "ROE",
+    "ROM",
+    "ROT",
+    "TEE",
+    "TOE",
+    "TOM",
+    "TOR",
+    "MERE",
+    "METE",
+    "MORT",
+    "MOTE",
+    "OMER",
+    "RETE",
+    "ROTE",
+    "TEEM",
+    "TOME",
+    "TORE",
+    "TREE",
+    "EMOTE",
+    "METER",
+    "METRE",
+    "METRO",
+    "REMET",
+    "RETEM",
+    "EMOTER",
+    "METEOR"
+  ]
+}

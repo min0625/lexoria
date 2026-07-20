@@ -1,0 +1,80 @@
+{
+  "id": 222,
+  "letters": [
+    "R",
+    "R",
+    "A",
+    "F",
+    "E",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "FARMER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who operates a farm",
+      "zh": "n. 農夫, 農場主"
+    },
+    {
+      "word": "RARE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "not widely known; especially valued for its uncommonness",
+      "zh": "a. 稀罕的, 罕有的, 珍奇的, 稀薄的, 半熟的, 非常好的"
+    },
+    {
+      "word": "FEAR",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "an emotion experienced in anticipation of some specific pain or danger (usually accompanied by a desire to flee or fight)",
+      "zh": "n. 恐怖, 害怕, 擔心"
+    },
+    {
+      "word": "ARE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "FAR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    }
+  ],
+  "bonus": [
+    "ARF",
+    "ARM",
+    "EAR",
+    "EMF",
+    "ERA",
+    "ERR",
+    "FEM",
+    "FER",
+    "MAE",
+    "MAR",
+    "RAM",
+    "REF",
+    "REM",
+    "FAME",
+    "FARE",
+    "FARM",
+    "FRAE",
+    "MARE",
+    "REAM",
+    "REAR",
+    "ARMER",
+    "FARER",
+    "FRAME",
+    "REARM",
+    "FRAMER"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": 59,
+  "letters": [
+    "A",
+    "L",
+    "T",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "TALL",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a garment size for a tall person",
+      "zh": "a. 高的, 長的, 誇大的"
+    },
+    {
+      "word": "ALT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "angular distance above the horizon (especially of a celestial object)",
+      "zh": "n. 高音調"
+    },
+    {
+      "word": "ALL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "quantifier; used with either mass or count nouns to indicate the whole number or amount of or every one of a class",
+      "zh": "a. 所有的, 全部的, 一切的"
+    }
+  ],
+  "bonus": [
+    "LAT"
+  ]
+}

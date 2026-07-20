@@ -1,0 +1,85 @@
+{
+  "id": 305,
+  "letters": [
+    "L",
+    "U",
+    "A",
+    "M",
+    "Y",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "ASYLUM",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a shelter from danger or hardship",
+      "zh": "n. 庇護, 收容所"
+    },
+    {
+      "word": "LAY",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a narrative song with a recurrent refrain",
+      "zh": "vt. 放置, 產, 鋪設, 佈置, 提出, 平息"
+    },
+    {
+      "word": "SUM",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a quantity of money",
+      "zh": "n. 總數, 總和, 金額, 概要, 頂點"
+    },
+    {
+      "word": "SAY",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the chance to speak",
+      "zh": "vt. 說, 講, 念, 說明, 指明"
+    },
+    {
+      "word": "MAY",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the month following April and preceding June",
+      "zh": "n. 五月"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "AMU",
+    "AYS",
+    "LAM",
+    "LAS",
+    "LUM",
+    "MAS",
+    "MUS",
+    "SAL",
+    "SAU",
+    "SLY",
+    "YAM",
+    "YUM",
+    "ALMS",
+    "ALUM",
+    "AMUS",
+    "AMYL",
+    "LAMS",
+    "LAYS",
+    "LUMS",
+    "MAUL",
+    "MAYS",
+    "SAUL",
+    "SLAM",
+    "SLAY",
+    "SLUM",
+    "YAMS",
+    "ALUMS",
+    "AMYLS",
+    "MAULS"
+  ]
+}

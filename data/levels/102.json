@@ -1,0 +1,62 @@
+{
+  "id": 102,
+  "letters": [
+    "N",
+    "I",
+    "E",
+    "H",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "NICHE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a position particularly well suited to the person who occupies it",
+      "zh": "n. 壁龕"
+    },
+    {
+      "word": "CHIN",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the protruding part of the lower jaw",
+      "zh": "n. 下巴, 頦"
+    },
+    {
+      "word": "NICE",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a city in southeastern France on the Mediterranean; the leading resort on the French Riviera",
+      "zh": "a. 美好的, 和藹的, 正派的, 做得好的, 精密的, 細微的, 挑剔的, 謹慎的"
+    },
+    {
+      "word": "INCH",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a unit of length equal to one twelfth of a foot",
+      "zh": "n. 英寸, 身高, 小島"
+    },
+    {
+      "word": "ICE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    }
+  ],
+  "bonus": [
+    "CHI",
+    "HEN",
+    "HIC",
+    "HIE",
+    "HIN",
+    "ICH",
+    "CINE",
+    "CHINE"
+  ]
+}

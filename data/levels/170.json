@@ -1,0 +1,70 @@
+{
+  "id": 170,
+  "letters": [
+    "I",
+    "O",
+    "C",
+    "S",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "COINS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a flat metal piece (usually a disc) used as money",
+      "zh": "n. 硬幣（coin的複數）"
+    },
+    {
+      "word": "SONIC",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "(of speed) having or caused by speed approximately equal to that of sound in air at sea level",
+      "zh": "a. 音波的, 音速的, 聲音的"
+    },
+    {
+      "word": "SIN",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    },
+    {
+      "word": "CON",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an argument opposed to a proposal",
+      "zh": "vt. 精讀, 仔細研究, 默記"
+    },
+    {
+      "word": "SON",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "COS",
+    "INS",
+    "ION",
+    "NOS",
+    "ONS",
+    "SIC",
+    "CION",
+    "COIN",
+    "CONI",
+    "CONS",
+    "ICON",
+    "IONS",
+    "CIONS",
+    "ICONS",
+    "SCION"
+  ]
+}

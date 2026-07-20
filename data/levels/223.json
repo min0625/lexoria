@@ -1,0 +1,85 @@
+{
+  "id": 223,
+  "letters": [
+    "A",
+    "N",
+    "B",
+    "I",
+    "K",
+    "G"
+  ],
+  "words": [
+    {
+      "word": "BAKING",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "making bread or cake or pastry etc.",
+      "zh": "n. 烘焙, 一次烘焙的量"
+    },
+    {
+      "word": "BANK",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "sloping land (especially the slope beside a body of water)",
+      "zh": "n. 銀行, 堤, 岸"
+    },
+    {
+      "word": "KING",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a male sovereign; ruler of a kingdom",
+      "zh": "n. 國王, 君主"
+    },
+    {
+      "word": "GAIN",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "a quantity that is added",
+      "zh": "n. 增益, 獲得, 利潤, 收穫, 增加"
+    },
+    {
+      "word": "BIG",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "above average in size or number or quantity or magnitude or extent",
+      "zh": "a. 大的, 重要的"
+    },
+    {
+      "word": "BAG",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "a flexible container with a single opening",
+      "zh": "n. 袋子, 袋狀物"
+    }
+  ],
+  "bonus": [
+    "AIN",
+    "ANI",
+    "BAN",
+    "BIN",
+    "GAB",
+    "GAN",
+    "GIB",
+    "GIN",
+    "INK",
+    "KAB",
+    "KIN",
+    "NAB",
+    "NAG",
+    "NIB",
+    "AGIN",
+    "AKIN",
+    "BANG",
+    "BANI",
+    "GINK",
+    "KAIN",
+    "KINA",
+    "KIANG"
+  ]
+}

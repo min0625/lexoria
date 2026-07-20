@@ -1,0 +1,49 @@
+{
+  "id": 38,
+  "letters": [
+    "T",
+    "I",
+    "F",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "FITS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a display of bad temper",
+      "zh": "n. 合身的衣服；陣發；一陣（fit的複數）"
+    },
+    {
+      "word": "FIT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a display of bad temper",
+      "zh": "n. 適宜, 合身, 發作, 痙攣"
+    },
+    {
+      "word": "SIT",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "IFS",
+    "TIS",
+    "FIST",
+    "SIFT"
+  ]
+}

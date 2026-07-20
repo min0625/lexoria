@@ -1,0 +1,83 @@
+{
+  "id": 158,
+  "letters": [
+    "E",
+    "L",
+    "S",
+    "V",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "SLAVE",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a person who is owned by someone",
+      "zh": "n. 奴隸, 從動裝置, 卑鄙的人"
+    },
+    {
+      "word": "SEAL",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "fastener consisting of a resinous composition that is plastic when warm; used for sealing documents and parcels and letters",
+      "zh": "n. 印章, 封條, 海豹, 海豹皮, 火漆, 封蠟, 璽, 保證, 批准, 象徵, 標誌"
+    },
+    {
+      "word": "SAVE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(sports) the act of preventing the opposition from scoring",
+      "zh": "n. 救球"
+    },
+    {
+      "word": "SALE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a particular instance of selling",
+      "zh": "n. 出售, 賣, 拍賣, 銷售額, 廉價出售"
+    },
+    {
+      "word": "SEA",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALS",
+    "AVE",
+    "ELS",
+    "LAS",
+    "LAV",
+    "LEA",
+    "LEV",
+    "SAE",
+    "SAL",
+    "SEL",
+    "VAS",
+    "ALES",
+    "AVES",
+    "LASE",
+    "LAVE",
+    "LAVS",
+    "LEAS",
+    "LEVA",
+    "VALE",
+    "VASE",
+    "VEAL",
+    "VELA",
+    "LAVES",
+    "SALVE",
+    "SELVA",
+    "VALES",
+    "VALSE",
+    "VEALS"
+  ]
+}

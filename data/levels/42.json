@@ -1,0 +1,53 @@
+{
+  "id": 42,
+  "letters": [
+    "S",
+    "T",
+    "L",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "LAST",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the temporal end; the concluding time",
+      "zh": "a. 最後的, 末尾的, 最近的"
+    },
+    {
+      "word": "SALT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a compound formed by replacing hydrogen in an acid by a metal (or a radical that acts like a metal)",
+      "zh": "n. 鹽, 風趣, 刺激"
+    },
+    {
+      "word": "ALT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "angular distance above the horizon (especially of a celestial object)",
+      "zh": "n. 高音調"
+    },
+    {
+      "word": "SAT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the seventh and last day of the week; observed as the Sabbath by Jews and some Christians",
+      "zh": "n. 飽和度"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "LAS",
+    "LAT",
+    "SAL",
+    "TAS",
+    "ALTS",
+    "LATS",
+    "SLAT"
+  ]
+}

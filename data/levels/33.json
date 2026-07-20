@@ -1,0 +1,38 @@
+{
+  "id": 33,
+  "letters": [
+    "S",
+    "K",
+    "S",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "KISS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of caressing with the lips (or an instance thereof)",
+      "zh": "n. 吻"
+    },
+    {
+      "word": "SKI",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "zh": "n. 滑雪橇"
+    },
+    {
+      "word": "SIS",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a female person who has the same parents as another person",
+      "zh": "n. [美口]姐妹（等於sister）"
+    }
+  ],
+  "bonus": [
+    "SKIS"
+  ]
+}

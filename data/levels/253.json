@@ -1,0 +1,70 @@
+{
+  "id": 253,
+  "letters": [
+    "U",
+    "F",
+    "O",
+    "A",
+    "R",
+    "V"
+  ],
+  "words": [
+    {
+      "word": "FAVOUR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a feeling of favorable regard",
+      "zh": "n. 好感, 偏愛, 喜愛, 相信, 庇護, 贊同, 支援, 信賴, 善行, 恩惠, 徽章, 禮物"
+    },
+    {
+      "word": "FAVOR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an act of gracious kindness",
+      "zh": "n. 好意, 喜愛"
+    },
+    {
+      "word": "FOUR",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of three and one",
+      "zh": "num. 四, 四個"
+    },
+    {
+      "word": "FAR",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    },
+    {
+      "word": "FUR",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "the dressed hairy coat of a mammal",
+      "zh": "n. 毛皮"
+    }
+  ],
+  "bonus": [
+    "ARF",
+    "AVO",
+    "FOR",
+    "FOU",
+    "FRO",
+    "OAF",
+    "OAR",
+    "ORA",
+    "OUR",
+    "OVA",
+    "VAR",
+    "VAU",
+    "ARVO",
+    "FARO",
+    "FORA"
+  ]
+}

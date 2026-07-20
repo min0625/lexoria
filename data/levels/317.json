@@ -1,0 +1,80 @@
+{
+  "id": 317,
+  "letters": [
+    "I",
+    "B",
+    "L",
+    "L",
+    "E",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "BILLED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "demand payment",
+      "zh": "vt. 安排（bill的過去式與過去分詞形式）"
+    },
+    {
+      "word": "BILL",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a statute in draft before it becomes law",
+      "zh": "n. 帳單, 清單, 鈔票, 鳥嘴, 廣告, 法案, 票據"
+    },
+    {
+      "word": "LED",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "BED",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a piece of furniture that provides a place to sleep",
+      "zh": "n. 床, 睡眠處, 河床, 底座, 路基, 一層"
+    },
+    {
+      "word": "DIE",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "BEL",
+    "BID",
+    "DEB",
+    "DEL",
+    "DIB",
+    "ELD",
+    "ELL",
+    "ILL",
+    "LEI",
+    "LIB",
+    "LID",
+    "LIE",
+    "BELL",
+    "BIDE",
+    "BILE",
+    "BLED",
+    "DEIL",
+    "DELI",
+    "DELL",
+    "DIEL",
+    "DILL",
+    "IDLE",
+    "LIED",
+    "BIELD",
+    "LIBEL"
+  ]
+}

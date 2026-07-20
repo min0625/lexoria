@@ -1,0 +1,75 @@
+{
+  "id": 133,
+  "letters": [
+    "C",
+    "A",
+    "R",
+    "E",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "CARED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "feel concern or interest",
+      "zh": "v. 關心( care的過去式和過去分詞 ); 擔心; 在乎; 介意"
+    },
+    {
+      "word": "READ",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "something that is read",
+      "zh": "v. 讀, 閱讀, 理解"
+    },
+    {
+      "word": "CARE",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "the work of providing treatment for or attending to someone or something",
+      "zh": "n. 小心, 照料, 憂慮"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "ARC",
+    "CAD",
+    "EAR",
+    "ERA",
+    "RAD",
+    "REC",
+    "RED",
+    "ACED",
+    "ACRE",
+    "CADE",
+    "CARD",
+    "DACE",
+    "DARE",
+    "DEAR",
+    "RACE",
+    "ACRED",
+    "ARCED",
+    "CADRE",
+    "CEDAR",
+    "RACED"
+  ]
+}

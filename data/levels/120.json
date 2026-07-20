@@ -1,0 +1,59 @@
+{
+  "id": 120,
+  "letters": [
+    "I",
+    "C",
+    "E",
+    "W",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "TWICE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "two times",
+      "zh": "adv. 兩次, 兩倍"
+    },
+    {
+      "word": "WIT",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a message whose ingenuity or verbal skill or incongruity has the power to evoke laughter",
+      "zh": "n. 機智, 智力, 頭腦, 理智, 妙語, 機智的人"
+    },
+    {
+      "word": "ICE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "TIE",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    },
+    {
+      "word": "WET",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "wetness caused by water",
+      "zh": "n. 溼氣, 潮溼, 水分, 雨天"
+    }
+  ],
+  "bonus": [
+    "TEW",
+    "TIC",
+    "CITE",
+    "ETIC",
+    "WITE"
+  ]
+}

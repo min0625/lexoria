@@ -1,0 +1,70 @@
+{
+  "id": 157,
+  "letters": [
+    "C",
+    "S",
+    "R",
+    "A",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "SCRAP",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a small fragment of something broken off from the whole",
+      "zh": "n. 碎片, 殘餘物, 些微, 片斷, 鐵屑, 吵架"
+    },
+    {
+      "word": "CRAP",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "obscene terms for feces",
+      "zh": "n. 廢物, 廢話"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "CAP",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a tight-fitting headdress",
+      "zh": "n. 蓋子, 帽子"
+    }
+  ],
+  "bonus": [
+    "ARC",
+    "ARS",
+    "ASP",
+    "PAC",
+    "PAR",
+    "PAS",
+    "RAP",
+    "RAS",
+    "SAC",
+    "SAP",
+    "SPA",
+    "ARCS",
+    "CAPS",
+    "CARP",
+    "CARS",
+    "PACS",
+    "PARS",
+    "RAPS",
+    "RASP",
+    "SCAR",
+    "SPAR",
+    "CARPS",
+    "CRAPS",
+    "SCARP"
+  ]
+}

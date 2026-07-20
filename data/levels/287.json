@@ -1,0 +1,103 @@
+{
+  "id": 287,
+  "letters": [
+    "O",
+    "S",
+    "E",
+    "N",
+    "L",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "LESSON",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a unit of instruction",
+      "zh": "n. 課, 課業, 教訓"
+    },
+    {
+      "word": "LESS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(comparative of `little' usually used with mass nouns) a quantifier meaning not as great in amount or degree",
+      "zh": "n. 較少, 較小"
+    },
+    {
+      "word": "LOSS",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "something that is lost",
+      "zh": "n. 損失, 遺失, 失敗, 輸, 錯過, 傷亡"
+    },
+    {
+      "word": "LOSE",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "fail to keep or to maintain; cease to have, either physically or in an abstract sense",
+      "zh": "vt. 遺失, 損失, 丟失, 使失去, 錯過, 浪費, 迷失, 使迷路, 輸去, 使沉溺於"
+    },
+    {
+      "word": "ONE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "SON",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "ENS",
+    "EON",
+    "ESS",
+    "NOS",
+    "OES",
+    "OLE",
+    "ONS",
+    "OSE",
+    "SEL",
+    "SEN",
+    "SOL",
+    "SOS",
+    "ENOL",
+    "EONS",
+    "LENO",
+    "LENS",
+    "LONE",
+    "NESS",
+    "NOEL",
+    "NOES",
+    "NOSE",
+    "OLES",
+    "ONES",
+    "OSES",
+    "SELS",
+    "SLOE",
+    "SOLE",
+    "SOLS",
+    "SONE",
+    "SONS",
+    "ENOLS",
+    "LENOS",
+    "LOESS",
+    "LOSES",
+    "NOELS",
+    "NOSES",
+    "SLOES",
+    "SOLES",
+    "SONES"
+  ]
+}

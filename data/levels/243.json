@@ -1,0 +1,85 @@
+{
+  "id": 243,
+  "letters": [
+    "I",
+    "R",
+    "S",
+    "K",
+    "N",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "SHRINK",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a physician who specializes in psychiatry",
+      "zh": "n. 收縮, 萎縮, 迴避"
+    },
+    {
+      "word": "SKIN",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "a natural protective body covering and site of the sense of touch",
+      "zh": "n. 皮膚, 皮"
+    },
+    {
+      "word": "RISK",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a source of danger; a possibility of incurring loss or misfortune",
+      "zh": "n. 冒險, 危險, 保險額"
+    },
+    {
+      "word": "SIN",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "estrangement from god",
+      "zh": "n. 罪, 犯罪, 過失, 失禮"
+    },
+    {
+      "word": "SIR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "HIN",
+    "HIS",
+    "INK",
+    "INS",
+    "IRK",
+    "KHI",
+    "KIN",
+    "KIR",
+    "RIN",
+    "SKI",
+    "SRI",
+    "HINS",
+    "HISN",
+    "INKS",
+    "IRKS",
+    "KHIS",
+    "KINS",
+    "KIRN",
+    "KIRS",
+    "KRIS",
+    "RINK",
+    "RINS",
+    "SHIN",
+    "SHRI",
+    "SINH",
+    "SINK",
+    "KIRNS",
+    "KNISH",
+    "RINKS",
+    "SHIRK"
+  ]
+}

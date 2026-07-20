@@ -1,0 +1,50 @@
+{
+  "id": 152,
+  "letters": [
+    "G",
+    "E",
+    "A",
+    "G",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "GAUGE",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a measuring instrument for measuring and indicating a quantity such as the thickness of wire or the amount of rain etc.",
+      "zh": "n. 標準度量, 計量器"
+    },
+    {
+      "word": "AGE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "GAG",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a humorous anecdote or remark intended to provoke laughter",
+      "zh": "n. 箝口物, 箝制言論, 討論終結"
+    },
+    {
+      "word": "EGG",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "animal reproductive body consisting of an ovum or embryo together with nutritive and protective envelopes; especially the thin-shelled reproductive body laid by e.g. female birds",
+      "zh": "n. 蛋, 卵"
+    }
+  ],
+  "bonus": [
+    "EAU",
+    "GAE",
+    "AGUE",
+    "GAGE"
+  ]
+}

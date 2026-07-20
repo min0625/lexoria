@@ -1,0 +1,61 @@
+{
+  "id": 130,
+  "letters": [
+    "B",
+    "S",
+    "E",
+    "D",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "DEBTS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the state of owing something (especially money)",
+      "zh": "n. 負債類, 債務（debt的複數形式）"
+    },
+    {
+      "word": "BEST",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the supreme effort one can make",
+      "zh": "a. 最好的"
+    },
+    {
+      "word": "SET",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "BET",
+      "row": 3,
+      "col": 2,
+      "dir": "down",
+      "def": "the money risked on a gamble",
+      "zh": "n. 打賭, 賭注"
+    },
+    {
+      "word": "BED",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a piece of furniture that provides a place to sleep",
+      "zh": "n. 床, 睡眠處, 河床, 底座, 路基, 一層"
+    }
+  ],
+  "bonus": [
+    "DEB",
+    "TED",
+    "BEDS",
+    "BETS",
+    "DEBS",
+    "DEBT",
+    "TEDS"
+  ]
+}

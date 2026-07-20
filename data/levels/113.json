@@ -1,0 +1,63 @@
+{
+  "id": 113,
+  "letters": [
+    "G",
+    "N",
+    "T",
+    "I",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "THING",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a special situation",
+      "zh": "n. 事物, 東西, 物, 用品, 事, 事件, 情況, 行為, 特徵"
+    },
+    {
+      "word": "NIGHT",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "the time after sunset and before sunrise while it is dark outside",
+      "zh": "n. 夜, 夜晚, 晚上, 黑暗, 夜晚的工作"
+    },
+    {
+      "word": "THIN",
+      "row": 5,
+      "col": 1,
+      "dir": "across",
+      "def": "lose thickness; become thin or thinner",
+      "zh": "a. 薄的, 細的, 瘦的, 稀疏的, 稀薄的, 淡的, 弱的, 空洞的"
+    },
+    {
+      "word": "HINT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an indirect suggestion",
+      "zh": "n. 暗示, 提示"
+    },
+    {
+      "word": "HIT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "(baseball) a successful stroke in an athletic contest (especially in baseball)",
+      "zh": "n. 打擊, 打, 衝撞, 諷刺"
+    }
+  ],
+  "bonus": [
+    "GHI",
+    "GIN",
+    "GIT",
+    "HIN",
+    "NIT",
+    "NTH",
+    "TIN",
+    "NIGH",
+    "TING"
+  ]
+}

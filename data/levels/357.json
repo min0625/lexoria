@@ -1,0 +1,96 @@
+{
+  "id": 357,
+  "letters": [
+    "E",
+    "D",
+    "V",
+    "P",
+    "R",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "PROVED",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "be shown or be found to be",
+      "zh": "prove的過去式和過去分詞"
+    },
+    {
+      "word": "PROVE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "be shown or be found to be",
+      "zh": "vt. 證明, 查驗, 檢驗, 勘探, 顯示"
+    },
+    {
+      "word": "OVER",
+      "row": 2,
+      "col": 4,
+      "dir": "across",
+      "def": "(cricket) the division of play during which six balls are bowled at the batsman by one player from the other team from the same end of the pitch",
+      "zh": "adv. 結束, 越過, 從頭到尾"
+    },
+    {
+      "word": "DROP",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a shape that is spherical and small",
+      "zh": "n. 滴, 微量, 落下, 空投"
+    },
+    {
+      "word": "PRO",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    },
+    {
+      "word": "RED",
+      "row": 2,
+      "col": 7,
+      "dir": "down",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    }
+  ],
+  "bonus": [
+    "DEV",
+    "DOE",
+    "DOR",
+    "ODE",
+    "OPE",
+    "ORE",
+    "PED",
+    "PER",
+    "POD",
+    "REP",
+    "REV",
+    "ROD",
+    "ROE",
+    "VOE",
+    "DOER",
+    "DOPE",
+    "DORE",
+    "DORP",
+    "DOVE",
+    "OPED",
+    "PORE",
+    "PROD",
+    "REDO",
+    "REPO",
+    "RODE",
+    "ROPE",
+    "ROVE",
+    "DOPER",
+    "DROVE",
+    "PEDRO",
+    "PORED",
+    "ROPED",
+    "ROVED"
+  ]
+}

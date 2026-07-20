@@ -1,0 +1,40 @@
+{
+  "id": 18,
+  "letters": [
+    "N",
+    "B",
+    "E",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BEEN",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "zh": "be的過去分詞"
+    },
+    {
+      "word": "BEE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "any of numerous hairy-bodied insects including social and solitary species",
+      "zh": "n. 蜜蜂, 聚會"
+    },
+    {
+      "word": "BEN",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a mountain or tall hill",
+      "zh": "n. 內室"
+    }
+  ],
+  "bonus": [
+    "NEB",
+    "NEE",
+    "BENE"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 100,
+  "letters": [
+    "P",
+    "A",
+    "Y",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "PRAY",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "address a deity, a prophet, a saint or an object of worship; say a prayer",
+      "zh": "v. 祈禱, 懇求, 請"
+    },
+    {
+      "word": "PAY",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "something that remunerates",
+      "zh": "n. 薪資, 付款, 補償"
+    },
+    {
+      "word": "RAY",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a column of light (as from a beacon)",
+      "zh": "n. 光線, 射線, 閃爍, 光輝"
+    }
+  ],
+  "bonus": [
+    "PAR",
+    "PRY",
+    "PYA",
+    "RAP",
+    "RYA",
+    "YAP",
+    "YAR"
+  ]
+}

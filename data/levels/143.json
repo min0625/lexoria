@@ -1,0 +1,62 @@
+{
+  "id": 143,
+  "letters": [
+    "T",
+    "E",
+    "C",
+    "X",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "EXACT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "claim as due or just",
+      "zh": "a. 精確的, 準確的, 精密的"
+    },
+    {
+      "word": "EAT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "ACT",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "TAX",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "charge against a citizen's person or property or activity for the support of government",
+      "zh": "n. 稅, 稅款, 重負, 會費"
+    },
+    {
+      "word": "CAT",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    }
+  ],
+  "bonus": [
+    "ACE",
+    "ATE",
+    "AXE",
+    "ETA",
+    "TAE",
+    "TEA",
+    "CATE",
+    "TACE"
+  ]
+}

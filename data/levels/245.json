@@ -1,0 +1,96 @@
+{
+  "id": 245,
+  "letters": [
+    "C",
+    "E",
+    "R",
+    "I",
+    "M",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "METRIC",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a function of a topological space that gives, for any two points in the space, a value equal to the distance between them",
+      "zh": "a. 公尺的, 公制的, 計量的"
+    },
+    {
+      "word": "CRIME",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "(criminal law) an act punishable by law; usually considered an evil act",
+      "zh": "n. 犯罪, 罪行, 罪惡"
+    },
+    {
+      "word": "TIME",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an instance or single occasion for some event",
+      "zh": "n. 時間, 時侯, 時機, 時期, 期限, 次數, 節拍, 暫停, 規定時間"
+    },
+    {
+      "word": "TERM",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a word or expression used for some particular thing",
+      "zh": "n. 術語, 專有名詞, 期限, 學期, 任期, 條件, 價錢, 關係, 地位, 項, 界石"
+    },
+    {
+      "word": "MET",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "come together",
+      "zh": "meet的過去式和過去分詞"
+    },
+    {
+      "word": "ICE",
+      "row": 6,
+      "col": 1,
+      "dir": "across",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    }
+  ],
+  "bonus": [
+    "IRE",
+    "MIR",
+    "REC",
+    "REI",
+    "REM",
+    "RET",
+    "RIM",
+    "TIC",
+    "TIE",
+    "CIRE",
+    "CITE",
+    "EMIC",
+    "EMIR",
+    "EMIT",
+    "ETIC",
+    "ITEM",
+    "MICE",
+    "MIRE",
+    "MITE",
+    "RICE",
+    "RIME",
+    "RITE",
+    "TIER",
+    "TIRE",
+    "TRIM",
+    "CITER",
+    "MERIT",
+    "MITER",
+    "MITRE",
+    "RECTI",
+    "REMIT",
+    "TIMER",
+    "TRICE"
+  ]
+}

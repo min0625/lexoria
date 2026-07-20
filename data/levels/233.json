@@ -1,0 +1,95 @@
+{
+  "id": 233,
+  "letters": [
+    "Y",
+    "S",
+    "B",
+    "R",
+    "E",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "BUYERS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who buys",
+      "zh": "n. 買主；採購者；買方市場；購貨者（buyer的複數）"
+    },
+    {
+      "word": "SURE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "YES",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    },
+    {
+      "word": "BUY",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an advantageous purchase",
+      "zh": "vt. 買, 獲得"
+    },
+    {
+      "word": "USE",
+      "row": 3,
+      "col": 3,
+      "dir": "across",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "BEY",
+    "BUR",
+    "BUS",
+    "BYE",
+    "BYS",
+    "ERS",
+    "REB",
+    "RES",
+    "RUB",
+    "RUE",
+    "RYE",
+    "SER",
+    "SUB",
+    "SUE",
+    "URB",
+    "BEYS",
+    "BURS",
+    "BURY",
+    "BUSY",
+    "BUYS",
+    "BYES",
+    "BYRE",
+    "REBS",
+    "RUBE",
+    "RUBS",
+    "RUBY",
+    "RUES",
+    "RUSE",
+    "RYES",
+    "SUER",
+    "URBS",
+    "USER",
+    "BURSE",
+    "BUYER",
+    "BYRES",
+    "REBUS",
+    "REBUY",
+    "RUBES",
+    "SUBER",
+    "REBUYS"
+  ]
+}

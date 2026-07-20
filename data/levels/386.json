@@ -1,0 +1,39 @@
+{
+  "id": 386,
+  "letters": [
+    "R",
+    "C",
+    "D",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "CARD",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "one of a set of small pieces of stiff paper marked in various ways and used for playing games or for telling fortunes",
+      "zh": "n. 卡片, 紙牌, 節目單, 明信片, 梳棉機"
+    },
+    {
+      "word": "CAR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "ARC",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "electrical conduction through a gas in an applied electric field",
+      "zh": "n. 弧, 弧形, 弓形, 弧光"
+    }
+  ],
+  "bonus": [
+    "CAD",
+    "RAD"
+  ]
+}

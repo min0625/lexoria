@@ -1,0 +1,81 @@
+{
+  "id": 319,
+  "letters": [
+    "O",
+    "E",
+    "E",
+    "M",
+    "N",
+    "G"
+  ],
+  "words": [
+    {
+      "word": "GENOME",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the ordering of genes in a haploid set of chromosomes of a particular organism; the full DNA sequence of an organism",
+      "zh": "[化] 基因組"
+    },
+    {
+      "word": "GONE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "change location; move, travel, or proceed, also metaphorically",
+      "zh": "a. 離去的, 死去的, 用完的"
+    },
+    {
+      "word": "GENE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "(genetics) a segment of DNA that is involved in producing a polypeptide chain; it can include regions preceding and following the coding DNA as well as introns between the exons; it is considered a unit of heredity",
+      "zh": "n. 基因"
+    },
+    {
+      "word": "MEN",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "the force of workers available",
+      "zh": "pl. man的複數"
+    },
+    {
+      "word": "ONE",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "GEN",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    }
+  ],
+  "bonus": [
+    "EGO",
+    "EME",
+    "ENG",
+    "EON",
+    "GEE",
+    "GEM",
+    "MOG",
+    "MON",
+    "NEE",
+    "NOG",
+    "NOM",
+    "MENO",
+    "NEEM",
+    "NOME",
+    "OGEE",
+    "OMEN",
+    "GENOM",
+    "GNOME"
+  ]
+}

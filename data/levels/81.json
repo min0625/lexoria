@@ -1,0 +1,38 @@
+{
+  "id": 81,
+  "letters": [
+    "A",
+    "F",
+    "G",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "FLAG",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "emblem usually consisting of a rectangular piece of cloth of distinctive design",
+      "zh": "n. 標誌, 旗標, 旗子, 訊號旗, 菖蒲"
+    },
+    {
+      "word": "LAG",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the act of slowing down or falling behind",
+      "zh": "n. 落後, 囚犯, 遲延, 桶板, 防護套"
+    },
+    {
+      "word": "GAL",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "United States liquid unit equal to 4 quarts or 3.785 liters",
+      "zh": "[化] 伽(重力加速度單位,等於1釐米/秒,2)"
+    }
+  ],
+  "bonus": [
+    "FAG"
+  ]
+}

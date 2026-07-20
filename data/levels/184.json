@@ -1,0 +1,73 @@
+{
+  "id": 184,
+  "letters": [
+    "A",
+    "E",
+    "D",
+    "L",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "DEALT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "act on verbally or in some form of artistic expression",
+      "zh": "deal的過去式和過去分詞"
+    },
+    {
+      "word": "LATE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "being or occurring at an advanced period of time or after a usual or expected time",
+      "zh": "a. 遲的, 晚的, 已故的"
+    },
+    {
+      "word": "DEAL",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a particular instance of buying or selling",
+      "zh": "n. 交易, 協定, 數量, 買賣, 松木板"
+    },
+    {
+      "word": "LET",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALT",
+    "ATE",
+    "DAL",
+    "DEL",
+    "EAT",
+    "ELD",
+    "ETA",
+    "LAD",
+    "LAT",
+    "LEA",
+    "LED",
+    "TAD",
+    "TAE",
+    "TEA",
+    "TED",
+    "TEL",
+    "DALE",
+    "DATE",
+    "LADE",
+    "LEAD",
+    "TAEL",
+    "TALE",
+    "TEAL",
+    "TELA",
+    "DELTA",
+    "LATED"
+  ]
+}

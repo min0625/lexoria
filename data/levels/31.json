@@ -1,0 +1,53 @@
+{
+  "id": 31,
+  "letters": [
+    "R",
+    "A",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "STAR",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "(astronomy) a celestial body of hot gases that radiates energy derived from thermonuclear reactions in the interior",
+      "zh": "n. 星, 恆星, 星形物, 運氣, 明星"
+    },
+    {
+      "word": "ARTS",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "studies intended to provide general knowledge and intellectual skills (rather than occupational or professional skills)",
+      "zh": "n. 文科"
+    },
+    {
+      "word": "ART",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "SAT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the seventh and last day of the week; observed as the Sabbath by Jews and some Christians",
+      "zh": "n. 飽和度"
+    }
+  ],
+  "bonus": [
+    "ARS",
+    "RAS",
+    "RAT",
+    "TAR",
+    "TAS",
+    "RATS",
+    "TARS",
+    "TSAR"
+  ]
+}

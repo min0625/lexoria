@@ -1,0 +1,42 @@
+{
+  "id": 46,
+  "letters": [
+    "P",
+    "C",
+    "I",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "PICS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a form of entertainment that enacts a story by sound and a sequence of images giving the illusion of continuous movement",
+      "zh": "[計] 生產資訊控制系統"
+    },
+    {
+      "word": "SIP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a small drink",
+      "zh": "n. 啜飲, 小口喝, 抿"
+    },
+    {
+      "word": "PIC",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a form of entertainment that enacts a story by sound and a sequence of images giving the illusion of continuous movement",
+      "zh": "n. 照片, 圖片, 影片"
+    }
+  ],
+  "bonus": [
+    "CIS",
+    "PIS",
+    "PSI",
+    "SIC",
+    "SPIC"
+  ]
+}

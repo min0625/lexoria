@@ -1,0 +1,87 @@
+{
+  "id": 339,
+  "letters": [
+    "K",
+    "S",
+    "T",
+    "A",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "TAKES",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the income or profit arising from such transactions as the sale of land or other property",
+      "zh": "vt. 取走, 預備動作（take第三人稱單數）"
+    },
+    {
+      "word": "STAKE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "(law) a right or legal share of something; a financial involvement with something",
+      "zh": "n. 樁, 炮烙刑, 木柱, 賭注, 獎金"
+    },
+    {
+      "word": "TAKE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the income or profit arising from such transactions as the sale of land or other property",
+      "zh": "vt. 拿, 取, 抓, 帶領, 獲得, 就座, 接受, 吃, 吸引, 採取, 乘, 需要, 花費"
+    },
+    {
+      "word": "ASK",
+      "row": 1,
+      "col": 3,
+      "dir": "across",
+      "def": "inquire about",
+      "zh": "vi. 問, 要求"
+    },
+    {
+      "word": "SET",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ATE",
+    "EAT",
+    "ETA",
+    "KAE",
+    "KAS",
+    "KAT",
+    "KEA",
+    "SAE",
+    "SAT",
+    "SEA",
+    "SKA",
+    "TAE",
+    "TAS",
+    "TEA",
+    "TSK",
+    "ATES",
+    "EAST",
+    "EATS",
+    "ETAS",
+    "KAES",
+    "KATS",
+    "KEAS",
+    "SAKE",
+    "SATE",
+    "SEAT",
+    "SETA",
+    "SKAT",
+    "TASK",
+    "TEAK",
+    "TEAS",
+    "SKATE",
+    "STEAK",
+    "TEAKS"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "id": 28,
+  "letters": [
+    "S",
+    "T",
+    "P",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "STEP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "any maneuver made as part of progress toward a goal",
+      "zh": "n. 步驟, 步, 步幅, 腳步聲, 踏級, 步伐, 短距離, 步態, 手段, 等級"
+    },
+    {
+      "word": "PET",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a domesticated animal kept for companionship or amusement",
+      "zh": "n. 寵物, 受寵愛的人, 寵壞的孩子, 不悅, 生氣"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "PES",
+    "PEST",
+    "PETS",
+    "SEPT"
+  ]
+}

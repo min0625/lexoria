@@ -1,0 +1,46 @@
+{
+  "id": 41,
+  "letters": [
+    "D",
+    "B",
+    "U",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "DUMB",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "slow to learn or understand; lacking intellectual acuity; ; ; - Thackeray",
+      "zh": "a. 啞的, 不說話的, 無聲音的"
+    },
+    {
+      "word": "BUD",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a partially opened flower",
+      "zh": "n. 芽, 花蕾"
+    },
+    {
+      "word": "MUD",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "water soaked soil; soft wet earth",
+      "zh": "n. 泥, 誹謗"
+    },
+    {
+      "word": "BUM",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who is deemed to be despicable or contemptible",
+      "zh": "n. 遊蕩者, 懶鬼, 鬧飲"
+    }
+  ],
+  "bonus": [
+    "DUB"
+  ]
+}

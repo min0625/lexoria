@@ -1,0 +1,71 @@
+{
+  "id": 123,
+  "letters": [
+    "O",
+    "P",
+    "T",
+    "E",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "DEPOT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "station where transport vehicles load or unload passengers or goods",
+      "zh": "n. 停車場, 車站, 貯藏所, 倉庫"
+    },
+    {
+      "word": "PET",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a domesticated animal kept for companionship or amusement",
+      "zh": "n. 寵物, 受寵愛的人, 寵壞的孩子, 不悅, 生氣"
+    },
+    {
+      "word": "POT",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "metal or earthenware cooking vessel that is usually round and deep; often has a handle and lid",
+      "zh": "n. 盆, 罐, 壺, 坩堝, 獎盃"
+    },
+    {
+      "word": "TED",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a tough youth of 1950's and 1960's wearing Edwardian style clothes",
+      "zh": "vt. 翻曬"
+    },
+    {
+      "word": "TOP",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "the upper part of anything",
+      "zh": "n. 頂部, 頂端, 極點, 上面, 上部, 頂篷, 最高地位, 首位, 陀螺"
+    }
+  ],
+  "bonus": [
+    "DOE",
+    "DOT",
+    "ODE",
+    "OPE",
+    "OPT",
+    "PED",
+    "POD",
+    "TOD",
+    "TOE",
+    "DOPE",
+    "DOTE",
+    "OPED",
+    "POET",
+    "TOED",
+    "TOPE",
+    "OPTED",
+    "TOPED"
+  ]
+}

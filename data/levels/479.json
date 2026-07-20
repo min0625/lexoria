@@ -1,0 +1,97 @@
+{
+  "id": 479,
+  "letters": [
+    "Y",
+    "R",
+    "W",
+    "E",
+    "B",
+    "E",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "BREWERY",
+      "row": 3,
+      "col": 2,
+      "dir": "across",
+      "def": "a plant where beer is brewed by fermentation",
+      "zh": "n. 啤酒廠, 釀酒廠"
+    },
+    {
+      "word": "BEER",
+      "row": 1,
+      "col": 4,
+      "dir": "down",
+      "def": "a general name for alcoholic beverages made by fermenting a cereal (or mixture of cereals) flavored with hops",
+      "zh": "n. 啤酒"
+    },
+    {
+      "word": "WERE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "have the quality of being; (copula, used with an adjective or a predicate noun)",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "WEB",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "an intricate network suggesting something that was formed by weaving or interweaving",
+      "zh": "n. 網, 蛛絲, 蹼, 織物, 圈套, 捲筒紙"
+    },
+    {
+      "word": "BYE",
+      "row": 1,
+      "col": 4,
+      "dir": "across",
+      "def": "you advance to the next round in a tournament without playing an opponent",
+      "zh": "interj. 再會, 回頭見"
+    },
+    {
+      "word": "EYE",
+      "row": 2,
+      "col": 8,
+      "dir": "down",
+      "def": "the organ of sight",
+      "zh": "n. 眼睛, 視力, 看"
+    },
+    {
+      "word": "BEE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "any of numerous hairy-bodied insects including social and solitary species",
+      "zh": "n. 蜜蜂, 聚會"
+    }
+  ],
+  "bonus": [
+    "BEY",
+    "BRR",
+    "ERE",
+    "ERR",
+    "EWE",
+    "REB",
+    "REE",
+    "RYE",
+    "WEE",
+    "WRY",
+    "WYE",
+    "YEW",
+    "BREE",
+    "BREW",
+    "BYRE",
+    "EERY",
+    "EWER",
+    "EYER",
+    "EYRE",
+    "WEER",
+    "BEERY",
+    "BERRY",
+    "WEBER",
+    "WRYER",
+    "BREWER"
+  ]
+}

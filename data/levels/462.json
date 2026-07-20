@@ -1,0 +1,120 @@
+{
+  "id": 462,
+  "letters": [
+    "R",
+    "V",
+    "E",
+    "S",
+    "S",
+    "U",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "VIRUSES",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "(virology) ultramicroscopic infectious agent that replicates itself only within cells of living hosts; many are pathogenic; a piece of nucleic acid (DNA or RNA) wrapped in a thin coat of protein",
+      "zh": "n. 病毒；病黴（virus的複數）"
+    },
+    {
+      "word": "ISSUE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "an important question that is in dispute and must be settled",
+      "zh": "n. 發行, 問題, 後果, 流出, 出口, 爭端"
+    },
+    {
+      "word": "USERS",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a person who makes use of a thing; someone who uses or employs something",
+      "zh": "n. 使用者；受限使用者（user的複數）"
+    },
+    {
+      "word": "RISE",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a growth in strength or number or importance",
+      "zh": "n. 上升, 增加, 上漲, 高地, 升高, 出現"
+    },
+    {
+      "word": "SURE",
+      "row": 4,
+      "col": 3,
+      "dir": "down",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "SIR",
+      "row": 6,
+      "col": 1,
+      "dir": "across",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "USE",
+      "row": 5,
+      "col": 1,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "ERS",
+    "ESS",
+    "IRE",
+    "REI",
+    "RES",
+    "REV",
+    "RUE",
+    "SEI",
+    "SER",
+    "SIS",
+    "SRI",
+    "SUE",
+    "VIE",
+    "VIS",
+    "IRES",
+    "REIS",
+    "REVS",
+    "RIVE",
+    "RUES",
+    "RUSE",
+    "SEIS",
+    "SERS",
+    "SIRE",
+    "SIRS",
+    "SRIS",
+    "SUER",
+    "SUES",
+    "USER",
+    "USES",
+    "VIER",
+    "VIES",
+    "VISE",
+    "RISES",
+    "RISUS",
+    "RIVES",
+    "RUSES",
+    "SIEUR",
+    "SIRES",
+    "SIVER",
+    "SUERS",
+    "VIERS",
+    "VIRES",
+    "VIRUS",
+    "VISES",
+    "ISSUER",
+    "SIEURS",
+    "SIVERS",
+    "VERSUS"
+  ]
+}

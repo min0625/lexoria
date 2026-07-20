@@ -1,0 +1,82 @@
+{
+  "id": 476,
+  "letters": [
+    "S",
+    "T",
+    "T",
+    "R",
+    "H",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "THRUST",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "the force used in pushing",
+      "zh": "n. 插, 戳, 刺, 猛推, 口頭攻擊, 推力"
+    },
+    {
+      "word": "TRUST",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "something (as property) held by one party (the trustee) for the benefit of another (the beneficiary)",
+      "zh": "n. 信任, 信賴, 相信, 受託, 職責, 信心, 托拉斯"
+    },
+    {
+      "word": "TRUTH",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a fact that has been verified",
+      "zh": "n. 事實, 實情"
+    },
+    {
+      "word": "THUS",
+      "row": 5,
+      "col": 0,
+      "dir": "down",
+      "def": "an aromatic gum resin obtained from various Arabian or East African trees; formerly valued for worship and for embalming and fumigation",
+      "zh": "adv. 如此, 因此, 到如此程度"
+    },
+    {
+      "word": "SHUT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "move so that an opening or passage is obstructed; make shut",
+      "zh": "n. 關閉"
+    },
+    {
+      "word": "HURT",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "any physical damage to the body caused by violence or accident or fracture etc.",
+      "zh": "n. 傷害, 創傷, 損害"
+    }
+  ],
+  "bonus": [
+    "HUT",
+    "RUT",
+    "TUT",
+    "UTS",
+    "HUTS",
+    "RHUS",
+    "RUSH",
+    "RUST",
+    "RUTH",
+    "RUTS",
+    "THRU",
+    "TUSH",
+    "TUTS",
+    "HURST",
+    "HURTS",
+    "RUTHS",
+    "STRUT",
+    "STURT",
+    "TRUTHS"
+  ]
+}

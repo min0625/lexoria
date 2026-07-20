@@ -1,0 +1,69 @@
+{
+  "id": 174,
+  "letters": [
+    "V",
+    "O",
+    "L",
+    "D",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LOVED",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "have a great affection or liking for",
+      "zh": "v. 熱愛（love的過去分詞）"
+    },
+    {
+      "word": "LOVE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "a strong positive emotion of regard and affection",
+      "zh": "n. 愛, 戀愛, 愛情, 愛好, 性愛"
+    },
+    {
+      "word": "OLD",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "past times (especially in the phrase `in days of old')",
+      "zh": "n. 以前, 往昔"
+    },
+    {
+      "word": "LED",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "DOE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the federal department responsible for maintaining a national energy policy of the United States; created in 1977",
+      "zh": "n. 母鹿, 雌兔"
+    }
+  ],
+  "bonus": [
+    "DEL",
+    "DEV",
+    "DOL",
+    "ELD",
+    "LEV",
+    "ODE",
+    "OLE",
+    "VOE",
+    "DOLE",
+    "DOVE",
+    "LEVO",
+    "LODE",
+    "VELD",
+    "VOLE",
+    "VOLED"
+  ]
+}

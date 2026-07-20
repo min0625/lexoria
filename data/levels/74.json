@@ -1,0 +1,39 @@
+{
+  "id": 74,
+  "letters": [
+    "T",
+    "W",
+    "N",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "TWIN",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "either of two offspring born at the same time from the same pregnancy",
+      "zh": "n. 雙胞胎中一人, 一對非常相像的人(或物)中的一個"
+    },
+    {
+      "word": "WIN",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a victory (as in a race or other competition)",
+      "zh": "vt. 贏得, 打勝, 成功"
+    },
+    {
+      "word": "TIN",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a silvery malleable metallic element that resists corrosion; used in many alloys and to coat other metals to prevent corrosion; obtained chiefly from cassiterite where it occurs as tin oxide",
+      "zh": "n. 錫, 馬口鐵, 罐頭"
+    }
+  ],
+  "bonus": [
+    "NIT",
+    "WIT"
+  ]
+}

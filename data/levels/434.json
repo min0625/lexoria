@@ -1,0 +1,58 @@
+{
+  "id": 434,
+  "letters": [
+    "E",
+    "L",
+    "I",
+    "C",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "CHILE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a republic in southern South America on the western slopes of the Andes on the south Pacific coast",
+      "zh": "n. 智利"
+    },
+    {
+      "word": "LIE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    },
+    {
+      "word": "ICE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "CHI",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the circulating life energy that in Chinese philosophy is thought to be inherent in all things; in traditional Chinese medicine the balance of negative and positive forms in the body is believed to be essential for good health",
+      "zh": "n. 希臘語的第22個字母"
+    }
+  ],
+  "bonus": [
+    "CEL",
+    "HIC",
+    "HIE",
+    "ICH",
+    "LEI",
+    "CEIL",
+    "ELHI",
+    "HEIL",
+    "LECH",
+    "LICE",
+    "LICH",
+    "CHIEL"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": 8,
+  "letters": [
+    "O",
+    "W",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "OWN",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "have ownership or possession of",
+      "zh": "n. 自己的"
+    },
+    {
+      "word": "WON",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the basic unit of money in South Korea",
+      "zh": "win的過去式和過去分詞"
+    },
+    {
+      "word": "NOW",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the momentary present",
+      "zh": "adv. 現在, 剛才, 目前"
+    }
+  ],
+  "bonus": []
+}

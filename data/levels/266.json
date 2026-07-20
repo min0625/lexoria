@@ -1,0 +1,105 @@
+{
+  "id": 266,
+  "letters": [
+    "N",
+    "U",
+    "S",
+    "L",
+    "I",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "INSULT",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a rude expression intended to offend or hurt",
+      "zh": "n. 侮辱, 無禮, 損害"
+    },
+    {
+      "word": "UNIT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "any division of quantity accepted as a standard of measurement or exchange",
+      "zh": "n. 單位, 分隊, 部隊, 單元, 部件, 裝置"
+    },
+    {
+      "word": "LIST",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a database containing an ordered array of items (names or topics)",
+      "zh": "n. 目錄, 名單, 明細表, 布條, 條紋, 列表, 序列, 資料清單"
+    },
+    {
+      "word": "SUN",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    },
+    {
+      "word": "SIT",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 1,
+      "col": 7,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "INS",
+    "LIN",
+    "LIS",
+    "LIT",
+    "NIL",
+    "NIT",
+    "NUS",
+    "NUT",
+    "SIN",
+    "TIL",
+    "TIN",
+    "TIS",
+    "TUI",
+    "TUN",
+    "UNS",
+    "UTS",
+    "LINS",
+    "LINT",
+    "LITS",
+    "LITU",
+    "LUNT",
+    "LUST",
+    "NILS",
+    "NITS",
+    "NUTS",
+    "SILT",
+    "SLIT",
+    "SLUT",
+    "SNIT",
+    "STUN",
+    "SUIT",
+    "TILS",
+    "TINS",
+    "TUIS",
+    "TUNS",
+    "LINTS",
+    "LUNTS",
+    "SUINT",
+    "UNITS",
+    "UNLIT",
+    "UNTIL",
+    "SUNLIT"
+  ]
+}

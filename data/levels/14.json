@@ -1,0 +1,27 @@
+{
+  "id": 14,
+  "letters": [
+    "D",
+    "A",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "ADD",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a condition (mostly in boys) characterized by behavioral and learning disorders",
+      "zh": "vt. 增加, 新增, 附帶說明, 計算...總和"
+    },
+    {
+      "word": "DAD",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an informal term for a father; probably derived from baby talk",
+      "zh": "n. 爸爸, 爹爹"
+    }
+  ],
+  "bonus": []
+}

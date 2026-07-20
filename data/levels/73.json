@@ -1,0 +1,55 @@
+{
+  "id": 73,
+  "letters": [
+    "E",
+    "S",
+    "A",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "SEAL",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "fastener consisting of a resinous composition that is plastic when warm; used for sealing documents and parcels and letters",
+      "zh": "n. 印章, 封條, 海豹, 海豹皮, 火漆, 封蠟, 璽, 保證, 批准, 象徵, 標誌"
+    },
+    {
+      "word": "SALE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a particular instance of selling",
+      "zh": "n. 出售, 賣, 拍賣, 銷售額, 廉價出售"
+    },
+    {
+      "word": "ALE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a general name for beer made with a top fermenting yeast; in some of the United States an ale is (by law) a brew of more than 4% alcohol by volume",
+      "zh": "n. 麥芽酒"
+    },
+    {
+      "word": "SEA",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    }
+  ],
+  "bonus": [
+    "ALS",
+    "ELS",
+    "LAS",
+    "LEA",
+    "SAE",
+    "SAL",
+    "SEL",
+    "ALES",
+    "LASE",
+    "LEAS"
+  ]
+}

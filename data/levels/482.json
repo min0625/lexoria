@@ -1,0 +1,69 @@
+{
+  "id": 482,
+  "letters": [
+    "T",
+    "I",
+    "S",
+    "W",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "WAIST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the narrowing of the body between the ribs and hips",
+      "zh": "n. 腰部, 腰"
+    },
+    {
+      "word": "WAIT",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "time during which some action is awaited",
+      "zh": "n. 等待, 等候"
+    },
+    {
+      "word": "WAS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a state in northwestern United States on the Pacific",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "ITS",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    }
+  ],
+  "bonus": [
+    "AIS",
+    "AIT",
+    "SAT",
+    "SAW",
+    "SIT",
+    "TAS",
+    "TAW",
+    "TIS",
+    "TWA",
+    "WAT",
+    "WIS",
+    "WIT",
+    "AITS",
+    "SATI",
+    "STAW",
+    "SWAT",
+    "TAWS",
+    "TWAS",
+    "WAST",
+    "WATS",
+    "WIST",
+    "WITS",
+    "WAITS"
+  ]
+}

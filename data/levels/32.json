@@ -1,0 +1,38 @@
+{
+  "id": 32,
+  "letters": [
+    "S",
+    "E",
+    "B",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "BEST",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the supreme effort one can make",
+      "zh": "a. 最好的"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "BET",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the money risked on a gamble",
+      "zh": "n. 打賭, 賭注"
+    }
+  ],
+  "bonus": [
+    "BETS"
+  ]
+}

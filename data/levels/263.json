@@ -1,0 +1,94 @@
+{
+  "id": 263,
+  "letters": [
+    "H",
+    "L",
+    "H",
+    "E",
+    "T",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "HEALTH",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a healthy state of wellbeing free from disease",
+      "zh": "n. 健康, 衛生, 蓬勃, 健康狀態"
+    },
+    {
+      "word": "HATE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "the emotion of intense dislike; a feeling of dislike so strong that it demands action",
+      "zh": "n. 憎恨, 恨, 厭惡"
+    },
+    {
+      "word": "LATE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "being or occurring at an advanced period of time or after a usual or expected time",
+      "zh": "a. 遲的, 晚的, 已故的"
+    },
+    {
+      "word": "HEAT",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "a form of energy that is transferred by a difference in temperature",
+      "zh": "n. 熱, 熱度, 體溫, 高潮"
+    },
+    {
+      "word": "EAT",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "LET",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALT",
+    "ATE",
+    "ETA",
+    "ETH",
+    "HAE",
+    "HAH",
+    "HAT",
+    "HEH",
+    "HET",
+    "LAT",
+    "LEA",
+    "TAE",
+    "TEA",
+    "TEL",
+    "THE",
+    "EATH",
+    "HAET",
+    "HALE",
+    "HALT",
+    "HATH",
+    "HEAL",
+    "HETH",
+    "LATH",
+    "TAEL",
+    "TALE",
+    "TEAL",
+    "TELA",
+    "THAE",
+    "HEATH",
+    "LATHE"
+  ]
+}

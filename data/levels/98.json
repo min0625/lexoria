@@ -1,0 +1,51 @@
+{
+  "id": 98,
+  "letters": [
+    "A",
+    "Y",
+    "L",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PLAY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a dramatic work intended for performance by actors on a stage",
+      "zh": "n. 遊戲, 遊玩, 玩笑, 運動, 比賽, 賭博, 跳動, 表演, 劇本"
+    },
+    {
+      "word": "LAP",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the upper side of the thighs of a seated person",
+      "zh": "n. 膝蓋, 舔, 一圈, 下襬, 衣兜, 山坳"
+    },
+    {
+      "word": "PAY",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "something that remunerates",
+      "zh": "n. 薪資, 付款, 補償"
+    },
+    {
+      "word": "LAY",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a narrative song with a recurrent refrain",
+      "zh": "vt. 放置, 產, 鋪設, 佈置, 提出, 平息"
+    }
+  ],
+  "bonus": [
+    "ALP",
+    "PAL",
+    "PLY",
+    "PYA",
+    "YAP",
+    "PALY"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "id": 200,
+  "letters": [
+    "T",
+    "U",
+    "K",
+    "R",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "TRUNK",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the main stem of a tree; usually covered with bark; the bole is usually the part that is commercially useful for lumber",
+      "zh": "n. 樹幹, 幹線, 軀幹, 主幹, 象鼻, 箱子"
+    },
+    {
+      "word": "TURN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a circular segment of a curve",
+      "zh": "n. 轉彎, 轉動, 旋轉, 翻轉, 一圈, 順次, 改動, 變化, 性格, 特色, 形狀, 轉折"
+    },
+    {
+      "word": "NUT",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "usually large hard-shelled seed",
+      "zh": "n. 堅果, 核心, 螺帽"
+    },
+    {
+      "word": "RUN",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a score in baseball made by a runner touching all four bases safely",
+      "zh": "n. 跑, 賽跑, 奔跑, 奔跑的路程, 趨向, 流出, 運轉時間, 連續"
+    }
+  ],
+  "bonus": [
+    "RUT",
+    "TUN",
+    "URN",
+    "KNUR",
+    "RUNT",
+    "TURK"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "id": 257,
+  "letters": [
+    "G",
+    "N",
+    "I",
+    "M",
+    "T",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "MATING",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of pairing a male and female for reproductive purposes",
+      "zh": "n. 交配"
+    },
+    {
+      "word": "MAIN",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "any very large body of (salt) water",
+      "zh": "n. 主要部分, 幹線, 體力, 力量, 主群組"
+    },
+    {
+      "word": "GAIN",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "a quantity that is added",
+      "zh": "n. 增益, 獲得, 利潤, 收穫, 增加"
+    },
+    {
+      "word": "ANTI",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a person who is opposed (to an action or policy or practice etc.)",
+      "zh": "n. 反對者, 反對論者"
+    },
+    {
+      "word": "MAN",
+      "row": 5,
+      "col": 3,
+      "dir": "across",
+      "def": "an adult person who is male (as opposed to a woman)",
+      "zh": "n. 男人, 人類, 人"
+    }
+  ],
+  "bonus": [
+    "AIM",
+    "AIN",
+    "AIT",
+    "AMI",
+    "ANI",
+    "ANT",
+    "GAM",
+    "GAN",
+    "GAT",
+    "GIN",
+    "GIT",
+    "MAG",
+    "MAT",
+    "MIG",
+    "NAG",
+    "NAM",
+    "NIM",
+    "NIT",
+    "TAG",
+    "TAM",
+    "TAN",
+    "TIN",
+    "AGIN",
+    "AMIN",
+    "GAIT",
+    "GNAT",
+    "MAGI",
+    "MINA",
+    "MINT",
+    "TAIN",
+    "TANG",
+    "TING",
+    "GAMIN",
+    "GIANT",
+    "MATIN",
+    "TAMING"
+  ]
+}

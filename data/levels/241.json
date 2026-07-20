@@ -1,0 +1,66 @@
+{
+  "id": 241,
+  "letters": [
+    "D",
+    "Z",
+    "M",
+    "A",
+    "E",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "AMAZED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "affect with wonder",
+      "zh": "a. 吃驚的, 驚奇的"
+    },
+    {
+      "word": "MADE",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "a. 人工製成的, 成功的, 創造的"
+    },
+    {
+      "word": "DAME",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "informal terms for a (young) woman",
+      "zh": "n. 夫人"
+    },
+    {
+      "word": "MAD",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "roused to anger; - Mark Twain",
+      "zh": "a. 瘋狂的, 發瘋的, 生氣的, 愚蠢的, 狂歡的"
+    },
+    {
+      "word": "DAM",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "a barrier constructed to contain the flow of water or to keep out the sea",
+      "zh": "n. 水壩, 障礙"
+    }
+  ],
+  "bonus": [
+    "ADZ",
+    "AMA",
+    "MAE",
+    "MED",
+    "ZED",
+    "ADZE",
+    "DAZE",
+    "MAZE",
+    "MEAD",
+    "AMAZE",
+    "MAZED"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": 110,
+  "letters": [
+    "R",
+    "A",
+    "C",
+    "F",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "CRAFT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the skilled practice of a practical occupation",
+      "zh": "n. 技藝, 手藝, 詭計"
+    },
+    {
+      "word": "FACT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a piece of information about circumstances that exist or events that have occurred",
+      "zh": "n. 事實, 真實性, 真相, 細節, 論據"
+    },
+    {
+      "word": "ACT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "FAR",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a terrorist organization that seeks to overthrow the government dominated by Tutsi and to institute Hutu control again",
+      "zh": "a. 遠的, 久遠的, 遙遠的"
+    },
+    {
+      "word": "CAR",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    }
+  ],
+  "bonus": [
+    "AFT",
+    "ARC",
+    "ARF",
+    "ART",
+    "CAT",
+    "FAT",
+    "RAT",
+    "TAR",
+    "CART",
+    "FART",
+    "FRAT",
+    "RAFT"
+  ]
+}

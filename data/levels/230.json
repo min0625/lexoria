@@ -1,0 +1,70 @@
+{
+  "id": 230,
+  "letters": [
+    "L",
+    "U",
+    "N",
+    "E",
+    "G",
+    "J"
+  ],
+  "words": [
+    {
+      "word": "JUNGLE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a location marked by an intense competition and struggle for survival",
+      "zh": "n. 叢林, 雜亂的一堆, 弱肉強食的地方"
+    },
+    {
+      "word": "LUNG",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "either of two saclike respiratory organs in the chest of vertebrates; serves to remove carbon dioxide and provide oxygen to the blood",
+      "zh": "n. 肺, 肺臟, 空地"
+    },
+    {
+      "word": "LEG",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle",
+      "zh": "n. 腿, 假腿, 路程"
+    },
+    {
+      "word": "GEN",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    },
+    {
+      "word": "GUN",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "a weapon that discharges a missile at high velocity (especially from a metal tube or barrel)",
+      "zh": "n. 槍"
+    }
+  ],
+  "bonus": [
+    "ENG",
+    "GEL",
+    "GNU",
+    "GUL",
+    "JEU",
+    "JUG",
+    "JUN",
+    "LEU",
+    "LUG",
+    "GENU",
+    "GLEN",
+    "GLUE",
+    "LUGE",
+    "LUNE",
+    "LUNGE"
+  ]
+}

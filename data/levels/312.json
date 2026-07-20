@@ -1,0 +1,65 @@
+{
+  "id": 312,
+  "letters": [
+    "N",
+    "R",
+    "I",
+    "E",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "INTER",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "place in a grave or tomb",
+      "zh": "vt. 埋葬"
+    },
+    {
+      "word": "RENT",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a payment or series of payments made by the lessee to an owner for use of some property, facility, equipment, or service",
+      "zh": "n. 租金, 房租, 出租物, 裂縫, 破裂處, 分裂"
+    },
+    {
+      "word": "NET",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a computer network consisting of a worldwide network of computer networks that use the TCP/IP network protocols to facilitate data transmission and exchange",
+      "zh": "n. 網, 網狀物, 羅網, 淨利, 淨價"
+    },
+    {
+      "word": "TEN",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    }
+  ],
+  "bonus": [
+    "ERN",
+    "IRE",
+    "NIT",
+    "REI",
+    "RET",
+    "RIN",
+    "TIE",
+    "TIN",
+    "NITE",
+    "REIN",
+    "RITE",
+    "TERN",
+    "TIER",
+    "TINE",
+    "TIRE",
+    "INERT",
+    "NITER",
+    "NITRE",
+    "TRINE"
+  ]
+}

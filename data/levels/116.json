@@ -1,0 +1,70 @@
+{
+  "id": 116,
+  "letters": [
+    "S",
+    "O",
+    "O",
+    "H",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "SHOOT",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a new branch",
+      "zh": "n. 射擊, 狩獵, 芽, 射傷, 發射, 發芽, 急流, 推力, 攝影, 急送, 滑運道, 浪費"
+    },
+    {
+      "word": "HOST",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a person who invites guests to a social event (such as a party in his or her own home) and who is responsible for them while they are there",
+      "zh": "n. 主人, 旅館老闆, 節目主持人"
+    },
+    {
+      "word": "SHOT",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "the act of firing a projectile",
+      "zh": "n. 發射, 炮彈, 射擊, 射手, 投籃, 射門, 子彈, 射程, 拍攝, 注射"
+    },
+    {
+      "word": "TOO",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "to a degree exceeding normal or proper limits",
+      "zh": "adv. 也, 非常, 太"
+    },
+    {
+      "word": "HOT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "zh": "a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"
+    }
+  ],
+  "bonus": [
+    "OHO",
+    "OHS",
+    "OOH",
+    "OOT",
+    "SOT",
+    "THO",
+    "HOOT",
+    "HOTS",
+    "OOHS",
+    "OOTS",
+    "SHOO",
+    "SOOT",
+    "SOTH",
+    "TOSH",
+    "HOOTS",
+    "SOOTH"
+  ]
+}

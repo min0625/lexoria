@@ -1,0 +1,103 @@
+{
+  "id": 348,
+  "letters": [
+    "O",
+    "S",
+    "L",
+    "I",
+    "F",
+    "H",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "FOOLISH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "devoid of good sense or judgment",
+      "zh": "a. 愚蠢的, 傻的"
+    },
+    {
+      "word": "FOOLS",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a person who lacks good judgment",
+      "zh": "n. 傻瓜（fool的複數）"
+    },
+    {
+      "word": "SOIL",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "the state of being covered with unclean things",
+      "zh": "n. 土壤, 土地, 國家, 國土, 溫床, 汙物, 糞便, 水池"
+    },
+    {
+      "word": "FOOL",
+      "row": 5,
+      "col": 2,
+      "dir": "across",
+      "def": "a person who lacks good judgment",
+      "zh": "n. 愚人, 受騙者, 奶油拌水果"
+    },
+    {
+      "word": "SOLO",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "any activity that is performed alone without assistance",
+      "zh": "n. 獨奏, 獨唱, 單獨表演"
+    },
+    {
+      "word": "FISH",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "any of various mostly cold-blooded aquatic vertebrates usually having scales and breathing through gills",
+      "zh": "n. 魚, 魚肉, 魚類, 接合板"
+    },
+    {
+      "word": "OIL",
+      "row": 5,
+      "col": 3,
+      "dir": "down",
+      "def": "a slippery or viscous liquid or liquefiable substance not miscible with water",
+      "zh": "n. 油, 石油, 油畫顏料"
+    }
+  ],
+  "bonus": [
+    "FIL",
+    "FOH",
+    "HIS",
+    "IFS",
+    "LIS",
+    "LOO",
+    "OHO",
+    "OHS",
+    "OOH",
+    "SOL",
+    "FILO",
+    "FILS",
+    "FOIL",
+    "HOLS",
+    "HOOF",
+    "LOOF",
+    "LOOS",
+    "OILS",
+    "OLIO",
+    "OOHS",
+    "SHOO",
+    "SILO",
+    "SOLI",
+    "FILOS",
+    "FOILS",
+    "FOLIO",
+    "HOOFS",
+    "LOOFS",
+    "OLIOS",
+    "SHOOL",
+    "FOLIOS"
+  ]
+}

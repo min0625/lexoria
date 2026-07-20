@@ -1,0 +1,81 @@
+{
+  "id": 363,
+  "letters": [
+    "L",
+    "S",
+    "C",
+    "U",
+    "O",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "CONSUL",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a diplomat appointed by a government to protect its commercial interests and help its citizens in a foreign country",
+      "zh": "n. 領事, 執政官"
+    },
+    {
+      "word": "SOUL",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "the immaterial part of a person; the actuating cause of an individual life",
+      "zh": "n. 靈魂, 心靈, 精神, 精髓, 人, 化身, 典型, 鬼魂"
+    },
+    {
+      "word": "SON",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a male human offspring",
+      "zh": "n. 兒子, 女婿, 子孫"
+    },
+    {
+      "word": "COS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "ratio of the adjacent side to the hypotenuse of a right-angled triangle",
+      "zh": "n. 餘弦"
+    },
+    {
+      "word": "SUN",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    },
+    {
+      "word": "CON",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "an argument opposed to a proposal",
+      "zh": "vt. 精讀, 仔細研究, 默記"
+    }
+  ],
+  "bonus": [
+    "COL",
+    "NOS",
+    "NUS",
+    "ONS",
+    "SOL",
+    "SOU",
+    "UNS",
+    "CLON",
+    "COLS",
+    "CONS",
+    "NOUS",
+    "ONUS",
+    "UNCO",
+    "CLONS",
+    "CONUS",
+    "LOCUS",
+    "UNCOS",
+    "CLONUS"
+  ]
+}

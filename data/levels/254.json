@@ -1,0 +1,107 @@
+{
+  "id": 254,
+  "letters": [
+    "T",
+    "A",
+    "R",
+    "L",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LATTER",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "the second of two or the second mentioned of two",
+      "zh": "a. 後者的, 較後的, 近來的"
+    },
+    {
+      "word": "LATER",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "coming at a subsequent time or stage",
+      "zh": "adv. 以後, 隨後"
+    },
+    {
+      "word": "LATE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "being or occurring at an advanced period of time or after a usual or expected time",
+      "zh": "a. 遲的, 晚的, 已故的"
+    },
+    {
+      "word": "REAL",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "any rational or irrational number",
+      "zh": "a. 真的, 真實的, 實際的, 實在的, 不動(產)的, 實數的"
+    },
+    {
+      "word": "LET",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    },
+    {
+      "word": "ARE",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ALT",
+    "ART",
+    "ATE",
+    "ATT",
+    "EAR",
+    "EAT",
+    "ERA",
+    "ETA",
+    "LAR",
+    "LAT",
+    "LEA",
+    "RAT",
+    "RET",
+    "TAE",
+    "TAR",
+    "TAT",
+    "TEA",
+    "TEL",
+    "TET",
+    "EARL",
+    "LEAR",
+    "RALE",
+    "RATE",
+    "TAEL",
+    "TALE",
+    "TARE",
+    "TART",
+    "TATE",
+    "TEAL",
+    "TEAR",
+    "TEAT",
+    "TELA",
+    "TRET",
+    "ALERT",
+    "ALTER",
+    "ARTEL",
+    "LATTE",
+    "RATEL",
+    "TALER",
+    "TATER",
+    "TETRA",
+    "TREAT",
+    "RATTLE"
+  ]
+}

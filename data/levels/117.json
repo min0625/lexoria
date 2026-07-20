@@ -1,0 +1,85 @@
+{
+  "id": 117,
+  "letters": [
+    "E",
+    "T",
+    "S",
+    "M",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "STEAM",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "water at boiling temperature diffused in the atmosphere",
+      "zh": "n. 蒸汽, 精力"
+    },
+    {
+      "word": "TEAM",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a cooperative unit (especially in sports)",
+      "zh": "n. 隊, 組"
+    },
+    {
+      "word": "SAME",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a member of an indigenous nomadic people living in northern Scandinavia and herding reindeer",
+      "zh": "a. 相同的, 同樣的"
+    },
+    {
+      "word": "SET",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "ATE",
+    "EAT",
+    "EMS",
+    "ETA",
+    "MAE",
+    "MAS",
+    "MAT",
+    "MET",
+    "SAE",
+    "SAT",
+    "SEA",
+    "TAE",
+    "TAM",
+    "TAS",
+    "TEA",
+    "ATES",
+    "EAST",
+    "EATS",
+    "ETAS",
+    "MAES",
+    "MAST",
+    "MATE",
+    "MATS",
+    "MEAT",
+    "MESA",
+    "META",
+    "SATE",
+    "SEAM",
+    "SEAT",
+    "SETA",
+    "STEM",
+    "TAME",
+    "TAMS",
+    "TEAS",
+    "MATES",
+    "MEATS",
+    "SATEM",
+    "TAMES",
+    "TEAMS"
+  ]
+}

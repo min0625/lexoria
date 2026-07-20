@@ -1,0 +1,102 @@
+{
+  "id": 455,
+  "letters": [
+    "R",
+    "U",
+    "D",
+    "S",
+    "E",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "RUSHED",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "move fast",
+      "zh": "a. 匆忙的；貿然的"
+    },
+    {
+      "word": "SURE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "USED",
+      "row": 3,
+      "col": 2,
+      "dir": "across",
+      "def": "put into service; make work or employ for a particular purpose or for its inherent or natural purpose",
+      "zh": "a. 使用過的, 二手的, 習慣的"
+    },
+    {
+      "word": "DUE",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "that which is deserved or owed",
+      "zh": "n. 應得的東西, 應付款"
+    },
+    {
+      "word": "RED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "USE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "EDH",
+    "ERS",
+    "HER",
+    "HES",
+    "HUE",
+    "RES",
+    "RUE",
+    "SER",
+    "SHE",
+    "SUE",
+    "URD",
+    "DUES",
+    "DURE",
+    "EDHS",
+    "HERD",
+    "HERS",
+    "HUED",
+    "HUES",
+    "REDS",
+    "RESH",
+    "RHUS",
+    "RUDE",
+    "RUED",
+    "RUES",
+    "RUSE",
+    "RUSH",
+    "SHED",
+    "SUED",
+    "SUER",
+    "SURD",
+    "URDS",
+    "USER",
+    "DRUSE",
+    "DURES",
+    "HERDS",
+    "HURDS",
+    "SHERD",
+    "SHRED",
+    "USHER"
+  ]
+}

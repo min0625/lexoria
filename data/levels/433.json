@@ -1,0 +1,81 @@
+{
+  "id": 433,
+  "letters": [
+    "F",
+    "R",
+    "S",
+    "E",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "FRIES",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "strips of potato fried in deep fat",
+      "zh": "n. 炸薯條（French fries）"
+    },
+    {
+      "word": "FIRES",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "the event of something burning (often destructive)",
+      "zh": "n. 火災, 點火；火力"
+    },
+    {
+      "word": "RISE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a growth in strength or number or importance",
+      "zh": "n. 上升, 增加, 上漲, 高地, 升高, 出現"
+    },
+    {
+      "word": "FIRE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "the event of something burning (often destructive)",
+      "zh": "n. 火, 爐火, 電爐, 火災, 閃光體, 炮火, 熱情"
+    },
+    {
+      "word": "SIR",
+      "row": 5,
+      "col": 3,
+      "dir": "across",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    }
+  ],
+  "bonus": [
+    "EFS",
+    "ERS",
+    "FER",
+    "FIE",
+    "FIR",
+    "IFS",
+    "IRE",
+    "REF",
+    "REI",
+    "RES",
+    "RIF",
+    "SEI",
+    "SER",
+    "SRI",
+    "FIRS",
+    "IRES",
+    "REFS",
+    "REIF",
+    "REIS",
+    "RIFE",
+    "RIFS",
+    "SEIF",
+    "SERF",
+    "SIRE",
+    "FRISE",
+    "REIFS",
+    "SERIF"
+  ]
+}

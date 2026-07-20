@@ -1,0 +1,27 @@
+{
+  "id": 7,
+  "letters": [
+    "W",
+    "A",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "WAS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a state in northwestern United States on the Pacific",
+      "zh": "be的過去式"
+    },
+    {
+      "word": "SAW",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a condensed but memorable saying embodying some important fact of experience that is taken as true by many people",
+      "zh": "n. 鋸子, 諺語"
+    }
+  ],
+  "bonus": []
+}

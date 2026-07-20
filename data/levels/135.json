@@ -1,0 +1,69 @@
+{
+  "id": 135,
+  "letters": [
+    "O",
+    "T",
+    "H",
+    "W",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "WORTH",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "an indefinite quantity of something having a specified value",
+      "zh": "n. 價值, 財產"
+    },
+    {
+      "word": "THROW",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the act of throwing (propelling something with a rapid movement of the arm and wrist)",
+      "zh": "vt. 投, 擲, 拋, 發射, 摔下, 匆匆穿上(或脫下), 拋棄, 擺脫"
+    },
+    {
+      "word": "TWO",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of one and one or a numeral representing this number",
+      "zh": "num. 二, 二個"
+    },
+    {
+      "word": "WHO",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a United Nations agency to coordinate international health activities and to help governments improve health services",
+      "zh": "pron. 誰"
+    },
+    {
+      "word": "HOT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "zh": "a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"
+    }
+  ],
+  "bonus": [
+    "HOW",
+    "ORT",
+    "RHO",
+    "ROT",
+    "ROW",
+    "THO",
+    "TOR",
+    "TOW",
+    "WOT",
+    "THRO",
+    "TROW",
+    "WORT",
+    "ROWTH",
+    "WHORT",
+    "WROTH"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": 444,
+  "letters": [
+    "A",
+    "R",
+    "S",
+    "P",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "PARIS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the capital and largest city of France; and international center of culture and commerce",
+      "zh": "n. 巴黎"
+    },
+    {
+      "word": "PAIR",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a set of two similar things considered as a unit",
+      "zh": "n. 一雙, 一對, 一副"
+    },
+    {
+      "word": "AIR",
+      "row": 3,
+      "col": 1,
+      "dir": "down",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    },
+    {
+      "word": "SIR",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "term of address for a man",
+      "zh": "n. 先生, 閣下"
+    },
+    {
+      "word": "RIP",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a dissolute man in fashionable society",
+      "zh": "n. 裂痕, 破綻, 拉裂, 浪子, 巨浪"
+    }
+  ],
+  "bonus": [
+    "AIS",
+    "ARS",
+    "ASP",
+    "PAR",
+    "PAS",
+    "PIA",
+    "PIS",
+    "PSI",
+    "RAP",
+    "RAS",
+    "RIA",
+    "SAP",
+    "SIP",
+    "SPA",
+    "SRI",
+    "AIRS",
+    "PARS",
+    "PIAS",
+    "RAPS",
+    "RASP",
+    "RIAS",
+    "RIPS",
+    "SARI",
+    "SPAR",
+    "PAIRS"
+  ]
+}

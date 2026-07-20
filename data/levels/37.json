@@ -1,0 +1,46 @@
+{
+  "id": 37,
+  "letters": [
+    "L",
+    "I",
+    "M",
+    "D"
+  ],
+  "words": [
+    {
+      "word": "MILD",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "moderate in type or degree or effect or force; far from extreme",
+      "zh": "a. 溫和的, 溫柔的, 淡味的, 適度的, 輕微的, (肥皂等)軟性的"
+    },
+    {
+      "word": "LID",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "either of two folds of skin that can be moved to cover or open the eye",
+      "zh": "n. 蓋子, 限制, 眼瞼"
+    },
+    {
+      "word": "MIL",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a Cypriot monetary unit equal to one thousandth of a pound",
+      "zh": "n. 千分之一英寸"
+    },
+    {
+      "word": "MID",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "used in combination to denote the middle",
+      "zh": "a. 中間的, 中央的, 中部的"
+    }
+  ],
+  "bonus": [
+    "DIM"
+  ]
+}

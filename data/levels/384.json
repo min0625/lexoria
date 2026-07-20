@@ -1,0 +1,86 @@
+{
+  "id": 384,
+  "letters": [
+    "A",
+    "R",
+    "L",
+    "L",
+    "O",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "COLLAR",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a band that fits around the neck and is usually folded over",
+      "zh": "n. 衣領, 頸圈"
+    },
+    {
+      "word": "LOCAL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "public transport consisting of a bus or train that stops at all stations or stops",
+      "zh": "a. 地方性的, 當地的, 區域性的, 鄉土的, 本地的"
+    },
+    {
+      "word": "CALL",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a telephone connection",
+      "zh": "n. 呼叫, 訪問, 打電話, 號召, 召集, 要求"
+    },
+    {
+      "word": "ROLL",
+      "row": 6,
+      "col": 2,
+      "dir": "across",
+      "def": "rotary motion of an object around its own axis",
+      "zh": "n. 卷, 滾動, 名單, 案卷, 壓路機"
+    },
+    {
+      "word": "CAR",
+      "row": 4,
+      "col": 0,
+      "dir": "down",
+      "def": "a motor vehicle with four wheels; usually propelled by an internal combustion engine",
+      "zh": "n. 汽車, 客車"
+    },
+    {
+      "word": "ALL",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "quantifier; used with either mass or count nouns to indicate the whole number or amount of or every one of a class",
+      "zh": "a. 所有的, 全部的, 一切的"
+    }
+  ],
+  "bonus": [
+    "ARC",
+    "COL",
+    "COR",
+    "LAC",
+    "LAR",
+    "OAR",
+    "OCA",
+    "ORA",
+    "ORC",
+    "ROC",
+    "ARCO",
+    "CALO",
+    "CARL",
+    "COAL",
+    "COLA",
+    "LOCA",
+    "OLLA",
+    "ORAL",
+    "ORCA",
+    "CAROL",
+    "CLARO",
+    "CORAL",
+    "LORAL"
+  ]
+}

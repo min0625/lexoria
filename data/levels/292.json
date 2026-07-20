@@ -1,0 +1,87 @@
+{
+  "id": 292,
+  "letters": [
+    "M",
+    "T",
+    "X",
+    "I",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "MATRIX",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "(mathematics) a rectangular array of quantities or expressions set out by rows and columns; treated as a single element and manipulated according to rules",
+      "zh": "n. 母體, 子宮, 基質, 脈石, 模型, 矩陣"
+    },
+    {
+      "word": "ART",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "AIR",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a mixture of gases (especially oxygen) required for breathing; the stuff that the wind consists of",
+      "zh": "n. 空氣, 旋律, 態度"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    },
+    {
+      "word": "MIX",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a commercially prepared mixture of dry ingredients",
+      "zh": "n. 混合物, 混亂, 糊塗"
+    },
+    {
+      "word": "TAX",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "charge against a citizen's person or property or activity for the support of government",
+      "zh": "n. 稅, 稅款, 重負, 會費"
+    }
+  ],
+  "bonus": [
+    "AIM",
+    "AIT",
+    "AMI",
+    "MAR",
+    "MAT",
+    "MAX",
+    "MIR",
+    "RAM",
+    "RAT",
+    "RAX",
+    "RIA",
+    "RIM",
+    "TAM",
+    "TAR",
+    "AIRT",
+    "AMIR",
+    "MAIR",
+    "MART",
+    "MAXI",
+    "MIXT",
+    "RAMI",
+    "TAXI",
+    "TRAM",
+    "TRIM"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "id": 193,
+  "letters": [
+    "W",
+    "I",
+    "R",
+    "E",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "WRITE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "produce a literary work",
+      "zh": "vt. 書寫, 著述, 寫, 寫滿, 寫信給"
+    },
+    {
+      "word": "WIRE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "ligament made of metal and used to fasten things or make cages or fences etc",
+      "zh": "n. 電線, 電報, 電信, 鐵絲網, 金屬絲"
+    },
+    {
+      "word": "TIE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    },
+    {
+      "word": "WET",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "wetness caused by water",
+      "zh": "n. 溼氣, 潮溼, 水分, 雨天"
+    }
+  ],
+  "bonus": [
+    "IRE",
+    "REI",
+    "RET",
+    "TEW",
+    "WIT",
+    "RITE",
+    "TIER",
+    "TIRE",
+    "WEIR",
+    "WERT",
+    "WITE",
+    "WRIT",
+    "TWIER"
+  ]
+}

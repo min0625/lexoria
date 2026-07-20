@@ -1,0 +1,72 @@
+{
+  "id": 467,
+  "letters": [
+    "E",
+    "P",
+    "U",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SETUP",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "equipment designed to serve a specific function",
+      "zh": "n. 裝備, 組織, 計劃, 機構, 調整, 設定"
+    },
+    {
+      "word": "STEP",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "any maneuver made as part of progress toward a goal",
+      "zh": "n. 步驟, 步, 步幅, 腳步聲, 踏級, 步伐, 短距離, 步態, 手段, 等級"
+    },
+    {
+      "word": "PUT",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "the option to sell a given stock (or stock index or commodity future) at a given price before a given date",
+      "zh": "vt. 放, 擺, 安置, 移動, 發射, 投擲, 寫上, 表達, 使從事, 使受到, 驅使, 賦予"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    },
+    {
+      "word": "USE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "PES",
+    "PET",
+    "PUS",
+    "SUE",
+    "SUP",
+    "TUP",
+    "UPS",
+    "UTS",
+    "PEST",
+    "PETS",
+    "PUTS",
+    "SEPT",
+    "SPUE",
+    "SUET",
+    "SUPE",
+    "TUPS",
+    "STUPE",
+    "UPSET"
+  ]
+}

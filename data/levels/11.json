@@ -1,0 +1,38 @@
+{
+  "id": 11,
+  "letters": [
+    "A",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "TEA",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a beverage made by steeping tea leaves in water",
+      "zh": "n. 茶, 茶葉"
+    },
+    {
+      "word": "EAT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "ATE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "goddess of criminal rashness and its punishment",
+      "zh": "eat的過去式"
+    }
+  ],
+  "bonus": [
+    "ETA",
+    "TAE"
+  ]
+}

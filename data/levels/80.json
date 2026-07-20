@@ -1,0 +1,43 @@
+{
+  "id": 80,
+  "letters": [
+    "B",
+    "U",
+    "S",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "BUST",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a complete failure",
+      "zh": "n. 半身像, 胸部, 失敗, 毆打"
+    },
+    {
+      "word": "BUT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "and nothing more",
+      "zh": "prep. 除了"
+    },
+    {
+      "word": "BUS",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a vehicle carrying many passengers; used for public transport",
+      "zh": "n. 公共汽車"
+    }
+  ],
+  "bonus": [
+    "SUB",
+    "TUB",
+    "UTS",
+    "BUTS",
+    "STUB",
+    "TUBS"
+  ]
+}

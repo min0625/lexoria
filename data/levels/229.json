@@ -1,0 +1,96 @@
+{
+  "id": 229,
+  "letters": [
+    "E",
+    "S",
+    "L",
+    "C",
+    "E",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "SELECT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "pick out, select, or choose from a number of alternatives",
+      "zh": "a. 挑選出來的, 極好的"
+    },
+    {
+      "word": "STEEL",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "an alloy of iron with small amounts of carbon; widely used in construction; mechanical properties can be varied over a wide range",
+      "zh": "n. 鋼, 鋼製品, 鋼鐵, 堅硬, 堅固"
+    },
+    {
+      "word": "LET",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    },
+    {
+      "word": "LEE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "United States filmmaker whose works explore the richness of black culture in America (born in 1957)",
+      "zh": "n. 背風處, 避風處, 下風處, 保護, 庇護"
+    },
+    {
+      "word": "SEE",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SET",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "CEL",
+    "EEL",
+    "ELS",
+    "SEC",
+    "SEL",
+    "TEE",
+    "TEL",
+    "CEES",
+    "CELS",
+    "CELT",
+    "CETE",
+    "EELS",
+    "ELSE",
+    "LEES",
+    "LEET",
+    "LEST",
+    "LETS",
+    "SECT",
+    "SEEL",
+    "TEEL",
+    "TEES",
+    "TELE",
+    "TELS",
+    "CELTS",
+    "CETES",
+    "ELECT",
+    "LEETS",
+    "SLEET",
+    "STELE",
+    "TEELS",
+    "TELES",
+    "ELECTS"
+  ]
+}

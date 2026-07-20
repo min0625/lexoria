@@ -55,10 +55,9 @@ const value = effect.amount ?? effect.id;
 if (!Number.isInteger(value) || value <= 0) die(`數值必須是正整數，收到：${arg}`);
 
 if (effect.type === 'level') {
-  const levels = JSON.parse(readFileSync(new URL('../data/levels.json', import.meta.url)));
-  const maxId = levels.at(-1).id;
+  const { count } = JSON.parse(readFileSync(new URL('../data/levels/index.json', import.meta.url)));
   // 前端 validator 管不到兌換碼，關卡範圍在簽發當下把關（評估文件 §4）
-  if (effect.id > maxId) die(`第 ${effect.id} 關不存在，levels.json 目前只到第 ${maxId} 關`);
+  if (effect.id > count) die(`第 ${effect.id} 關不存在，目前只到第 ${count} 關`);
 }
 
 let exp;

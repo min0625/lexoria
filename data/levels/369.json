@@ -1,0 +1,112 @@
+{
+  "id": 369,
+  "letters": [
+    "A",
+    "S",
+    "G",
+    "S",
+    "A",
+    "E",
+    "V"
+  ],
+  "words": [
+    {
+      "word": "SAVAGES",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a member of an uncivilized people",
+      "zh": "n. 殘酷的人；野蠻人（savage的複數）"
+    },
+    {
+      "word": "SAVES",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "(sports) the act of preventing the opposition from scoring",
+      "zh": "n. 救援（save的複數）"
+    },
+    {
+      "word": "SAVE",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "(sports) the act of preventing the opposition from scoring",
+      "zh": "n. 救球"
+    },
+    {
+      "word": "GAVE",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "cause to have, in the abstract sense or physical sense",
+      "zh": "give的過去式"
+    },
+    {
+      "word": "AGE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "SEA",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a division of an ocean or a large body of salt water partially enclosed by land",
+      "zh": "n. 海, 海洋, 海浪, 大量"
+    },
+    {
+      "word": "GAS",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the state of matter distinguished from the solid and liquid states by: relatively low density and viscosity; relatively great expansion and contraction with changes in pressure and temperature; the ability to diffuse readily; and the spontaneous tendency to become distributed uniformly throughout any container",
+      "zh": "n. 氣體, 汽油, 瓦斯"
+    },
+    {
+      "word": "ASS",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "the fleshy part of the human body that you sit on",
+      "zh": "n. 驢, 傻瓜, 笨蛋, 屁股"
+    }
+  ],
+  "bonus": [
+    "AAS",
+    "AGA",
+    "AVA",
+    "AVE",
+    "ESS",
+    "GAE",
+    "SAE",
+    "SAG",
+    "SEG",
+    "VAS",
+    "VEG",
+    "AGAS",
+    "AGES",
+    "ASEA",
+    "AVES",
+    "GAES",
+    "SAGA",
+    "SAGE",
+    "SAGS",
+    "SEAS",
+    "SEGS",
+    "VASA",
+    "VASE",
+    "AGAVE",
+    "AVGAS",
+    "GASES",
+    "SAGAS",
+    "SAGES",
+    "VASES",
+    "AGAVES",
+    "SAVAGE",
+    "AVGASES"
+  ]
+}

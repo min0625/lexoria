@@ -1,0 +1,66 @@
+{
+  "id": 385,
+  "letters": [
+    "O",
+    "E",
+    "P",
+    "C",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SCOPE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an area in which something acts or operates or has power or control:",
+      "zh": "n. 範圍, 機會, 廣度, 眼界, 觀察儀器, 導彈射程"
+    },
+    {
+      "word": "COPS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "[建] 堆, 頂, 繞絲軸"
+    },
+    {
+      "word": "SEC",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "1/60 of a minute; the basic unit of time adopted under the Systeme International d'Unites",
+      "zh": "[計] 秒, 輔助"
+    },
+    {
+      "word": "COP",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    }
+  ],
+  "bonus": [
+    "CEP",
+    "COS",
+    "OES",
+    "OPE",
+    "OPS",
+    "OSE",
+    "PEC",
+    "PES",
+    "SOP",
+    "CEPS",
+    "COPE",
+    "EPOS",
+    "OPES",
+    "PECS",
+    "PESO",
+    "POSE",
+    "SCOP",
+    "SPEC",
+    "COPES",
+    "COPSE"
+  ]
+}

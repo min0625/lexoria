@@ -1,0 +1,95 @@
+{
+  "id": 301,
+  "letters": [
+    "U",
+    "A",
+    "H",
+    "T",
+    "R",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "AUTHOR",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "writes (books or stories or articles or the like) professionally (for pay)",
+      "zh": "n. 作家, 作家的著作, 創始人"
+    },
+    {
+      "word": "HOUR",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "a period of time equal to 1/24th of a day",
+      "zh": "n. 小時, 鐘頭, 時間, ...點鐘, 課時"
+    },
+    {
+      "word": "ART",
+      "row": 3,
+      "col": 5,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "HOT",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "zh": "a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"
+    },
+    {
+      "word": "OUT",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(baseball) a failure by a batter or runner to reach a base safely in baseball",
+      "zh": "a. 外面的, 熄滅的, 結束的"
+    }
+  ],
+  "bonus": [
+    "HAO",
+    "HAT",
+    "HUT",
+    "OAR",
+    "OAT",
+    "ORA",
+    "ORT",
+    "OUR",
+    "RAH",
+    "RAT",
+    "RHO",
+    "ROT",
+    "RUT",
+    "TAO",
+    "TAR",
+    "TAU",
+    "THO",
+    "TOR",
+    "UTA",
+    "AUTO",
+    "HART",
+    "HAUT",
+    "HOAR",
+    "HORA",
+    "HURT",
+    "OATH",
+    "RATH",
+    "RATO",
+    "ROTA",
+    "ROUT",
+    "RUTH",
+    "TAHR",
+    "TARO",
+    "THOU",
+    "THRO",
+    "THRU",
+    "TORA",
+    "TOUR",
+    "ROUTH",
+    "TORAH"
+  ]
+}

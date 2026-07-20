@@ -1,0 +1,83 @@
+{
+  "id": 428,
+  "letters": [
+    "S",
+    "M",
+    "N",
+    "H",
+    "A",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "HUMANS",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "all of the living human inhabitants of the earth",
+      "zh": "n. 人類（human的複數形式）"
+    },
+    {
+      "word": "HUMAN",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "any living or extinct member of the family Hominidae characterized by superior intelligence, articulate speech, and erect carriage",
+      "zh": "n. 人, 人類"
+    },
+    {
+      "word": "MAN",
+      "row": 2,
+      "col": 4,
+      "dir": "across",
+      "def": "an adult person who is male (as opposed to a woman)",
+      "zh": "n. 男人, 人類, 人"
+    },
+    {
+      "word": "HAS",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "(astronomy) the angular distance of a celestial point measured westward along the celestial equator from the zenith crossing; the right ascension for an observer at a particular location and time of day",
+      "zh": "have的第三人稱單數現在式"
+    },
+    {
+      "word": "SUN",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "the star that is the source of light and heat for the planets in the solar system",
+      "zh": "n. 太陽, 日, 日光, 陽光"
+    }
+  ],
+  "bonus": [
+    "AMU",
+    "ASH",
+    "HAM",
+    "HUM",
+    "HUN",
+    "MAS",
+    "MUN",
+    "MUS",
+    "NAH",
+    "NAM",
+    "NUS",
+    "SAU",
+    "SHA",
+    "SUM",
+    "UNS",
+    "AMUS",
+    "ANUS",
+    "HAMS",
+    "HUMS",
+    "HUNS",
+    "MANS",
+    "MASH",
+    "MAUN",
+    "MUNS",
+    "MUSH",
+    "SHAM",
+    "SHUN",
+    "MANUS"
+  ]
+}

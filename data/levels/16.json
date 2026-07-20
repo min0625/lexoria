@@ -1,0 +1,36 @@
+{
+  "id": 16,
+  "letters": [
+    "I",
+    "C",
+    "L",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "CLIP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a metal frame or container holding cartridges; can be inserted into an automatic gun",
+      "zh": "n. 修剪, 夾子, 回形針, 剪下來的東西"
+    },
+    {
+      "word": "PIC",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a form of entertainment that enacts a story by sound and a sequence of images giving the illusion of continuous movement",
+      "zh": "n. 照片, 圖片, 影片"
+    },
+    {
+      "word": "LIP",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking",
+      "zh": "n. 唇, 口緣, 唇狀構造"
+    }
+  ],
+  "bonus": []
+}

@@ -1,0 +1,68 @@
+{
+  "id": 496,
+  "letters": [
+    "E",
+    "C",
+    "D",
+    "R",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "CRIED",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "utter a sudden loud cry",
+      "zh": "v. 哭泣；喊叫（cry的過去分詞）"
+    },
+    {
+      "word": "RIDE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a journey in a vehicle (usually an automobile)",
+      "zh": "n. 騎馬, 乘坐, 乘車, 搭便車"
+    },
+    {
+      "word": "RED",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "red color or pigment; the chromatic color resembling the hue of blood",
+      "zh": "a. 紅的, 紅色的, 紅腫的, 流血的"
+    },
+    {
+      "word": "ICE",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    },
+    {
+      "word": "DIE",
+      "row": 3,
+      "col": 3,
+      "dir": "down",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "IRE",
+    "REC",
+    "REI",
+    "RID",
+    "CEDI",
+    "CIRE",
+    "DICE",
+    "DIRE",
+    "ICED",
+    "IRED",
+    "RICE",
+    "CIDER",
+    "DICER",
+    "RICED"
+  ]
+}

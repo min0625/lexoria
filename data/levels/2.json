@@ -1,0 +1,27 @@
+{
+  "id": 2,
+  "letters": [
+    "W",
+    "R",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "RAW",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "informal terms for nakedness",
+      "zh": "n. 擦傷處, 半成品"
+    },
+    {
+      "word": "WAR",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the waging of armed conflict against an enemy",
+      "zh": "n. 戰爭, 戰爭狀態, 戰術, 軍事, 衝突, 鬥爭, 競爭"
+    }
+  ],
+  "bonus": []
+}

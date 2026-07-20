@@ -1,0 +1,112 @@
+{
+  "id": 378,
+  "letters": [
+    "D",
+    "K",
+    "E",
+    "Y",
+    "E",
+    "W",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "WEEKDAY",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "any day except Sunday (and sometimes except Saturday)",
+      "zh": "n. 週日, 平日"
+    },
+    {
+      "word": "WAKE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "the consequences of an event (especially a catastrophic event)",
+      "zh": "vt. 叫醒, 激發"
+    },
+    {
+      "word": "WEEK",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "any period of seven consecutive days",
+      "zh": "n. 星期, 周"
+    },
+    {
+      "word": "WAY",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "how something is done or how it happens",
+      "zh": "n. 路, 路線, 路途, 方法, 道路, 情形, 規模, 習慣, 行業, 方面"
+    },
+    {
+      "word": "DAY",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "time for Earth to make a complete rotation on its axis",
+      "zh": "n. 天, 日子, 白天, 工作日"
+    },
+    {
+      "word": "KEY",
+      "row": 0,
+      "col": 8,
+      "dir": "down",
+      "def": "metal device shaped in such a way that when it is inserted into the appropriate lock the lock's mechanism can be rotated",
+      "zh": "n. 鑰匙, 鍵, 解答, 關鍵, 要害, 基調, 線索, 答案, 暗礁"
+    },
+    {
+      "word": "EYE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the organ of sight",
+      "zh": "n. 眼睛, 視力, 看"
+    }
+  ],
+  "bonus": [
+    "AWE",
+    "AYE",
+    "DAK",
+    "DAW",
+    "DEE",
+    "DEW",
+    "DEY",
+    "DYE",
+    "EKE",
+    "EWE",
+    "KAE",
+    "KAY",
+    "KEA",
+    "WAD",
+    "WAE",
+    "WED",
+    "WEE",
+    "WYE",
+    "YAK",
+    "YAW",
+    "YEA",
+    "YEW",
+    "AKEE",
+    "AWED",
+    "AWEE",
+    "DAWK",
+    "DEKE",
+    "DEWY",
+    "DYKE",
+    "EKED",
+    "EYED",
+    "WADE",
+    "WADY",
+    "WEAK",
+    "WEED",
+    "WEKA",
+    "KEYED",
+    "WAKED",
+    "WEEDY",
+    "YAWED"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "id": 137,
+  "letters": [
+    "N",
+    "L",
+    "A",
+    "C",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "CANAL",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "(astronomy) an indistinct surface feature of Mars once thought to be a system of channels; they are now believed to be an optical illusion",
+      "zh": "n. 運河, 水道, 管, 溝渠"
+    },
+    {
+      "word": "ANAL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "of or related to the anus",
+      "zh": "a. 肛門的, 肛門附近的"
+    },
+    {
+      "word": "CLAN",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "group of people related by blood or marriage",
+      "zh": "n. 氏族, 宗族, 集團"
+    },
+    {
+      "word": "ANA",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "mother of the ancient Irish gods; sometimes identified with Danu",
+      "zh": "n. 言論集, 語錄, 軼事"
+    },
+    {
+      "word": "CAN",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "airtight sealed metal container for food or drink or paint etc.",
+      "zh": "vt. 裝罐"
+    }
+  ],
+  "bonus": [
+    "AAL",
+    "ALA",
+    "LAC",
+    "ALAN"
+  ]
+}

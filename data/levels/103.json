@@ -1,0 +1,53 @@
+{
+  "id": 103,
+  "letters": [
+    "I",
+    "H",
+    "G",
+    "R",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "RIGHT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an abstract idea of that which is due to a person or governmental body by law or tradition or nature; ; - Eleanor Roosevelt",
+      "zh": "n. 權利, 右邊, 正義, 右派, 公正"
+    },
+    {
+      "word": "GRIT",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a hard coarse-grained siliceous sandstone",
+      "zh": "n. 砂礫, 粗砂石"
+    },
+    {
+      "word": "RIG",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "gear (including necessary machinery) for a particular enterprise",
+      "zh": "n. 裝備, 帆裝"
+    },
+    {
+      "word": "HIT",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "(baseball) a successful stroke in an athletic contest (especially in baseball)",
+      "zh": "n. 打擊, 打, 衝撞, 諷刺"
+    }
+  ],
+  "bonus": [
+    "GHI",
+    "GIT",
+    "GIRT",
+    "THIR",
+    "TRIG",
+    "GIRTH",
+    "GRITH"
+  ]
+}

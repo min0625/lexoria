@@ -1,0 +1,70 @@
+{
+  "id": 126,
+  "letters": [
+    "L",
+    "E",
+    "D",
+    "Y",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "YIELD",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "production of a certain amount",
+      "zh": "n. 生產量, 投資收益"
+    },
+    {
+      "word": "LIED",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "a German art song of the 19th century for voice and piano",
+      "zh": "n. (德國)歌曲"
+    },
+    {
+      "word": "LIE",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a statement that deviates from or perverts the truth",
+      "zh": "n. 謊言, 假象, 位置"
+    },
+    {
+      "word": "LED",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "DIE",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a small cube with 1 to 6 spots on the six faces; used in gambling to generate random numbers",
+      "zh": "vi. 死亡, 消逝, 平息, 熄滅, 漠然, 渴望"
+    }
+  ],
+  "bonus": [
+    "DEL",
+    "DEY",
+    "DYE",
+    "ELD",
+    "LEI",
+    "LEY",
+    "LID",
+    "LYE",
+    "YID",
+    "DEIL",
+    "DELI",
+    "DIEL",
+    "IDLE",
+    "IDLY",
+    "IDYL",
+    "YELD"
+  ]
+}

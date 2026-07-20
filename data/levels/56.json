@@ -1,0 +1,46 @@
+{
+  "id": 56,
+  "letters": [
+    "A",
+    "B",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BEAT",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a regular route for a sentry or policeman",
+      "zh": "n. 心跳(聲), 打, 敲打聲, 拍子"
+    },
+    {
+      "word": "BETA",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the 2nd letter of the Greek alphabet",
+      "zh": "n. 希臘字母表的第二個字母"
+    },
+    {
+      "word": "EAT",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    }
+  ],
+  "bonus": [
+    "ATE",
+    "BAT",
+    "BET",
+    "ETA",
+    "TAB",
+    "TAE",
+    "TEA",
+    "ABET",
+    "BATE"
+  ]
+}

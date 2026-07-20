@@ -1,0 +1,41 @@
+{
+  "id": 48,
+  "letters": [
+    "F",
+    "A",
+    "E",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "LEAF",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the main organ of photosynthesis and transpiration in higher plants",
+      "zh": "n. 葉, 樹葉, 花瓣, 頁"
+    },
+    {
+      "word": "ELF",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(folklore) fairies that are somewhat mischievous",
+      "zh": "n. 小精靈, 矮人, 淘氣鬼"
+    },
+    {
+      "word": "ALE",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "a general name for beer made with a top fermenting yeast; in some of the United States an ale is (by law) a brew of more than 4% alcohol by volume",
+      "zh": "n. 麥芽酒"
+    }
+  ],
+  "bonus": [
+    "LEA",
+    "ALEF",
+    "FEAL",
+    "FLEA"
+  ]
+}

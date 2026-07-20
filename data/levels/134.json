@@ -1,0 +1,64 @@
+{
+  "id": 134,
+  "letters": [
+    "O",
+    "R",
+    "S",
+    "C",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "ROCKS",
+      "row": 2,
+      "col": 3,
+      "dir": "across",
+      "def": "a lump or mass of hard consolidated mineral matter",
+      "zh": "n. 岩石, 岩礁；岩石礁石（rock複數形式）"
+    },
+    {
+      "word": "SOCK",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "hosiery consisting of a cloth covering for the foot; worn inside the shoe; reaches to between the ankle and the knee",
+      "zh": "n. 短襪, 鞋墊, 一擊"
+    },
+    {
+      "word": "CORK",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "outer bark of the cork oak; used for stoppers for bottles etc.",
+      "zh": "n. 軟木塞, 軟木樹, 軟木"
+    },
+    {
+      "word": "ROCK",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a lump or mass of hard consolidated mineral matter",
+      "zh": "n. 岩石, 岩礁, 石頭, 基石, 暗礁, 搖動, 搖滾樂"
+    },
+    {
+      "word": "COS",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "ratio of the adjacent side to the hypotenuse of a right-angled triangle",
+      "zh": "n. 餘弦"
+    }
+  ],
+  "bonus": [
+    "COR",
+    "KOR",
+    "KOS",
+    "ORC",
+    "ORS",
+    "ROC",
+    "KORS",
+    "ORCS",
+    "ROCS",
+    "CORKS"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 54,
+  "letters": [
+    "A",
+    "E",
+    "T",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "TAKE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "the income or profit arising from such transactions as the sale of land or other property",
+      "zh": "vt. 拿, 取, 抓, 帶領, 獲得, 就座, 接受, 吃, 吸引, 採取, 乘, 需要, 花費"
+    },
+    {
+      "word": "EAT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "take in solid food",
+      "zh": "v. 吃, 腐蝕"
+    },
+    {
+      "word": "TEA",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a beverage made by steeping tea leaves in water",
+      "zh": "n. 茶, 茶葉"
+    }
+  ],
+  "bonus": [
+    "ATE",
+    "ETA",
+    "KAE",
+    "KAT",
+    "KEA",
+    "TAE",
+    "TEAK"
+  ]
+}

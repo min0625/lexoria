@@ -1,0 +1,95 @@
+{
+  "id": 358,
+  "letters": [
+    "S",
+    "A",
+    "N",
+    "I",
+    "T",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "SAINTS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a person who has died and has been declared a saint by canonization",
+      "zh": "n. 聖人；聖徒（saint的複數）"
+    },
+    {
+      "word": "ANTI",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a person who is opposed (to an action or policy or practice etc.)",
+      "zh": "n. 反對者, 反對論者"
+    },
+    {
+      "word": "SIT",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "be seated",
+      "zh": "vi. 坐, 就座, 坐落"
+    },
+    {
+      "word": "ITS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the branch of engineering that deals with the use of computers and telecommunications to retrieve and store and transmit information",
+      "zh": "pron. 它的"
+    },
+    {
+      "word": "ASS",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "the fleshy part of the human body that you sit on",
+      "zh": "n. 驢, 傻瓜, 笨蛋, 屁股"
+    }
+  ],
+  "bonus": [
+    "AIN",
+    "AIS",
+    "AIT",
+    "ANI",
+    "ANT",
+    "INS",
+    "NIT",
+    "SAT",
+    "SIN",
+    "SIS",
+    "TAN",
+    "TAS",
+    "TIN",
+    "TIS",
+    "AINS",
+    "AITS",
+    "ANIS",
+    "ANTS",
+    "NITS",
+    "SAIN",
+    "SANS",
+    "SATI",
+    "SINS",
+    "SITS",
+    "SNIT",
+    "TAIN",
+    "TANS",
+    "TASS",
+    "TINS",
+    "ANTIS",
+    "SAINS",
+    "SAINT",
+    "SASIN",
+    "SATIN",
+    "SATIS",
+    "SNITS",
+    "STAIN",
+    "TAINS",
+    "SATINS",
+    "STAINS"
+  ]
+}

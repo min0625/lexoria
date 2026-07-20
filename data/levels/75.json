@@ -1,0 +1,41 @@
+{
+  "id": 75,
+  "letters": [
+    "L",
+    "F",
+    "T",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "LEFT",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "location near or direction toward the left side; i.e. the side to the north when a person or object faces east",
+      "zh": "a. 左邊的, 左傾的, 左側的, 左派的"
+    },
+    {
+      "word": "FELT",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a fabric made of compressed matted animal fibers",
+      "zh": "n. 毛毯, 氈"
+    },
+    {
+      "word": "LET",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "EFT",
+    "ELF",
+    "FET",
+    "TEL"
+  ]
+}

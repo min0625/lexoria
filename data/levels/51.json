@@ -1,0 +1,49 @@
+{
+  "id": 51,
+  "letters": [
+    "T",
+    "E",
+    "A",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "RATE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a magnitude or frequency relative to a time unit",
+      "zh": "n. 比率, 率, 速度, 價格, 費用, 等級"
+    },
+    {
+      "word": "ART",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "ARE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a unit of surface area equal to 100 square meters",
+      "zh": "be的現在時複數或第二人稱單數"
+    }
+  ],
+  "bonus": [
+    "ATE",
+    "EAR",
+    "EAT",
+    "ERA",
+    "ETA",
+    "RAT",
+    "RET",
+    "TAE",
+    "TAR",
+    "TEA",
+    "TARE",
+    "TEAR"
+  ]
+}

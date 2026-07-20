@@ -1,0 +1,76 @@
+{
+  "id": 235,
+  "letters": [
+    "U",
+    "D",
+    "P",
+    "H",
+    "L",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "UPHELD",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "keep or maintain in unaltered condition; cause to remain or last",
+      "zh": "uphold的過去式和過去分詞"
+    },
+    {
+      "word": "HELP",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "the activity of contributing to the fulfillment of a need or furtherance of an effort or purpose",
+      "zh": "n. 幫忙, 幫助者, 補救辦法, 有益的東西"
+    },
+    {
+      "word": "HELD",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "keep in a certain state, position, or activity; e.g.,",
+      "zh": "hold的過去式和過去分詞"
+    },
+    {
+      "word": "LED",
+      "row": 1,
+      "col": 5,
+      "dir": "down",
+      "def": "diode such that light emitted at a p-n junction is proportional to the bias current; color depends on the material used",
+      "zh": "lead的過去式和過去分詞"
+    },
+    {
+      "word": "DUE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "that which is deserved or owed",
+      "zh": "n. 應得的東西, 應付款"
+    }
+  ],
+  "bonus": [
+    "DEL",
+    "DUP",
+    "EDH",
+    "ELD",
+    "HEP",
+    "HUE",
+    "HUP",
+    "LEU",
+    "PED",
+    "PEH",
+    "PUD",
+    "PUL",
+    "DUEL",
+    "DUPE",
+    "HUED",
+    "LEUD",
+    "LUDE",
+    "PLED",
+    "PULE",
+    "DUPLE",
+    "PULED"
+  ]
+}

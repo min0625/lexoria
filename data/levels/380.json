@@ -1,0 +1,86 @@
+{
+  "id": 380,
+  "letters": [
+    "V",
+    "R",
+    "G",
+    "N",
+    "O",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "GOVERN",
+      "row": 1,
+      "col": 1,
+      "dir": "across",
+      "def": "bring into conformity with rules or principles or usage; impose regulations",
+      "zh": "v. 統治, 支配, 管理"
+    },
+    {
+      "word": "OVER",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "(cricket) the division of play during which six balls are bowled at the batsman by one player from the other team from the same end of the pitch",
+      "zh": "adv. 結束, 越過, 從頭到尾"
+    },
+    {
+      "word": "GONE",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "change location; move, travel, or proceed, also metaphorically",
+      "zh": "a. 離去的, 死去的, 用完的"
+    },
+    {
+      "word": "GEN",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "informal term for information",
+      "zh": "n. 訊息, 真相, 情報"
+    },
+    {
+      "word": "REV",
+      "row": 3,
+      "col": 3,
+      "dir": "across",
+      "def": "rate of revolution of a motor",
+      "zh": "n. 一次迴轉"
+    },
+    {
+      "word": "ONE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    }
+  ],
+  "bonus": [
+    "EGO",
+    "ENG",
+    "EON",
+    "ERG",
+    "ERN",
+    "GOR",
+    "NOG",
+    "NOR",
+    "ORE",
+    "REG",
+    "ROE",
+    "VEG",
+    "VOE",
+    "ERGO",
+    "GOER",
+    "GORE",
+    "OGRE",
+    "OVEN",
+    "ROVE",
+    "GENRO",
+    "GONER",
+    "GROVE",
+    "ROVEN"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": 19,
+  "letters": [
+    "S",
+    "I",
+    "P",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "SKIP",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a gait in which steps and hops alternate",
+      "zh": "n. 跳躍, 跳讀"
+    },
+    {
+      "word": "SIP",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a small drink",
+      "zh": "n. 啜飲, 小口喝, 抿"
+    },
+    {
+      "word": "SKI",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "narrow wood or metal or plastic runners used in pairs for gliding over snow",
+      "zh": "n. 滑雪橇"
+    }
+  ],
+  "bonus": [
+    "KIP",
+    "PIS",
+    "PSI",
+    "KIPS",
+    "SPIK"
+  ]
+}

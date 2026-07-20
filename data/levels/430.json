@@ -1,0 +1,89 @@
+{
+  "id": 430,
+  "letters": [
+    "C",
+    "K",
+    "E",
+    "N",
+    "H",
+    "I",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "CHICKEN",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "the flesh of a chicken used for food",
+      "zh": "n. 小雞, 雞肉"
+    },
+    {
+      "word": "CHECK",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "a written order directing a bank to pay money",
+      "zh": "n. 檢查, 支票, 阻止物, 寄物牌, 象棋中將軍"
+    },
+    {
+      "word": "NICE",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "a city in southeastern France on the Mediterranean; the leading resort on the French Riviera",
+      "zh": "a. 美好的, 和藹的, 正派的, 做得好的, 精密的, 細微的, 挑剔的, 謹慎的"
+    },
+    {
+      "word": "NICK",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "an impression in a surface (as made by a blow)",
+      "zh": "n. 刻痕, 缺口, 劃痕"
+    },
+    {
+      "word": "NECK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "the part of an organism (human or animal) that connects the head to the rest of the body",
+      "zh": "n. 脖子, 衣領, 頸"
+    },
+    {
+      "word": "ICE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "water frozen in the solid state",
+      "zh": "n. 冰, 冰淇淋, 糖衣, 冷若冰霜, 矜持, 賄賂"
+    }
+  ],
+  "bonus": [
+    "CHI",
+    "HEN",
+    "HIC",
+    "HIE",
+    "HIN",
+    "ICH",
+    "ICK",
+    "INK",
+    "KEN",
+    "KHI",
+    "KIN",
+    "CHIC",
+    "CHIN",
+    "CINE",
+    "HECK",
+    "HICK",
+    "HIKE",
+    "INCH",
+    "KINE",
+    "CHICK",
+    "CHINE",
+    "CHINK",
+    "CINCH",
+    "KENCH",
+    "NICHE"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "id": 95,
+  "letters": [
+    "E",
+    "B",
+    "T",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "BITE",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a wound resulting from biting by an animal or a person",
+      "zh": "n. 咬, 一口"
+    },
+    {
+      "word": "BIT",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a small piece or quantity of something",
+      "zh": "n. 少量, 馬嚼子, 輔幣"
+    },
+    {
+      "word": "TIE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "neckwear consisting of a long narrow piece of material worn (mostly by men) under a collar and tied in knot at the front",
+      "zh": "n. 帶子, 線, 鞋帶, 領帶, 領結, 關係, 束縛, 平局, 不分勝負"
+    },
+    {
+      "word": "BET",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the money risked on a gamble",
+      "zh": "n. 打賭, 賭注"
+    }
+  ],
+  "bonus": []
+}

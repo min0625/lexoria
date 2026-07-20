@@ -1,0 +1,66 @@
+{
+  "id": 247,
+  "letters": [
+    "E",
+    "C",
+    "O",
+    "O",
+    "D",
+    "K"
+  ],
+  "words": [
+    {
+      "word": "COOKED",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "prepare a hot meal",
+      "zh": "a. 精疲力竭的, 被揍得昏厥的, 未達到目的就完蛋的, 喝醉了的"
+    },
+    {
+      "word": "COOK",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "someone who cooks food",
+      "zh": "n. 廚子, 廚師"
+    },
+    {
+      "word": "CODE",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a set of rules or principles or laws (especially written ones)",
+      "zh": "n. 程式碼, 密碼, 法規, 法典"
+    },
+    {
+      "word": "DECK",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "any of various platforms built into a vessel",
+      "zh": "n. 甲板, (汽車後部的)行李倉"
+    },
+    {
+      "word": "DOC",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a licensed medical practitioner",
+      "zh": "[計] 通訊部, 數字輸出控制, 文件"
+    }
+  ],
+  "bonus": [
+    "COD",
+    "COO",
+    "DOE",
+    "ODE",
+    "OKE",
+    "COED",
+    "COKE",
+    "DECO",
+    "DOCK",
+    "COKED",
+    "COOED"
+  ]
+}

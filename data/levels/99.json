@@ -1,0 +1,46 @@
+{
+  "id": 99,
+  "letters": [
+    "N",
+    "O",
+    "E",
+    "C"
+  ],
+  "words": [
+    {
+      "word": "ONCE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "on one occasion",
+      "zh": "adv. 一次, 曾經, 一旦"
+    },
+    {
+      "word": "CONE",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "any cone-shaped artifact",
+      "zh": "n. 圓錐體, 球果"
+    },
+    {
+      "word": "CON",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "an argument opposed to a proposal",
+      "zh": "vt. 精讀, 仔細研究, 默記"
+    },
+    {
+      "word": "ONE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    }
+  ],
+  "bonus": [
+    "EON"
+  ]
+}

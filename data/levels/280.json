@@ -1,0 +1,58 @@
+{
+  "id": 280,
+  "letters": [
+    "Y",
+    "Y",
+    "P",
+    "A",
+    "D",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "PAYDAY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the day on which you receive pay for your work",
+      "zh": "n. 發薪日, 發工資日, 交割日, 過戶結帳日"
+    },
+    {
+      "word": "PAD",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "a number of sheets of paper fastened together along one edge",
+      "zh": "n. 填補, 襯墊, 印色盒, 路"
+    },
+    {
+      "word": "YAY",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a branch of the Tai languages",
+      "zh": "int. 哇（因高興而歡呼）"
+    },
+    {
+      "word": "PAY",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "something that remunerates",
+      "zh": "n. 薪資, 付款, 補償"
+    },
+    {
+      "word": "DAY",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "time for Earth to make a complete rotation on its axis",
+      "zh": "n. 天, 日子, 白天, 工作日"
+    }
+  ],
+  "bonus": [
+    "DAP",
+    "PYA",
+    "YAP"
+  ]
+}

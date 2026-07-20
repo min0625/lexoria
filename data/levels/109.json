@@ -1,0 +1,61 @@
+{
+  "id": 109,
+  "letters": [
+    "B",
+    "E",
+    "A",
+    "B",
+    "Y"
+  ],
+  "words": [
+    {
+      "word": "ABBEY",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a church associated with a monastery or convent",
+      "zh": "n. 大修道院"
+    },
+    {
+      "word": "BABY",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a very young child (birth to 1 year) who has not yet begun to walk or talk",
+      "zh": "n. 嬰孩"
+    },
+    {
+      "word": "BYE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "you advance to the next round in a tournament without playing an opponent",
+      "zh": "interj. 再會, 回頭見"
+    },
+    {
+      "word": "YEA",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "n. 肯定, 贊成, 贊成票"
+    },
+    {
+      "word": "BAY",
+      "row": 2,
+      "col": 3,
+      "dir": "across",
+      "def": "an indentation of a shoreline larger than a cove but smaller than a gulf",
+      "zh": "n. 海灣, 狗吠聲, 月桂"
+    }
+  ],
+  "bonus": [
+    "ABY",
+    "AYE",
+    "BEY",
+    "EBB",
+    "ABBE",
+    "ABYE",
+    "BABE"
+  ]
+}

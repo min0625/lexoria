@@ -1,0 +1,59 @@
+{
+  "id": 122,
+  "letters": [
+    "R",
+    "C",
+    "S",
+    "O",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "CROPS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the yield from plants in a single growing season",
+      "zh": "[醫] 分批出現(疹)"
+    },
+    {
+      "word": "COPS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "[建] 堆, 頂, 繞絲軸"
+    },
+    {
+      "word": "PRO",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    },
+    {
+      "word": "COP",
+      "row": 0,
+      "col": 3,
+      "dir": "across",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    }
+  ],
+  "bonus": [
+    "COR",
+    "COS",
+    "OPS",
+    "ORC",
+    "ORS",
+    "ROC",
+    "SOP",
+    "CROP",
+    "ORCS",
+    "PROS",
+    "ROCS",
+    "SCOP",
+    "CORPS"
+  ]
+}

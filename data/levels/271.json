@@ -1,0 +1,96 @@
+{
+  "id": 271,
+  "letters": [
+    "C",
+    "E",
+    "O",
+    "N",
+    "T",
+    "I"
+  ],
+  "words": [
+    {
+      "word": "NOTICE",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "an announcement containing information about an event; ; ; \"a notice of sale",
+      "zh": "n. 注意, 佈告, 通知, 預告, 短評"
+    },
+    {
+      "word": "ONCE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "on one occasion",
+      "zh": "adv. 一次, 曾經, 一旦"
+    },
+    {
+      "word": "NICE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a city in southeastern France on the Mediterranean; the leading resort on the French Riviera",
+      "zh": "a. 美好的, 和藹的, 正派的, 做得好的, 精密的, 細微的, 挑剔的, 謹慎的"
+    },
+    {
+      "word": "ONE",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "NOT",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "negation of a word or group of words",
+      "zh": "adv. 不, 非, 未"
+    },
+    {
+      "word": "TEN",
+      "row": 0,
+      "col": 7,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of nine and one; the base of the decimal system",
+      "zh": "num. 十, 十個"
+    }
+  ],
+  "bonus": [
+    "CON",
+    "COT",
+    "EON",
+    "ICE",
+    "ION",
+    "NET",
+    "NIT",
+    "TIC",
+    "TIE",
+    "TIN",
+    "TOE",
+    "TON",
+    "CENT",
+    "CINE",
+    "CION",
+    "CITE",
+    "COIN",
+    "CONE",
+    "CONI",
+    "COTE",
+    "ETIC",
+    "ICON",
+    "INTO",
+    "NITE",
+    "NOTE",
+    "OTIC",
+    "TINE",
+    "TONE",
+    "CENTO",
+    "CONTE",
+    "ONTIC",
+    "TONIC",
+    "NOETIC"
+  ]
+}

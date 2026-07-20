@@ -1,0 +1,63 @@
+{
+  "id": 150,
+  "letters": [
+    "H",
+    "M",
+    "T",
+    "C",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "MATCH",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "lighter consisting of a thin piece of wood or cardboard tipped with combustible chemical; ignites with friction",
+      "zh": "n. 比賽, 火柴, 對手"
+    },
+    {
+      "word": "CHAT",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "an informal conversation",
+      "zh": "n. 閒談"
+    },
+    {
+      "word": "HAT",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "headdress that protects the head from bad weather; has shaped crown and usually a brim",
+      "zh": "n. 帽子"
+    },
+    {
+      "word": "ACT",
+      "row": 4,
+      "col": 2,
+      "dir": "across",
+      "def": "a legal document codifying the result of deliberations of a committee or society or legislative body",
+      "zh": "n. 行動, 行為, 幕, 法案"
+    },
+    {
+      "word": "CAT",
+      "row": 0,
+      "col": 1,
+      "dir": "across",
+      "def": "feline mammal usually having thick soft fur and no ability to roar: domestic cats; wildcats",
+      "zh": "n. 貓, 惡婦"
+    }
+  ],
+  "bonus": [
+    "CAM",
+    "HAM",
+    "MAC",
+    "MAT",
+    "TAM",
+    "CHAM",
+    "MACH",
+    "MATH",
+    "TACH"
+  ]
+}

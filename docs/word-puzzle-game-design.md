@@ -31,7 +31,7 @@
 │  ┌───────────────────────┐  │
 │  │  WebView (遊戲本體)     │  │
 │  │  HTML + CSS + JS       │  │
-│  │  levels.json (關卡)     │  │
+│  │  data/levels/ (關卡)    │  │
 │  │  localStorage (進度)    │  │
 │  └───────────↕────────────┘  │
 │     JS Bridge (廣告/IAP/存檔) │
@@ -126,7 +126,9 @@ place(words):                          # words 依長度遞減排序
 
 **字典建議**：目標單字用常用字頻表過濾；bonus 判定用大字典（建議 ENABLE，public domain）。注意授權陷阱：TWL / SOWPODS 是 Scrabble 主辦方的專有字表、COCA 頻率表商用要付費，都不要用——各資料源授權與替代品整理在 §14。兩份分開——「玩家想得到的字被判無效」是這類遊戲最大的差評來源。
 
-Bonus 字典幾十萬字，全部塞進關卡 JSON 不划算 → 打包成一份以字母排序 key 的 JSON（`"AELNP": ["PANEL","PLANE",...]`）或前綴樹，查詢 O(1)。壓縮後約幾百 KB，可接受。啟動時 `fetch` 非同步載入一次、常駐記憶體；`levels.json` 很小，隨頁面直接載入即可。
+Bonus 字典幾十萬字，全部塞進關卡 JSON 不划算 → 打包成一份以字母排序 key 的 JSON（`"AELNP": ["PANEL","PLANE",...]`）或前綴樹，查詢 O(1)。壓縮後約幾百 KB，可接受。啟動時 `fetch` 非同步載入一次、常駐記憶體。
+
+單一 `levels.json` 塞 500 關（每關都內嵌 §6.3 的英中釋義文字）會膨脹到 500KB+，開頁就整包載入會拖慢首次進場——改成每關一個檔（`data/levels/<id>.json`），啟動只 `fetch` 一份僅含關卡數的輕量索引（`data/levels/index.json`），單關內容留到 `startLevel()` 當下才按需載入，首屏只需要當前那一關（1–2KB）。索引與當前關卡是**並行**發出的——當前關卡 id 從存檔就讀得到，不必等索引回來才知道要抓哪一關，否則等於把原本的瀑布換成新的一段。背景預取（開機的當前關、遊玩中的下一關）都必須把 response body 讀完，只發不讀的 `fetch` 在 Safari 會被中止、也不保證寫進 HTTP 快取。
 
 ## 6. 單字解釋與發音（查詞功能）
 
@@ -161,7 +163,7 @@ function speak(word) {
 - 英文釋義用 **WordNet**（Princeton；WordNet License，免費可商用但需隨附授權聲明，見 §14）：每個字取第一個常用義的一句短釋義即可，不做詞性標註、多義選擇、例句這類進階資訊。
 - 繁體中文釋義用 **ECDICT**（MIT，見 §14）：取 translation 欄第一個**非 `abbr.` 縮寫**的義項（同樣是一句短釋義的原則）——某些字形（如 ages、tho）的第一行是專有名詞縮寫（「聲控遙測系統」之類），顯示在查詞卡上完全誤導；整欄只有縮寫義的字形直接不收，等同查不到中文而退出目標字候選（bonus 判定不受影響）。原始資料為簡體，建置期以 **OpenCC**（s2twp）轉為台灣正體。查詞卡以中文為主、英文釋義為輔。
 - 只需要涵蓋關卡實際用到的目標字（本來就是常用字頻表過濾出來的少量字），不必打包整本字典——產生器（§5 步驟 3 挑目標字時）順便查一次塞進 JSON。
-- 直接內嵌進 `levels.json`（每關字少，內嵌最省事，不必再建索引檔）：
+- 直接內嵌進每關的 JSON 檔（每關字少，內嵌最省事，不必再建索引檔）：
 
   ```json
   { "word": "PLANE", "row": 0, "col": 2, "dir": "across", "def": "a flat or level surface", "zh": "n. 平面, 飛機" }
@@ -274,7 +276,7 @@ word-game/
 │   ├── bridge.js        # 平台抽象層（存檔/分享/廣告）
 │   └── style.css
 ├── data/
-│   ├── levels.json      # 產生器輸出，含每個目標字的 def 欄位（§6.3）
+│   ├── levels/           # 產生器輸出，每關一個檔＋index.json（含每個目標字的 def 欄位，§6.3）
 │   └── dictionary.json  # bonus 字典（依字母排序 key）
 ├── tools/
 │   └── generate-levels.mjs  # 關卡產生器（建置期執行，查 WordNet 取釋義）

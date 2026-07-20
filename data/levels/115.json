@@ -1,0 +1,75 @@
+{
+  "id": 115,
+  "letters": [
+    "A",
+    "G",
+    "E",
+    "N",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "ANGEL",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "spiritual being attendant upon God",
+      "zh": "n. 天使, 守護神, 善人"
+    },
+    {
+      "word": "ANGLE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "the space between two lines or planes that intersect; the inclination of one line to another; measured in degrees or radians",
+      "zh": "n. 角, 角度, 角落"
+    },
+    {
+      "word": "LANE",
+      "row": 1,
+      "col": 2,
+      "dir": "across",
+      "def": "a narrow way or road",
+      "zh": "n. 小路, 巷, 弄, 單行道"
+    },
+    {
+      "word": "LEG",
+      "row": 1,
+      "col": 2,
+      "dir": "down",
+      "def": "a human limb; commonly used to refer to a whole limb but technically only the part of the limb between the knee and ankle",
+      "zh": "n. 腿, 假腿, 路程"
+    },
+    {
+      "word": "AGE",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    }
+  ],
+  "bonus": [
+    "ALE",
+    "ANE",
+    "ENG",
+    "GAE",
+    "GAL",
+    "GAN",
+    "GEL",
+    "GEN",
+    "LAG",
+    "LEA",
+    "NAE",
+    "NAG",
+    "EGAL",
+    "ELAN",
+    "GAEN",
+    "GALE",
+    "GANE",
+    "GLEN",
+    "LANG",
+    "LEAN",
+    "GLEAN"
+  ]
+}

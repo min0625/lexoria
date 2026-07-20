@@ -1,0 +1,64 @@
+{
+  "id": 118,
+  "letters": [
+    "N",
+    "A",
+    "G",
+    "B",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "BEGAN",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "take the first step or steps in carrying out an action",
+      "zh": "begin的過去式"
+    },
+    {
+      "word": "AGE",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "how long something has existed",
+      "zh": "n. 年齡, 老年, 成年, 壽命, 時代, 時期"
+    },
+    {
+      "word": "BAG",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a flexible container with a single opening",
+      "zh": "n. 袋子, 袋狀物"
+    },
+    {
+      "word": "BEN",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a mountain or tall hill",
+      "zh": "n. 內室"
+    }
+  ],
+  "bonus": [
+    "ANE",
+    "BAN",
+    "BEG",
+    "ENG",
+    "GAB",
+    "GAE",
+    "GAN",
+    "GEN",
+    "NAB",
+    "NAE",
+    "NAG",
+    "NEB",
+    "BANE",
+    "BANG",
+    "BEAN",
+    "GAEN",
+    "GANE",
+    "NABE"
+  ]
+}

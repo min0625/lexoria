@@ -1,0 +1,89 @@
+{
+  "id": 224,
+  "letters": [
+    "S",
+    "L",
+    "Y",
+    "E",
+    "U",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "SURELY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "definitely or positively (`sure' is sometimes used informally for `surely')",
+      "zh": "adv. 的確地, 安全地"
+    },
+    {
+      "word": "RULES",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則；條例（rule的複數形式）"
+    },
+    {
+      "word": "SURE",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "having or feeling no doubt or uncertainty; confident and assured",
+      "zh": "a. 確信, 必然的, 必定的"
+    },
+    {
+      "word": "YES",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "an affirmative",
+      "zh": "adv. 是"
+    },
+    {
+      "word": "USE",
+      "row": 4,
+      "col": 3,
+      "dir": "across",
+      "def": "the act of using",
+      "zh": "n. 使用, 習慣, 使用價值, 用法, 使用權"
+    }
+  ],
+  "bonus": [
+    "ELS",
+    "ERS",
+    "LEU",
+    "LEY",
+    "LYE",
+    "RES",
+    "RUE",
+    "RYE",
+    "SEL",
+    "SER",
+    "SLY",
+    "SUE",
+    "LEYS",
+    "LUES",
+    "LURE",
+    "LYES",
+    "LYRE",
+    "LYSE",
+    "RELY",
+    "RUES",
+    "RULE",
+    "RULY",
+    "RUSE",
+    "RYES",
+    "SLUE",
+    "SLUR",
+    "SUER",
+    "USER",
+    "YULE",
+    "LURES",
+    "LYRES",
+    "SLYER",
+    "SURLY",
+    "YULES"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "id": 315,
+  "letters": [
+    "L",
+    "R",
+    "Y",
+    "G",
+    "H",
+    "O",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "ROUGHLY",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "(of quantities) imprecise but fairly close to correct",
+      "zh": "adv. 概略地, 粗糙地, 粗暴地"
+    },
+    {
+      "word": "ROUGH",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "the part of a golf course bordering the fairway where the grass is not cut short",
+      "zh": "n. 粗糙的東西, 毛坯, 未加工品, 梗概, 草圖, 暴徒, 艱難"
+    },
+    {
+      "word": "GLORY",
+      "row": 6,
+      "col": 0,
+      "dir": "across",
+      "def": "a state of high honor",
+      "zh": "n. 光榮, 榮耀, 榮譽, 壯麗, 繁榮"
+    },
+    {
+      "word": "UGLY",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "displeasing to the senses",
+      "zh": "a. 醜陋的, 邪惡的, 險惡的, 不祥的"
+    },
+    {
+      "word": "HOLY",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "a sacred place of pilgrimage",
+      "zh": "a. 神聖的, 聖潔的, 至善的"
+    },
+    {
+      "word": "HOUR",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "a period of time equal to 1/24th of a day",
+      "zh": "n. 小時, 鐘頭, 時間, ...點鐘, 課時"
+    },
+    {
+      "word": "GUY",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "an informal term for a youth or man",
+      "zh": "n. 傢伙, 支索"
+    },
+    {
+      "word": "LOG",
+      "row": 2,
+      "col": 6,
+      "dir": "across",
+      "def": "a segment of the trunk of a tree when stripped of branches",
+      "zh": "n. 記錄, 圓木, 日誌, 計程儀"
+    }
+  ],
+  "bonus": [
+    "GOR",
+    "GOY",
+    "GUL",
+    "HOG",
+    "HOY",
+    "HUG",
+    "LUG",
+    "OUR",
+    "RHO",
+    "RUG",
+    "UGH",
+    "YOU",
+    "GORY",
+    "GYRO",
+    "HURL",
+    "LOGY",
+    "LORY",
+    "LOUR",
+    "ORGY",
+    "RULY",
+    "YOGH",
+    "YOUR",
+    "GHOUL",
+    "HURLY",
+    "LOUGH",
+    "LOURY",
+    "HOURLY"
+  ]
+}

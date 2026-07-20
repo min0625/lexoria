@@ -1,0 +1,81 @@
+{
+  "id": 445,
+  "letters": [
+    "E",
+    "E",
+    "M",
+    "O",
+    "I",
+    "N",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "NOMINEE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a politician who is running for public office",
+      "zh": "n. 被提名者, 被任命者"
+    },
+    {
+      "word": "NINE",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "the cardinal number that is the sum of eight and one",
+      "zh": "num. 九, 九個"
+    },
+    {
+      "word": "MINE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "excavation in the earth from which ores and minerals are extracted",
+      "zh": "n. 礦, 礦藏, 地雷"
+    },
+    {
+      "word": "NONE",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a canonical hour that is the ninth hour of the day counting from sunrise",
+      "zh": "adv. 一點也不, 毫不"
+    },
+    {
+      "word": "ONE",
+      "row": 0,
+      "col": 6,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "MEN",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "the force of workers available",
+      "zh": "pl. man的複數"
+    }
+  ],
+  "bonus": [
+    "EME",
+    "EON",
+    "INN",
+    "ION",
+    "MON",
+    "NEE",
+    "NIM",
+    "NOM",
+    "MENO",
+    "MIEN",
+    "NEEM",
+    "NENE",
+    "NEON",
+    "NOME",
+    "OMEN",
+    "MONIE",
+    "NOMEN"
+  ]
+}

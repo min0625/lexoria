@@ -1,0 +1,77 @@
+{
+  "id": 275,
+  "letters": [
+    "S",
+    "T",
+    "O",
+    "C",
+    "K",
+    "S"
+  ],
+  "words": [
+    {
+      "word": "STOCKS",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a frame that supports a boat while it is under construction",
+      "zh": "n. 股票；存貨；庫存量（stock的複數）"
+    },
+    {
+      "word": "STOCK",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "the capital raised by a corporation through the issue of shares entitling holders to an ownership interest (equity)",
+      "zh": "n. 樹幹, 祖先, 血統, 原料, 備料, 庫存, 牲畜, 股票, 股份, 保留劇目"
+    },
+    {
+      "word": "COSTS",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "pecuniary reimbursement to the winning party for the expenses of litigation",
+      "zh": "n. 費用；訴訟費；損失（cost的複數）"
+    },
+    {
+      "word": "SOCKS",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "hosiery consisting of a cloth covering for the foot; worn inside the shoe; reaches to between the ankle and the knee",
+      "zh": "短襪, 襪子, 鞋內的襯墊, 輕軟鞋, 鉅款, 存款, 存錢處, 銀箱, 拳打, 一擊, 重擊"
+    },
+    {
+      "word": "COST",
+      "row": 0,
+      "col": 5,
+      "dir": "across",
+      "def": "the total spent for goods or services including money and time and labor",
+      "zh": "n. 代價, 價值, 費用"
+    },
+    {
+      "word": "COS",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "ratio of the adjacent side to the hypotenuse of a right-angled triangle",
+      "zh": "n. 餘弦"
+    }
+  ],
+  "bonus": [
+    "COT",
+    "KOS",
+    "SOS",
+    "SOT",
+    "TSK",
+    "COSS",
+    "COTS",
+    "KOSS",
+    "SCOT",
+    "SOCK",
+    "SOTS",
+    "TOSS",
+    "TSKS",
+    "SCOTS"
+  ]
+}

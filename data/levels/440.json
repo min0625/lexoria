@@ -1,0 +1,41 @@
+{
+  "id": 440,
+  "letters": [
+    "P",
+    "S",
+    "C",
+    "U"
+  ],
+  "words": [
+    {
+      "word": "CUPS",
+      "row": 1,
+      "col": 0,
+      "dir": "across",
+      "def": "a small open container usually used for drinking; usually has a handle",
+      "zh": "n. 撥火罐（器具）；杯子（cup的複數形式）"
+    },
+    {
+      "word": "UPS",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "raise",
+      "zh": "不間斷電源"
+    },
+    {
+      "word": "CUP",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "a small open container usually used for drinking; usually has a handle",
+      "zh": "n. 杯子, 茶杯, 優勝杯"
+    }
+  ],
+  "bonus": [
+    "PUS",
+    "SUP",
+    "CUSP",
+    "SCUP"
+  ]
+}

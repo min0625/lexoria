@@ -1,0 +1,57 @@
+{
+  "id": 138,
+  "letters": [
+    "D",
+    "Z",
+    "O",
+    "N",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "DOZEN",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "the cardinal number that is the sum of eleven and one",
+      "zh": "n. 打, 十二個"
+    },
+    {
+      "word": "DONE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "engage in",
+      "zh": "a. 完成了的, 好了的"
+    },
+    {
+      "word": "ONE",
+      "row": 2,
+      "col": 1,
+      "dir": "down",
+      "def": "the smallest whole number or a numeral representing this number",
+      "zh": "n. 一(個)"
+    },
+    {
+      "word": "END",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "either extremity of something that has length",
+      "zh": "n. 結束, 終點, 目標, 末端, 梢, 死亡, 殘餘"
+    }
+  ],
+  "bonus": [
+    "DEN",
+    "DOE",
+    "DON",
+    "EON",
+    "NOD",
+    "ODE",
+    "ZED",
+    "DOZE",
+    "NODE",
+    "ZONE",
+    "ZONED"
+  ]
+}

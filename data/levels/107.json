@@ -1,0 +1,63 @@
+{
+  "id": 107,
+  "letters": [
+    "F",
+    "W",
+    "S",
+    "O",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "FLOWS",
+      "row": 3,
+      "col": 0,
+      "dir": "across",
+      "def": "the motion characteristic of fluids (liquids or gases)",
+      "zh": "n. 現金流量"
+    },
+    {
+      "word": "WOLF",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "any of various predatory carnivorous canine mammals of North America and Eurasia that usually hunt in packs",
+      "zh": "n. 狼, 殘忍貪婪之人, 極度窮困"
+    },
+    {
+      "word": "FLOW",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "the motion characteristic of fluids (liquids or gases)",
+      "zh": "n. 流程, 流動, 流量, 洋溢, 氾濫, 漲潮"
+    },
+    {
+      "word": "SLOW",
+      "row": 3,
+      "col": 4,
+      "dir": "down",
+      "def": "lose velocity; move more slowly",
+      "zh": "a. 慢的, 緩慢的, 遲緩的, 遲鈍的, 冷漠的, 落後的"
+    },
+    {
+      "word": "LOW",
+      "row": 6,
+      "col": 2,
+      "dir": "across",
+      "def": "an air mass of lower pressure; often brings precipitation",
+      "zh": "n. 低點, 低價, 低, 牛叫聲"
+    }
+  ],
+  "bonus": [
+    "OWL",
+    "SOL",
+    "SOW",
+    "WOS",
+    "FOWL",
+    "LOWS",
+    "OWLS",
+    "FOWLS",
+    "WOLFS"
+  ]
+}

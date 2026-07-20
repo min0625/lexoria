@@ -1,0 +1,54 @@
+{
+  "id": 83,
+  "letters": [
+    "T",
+    "A",
+    "P",
+    "R"
+  ],
+  "words": [
+    {
+      "word": "TRAP",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a device in which something (usually an animal) can be caught and penned",
+      "zh": "n. 圈套, 陷阱, 詭計, 存水彎"
+    },
+    {
+      "word": "PART",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "something determined in relation to something that includes it",
+      "zh": "n. 部分, 區域性, 零件, 要素, 等分, 職責, 角色, 部位"
+    },
+    {
+      "word": "ART",
+      "row": 3,
+      "col": 1,
+      "dir": "across",
+      "def": "the products of human creativity; works of art collectively",
+      "zh": "n. 藝術, 人文科學, 技術, 巧妙, 詭計, 美術"
+    },
+    {
+      "word": "TAP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "the sound made by a gentle blow",
+      "zh": "n. 輕打, 水龍頭"
+    }
+  ],
+  "bonus": [
+    "APT",
+    "PAR",
+    "PAT",
+    "RAP",
+    "RAT",
+    "TAR",
+    "PRAT",
+    "RAPT",
+    "TARP"
+  ]
+}

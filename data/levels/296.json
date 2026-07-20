@@ -1,0 +1,80 @@
+{
+  "id": 296,
+  "letters": [
+    "C",
+    "O",
+    "E",
+    "U",
+    "P",
+    "L"
+  ],
+  "words": [
+    {
+      "word": "COUPLE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a pair who associate with one another",
+      "zh": "n. 對, 夫婦, 數個"
+    },
+    {
+      "word": "CLUE",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "a slight indication",
+      "zh": "n. 線索, 暗示"
+    },
+    {
+      "word": "POLE",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a long (usually round) rod of wood or metal or plastic",
+      "zh": "n. 波蘭人, 極點, 磁極, 電極, 杆, 竿, 相反的極端"
+    },
+    {
+      "word": "COP",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "uncomplimentary terms for a policeman",
+      "zh": "n. 警官"
+    },
+    {
+      "word": "CUP",
+      "row": 2,
+      "col": 0,
+      "dir": "down",
+      "def": "a small open container usually used for drinking; usually has a handle",
+      "zh": "n. 杯子, 茶杯, 優勝杯"
+    }
+  ],
+  "bonus": [
+    "CEL",
+    "CEP",
+    "COL",
+    "CUE",
+    "ECU",
+    "LEU",
+    "LOP",
+    "OLE",
+    "OPE",
+    "PEC",
+    "POL",
+    "PUL",
+    "UPO",
+    "CLOP",
+    "COLE",
+    "COPE",
+    "COUP",
+    "LOPE",
+    "LOUP",
+    "LUCE",
+    "PUCE",
+    "PULE",
+    "COUPE",
+    "CUPEL",
+    "LOUPE"
+  ]
+}

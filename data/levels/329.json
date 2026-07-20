@@ -1,0 +1,102 @@
+{
+  "id": 329,
+  "letters": [
+    "P",
+    "S",
+    "T",
+    "X",
+    "C",
+    "E",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "EXPECTS",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "regard something as probable or likely",
+      "zh": "v. 期望( expect的第三人稱單數 ); 預料; 要求; 認為（某事）會發生"
+    },
+    {
+      "word": "EXPECT",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "regard something as probable or likely",
+      "zh": "vt. 預期, 盼望, 期待"
+    },
+    {
+      "word": "EXCEPT",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "take exception to",
+      "zh": "vt. 除, 除外"
+    },
+    {
+      "word": "STEP",
+      "row": 3,
+      "col": 0,
+      "dir": "down",
+      "def": "any maneuver made as part of progress toward a goal",
+      "zh": "n. 步驟, 步, 步幅, 腳步聲, 踏級, 步伐, 短距離, 步態, 手段, 等級"
+    },
+    {
+      "word": "SEX",
+      "row": 0,
+      "col": 4,
+      "dir": "across",
+      "def": "activities associated with sexual intercourse",
+      "zh": "n. 性別, 性慾"
+    },
+    {
+      "word": "SEE",
+      "row": 2,
+      "col": 1,
+      "dir": "across",
+      "def": "the seat within a bishop's diocese where his cathedral is located",
+      "zh": "vt. 看見, 檢視, 參觀, 遊覽, 理解, 知道, 同意"
+    },
+    {
+      "word": "SET",
+      "row": 7,
+      "col": 1,
+      "dir": "across",
+      "def": "a group of things of the same kind that belong together and are so used",
+      "zh": "n. 日落, 同夥, 組合, 集合, 裝置"
+    }
+  ],
+  "bonus": [
+    "CEE",
+    "CEP",
+    "PEC",
+    "PEE",
+    "PES",
+    "PET",
+    "SEC",
+    "TEE",
+    "CEES",
+    "CEPE",
+    "CEPS",
+    "CETE",
+    "EXEC",
+    "EXES",
+    "PECS",
+    "PEES",
+    "PEST",
+    "PETS",
+    "SECT",
+    "SEEP",
+    "SEPT",
+    "SEXT",
+    "SPEC",
+    "TEES",
+    "CEPES",
+    "CETES",
+    "EXECS",
+    "STEEP",
+    "EXSECT",
+    "EXCEPTS"
+  ]
+}

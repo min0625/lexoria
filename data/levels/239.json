@@ -1,0 +1,93 @@
+{
+  "id": 239,
+  "letters": [
+    "S",
+    "E",
+    "R",
+    "C",
+    "S",
+    "O"
+  ],
+  "words": [
+    {
+      "word": "SCORES",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "a large number or amount",
+      "zh": "n. 大量, 眾多; 二十( score的名詞複數 ); （遊戲或比賽中的）得分; 大量; 百分數"
+    },
+    {
+      "word": "SCORE",
+      "row": 1,
+      "col": 3,
+      "dir": "down",
+      "def": "a number or letter indicating quality (especially of a student's performance)",
+      "zh": "n. 得分, 抓痕, 二十個, 刻痕, 帳目, 樂譜, 起跑線, 終點線, 大量"
+    },
+    {
+      "word": "CROSS",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a wooden structure consisting of an upright post with a transverse piece",
+      "zh": "n. 十字架, 十字架形物件, 交叉, 十字標, 交叉路, 磨難, 雜交"
+    },
+    {
+      "word": "CORE",
+      "row": 2,
+      "col": 3,
+      "dir": "across",
+      "def": "a small group of indispensable persons or things",
+      "zh": "n. 核心, 果心, 要點"
+    },
+    {
+      "word": "ROSE",
+      "row": 2,
+      "col": 5,
+      "dir": "down",
+      "def": "any of many shrubs of the genus Rosa that bear roses",
+      "zh": "n. 玫瑰, 薔薇, 玫瑰色"
+    }
+  ],
+  "bonus": [
+    "COR",
+    "COS",
+    "ERS",
+    "ESS",
+    "OES",
+    "ORC",
+    "ORE",
+    "ORS",
+    "OSE",
+    "REC",
+    "RES",
+    "ROC",
+    "ROE",
+    "SEC",
+    "SER",
+    "SOS",
+    "CERO",
+    "CESS",
+    "COSS",
+    "EROS",
+    "ORCS",
+    "ORES",
+    "OSES",
+    "RECS",
+    "ROCS",
+    "ROES",
+    "SECS",
+    "SERS",
+    "SORE",
+    "CEROS",
+    "CORES",
+    "CORSE",
+    "COSES",
+    "CRESS",
+    "ROSES",
+    "SORES",
+    "CORSES",
+    "CROSSE"
+  ]
+}

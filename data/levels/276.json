@@ -1,0 +1,74 @@
+{
+  "id": 276,
+  "letters": [
+    "F",
+    "U",
+    "R",
+    "L",
+    "L",
+    "E"
+  ],
+  "words": [
+    {
+      "word": "FULLER",
+      "row": 5,
+      "col": 0,
+      "dir": "across",
+      "def": "United States jurist and chief justice of the United States Supreme Court (1833-1910)",
+      "zh": "n. 漂洗工, 套柄鐵錘"
+    },
+    {
+      "word": "FULL",
+      "row": 2,
+      "col": 2,
+      "dir": "down",
+      "def": "the time when the Moon is fully illuminated",
+      "zh": "n. 全部, 完整"
+    },
+    {
+      "word": "FUEL",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "a substance that can be consumed to produce energy",
+      "zh": "n. 燃料, 木炭"
+    },
+    {
+      "word": "FELL",
+      "row": 4,
+      "col": 4,
+      "dir": "down",
+      "def": "the dressed skin of an animal (especially a large animal)",
+      "zh": "vt. 擊倒"
+    },
+    {
+      "word": "RULE",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "a principle or condition that customarily governs behavior",
+      "zh": "n. 規則, 統治, 控制, 支配, 規律, 標準, 章程, 破折號, 鉛線"
+    },
+    {
+      "word": "FUR",
+      "row": 5,
+      "col": 0,
+      "dir": "down",
+      "def": "the dressed hairy coat of a mammal",
+      "zh": "n. 毛皮"
+    }
+  ],
+  "bonus": [
+    "ELF",
+    "ELL",
+    "FER",
+    "FEU",
+    "FLU",
+    "LEU",
+    "REF",
+    "RUE",
+    "FLUE",
+    "FURL",
+    "LURE"
+  ]
+}

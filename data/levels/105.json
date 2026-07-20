@@ -1,0 +1,61 @@
+{
+  "id": 105,
+  "letters": [
+    "E",
+    "F",
+    "L",
+    "E",
+    "T"
+  ],
+  "words": [
+    {
+      "word": "FLEET",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "group of aircraft operating together under the same ownership",
+      "zh": "n. 艦隊, 港灣, 小河"
+    },
+    {
+      "word": "FEEL",
+      "row": 0,
+      "col": 2,
+      "dir": "down",
+      "def": "an intuitive awareness;  or",
+      "zh": "vt. 感覺, 覺得, 觸控, 以為"
+    },
+    {
+      "word": "LEFT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "location near or direction toward the left side; i.e. the side to the north when a person or object faces east",
+      "zh": "a. 左邊的, 左傾的, 左側的, 左派的"
+    },
+    {
+      "word": "LET",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "a brutal terrorist group active in Kashmir; fights against India with the goal of restoring Islamic rule of India",
+      "zh": "vt. 讓, 假設, 出租, 排放, 妨礙"
+    }
+  ],
+  "bonus": [
+    "EEL",
+    "EFT",
+    "ELF",
+    "FEE",
+    "FET",
+    "LEE",
+    "TEE",
+    "TEL",
+    "FEET",
+    "FELT",
+    "FETE",
+    "FLEE",
+    "LEET",
+    "TEEL",
+    "TELE"
+  ]
+}

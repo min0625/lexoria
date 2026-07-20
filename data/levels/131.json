@@ -1,0 +1,56 @@
+{
+  "id": 131,
+  "letters": [
+    "O",
+    "R",
+    "T",
+    "F",
+    "H"
+  ],
+  "words": [
+    {
+      "word": "FORTH",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "a river in southern Scotland that flows eastward to the Firth of Forth",
+      "zh": "adv. 往前, 以後, 向外"
+    },
+    {
+      "word": "FORT",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "a fortified military post where troops are stationed",
+      "zh": "n. 堡壘, 要塞, 易貨站"
+    },
+    {
+      "word": "HOT",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "used of physical heat; having a high or higher than desirable temperature or giving off heat or feeling or causing a sensation of heat or burning",
+      "zh": "a. 熱的, 熱心的, 辣的, 熱情的, 激動的, 猛烈的, 緊迫的"
+    },
+    {
+      "word": "ROT",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a state of decay usually accompanied by an offensive odor",
+      "zh": "n. 腐爛, 腐蝕, 敗壞"
+    }
+  ],
+  "bonus": [
+    "FOH",
+    "FOR",
+    "FRO",
+    "OFT",
+    "ORT",
+    "RHO",
+    "THO",
+    "TOR",
+    "THRO",
+    "FROTH"
+  ]
+}

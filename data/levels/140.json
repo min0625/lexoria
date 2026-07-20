@@ -1,0 +1,61 @@
+{
+  "id": 140,
+  "letters": [
+    "B",
+    "E",
+    "O",
+    "R",
+    "P"
+  ],
+  "words": [
+    {
+      "word": "PROBE",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "an inquiry into unfamiliar or questionable activities",
+      "zh": "n. 探索, 調查, 探針, 探測器"
+    },
+    {
+      "word": "ROB",
+      "row": 0,
+      "col": 3,
+      "dir": "down",
+      "def": "take something away by force or without the consent of the owner",
+      "zh": "v. 搶奪, 搶掠, 剝奪"
+    },
+    {
+      "word": "PRO",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "an athlete who plays for pay",
+      "zh": "adv. 正面地"
+    },
+    {
+      "word": "REP",
+      "row": 0,
+      "col": 0,
+      "dir": "down",
+      "def": "informal abbreviation of `representative'",
+      "zh": "n. 稜紋平布, 浪蕩子, 名聲"
+    }
+  ],
+  "bonus": [
+    "BOP",
+    "BRO",
+    "OBE",
+    "OPE",
+    "ORB",
+    "ORE",
+    "PER",
+    "REB",
+    "ROE",
+    "BORE",
+    "PORE",
+    "REPO",
+    "ROBE",
+    "ROPE",
+    "REBOP"
+  ]
+}

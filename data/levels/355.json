@@ -1,0 +1,81 @@
+{
+  "id": 355,
+  "letters": [
+    "Y",
+    "S",
+    "L",
+    "I",
+    "P",
+    "M"
+  ],
+  "words": [
+    {
+      "word": "SIMPLY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "and nothing more",
+      "zh": "adv. 簡單地, 只是, 簡直, 簡樸地, 坦白地"
+    },
+    {
+      "word": "LIPS",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking",
+      "zh": "n. 嘴唇（lip的複數）"
+    },
+    {
+      "word": "SLIP",
+      "row": 4,
+      "col": 1,
+      "dir": "across",
+      "def": "a socially awkward or tactless act",
+      "zh": "n. 滑, 滑行, 事故, 溜, 差錯, 滑臺, 下降, 插條, 後裔, 板條, 瘦長的年輕人"
+    },
+    {
+      "word": "LIP",
+      "row": 2,
+      "col": 4,
+      "dir": "down",
+      "def": "either of two fleshy folds of tissue that surround the mouth and play a role in speaking",
+      "zh": "n. 唇, 口緣, 唇狀構造"
+    },
+    {
+      "word": "SPY",
+      "row": 0,
+      "col": 5,
+      "dir": "down",
+      "def": "(military) a secret agent hired by a state to obtain information about its enemies or by a business to obtain industrial secrets from competitors",
+      "zh": "n. 間諜, 偵探, 偵察"
+    }
+  ],
+  "bonus": [
+    "IMP",
+    "ISM",
+    "LIS",
+    "MIL",
+    "MIS",
+    "PIS",
+    "PLY",
+    "PSI",
+    "SIM",
+    "SIP",
+    "SLY",
+    "YIP",
+    "IMPS",
+    "LIMP",
+    "LIMY",
+    "LISP",
+    "MILS",
+    "PILY",
+    "SIMP",
+    "SLIM",
+    "SYLI",
+    "YIPS",
+    "IMPLY",
+    "LIMPS",
+    "SLIMY",
+    "LIMPSY"
+  ]
+}

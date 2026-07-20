@@ -1,0 +1,87 @@
+{
+  "id": 278,
+  "letters": [
+    "A",
+    "R",
+    "O",
+    "M",
+    "L",
+    "N"
+  ],
+  "words": [
+    {
+      "word": "NORMAL",
+      "row": 4,
+      "col": 0,
+      "dir": "across",
+      "def": "something regarded as a normative example",
+      "zh": "n. 常態, 標準, 正常, 普通"
+    },
+    {
+      "word": "LOAN",
+      "row": 1,
+      "col": 0,
+      "dir": "down",
+      "def": "the temporary provision of money (usually at interest)",
+      "zh": "n. 貸款, 借出"
+    },
+    {
+      "word": "ARM",
+      "row": 2,
+      "col": 3,
+      "dir": "down",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    },
+    {
+      "word": "MAN",
+      "row": 2,
+      "col": 2,
+      "dir": "across",
+      "def": "an adult person who is male (as opposed to a woman)",
+      "zh": "n. 男人, 人類, 人"
+    },
+    {
+      "word": "RAN",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "move fast by using one's feet, with one foot off the ground at any given time",
+      "zh": "run的過去式"
+    }
+  ],
+  "bonus": [
+    "LAM",
+    "LAR",
+    "MAR",
+    "MOA",
+    "MOL",
+    "MON",
+    "MOR",
+    "NAM",
+    "NOM",
+    "NOR",
+    "OAR",
+    "ORA",
+    "RAM",
+    "ROM",
+    "LOAM",
+    "LORN",
+    "MANO",
+    "MARL",
+    "MOAN",
+    "MOLA",
+    "MORA",
+    "MORN",
+    "NOMA",
+    "NORM",
+    "ORAL",
+    "ROAM",
+    "ROAN",
+    "LORAN",
+    "MANOR",
+    "MOLAR",
+    "MORAL",
+    "ROMAN"
+  ]
+}

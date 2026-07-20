@@ -1,0 +1,29 @@
+{
+  "id": 13,
+  "letters": [
+    "R",
+    "M",
+    "A"
+  ],
+  "words": [
+    {
+      "word": "MAR",
+      "row": 0,
+      "col": 0,
+      "dir": "across",
+      "def": "the month following February and preceding April",
+      "zh": "vt. 損毀, 損傷, 糟蹋"
+    },
+    {
+      "word": "ARM",
+      "row": 0,
+      "col": 1,
+      "dir": "down",
+      "def": "a human limb; technically the part of the superior limb between the shoulder and the elbow but commonly used to refer to the whole superior limb",
+      "zh": "n. 手臂, 袖子, 狹長港灣, 武器"
+    }
+  ],
+  "bonus": [
+    "RAM"
+  ]
+}

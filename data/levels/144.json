@@ -1,0 +1,54 @@
+{
+  "id": 144,
+  "letters": [
+    "Y",
+    "B",
+    "R",
+    "U",
+    "G"
+  ],
+  "words": [
+    {
+      "word": "RUGBY",
+      "row": 2,
+      "col": 0,
+      "dir": "across",
+      "def": "a form of football played with an oval ball",
+      "zh": "n. 橄欖球, 橄欖球賽"
+    },
+    {
+      "word": "BUY",
+      "row": 1,
+      "col": 1,
+      "dir": "down",
+      "def": "an advantageous purchase",
+      "zh": "vt. 買, 獲得"
+    },
+    {
+      "word": "GUY",
+      "row": 0,
+      "col": 4,
+      "dir": "down",
+      "def": "an informal term for a youth or man",
+      "zh": "n. 傢伙, 支索"
+    },
+    {
+      "word": "BUG",
+      "row": 0,
+      "col": 2,
+      "dir": "across",
+      "def": "general term for any insect or similar creeping or crawling invertebrate",
+      "zh": "n. 錯誤, 蟲, 病菌, 缺陷, 竊聽器, 癖好, 防盜報警器, 雙座小汽車, 要人"
+    }
+  ],
+  "bonus": [
+    "BUR",
+    "RUB",
+    "RUG",
+    "URB",
+    "BURG",
+    "BURY",
+    "GRUB",
+    "RUBY"
+  ]
+}
