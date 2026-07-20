@@ -22,9 +22,13 @@ if ('speechSynthesis' in window) {
   // iOS Safari 的語音引擎要先真正念出過一句才會醒：在那之前 utterance 會被靜默丟棄——
   // 不出聲，onstart/onerror 都不觸發；醒了之後每條路徑都正常。實機 log 佐證：查詞卡喇叭鈕
   // （click）念過一次後，後續轉盤答對就都念得出來。
-  // 但「哪種手勢才叫得醒」試不出來——拖曳結束的 touchend 連解鎖那句自己都會被丟掉，click 才
-  // 行；是手勢種類還是 volume 0 的差別無從分辨。與其繼續猜，不如每個手勢都試著解鎖一次，
-  // 直到真的有一句 onstart 為止：叫不醒的那幾次本來就是無聲丟棄，重試不花成本。
+  // 叫得醒的只有「點擊」：拖曳結束的 touchend 連解鎖那句自己都會被丟掉。實機 log 佐證——
+  // 解鎖是在一次點擊後才 onstart，而它同樣是 volume 0，所以音量不是變因。
+  // 因此每個手勢都試著解鎖一次，直到真的有一句 onstart 為止：叫不醒的那幾次本來就是無聲
+  // 丟棄，重試不花成本，也不必在 code 裡分辨哪種手勢算數。
+  // ponytail: 只滑不點的玩家在第一次點擊前都只會聽到命中音效（下方 300ms 檢查的退路）。
+  // 實務上第一關的「下一關」按鈕就是點擊，影響範圍是開局前幾個字；真要補，得在轉盤的
+  // pointerup 之外另找一個保證會發生的點擊時機。
   const unlock = () => {
     if (unlocked || speechSynthesis.speaking || speechSynthesis.pending) return;
     const u = new SpeechSynthesisUtterance('a'); // 空字串沒東西可念，會連解鎖自己一起被丟掉
