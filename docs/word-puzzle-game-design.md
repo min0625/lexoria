@@ -321,7 +321,8 @@ export const bridge = {
 
 - iOS WKWebView 的 localStorage 在某些情境（App 被系統清理）可能丟失 → 嵌入後改由 native 端存檔（Capacitor Preferences / filesystem）。
 - 音效：行動瀏覽器要求「首次使用者手勢後」才能播音 → 在第一次 `pointerdown` 時把每個 `<audio>` 元素各解鎖一次（iOS 的解鎖是逐元素算的，不是整頁一次）。
-- 發音（TTS）的解鎖規則跟 `<audio>` **不一樣**，不能套用上一條：iOS Safari 的語音引擎要先真正念出過一句才會醒，在那之前 utterance 被靜默丟棄——不出聲，`onstart`／`onerror` 都不觸發，連 `pending` 都是 false。實機測過三種手勢：`touchend` 與 `pointerdown` 都叫不醒（無痕分頁開場連拖兩個字都沒有 `onstart`），**只有 `click` 算數**，醒了之後每條路徑都正常。`dictionary-card.js` 三個事件都掛著重試，叫不醒的那幾次本來就是無聲丟棄，重試不花成本。影響面：純拖曳的玩家在第一次點擊前只聽得到命中音效（`speak()` 裡 300ms 檢查的退路）。解鎖**每次載入頁面都要重來**（重新整理、分頁還原、Phase 2 的 App 冷啟動），不是首次遊玩一次就永久有效；但過關卡片的下一關、切關卡、查詞卡都是 click，缺口通常止於該次載入的那一關。這是這條路的天花板，不要再往下試第四種事件。
+- 發音（TTS）的解鎖規則跟 `<audio>` **不一樣**，不能套用上一條：iOS Safari 的語音引擎要先真正念出過一句才會醒，在那之前 utterance 被靜默丟棄——不出聲，`onstart`／`onerror` 都不觸發，連 `pending` 都是 false（曾懷疑是 `speak()` 開頭的 `cancel()` 砍掉解鎖句，改成只在解鎖後才 cancel，行為完全沒變，已還原）。實機測過三種手勢：`touchend` 與 `pointerdown` 都叫不醒（無痕分頁開場連拖兩個字都沒有 `onstart`），**只有 `click` 算數**，醒了之後每條路徑都正常。`dictionary-card.js` 三個事件都掛著重試，叫不醒的那幾次本來就是無聲丟棄，重試不花成本。
+- 上一條的影響面：解鎖**每次載入頁面都要重來**（重新整理、分頁還原、Phase 2 的 App 冷啟動），不是首次遊玩一次就永久有效。而遊戲畫面上沒有任何非點不可的按鈕（一次拖曳從 pointerdown 到 pointerup 不產生 click），所以純拖曳的玩家在第一次點擊前只聽得到命中音效（`speak()` 裡 300ms 檢查的退路）；過關卡片的下一關、切關卡、查詞卡都是 click，缺口通常止於該次載入的那一關。要根治只能在流程裡放一個必點的東西——開場閘門的實作在 `tts-unlock-gate` 分支，因為會推翻 UI 文件 §1「沒有標題畫面」而尚未採用。
 - 禁用 WebView 的縮放與長按選單（Capacitor 預設已處理大半）。
 - 效能：動畫只用 `transform` / `opacity`（compositor-only），避免觸發 layout；中低階 Android 機是效能底線。
 - **上架風險（Apple 審查準則 4.2「最低功能性」）**：純 WebView 包殼的 App 有被拒的前例。緩解：完全離線可玩（本來就是 §2 的硬需求）、接上 native haptics、完整的啟動畫面與 App icon、UI 不露出任何瀏覽器痕跡。Capacitor 遊戲過審前例很多，但第一次送審的時程要預留被拒一輪的緩衝。

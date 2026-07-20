@@ -33,7 +33,8 @@ if ('speechSynthesis' in window) {
   // ponytail: 純拖曳的玩家在第一次點擊前只會聽到命中音效（speak() 裡 300ms 檢查的退路）。
   // 解鎖是「每次載入頁面」重算的，重新整理／分頁還原都要重來，不是首次遊玩一次就永久有效；
   // 但過關卡片的下一關、切關卡、查詞卡都是 click，所以缺口通常止於該次載入的那一關。
-  // 這就是這條路的天花板，不要再往下試第五種事件。
+  // 那就是這條路的天花板，不要再往下試第四種事件。真要根治得靠開場閘門（實作見 tts-unlock-gate
+  // 分支，尚未採用）——遊戲畫面上沒有任何非點不可的按鈕，一次拖曳也不產生 click。
   const unlock = () => {
     if (unlocked || speechSynthesis.speaking || speechSynthesis.pending) return;
     const u = new SpeechSynthesisUtterance('a'); // 空字串沒東西可念，會連解鎖自己一起被丟掉
