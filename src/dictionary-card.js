@@ -16,24 +16,30 @@ export function setSpeechDebug(fn) {
 if ('speechSynthesis' in window) {
   refreshVoices();
   speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
-  // iOS Safari 疑似只在「它認得的手勢」handler 裡才真的送出 utterance，而轉盤結束手勢用的
-  // pointerup 可能不算數。跟 main.js 解鎖 <audio> 同一招：第一次 touchend 先念一句無聲的
-  // 把引擎解鎖。尚未證實有效——留著並記 log，等對照組資料再決定去留。
-  document.addEventListener(
-    'touchend',
-    () => {
-      const u = new SpeechSynthesisUtterance('');
-      u.volume = 0;
-      u.onstart = () => log('unlock onstart');
-      u.onend = () => log('unlock onend');
-      u.onerror = (e) => log(`unlock onerror: ${e.error}`);
-      speechSynthesis.speak(u);
-      log(
-        `unlock speak() done, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
-      );
-    },
-    { once: true, capture: true }
-  );
+  // iOS Safari 的語音引擎要先真正念出過一句才會醒：在那之前，答對自動發音（手勢結束於
+  // pointerup）會被靜默丟棄——不出聲，onstart/onerror 都不觸發；醒了之後同一條路徑就正常。
+  // 實機 log 佐證：查詞卡喇叭鈕（click）念過一次後，後續轉盤答對就都念得出來。
+  // 所以第一個手勢先偷念一句把引擎叫醒。內容不能是空字串——空的沒東西可念，會連同解鎖本身
+  // 一起被丟掉（前一版就是這樣失敗的），要給真的內容再用 volume 0 蓋掉聲音。
+  const unlock = () => {
+    const u = new SpeechSynthesisUtterance('a');
+    u.volume = 0;
+    u.onstart = () => log('unlock onstart');
+    u.onend = () => log('unlock onend');
+    u.onerror = (e) => log(`unlock onerror: ${e.error}`);
+    speechSynthesis.speak(u);
+    log(
+      `unlock speak() done, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
+    );
+  };
+  // touchend 與 click 都掛，先到的那個解鎖（哪一種手勢才算數還沒定論，兩個都掛最省事）
+  const ac = new AbortController();
+  const once = () => {
+    ac.abort();
+    unlock();
+  };
+  document.addEventListener('touchend', once, { signal: ac.signal, capture: true });
+  document.addEventListener('click', once, { signal: ac.signal, capture: true });
 }
 
 // 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
