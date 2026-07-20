@@ -11,7 +11,7 @@ export const defaultSave = () => ({
   levelState: { foundWords: [], revealedCells: [] }, // 只屬於 currentLevel
   redeemedCodes: [], // 已兌換碼的 jti 清單（.local.feature-evaluation.md §2）
   lastClaimAt: 0, // 上次定時領取金幣的 timestamp，0 = 從未領過、立即可領（§8）
-  settings: { sound: true, haptic: true, tutorialDone: false },
+  settings: { sound: true, tutorialDone: false },
 });
 
 // 讀到壞掉或無法辨識的資料 → 重置成初始存檔（§9）。

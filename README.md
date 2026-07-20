@@ -38,7 +38,7 @@ src/
   dictionary-card.js 查詢單字卡片
   storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）
   redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發）
-  bridge.js         平台抽象層（存檔/震動/分享/廣告/IAP）— Phase 2 換 native 實作
+  bridge.js         平台抽象層（存檔/分享/廣告/IAP）— Phase 2 換 native 實作
   strings.js        所有 UI 文案
   style.css         全站樣式
 tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發
