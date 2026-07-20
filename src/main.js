@@ -158,8 +158,7 @@ function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
   const el = sfxAudio[name];
-  // 分開量兩件事：倒帶（seek）和 play() 各自阻塞多久。上一輪把兩者合在一起量，
-  // 才會把帳算到 seek 頭上；tick.wav 只有 20ms，第二顆觸發時根本沒有東西在播。
+  // seek 和 play() 分開量：合在一起量會分不出是倒帶貴還是播放貴（實測全部是 play()）。
   const t0 = performance.now();
   el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
   el.currentTime = 0;
@@ -188,11 +187,11 @@ function updateCoins() {
 
 // ---- 拼字串顯示區與提示訊息 ----
 let previewTimer = 0;
-// 這裡本來每選到一個字母就播一次 tick。實機量測（?debug）顯示 <audio> 的 play() 在 iOS 上
-// 會間歇性同步阻塞主執行緒 2~173ms（seek 是 0ms、readyState 一直是 4，所以不是倒帶也不是
-// 重新解碼，是音訊管線本身），而 tick 是拖曳期間唯一會響的音效：關掉音效時同一支裝置穩定
-// 60fps、queue.max 14~21ms，開著就掉到 30fps、queue.max 破百。拖曳的手感比這一顆音效重要，
-// 所以拿掉。手勢結束才響的其他音效不影響拖曳，維持原樣。
+// 這裡本來每選到一個字母就播一次 tick，已拿掉。實機量測（?debug）：<audio> 的 play() 被連續
+// 快速呼叫時會同步阻塞主執行緒（閒置 2~6ms，連續呼叫最高 173ms；seek 一直是 0ms、readyState
+// 一直是 4，所以不是倒帶也不是重新解碼）。tick 一次手勢響三次把管線塞住，轉盤掉到 30fps，
+// 連排在後面的 invalid 也被拖到 134ms。拿掉後穩定 60fps、invalid 回到 0~6ms（設計文件 §7）。
+// 手勢結束才響的音效一次只有一顆，不會觸發這個問題，維持原樣。
 function showPreview(word) {
   clearTimeout(previewTimer);
   const el = $('preview');
