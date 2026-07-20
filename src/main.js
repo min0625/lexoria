@@ -84,6 +84,9 @@ document.addEventListener(
       el.muted = true;
       el.play().then(
         () => {
+          // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
+          // muted 設回 false 就代表這顆被真的播放接手了，這裡再 pause 會把聲音掐掉。
+          if (!el.muted) return;
           el.pause();
           el.currentTime = 0;
           el.muted = false;
@@ -115,6 +118,7 @@ function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
   const el = sfxAudio[name];
+  el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
   el.currentTime = 0;
   el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
 }
