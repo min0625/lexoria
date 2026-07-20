@@ -103,12 +103,19 @@ setSpeechDebug(dbg);
 // 期間所有音效都被吞掉；相同裝置上 <audio> 元素的 play() 卻是手勢當下就立刻 resolve。
 // 這款遊戲的音效都是獨立短音、不需要 Web Audio 的混音圖，所以直接改用 <audio>
 // 元素——不必自己管 AudioContext 狀態機，也不受這個 resume() 延遲影響。
+// tick 在同一次手勢裡連續觸發，而對「還在播」的元素設 currentTime = 0 會讓 WebKit 做一次
+// 真正的 seek（沖掉並重灌音訊管線）：實機量到同步阻塞 17~124ms，事件排隊、畫面掉幀，
+// 拖曳因此明顯延遲。停著的元素倒帶則只要 3~5ms。所以 tick 備幾顆實例輪流播，永遠挑一顆
+// 已經停下來的，就不必倒帶正在響的那顆。其餘音效一次手勢只響一下，一顆就夠。
+const POOL = { tick: 3 };
 const sfxAudio = {};
 const SFX = {};
 for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
-  const el = new Audio(`assets/sfx/${name}.wav`);
-  el.preload = 'auto';
-  sfxAudio[name] = el;
+  sfxAudio[name] = Array.from({ length: POOL[name] ?? 1 }, () => {
+    const el = new Audio(`assets/sfx/${name}.wav`);
+    el.preload = 'auto';
+    return el;
+  });
   SFX[name] = () => playSfx(name);
 }
 // iOS 對「手勢內播放才允許自動播放」的解鎖是分別針對每個 <audio> 元素算的，不是整頁一次
@@ -119,7 +126,8 @@ for (const name of ['tick', 'target', 'invalid', 'coin', 'clear']) {
 document.addEventListener(
   'pointerdown',
   () => {
-    for (const el of Object.values(sfxAudio)) {
+    for (const el of Object.values(sfxAudio).flat()) {
+      // flat()：解鎖是逐元素算的，tick 池裡每一顆都要各自解鎖，漏掉哪顆哪顆就沒聲音
       el.muted = true;
       el.play().then(
         () => {
@@ -156,10 +164,11 @@ document.addEventListener(
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
-  const el = sfxAudio[name];
+  const pool = sfxAudio[name];
+  const el = pool.find((e) => e.paused) ?? pool[0]; // 全都在播就只好倒帶第一顆
   const t0 = performance.now(); // 量 currentTime=0 + play() 的「同步」耗時，非播放長度
   el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
-  el.currentTime = 0;
+  if (el.currentTime) el.currentTime = 0; // 已經在 0 就別碰，seek 是這裡唯一貴的動作
   el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
   dbg(`playSfx(${name}) sync ${(performance.now() - t0).toFixed(1)}ms`);
 }
