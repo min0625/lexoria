@@ -34,7 +34,7 @@ src/
   main.js           唯一接線點：wheel → game.submit(word) → 結果分派給 grid/HUD/音效
   game.js           關卡狀態與規則，純邏輯無 DOM（可單元測試）；經濟數值在 ECONOMY
   wheel.js          字母轉盤與指標手勢（hitIndex/applyHit/permutationAt 為純函式）
-  grid.js           字謎格渲染（含分享用 canvas 快照 snapshotBlob）
+  grid.js           字謎格渲染（含分享用 emoji 文字快照 snapshotText、下載用 canvas 快照 snapshotBlob，下載按鈕暫時隱藏）
   dictionary-card.js 查詢單字卡片
   storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）
   redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發）

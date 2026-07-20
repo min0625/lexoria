@@ -15,10 +15,15 @@ export const strings = {
   haptic: '震動',
   about: '關於',
   replayNote: '重玩不再獲得金幣',
-  share: '分享進度',
-  shareText: (n) => `我在 Lexoria 正在挑戰第 ${n} 關！`,
-  shareCopied: '已複製！',
+  share: '分享',
+  // 字母數 3–7，用中文數字才接得上前後文；超出範圍就退回阿拉伯數字（不會讀成 undefined）。
+  // 結尾的 \n 是留給 bridge.share 接上的網址，讓它與盤面之間空一行。
+  shareText: (n, letters, grid) =>
+    `我正在玩 Lexoria 第 ${n} 關\n\n只用 ${letters.join(' ')} ${'三四五六七'[letters.length - 3] ?? letters.length}個字母，拼出單字填滿空格\n\n${grid}\n`,
+  shareCopied: '已複製，可直接貼上',
+  shareFailed: '此瀏覽器無法分享',
   shareImageTitle: (n) => `Lexoria · 第 ${n} 關`,
+  download: '下載圖片',
   clearWordsHint: '點單字查看解釋',
   redeemPlaceholder: '貼上兌換碼',
   redeemAction: '兌換',
