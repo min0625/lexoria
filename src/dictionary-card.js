@@ -13,33 +13,31 @@ export function setSpeechDebug(fn) {
   log = fn;
 }
 
+// 引擎是否已經真的念出過一句（見下方 unlock 的說明）
+let unlocked = false;
+
 if ('speechSynthesis' in window) {
   refreshVoices();
   speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
-  // iOS Safari 的語音引擎要先真正念出過一句才會醒：在那之前，答對自動發音（手勢結束於
-  // pointerup）會被靜默丟棄——不出聲，onstart/onerror 都不觸發；醒了之後同一條路徑就正常。
-  // 實機 log 佐證：查詞卡喇叭鈕（click）念過一次後，後續轉盤答對就都念得出來。
-  // 所以第一個手勢先偷念一句把引擎叫醒。內容不能是空字串——空的沒東西可念，會連同解鎖本身
-  // 一起被丟掉（前一版就是這樣失敗的），要給真的內容再用 volume 0 蓋掉聲音。
+  // iOS Safari 的語音引擎要先真正念出過一句才會醒：在那之前 utterance 會被靜默丟棄——
+  // 不出聲，onstart/onerror 都不觸發；醒了之後每條路徑都正常。實機 log 佐證：查詞卡喇叭鈕
+  // （click）念過一次後，後續轉盤答對就都念得出來。
+  // 但「哪種手勢才叫得醒」試不出來——拖曳結束的 touchend 連解鎖那句自己都會被丟掉，click 才
+  // 行；是手勢種類還是 volume 0 的差別無從分辨。與其繼續猜，不如每個手勢都試著解鎖一次，
+  // 直到真的有一句 onstart 為止：叫不醒的那幾次本來就是無聲丟棄，重試不花成本。
   const unlock = () => {
-    const u = new SpeechSynthesisUtterance('a');
+    if (unlocked || speechSynthesis.speaking || speechSynthesis.pending) return;
+    const u = new SpeechSynthesisUtterance('a'); // 空字串沒東西可念，會連解鎖自己一起被丟掉
     u.volume = 0;
-    u.onstart = () => log('unlock onstart');
-    u.onend = () => log('unlock onend');
+    u.onstart = () => {
+      unlocked = true;
+      log('unlock onstart');
+    };
     u.onerror = (e) => log(`unlock onerror: ${e.error}`);
     speechSynthesis.speak(u);
-    log(
-      `unlock speak() done, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
-    );
   };
-  // touchend 與 click 都掛，先到的那個解鎖（哪一種手勢才算數還沒定論，兩個都掛最省事）
-  const ac = new AbortController();
-  const once = () => {
-    ac.abort();
-    unlock();
-  };
-  document.addEventListener('touchend', once, { signal: ac.signal, capture: true });
-  document.addEventListener('click', once, { signal: ac.signal, capture: true });
+  document.addEventListener('touchend', unlock, { capture: true });
+  document.addEventListener('click', unlock, { capture: true });
 }
 
 // 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
@@ -53,7 +51,12 @@ export function speak(word, onError, src = '?') {
   // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
   const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
-  u.onstart = () => log(`speak(${word}) [${src}] onstart`);
+  let started = false;
+  u.onstart = () => {
+    started = true;
+    unlocked = true;
+    log(`speak(${word}) [${src}] onstart`);
+  };
   u.onend = () => log(`speak(${word}) [${src}] onend`);
   u.onerror = (e) => {
     log(`speak(${word}) [${src}] onerror: ${e.error}`);
@@ -69,14 +72,15 @@ export function speak(word, onError, src = '?') {
   );
   speechSynthesis.resume();
   speechSynthesis.speak(u);
-  // 同步讀到的 speaking/pending 在 iOS 上可能還沒更新，隔一拍再讀一次才知道有沒有真的排進去
-  setTimeout(
-    () =>
-      log(
-        `speak(${word}) [${src}] +300ms, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
-      ),
-    300
-  );
+  // 被丟棄的 utterance 不出聲也不觸發 onerror，呼叫端的 onError 補救因此不會被叫到，
+  // 玩家答對了卻完全沒有回饋（連命中音效都沒有，因為 speak 回報「已排入」）。
+  // 沒有事件可以等，只能定時檢查：這段時間內沒 onstart 就當作被丟掉，補播音效。
+  setTimeout(() => {
+    log(
+      `speak(${word}) [${src}] +300ms, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
+    );
+    if (!started && !speechSynthesis.speaking && !speechSynthesis.pending) onError?.();
+  }, 300);
   return true;
 }
 
