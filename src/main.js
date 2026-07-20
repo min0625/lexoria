@@ -157,9 +157,11 @@ function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
   const el = sfxAudio[name];
+  const t0 = performance.now(); // 量 currentTime=0 + play() 的「同步」耗時，非播放長度
   el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
   el.currentTime = 0;
   el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
+  dbg(`playSfx(${name}) sync ${(performance.now() - t0).toFixed(1)}ms`);
 }
 
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
@@ -236,10 +238,14 @@ function onSubmit(word) {
   const result = game.submit(word);
   switch (result.type) {
     case 'target': {
+      const t0 = performance.now();
       grid.update(game.getCells());
+      dbg(`grid.update sync ${(performance.now() - t0).toFixed(1)}ms`);
       // 答對目標字自動念一次（§6.1）：發音取代命中音效——疊播會聽不清楚人聲；
       // 引擎發音失敗時由 onError 退回命中音效，不會整個靜音
+      const t1 = performance.now();
       const spoken = save.settings.sound && speak(word, SFX.target, 'wheel');
+      dbg(`speak() sync ${(performance.now() - t1).toFixed(1)}ms`);
       if (!spoken) SFX.target();
       if (!save.settings.tutorialDone) {
         save.settings.tutorialDone = true; // 完成第一個字即收掉教學（UI 文件 §4-F）
