@@ -55,7 +55,10 @@ export function speak(word, onError, src = '?') {
     `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in window ? speechSynthesis.getVoices().length : 'n/a'}`
   );
   if (!hasEnglishVoice) return false;
-  speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
+  // 連續呼叫時不排隊，直接改念最新的字。但引擎還沒醒時不能 cancel：pointerdown 排入的解鎖句
+  // 要等引擎醒才會念，而一次拖曳從 pointerdown 到答對只隔幾百 ms，這裡的 cancel 會把它砍掉，
+  // 拖曳因此永遠解鎖不了自己。醒之前沒有聲音可蓋，cancel 沒有好處。
+  if (unlocked) speechSynthesis.cancel();
   // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
   const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
