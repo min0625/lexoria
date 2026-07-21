@@ -110,20 +110,13 @@ setSpeechDebug(dbg);
 // 所以只有拼錯聽得出來，target(290ms)／clear(539ms) 只是起音軟一點（設計文件 §7）。
 // 用檔案而不是 data URI：同格式的 250ms 靜音 base64 會膨脹到 20KB 以上，不適合塞進原始碼；
 // 存成資產檔還能比照其他音效 preload。模組層級持有這個參考，別讓它播完就被回收。
-// 這段無聲是**循環播放、不停**的（keep-alive）。實機量到：閒置一段時間後的第一次 play() 會
-// 同步阻塞主執行緒 191ms，而如果中間還被 TTS 佔走音訊 session，代價會漲到 **752ms**（log 裡
-// TTS `unlock onend` 2.93s → 下一顆音效 `play 752.0ms`）；反過來，音效每 0.8 秒連續響時每次
-// 只要 4~6ms。也就是說貴的不是「這顆元素第一次播」而是「整個音訊 session 剛從閒置醒來」——
-// 池子解掉的是另一件事（同一顆元素被連續戳的競爭），解不掉這個。持續播一段聽不見的無聲把
-// session 釘在 active，醒來成本就不會落到玩家的某一次拼字上（設計文件 §7）。
+// 播**一次**就好，不要改成 loop 常駐。試過 keep-alive（循環播無聲把音訊 session 釘在 active，
+// 想省掉「從閒置醒來」的成本），實機是明確的退步：解鎖迴圈的同步成本從 0ms 變成 535ms、
+// 12 顆元素的解鎖窗口從 639ms 變成 1705ms，玩家點完閘門的第一次拖曳整個沒反應、連線都畫不出來。
+// 原因是 iOS 上**並行的 `<audio>` 播放本身就貴**，常駐一條無聲等於讓之後每一次 play() 都要跟它搶。
+// 別再試一次（設計文件 §7）。
 const silenceAudio = new Audio('assets/sfx/silence.wav');
 silenceAudio.preload = 'auto';
-silenceAudio.loop = true;
-// 關掉音效時就別再佔著 session（省電，也不必為了沒人聽的東西維持硬體 active）。
-function keepAlive(on) {
-  if (on) silenceAudio.play().catch((e) => dbg(`keepAlive FAILED: ${e}`));
-  else silenceAudio.pause();
-}
 
 // 每顆音效備 POOL 份、輪流播：`<audio>` 的 play() 被連續快速呼叫時會同步阻塞主執行緒（§7 的
 // tick 就是這樣被拿掉的），而玩家每 0.6~0.7 秒拼錯一次時同一顆元素會被連續戳，實機量到 play()
@@ -152,12 +145,12 @@ document.addEventListener(
   () => {
     // 靜音播放解得開「權限」，卻解不開「延遲」：第一次**真正出聲**的 play() 會同步阻塞主
     // 執行緒（實機 191ms，被 TTS 佔過 session 後更慘，量到 752ms）。這裡「不靜音」播無聲把這
-    // 筆帳挪到手勢當下付掉，而且之後**不停**（loop，見 keepAlive）——只播一次的話 session 會
-    // 再度閒置，帳單又會回到玩家的某一次拼字上。開場閘門（index.html #gate）保證這個
+    // 筆帳挪到手勢當下付掉。只播一次——常駐 loop 試過，反而更糟，理由見上面 silenceAudio 那段。
+    // 代價是 session 之後仍會閒置，冷啟動那次的成本躲不掉。開場閘門（index.html #gate）保證這個
     // pointerdown 落在閘門上而不是轉盤上，那一刻畫面上什麼都沒在動，這段阻塞才藏得住——閘門
     // 與這段暖機是綁在一起的，拿掉閘門會讓轉盤凍住（設計文件 §7）。
     const tWarm = performance.now();
-    keepAlive(save.settings.sound);
+    silenceAudio.play().catch((e) => dbg(`warmup FAILED: ${e}`));
     dbg(`warmup sync ${(performance.now() - tWarm).toFixed(1)}ms`);
     // 池子讓這裡要解鎖的元素變成 POOL 倍（4 顆音效 × 3 = 12 次 play()），而連續呼叫 play()
     // 正是會阻塞主執行緒的那件事——量一下總耗時：這段是同步阻塞在閘門的 pointerdown 上，
@@ -167,6 +160,11 @@ document.addEventListener(
     for (const [name, els] of Object.entries(sfxAudio)) {
       for (const [i, el] of els.entries()) {
         el.muted = true;
+        // 先跳到音檔尾端再播：解鎖只要「在手勢內成功 play 過一次」就算數，不需要真的播完整段。
+        // 不跳的話這 12 顆會各自播到自己的長度才結束（clear.wav 539ms），實機量到整個解鎖窗口
+        // 639ms，而玩家點完閘門立刻拖曳就會撞進去——那次拖曳 frames=0、487ms 一格都沒畫，
+        // 線也畫不出來。跳到尾端讓每顆幾十毫秒就結束，窗口才收得掉（設計文件 §7）。
+        if (Number.isFinite(el.duration)) el.currentTime = Math.max(0, el.duration - 0.05);
         const p = el.play();
         settled.push(p);
         p.then(
@@ -563,7 +561,6 @@ $('btn-settings').addEventListener('click', () => {
 });
 $('opt-sound').addEventListener('change', (e) => {
   save.settings.sound = e.target.checked;
-  keepAlive(save.settings.sound); // 這是 click，重新開啟時的 play() 一樣在手勢內
   persist(save);
 });
 $('overlay-settings').addEventListener('click', (e) => {
