@@ -113,32 +113,45 @@ for (const name of ['target', 'invalid', 'coin', 'clear']) {
   SFX[name] = () => playSfx(name);
   if (!audioCtx) continue;
   // suspended 狀態也能 decode，所以不必等手勢——開頁就解碼好，手勢只負責 resume()。
+  const t0 = performance.now();
   fetch(`assets/sfx/${name}.wav`)
     .then((r) => r.arrayBuffer())
     .then((raw) => audioCtx.decodeAudioData(raw))
     .then((buf) => {
       sfxBuffers[name] = buf;
+      dbg(`buffer(${name}) ready ${(performance.now() - t0).toFixed(0)}ms after load`);
     })
     .catch((e) => dbg(`decode(${name}) FAILED: ${e}`));
 }
 // iOS 硬體靜音鍵會讓 Web Audio 整個靜音，但不影響 `<audio>`／`<video>`（WebKit bug 237322）。
-// 繞法是在同一個手勢裡真的播一段 `<audio>` 靜音音檔，整頁的音訊 session 會被升級成媒體類別，
-// 之後 Web Audio 就不再受靜音鍵影響。#16／#18 當年為此加的這個檔案，換回 Web Audio 後仍然
-// 是必要的——它現在的唯一職責就是這個 session 升級，別因為「音效不再用 <audio>」就刪掉它。
+// 繞法是播一段 `<audio>` 靜音音檔把整頁的音訊 session 升級成媒體類別，之後 Web Audio 就不再
+// 受靜音鍵影響。這個檔案的唯一職責就是這個升級，別因為「音效不再用 <audio>」就刪掉它。
+//
+// **必須 loop。** 實機（iOS 靜音模式 + 無痕分頁）驗證過只播一次是不夠的：250ms 播完後 session
+// 就掉回去，`AudioContext` 一路卡在 suspended，所有 `start()` 都靜靜地沒有聲音，直到玩家答對
+// 一個字、TTS 真的唸出人聲才把 session 一併喚醒——那次 `resume()` 量到 **8974ms**（正是 #19
+// 當年放棄 Web Audio 的那個 10~15 秒，它從來不是幻覺，只是要在靜音模式下才現形）。
+// 這也是為什麼 keep-alive 在 `<audio>` 時代失敗、現在卻可行：當時它要跟 12 顆音效元素的解鎖
+// 搶播放管線（解鎖窗口從 639ms 暴增到 1705ms），而現在頁面上只剩這一個 `<audio>`，沒有東西可搶。
 const silenceAudio = new Audio('assets/sfx/silence.wav');
 silenceAudio.preload = 'auto';
+silenceAudio.loop = true;
 // 音訊解鎖：`resume()` 與靜音鍵繞法都必須在使用者手勢內發生。開場閘門（index.html #gate）
 // 保證每次載入都有一個，而且落在閘門上而不是轉盤上——resume() 那 190ms 在閘門上看不見。
 document.addEventListener(
   'pointerdown',
   () => {
-    silenceAudio.play().catch((e) => dbg(`silence FAILED: ${e}`)); // 靜音鍵繞法，見上
+    silenceAudio.play().catch((e) => dbg(`silence FAILED: ${e}`)); // 靜音鍵繞法（loop），見上
     if (!audioCtx) return;
     const t0 = performance.now();
     audioCtx.resume().then(
       () => dbg(`resume() -> ${audioCtx.state} in ${(performance.now() - t0).toFixed(1)}ms`),
       (e) => dbg(`resume() REJECTED: ${e}`)
     );
+    // 解碼在開頁時就開始，但無痕分頁沒有 HTTP 快取，實機量到玩家點完閘門後還要等 3 秒多才
+    // 備好——期間 playSfx 直接跳過，前三次拼錯完全沒聲音。記一筆時間，看預載夠不夠早。
+    for (const name of Object.keys(SFX))
+      if (!sfxBuffers[name]) dbg(`buffer(${name}) not ready at unlock`);
   },
   { once: true, capture: true }
 );
