@@ -98,112 +98,46 @@ const dictCard = createDictionaryCard($('dict-card'));
 setSpeechDebug(dbg);
 
 // ---- 音效：Kenney Interface Sounds（CC0），本地 wav（§7、§14）----
-// 原本走 Web Audio API（AudioContext + decodeAudioData），但實機診斷（?debug 面板）
-// 量到 AudioContext.resume() 在部分 iOS 裝置上要拖到 10~15 秒才真正轉成 running，
-// 期間所有音效都被吞掉；相同裝置上 <audio> 元素的 play() 卻是手勢當下就立刻 resolve。
-// 這款遊戲的音效都是獨立短音、不需要 Web Audio 的混音圖，所以直接改用 <audio>
-// 元素——不必自己管 AudioContext 狀態機，也不受這個 resume() 延遲影響。
-// 暖機用的無聲音檔，格式**必須跟四顆音效完全一致**（44.1kHz / 16-bit / mono）。之前是內嵌
-// data URI 的 8kHz / 8-bit，實機症狀是解鎖後最初幾次 invalid「沒聲音 → 很小聲 → 延遲 → 正常」：
-// 推測是暖機先把 iOS 的音訊輸出路由設定成 8kHz，第一批 44.1kHz 的音效要重新協商取樣率，
-// 那段期間輸出被吃掉或衰減。invalid.wav 只有 103ms（全場最短），被吃掉幾十毫秒就少一大半，
-// 所以只有拼錯聽得出來，target(290ms)／clear(539ms) 只是起音軟一點（設計文件 §7）。
-// 用檔案而不是 data URI：同格式的 250ms 靜音 base64 會膨脹到 20KB 以上，不適合塞進原始碼；
-// 存成資產檔還能比照其他音效 preload。模組層級持有這個參考，別讓它播完就被回收。
-// 播**一次**就好，不要改成 loop 常駐。試過 keep-alive（循環播無聲把音訊 session 釘在 active，
-// 想省掉「從閒置醒來」的成本），實機是明確的退步：解鎖迴圈的同步成本從 0ms 變成 535ms、
-// 12 顆元素的解鎖窗口從 639ms 變成 1705ms，玩家點完閘門的第一次拖曳整個沒反應、連線都畫不出來。
-// 原因是 iOS 上**並行的 `<audio>` 播放本身就貴**，常駐一條無聲等於讓之後每一次 play() 都要跟它搶。
-// 別再試一次（設計文件 §7）。
-const silenceAudio = new Audio('assets/sfx/silence.wav');
-silenceAudio.preload = 'auto';
-// 12 顆元素的解鎖何時真的結束——閘門要等它才收（見 #gate 的 click）。手勢還沒發生前先給
-// 一個已 resolve 的值，錯誤畫面那條路（不經閘門）才不會卡住。
-let unlockSettled = Promise.resolve();
-
-// 每顆音效備 POOL 份、輪流播：`<audio>` 的 play() 被連續快速呼叫時會同步阻塞主執行緒（§7 的
-// tick 就是這樣被拿掉的），而玩家每 0.6~0.7 秒拼錯一次時同一顆元素會被連續戳，實機量到 play()
-// 從 4~6ms 爬到 60~109ms（同一份 log 的 frame.max 同步噴到 90~320ms，主執行緒真的卡住了）。
-// 隔一秒以上再拼錯就全部回到 4~6ms，所以是「連續戳同一顆」而不是裝置整體慢。輪流用不同元素，
-// 相鄰兩次就落在不同的播放管線上。ponytail: 3 是猜的，log 顯示還會卡就加大。
-const POOL = 3;
-const sfxAudio = {};
-const sfxNext = {};
+// 走 Web Audio：把四顆音效解碼進記憶體，播放時開一個 AudioBufferSourceNode。
+// 這是繞了一大圈換回來的——#19 曾因為實機量到 `AudioContext.resume()` 要 10~15 秒才轉成
+// running 而改用 `<audio>` 元素，但那版的解鎖掛在 `pointerdown` 上，正是 #54 後來測出
+// 叫不醒 TTS 的同一個手勢陷阱。開場閘門保證每次載入都有一個真正的 click 之後重測：
+// `resume()` 190ms、`decodeAudioData` 10ms、而 `start()` 每一次都是 **0.0ms**。
+// 對照同一次拼字的 `<audio>.play()` 是 6~9ms（session 冷掉時量過 173ms、752ms），
+// 而且 play() 是**同步阻塞主執行緒**——轉盤掉幀、音效被吃掉、連線畫不出來全是它來的。
+// `start()` 不阻塞，所以池子、逐元素解鎖、暖機、閘門等待那一整套繞道全部不需要了（設計文件 §7）。
+const audioCtx = 'AudioContext' in window ? new AudioContext() : null;
+const sfxBuffers = {};
 const SFX = {};
 for (const name of ['target', 'invalid', 'coin', 'clear']) {
-  sfxAudio[name] = Array.from({ length: POOL }, () => {
-    const el = new Audio(`assets/sfx/${name}.wav`);
-    el.preload = 'auto';
-    return el;
-  });
-  sfxNext[name] = 0;
   SFX[name] = () => playSfx(name);
+  if (!audioCtx) continue;
+  // suspended 狀態也能 decode，所以不必等手勢——開頁就解碼好，手勢只負責 resume()。
+  fetch(`assets/sfx/${name}.wav`)
+    .then((r) => r.arrayBuffer())
+    .then((raw) => audioCtx.decodeAudioData(raw))
+    .then((buf) => {
+      sfxBuffers[name] = buf;
+    })
+    .catch((e) => dbg(`decode(${name}) FAILED: ${e}`));
 }
-// iOS 對「手勢內播放才允許自動播放」的解鎖是分別針對每個 <audio> 元素算的，不是整頁一次
-// 就全解鎖——沒有在手勢當下播過的元素，第一次真的要播時已經不在手勢裡，會被 NotAllowedError
-// 擋掉（症狀：invalid/target/coin/clear 偶爾被吃掉）。所以第一個手勢裡把每顆音效都靜音播
-// 一次再馬上暫停歸零，一次把全部解鎖。
+// iOS 硬體靜音鍵會讓 Web Audio 整個靜音，但不影響 `<audio>`／`<video>`（WebKit bug 237322）。
+// 繞法是在同一個手勢裡真的播一段 `<audio>` 靜音音檔，整頁的音訊 session 會被升級成媒體類別，
+// 之後 Web Audio 就不再受靜音鍵影響。#16／#18 當年為此加的這個檔案，換回 Web Audio 後仍然
+// 是必要的——它現在的唯一職責就是這個 session 升級，別因為「音效不再用 <audio>」就刪掉它。
+const silenceAudio = new Audio('assets/sfx/silence.wav');
+silenceAudio.preload = 'auto';
+// 音訊解鎖：`resume()` 與靜音鍵繞法都必須在使用者手勢內發生。開場閘門（index.html #gate）
+// 保證每次載入都有一個，而且落在閘門上而不是轉盤上——resume() 那 190ms 在閘門上看不見。
 document.addEventListener(
   'pointerdown',
   () => {
-    // 靜音播放解得開「權限」，卻解不開「延遲」：第一次**真正出聲**的 play() 會同步阻塞主
-    // 執行緒（實機 191ms，被 TTS 佔過 session 後更慘，量到 752ms）。這裡「不靜音」播無聲把這
-    // 筆帳挪到手勢當下付掉。只播一次——常駐 loop 試過，反而更糟，理由見上面 silenceAudio 那段。
-    // 代價是 session 之後仍會閒置，冷啟動那次的成本躲不掉。開場閘門（index.html #gate）保證這個
-    // pointerdown 落在閘門上而不是轉盤上，那一刻畫面上什麼都沒在動，這段阻塞才藏得住——閘門
-    // 與這段暖機是綁在一起的，拿掉閘門會讓轉盤凍住（設計文件 §7）。
-    const tWarm = performance.now();
-    silenceAudio.play().catch((e) => dbg(`warmup FAILED: ${e}`));
-    dbg(`warmup sync ${(performance.now() - tWarm).toFixed(1)}ms`);
-    probeWebAudio(); // ?debug 才跑；resume() 要在手勢內呼叫才算數（見 probeWebAudio 的說明）
-    // 池子讓這裡要解鎖的元素變成 POOL 倍（4 顆音效 × 3 = 12 次 play()），而連續呼叫 play()
-    // 正是會阻塞主執行緒的那件事——量一下總耗時：這段是同步阻塞在閘門的 pointerdown 上，
-    // 太久的話閘門會遲遲不消失，那就得把 POOL 調小或改成分批解鎖。
-    const tUnlock = performance.now();
-    const settled = [];
-    for (const [name, els] of Object.entries(sfxAudio)) {
-      for (const [i, el] of els.entries()) {
-        // 別在這裡把 currentTime 跳到音檔尾端。試過（想縮短解鎖播放的長度），三個理由不留：
-        // 1. 前提就是錯的——`play()` 的 promise 是**播放開始**就 resolve，不是播完，所以縮短
-        //    播放長度根本不會縮短解鎖窗口；量到的 639→417ms 分不出是改善還是噪音。
-        // 2. 12 次 seek 讓解鎖迴圈的同步成本從 0ms 變成 148ms，白付在閘門上。
-        // 3. 真正的傷害：元素的停放位置變成音檔結尾。解鎖收尾雖然有 currentTime = 0，但 iOS 上
-        //    seek 是非同步的（#57 就是栽在這件事），一旦沒生效，playSfx 播出來的是尾端碎片——
-        //    實機症狀是「明明拼錯，聽到的卻不是錯誤音效」。元素停在 0 時 seek 失敗無害，
-        //    停在尾端就變成放錯聲音（設計文件 §7）。
-        el.muted = true;
-        const p = el.play();
-        settled.push(p);
-        p.then(
-          () => {
-            dbg(`unlock(${name}#${i}) ok`);
-            // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
-            // muted 設回 false 就代表這顆被真的播放接手了，這裡再 pause 會把聲音掐掉。
-            if (!el.muted) return;
-            el.pause();
-            el.currentTime = 0;
-            el.muted = false;
-          },
-          (e) => {
-            // playSfx 在同一個手勢裡接手時會 pause()，把這個 play() 中止成 AbortError——
-            // 那不是解鎖失敗（已經在手勢內播過就算解鎖），別在 debug 面板謊報。
-            if (e.name === 'AbortError') return;
-            dbg(`unlock(${name}#${i}) FAILED: ${e}`); // 這顆之後很可能整場都放不出聲音
-            el.muted = false;
-          }
-        );
-      }
-    }
-    dbg(`unlock loop sync ${(performance.now() - tUnlock).toFixed(1)}ms`);
-    // 解鎖是「同步呼叫、非同步結束」，而且結束得多晚**不由我們決定**：TTS 的解鎖句掛在同一個
-    // 閘門手勢上，誰先搶到音訊 session 誰贏。實機量到 TTS 先搶到的那次，12 個 play() promise
-    // 一直卡到 `unlock onend` 的**同一毫秒**才 resolve（窗口 1098ms）；反過來 TTS 晚一步的那次
-    // 只有 639ms。窗口在 417~1705ms 之間跳就是這個競爭造成的。這段期間主執行緒進不了轉盤的
-    // pointermove，玩家拖曳會完全沒反應、連線都畫不出來（實機 frames=0）——所以閘門要等它結束
-    // 才收，見下面 #gate 的 click（設計文件 §7）。
-    unlockSettled = Promise.allSettled(settled);
-    unlockSettled.then(() =>
-      dbg(`unlock all settled ${(performance.now() - tUnlock).toFixed(1)}ms after loop start`)
+    silenceAudio.play().catch((e) => dbg(`silence FAILED: ${e}`)); // 靜音鍵繞法，見上
+    if (!audioCtx) return;
+    const t0 = performance.now();
+    audioCtx.resume().then(
+      () => dbg(`resume() -> ${audioCtx.state} in ${(performance.now() - t0).toFixed(1)}ms`),
+      (e) => dbg(`resume() REJECTED: ${e}`)
     );
   },
   { once: true, capture: true }
@@ -223,71 +157,19 @@ document.addEventListener(
   { passive: false }
 );
 
-// ---- 只在 ?debug 跑的量測：Web Audio 到底還值不值得走回去（設計文件 §7）----
-// `<audio>` 的 play() 同步卡住主執行緒，是上面那一百多行繞道的**根**；Web Audio 的
-// `source.start()` 不卡。當年 #19 放棄 Web Audio 是因為實機量到 `AudioContext.resume()`
-// 要 10~15 秒才轉成 running——但那版解鎖掛在 `pointerdown` 上，正是 #54 後來測出叫不醒
-// TTS 的同一個手勢陷阱，而開場閘門現在保證每次載入都有一個真正的 click。沒有人重測過。
-// 這段**不接管任何播放**，只回答三個問題：resume() 多久轉 running、decode 多久、
-// 以及最關鍵的——`start()` 的同步成本，直接跟同一次拼字的 play() 對照。
-// 量完就該刪掉：不是功能，是決定去留的依據。
-let probeCtx = null;
-let probeBuffer = null;
-function probeWebAudio() {
-  if (!DEBUG || !('AudioContext' in window)) return;
-  probeCtx = new AudioContext();
-  const t0 = performance.now();
-  dbg(`probe: ctx state=${probeCtx.state} rate=${probeCtx.sampleRate}`);
-  probeCtx.resume().then(
-    () => dbg(`probe: resume() -> ${probeCtx.state} in ${(performance.now() - t0).toFixed(1)}ms`),
-    (e) => dbg(`probe: resume() REJECTED: ${e}`)
-  );
-  fetch('assets/sfx/invalid.wav')
-    .then((r) => r.arrayBuffer())
-    .then((raw) => {
-      const t1 = performance.now();
-      return probeCtx.decodeAudioData(raw).then((buf) => {
-        dbg(`probe: decode ${(performance.now() - t1).toFixed(1)}ms`);
-        probeBuffer = buf;
-      });
-    })
-    .catch((e) => dbg(`probe FAILED: ${e}`));
-}
-
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
-  // 輪流取池子裡的下一顆，相鄰兩次拼錯不會戳到同一條播放管線。
-  const i = sfxNext[name];
-  sfxNext[name] = (i + 1) % POOL;
-  const el = sfxAudio[name][i];
-  // seek 和 play() 分開量：合在一起量會分不出是倒帶貴還是播放貴（實測全部是 play()）。
+  const buf = sfxBuffers[name];
+  if (!buf) return dbg(`playSfx(${name}) skipped: buffer not ready`);
+  // 每次播都開一個新的 source：AudioBufferSourceNode 是一次性的，播完自動回收，
+  // buffer 本身共用。這也是為什麼不再需要元素池——沒有「同一顆元素被連續戳」這回事了。
   const t0 = performance.now();
-  // 先 pause 再倒帶：解鎖的靜音播放可能還在跑（第一個手勢內 pointerdown 解鎖、pointerup 播音效），
-  // 直接 muted=false 等於從半途解除靜音，而 currentTime 的 seek 是非同步的、來不及生效——
-  // 聽到的是尾巴，症狀就是第一次載入時音效延遲／變小聲／整個沒聲音。暫停後 seek 才會確實歸零。
-  el.pause();
-  el.currentTime = 0;
-  el.muted = false; // 解鎖可能還靜音著（同一個手勢內），真的要播就蓋過去
-  const t1 = performance.now();
-  el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
-  const t2 = performance.now();
-  dbg(
-    `playSfx(${name}#${i}) stop+seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
-      `paused=${el.paused} ready=${el.readyState} muted=${el.muted} vol=${el.volume}`
-  );
-  // 同一個事件裡，用 Web Audio 靜音播一次同一顆音效，只為了跟上面那個 play() 直接對照——
-  // 兩個數字並排才有意義（同一台裝置、同一刻的 session 狀態）。gain 0 所以聽不到。
-  if (probeBuffer) {
-    const src = probeCtx.createBufferSource();
-    const gain = probeCtx.createGain();
-    gain.gain.value = 0;
-    src.buffer = probeBuffer;
-    src.connect(gain).connect(probeCtx.destination);
-    const t3 = performance.now();
-    src.start();
-    dbg(`probe: start() sync ${(performance.now() - t3).toFixed(1)}ms state=${probeCtx.state}`);
-  }
+  const src = audioCtx.createBufferSource();
+  src.buffer = buf;
+  src.connect(audioCtx.destination);
+  src.start();
+  dbg(`playSfx(${name}) start ${(performance.now() - t0).toFixed(1)}ms state=${audioCtx.state}`);
 }
 
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
@@ -721,25 +603,13 @@ function showLoadError() {
 }
 $('btn-reload').addEventListener('click', () => location.reload());
 // 閘門的 click 本身就是解鎖手勢（TTS 與 <audio> 的 listener 都掛在 document 上），這裡只管收掉
-$('gate').addEventListener(
-  'click',
-  () => {
-    // 不是點了就收：音訊解鎖在這一刻才剛開始跑，而它結束前主執行緒收不到轉盤的 pointermove，
-    // 玩家拖曳會完全沒反應、連線都畫不出來（實機 frames=0）。閘門存在就是為了吸收這段，所以
-    // 等解鎖真的結束再收——期間換掉提示文字，免得看起來像點了沒反應（設計文件 §7）。
-    // 上限 2 秒：解鎖若卡死，寧可放玩家進去玩沒有音效的版本，也不能把人關在閘門後面。
-    $('gate').querySelector('.gate-hint').textContent = '準備中…';
-    const hide = () => {
-      if ($('gate').hidden) return;
-      $('gate').hidden = true;
-      dbg('gate hidden');
-      requestAnimationFrame(() => dbg('gate hidden +1 frame')); // 隔多久才畫得出下一格
-    };
-    unlockSettled.then(hide);
-    setTimeout(hide, 2000);
-  },
-  { once: true }
-);
+// 點了就收。這裡曾經要等 12 顆 <audio> 的解鎖窗口（實機 417~1705ms，期間玩家拖曳完全沒反應，
+// frames=0），還為此顯示「準備中…」；換成 Web Audio 後那個窗口整個不存在了——resume() 是
+// 非同步的、不擋主執行緒，解碼在開頁時就做完了（設計文件 §7）。
+$('gate').addEventListener('click', () => {
+  $('gate').hidden = true;
+  dbg('gate hidden');
+});
 
 (async function boot() {
   // 開場閘門（UI 文件 §1-I）：關卡載入照常在背後跑，閘門只是等一下 click，不拖慢首屏。
