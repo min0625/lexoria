@@ -44,6 +44,9 @@ if ('speechSynthesis' in window) {
       unlocked = true;
       log('unlock onstart');
     };
+    // onend 也記：解鎖那句在念的期間跟閘門後的第一次拖曳重疊，而那次拖曳實機量到 frames=0
+    // （487ms 一格都沒畫），要靠這個時間戳才分得出兇手是不是 TTS（設計文件 §7）。
+    u.onend = () => log('unlock onend');
     u.onerror = (e) => log(`unlock onerror: ${e.error}`);
     speechSynthesis.speak(u);
   };
