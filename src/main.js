@@ -150,10 +150,13 @@ document.addEventListener(
     // 正是會阻塞主執行緒的那件事——量一下總耗時：這段是同步阻塞在閘門的 pointerdown 上，
     // 太久的話閘門會遲遲不消失，那就得把 POOL 調小或改成分批解鎖。
     const tUnlock = performance.now();
+    const settled = [];
     for (const [name, els] of Object.entries(sfxAudio)) {
       for (const [i, el] of els.entries()) {
         el.muted = true;
-        el.play().then(
+        const p = el.play();
+        settled.push(p);
+        p.then(
           () => {
             dbg(`unlock(${name}#${i}) ok`);
             // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
@@ -174,6 +177,13 @@ document.addEventListener(
       }
     }
     dbg(`unlock loop sync ${(performance.now() - tUnlock).toFixed(1)}ms`);
+    // 解鎖是「同步呼叫、非同步結束」：12 顆元素的靜音播放會一路播到各自音檔長度結束
+    // （clear.wav 有 539ms），promise 才陸續 resolve、才輪到那 12 次 pause()。實機量到
+    // 閘門後的第一次拖曳 frames=0（487ms 一格都沒畫），而 unlock ok 正好落在那次拖曳中間，
+    // 所以要知道這整個窗口實際多長、跟第一次拖曳重疊多少（設計文件 §7）。
+    Promise.allSettled(settled).then(() =>
+      dbg(`unlock all settled ${(performance.now() - tUnlock).toFixed(1)}ms after loop start`)
+    );
   },
   { once: true, capture: true }
 );
@@ -649,6 +659,10 @@ $('btn-reload').addEventListener('click', () => location.reload());
 // 閘門的 click 本身就是解鎖手勢（TTS 與 <audio> 的 listener 都掛在 document 上），這裡只管收掉
 $('gate').addEventListener('click', () => {
   $('gate').hidden = true;
+  // 收掉閘門是遊戲畫面第一次真的要繪製，而閘門後的第一次拖曳實機量到 frames=0——這行的時間戳
+  // 是判斷「首次 layout/paint」有沒有份的基準（設計文件 §7）。
+  dbg('gate hidden');
+  requestAnimationFrame(() => dbg('gate hidden +1 frame')); // 隔多久才畫得出下一格
 });
 
 (async function boot() {
