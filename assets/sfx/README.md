@@ -10,4 +10,4 @@
 | invalid.wav | error_004.ogg | 無效字 |
 | coin.wav | glass_002.ogg | 拼出 bonus 字得金幣 |
 | clear.wav | confirmation_002.ogg | 過關 |
-| silence.wav | 無（`tools/` 外以 python `wave` 產生） | 250ms 數位靜音，只用來在第一個手勢裡暖機音訊輸出。**格式必須與上面四顆一致**（44.1kHz/16-bit/mono），對不上會讓最初幾次音效被吃掉或衰減，原因見設計文件 §7 |
+| silence.wav | 無（以 python `wave` 產生） | 250ms、440Hz、峰值 2/32768（約 -84dBFS）的正弦波，`loop` 播放。職責只有一個：把整頁音訊 session 升級成媒體類別，讓 Web Audio 不受 iOS 靜音鍵影響。**不能改成數位全零**（系統不當它是音訊活動，`AudioContext.resume()` 會拖到 5~9 秒），**也不能停掉 loop**（播完 session 就掉回去）。原因與量測見設計文件 §7 |
