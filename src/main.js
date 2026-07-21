@@ -155,6 +155,7 @@ document.addEventListener(
     const tWarm = performance.now();
     silenceAudio.play().catch((e) => dbg(`warmup FAILED: ${e}`));
     dbg(`warmup sync ${(performance.now() - tWarm).toFixed(1)}ms`);
+    probeWebAudio(); // ?debug 才跑；resume() 要在手勢內呼叫才算數（見 probeWebAudio 的說明）
     // 池子讓這裡要解鎖的元素變成 POOL 倍（4 顆音效 × 3 = 12 次 play()），而連續呼叫 play()
     // 正是會阻塞主執行緒的那件事——量一下總耗時：這段是同步阻塞在閘門的 pointerdown 上，
     // 太久的話閘門會遲遲不消失，那就得把 POOL 調小或改成分批解鎖。
@@ -222,6 +223,37 @@ document.addEventListener(
   { passive: false }
 );
 
+// ---- 只在 ?debug 跑的量測：Web Audio 到底還值不值得走回去（設計文件 §7）----
+// `<audio>` 的 play() 同步卡住主執行緒，是上面那一百多行繞道的**根**；Web Audio 的
+// `source.start()` 不卡。當年 #19 放棄 Web Audio 是因為實機量到 `AudioContext.resume()`
+// 要 10~15 秒才轉成 running——但那版解鎖掛在 `pointerdown` 上，正是 #54 後來測出叫不醒
+// TTS 的同一個手勢陷阱，而開場閘門現在保證每次載入都有一個真正的 click。沒有人重測過。
+// 這段**不接管任何播放**，只回答三個問題：resume() 多久轉 running、decode 多久、
+// 以及最關鍵的——`start()` 的同步成本，直接跟同一次拼字的 play() 對照。
+// 量完就該刪掉：不是功能，是決定去留的依據。
+let probeCtx = null;
+let probeBuffer = null;
+function probeWebAudio() {
+  if (!DEBUG || !('AudioContext' in window)) return;
+  probeCtx = new AudioContext();
+  const t0 = performance.now();
+  dbg(`probe: ctx state=${probeCtx.state} rate=${probeCtx.sampleRate}`);
+  probeCtx.resume().then(
+    () => dbg(`probe: resume() -> ${probeCtx.state} in ${(performance.now() - t0).toFixed(1)}ms`),
+    (e) => dbg(`probe: resume() REJECTED: ${e}`)
+  );
+  fetch('assets/sfx/invalid.wav')
+    .then((r) => r.arrayBuffer())
+    .then((raw) => {
+      const t1 = performance.now();
+      return probeCtx.decodeAudioData(raw).then((buf) => {
+        dbg(`probe: decode ${(performance.now() - t1).toFixed(1)}ms`);
+        probeBuffer = buf;
+      });
+    })
+    .catch((e) => dbg(`probe FAILED: ${e}`));
+}
+
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
@@ -244,6 +276,18 @@ function playSfx(name) {
     `playSfx(${name}#${i}) stop+seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
       `paused=${el.paused} ready=${el.readyState} muted=${el.muted} vol=${el.volume}`
   );
+  // 同一個事件裡，用 Web Audio 靜音播一次同一顆音效，只為了跟上面那個 play() 直接對照——
+  // 兩個數字並排才有意義（同一台裝置、同一刻的 session 狀態）。gain 0 所以聽不到。
+  if (probeBuffer) {
+    const src = probeCtx.createBufferSource();
+    const gain = probeCtx.createGain();
+    gain.gain.value = 0;
+    src.buffer = probeBuffer;
+    src.connect(gain).connect(probeCtx.destination);
+    const t3 = performance.now();
+    src.start();
+    dbg(`probe: start() sync ${(performance.now() - t3).toFixed(1)}ms state=${probeCtx.state}`);
+  }
 }
 
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
