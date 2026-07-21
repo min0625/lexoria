@@ -113,12 +113,22 @@ setSpeechDebug(dbg);
 const silenceAudio = new Audio('assets/sfx/silence.wav');
 silenceAudio.preload = 'auto';
 
+// 每顆音效備 POOL 份、輪流播：`<audio>` 的 play() 被連續快速呼叫時會同步阻塞主執行緒（§7 的
+// tick 就是這樣被拿掉的），而玩家每 0.6~0.7 秒拼錯一次時同一顆元素會被連續戳，實機量到 play()
+// 從 4~6ms 爬到 60~109ms（同一份 log 的 frame.max 同步噴到 90~320ms，主執行緒真的卡住了）。
+// 隔一秒以上再拼錯就全部回到 4~6ms，所以是「連續戳同一顆」而不是裝置整體慢。輪流用不同元素，
+// 相鄰兩次就落在不同的播放管線上。ponytail: 3 是猜的，log 顯示還會卡就加大。
+const POOL = 3;
 const sfxAudio = {};
+const sfxNext = {};
 const SFX = {};
 for (const name of ['target', 'invalid', 'coin', 'clear']) {
-  const el = new Audio(`assets/sfx/${name}.wav`);
-  el.preload = 'auto';
-  sfxAudio[name] = el;
+  sfxAudio[name] = Array.from({ length: POOL }, () => {
+    const el = new Audio(`assets/sfx/${name}.wav`);
+    el.preload = 'auto';
+    return el;
+  });
+  sfxNext[name] = 0;
   SFX[name] = () => playSfx(name);
 }
 // iOS 對「手勢內播放才允許自動播放」的解鎖是分別針對每個 <audio> 元素算的，不是整頁一次
@@ -136,27 +146,34 @@ document.addEventListener(
     // （index.html #gate）保證這個 pointerdown 落在閘門上而不是轉盤上，那一刻畫面上什麼都
     // 沒在動，191ms 才藏得住——閘門與這段暖機是綁在一起的，拿掉閘門會讓轉盤凍住（設計文件 §7）。
     silenceAudio.play().catch((e) => dbg(`warmup FAILED: ${e}`));
-    for (const [name, el] of Object.entries(sfxAudio)) {
-      el.muted = true;
-      el.play().then(
-        () => {
-          dbg(`unlock(${name}) ok`);
-          // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
-          // muted 設回 false 就代表這顆被真的播放接手了，這裡再 pause 會把聲音掐掉。
-          if (!el.muted) return;
-          el.pause();
-          el.currentTime = 0;
-          el.muted = false;
-        },
-        (e) => {
-          // playSfx 在同一個手勢裡接手時會 pause()，把這個 play() 中止成 AbortError——
-          // 那不是解鎖失敗（已經在手勢內播過就算解鎖），別在 debug 面板謊報。
-          if (e.name === 'AbortError') return;
-          dbg(`unlock(${name}) FAILED: ${e}`); // 這顆之後很可能整場都放不出聲音
-          el.muted = false;
-        }
-      );
+    // 池子讓這裡要解鎖的元素變成 POOL 倍（4 顆音效 × 3 = 12 次 play()），而連續呼叫 play()
+    // 正是會阻塞主執行緒的那件事——量一下總耗時：這段是同步阻塞在閘門的 pointerdown 上，
+    // 太久的話閘門會遲遲不消失，那就得把 POOL 調小或改成分批解鎖。
+    const tUnlock = performance.now();
+    for (const [name, els] of Object.entries(sfxAudio)) {
+      for (const [i, el] of els.entries()) {
+        el.muted = true;
+        el.play().then(
+          () => {
+            dbg(`unlock(${name}#${i}) ok`);
+            // 解除靜音是非同步的，解鎖跟第一次真的播放會落在同一個手勢裡：playSfx 已經把
+            // muted 設回 false 就代表這顆被真的播放接手了，這裡再 pause 會把聲音掐掉。
+            if (!el.muted) return;
+            el.pause();
+            el.currentTime = 0;
+            el.muted = false;
+          },
+          (e) => {
+            // playSfx 在同一個手勢裡接手時會 pause()，把這個 play() 中止成 AbortError——
+            // 那不是解鎖失敗（已經在手勢內播過就算解鎖），別在 debug 面板謊報。
+            if (e.name === 'AbortError') return;
+            dbg(`unlock(${name}#${i}) FAILED: ${e}`); // 這顆之後很可能整場都放不出聲音
+            el.muted = false;
+          }
+        );
+      }
     }
+    dbg(`unlock loop sync ${(performance.now() - tUnlock).toFixed(1)}ms`);
   },
   { once: true, capture: true }
 );
@@ -178,7 +195,10 @@ document.addEventListener(
 function playSfx(name) {
   dbg(`playSfx(${name}) called, sound=${save.settings.sound}`);
   if (!save.settings.sound) return;
-  const el = sfxAudio[name];
+  // 輪流取池子裡的下一顆，相鄰兩次拼錯不會戳到同一條播放管線。
+  const i = sfxNext[name];
+  sfxNext[name] = (i + 1) % POOL;
+  const el = sfxAudio[name][i];
   // seek 和 play() 分開量：合在一起量會分不出是倒帶貴還是播放貴（實測全部是 play()）。
   const t0 = performance.now();
   // 先 pause 再倒帶：解鎖的靜音播放可能還在跑（第一個手勢內 pointerdown 解鎖、pointerup 播音效），
@@ -191,7 +211,7 @@ function playSfx(name) {
   el.play().catch((e) => dbg(`playSfx(${name}) play() REJECTED: ${e}`));
   const t2 = performance.now();
   dbg(
-    `playSfx(${name}) stop+seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
+    `playSfx(${name}#${i}) stop+seek ${(t1 - t0).toFixed(1)}ms play ${(t2 - t1).toFixed(1)}ms ` +
       `paused=${el.paused} ready=${el.readyState} muted=${el.muted} vol=${el.volume}`
   );
 }
