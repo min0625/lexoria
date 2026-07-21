@@ -159,12 +159,15 @@ document.addEventListener(
     const settled = [];
     for (const [name, els] of Object.entries(sfxAudio)) {
       for (const [i, el] of els.entries()) {
+        // 別在這裡把 currentTime 跳到音檔尾端。試過（想縮短解鎖播放的長度），三個理由不留：
+        // 1. 前提就是錯的——`play()` 的 promise 是**播放開始**就 resolve，不是播完，所以縮短
+        //    播放長度根本不會縮短解鎖窗口；量到的 639→417ms 分不出是改善還是噪音。
+        // 2. 12 次 seek 讓解鎖迴圈的同步成本從 0ms 變成 148ms，白付在閘門上。
+        // 3. 真正的傷害：元素的停放位置變成音檔結尾。解鎖收尾雖然有 currentTime = 0，但 iOS 上
+        //    seek 是非同步的（#57 就是栽在這件事），一旦沒生效，playSfx 播出來的是尾端碎片——
+        //    實機症狀是「明明拼錯，聽到的卻不是錯誤音效」。元素停在 0 時 seek 失敗無害，
+        //    停在尾端就變成放錯聲音（設計文件 §7）。
         el.muted = true;
-        // 先跳到音檔尾端再播：解鎖只要「在手勢內成功 play 過一次」就算數，不需要真的播完整段。
-        // 不跳的話這 12 顆會各自播到自己的長度才結束（clear.wav 539ms），實機量到整個解鎖窗口
-        // 639ms，而玩家點完閘門立刻拖曳就會撞進去——那次拖曳 frames=0、487ms 一格都沒畫，
-        // 線也畫不出來。跳到尾端讓每顆幾十毫秒就結束，窗口才收得掉（設計文件 §7）。
-        if (Number.isFinite(el.duration)) el.currentTime = Math.max(0, el.duration - 0.05);
         const p = el.play();
         settled.push(p);
         p.then(
