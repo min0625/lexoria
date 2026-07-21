@@ -11,7 +11,7 @@ export const strings = {
   allClear: '更多關卡即將推出',
   backToLevels: '關卡選擇',
   settings: '設定',
-  sound: '音效',
+  sound: '發音', // 音效已整層移除（設計文件 §13），這個開關現在只管答對時的自動發音
   about: '關於',
   replayNote: '重玩不再獲得金幣',
   share: '分享',

@@ -32,8 +32,8 @@ if ('speechSynthesis' in window) {
   // 也不必在 code 裡分辨哪種手勢算數。
   // 解鎖是「每次載入頁面」重算的，重新整理／分頁還原都要重來，不是首次遊玩一次就永久有效。
   // 遊戲畫面上沒有任何非點不可的按鈕（一次拖曳從 pointerdown 到 pointerup 不產生 click），
-  // 所以由 index.html 的開場閘門（#gate）負責製造這一下 click——那是它存在的理由之一
-  // （另一半是 main.js 的音效暖機，見設計文件 §7）。
+  // 所以由 index.html 的開場閘門（#gate）負責製造這一下 click——閘門曾經還兼著音效解鎖，
+  // 音效整層移除後（設計文件 §13）那半沒了，**現在這是它存在的唯一理由**，別把它當裝飾拆掉。
   // 這三個 listener 仍留著：閘門被繞過（例如日後改流程）時還有機會靠玩家隨手點的按鈕解鎖。
   // 這就是這條路的天花板，不要再往下試第四種事件。
   const unlock = () => {
@@ -44,8 +44,7 @@ if ('speechSynthesis' in window) {
       unlocked = true;
       log('unlock onstart');
     };
-    // onend 也記：解鎖那句在念的期間跟閘門後的第一次拖曳重疊，而那次拖曳實機量到 frames=0
-    // （487ms 一格都沒畫），要靠這個時間戳才分得出兇手是不是 TTS（設計文件 §7）。
+    // onend 也記：診斷音效問題時靠這對時間戳才確認 TTS 唸的期間不會卡住轉盤（設計文件 §13）。
     u.onend = () => log('unlock onend');
     u.onerror = (e) => log(`unlock onerror: ${e.error}`);
     speechSynthesis.speak(u);
@@ -55,9 +54,11 @@ if ('speechSynthesis' in window) {
   document.addEventListener('click', unlock, { capture: true });
 }
 
-// 有英文語音才念，回傳是否已排入發音；發音失敗（引擎錯誤）時呼叫 onError 讓呼叫端補音效
+// 有英文語音才念，回傳是否已排入發音。
+// 這裡曾有一個 onError 退路，讓呼叫端在引擎失敗時補播命中音效——音效整層已移除（§13），
+// 沒有東西可以補了，所以連同那條退路一起拿掉。發音叫不出來時就是純視覺回饋。
 // src 標記是哪條路徑（wheel=答對自動念、btn=喇叭鈕），用來比對兩者 log 差異
-export function speak(word, onError, src = '?') {
+export function speak(word, src = '?') {
   log(
     `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in window ? speechSynthesis.getVoices().length : 'n/a'}`
   );
@@ -66,36 +67,21 @@ export function speak(word, onError, src = '?') {
   // 全大寫會被部分 TTS 引擎當縮寫逐字母拼讀（CAT → C-A-T），一律轉小寫
   const u = new SpeechSynthesisUtterance(word.toLowerCase());
   u.lang = 'en-US';
-  let started = false;
   u.onstart = () => {
-    started = true;
     unlocked = true;
     log(`speak(${word}) [${src}] onstart`);
   };
   u.onend = () => log(`speak(${word}) [${src}] onend`);
-  u.onerror = (e) => {
-    log(`speak(${word}) [${src}] onerror: ${e.error}`);
-    // 自己 cancel 掉的不算失敗，補播音效反而蓋到下一個字的人聲
-    if (onError && e.error !== 'interrupted' && e.error !== 'canceled') onError();
-  };
+  u.onerror = (e) => log(`speak(${word}) [${src}] onerror: ${e.error}`);
   // 曾經延後一拍呼叫（setTimeout 0ms）來閃避 Chrome cancel() 非同步造成的丟句問題，
   // 但實測 iOS Safari 需要 speak() 跟觸發手勢同一個 tick 呼叫，延後一拍會讓語音引擎
   // 整個不出聲、不觸發 onstart 也不觸發 onerror（症狀：答對字完全沒有發音）。
-  // resume() 防引擎卡在 paused（分頁背景化後會發生），等同 playSfx 對 audioCtx 的 resume
+  // resume() 防引擎卡在 paused（分頁背景化後會發生）
   log(
     `speak(${word}) [${src}] about to speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
   );
   speechSynthesis.resume();
   speechSynthesis.speak(u);
-  // 被丟棄的 utterance 不出聲也不觸發 onerror，呼叫端的 onError 補救因此不會被叫到，
-  // 玩家答對了卻完全沒有回饋（連命中音效都沒有，因為 speak 回報「已排入」）。
-  // 沒有事件可以等，只能定時檢查：這段時間內沒 onstart 就當作被丟掉，補播音效。
-  setTimeout(() => {
-    log(
-      `speak(${word}) [${src}] +300ms, speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending}`
-    );
-    if (!started && !speechSynthesis.speaking && !speechSynthesis.pending) onError?.();
-  }, 300);
   return true;
 }
 
@@ -123,7 +109,7 @@ export function createDictionaryCard(cardEl) {
       btn.className = 'speak-btn';
       btn.innerHTML = '<span class="icon icon-speaker"></span>';
       btn.setAttribute('aria-label', `pronounce ${word}`);
-      btn.addEventListener('click', () => speak(word, null, 'btn'));
+      btn.addEventListener('click', () => speak(word, 'btn'));
       cardEl.appendChild(btn);
     }
     if (entry?.zh) {

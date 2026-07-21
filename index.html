@@ -56,11 +56,12 @@
   <noscript>
     <p>Lexoria 是英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。需要啟用 JavaScript 才能遊玩。</p>
   </noscript>
-  <!-- I. 開場閘門：載入後蓋住全畫面，點一下才進遊戲（UI 文件 §1-I）。這一層扛兩件事，缺一不可，
-       不是裝飾也不是標題畫面（設計文件 §7）：(1) iOS Safari 的 TTS 引擎只有 click 叫得醒，純拖曳
-       解不了鎖；(2) main.js 的音效暖機要在手勢裡付掉 191ms 的首次出聲成本，落在轉盤上會凍住第一次
-       拖曳。「點擊繼續」寫死在 HTML 不經 strings.js——JS 還在下載時就要看得見；上面的關卡數是
-       boot() 才填的，所以 .gate-level 先留白，別把它也當成靜態文案。 -->
+  <!-- I. 開場閘門：載入後蓋住全畫面，點一下才進遊戲（UI 文件 §1-I）。不是裝飾也不是標題畫面：
+       iOS Safari 的 TTS 引擎**只有 click 叫得醒**，而一次拖曳從 pointerdown 到 pointerup 不產生
+       click，遊戲畫面上又沒有非點不可的按鈕——沒有這一層，純拖曳的玩家整個 page load 都聽不到
+       發音，而且每次重新整理都要重來（設計文件 §13）。它曾經還兼著音效解鎖，音效移除後那半沒了，
+       但 TTS 這半仍然成立。「點擊繼續」寫死在 HTML 不經 strings.js——JS 還在下載時就要看得見；
+       上面的關卡數是 boot() 才填的，所以 .gate-level 先留白，別把它也當成靜態文案。 -->
   <button id="gate" class="gate" type="button">
     <span id="gate-level" class="gate-level"></span>
     <span class="gate-hint">點擊繼續</span>
@@ -134,7 +135,7 @@
         <button id="btn-redeem" class="chip" type="button"></button>
       </div>
       <p id="redeem-msg" class="redeem-msg" hidden></p>
-      <!-- 除錯用：只在網址帶 ?debug 時顯示，複製音效診斷紀錄（非正式功能） -->
+      <!-- 除錯用：只在網址帶 ?debug 時顯示，複製診斷紀錄（非正式功能） -->
       <button id="btn-debug-copy" type="button" hidden>複製除錯紀錄</button>
       <details><summary id="label-about"></summary>
         <p class="about-text">Lexoria v0.1.0<br>
@@ -142,8 +143,7 @@
         Definitions: WordNet® (Princeton University) — used under the WordNet License.<br>
         Chinese translations: ECDICT by Wei Lin (MIT License), converted with OpenCC (Apache-2.0).<br>
         Word list: ENABLE (public domain).<br>
-        Word frequency data: wordfreq by Robyn Speer (MIT License).<br>
-        Sound effects: "Interface Sounds" by Kenney (kenney.nl, CC0).</p>
+        Word frequency data: wordfreq by Robyn Speer (MIT License).</p>
       </details>
     </div>
   </div>
