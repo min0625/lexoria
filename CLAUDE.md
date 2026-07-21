@@ -64,7 +64,7 @@ Before finishing any change, update the docs that describe what you touched (a S
 |---|---|
 | Gameplay rules, economy, level algorithm, licensing | design doc section first (source of truth), then CLAUDE.md/README if they summarize it |
 | Commands / tasks (mise.toml, package.json) | CLAUDE.md Commands + README 快速開始 |
-| Module added/renamed/responsibility moved (src/) | CLAUDE.md Architecture + README 專案結構 |
+| Module added/renamed/responsibility moved (src/) | CLAUDE.md Architecture + README 專案結構 + index.html `modulepreload` 清單 |
 | Generator pipeline (tools/) | CLAUDE.md pipeline section + README 關卡資料 |
 | Project status (deployed, phase done) | `.serena/memories/project-overview.md` only |
 

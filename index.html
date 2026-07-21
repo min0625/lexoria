@@ -22,8 +22,21 @@
   <link rel="apple-touch-icon" href="assets/icon-180.png">
   <link rel="stylesheet" href="src/style.css">
   <!-- 與 JS 模組並行下載關卡索引，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中）。
-       關卡本體（data/levels/<id>.json）按需載入，boot() 只需要這份 { count } 就能起步 -->
+       關卡本體（data/levels/<id>.json）按需載入，boot() 只需要這份 { count } 就能起步。
+       要排在 modulepreload 之前：同優先級的請求依文件順序派送，排在 9 支模組後面等於重新排隊 -->
   <link rel="preload" href="data/levels/index.json" as="fetch" crossorigin>
+  <!-- 攤平模組瀑布：不預載的話瀏覽器要先抓 main.js、解析完才發現還要抓它 import 的 8 支，
+       多一趟往返。全部一起宣告就同時開抓、壓成一層。
+       新增/更名 src/*.js 時要一併改這裡（沒有自動檢查，漏了只是靜靜退回瀑布） -->
+  <link rel="modulepreload" href="src/main.js">
+  <link rel="modulepreload" href="src/game.js">
+  <link rel="modulepreload" href="src/bridge.js">
+  <link rel="modulepreload" href="src/storage.js">
+  <link rel="modulepreload" href="src/grid.js">
+  <link rel="modulepreload" href="src/wheel.js">
+  <link rel="modulepreload" href="src/dictionary-card.js">
+  <link rel="modulepreload" href="src/redeem.js">
+  <link rel="modulepreload" href="src/strings.js">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,7 +138,7 @@
       <button id="btn-debug-copy" type="button" hidden>複製除錯紀錄</button>
       <details><summary id="label-about"></summary>
         <p class="about-text">Lexoria v0.1.0<br>
-        Source code: <a href="https://github.com/min0625/lexoria" target="_blank" rel="noopener">github.com/min0625/lexoria</a><br>
+        © 2026 Lexoria · <a href="https://github.com/min0625/lexoria" target="_blank" rel="noopener">github.com/min0625/lexoria</a><br>
         Definitions: WordNet® (Princeton University) — used under the WordNet License.<br>
         Chinese translations: ECDICT by Wei Lin (MIT License), converted with OpenCC (Apache-2.0).<br>
         Word list: ENABLE (public domain).<br>
