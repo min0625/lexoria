@@ -117,6 +117,9 @@ setSpeechDebug(dbg);
 // 別再試一次（設計文件 §7）。
 const silenceAudio = new Audio('assets/sfx/silence.wav');
 silenceAudio.preload = 'auto';
+// 12 顆元素的解鎖何時真的結束——閘門要等它才收（見 #gate 的 click）。手勢還沒發生前先給
+// 一個已 resolve 的值，錯誤畫面那條路（不經閘門）才不會卡住。
+let unlockSettled = Promise.resolve();
 
 // 每顆音效備 POOL 份、輪流播：`<audio>` 的 play() 被連續快速呼叫時會同步阻塞主執行緒（§7 的
 // tick 就是這樣被拿掉的），而玩家每 0.6~0.7 秒拼錯一次時同一顆元素會被連續戳，實機量到 play()
@@ -191,11 +194,14 @@ document.addEventListener(
       }
     }
     dbg(`unlock loop sync ${(performance.now() - tUnlock).toFixed(1)}ms`);
-    // 解鎖是「同步呼叫、非同步結束」：12 顆元素的靜音播放會一路播到各自音檔長度結束
-    // （clear.wav 有 539ms），promise 才陸續 resolve、才輪到那 12 次 pause()。實機量到
-    // 閘門後的第一次拖曳 frames=0（487ms 一格都沒畫），而 unlock ok 正好落在那次拖曳中間，
-    // 所以要知道這整個窗口實際多長、跟第一次拖曳重疊多少（設計文件 §7）。
-    Promise.allSettled(settled).then(() =>
+    // 解鎖是「同步呼叫、非同步結束」，而且結束得多晚**不由我們決定**：TTS 的解鎖句掛在同一個
+    // 閘門手勢上，誰先搶到音訊 session 誰贏。實機量到 TTS 先搶到的那次，12 個 play() promise
+    // 一直卡到 `unlock onend` 的**同一毫秒**才 resolve（窗口 1098ms）；反過來 TTS 晚一步的那次
+    // 只有 639ms。窗口在 417~1705ms 之間跳就是這個競爭造成的。這段期間主執行緒進不了轉盤的
+    // pointermove，玩家拖曳會完全沒反應、連線都畫不出來（實機 frames=0）——所以閘門要等它結束
+    // 才收，見下面 #gate 的 click（設計文件 §7）。
+    unlockSettled = Promise.allSettled(settled);
+    unlockSettled.then(() =>
       dbg(`unlock all settled ${(performance.now() - tUnlock).toFixed(1)}ms after loop start`)
     );
   },
@@ -671,13 +677,25 @@ function showLoadError() {
 }
 $('btn-reload').addEventListener('click', () => location.reload());
 // 閘門的 click 本身就是解鎖手勢（TTS 與 <audio> 的 listener 都掛在 document 上），這裡只管收掉
-$('gate').addEventListener('click', () => {
-  $('gate').hidden = true;
-  // 收掉閘門是遊戲畫面第一次真的要繪製，而閘門後的第一次拖曳實機量到 frames=0——這行的時間戳
-  // 是判斷「首次 layout/paint」有沒有份的基準（設計文件 §7）。
-  dbg('gate hidden');
-  requestAnimationFrame(() => dbg('gate hidden +1 frame')); // 隔多久才畫得出下一格
-});
+$('gate').addEventListener(
+  'click',
+  () => {
+    // 不是點了就收：音訊解鎖在這一刻才剛開始跑，而它結束前主執行緒收不到轉盤的 pointermove，
+    // 玩家拖曳會完全沒反應、連線都畫不出來（實機 frames=0）。閘門存在就是為了吸收這段，所以
+    // 等解鎖真的結束再收——期間換掉提示文字，免得看起來像點了沒反應（設計文件 §7）。
+    // 上限 2 秒：解鎖若卡死，寧可放玩家進去玩沒有音效的版本，也不能把人關在閘門後面。
+    $('gate').querySelector('.gate-hint').textContent = '準備中…';
+    const hide = () => {
+      if ($('gate').hidden) return;
+      $('gate').hidden = true;
+      dbg('gate hidden');
+      requestAnimationFrame(() => dbg('gate hidden +1 frame')); // 隔多久才畫得出下一格
+    };
+    unlockSettled.then(hide);
+    setTimeout(hide, 2000);
+  },
+  { once: true }
+);
 
 (async function boot() {
   // 開場閘門（UI 文件 §1-I）：關卡載入照常在背後跑，閘門只是等一下 click，不拖慢首屏。
