@@ -336,18 +336,24 @@ function updateClaim() {
   const { ready, remainingMs } = claimStatus(save.lastClaimAt);
   const btn = $('btn-claim');
   btn.classList.toggle('cooling', !ready); // 冷卻中仍可點——點了會解釋倒數的意思
+  // 彈跳播完就卸掉 .pop：#btn-claim.pop（id）比共用的 .shake 特異性高，
+  // 留著會讓冷卻中點擊的抖動整個不播（class 加了但 animation 仍解析成 pop）
+  if (!ready) btn.classList.remove('pop');
   clearTimeout(claimTimer);
   if (ready) {
     btn.textContent = strings.claimReady(ECONOMY.claimCoins);
     btn.setAttribute('aria-label', strings.claimLabel); // 「+25」對螢幕閱讀器太隱晦，補上動作名
     if (claimWasReady === false) {
-      // 從倒數翻成可領（守到歸零，或切回分頁時剛好過期）→ 彈跳登場
+      // 從倒數翻成可領（守到歸零，或切回分頁時剛好過期）→ 彈跳登場。
+      // 移除→強制回流→加回，否則同一個 class 還在時動畫不會重播。
       btn.classList.remove('pop');
       void btn.offsetWidth;
       btn.classList.add('pop');
     }
   } else if (remainingMs <= CLAIM_FINAL_MS) {
-    btn.textContent = strings.claimSeconds(Math.ceil(remainingMs / 1000));
+    // 進入秒級的那一刻 remainingMs 幾乎剛好 60000（setTimeout 只會晚不會早），
+    // ceil 會先閃一格「60 秒」——夾到 59，秒級倒數才真的從 59 開始
+    btn.textContent = strings.claimSeconds(Math.min(59, Math.ceil(remainingMs / 1000)));
     btn.setAttribute('aria-label', strings.claimWait(0, 1));
     claimTimer = setTimeout(updateClaim, remainingMs % 1000 || 1000); // 對齊秒界
   } else {
