@@ -1,7 +1,8 @@
 // 純邏輯單元測試（設計文件 §12）：node --test tests/
 
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { readdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { bridge } from '../src/bridge.js';
 import { cellsOf, claimStatus, createGame, ECONOMY } from '../src/game.js';
@@ -362,5 +363,81 @@ test('snapshotText：兩個字元都落在 U+2B1x 區塊', () => {
       cp >= 0x2b1b && cp <= 0x2b1c,
       `${ch} (U+${cp.toString(16).toUpperCase()}) 不在 U+2B1x 區塊，與另一色寬度會不一致`
     );
+  }
+});
+
+// --- PWA shell 清單 ---
+// 三份清單（main.js 的 import、index.html 的 modulepreload、sw.js 的 SHELL）純靠人工同步，
+// 但漏掉的代價不對稱：sw.js 的 cache.addAll 是全有全無，一條指不到檔案的路徑會讓整個
+// install 失敗，結果不是「那支模組沒離線」而是「完全沒有離線」，而且錯誤只出現在 SW console。
+const SHELL_RE = /const SHELL = \[[^\]]*\]/;
+const QUOTED_RE = /'([^']+)'/g;
+const PRELOAD_RE = /modulepreload" href="([^"]+)"/g;
+const CP_RE = /cp -r (.+) _site\//;
+
+// SHELL 裡不是 src/*.js、但少了就會壞掉的：沒 CSS 離線是裸樣式，沒 index.json 連關卡都開不了，
+// 授權條文則是設計文件 §14 的義務——條文必須跟著每一份副本走，離線也得打得開。
+const SHELL_REQUIRED = [
+  './',
+  'manifest.webmanifest',
+  'src/style.css',
+  'assets/licenses.txt',
+  'data/levels/index.json',
+];
+
+const ROOT = new URL('../', import.meta.url);
+const readRoot = (p) => readFile(new URL(p, ROOT), 'utf8');
+
+// 兩份清單都是拿正規表示式從原始檔刮出來的，版面一改就抓不到——沒接住的話會變成
+// 「null 上取 [0]」的 TypeError，看不出真正該修的是這裡的 regex。
+function extract(re, text, what) {
+  const m = text.match(re);
+  assert.ok(m, `${what} 的格式對不上測試的正規表示式，改了版面要一併改這裡`);
+  return m;
+}
+
+const shellPaths = async () =>
+  [...extract(SHELL_RE, await readRoot('sw.js'), 'sw.js 的 SHELL')[0].matchAll(QUOTED_RE)].map(
+    (m) => m[1]
+  );
+
+test('sw.js SHELL 與 index.html modulepreload 涵蓋所有 src 模組，且路徑都指到真檔案', async () => {
+  const shell = await shellPaths();
+  const html = await readRoot('index.html');
+  const preload = [...html.matchAll(PRELOAD_RE)].map((m) => m[1]);
+  const modules = (await readdir(new URL('src/', ROOT)))
+    .filter((f) => f.endsWith('.js'))
+    .map((f) => `src/${f}`);
+
+  for (const m of [...modules, ...SHELL_REQUIRED]) {
+    assert.ok(shell.includes(m), `sw.js 的 SHELL 少了 ${m}——它不會進離線快取`);
+  }
+  for (const m of modules) {
+    assert.ok(preload.includes(m), `index.html 的 modulepreload 少了 ${m}——模組瀑布會退回多一趟`);
+  }
+  for (const p of new Set([...shell, ...preload])) {
+    if (p === './') continue;
+    assert.ok(existsSync(new URL(p, ROOT)), `清單指到不存在的檔案：${p}`);
+  }
+  // addAll 是單一 batch，同一個 URL 出現兩次直接 InvalidStateError——失敗方式跟壞路徑一樣是
+  // 「完全沒有離線」。比對解析後的網址，'./src/x.js' 跟 'src/x.js' 這種寫法差異也算重複。
+  const urls = shell.map((p) => new URL(p, ROOT).href);
+  assert.equal(
+    new Set(urls).size,
+    urls.length,
+    'sw.js 的 SHELL 有重複路徑——addAll 會整批失敗，等於完全沒有離線'
+  );
+});
+
+// deploy.yml 是逐項 cp 的白名單，漏掉的失敗完全無聲：本機 mise run serve 一切正常、
+// bun run check 全綠，正式站卻是 sw.js 404 而 register() 的 .catch() 把它吞掉（設計文件 §15）。
+test('deploy.yml 的 cp 清單涵蓋 sw.js 與 SHELL 用到的每個根目錄項目', async () => {
+  const shell = await shellPaths();
+  const deploy = await readRoot('.github/workflows/deploy.yml');
+  const staged = new Set(extract(CP_RE, deploy, 'deploy.yml 的 cp 清單')[1].split(' '));
+
+  for (const p of [...shell, 'sw.js']) {
+    const top = p === './' ? 'index.html' : p.split('/')[0];
+    assert.ok(staged.has(top), `deploy.yml 的 cp 清單少了 ${top}——正式站直接沒有這個檔案`);
   }
 });

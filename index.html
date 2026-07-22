@@ -21,6 +21,14 @@
   <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
   <link rel="icon" type="image/png" sizes="180x180" href="assets/icon-180.png">
   <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <!-- iOS 從 manifest 讀 display:standalone 是後來才支援的，舊版只認這個私有 meta；
+       少了它，加到主畫面的 iPhone 會照常帶著網址列開（standalone 全螢幕正是加它的理由） -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <!-- 沒有這行 iOS 會給預設的不透明淺色狀態列，壓在 #10201f 的深色遊戲上方；而且那個模式下
+       safe-area-inset-top 是 0，.screen 的 padding 補不回來。black-translucent 讓內容延伸到
+       狀態列底下，正好接上既有的 viewport-fit=cover ＋ safe-area padding -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="stylesheet" href="src/style.css">
   <!-- 與 JS 模組並行下載關卡索引，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中）。
        關卡本體（data/levels/<id>.json）按需載入，boot() 只需要這份 { count } 就能起步。
@@ -28,7 +36,8 @@
   <link rel="preload" href="data/levels/index.json" as="fetch" crossorigin>
   <!-- 攤平模組瀑布：不預載的話瀏覽器要先抓 main.js、解析完才發現還要抓它 import 的 8 支，
        多一趟往返。全部一起宣告就同時開抓、壓成一層。
-       新增/更名 src/*.js 時要一併改這裡（沒有自動檢查，漏了只是靜靜退回瀑布） -->
+       新增/更名 src/*.js 時要一併改這裡，同 sw.js 的 SHELL
+       （tests/game.test.mjs 拿 src/ 的實際檔案對這兩份清單驗證，漏了會紅） -->
   <link rel="modulepreload" href="src/main.js">
   <link rel="modulepreload" href="src/game.js">
   <link rel="modulepreload" href="src/bridge.js">
