@@ -531,6 +531,14 @@ button {
 .gate[hidden] {
   display: none;
 }
+/* 唯一露出品牌名的畫面內位置：閘門每次載入都會經過，版面本來就是空的置中欄。
+   仍然不是標題畫面——底下的「第 N 關 · 點擊繼續」比它顯眼，玩家一點就進遊戲。 */
+.gate-brand {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--accent-ink);
+}
 .gate-level {
   font-size: 1.6rem;
   font-weight: 800;
