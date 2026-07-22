@@ -38,9 +38,9 @@ src/
   wheel.js          字母轉盤與指標手勢（hitIndex/applyHit/permutationAt 為純函式）
   grid.js           字謎格渲染（含分享用 emoji 文字快照 snapshotText、下載用 canvas 快照 snapshotBlob，下載按鈕暫時隱藏）
   dictionary-card.js 查詢單字卡片
-  storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）
-  redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發）
-  bridge.js         平台抽象層（存檔/分享/廣告/IAP）— Phase 2 換 native 實作
+  storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）＋玩家編號 uid 產生／驗證
+  redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發，--uid 可綁定單一玩家）
+  bridge.js         平台抽象層（存檔/分享/複製/廣告/IAP）— Phase 2 換 native 實作
   strings.js        所有 UI 文案
   style.css         全站樣式
 tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發

@@ -48,11 +48,12 @@ const isValidEffect = (e) =>
   ((e.type === 'coins' && Number.isInteger(e.amount) && e.amount > 0) ||
     (e.type === 'level' && Number.isInteger(e.id) && e.id > 0));
 
-// 驗證兌換碼 → { ok: true, jti, effect } 或 { ok: false, reason: 'invalid' | 'expired' | 'used' }。
-// keys / now / redeemed 可注入，測試用；正式呼叫端只帶 redeemed（已兌換 jti 清單）。
+// 驗證兌換碼 → { ok: true, jti, effect } 或
+// { ok: false, reason: 'invalid' | 'expired' | 'used' | 'wrongUid' }。
+// keys / now 可注入，測試用；正式呼叫端帶 redeemed（已兌換 jti 清單）與 uid（本機玩家編號）。
 export async function verifyCode(
   token,
-  { keys = PUBLIC_KEYS, now = Date.now() / 1000, redeemed = [] } = {}
+  { keys = PUBLIC_KEYS, now = Date.now() / 1000, redeemed = [], uid = '' } = {}
 ) {
   if (!globalThis.crypto?.subtle) return { ok: false, reason: 'invalid' }; // 非 secure context（評估文件 §3-4）
   const t = decode(token);
@@ -74,8 +75,11 @@ export async function verifyCode(
     t.signedData
   );
   if (!valid) return { ok: false, reason: 'invalid' };
-  const { jti, exp, effect } = t.payload;
+  const { jti, exp, effect, uid: boundUid } = t.payload;
   if (typeof jti !== 'string' || !isValidEffect(effect)) return { ok: false, reason: 'invalid' };
+  // 專屬碼：payload 帶 uid 就只有那台裝置能兌（沒帶＝活動碼，行為不變）。
+  // 玩家改 localStorage 的 uid 即可繞過——同既有取捨。
+  if (boundUid !== undefined && boundUid !== uid) return { ok: false, reason: 'wrongUid' };
   if (exp !== undefined && !(Number.isFinite(exp) && now <= exp))
     return { ok: false, reason: 'expired' };
   if (redeemed.includes(jti)) return { ok: false, reason: 'used' };

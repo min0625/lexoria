@@ -3,13 +3,15 @@
 //
 // 用法：
 //   bun tools/make-code.mjs keygen [kid]                          產生金鑰對（kid 預設隨機 6 碼 hex），印出要貼進 src/redeem.js 的公鑰
-//   bun tools/make-code.mjs coins <amount> [--exp 2026-08-31] [--kid <kid>]
-//   bun tools/make-code.mjs level <id>     [--exp 2026-08-31] [--kid <kid>]
+//   bun tools/make-code.mjs coins <amount> [--exp 2026-08-31] [--kid <kid>] [--uid <玩家編號>]
+//   bun tools/make-code.mjs level <id>     [--exp 2026-08-31] [--kid <kid>] [--uid <玩家編號>]
 // --exp 省略時預設 1 天後過期；--exp none 為永久有效。
 // --kid 省略時，tools/keys/ 只有一把私鑰就用那把。
+// --uid 帶了就是「專屬碼」：只有那位玩家兌得了（玩家從設定卡複製自己的編號回報）。
 import { createPrivateKey, generateKeyPairSync, randomBytes, randomUUID, sign } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import process from 'node:process';
+import { isUid, normalizeUid } from '../src/storage.js';
 
 const KEYS_DIR = new URL('keys/', import.meta.url);
 const b64url = (data) => Buffer.from(data).toString('base64url');
@@ -49,7 +51,7 @@ const effect =
       : null;
 if (!effect)
   die(
-    '用法：make-code.mjs keygen [kid] | coins <amount> | level <id>  （選項：--exp 2026-08-31|none，省略預設 1 天；--kid <kid>）'
+    '用法：make-code.mjs keygen [kid] | coins <amount> | level <id>  （選項：--exp 2026-08-31|none，省略預設 1 天；--kid <kid>；--uid <玩家編號>）'
   );
 const value = effect.amount ?? effect.id;
 if (!Number.isInteger(value) || value <= 0) die(`數值必須是正整數，收到：${arg}`);
@@ -58,6 +60,15 @@ if (effect.type === 'level') {
   const { count } = JSON.parse(readFileSync(new URL('../data/levels/index.json', import.meta.url)));
   // 前端 validator 管不到兌換碼，關卡範圍在簽發當下把關（評估文件 §4）
   if (effect.id > count) die(`第 ${effect.id} 關不存在，目前只到第 ${count} 關`);
+}
+
+// 玩家回報的編號在簽發當下驗校驗碼，打錯字就不會發出一張沒人兌得了的碼
+// 'uid' in flags 而非 flags.uid：`--uid` 忘了帶值時要當場報錯，
+// 否則會靜靜簽出一張「人人都能兌」的碼，跟本意剛好相反
+let boundUid;
+if ('uid' in flags) {
+  boundUid = normalizeUid(flags.uid);
+  if (!isUid(boundUid)) die(`看起來不是合法的玩家編號：${flags.uid}`);
 }
 
 let exp;
@@ -88,7 +99,12 @@ const pemPath = new URL(`${kid}.pem`, KEYS_DIR);
 if (!existsSync(pemPath)) die(`找不到私鑰 ${pemPath.pathname}——先跑 make-code.mjs keygen ${kid}`);
 
 const jti = randomUUID();
-const payload = { jti, effect, ...(exp !== undefined && { exp }) };
+const payload = {
+  jti,
+  effect,
+  ...(exp !== undefined && { exp }),
+  ...(boundUid && { uid: boundUid }),
+};
 const signingInput = `${b64url(JSON.stringify({ alg: 'ES256', kid }))}.${b64url(JSON.stringify(payload))}`;
 // ieee-p1363 = raw r‖s 64 bytes，即 JWT ES256 規定的簽章格式
 const signature = sign('sha256', Buffer.from(signingInput), {
@@ -99,7 +115,8 @@ const token = `${signingInput}.${b64url(signature)}`;
 
 console.log(
   `效果：${effect.type === 'coins' ? `金幣 +${effect.amount}` : `解鎖至第 ${effect.id} 關`}` +
-    `　期限：${exp ? new Date(exp * 1000).toISOString() : '無'}　jti：${jti}`
+    `　期限：${exp ? new Date(exp * 1000).toISOString() : '無'}` +
+    `${boundUid ? `　專屬：${boundUid}` : ''}　jti：${jti}`
 );
 console.log(`\n${token}\n`);
 console.log(

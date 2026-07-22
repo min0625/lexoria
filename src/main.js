@@ -6,7 +6,7 @@ import { createDictionaryCard, setSpeechDebug, speak, stopSpeech } from './dicti
 import { claimStatus, createGame, ECONOMY } from './game.js';
 import { createGrid, snapshotBlob, snapshotText } from './grid.js';
 import { verifyCode } from './redeem.js';
-import { loadSave, persist } from './storage.js';
+import { formatUid, loadSave, persist } from './storage.js';
 import { strings } from './strings.js';
 import { createWheel } from './wheel.js';
 
@@ -22,7 +22,7 @@ function dbg(msg) {
 if (DEBUG) {
   $('btn-debug-copy').hidden = false;
   $('btn-debug-copy').addEventListener('click', async () => {
-    await navigator.clipboard.writeText(debugLog.join('\n')).catch(() => {});
+    await bridge.copy(debugLog.join('\n'));
     $('btn-debug-copy').textContent = '已複製';
     setTimeout(() => {
       $('btn-debug-copy').textContent = '複製除錯紀錄';
@@ -80,6 +80,7 @@ $('btn-next').textContent = strings.nextLevel;
 $('settings-title').textContent = strings.settings;
 $('label-sound').textContent = strings.sound;
 $('label-about').textContent = strings.about;
+$('label-uid').textContent = strings.playerId;
 $('btn-download').textContent = strings.download;
 $('redeem-input').placeholder = strings.redeemPlaceholder;
 $('btn-redeem').textContent = strings.redeemAction;
@@ -426,12 +427,37 @@ $('btn-level').addEventListener('click', showLevels);
 $('btn-back').addEventListener('click', () => startLevel(currentLevelId));
 $('btn-allclear-back').addEventListener('click', showLevels);
 
+// 按鈕暫時閃一句提示、ms 後還原原文（複製類操作沒有別的地方能回饋成功與否）。
+// timer 逐顆各自持有：共用一個時，連點兩顆會互相取消還原，把先點的那顆永久卡在提示文案上；
+// 連點同一顆時前一顆 timer 也會把新提示提早擦掉，看起來像沒複製到。
+function flasher(btn, label, ms) {
+  btn.textContent = label;
+  let timer = 0;
+  return (msg) => {
+    btn.textContent = msg;
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      btn.textContent = label;
+    }, ms);
+  };
+}
+
 // ---- 設定 overlay ----
 $('btn-settings').addEventListener('click', () => {
   dictCard.hide(); // 同時只留一個互動 overlay（UI 文件 §4）
   $('opt-sound').checked = save.settings.sound;
   $('redeem-msg').hidden = true; // 上次的兌換結果不留到下次開卡
   $('overlay-settings').hidden = false;
+});
+// 玩家編號：一輩子不變，填一次就好；點一下複製。
+// 複製失敗（非 secure context 沒有 clipboard）也要出文案——按鈕按下去毫無反應使用者不知道
+// 發生什麼事，同 bridge.share 的取捨；編號本來就印在鈕上，抄得下來。
+// 複製帶分隔線的版本：跟鈕上看到的一字不差，貼進聊天室才不會像複製錯了；
+// make-code.mjs 的 normalizeUid 會把分隔符剝掉，帶不帶都簽得出來。
+const uidLabel = formatUid(save.uid);
+const flashUid = flasher($('btn-uid'), uidLabel, 1500);
+$('btn-uid').addEventListener('click', async () => {
+  flashUid((await bridge.copy(uidLabel)) ? strings.copied : strings.copyFailed);
 });
 $('opt-sound').addEventListener('change', (e) => {
   save.settings.sound = e.target.checked;
@@ -443,18 +469,8 @@ $('overlay-settings').addEventListener('click', (e) => {
 // 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實
 // 過關卡片與設定各掛一顆，文案不同、分享內容相同
 function wireShare(btn, label) {
-  btn.textContent = label;
-  // timer 逐顆各自持有：兩顆雖不會同時顯示，但閃字會活過 overlay 關閉，
-  // 共用一個 timer 時後點的那顆會取消前一顆的還原，把它永久卡在提示文案上
-  let timer = 0;
   // 分享面板關閉後才開始計時；文案較長，給足閱讀時間
-  const flash = (msg) => {
-    btn.textContent = msg;
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      btn.textContent = label;
-    }, 2500);
-  };
+  const flash = flasher(btn, label, 2500);
   btn.addEventListener('click', async () => {
     if (!game || !wheel) return; // 關卡資料還在 fetch 中（boot 或換關）
     try {
@@ -502,12 +518,16 @@ function showRedeemMsg(text) {
 $('btn-redeem').addEventListener('click', async () => {
   const token = $('redeem-input').value.trim();
   if (!token) return;
-  const result = await verifyCode(token, { redeemed: save.redeemedCodes }).catch(() => ({
-    ok: false,
-    reason: 'invalid',
-  }));
+  const result = await verifyCode(token, {
+    redeemed: save.redeemedCodes,
+    uid: save.uid,
+  }).catch(() => ({ ok: false, reason: 'invalid' }));
   if (!result.ok) {
-    const msg = { expired: strings.redeemExpired, used: strings.redeemUsed }[result.reason];
+    const msg = {
+      expired: strings.redeemExpired,
+      used: strings.redeemUsed,
+      wrongUid: strings.redeemWrongUid,
+    }[result.reason];
     showRedeemMsg(msg ?? strings.redeemInvalid);
     return;
   }
