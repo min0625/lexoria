@@ -7,8 +7,8 @@ file is distributed alongside the game.
 
 Lexoria's own code is Apache-2.0 (see LICENSE in the repository).
 The ENABLE word list is public domain and carries no notice requirement.
-Build-time-only tools (OpenCC, NLTK, wordfreq) ship no data with the app;
-they are credited in the in-game About panel.
+Build-time-only tools (OpenCC, NLTK, wordfreq) ship no data with the app and
+carry no notice requirement here.
 
 ========================================================================
 
