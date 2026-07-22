@@ -31,16 +31,21 @@ export const bridge = {
   copy: writeClipboard,
   // 分享進度：先寫剪貼簿當保險，再開系統分享面板——兩者都做。
   // 部分分享目標（桌面 Windows 面板、Facebook）只收 url 丟掉 text，文案會不見；
-  // 剪貼簿裡永遠有完整版，使用者可自行貼上。回傳 'copied' 讓呼叫端提示「可直接貼上」。
-  // 兩條路都不可用時回傳 'failed'——否則按鈕按下去毫無反應，使用者不知道發生什麼事。
+  // 剪貼簿裡永遠有完整版，使用者可自行貼上。
+  // 有系統分享面板時一律回 'shared'，即使剪貼簿也寫成功——呼叫端不該在分享送出後再提示
+  // 「已複製」，那句話在剛按完分享的人眼裡像是失敗。代價是遇到會丟 text 的目標時，
+  // 使用者不知道剪貼簿裡有完整版；為了少數例外對所有人顯示疑似錯誤的提示更虧。
+  // 沒有面板才回 'copied'（提示「可直接貼上」），兩條路都不可用回 'failed'——
+  // 否則按鈕按下去毫無反應，使用者不知道發生什麼事。
   // 剪貼簿只發動不 await：navigator.share 需要 transient user activation，
   // 先 await 一個非 microtask 的 promise 會吃掉手勢，Safari 會直接 NotAllowedError（面板不開）。
   async share(text, url) {
     const copying = writeClipboard(`${text}\n${url}`);
-    const shared = Boolean(navigator.share);
-    if (shared) await navigator.share({ text, url }).catch(() => {}); // 使用者取消不算失敗
-    if (await copying) return 'copied';
-    return shared ? 'shared' : 'failed';
+    if (navigator.share) {
+      await navigator.share({ text, url }).catch(() => {}); // 使用者取消不算失敗
+      return 'shared';
+    }
+    return (await copying) ? 'copied' : 'failed';
   },
   showAd() {
     return Promise.resolve(); // Phase 3 接 AdMob
