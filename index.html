@@ -2,7 +2,8 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- maximum-scale/user-scalable 只有 Android 吃；iOS 從 10 起忽略它，捏合要靠 main.js 的 gesturestart（設計文件 §4） -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>Lexoria</title>
   <meta name="description" content="Lexoria 英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。">
   <link rel="canonical" href="https://lexoria.min0625.com/">

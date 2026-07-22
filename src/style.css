@@ -611,12 +611,12 @@ button {
   flex: 1;
   min-width: 0; /* flex 子元素預設 min-width:auto，長 token 會撐爆卡片 */
   font: inherit;
-  font-size: 0.85rem;
+  font-size: 16px; /* 低於 16px 時 iOS focus 會自動放大整個版面，別改小（設計文件 §4）*/
   color: inherit;
   background: transparent;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 7px 15px;
+  padding: 6px 15px;
 }
 .redeem-msg {
   font-size: 0.8rem;
