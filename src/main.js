@@ -466,19 +466,15 @@ $('opt-sound').addEventListener('change', (e) => {
 $('overlay-settings').addEventListener('click', (e) => {
   if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
 });
-// 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實
-// 過關卡片與設定各掛一顆，文案不同、分享內容相同
-function wireShare(btn, label) {
+// 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實。
+// 三顆按鈕共用這套流程，差別全在 buildText：過關報戰績、設定邀人玩、全破報總關數。
+function wireShare(btn, label, buildText) {
   // 分享面板關閉後才開始計時；文案較長，給足閱讀時間
   const flash = flasher(btn, label, 2500);
   btn.addEventListener('click', async () => {
-    if (!game || !wheel) return; // 關卡資料還在 fetch 中（boot 或換關）
     try {
-      const text = strings.shareText(
-        currentLevelId,
-        wheel.getLetters(),
-        snapshotText(game.getCells())
-      );
+      const text = buildText();
+      if (!text) return; // 關卡資料還在 fetch 中（boot 或換關）
       const mode = await bridge.share(text, location.href);
       if (mode === 'copied') flash(strings.shareCopied);
       else if (mode === 'failed') flash(strings.shareFailed); // 剪貼簿與分享面板都不可用
@@ -487,8 +483,22 @@ function wireShare(btn, label) {
     }
   });
 }
-wireShare($('btn-share'), strings.share);
-wireShare($('btn-share-clear'), strings.shareScore);
+// cleared：過關卡片上那顆才報額外單字數，設定裡那顆只說在玩哪一關。
+// 字母排序後才附上：getLetters 給的是洗牌後的視覺順序（快照圖要跟畫面對得上才這樣設計），
+// 但純文字裡沒有畫面可對，未排序的話同一關分享兩次字母串就不一樣，看起來像亂碼而不是字母組。
+const levelShareText = (cleared) => () =>
+  game && wheel
+    ? strings.shareText(
+        currentLevelId,
+        [...wheel.getLetters()].sort(),
+        snapshotText(game.getCells()),
+        cleared ? game.getState().foundBonusWords.length : null
+      )
+    : null;
+wireShare($('btn-share'), strings.share, levelShareText(false));
+wireShare($('btn-share-clear'), strings.shareScore, levelShareText(true));
+// 全破畫面：startLevel 走的是 early return，game/wheel 還停在最後一關，秀那張盤面沒有意義
+wireShare($('btn-share-allclear'), strings.shareScore, () => strings.shareAll());
 // 快照圖（含 wheel 目前排列）改為手動下載——帶檔分享時多數目標會丟 text，圖只給想要的人
 $('btn-download').addEventListener('click', async () => {
   if (!game || !wheel) return;

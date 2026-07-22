@@ -98,6 +98,7 @@
     <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
     <h1 id="allclear-text"></h1>
     <button id="btn-allclear-back" class="btn-primary" type="button"></button>
+    <button id="btn-share-allclear" class="chip" type="button"></button>
   </section>
 
   <!-- H. 載入失敗（levels.json 取不到時由 boot() 顯示，不留白屏） -->
@@ -130,7 +131,8 @@
       <!-- 玩家編號：點一下複製，回報給開發者才能拿專屬兌換碼 -->
       <!-- aria-describedby：鈕上的字是編號本身，讀螢幕的人光聽一串亂碼不知道那是什麼 -->
       <div class="uid-row"><span id="label-uid"></span><button id="btn-uid" class="chip" type="button" aria-describedby="label-uid"></button></div>
-      <button id="btn-share" class="btn-primary" type="button"></button>
+      <!-- 邀人玩，不是設定面板的主要動作——用 chip，與旁邊的玩家編號／兌換同一層級 -->
+      <button id="btn-share" class="chip" type="button"></button>
       <!-- 暫時隱藏：下載快照圖的程式碼保留備用（main.js / grid.js snapshotBlob），拿掉 hidden 即可復活 -->
       <button id="btn-download" class="chip" type="button" hidden></button>
       <div class="redeem-row">
