@@ -1,7 +1,7 @@
 # 產出 wordinfo.json：候選目標字的字頻與釋義（設計文件 §5 步驟 1、3；§6.3）。
 # 收錄條件：3–7 字母、純字母、zipf 字頻 >= 3.0、WordNet 有釋義、ECDICT 有中文翻譯——
 # 目標字必須「常見且查得到釋義」，bonus 判定另走完整 ENABLE，不經這份資料。
-# 字頻：wordfreq（MIT）；英文釋義：WordNet 3.x via NLTK（WordNet License，聲明見 index.html 關於區）；
+# 字頻：wordfreq（Apache-2.0，僅建置期）；英文釋義：WordNet 3.0 via NLTK（WordNet License，條文全文見 index.html 關於區）；
 # 中文釋義：ECDICT（MIT）為簡體，以 OpenCC s2twp 轉為台灣正體。
 import csv
 import json

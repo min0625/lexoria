@@ -146,9 +146,13 @@
         <p class="about-text">Lexoria v0.1.0<br>
         © 2026 Lexoria · <a href="https://github.com/min0625/lexoria" target="_blank" rel="noopener">github.com/min0625/lexoria</a><br>
         Definitions: WordNet® (Princeton University) — used under the WordNet License.<br>
-        Chinese translations: ECDICT by Wei Lin (MIT License), converted with OpenCC (Apache-2.0).<br>
+        Chinese translations: ECDICT by Linwei (MIT License), converted with OpenCC (Apache-2.0).<br>
         Word list: ENABLE (public domain).<br>
-        Word frequency data: wordfreq by Robyn Speer (MIT License).</p>
+        Word frequency data: wordfreq by Robyn Speer (Apache-2.0) — build-time only.</p>
+        <!-- WordNet 與 MIT 都要求「授權條文隨副本散布」，只寫授權名稱不算數：關卡 JSON 內嵌了兩者的釋義文字。
+             條文全文放同站的 assets/licenses.txt（deploy 有 cp assets/，Phase 2 也會一起打包進 app），
+             關於區只留連結——連的是自家副本而不是上游 repo，離線照樣打得開，才算數（設計文件 §14）。 -->
+        <p class="about-text"><a href="assets/licenses.txt" target="_blank" rel="noopener">License texts (WordNet, ECDICT)</a></p>
       </details>
     </div>
   </div>
