@@ -6,7 +6,14 @@ import assert from 'node:assert/strict';
 import { generateKeyPairSync, sign } from 'node:crypto';
 import test from 'node:test';
 import { verifyCode } from '../src/redeem.js';
-import { defaultSave, normalizeSave } from '../src/storage.js';
+import {
+  defaultSave,
+  formatUid,
+  isUid,
+  newUid,
+  normalizeSave,
+  normalizeUid,
+} from '../src/storage.js';
 
 const { privateKey, publicKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' });
 const { kty, crv, x, y } = publicKey.export({ format: 'jwk' });
@@ -83,6 +90,60 @@ test('redeem：effect 不合法或缺 jti → invalid（簽章正確也擋）', 
       reason: 'invalid',
     });
   }
+});
+
+// ---- 專屬兌換碼（payload.uid）----
+
+test('redeem：專屬碼只有該玩家兌得了', async () => {
+  const uid = newUid();
+  const token = makeToken({ ...coinsPayload, uid });
+  assert.equal((await verifyCode(token, { keys, uid })).ok, true);
+  assert.deepEqual(await verifyCode(token, { keys, uid: newUid() }), {
+    ok: false,
+    reason: 'wrongUid',
+  });
+  assert.deepEqual(await verifyCode(token, { keys }), { ok: false, reason: 'wrongUid' }); // 沒帶 uid 也擋
+});
+
+test('redeem：不帶 uid 的活動碼行為不變（任何玩家都能兌）', async () => {
+  assert.equal((await verifyCode(makeToken(coinsPayload), { keys, uid: newUid() })).ok, true);
+});
+
+// ---- 玩家編號 ----
+
+test('uid：newUid 產出必定通過 isUid', () => {
+  for (let i = 0; i < 20; i++) assert.ok(isUid(newUid()));
+});
+
+test('uid：改掉任何一碼就通不過校驗', () => {
+  const uid = newUid();
+  for (let i = 0; i < uid.length; i++) {
+    const other = uid[i] === '0' ? '1' : '0';
+    assert.ok(!isUid(uid.slice(0, i) + other + uid.slice(i + 1)), `第 ${i} 碼`);
+  }
+});
+
+test('uid：isUid 擋掉長度不對、含易混字、亂打的字串', () => {
+  const uid = newUid();
+  for (const bad of ['', uid.slice(0, 11), `${uid}0`, `ILOU${uid.slice(4)}`, '0123456789AB']) {
+    assert.ok(!isUid(bad), bad);
+  }
+});
+
+test('uid：normalizeUid 修掉小寫、連字號與 Crockford 易混字', () => {
+  const uid = newUid();
+  assert.equal(normalizeUid(formatUid(uid).toLowerCase()), uid);
+  assert.equal(normalizeUid(' o-i l '), '011');
+});
+
+test('存檔：uid 缺漏或壞掉都不會讓存檔重置（由 loadSave 補記）', () => {
+  // coins 必須是非預設值，否則「有沒有重置」兩種結果都是 defaultSave().coins，斷言永遠成立
+  for (const uid of [undefined, 'garbage', 123456789012, null])
+    assert.equal(normalizeSave({ ...defaultSave(), coins: 123, uid }).coins, 123, String(uid));
+});
+
+test('uid：isUid 不會被非字串炸掉（存檔被手改成數字也不能白屏）', () => {
+  for (const bad of [123456789012, null, undefined, {}, ['0123456789AB']]) assert.ok(!isUid(bad));
 });
 
 // ---- 存檔欄位（redeemedCodes）----

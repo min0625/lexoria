@@ -4,8 +4,8 @@
 
 此檔只記 CLAUDE.md/文件沒有的狀態：
 
-- Phase 1 已完成：GitHub Pages 已部署（main 分支根目錄，legacy build），網址 https://lexoria.min0625.com/（舊網址 min0625.com/lexoria 會 301 轉址）；§17 驗收清單 24 項已全數真機測過並打勾（含開場閘門與「已移除音效」那批）。
+- Phase 1 已完成：GitHub Pages 已部署（main 分支根目錄，legacy build），網址 https://lexoria.min0625.com/（舊網址 min0625.com/lexoria 會 301 轉址）；§17 驗收清單原 24 項已全數真機測過並打勾（含開場閘門與「已移除音效」那批）；玩家編號／專屬兌換碼新增的 3 項尚未真機驗收（含舊存檔補號那條）。
 - 音效已整層移除（PR #72），唯一的聲音是答對時的 TTS 發音。兩種實作都敗給 iOS 音訊 session 行為，完整量測與 5 條死路留在設計文件 §13——**要加音效前先讀那節**，不要重走。
 - 開場閘門（#gate）現在唯一的職責是喚醒 TTS 引擎（只有 click 叫得醒），拆掉會讓純拖曳的玩家整場沒發音。
-- 下一步：Phase 2 — Capacitor 嵌入 iOS / Android（設計文件 §15），存檔需換掉 `bridge.save/load` 的 native 實作。
+- 下一步：Phase 2 — Capacitor 嵌入 iOS / Android（設計文件 §15），存檔需換掉 `bridge.save/load` 的 native 實作；好友邀請碼也押在這一步（要 `Device.getId()` 才成立，理由見 `.local.feature-evaluation.md` §2，別在網頁版重試）。
 - `mise run fetch-data` 只需跑一次（輸出在 tools/data/，已 gitignore）；之後只需 `mise run gen`。

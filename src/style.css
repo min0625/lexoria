@@ -577,7 +577,8 @@ button {
   width: 1.05em;
   height: 1.05em;
 } /* 過關 +N 金幣 */
-.card label {
+.card label,
+.uid-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
