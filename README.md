@@ -1,5 +1,7 @@
 # Lexoria
 
+▶ **[立即遊玩](https://lexoria.min0625.com/)**
+
 Wordscapes 風格的英文單字拼圖遊戲：從字母轉盤滑選字母拼出單字，填入交叉字謎格。純 Vanilla JS + ES Modules，無框架、無打包、無後端，完全離線可玩。介面為正體中文；單字釋義為正體中文（ECDICT）+ 英文（WordNet）。
 
 ## 快速開始
