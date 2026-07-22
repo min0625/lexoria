@@ -65,7 +65,9 @@
 - 全域設 `user-select: none` 與 `-webkit-touch-callout: none`，避免長按選字、iOS 放大鏡；`touch-action: manipulation` 避免行動端連點兩下觸發縮放。iOS Safari 連續快速點擊仍會叫出文字選取放大鏡，CSS 擋不掉，需在 JS 對第二次 `touchend` `preventDefault()`（跳過 button/input/label/a/summary 等互動元素，否則會吃掉它們的 click/focus/toggle）。
 - 命中判斷**不要**依賴 `elementFromPoint`，改用「手指座標與每個字母圓心的距離 < 命中半徑」自己算。命中半徑 = 按鈕半徑 × 1.2（放大手感較好），但**上限夾在最近字母圓心間距的 0.35 倍**：3–4 字母的大間距輪盤維持寬鬆手感，6–7 字母的擁擠輪盤命中圓自動縮小，任兩顆字母間永遠留 ≥ 30% 間距的死區，手指掃過兩顆字母中間不會誤觸隔壁。範圍內同時符合多顆時取**最近**的圓心，不能取「第一個符合的」。
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
-- viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
+- viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
+- 誤觸**雙指捏合縮放**會讓固定版面（html/body `overflow: hidden`）卡在錯位狀態且不易還原，兩個平台各擋一半：Android Chrome 吃 viewport 的 `maximum-scale=1, user-scalable=no`；iOS Safari 自 10 起忽略該設定，只能在 JS 對 Safari 專屬的 `gesturestart`/`gesturechange`/`gestureend` `preventDefault()`。畫面沒有需要放大來讀的內容，字級與命中區都已為手機尺寸設計，故不保留縮放。
+- iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: max(1rem, 16px)`，用 padding 調高度，不要用縮字級的方式配版；寫死 `16px` 也擋得住自動縮放，但頁面已經不能捏合縮放，系統字級是玩家僅剩的放大手段，其餘字級都是 rem，唯獨輸入框寫死會變成唯一不跟著放大的元件。
 
 ## 5. 關卡資料設計
 

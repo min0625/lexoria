@@ -126,6 +126,12 @@ document.addEventListener(
   { passive: false }
 );
 
+// 雙指捏合縮放：Android 靠 viewport 的 user-scalable=no 就夠，iOS Safari 從 10 起忽略該設定，
+// 只剩 Safari 專屬的 gesture 事件可擋。整頁是固定版面（html/body overflow: hidden），
+// 玩家縮放後只會卡在錯位的畫面，沒有內容需要放大來讀（設計文件 §4）。
+for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
+  document.addEventListener(type, (e) => e.preventDefault(), { passive: false });
+
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
 function showScreen(name) {
   $('screen-game').hidden = name !== 'game';
