@@ -64,7 +64,9 @@ docs/               設計文件（單一事實來源，程式註解引用其章
 
 - 字表：ENABLE（public domain）
 - 英文釋義：WordNet®（Princeton University, WordNet License）
-- 中文翻譯：ECDICT by Wei Lin（MIT），經 OpenCC（Apache-2.0）轉正體
-- 字頻：wordfreq by Robyn Speer（MIT）
+- 中文翻譯：ECDICT by Linwei（MIT），經 OpenCC（Apache-2.0）轉正體
+- 字頻：wordfreq by Robyn Speer（Apache-2.0，僅建置期使用）
+
+WordNet 與 ECDICT 的授權條文全文隨站台散布，見 [assets/licenses.txt](assets/licenses.txt)（遊戲內「設定 → 關於 → License texts」連過去）。
 
 完整授權盤點見設計文件 §14。
