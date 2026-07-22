@@ -611,7 +611,9 @@ button {
   flex: 1;
   min-width: 0; /* flex 子元素預設 min-width:auto，長 token 會撐爆卡片 */
   font: inherit;
-  font-size: 16px; /* 低於 16px 時 iOS focus 會自動放大整個版面，別改小（設計文件 §4）*/
+  /* 低於 16px 時 iOS focus 會自動放大整個版面，別改小；用 max() 而非寫死 16px，
+     其他字級都是 rem，寫死會讓這顆變成唯一不跟著系統字級放大的元件（設計文件 §4）*/
+  font-size: max(1rem, 16px);
   color: inherit;
   background: transparent;
   border: 1px solid var(--line);

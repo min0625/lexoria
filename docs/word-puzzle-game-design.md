@@ -67,7 +67,7 @@
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 - 誤觸**雙指捏合縮放**會讓固定版面（html/body `overflow: hidden`）卡在錯位狀態且不易還原，兩個平台各擋一半：Android Chrome 吃 viewport 的 `maximum-scale=1, user-scalable=no`；iOS Safari 自 10 起忽略該設定，只能在 JS 對 Safari 專屬的 `gesturestart`/`gesturechange`/`gestureend` `preventDefault()`。畫面沒有需要放大來讀的內容，字級與命中區都已為手機尺寸設計，故不保留縮放。
-- iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: 16px`，用 padding 調高度，不要用縮字級的方式配版。
+- iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: max(1rem, 16px)`，用 padding 調高度，不要用縮字級的方式配版；寫死 `16px` 也擋得住自動縮放，但頁面已經不能捏合縮放，系統字級是玩家僅剩的放大手段，其餘字級都是 rem，唯獨輸入框寫死會變成唯一不跟著放大的元件。
 
 ## 5. 關卡資料設計
 
