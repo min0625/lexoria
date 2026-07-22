@@ -613,3 +613,19 @@ $('gate').addEventListener('click', () => {
     $('btn-settings').click();
   }
 })();
+
+// PWA：service worker 只負責離線可開與二次載入加速，遊戲邏輯完全不知道它存在（sw.js 有策略說明）。
+// 等 load 之後才註冊——安裝當下要把整份 SHELL 預快取起來，跟首屏的關卡 fetch 搶頻寬不划算。
+// 非 secure context（LAN IP 真機測試）沒有 navigator.serviceWorker，?. 直接短路整串。
+// 首次安裝那一趟頁面還沒被接管，boot()/startLevel() 的關卡 fetch 全部繞過 SW，Cache Storage
+// 裡只有 SHELL、沒有任何關卡——裝完就斷網重開會拿到載入失敗畫面。clients.claim() 接管時把
+// startLevel() 那兩趟（當前關 + 下一關）補回來，這趟才真的離線可玩：只補當前關的話，玩家
+// 破完這關按「下一關」還是會撞上載入失敗。之後的載入本來就被接管，只有推新版 sw.js 時
+// （skipWaiting + claim）才會再觸發一次，成本是重抓兩個 1–2KB 的關卡檔。
+addEventListener('load', () => {
+  navigator.serviceWorker?.register('sw.js').catch(() => {});
+  navigator.serviceWorker?.addEventListener('controllerchange', () => {
+    prefetchLevel(currentLevelId);
+    if (currentLevelId + 1 <= levelCount) prefetchLevel(currentLevelId + 1);
+  });
+});

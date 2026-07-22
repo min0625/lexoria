@@ -1,0 +1,22 @@
+{
+  "name": "Lexoria",
+  "short_name": "Lexoria",
+  "description": "英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，附繁體中文釋義與英文發音。",
+  "lang": "zh-Hant",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#10201f",
+  "theme_color": "#10201f",
+  "icons": [
+    { "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "assets/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
