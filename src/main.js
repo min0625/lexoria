@@ -132,6 +132,30 @@ document.addEventListener(
 for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
   document.addEventListener(type, (e) => e.preventDefault(), { passive: false });
 
+// iOS 從別的 App 點連結會用內嵌 WebView（WKWebView）開，它帶了原生的「下拉關閉」手勢。
+// 那個手勢屬於外層 App，網頁 JS 無法完全停用；但多數內嵌瀏覽器是靠 WKWebView 內部
+// scrollView 在頂端往下 rubber-band 來觸發的。整頁本就是固定版面（html/body overflow: hidden），
+// 只有少數容器需要捲動，於是全域擋掉「非捲動區」的 touchmove，讓 scrollView 不 rubber-band
+// → 大幅降低下滑誤觸關閉。真正可捲動的祖先（如 .level-list）放行，交給它自己的
+// overscroll-behavior: none 擋邊界鏈接。這是緩解而非保證：少數自帶 UIPanGestureRecognizer
+// 的內嵌瀏覽器仍擋不掉，根治要用「加入主畫面」以 standalone 開啟（設計文件 §4）。
+function inScrollable(node) {
+  for (let el = node; el instanceof Element; el = el.parentElement) {
+    if (el.scrollHeight <= el.clientHeight) continue;
+    const overflowY = getComputedStyle(el).overflowY;
+    if (overflowY === 'auto' || overflowY === 'scroll') return true;
+  }
+  return false;
+}
+document.addEventListener(
+  'touchmove',
+  (e) => {
+    // 多指（縮放）已由 gesture 事件處理；這裡只管單指滑動不誤觸關閉。
+    if (e.touches.length === 1 && !inScrollable(e.target)) e.preventDefault();
+  },
+  { passive: false }
+);
+
 // ---- 畫面切換：顯示/隱藏 section，不做路由（UI 文件 §5）----
 function showScreen(name) {
   $('screen-game').hidden = name !== 'game';
