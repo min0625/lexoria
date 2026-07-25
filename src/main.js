@@ -135,23 +135,19 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 // iOS 從別的 App 點連結會用內嵌 WebView（WKWebView）開，它帶了原生的「下拉關閉」手勢。
 // 那個手勢屬於外層 App，網頁 JS 無法完全停用；但多數內嵌瀏覽器是靠 WKWebView 內部
 // scrollView 在頂端往下 rubber-band 來觸發的。整頁本就是固定版面（html/body overflow: hidden），
-// 只有少數容器需要捲動，於是全域擋掉「非捲動區」的 touchmove，讓 scrollView 不 rubber-band
-// → 大幅降低下滑誤觸關閉。真正可捲動的祖先（如 .level-list）放行，交給它自己的
-// overscroll-behavior: none 擋邊界鏈接。這是緩解而非保證：少數自帶 UIPanGestureRecognizer
-// 的內嵌瀏覽器仍擋不掉，根治要用「加入主畫面」以 standalone 開啟（設計文件 §4）。
-function inScrollable(node) {
-  for (let el = node; el instanceof Element; el = el.parentElement) {
-    if (el.scrollHeight <= el.clientHeight) continue;
-    const overflowY = getComputedStyle(el).overflowY;
-    if (overflowY === 'auto' || overflowY === 'scroll') return true;
-  }
-  return false;
-}
+// 只有 .level-list 真的要捲動（style.css 裡唯一的 overflow-y: auto），於是其餘一律擋掉
+// touchmove，讓 scrollView 不 rubber-band → 大幅降低下滑誤觸關閉。關卡列表放行，捲到邊界
+// 交給它自己的 overscroll-behavior: none 不外溢。多指一起擋：兩指下滑照樣 rubber-band，
+// 而縮放本來就由 gesture*／viewport 擋掉了，這裡多擋不會多吃到任何手勢。
+// 不用「往上找可捲動祖先」的通用判斷：那要逐事件讀 scrollHeight／getComputedStyle，
+// 轉盤拖曳時每個 touchmove 都會強制一次同步 reflow——正是 wheel.js 特地快取 rect 避開的成本。
+// 輸入框放行：iOS 拖曳游標／選字是原生手勢，preventDefault 會吃掉（同上面 touchend 的理由）。
+// 這是緩解而非保證：少數自帶 UIPanGestureRecognizer 的內嵌瀏覽器仍擋不掉，
+// 根治要用「加入主畫面」以 standalone 開啟（設計文件 §4）。
 document.addEventListener(
   'touchmove',
   (e) => {
-    // 多指（縮放）已由 gesture 事件處理；這裡只管單指滑動不誤觸關閉。
-    if (e.touches.length === 1 && !inScrollable(e.target)) e.preventDefault();
+    if (!e.target.closest('.level-list, input')) e.preventDefault();
   },
   { passive: false }
 );
