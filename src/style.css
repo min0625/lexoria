@@ -47,6 +47,8 @@ html,
 body {
   height: 100%;
   overflow: hidden;
+  /* 捲動不鏈接到外層：iOS 內嵌 WebView 靠 scrollView rubber-band 觸發下拉關閉（設計文件 §4）*/
+  overscroll-behavior: none;
   color: var(--text);
   font-family: var(--font-body);
   /* 暖紙不是扁平單色：極淡的暖暈染做出深度，仍在同一識別內 */
@@ -457,6 +459,7 @@ button {
 .level-list {
   flex: 1;
   overflow-y: auto;
+  overscroll-behavior: none; /* 捲到頂/底不外溢到 WebView scrollView，避免下拉關閉（設計文件 §4）*/
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 12px;
