@@ -172,6 +172,10 @@
   <div id="overlay-tutorial" class="tutorial" hidden>
     <p id="tutorial-text"></p>
   </div>
+  <!-- 查詞提示（UI 文件 §4-F 第二段）：跟上面的滑字教學各一個節點，理由見 main.js showTapHint。
+       位置由 JS 量格盤下緣寫進 top。刻意沒有 hidden——aria-live 區塊要常駐才播報得到，
+       收起來是靠文字清空（main.js hideTapHint + style.css #tap-hint:empty）-->
+  <div id="tap-hint" class="tutorial at-grid" aria-live="polite"></div>
 
   <!-- E. 查詞卡片（動態定位） -->
   <div id="dict-card" class="dict-card" hidden></div>

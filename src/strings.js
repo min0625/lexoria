@@ -40,7 +40,8 @@ export const strings = {
   shareFailed: '此瀏覽器無法分享',
   shareImageTitle: (n) => `Lexoria · 第 ${n} 關`,
   download: '下載圖片',
-  clearWordsHint: '點單字查看解釋',
+  tapWordHint: '點單字查看解釋', // 過關卡片單字列(§4-C)與教學第二段(§4-F)共用同一條（UI 文件）
+  cellDictLabel: (w) => `查看 ${w} 的解釋`, // 已找到的格子的 aria-label：只有 role 會跟轉盤字母鈕同音
   playerId: '玩家編號',
   copied: '已複製',
   copyFailed: '無法複製，請手動抄下',
