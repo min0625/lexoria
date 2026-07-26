@@ -254,6 +254,7 @@ button {
   justify-content: center;
   font-weight: 800;
   font-size: calc(var(--cell) * 0.55);
+  transition: transform 0.12s ease;
 }
 .cell.on {
   /* 已填 = 浮起的字磚 */
@@ -261,6 +262,14 @@ button {
   color: var(--letter-on-fill);
   box-shadow: var(--shadow-md), var(--emboss);
   text-shadow: 0 1px 1px rgb(0 0 0 / 0.18);
+}
+/* 按下去會縮一下、放開彈回——點得開查詞卡的格子才有（§6.1），同 .clear-word-chip 的手感
+   （transition 在 .cell，只抄 :active 會變成按下與放開都硬切）。
+   條件用 [role]（grid.js 依「所屬目標字已找到」掛上）而不是 .on：提示揭示但整字還沒補滿的
+   格子點了沒反應，給它按壓回饋就是騙人。這只在點下去之後才回饋，教不了「可以點」；
+   發現性靠 showTapHint 那句提示 */
+.cell[role]:active {
+  transform: scale(0.94);
 }
 .cell.pop {
   animation: pop 0.3s ease-out;
@@ -717,6 +726,36 @@ button {
   text-shadow: 0 1px 2px var(--bg);
   animation: pulse 1.6s ease-in-out infinite;
 }
+/* 查詞提示（#tap-hint）：位置由 JS 量格盤下緣寫進 top（main.js placeTapHint），要放掉預設的 bottom。
+   後期盤面會把 .grid-area 填滿（--cell 由 cqh 決定時，格盤高度剛好等於容器內容框），
+   那時夾在區域下緣就一定會壓到最後一列——所以要有底：純 text-shadow 蓋不住底下的粗體字母。
+   實心膠囊只包住文字（width: fit-content），小盤面時看起來仍是一句浮字。 */
+.tutorial.at-grid {
+  bottom: auto;
+  font-size: 0.95rem;
+  width: fit-content;
+  margin-inline: auto;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--bg);
+}
+/* 空字串 = 收起來。不能用 hidden／display:none：aria-live 區塊一離開無障礙樹，下次寫入就會被
+   當成新插入的子樹而不播報（main.js hideTapHint）。所以節點常駐，只把看得見的東西關掉。 */
+#tap-hint:empty {
+  padding: 0;
+  background: none;
+  animation: none;
+}
+/* 有 overlay 開著時讓路：.tutorial 是 z-index 20、.overlay 是 30，脈動文字會從半透明模糊背景
+   透出來。用 opacity 而非 display 是同一個 aria-live 理由；animation 要一起關掉，否則
+   pulse 的 opacity keyframe 會蓋過這裡。overlay 收掉就自己回來，不會賠掉這一關的提示。
+   只針對 #tap-hint：滑字教學(#overlay-tutorial) 是第 1 關首次進站才在的另一段，它要不要讓路
+   沒人決定過，順手用共用 selector 一起改掉就是偷渡。開場閘門(.gate) 不在這裡——閘門蓋著時
+   showTapHint 根本不會寫入（main.js，理由是 aria-live 會提早播報），所以沒有東西需要藏。 */
+body:has(.overlay:not([hidden])) #tap-hint {
+  animation: none;
+  opacity: 0;
+}
 .tutorial[hidden] {
   display: none;
 }
@@ -803,7 +842,9 @@ button {
   .btn-primary,
   .wheel-letter,
   .wheel-shuffle,
-  .speak-btn {
+  .speak-btn,
+  .clear-word-chip,
+  .cell {
     transition: none;
   }
 }

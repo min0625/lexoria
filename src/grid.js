@@ -1,5 +1,6 @@
 // 填字格渲染：CSS Grid + DOM（設計文件 §3）。狀態變化只加/減 class，動畫交給 CSS。
 import { cellsOf } from './game.js';
+import { strings } from './strings.js';
 
 // 格盤範圍：DOM 渲染／文字快照／canvas 快照三處共用
 const boundsOf = (cells) => [
@@ -7,7 +8,7 @@ const boundsOf = (cells) => [
   Math.max(...cells.map((c) => c.c)) + 1,
 ];
 
-export function createGrid(container, level, { onCellTap }) {
+export function createGrid(container, level, { onCellTap, isFound }) {
   container.innerHTML = '';
   const el = document.createElement('div');
   el.className = 'grid';
@@ -43,6 +44,28 @@ export function createGrid(container, level, { onCellTap }) {
   });
   container.appendChild(el);
 
+  // 點得開查詞卡的條件是「所屬目標字已找到」，不是「格子有字」（§6.1）——提示揭示但整字還沒
+  // 補滿的格子點了不會有反應，給它按鈕語意（VoiceOver 唸成 button）與按壓回饋只會變成
+  // 「按下去有縮放、卻什麼都沒發生」。role 同時是 CSS(.cell[role]:active) 與 VoiceOver 的依據，
+  // 不另外再加一個 class。
+  // aria-label 是必要的、不是加分項：只有 role 的話 VoiceOver 唸出來是「A，按鈕」，跟轉盤的
+  // 字母鈕一字不差，聽的人分不出這顆是查解釋還是拼字母。名稱取「已找到的第一個字」而不是格子上的
+  // 字母，才不依賴 update() 有沒有先寫進 textContent（createGrid 就叫得動），取法同 onCellTap。
+  // 不給 tabindex／鍵盤：整場沒有鍵盤玩法（轉盤是拖曳手勢），VoiceOver 觸控巡覽不靠 tabindex
+  // 也到得了；要補就得整個格盤做 roving tabindex，那是另一件事。
+  // 一關內 foundWords 只增不減、換關整個格盤重建，所以只加不拿掉；已掛好的直接跳過——update()
+  // 跑在手勢剛結束的熱路徑上，重寫同一個值仍會觸發屬性變更與 .cell[role]:active 的樣式失效。
+  function syncTappable() {
+    for (const d of cellEls.values()) {
+      if (d.hasAttribute('role')) continue;
+      const word = d.dataset.words.split(' ').find(isFound);
+      if (!word) continue;
+      d.setAttribute('role', 'button');
+      d.setAttribute('aria-label', strings.cellDictLabel(word));
+    }
+  }
+  syncTappable(); // 續玩已有找到字的關卡時就該是可點的，不靠呼叫端緊接著呼叫 update()
+
   return {
     // 依 game.getCells() 同步畫面；animate=true 時新填的格子播飛入動畫
     update(cells, animate = true) {
@@ -58,6 +81,7 @@ export function createGrid(container, level, { onCellTap }) {
           }
         }
       }
+      syncTappable();
     },
   };
 }

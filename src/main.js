@@ -75,7 +75,7 @@ $('rotate-text').textContent = strings.rotateDevice;
 $('allclear-text').textContent = strings.allClear;
 $('btn-allclear-back').textContent = strings.backToLevels;
 $('clear-title').textContent = strings.levelClear;
-$('clear-words-hint').textContent = strings.clearWordsHint;
+$('clear-words-hint').textContent = strings.tapWordHint;
 $('btn-next').textContent = strings.nextLevel;
 $('settings-title').textContent = strings.settings;
 $('label-sound').textContent = strings.sound;
@@ -114,14 +114,40 @@ setSpeechDebug(dbg);
 // iOS Safari 連續快速點擊仍會叫出文字選取放大鏡，CSS（user-select / touch-action）擋不掉，
 // 只能對第二次 touchend preventDefault（設計文件 §4）。跳過互動元素：preventDefault 會吃掉
 // 它們的 click/focus/toggle，連點提示鈕會漏拍、勾選框會少切一次；轉盤走 pointer events，不受影響。
+// 拖曳結束的那次 touchend 不算一次點擊：轉盤放手後緊接著點格盤上已找到的字（§6.1）必落在
+// 350ms 內，被當成連點就吃掉 click，變成「按下去有縮放、卻什麼都沒發生」。判斷用位移門檻，
+// 不是把 .cell 加進上面的跳過名單——放大鏡只跟「同一點連點兩下」來，拖過的手勢根本不需要擋，
+// 而放行格子等於把放大鏡放回唯一有字（可被選取）的格子上。
 let lastTouchEnd = 0;
+let touchStart = null; // 這次 touch 的起點；判定為拖曳後設 null
+document.addEventListener(
+  'touchstart',
+  (e) => {
+    const t = e.touches[0];
+    touchStart = t ? { x: t.clientX, y: t.clientY } : null;
+  },
+  { passive: true }
+);
+document.addEventListener(
+  'touchmove',
+  (e) => {
+    // 10px：手指點下去本來就會抖幾 px，門檻太小會把真的連點誤判成拖曳、把放大鏡放回來。
+    // 用「起點到目前」而不是逐段位移，繞一圈回到原點的轉盤手勢中途就已經超標，仍算拖曳。
+    const t = e.touches[0];
+    if (touchStart && t && Math.hypot(t.clientX - touchStart.x, t.clientY - touchStart.y) > 10)
+      touchStart = null;
+  },
+  { passive: true }
+);
 document.addEventListener(
   'touchend',
   (e) => {
+    const tap = touchStart !== null;
     const now = Date.now();
-    if (now - lastTouchEnd < 350 && !e.target.closest('button, input, label, a, summary'))
+    if (tap && now - lastTouchEnd < 350 && !e.target.closest('button, input, label, a, summary'))
       e.preventDefault();
-    lastTouchEnd = now;
+    lastTouchEnd = tap ? now : 0; // 拖曳不進窗口；留著舊值會讓緊接著的那次點擊接著被誤判
+    touchStart = null;
   },
   { passive: false }
 );
@@ -163,6 +189,7 @@ function showScreen(name) {
   if (name !== 'game') {
     $('overlay-clear').hidden = true;
     $('overlay-tutorial').hidden = true;
+    hideTapHint();
   }
   dictCard.hide();
 }
@@ -227,6 +254,9 @@ async function startLevel(id) {
   game = null;
   wheel?.destroy();
   wheel = null;
+  // 查詞提示要在 fetch 之前就收掉，不是等關卡回來才收：兌換碼跳關這類路徑進來時它可能還開著，
+  // 留著就會停在上一關格盤的座標上蓋著載入畫面（同 onWin 收它的理由）。
+  hideTapHint();
   $('grid').innerHTML = `<p class="loading-text">${strings.loading}</p>`;
   let level;
   try {
@@ -244,7 +274,7 @@ async function startLevel(id) {
     ? { foundBonusWords: save.foundBonusWords[id] ?? [] }
     : { ...save.levelState, foundBonusWords: save.foundBonusWords[id] ?? [] };
   game = createGame(level, state);
-  grid = createGrid($('grid'), level, { onCellTap });
+  grid = createGrid($('grid'), level, { onCellTap, isFound: game.isFound });
   grid.update(game.getCells(), false);
   wheel = createWheel($('wheel'), level.letters, { onChange: showPreview, onSubmit });
   $('btn-level').textContent = strings.levelTitle(id);
@@ -252,9 +282,54 @@ async function startLevel(id) {
   $('overlay-clear').hidden = true;
   $('overlay-tutorial').hidden = !(id === 1 && !save.settings.tutorialDone);
   showScreen('game');
+  showTapHint(); // 要等 showScreen 之後才量得到版面；該不該出現由 showTapHint 自己判斷
   // 玩這關的期間先把下一關的檔案暖進瀏覽器快取，按「下一關」時 startLevel() 的 fetch 直接命中。
   if (id + 1 <= levelCount) prefetchLevel(id + 1);
 }
+
+// 查詞提示（UI 文件 §4-F 第二段）：貼著格盤下緣，刻意不跟滑字教學共用轉盤上方那個位置——
+// 兩段疊在同一格會被當成同一句話忽略掉，而且這句講的是格盤，眼睛卻被帶去看轉盤。
+// 也刻意各用一個節點：兩段的位置、生命週期、完成旗標都不同，共用一個節點就得在過關、換關、
+// 點開查詞、換畫面四處手動同步狀態，漏一處就會殘留在下一關的載入畫面上。
+// 後期大盤面會填滿整個 .grid-area，那時夾在區域下緣：寧可疊在最後一列上，也不要溢出去壓到預覽列
+//（用元素自己的高度夾，字級是 rem，寫死 px 在放大字型時就會壓到預覽列）。夾住時一定會疊到格子
+// ——格盤高度由 cqh 決定，剛好等於容器內容框，沒有空隙可躲——所以文字有實心膠囊底（style.css
+// .tutorial.at-grid），否則會跟底下的粗體字母糊成一團。
+function placeTapHint() {
+  const el = $('tap-hint');
+  const area = $('grid').getBoundingClientRect();
+  // 格盤一定已經 render：載入中提示是空的（hideTapHint），showTapHint 只在 render 之後叫得動
+  const board = $('grid').firstElementChild.getBoundingClientRect();
+  el.style.top = `${Math.min(board.bottom + 10, area.bottom - el.offsetHeight)}px`;
+}
+
+// 開關一律走文字空／不空，不用 hidden：aria-live 區塊只要離開過無障礙樹（hidden／display:none），
+// 下次寫入就被當成「新插入的子樹」而不是既有 live region 的變更，多數輔助技術不會播報（APG）。
+// 節點因此常駐，收起來的樣子交給 style.css 的 #tap-hint:empty。
+function hideTapHint() {
+  $('tap-hint').textContent = '';
+}
+
+// 所有條件都在這裡擋，不擺在呼叫點：四個入口各判一次遲早漏一個，而且重複呼叫不是白工——
+// 重寫 textContent 會讓 aria-live 每找到一個字就再報一次同一句，placeTapHint 也會在手勢剛結束的
+// 熱路徑上多逼一次同步版面計算（盤面尺寸沒變，量了也是同一個值）。
+// 條件是「格盤上有字可以點了」，不是「剛拼出來」（UI 文件 §4-F）——中途離開再回來的人一進關卡
+// 就有填好的字可以點，靠提示補滿的也算（§8）。
+function showTapHint() {
+  const el = $('tap-hint');
+  if (save.settings.dictHintDone || el.textContent) return;
+  // 閘門蓋著時先不寫：aria-live 一寫就播報，會在玩家還停在「點擊繼續」、格盤還點不到的時候
+  // 就唸出這句（續玩已有找到字的關卡必經此路），而文字沒變不會再播第二次。閘門收掉時補叫一次。
+  if (!$('gate').hidden) return;
+  if (!game?.getState().foundWords.length) return;
+  el.textContent = strings.tapWordHint;
+  placeTapHint();
+}
+
+// top 是量出來的視窗座標，轉向、iOS 網址列收合都會讓它失準——還開著就重量一次
+addEventListener('resize', () => {
+  if ($('tap-hint').textContent) placeTapHint();
+});
 
 function onSubmit(word) {
   const result = game.submit(word);
@@ -274,6 +349,7 @@ function onSubmit(word) {
       }
       persistProgress();
       if (result.won) onWin();
+      else showTapHint();
       break;
     }
     case 'bonus': {
@@ -307,6 +383,9 @@ function onWin() {
     : `${strings.levelClear} +${ECONOMY.clearCoins} <span class="icon icon-coin"></span>`;
   $('clear-bonus').textContent = replay ? strings.replayNote : strings.bonusFound(bonusCount);
   dictCard.hide(); // 換一批單字前先收掉舊卡片，避免錨點指向已消失的格子
+  // 查詞提示要跟著收：過關卡片的背景是半透明模糊，留著會透出來，按「下一關」後還會停在
+  // 上一關格盤的座標上、蓋在載入畫面上閃。過關後改由卡片的單字鈕承接「點字查解釋」（§4-C）
+  hideTapHint();
   renderClearWords();
   $('overlay-clear').hidden = false;
 }
@@ -319,7 +398,7 @@ function renderClearWords() {
     const chip = document.createElement('button');
     chip.className = 'clear-word-chip';
     chip.textContent = entry.word;
-    chip.addEventListener('click', () => dictCard.show(entry.word, entry, chip));
+    chip.addEventListener('click', () => openDict(entry.word, entry, chip));
     box.appendChild(chip);
   }
 }
@@ -349,6 +428,9 @@ $('btn-hint').addEventListener('click', () => {
   persistProgress();
   updateCoins();
   if (result.won) onWin();
+  // 提示補滿的字同樣算找到（§8），格盤上就多了一個可以點的字——卡到要花金幣的人反而更想知道
+  // 那個字是什麼意思。只揭一格、整字還沒補滿時 showTapHint 自己會擋（沒有新的可點字）。
+  else showTapHint();
 });
 
 // ---- 定時領取金幣（§8）：每 4 小時一份、不累積，邏輯在 game.js 的 claimStatus ----
@@ -421,11 +503,28 @@ document.addEventListener('visibilitychange', () => {
 updateClaim();
 
 // ---- 查詞卡片（§6）：只有已找到的字能查 ----
+// 彈卡 + 記下「玩家已經知道可以點了」。格盤的格子與過關卡片的單字鈕共用這段，但參數是
+// 已經查好的 entry 而不是字串：按「下一關」到新關卡 fetch 回來這段期間 game 是 null，
+// 而過關卡片還在畫面上、單字鈕還點得到——這條路不能碰 game。
+// learned = 這一次點得算「學會格盤可以點」，只有格盤那條路傳 true。過關卡片的單字鈕本來就是
+// <button>、長得就像按鈕，點它學到的是「這些膠囊可以點」，推不出「格盤上的字磚也可以點」——
+// 而後者正是這句提示存在的唯一理由（UI 文件 §4-F）。何況完成最後一個字時過關卡片馬上蓋上來，
+// 玩家根本沒機會在格子上點，第一次接觸查詞卡幾乎必然是從單字鈕：兩者算同一件事的話，
+// 相當比例的玩家會在從沒點過格子的情況下永久失去提示。預設 false，日後多一個入口不會誤殺。
+function openDict(word, entry, anchorEl, learned = false) {
+  dictCard.show(word, entry, anchorEl); // word 與 entry 分開傳：dictCard 對 entry 缺漏是容錯的
+  if (learned && !save.settings.dictHintDone) {
+    save.settings.dictHintDone = true; // 真的在格盤上點過一次才算學會，之後永不再提示
+    hideTapHint(); // 只收查詞提示：滑字教學是另一個旗標，收了它 tutorialDone 卻沒推進
+    persist(save);
+  }
+}
+
 function onCellTap(words, cellEl) {
   const word = words.find((w) => game.isFound(w));
-  if (!word) return;
+  if (!word) return; // 未找到的字點了沒反應（否則變相洩題，§6.1）
   const entry = game.level.words.find((w) => w.word === word);
-  dictCard.show(word, entry, cellEl);
+  openDict(word, entry, cellEl, true);
 }
 
 // ---- 關卡選擇（UI 文件 §3）----
@@ -608,6 +707,7 @@ $('btn-reload').addEventListener('click', () => location.reload());
 $('gate').addEventListener('click', () => {
   $('gate').hidden = true;
   dbg('gate hidden');
+  showTapHint(); // 閘門蓋著時 showTapHint 不寫（會提早播報），收掉才補這一次
 });
 
 (async function boot() {
