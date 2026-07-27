@@ -63,8 +63,9 @@ const SHELL_PATH = new URL('./', location).pathname;
 self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== 'GET' || url.origin !== location.origin) return;
-  // 導覽請求「而且指的就是首頁」才用 './' 當快取鍵：預快取的是 './'，而兌換／分享連結是
-  // '/?code=…'。讀取端逐字比對會 miss（離線點兌換連結變白屏），寫入端逐字比對更糟——每個
+  // 導覽請求「而且指的就是首頁」才用 './' 當快取鍵：預快取的是 './'，但分享出去的連結被平台
+  // 加上追蹤參數後會變成 '/?fbclid=…'、'/?utm_source=…'。讀取端逐字比對會 miss（離線從那種
+  // 連結點進來就是白屏），寫入端逐字比對更糟——每個
   // 不同的 query 都寫一筆永遠讀不到的死資料（比對時會先命中插入較早的 './'），而真正該更新
   // 的 './' 反而永不刷新，只用帶參數網址進來的玩家就被釘在安裝當下那版。
   // 但條件一定要連 pathname 一起看：關於區的 <a href="assets/licenses.txt" target="_blank">

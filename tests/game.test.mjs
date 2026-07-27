@@ -259,6 +259,70 @@ test('persist：寫入失敗不往外丟（loadSave 開機就寫，丟出去會�
   }
 });
 
+// ---- bridge.share 的回傳決策表（UI 文件 §4-D）----
+// 這張表（剪貼簿成功與否 × 有無面板 × AbortError × Windows）改壞了只有真機看得出來：分享明明
+// 送出去卻閃「分享失敗」，或按了完全沒反應。§17 那幾條是手動驗收，所以純分支部分釘在這裡。
+const swap = (name, value) => {
+  const saved = Object.getOwnPropertyDescriptor(globalThis, name);
+  Object.defineProperty(globalThis, name, { configurable: true, value });
+  return () => (saved ? Object.defineProperty(globalThis, name, saved) : delete globalThis[name]);
+};
+
+// writes：第 n 次 writeText 成功與否（沒列到的次數一律失敗）；share：undefined = 沒有分享面板
+async function shareWith({ writes = [], share, platform }) {
+  const payloads = [];
+  let n = 0;
+  const restore = [
+    swap('navigator', {
+      clipboard: {
+        writeText: () =>
+          writes[n++] ? Promise.resolve() : Promise.reject(new Error('Document is not focused')),
+      },
+      share:
+        share &&
+        ((p) => {
+          payloads.push(p);
+          return share();
+        }),
+      userAgentData: platform ? { platform } : undefined,
+    }),
+    swap('document', { hasFocus: () => true }),
+  ];
+  try {
+    const mode = await bridge.share('文案', 'https://lexoria.example/');
+    return { mode, payloads, writes: n };
+  } finally {
+    for (const r of restore) r();
+  }
+}
+
+test('bridge.share：三態回傳與 Windows 單欄位 payload（UI 文件 §4-D）', async () => {
+  const ok = () => Promise.resolve();
+  const abort = () => Promise.reject(Object.assign(new Error('cancel'), { name: 'AbortError' }));
+  const denied = () => Promise.reject(new Error('permissions policy')); // 面板叫不起來
+
+  // 剪貼簿真的寫進去了 → 一律 'copied'（提示「可直接貼上」），面板有沒有開、有沒有取消都一樣
+  assert.equal((await shareWith({ writes: [true], share: ok })).mode, 'copied');
+  assert.equal((await shareWith({ writes: [true], share: abort })).mode, 'copied');
+  assert.equal((await shareWith({ writes: [true] })).mode, 'copied');
+  // 面板開了但剪貼簿兩次都寫不進去 → 'shared'（不提示），而且第二次補寫真的有發生
+  const both = await shareWith({ writes: [false, false], share: ok });
+  assert.equal(both.mode, 'shared');
+  assert.equal(both.writes, 2);
+  // 第一次被「Document is not focused」擋掉、面板收掉後補寫成功 → 'copied'
+  assert.equal((await shareWith({ writes: [false, true], share: abort })).mode, 'copied');
+  // 面板本身失敗（非 AbortError）→ 不能當成送出成功，否則按鈕按了毫無反應
+  assert.equal((await shareWith({ writes: [false, false], share: denied })).mode, 'failed');
+  assert.equal((await shareWith({ writes: [false] })).mode, 'failed'); // 連面板都沒有
+  // Windows 面板只讀得到單一 text 欄位 → 網址要併進去；其他平台維持分開傳（iOS 的預覽卡片）
+  assert.deepEqual((await shareWith({ writes: [true], share: ok, platform: 'Windows' })).payloads, [
+    { text: '文案\nhttps://lexoria.example/' },
+  ]);
+  assert.deepEqual((await shareWith({ writes: [true], share: ok, platform: 'macOS' })).payloads, [
+    { text: '文案', url: 'https://lexoria.example/' },
+  ]);
+});
+
 // ---- 關卡資料驗證器（設計文件 §5 步驟 6）：任何一關不合法就讓測試失敗 ----
 
 test('data/levels/：每關通過完整驗證', () => {
