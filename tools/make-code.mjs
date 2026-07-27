@@ -1,4 +1,4 @@
-// 兌換碼簽發工具（.local.feature-evaluation.md §2）。
+// 兌換碼簽發工具（設計文件 §9）。
 // 私鑰存 tools/keys/<kid>.pem（已列入 .gitignore），絕不進版控。
 //
 // 用法：
@@ -58,7 +58,7 @@ if (!Number.isInteger(value) || value <= 0) die(`數值必須是正整數，收�
 
 if (effect.type === 'level') {
   const { count } = JSON.parse(readFileSync(new URL('../data/levels/index.json', import.meta.url)));
-  // 前端 validator 管不到兌換碼，關卡範圍在簽發當下把關（評估文件 §4）
+  // 前端 validator 管不到兌換碼，關卡範圍在簽發當下把關（設計文件 §9）
   if (effect.id > count) die(`第 ${effect.id} 關不存在，目前只到第 ${count} 關`);
 }
 

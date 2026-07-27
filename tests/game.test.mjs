@@ -1,7 +1,8 @@
 // 純邏輯單元測試（設計文件 §12）：node --test tests/
 
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync } from 'node:fs';
 import { readdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { bridge } from '../src/bridge.js';
@@ -503,5 +504,29 @@ test('deploy.yml 的 cp 清單涵蓋 sw.js 與 SHELL 用到的每個根目錄項
   for (const p of [...shell, 'sw.js']) {
     const top = p === './' ? 'index.html' : p.split('/')[0];
     assert.ok(staged.has(top), `deploy.yml 的 cp 清單少了 ${top}——正式站直接沒有這個檔案`);
+  }
+});
+
+// --- .local.* 引用 ---
+// `.gitignore` 吃掉整個 `*.local.*`，所以引用它的註解／文件在別人的 clone 裡就是斷鏈：
+// 句子照樣讀得通、只是指向不存在的檔案，跟 SHELL 少一條路徑一樣完全無聲（CLAUDE.md 有這條規則）。
+// 用 git ls-files 而不是自己走目錄：判準本來就是「有沒有進版控」。
+const TEXT_FILE_RE = /\.(js|mjs|md|html|css|json|toml|yml)$/;
+// CLAUDE.md 那條規則本身寫的就是 `.local.*`，是規則不是引用——後面接萬用字元的就跳過
+const LOCAL_CITE_RE = /\.local\.[\w-]/;
+
+test('版控裡的原始碼與文件都沒有引用 .local.* 檔案', () => {
+  const tracked = execFileSync('git', ['ls-files', '-z'], { cwd: ROOT, encoding: 'utf8' })
+    .split('\0')
+    .filter((p) => TEXT_FILE_RE.test(p) && !p.startsWith('data/levels/'));
+  for (const p of tracked) {
+    const hits = readFileSync(new URL(p, ROOT), 'utf8')
+      .split('\n')
+      .filter((line) => LOCAL_CITE_RE.test(line));
+    assert.equal(
+      hits.length,
+      0,
+      `${p} 引用了 .local.* 檔案（別人 clone 後只會拿到斷鏈）：\n${hits.join('\n')}`
+    );
   }
 });

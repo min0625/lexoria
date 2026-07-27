@@ -169,7 +169,8 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 // 轉盤拖曳時每個 touchmove 都會強制一次同步 reflow——正是 wheel.js 特地快取 rect 避開的成本。
 // 輸入框放行：iOS 拖曳游標／選字是原生手勢，preventDefault 會吃掉（同上面 touchend 的理由）。
 // 這是緩解而非保證：少數自帶 UIPanGestureRecognizer 的內嵌瀏覽器仍擋不掉，
-// 根治要用「加入主畫面」以 standalone 開啟（設計文件 §4）。
+// 根治只能離開內嵌瀏覽器（先「以 Safari 開啟」再加到主畫面，以 standalone 開）——
+// 但沒有任何程式在引導這件事，也不打算做，理由見設計文件 §4／§15 Phase 1.5-4。
 document.addEventListener(
   'touchmove',
   (e) => {
@@ -655,7 +656,7 @@ $('btn-download').addEventListener('click', async () => {
   }
 });
 
-// ---- 兌換碼（.local.feature-evaluation.md §2）：JWT 驗簽在 redeem.js，這裡只套用效果 ----
+// ---- 兌換碼（設計文件 §9）：JWT 驗簽在 redeem.js，這裡只套用效果 ----
 function showRedeemMsg(text) {
   $('redeem-msg').textContent = text;
   $('redeem-msg').hidden = false;
@@ -680,7 +681,15 @@ $('btn-redeem').addEventListener('click', async () => {
   }
   const { jti, effect } = result;
   if (effect.type === 'level' && effect.id <= save.currentLevel) {
-    showRedeemMsg(strings.redeemBehind); // 沒有效果就不消耗碼（評估文件 §3-3）
+    showRedeemMsg(strings.redeemBehind); // 沒有效果就不消耗碼（設計文件 §9）
+    return;
+  }
+  // 簽發端讀自己那份 index.json 把關，擋不住「碼比這台裝置手上的關卡新」：SW 是
+  // stale-while-revalidate，剛推完新關卡那一趟載入拿到的仍是舊的 index.json（設計文件 §2）。
+  // 沒有這道防線就會把 currentLevel 寫成 levelCount 以外的值，之後每次開場都直接掉進全破畫面
+  // 而且再也回不來（startLevel 的 id > levelCount 分支）。同樣不消耗碼——關卡上線後還能再兌。
+  if (effect.type === 'level' && effect.id > levelCount) {
+    showRedeemMsg(strings.redeemNoLevel);
     return;
   }
   if (effect.type === 'coins') {
@@ -695,7 +704,7 @@ $('btn-redeem').addEventListener('click', async () => {
   persist(save);
   updateCoins();
   $('redeem-input').value = '';
-  if (effect.type === 'level' && levelCount) startLevel(effect.id);
+  if (effect.type === 'level') startLevel(effect.id); // 上面已保證 1 <= effect.id <= levelCount
 });
 
 // ---- 啟動 ----

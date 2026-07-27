@@ -9,12 +9,12 @@ export const defaultSave = () => ({
   coins: ECONOMY.initialCoins,
   foundBonusWords: {}, // { [levelId]: [word, ...] }——按關卡記錄（§1）
   levelState: { foundWords: [], revealedCells: [] }, // 只屬於 currentLevel
-  redeemedCodes: [], // 已兌換碼的 jti 清單（.local.feature-evaluation.md §2）
+  redeemedCodes: [], // 已兌換碼的 jti 清單（設計文件 §9）
   lastClaimAt: 0, // 上次定時領取金幣的 timestamp，0 = 從未領過、立即可領（§8）
   settings: { sound: true, tutorialDone: false, dictHintDone: false },
 });
 
-// 玩家編號（.local.feature-evaluation.md §2）：Crockford Base32（無 I/L/O/U），
+// 玩家編號（設計文件 §9）：Crockford Base32（無 I/L/O/U），
 // 10 碼亂數 + 2 碼加鹽校驗 = 12 碼。用途是讓開發者能簽發只給某個人的兌換碼。
 // UID_SALT 必然隨前端出貨——校驗碼擋的是「亂打的字串」與「玩家回報時打錯字」，
 // 不是安全機制；讀得懂 JS 的人照樣量產合法 UID（沿用既有的「不防技術玩家」取捨）。
@@ -27,7 +27,7 @@ function uidCheck(body) {
   return UID_ALPHABET[h & 31] + UID_ALPHABET[(h >>> 5) & 31];
 }
 
-// getRandomValues 而非 randomUUID：後者要 secure context，LAN IP 真機測試會是 undefined（§3-4）。
+// getRandomValues 而非 randomUUID：後者要 secure context，LAN IP 真機測試會是 undefined（§9）。
 // 256 是 32 的整數倍，b & 31 在字母表上仍是均勻分布。
 export function newUid() {
   const body = Array.from(

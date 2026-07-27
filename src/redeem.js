@@ -1,4 +1,4 @@
-// 兌換碼驗證（.local.feature-evaluation.md §2）：JWT + ES256 非對稱簽章。
+// 兌換碼驗證（設計文件 §9）：JWT + ES256 非對稱簽章。
 // 私鑰只在開發者本機（tools/make-code.mjs 簽發），前端持公鑰離線驗簽——
 // 發新碼不用重新部署。演算法寫死 ES256、kid 必須命中下方白名單，
 // token 自帶的 alg 欄位一律忽略（防 alg confusion）。
@@ -42,7 +42,7 @@ function decode(token) {
   }
 }
 
-// 效果只有兩種（評估文件 §2 定案），不預先擴充
+// 效果只有 coins／level 兩種（設計文件 §9），不預先擴充
 const isValidEffect = (e) =>
   !!e &&
   ((e.type === 'coins' && Number.isInteger(e.amount) && e.amount > 0) ||
@@ -55,7 +55,7 @@ export async function verifyCode(
   token,
   { keys = PUBLIC_KEYS, now = Date.now() / 1000, redeemed = [], uid = '' } = {}
 ) {
-  if (!globalThis.crypto?.subtle) return { ok: false, reason: 'invalid' }; // 非 secure context（評估文件 §3-4）
+  if (!globalThis.crypto?.subtle) return { ok: false, reason: 'invalid' }; // 非 secure context（設計文件 §9）
   const t = decode(token);
   // Object.hasOwn：擋 __proto__/constructor 之類撈到原型鏈的 kid
   const jwk = t && Object.hasOwn(keys, t.header.kid) ? keys[t.header.kid] : null;
