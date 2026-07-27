@@ -1,4 +1,4 @@
-// 兌換碼驗證測試（.local.feature-evaluation.md §2、§5-2）。
+// 兌換碼驗證測試（設計文件 §9）。
 // 測試現場生金鑰對簽 token（node:crypto 的 ieee-p1363 = JWT ES256 的 raw r‖s 格式），
 // 不依賴 src/redeem.js 內嵌的正式公鑰。
 

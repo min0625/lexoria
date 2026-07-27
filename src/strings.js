@@ -54,6 +54,8 @@ export const strings = {
   redeemExpired: '兌換碼已過期',
   redeemUsed: '此兌換碼已使用過',
   redeemBehind: '進度已超過此兌換碼的關卡',
+  // 碼比這台裝置手上的關卡新（剛推新關卡、SW 還在給舊的 index.json）——不是壞碼，所以留餘地
+  redeemNoLevel: '此兌換碼的關卡還沒上線，請稍後再試',
   redeemWrongUid: '此兌換碼不屬於這個玩家編號',
   redeemCoins: (n) => `兌換成功，金幣 +${n}`,
   redeemLevel: (n) => `兌換成功，已解鎖至第 ${n} 關`,

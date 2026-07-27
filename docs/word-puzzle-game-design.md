@@ -68,7 +68,7 @@
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 - 誤觸**雙指捏合縮放**會讓固定版面（html/body `overflow: hidden`）卡在錯位狀態且不易還原，兩個平台各擋一半：Android Chrome 吃 viewport 的 `maximum-scale=1, user-scalable=no`；iOS Safari 自 10 起忽略該設定，只能在 JS 對 Safari 專屬的 `gesturestart`/`gesturechange`/`gestureend` `preventDefault()`。畫面沒有需要放大來讀的內容，字級與命中區都已為手機尺寸設計，故不保留縮放。
-- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list` 與輸入框——前者是樣式表裡唯一的 `overflow-y: auto`，後者的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，引導玩家**「加入主畫面」**以 standalone 開啟即無瀏覽器 chrome、無下拉關閉手勢。
+- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list` 與輸入框——前者是樣式表裡唯一的 `overflow-y: auto`，後者的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，以 standalone 從主畫面開啟即無瀏覽器 chrome、無下拉關閉手勢——但**內嵌 WebView 裡根本沒有「加入主畫面」這個選項**，真要引導得先講「以 Safari 開啟」；而 App 內的安裝引導做過一版又拿掉了（§15 Phase 1.5-4），現在沒有任何程式在做這件事，別照這句話直接開工。
 - iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: max(1rem, 16px)`，用 padding 調高度，不要用縮字級的方式配版；寫死 `16px` 也擋得住自動縮放，但頁面已經不能捏合縮放，系統字級是玩家僅剩的放大手段，其餘字級都是 rem，唯獨輸入框寫死會變成唯一不跟著放大的元件。
 
 ## 5. 關卡資料設計
@@ -224,6 +224,8 @@ function speak(word) {
 - `levelState` 是**進行中關卡**的進度（已找到的目標字、提示揭示過的格子）：玩家中途關掉頁面不該歸零——提示是花金幣買的，丟了等於扣錢沒拿到東西。過關進下一關時清空。
 - `version` 欄位第一天就放：日後存檔格式變更才有辦法寫遷移；讀到壞掉或無法辨識的資料時，重置成初始存檔（Phase 1 沒有付費資產，重置的代價可以接受）。
 - **重要**：把存檔讀寫包成一個小模組（`storage.js`，約 20 行），第二階段嵌入 App 時只要換掉這一個模組改走 native bridge（§13），遊戲邏輯完全不動。這是唯一值得預留的抽象層。
+- **兌換碼機制**（`redeem.js` 驗簽、`tools/make-code.mjs` 簽發，兩邊的程式註解都引用這條）：標準 JWT 三段式，**演算法寫死 ES256、忽略 token header 的 `alg`**（防 alg confusion；選 ES256 是因為 WebCrypto 全平台都有——Ed25519 在舊 Android WebView 沒把握——且 JWT 的 ES256 簽章本來就是 raw r‖s 64 bytes，跟 `crypto.subtle.verify` 的格式一致，不必做 DER 轉換）。前端內嵌 `kid → 公鑰(JWK)` 白名單，`kid` 命中才驗：**移除一把 key ＝ 該 key 簽過的碼整批作廢，這是離線環境唯一的撤銷手段**（單一碼撤不掉，只能等 `exp` 過期——所以 `make-code.mjs --exp none` 簽出來的永久碼**除了棄用整把 key 之外沒有任何撤銷手段**，個人補償碼請一律留期限）；反過來，新增 key 仍要部署前端，「免部署發碼」只限拿既有 key 造新碼。payload 是 `{ jti, effect }` 加兩個選用欄位：`exp`（省略＝永久有效，驗證端只在有這個欄位時才檢查）與 `uid`（帶了就只有那個玩家兌得了，不帶＝人人可兌的活動碼）。單次使用靠存檔記 `jti`——清 localStorage／換裝置／無痕視窗都能重兌，發活動碼時這正是預期行為，發個人補償碼要有此認知；`exp` 用裝置時鐘檢查，調系統時間可繞過，同樣沿用「不防技術玩家」的取捨。**不引入 JWT 函式庫**：`crypto.subtle.importKey`（JWK）+ `verify` 手寫約 30 行。私鑰只在開發者本機的 `tools/keys/`（已 gitignore），**遺失＝該 kid 再也簽不了新碼**。2026-07-18 從 sha256 雜湊表換成簽章制——雜湊表每發一張新碼都得改程式碼再部署一次。
+- **兌換碼的效果與邊界**（`redeem.js` 驗簽、`main.js` 套用，兩邊註解都引用這條）：`effect` 只有 `coins`（加金幣）與 `level`（解鎖到第 N 關）兩種，不預先擴充。跳關碼的目標關卡落在**兩端之外**時都只顯示提示、**不記 `jti`**——沒有效果就不消耗碼，那張碼還能換台裝置或換個人再兌。兩端是：(a) **不比目前進度前面**（`currentLevel` 只增不減，兌了也不會有事發生）；(b) **超出這台裝置手上的關卡數**。(b) 這道防線不能省：關卡存不存在雖然由**簽發端**把關（`make-code.mjs` 讀 `data/levels/index.json`），但簽發端讀的是**自己那份**，而 SW 是 stale-while-revalidate——剛推完新關卡那一趟載入拿到的仍是舊的 `index.json`（§2），碼會比裝置新。少了它就會把 `currentLevel` 寫進 `levelCount` 以外，之後每次開場都直接掉進全破畫面且再也回不來。§5 步驟 6 那套驗證器驗的是 `data/levels/`、管不到兌換碼。**secure context 是這一整套的隱形前提**：用 LAN IP 開頁面做真機測試時頁面不是 secure context，`crypto.subtle` 與 `crypto.randomUUID` 都會是 `undefined`——所以驗碼在缺 `crypto.subtle` 時回 `invalid` 而不是丟例外，`uid` 也用 `getRandomValues` 而非 `randomUUID` 產生。正式站是 https，這條只在開發期真機測試踩得到。
 - 兌換碼**只有一個入口**：設定卡裡貼上整串 token。`?code=…` 自動帶入的兌換連結曾經做過，2026-07-27 移除——它把 token 留在 `location.search` 一整個 session，而［分享］原本送出去的就是 `location.href`，等於按一下分享就把還能用的兌換碼一起送給對方（沒帶 `--uid` 的活動碼人人可兌，單次使用又只記在本機存檔裡）。省下的只是「玩家自己貼一次」，不值得。**同一批也把分享的網址改成 `location.origin + location.pathname`**：光拿掉自動帶入不夠——已經發出去的舊兌換連結還在，玩家從那種網址進來時 `?code=` 照樣躺在 `location.search` 裡，照送 `location.href` 就照樣外流。順帶擋掉 `?debug` 與平台補在分享連結上的 `?fbclid=`／`?utm_source=`（§2）被玩家再轉一手。**已經發出去的舊連結靜默失效**（點進去什麼都不會發生），所以兌換欄位收下整串網址：貼進來的字串一律切掉 `code=` 之前的部分——JWT 是 base64url，本身不可能含 `code=`，不會誤傷正常貼上的 token。玩家沒有別的線索知道該自己剪掉前綴。
 
 ## 10. 模組介面與事件流
@@ -378,7 +380,7 @@ export const bridge = {
 | wordfreq | 目標字常用度過濾（§5） | Apache-2.0（**不是 MIT**，程式與資料的授權另見其 NOTICE.md） | ✅ 僅建置期取字頻，頻率值不隨 app 散布 |
 | 系統 TTS | 發音（§6.2） | 作業系統內建 | ✅ 無授權問題 |
 
-**上架商用前唯一未結的一項：ECDICT 的權利鏈。** MIT 是 Linwei 授予的，但上游 README 自述資料是彙整而來（「在网上找到了一份别人提供的 EDictAZ.txt」、网友贡献词库、cdict-1.0-1.rpm），每一條詞條當初是否都有權被這樣授權無法從外部查證。WordNet 沒有這個疑慮（Princeton 自產）。真要處理，只需要動中文那半：500 關去重後的目標字只有 **1165 個**（不是 ECDICT 那幾十萬條），自產釋義或改用權利鏈清楚的來源都在數天工作量內，英文釋義本來就是輔助（§6.3），要斷就整項拿掉而不是重寫。**但現在不做**——目前的義務只有「散布一份 `assets/licenses.txt`」，成本已經是零，花數天換零成本的義務不划算。這是工程判斷不是法律意見，真的要上架商用時找懂的人看一眼。
+**上架商用前唯一未結的一項：ECDICT 的權利鏈。** MIT 是 Linwei 授予的，但上游 README 自述資料是彙整而來（「在网上找到了一份别人提供的 EDictAZ.txt」、网友贡献词库、cdict-1.0-1.rpm——**引號內維持上游原文的簡體**，這是權利鏈的佐證，轉成正體就對不回原始出處了），每一條詞條當初是否都有權被這樣授權無法從外部查證。WordNet 沒有這個疑慮（Princeton 自產）。真要處理，只需要動中文那半：500 關去重後的目標字只有 **1165 個**（不是 ECDICT 那幾十萬條），自產釋義或改用權利鏈清楚的來源都在數天工作量內，英文釋義本來就是輔助（§6.3），要斷就整項拿掉而不是重寫。**但現在不做**——目前的義務只有「散布一份 `assets/licenses.txt`」，成本已經是零，花數天換零成本的義務不划算。這是工程判斷不是法律意見，真的要上架商用時找懂的人看一眼。
 
 ## 15. 開發階段規劃
 
@@ -396,7 +398,7 @@ export const bridge = {
 1. `manifest.webmanifest`：主畫面圖示、`display: standalone`（拿掉網址列，固定版面才不必跟它搶高度）、`orientation: portrait`（直式鎖定）。但這條**只有 Android 認**——WebKit 沒有實作 manifest 的 `orientation`（螢幕方向鎖本身就不支援），iOS 還是得靠既有的「請轉直畫面」遮罩，別把它當跨平台保證。
 2. `sw.js`：離線可開 + 二次載入加速，策略見 §2。
 3. iOS 的 standalone 還要 `apple-mobile-web-app-capable` ＋ `apple-mobile-web-app-status-bar-style: black-translucent` 兩個私有 meta：前者舊版 iOS 才認得 `display: standalone`，少了後者則是預設的不透明淺色狀態列壓在深色底上，而且那個模式下 `safe-area-inset-top` 是 0、CSS 補不回來。`black-translucent` 讓內容延伸到狀態列底下，正好接上既有的 `viewport-fit=cover` ＋ safe-area padding。
-4. iOS 沒有 `beforeinstallprompt`，做不出「安裝」按鈕，只能靠文字教學「分享 → 加到主畫面」——這是 PWA 相對 App 最大的流失點，不要期待能靠程式解決。
+4. iOS 沒有 `beforeinstallprompt`，做不出「安裝」按鈕，只能靠文字教學「分享 → 加到主畫面」——這是 PWA 相對 App 最大的流失點，不要期待能靠程式解決。**「在設定卡放安裝引導」做過又拿掉了**（2026-07-27，程式碼別再寫回來）：Chrome 系攔 `beforeinstallprompt` 換一顆真按鈕、iOS 出文字步驟，二十幾行、能動、也符合上一句的結論——但擺在設定卡裡就是**淨虧**。攔那個事件必須 `preventDefault()`（否則 Chrome 自己那條橫幅照跳，兩套提示疊在一起），等於**壓掉瀏覽器本來就會做的招攬**，換成一顆沒人會打開的面板裡的按鈕；iOS 那半同理，Safari 的分享選單本來就有「加入主畫面」，我們只是幫它取了個名字。三個先決問題都答不出來：沒有後端與分析，**安裝率零可觀測**，做了也驗不了；最需要 standalone 的那群人（從 Line／FB／IG 進來、被 §4 的下滑誤觸關閉咬到的）在內嵌 WebView 裡**根本沒有**「加入主畫面」這個選項、`beforeinstallprompt` 也不會來，得先「以 Safari 開啟」才談得上安裝；而第一次進站的人沒有理由安裝，還沒喜歡上就被要求裝到主畫面是 PWA 最經典的負收益動作。要重做的前提是先有其一：能量到安裝率、或先解掉內嵌 WebView 那一段（提示「以 Safari 開啟」修的才是已回報的真痛點）。真要放，位置會是**開場閘門(I)**（每次載入必經、已在最上層、不跟「一次只開一層」打架）並且只對回訪玩家出（`firstOpenAt`／`currentLevel` 都是存檔現成欄位），不是設定卡、也不是首次進場的浮層。
 5. standalone 沒有返回鍵，關於區的外部連結（GitHub、`assets/licenses.txt`）一律 `target="_blank"`，否則玩家會被困在頁面裡回不來。
 6. 這兩個檔案在**根目錄**，而 `deploy.yml` 是逐項 `cp` 的白名單——沒加進去就整套 PWA 在正式站不存在，而且完全無聲：`sw.js` 404、`register()` 的 `.catch()` 吞掉錯誤、本機 `mise run serve` 一切正常。因為無聲，這條靠 `tests/game.test.mjs` 對著 `SHELL` 驗證 `cp` 清單，不靠人記得。
 
@@ -425,6 +427,9 @@ export const bridge = {
 - ❌ Bonus 字釋義、多義項/詞性/例句、發音腔調選擇（美式/英式）—— 目標字的單一短釋義 + 系統預設 TTS 就夠，見 §6。
 - ❌ 音效 —— 做過兩版（`<audio>` 元素、Web Audio），都在 iOS 的音訊 session 行為上翻車，完整量測見 §13。唯一的聽覺回饋是答對時的 TTS 發音；無效字、bonus、過關都已經有視覺回饋。想加回來之前先讀 §13，不要重走。
 - ❌ 線上字典 / 發音 API —— 破壞離線可玩的硬需求，Web Speech API + 本地打包的 WordNet 釋義已經足夠（§6.2、§6.3）。
+- ❌ 好友邀請碼 —— 2026-07-21 定案不做，**別再繞回來**。瀏覽器**沒有任何裝置唯一 ID 的 API**（那是刻意的反追蹤設計），開一個無痕視窗就能零門檻生出一組合法 `uid` 自己邀自己，§9 的校驗碼擋不住；改用指紋分桶擋「同一台機器」則會誤擋同型號手機的真朋友，作弊者轉個螢幕方向就繞過——最糟的組合。但真正的否決理由與作弊無關：**離線環境下邀請人永遠不會知道對方用了他的碼**，拿不到任何回報就沒有人會去邀，剩下的只是「新手貼一串碼領金幣」，那是藏起來的新手禮包、不是推薦機制。真要辦推薦活動有零程式碼的做法：玩家從設定卡複製自己的編號 → 人工收兩人的編號 → 各簽一張 `--uid` 專屬碼發回去（作弊由人審，獎勵可以大方給）。自動化版本等 Phase 2 的 Capacitor `Device.getId()`（§15），那才是真的每台不同、無痕視窗不存在。
+- ⏸ 匯出/匯入存檔 —— 2026-07-22 暫緩至 Phase 2（暫緩不是取消）。Phase 1 純單機，玩家本來就能直接改 localStorage，匯入的邊際價值低，而坑不小，動工前先認這三筆帳：(1) `normalizeSave` 的語意是「壞資料 → 重置成新檔」不是「拒絕」，直接拿它擋匯入會**靜默清空玩家進度還回報成功**（選錯檔案只要是合法 JSON，例如 `{}`，就會中），要做得先抽一個 `isValidSave()` 出來、不合法就不動現有存檔；(2) 整份存檔明文進出，玩家可自編 `coins` 匯回來——現在無所謂（單機遊戲本來就改得動），但 §15 的 Phase 3 一旦有 IAP，匯入就是**付費牆旁路**，屆時只有後端驗證／匯入不帶 `coins`／下架三選一；(3) 匯出檔活得比程式碼版本久，所以 §9 的 `version` **只能升不能棄**，升版必須同時寫遷移函式，不能改成「版本不符＝壞檔」，否則玩家磁碟上的舊匯出檔會整批變成廢檔。
+- ❌ App 內的「安裝到主畫面」引導 —— 做過一版又拿掉（2026-07-27），理由與重做的前提在 §15 Phase 1.5-4。一句話版：攔 `beforeinstallprompt` 必須 `preventDefault()`，等於壓掉瀏覽器自己的招攬去換一顆沒人打得開的按鈕，而安裝率我們量不到。
 
 ## 17. Phase 1 驗收清單
 
@@ -500,7 +505,7 @@ Phase 1.5（PWA，§15）補的幾條——同樣只能手測，而且**只有�
 
 ## 19. 開工前待決事項
 
-寫第一行程式前要拍板的事——都不影響架構，但影響資料與素材的準備方向：
+寫第一行程式前要拍板的事——都不影響架構，但影響資料與素材的準備方向。**四項都已拍板，本節保留為決策紀錄**：UI 繁中、名稱定為 Lexoria（§18）、色票見 UI 文件 §7、字頻用 wordfreq（§14）。唯一與當初推測不同的是第 1 項的括號——中文釋義最後有做，ECDICT 讓它不必自產（§6.3）。
 
 1. **UI 語言** —— 介面文案用英文還是繁中？WordNet 釋義只有英文；若定位是台灣市場「玩遊戲順便學英文」，繁中 UI + 英文釋義是合理組合（中文釋義要另找資料源，工程量大增，Phase 1 不建議）。文案總量很小（十幾條字串），集中成一個 `strings.js` 物件即可，之後換語言只改一個檔——但不要做 i18n 框架。繁中初稿已列在 UI 文件 §6。
 2. **名稱定案** —— 照 §18 做 App Store / Google Play / TIPO 查冊；名稱定了才能建 repo、買網域。
