@@ -48,7 +48,7 @@ src/
   strings.js        所有 UI 文案
   style.css         全站樣式
 tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發
-tests/              純邏輯單元測試 + data/levels/ 驗證器 + PWA 清單一致性檢查（sw.js SHELL／modulepreload、部署白名單）
+tests/              純邏輯單元測試（含 bridge.share 的三態決策表）+ data/levels/ 驗證器 + PWA 清單一致性檢查（sw.js SHELL／modulepreload、部署白名單）
 docs/               設計文件（單一事實來源，程式註解引用其章節如 §10）
 ```
 

@@ -119,6 +119,4 @@ console.log(
     `${boundUid ? `　專屬：${boundUid}` : ''}　jti：${jti}`
 );
 console.log(`\n${token}\n`);
-console.log(
-  `兌換連結：在遊戲網址後加 ?code=${encodeURIComponent(token).slice(0, 40)}…（完整 token）`
-);
+console.log('把整串 token 給玩家，貼進設定卡的兌換欄位即可（沒有兌換連結，見設計文件 §9）。');

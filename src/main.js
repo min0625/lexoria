@@ -606,7 +606,11 @@ function wireShare(btn, label, buildText) {
     try {
       const text = buildText();
       if (!text) return; // 關卡資料還在 fetch 中（boot 或換關）
-      const mode = await bridge.share(text, location.href);
+      // 分享的網址一律用乾淨的首頁，不是 location.href：進來時網址上帶什麼就會原封不動送出去
+      // ——平台補的 ?fbclid=／?utm_source=（sw.js 有註解，等於把別人的追蹤參數再傳一手）、?debug，
+      // 以及舊的 ?code= 兌換連結（設計文件 §9 拿掉了自動帶入，但網址還留在 location.search 一整個
+      // session，照送就等於把還能用的兌換碼分享出去——那正是 §9 要擋的那件事）。
+      const mode = await bridge.share(text, `${location.origin}${location.pathname}`);
       if (mode === 'copied') flash(strings.shareCopied);
       else if (mode === 'failed') flash(strings.shareFailed); // 剪貼簿與分享面板都不可用
     } catch {
@@ -657,7 +661,9 @@ function showRedeemMsg(text) {
   $('redeem-msg').hidden = false;
 }
 $('btn-redeem').addEventListener('click', async () => {
-  const token = $('redeem-input').value.trim();
+  // 舊的 `?code=…` 兌換連結（設計文件 §9 已移除）發出去的仍在玩家手上，點進來不會有任何反應，
+  // 他們只會把整串網址貼進來——切掉前綴當作收下。JWT 是 base64url，本身不可能含 `code=`。
+  const token = $('redeem-input').value.trim().split('code=').pop();
   if (!token) return;
   const result = await verifyCode(token, {
     redeemed: save.redeemedCodes,
@@ -726,12 +732,6 @@ $('gate').addEventListener('click', () => {
     return;
   }
   startLevel(save.currentLevel);
-  // 兌換連結（?code=…）：自動帶入兌換碼並打開設定卡，玩家只要按「兌換」
-  const code = new URLSearchParams(location.search).get('code');
-  if (code) {
-    $('redeem-input').value = code;
-    $('btn-settings').click();
-  }
 })();
 
 // PWA：service worker 只負責離線可開與二次載入加速，遊戲邏輯完全不知道它存在（sw.js 有策略說明）。
