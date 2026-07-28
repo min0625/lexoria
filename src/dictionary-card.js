@@ -12,10 +12,15 @@ function refreshVoices() {
 }
 // 除錯 log（見 main.js 的 dbg()），非正式功能。掛成模組層級，讓喇叭鈕跟答對自動發音
 // 兩條路徑都寫進同一份 log —— 少了「成功那條長什麼樣」的對照組，就無法判讀失敗那條。
-let log = () => {};
+// 收的是 thunk 而不是組好的字串，而且沒開 ?debug 時 sink 是 null（main.js 只在 DEBUG 才接上）：
+// 下面兩則診斷要讀 getVoices()／speaking／pending／paused，那些在 iOS 上是進 TTS daemon 的
+// 同步呼叫，而 speak() 就跑在答對字的熱路徑上。傳字串的話引數會先求值再丟給 noop——每答對
+// 一個字都白付兩次，連 main.js 那句量 `speak() sync` 的 dbg 都在量這筆自己造出來的成本。
+let sink = null;
 export function setSpeechDebug(fn) {
-  log = fn;
+  sink = fn;
 }
+const log = (make) => sink?.(make());
 
 // 引擎是否已經真的念出過一句（見下方 unlock 的說明）
 let unlocked = false;
@@ -46,11 +51,11 @@ if ('speechSynthesis' in globalThis) {
     u.volume = 0;
     u.onstart = () => {
       unlocked = true;
-      log('unlock onstart');
+      log(() => 'unlock onstart');
     };
     // onend 也記：診斷音效問題時靠這對時間戳才確認 TTS 唸的期間不會卡住轉盤（設計文件 §13）。
-    u.onend = () => log('unlock onend');
-    u.onerror = (e) => log(`unlock onerror: ${e.error}`);
+    u.onend = () => log(() => 'unlock onend');
+    u.onerror = (e) => log(() => `unlock onerror: ${e.error}`);
     speechSynthesis.speak(u);
   };
   document.addEventListener('pointerdown', unlock, { capture: true });
@@ -64,7 +69,8 @@ if ('speechSynthesis' in globalThis) {
 // src 標記是哪條路徑（wheel=答對自動念、btn=喇叭鈕），用來比對兩者 log 差異
 export function speak(word, src = '?') {
   log(
-    `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in globalThis ? speechSynthesis.getVoices().length : 'n/a'}`
+    () =>
+      `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in globalThis ? speechSynthesis.getVoices().length : 'n/a'}`
   );
   if (!hasEnglishVoice) return false;
   speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
@@ -73,16 +79,17 @@ export function speak(word, src = '?') {
   u.lang = 'en-US';
   u.onstart = () => {
     unlocked = true;
-    log(`speak(${word}) [${src}] onstart`);
+    log(() => `speak(${word}) [${src}] onstart`);
   };
-  u.onend = () => log(`speak(${word}) [${src}] onend`);
-  u.onerror = (e) => log(`speak(${word}) [${src}] onerror: ${e.error}`);
+  u.onend = () => log(() => `speak(${word}) [${src}] onend`);
+  u.onerror = (e) => log(() => `speak(${word}) [${src}] onerror: ${e.error}`);
   // 曾經延後一拍呼叫（setTimeout 0ms）來閃避 Chrome cancel() 非同步造成的丟句問題，
   // 但實測 iOS Safari 需要 speak() 跟觸發手勢同一個 tick 呼叫，延後一拍會讓語音引擎
   // 整個不出聲、不觸發 onstart 也不觸發 onerror（症狀：答對字完全沒有發音）。
   // resume() 防引擎卡在 paused（分頁背景化後會發生）
   log(
-    `speak(${word}) [${src}] about to speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
+    () =>
+      `speak(${word}) [${src}] about to speak(), speaking=${speechSynthesis.speaking} pending=${speechSynthesis.pending} paused=${speechSynthesis.paused}`
   );
   speechSynthesis.resume();
   speechSynthesis.speak(u);

@@ -153,7 +153,9 @@ let currentLevelId = save.currentLevel;
 let replay = false; // 重玩已完成關卡：不存 levelState、過關不給金幣（UI 文件 §3）
 
 const dictCard = createDictionaryCard($('dict-card'));
-setSpeechDebug(dbg);
+// 只有 ?debug 才接上：dbg 自己雖然會先 return，但接上去就代表 dictionary-card 那邊的 sink 非空，
+// 它的診斷 thunk 照樣會被叫起來讀 getVoices()／speaking（理由見該檔 log 的註解）。
+if (DEBUG) setSpeechDebug(dbg);
 
 // ---- 沒有音效，只有 TTS 發音（設計文件 §13、§16）----
 // 這裡曾經有一整層音效系統，兩種實作都試過、都在 iOS 上輸給同一件事：音訊 session 的行為。
@@ -604,23 +606,44 @@ function onCellTap(words, cellEl) {
 }
 
 // ---- 關卡選擇（UI 文件 §3）----
+// 一顆委派監聽器取代「每顆按鈕各掛一個 closure，只為了記住自己的 id」——500 關就是 500 個。
+// 掛在模組層而不是 renderLevelList 裡：重畫時清空的是子節點，這顆不受影響，也不會愈疊愈多。
+// 鎖住的關卡是 disabled，本來就不發 click，不必在這裡再判一次。
+$('level-list').addEventListener('click', (e) => {
+  const b = e.target.closest('.level-btn');
+  if (b) startLevel(Number(b.dataset.id));
+});
+
+// 畫面內容只由 currentLevel（勾／播放／鎖的分界）與 levelCount（總數）決定，兩者沒變就不用重畫。
+// 值得記這一筆是因為重畫不便宜：500 顆按鈕的建立，加上 showLevels 緊接著的 scrollIntoView 會
+// 逼一次 500 元素 grid 的完整版面計算——這是全 App 唯一一段玩家看得到停頓的同步工作，而且
+// 每次點頂列關卡號都會再來一遍。levelCount 也進 key：boot 還沒回來時它是 0，只記 currentLevel
+// 的話那次空清單會被當成畫好了，關卡數到齊後永遠不再重畫。
+let renderedKey = '';
 function renderLevelList() {
-  const list = $('level-list');
-  list.innerHTML = '';
+  const key = `${save.currentLevel}/${levelCount}`;
+  if (renderedKey === key) return;
+  renderedKey = key;
+  // 先組進 fragment、最後一次換上：逐顆 appendChild 會讓每一顆都可能觸發版面失效。
+  // 圖示用 createElement 而不是 innerHTML：後者等於叫 HTML parser 跑 500 趟解析同樣的一行標記。
+  const frag = document.createDocumentFragment();
   for (let id = 1; id <= levelCount; id++) {
     const b = document.createElement('button');
     b.className = 'level-btn';
-    if (id < save.currentLevel) b.innerHTML = `<span class="icon icon-check"></span>${id}`;
+    b.dataset.id = id;
+    const icon = document.createElement('span');
+    if (id < save.currentLevel) icon.className = 'icon icon-check';
     else if (id === save.currentLevel) {
-      b.innerHTML = `<span class="icon icon-play"></span>${id}`;
+      icon.className = 'icon icon-play';
       b.classList.add('current');
     } else {
-      b.innerHTML = `<span class="icon icon-lock"></span>${id}`;
+      icon.className = 'icon icon-lock';
       b.disabled = true;
     }
-    b.addEventListener('click', () => startLevel(id));
-    list.appendChild(b);
+    b.append(icon, String(id));
+    frag.appendChild(b);
   }
+  $('level-list').replaceChildren(frag);
 }
 
 function showLevels() {

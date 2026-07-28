@@ -509,6 +509,27 @@ button {
   align-content: start;
 }
 .level-btn {
+  /* 500 顆按鈕裡同時看得到的只有十幾顆，其餘的版面與繪製（每顆各一層 .icon 的 mask）純屬白算。
+     省的是「每次開關卡選擇」都要付的那筆：screen 從 display:none 翻回來時 500 顆全部重新算，
+     main.js 的記憶化擋得掉重建 DOM，擋不掉這一次——實測同一台機器 7.3ms → 2.8ms。
+     寬度**一定要 none**，不能填實測的 80−2(border)=78：被略過的元素會進 size containment，
+     那個寬度就變成它的 min-content 貢獻，而欄是 1fr＝minmax(auto, 1fr)，等於幫每一欄設下
+     80px 下限——5×80 + 4×12(gap) + 2×16(padding) = 470px，比 .screen 的 480px 上限窄的
+     每一支手機（390／375／360…）都撐不下，關卡格會橫向溢出、右欄被切掉。寬度交給 grid 決定。
+     高度才是這裡真正要給的：捲動長度與 scrollIntoView 的落點都靠它。18 是**內容框**
+     ＝48(整顆) − 28(padding) − 2(border)，而 48 只有在行高被釘住時才成立——normal 行高隨字型
+     而異（ui-rounded／Segoe UI Rounded／system-ui 各一個值），所以 line-height 寫死 1.125
+     （16px × 1.125 = 18px）。差 1px × 100 列就是捲軸與「捲到目前關卡」差 100px。
+     用比例不用 px：玩家把系統字級調大時整顆要跟著長高，min-height 只保底不封頂。
+     前面的 auto ＝渲染過一次就記住真實尺寸，估值只在首次掠過時用到。改 padding／border／
+     line-height 時三個數字要一起維護。
+     min-height 是保命索，不是排版：content-visibility 與 contain-intrinsic-size 是兩條獨立
+     宣告，不會一起被忽略——只認得前者的瀏覽器（Chrome 111 以前不吃 contain-intrinsic-size
+     的 auto 前綴）會把被略過的按鈕算成 0 高，整份清單塌掉。順便也是 48px 觸控目標下限。 */
+  content-visibility: auto;
+  contain-intrinsic-size: none auto 18px;
+  min-height: 48px;
+  line-height: 1.125;
   font-family: var(--font-display);
   font-variant-numeric: tabular-nums;
   display: flex;
