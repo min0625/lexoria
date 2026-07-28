@@ -1,4 +1,5 @@
 // 查詞卡片（設計文件 §6）：釋義 + 喇叭發音。只有已找到的字能查（由呼叫端把關）。
+import { strings } from './strings.js';
 
 // 無英文語音就隱藏喇叭鈕（§6.2）；getVoices 可能先回空陣列，要等 voiceschanged。
 let hasEnglishVoice = false;
@@ -108,7 +109,7 @@ export function createDictionaryCard(cardEl) {
       const btn = document.createElement('button');
       btn.className = 'speak-btn';
       btn.innerHTML = '<span class="icon icon-speaker"></span>';
-      btn.setAttribute('aria-label', `pronounce ${word}`);
+      btn.setAttribute('aria-label', strings.speakLabel(word));
       btn.addEventListener('click', () => speak(word, 'btn'));
       cardEl.appendChild(btn);
     }
@@ -125,6 +126,11 @@ export function createDictionaryCard(cardEl) {
     p.textContent = entry?.def ?? '';
     cardEl.appendChild(p);
 
+    // 節點要掛進當下那張 aria-modal 的 dialog 裡面，不能留在 body 上：aria-modal="true" 會讓
+    // 輔助技術把 dialog 以外的一切藏起來，而過關卡片的單字鈕正是這張卡最主要的入口（UI 文件 §4-C）
+    // ——留在外面的話讀螢幕的人點得下去、卻永遠滑不到剛彈出來的釋義與喇叭鈕。
+    // position: fixed 不吃 DOM 位置，版面與下面的定位計算都不受影響；沒有 modal 就掛回 body。
+    (anchorEl.closest('[aria-modal="true"]') ?? document.body).appendChild(cardEl);
     // 貼著被點的格子彈出（螢幕邊緣往內夾）
     cardEl.hidden = false;
     const a = anchorEl.getBoundingClientRect();

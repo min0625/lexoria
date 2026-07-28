@@ -10,6 +10,9 @@ const shareHead = (n, bonus) =>
 export const strings = {
   levelTitle: (n) => `第 ${n} 關`,
   alreadyFound: '已找到',
+  // 只給 #status 播報用：#preview 上無效字是「單字本身 + 抖動」，抖動是純視覺的，
+  // 光把單字丟進 live region 等於只唸出剛拼的字，聽不出來被判無效（答對時聽到的也是同一個字）
+  notAWord: (w) => `${w} 不是單字`,
   levelClear: '過關！',
   nextLevel: '下一關',
   bonusFound: (n) => `額外單字 +${n}`,
@@ -45,6 +48,10 @@ export const strings = {
   download: '下載圖片',
   tapWordHint: '點單字查看解釋', // 過關卡片單字列(§4-C)與教學第二段(§4-F)共用同一條（UI 文件）
   cellDictLabel: (w) => `查看 ${w} 的解釋`, // 已找到的格子的 aria-label：只有 role 會跟轉盤字母鈕同音
+  // 以下兩句只給輔助技術聽，畫面上看不到（圖示鈕沒有可見文字）。放這裡是因為它們也是 UI 文案：
+  // 其餘標籤全是繁中，寫死英文的話讀螢幕的人會聽到中英夾雜。
+  shuffleLabel: '洗牌',
+  speakLabel: (w) => `唸出 ${w}`,
   playerId: '玩家編號',
   copied: '已複製',
   copyFailed: '無法複製，請手動抄下',

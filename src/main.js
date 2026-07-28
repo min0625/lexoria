@@ -12,6 +12,16 @@ import { createWheel } from './wheel.js';
 
 const $ = (id) => document.getElementById(id);
 
+// 播一次動畫 class，播完就拆掉：留著的話切到關卡選擇（screen 用 hidden → display:none）
+// 再切回來會讓 CSS 動畫整個重播，看起來像按鈕自己動了一下。
+// 先移除→強制回流→加回，否則同一個 class 還在時動畫不會重播。
+function playOnce(el, cls) {
+  el.classList.remove(cls);
+  void el.offsetWidth;
+  el.classList.add(cls);
+  el.addEventListener('animationend', () => el.classList.remove(cls), { once: true });
+}
+
 // ---- 除錯紀錄：網址帶 ?debug 才收集，設定裡多一顆「複製除錯紀錄」（非正式功能）----
 const DEBUG = new URLSearchParams(location.search).has('debug');
 const debugLog = [];
@@ -83,6 +93,9 @@ $('label-about').textContent = strings.about;
 $('label-uid').textContent = strings.playerId;
 $('btn-download').textContent = strings.download;
 $('redeem-input').placeholder = strings.redeemPlaceholder;
+// placeholder 不是可存取名稱：多數輔助技術只在欄位還空著時唸它，開始輸入後就沒有名字了，
+// 有些設定下根本不唸。旁邊的［兌換］鈕也標不了它——那顆是動作，不是這格的標籤。
+$('redeem-input').setAttribute('aria-label', strings.redeemPlaceholder);
 $('btn-redeem').textContent = strings.redeemAction;
 $('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 ECONOMY（設計文件 §8）
 
@@ -161,7 +174,7 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 // iOS 從別的 App 點連結會用內嵌 WebView（WKWebView）開，它帶了原生的「下拉關閉」手勢。
 // 那個手勢屬於外層 App，網頁 JS 無法完全停用；但多數內嵌瀏覽器是靠 WKWebView 內部
 // scrollView 在頂端往下 rubber-band 來觸發的。整頁本就是固定版面（html/body overflow: hidden），
-// 只有 .level-list 真的要捲動（style.css 裡唯一的 overflow-y: auto），於是其餘一律擋掉
+// 只有 .level-list 和 .card 真的要捲動（style.css 裡僅有的兩個 overflow-y: auto），於是其餘一律擋掉
 // touchmove，讓 scrollView 不 rubber-band → 大幅降低下滑誤觸關閉。關卡列表放行，捲到邊界
 // 交給它自己的 overscroll-behavior: none 不外溢。多指一起擋：兩指下滑照樣 rubber-band，
 // 而縮放本來就由 gesture*／viewport 擋掉了，這裡多擋不會多吃到任何手勢。
@@ -174,7 +187,7 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 document.addEventListener(
   'touchmove',
   (e) => {
-    if (!e.target.closest('.level-list, input')) e.preventDefault();
+    if (!e.target.closest('.level-list, .card, input')) e.preventDefault();
   },
   { passive: false }
 );
@@ -209,14 +222,21 @@ function showPreview(word) {
   el.className = 'preview';
   el.textContent = word;
 }
-function flashPreview(text, cls) {
+// #preview 是純視覺的（showPreview 逐字母重寫，掛 aria-live 會整段拖曳都在播報），
+// 所以結果訊息另外寫進看不見的 #status live region。900ms 後兩邊一起清空：不清的話，
+// 連續兩次同樣的訊息（例如連撞兩個「已找到」）文字沒變、輔助技術就不會再播第二次。
+// say 預設等於畫面上那句；只有無效字要分開——那則的「無效」全在抖動動畫裡，
+// 畫面上的字就是玩家剛拼的那個字，照抄進 live region 等於什麼都沒說（答對時聽到的也是同一個字）。
+function flashPreview(text, cls, say = text) {
   const el = $('preview');
   el.textContent = text;
   el.className = `preview ${cls}`;
+  $('status').textContent = say;
   clearTimeout(previewTimer);
   previewTimer = setTimeout(() => {
     el.textContent = '';
     el.className = 'preview';
+    $('status').textContent = '';
   }, 900);
 }
 
@@ -364,7 +384,8 @@ function onSubmit(word) {
       flashPreview(strings.alreadyFound, 'dup'); // 不重播動畫、不重複給金幣（§1）
       break;
     case 'invalid':
-      flashPreview(word, 'shake'); // 無效字的回饋純視覺——沒有音效了（§13）
+      // 無效字的畫面回饋純視覺——沒有音效了（§13）；播報那份要自己說出「不是單字」
+      flashPreview(word, 'shake', strings.notAWord(word));
       break;
   }
 }
@@ -389,6 +410,10 @@ function onWin() {
   hideTapHint();
   renderClearWords();
   $('overlay-clear').hidden = false;
+  // 焦點進卡片本身（tabindex="-1"），VoiceOver 才會唸出「過關！+10 金幣」——不然過關這件事
+  // 對讀螢幕的人是完全無聲的（畫面上的慶祝全是視覺）。不進［下一關］鈕：那樣只聽得到
+  // 「下一關，按鈕」，仍然不知道剛剛贏了。
+  $('overlay-clear').querySelector('.card').focus();
 }
 
 // 過關卡片列出本關全部目標字，點字可彈出查詞卡（不強制關閉，UI 文件 §4）
@@ -416,10 +441,7 @@ $('btn-hint').addEventListener('click', () => {
   const result = game.useHint(save.coins);
   if (!result.ok) {
     // 金幣不足 → 按鈕抖動並強調價格，不彈購買視窗
-    const btn = $('btn-hint');
-    btn.classList.remove('shake');
-    void btn.offsetWidth; // 重新觸發動畫
-    btn.classList.add('shake');
+    playOnce($('btn-hint'), 'shake');
     flashPreview(strings.noCoins, 'dup');
     return;
   }
@@ -452,13 +474,8 @@ function updateClaim() {
   if (ready) {
     btn.textContent = strings.claimReady(ECONOMY.claimCoins);
     btn.setAttribute('aria-label', strings.claimLabel); // 「+25」對螢幕閱讀器太隱晦，補上動作名
-    if (claimWasReady === false) {
-      // 從倒數翻成可領（守到歸零，或切回分頁時剛好過期）→ 彈跳登場。
-      // 移除→強制回流→加回，否則同一個 class 還在時動畫不會重播。
-      btn.classList.remove('pop');
-      void btn.offsetWidth;
-      btn.classList.add('pop');
-    }
+    // 從倒數翻成可領（守到歸零，或切回分頁時剛好過期）→ 彈跳登場
+    if (claimWasReady === false) playOnce(btn, 'pop');
   } else if (remainingMs <= CLAIM_FINAL_MS) {
     // 進入秒級的那一刻 remainingMs 幾乎剛好 60000（setTimeout 只會晚不會早），
     // ceil 會先閃一格「60 秒」——夾到 59，秒級倒數才真的從 59 開始
@@ -478,10 +495,7 @@ $('btn-claim').addEventListener('click', () => {
   const { ready, remainingMs } = claimStatus(save.lastClaimAt);
   if (!ready) {
     // 同提示鈕金幣不足的模式：抖動 + 說明訊息，讓倒數不會被誤讀成限時
-    const btn = $('btn-claim');
-    btn.classList.remove('shake');
-    void btn.offsetWidth;
-    btn.classList.add('shake');
+    playOnce($('btn-claim'), 'shake');
     if (remainingMs <= CLAIM_FINAL_MS) {
       flashPreview(strings.claimAlmost, 'good'); // 最後一分鐘：承認他在等，不再報時
     } else {
@@ -575,11 +589,21 @@ function flasher(btn, label, ms) {
 }
 
 // ---- 設定 overlay ----
+// 三條關閉路徑（點卡片外、右上角 ✕、Escape）共用這支，才不會有一條忘了把焦點還回去。
+function closeSettings() {
+  $('overlay-settings').hidden = true;
+  // 焦點交還給開卡的那顆齒輪：不還的話焦點落回 body，讀螢幕的人得從畫面最上面重新滑一次
+  // 才找得回自己剛才在哪裡。
+  $('btn-settings').focus();
+}
 $('btn-settings').addEventListener('click', () => {
   dictCard.hide(); // 同時只留一個互動 overlay（UI 文件 §4）
   $('opt-sound').checked = save.settings.sound;
   $('redeem-msg').hidden = true; // 上次的兌換結果不留到下次開卡
   $('overlay-settings').hidden = false;
+  // 同過關卡：焦點進卡片本身，VoiceOver 會唸出 aria-labelledby 指的「設定」標題。
+  // 不進第一顆按鈕，那樣只聽得到「關閉」，不知道自己開了什麼。
+  $('overlay-settings').querySelector('.card').focus();
 });
 // 玩家編號：一輩子不變，填一次就好；點一下複製。
 // 複製失敗（非 secure context 沒有 clipboard）也要出文案——按鈕按下去毫無反應使用者不知道
@@ -596,7 +620,17 @@ $('opt-sound').addEventListener('change', (e) => {
   persist(save);
 });
 $('overlay-settings').addEventListener('click', (e) => {
-  if (e.target === e.currentTarget) $('overlay-settings').hidden = true; // 點卡片外關閉
+  if (e.target === e.currentTarget) closeSettings(); // 點卡片外關閉
+});
+$('btn-settings-close').addEventListener('click', closeSettings);
+// Escape：桌面鍵盤的退出鍵，跟轉盤的鍵盤輸入（wheel.js）一樣只服務開發迭代，不是玩家的出口
+// ——玩家的出口是 ✕ 與點卡片外。由上往下關一層：查詞卡(z 35) 疊在 overlay(30) 之上，
+// 兩張都開著時（過關卡片 + 點單字彈出的查詞卡，UI 文件 §4 允許）先關上面那張。
+// 過關卡片刻意不接：那是單向流程，跟「點卡片外不關閉」同一條規則（§4-C）。
+addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  if (!$('dict-card').hidden) dictCard.hide();
+  else if (!$('overlay-settings').hidden) closeSettings();
 });
 // 分享進度：Wordle 式純文字（emoji 格盤 + 關卡數），內容是目前畫面這一關——重玩舊關時誠實。
 // 三顆按鈕共用這套流程，差別全在 buildText：過關報戰績、設定邀人玩、全破報總關數。

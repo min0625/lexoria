@@ -1,5 +1,6 @@
 // 字母轉盤 + 手勢（設計文件 §4）。
 // 命中與選取邏輯是純函式（hitIndex / applyHit），與 DOM 分離以便單元測試（§12）。
+import { strings } from './strings.js';
 
 const LETTER_KEY = /^[a-zA-Z]$/;
 
@@ -73,8 +74,12 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   svg.appendChild(line);
   container.appendChild(svg);
 
+  // 字母是 <div> 而不是 <button>：命中判斷走座標（hitIndex），這些節點是 pointer-events: none，
+  // 從來收不到自己的 click——掛成 button 只會讓 VoiceOver 唸出「A，按鈕」再雙點一下毫無反應，
+  // 而且它們會全部排進 Tab 順序。用 div 仍然唸得出字母（玩家聽得到這關有哪些字母，資訊沒有少），
+  // 只是不再假裝可以按。CSS 全靠 .wheel-letter 這個 class，不吃 button 的預設樣式，換元素無感。
   const buttons = letters.map((letter, i) => {
-    const b = document.createElement('button');
+    const b = document.createElement('div');
     b.className = 'wheel-letter';
     b.textContent = letter;
     b.dataset.index = i;
@@ -85,7 +90,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
   const shuffleBtn = document.createElement('button');
   shuffleBtn.className = 'wheel-shuffle';
   shuffleBtn.innerHTML = '<span class="icon icon-shuffle"></span>';
-  shuffleBtn.setAttribute('aria-label', 'shuffle');
+  shuffleBtn.setAttribute('aria-label', strings.shuffleLabel);
   container.appendChild(shuffleBtn);
 
   // 盤面唯一的洗牌狀態:排列編號 k。按鈕 i 的圓周位置 = permutationAt(k)[i],

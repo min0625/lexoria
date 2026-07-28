@@ -48,8 +48,9 @@ export function createGrid(container, level, { onCellTap, isFound }) {
   // 補滿的格子點了不會有反應，給它按鈕語意（VoiceOver 唸成 button）與按壓回饋只會變成
   // 「按下去有縮放、卻什麼都沒發生」。role 同時是 CSS(.cell[role]:active) 與 VoiceOver 的依據，
   // 不另外再加一個 class。
-  // aria-label 是必要的、不是加分項：只有 role 的話 VoiceOver 唸出來是「A，按鈕」，跟轉盤的
-  // 字母鈕一字不差，聽的人分不出這顆是查解釋還是拼字母。名稱取「已找到的第一個字」而不是格子上的
+  // aria-label 是必要的、不是加分項：只有 role 的話 VoiceOver 唸出來是「A，按鈕」——除了字母本身
+  // 什麼都沒說，按下去會發生什麼完全聽不出來，而轉盤上同一個字母唸的是「A」（那邊是 div，不帶
+  // button 語意），兩者只差一個「按鈕」，分不出這顆是查解釋還是拼字母。名稱取「已找到的第一個字」而不是格子上的
   // 字母，才不依賴 update() 有沒有先寫進 textContent（createGrid 就叫得動），取法同 onCellTap。
   // 不給 tabindex／鍵盤：整場沒有鍵盤玩法（轉盤是拖曳手勢），VoiceOver 觸控巡覽不靠 tabindex
   // 也到得了；要補就得整個格盤做 roving tabindex，那是另一件事。

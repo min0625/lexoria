@@ -78,6 +78,7 @@ button {
   --i-shuffle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 3 21 3 21 8'/%3E%3Cline x1='4' y1='20' x2='21' y2='3'/%3E%3Cpolyline points='21 16 21 21 16 21'/%3E%3Cline x1='15' y1='15' x2='21' y2='21'/%3E%3Cline x1='4' y1='4' x2='9' y2='9'/%3E%3C/svg%3E");
   --i-speaker: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3C/svg%3E");
   --i-back: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='19' y1='12' x2='5' y2='12'/%3E%3Cpolyline points='12 19 5 12 12 5'/%3E%3C/svg%3E");
+  --i-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
   --i-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
   --i-lock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
   --i-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 4v16l13-8z'/%3E%3C/svg%3E");
@@ -116,6 +117,9 @@ button {
 }
 .icon-check {
   --i: var(--i-check);
+}
+.icon-close {
+  --i: var(--i-close);
 }
 .icon-lock {
   --i: var(--i-lock);
@@ -336,13 +340,21 @@ button {
   padding: 8px 0 24px;
 }
 .hint-btn {
-  /* 用 right（而非 left）定位，讓按鈕左緣交給內容自然撐開——不必猜按鈕寬度，
-     轉盤變大/變小時兩者永遠不會疊到；second min() 分支保底螢幕邊界最少 4px
-     （52px 是目前按鈕實際寬度，本專案無 i18n，內容固定不會變寬，設計文件 §4）*/
+  /* 轉盤的左下角。兩個軸各有各的理由，要動請兩邊一起想：
+     — 垂直靠轉盤下緣，不是正左方的水平中線：圓內接於矩形，剩下的空白全集中在四個角，而水平
+       中線正是圓最寬、整個版面唯一沒有餘裕的那條線（正左方那版在 390px 上離螢幕邊與轉盤各
+       只剩 4px／2.5px，320px 還會壓到圓周）。移到下緣這一帶圓半寬掉成 √(R²−d²)，橫向就有
+       空間了（UI 文件 §2）。空間不必挪，本來就在角落沒人用。
+     — 水平仍跟著轉盤走，不貼螢幕邊：轉盤 330px 封頂，桌機上版面再寬它也不會變大，貼螢幕邊
+       會讓按鈕離轉盤好幾百 px、看起來不屬於轉盤。用 right（而非 left）定位，按鈕左緣交給
+       內容自然撐開、不必猜寬度；second min() 分支保底離螢幕邊最少 4px（52px 是目前按鈕實際
+       寬度，本專案無 i18n，內容固定不會變寬，設計文件 §4）。
+     對齊的是轉盤外框左緣而不是圓周切點：按鈕底緣與轉盤底緣齊平，最近點是它的右上角，要真的
+     貼著圓弧得算 √(124R−3844)——那跟按鈕高度綁死，換個常數逼近就會在某個螢幕尺寸失手。
+     代價是桌機上最近點離圓弧約 36px（轉盤 330px 封頂時），手機上圓弧本來就在旁邊，看不出差別。 */
   position: absolute;
   right: min(calc(50% + var(--wheel-d) / 2 + 8px), calc(100% - 56px));
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 24px; /* 對齊轉盤下緣：絕對定位以 padding box 為準，這裡等於 .wheel-row 的 padding-bottom */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -356,24 +368,7 @@ button {
   transition: transform 0.12s ease;
 }
 .hint-btn:active {
-  transform: translateY(-50%) scale(0.94);
-}
-.hint-btn.shake {
-  /* .hint-btn 靠 translateY(-50%) 垂直置中，共用的 .shake 只設 translateX 會蓋掉它，
-     導致抖動時整顆按鈕往下掉半個身位，所以這裡疊加專屬 keyframes 保留置中位移 */
-  animation: hint-shake 0.35s;
-}
-@keyframes hint-shake {
-  0%,
-  100% {
-    transform: translateY(-50%) translateX(0);
-  }
-  25% {
-    transform: translateY(-50%) translateX(-6px);
-  }
-  75% {
-    transform: translateY(-50%) translateX(6px);
-  }
+  transform: scale(0.94);
 }
 .hint-btn small {
   font-family: var(--font-display);
@@ -578,18 +573,40 @@ button {
   display: none;
 }
 .card {
+  position: relative; /* 關閉鈕的定位基準 */
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 20px;
   padding: 26px 30px;
   min-width: 244px;
   max-width: min(92vw, 360px);
+  /* 卡片高過畫面時要自己捲，不能讓 overlay 的 align-items:center 把它上下裁掉：
+     裁掉的同時遮罩也被推出畫面，只剩兩側各 4vw 的縫可以點，「點卡片外關閉」等於失效。
+     展開設定卡的「關於」（六行授權文字）在小螢幕上就會這樣。用 % 而不是 vh——遮罩是
+     position:fixed inset:0，高度已經是定值，vh 在 iOS 反而會跟著網址列收合對不上。 */
+  max-height: 88%;
+  overflow-y: auto;
+  overscroll-behavior: none; /* 同 .level-list：捲到邊界不外溢到 WebView scrollView（設計文件 §4）*/
   display: flex;
   flex-direction: column;
   gap: 16px;
   text-align: center;
   box-shadow: var(--shadow-lg);
   animation: card-in 0.22s ease-out;
+}
+/* 右上角關閉鈕：脫離流排，不佔標題那一行的位置。捲動時會跟著內容捲走，
+   但那時遮罩已經點得到了（上面 max-height），VoiceOver 也照樣走得到這顆。 */
+.card-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 10px; /* 圖示 20px + 內距，湊滿 40px 觸控範圍 */
+  line-height: 0;
+  color: var(--text-soft);
+  transition: transform 0.12s ease;
+}
+.card-close:active {
+  transform: scale(0.9);
 }
 @keyframes card-in {
   from {
@@ -805,6 +822,18 @@ body:has(.overlay:not([hidden])) #tap-hint {
   transform: scale(0.88);
 }
 
+/* 只給輔助技術聽、畫面上看不見（#status 的結果訊息播報）。
+   不能用 display: none／visibility: hidden／width: 0——那些會把節點一起移出無障礙樹，
+   live region 就永遠不播了。夾成 1px 再 clip 掉是唯一還留在樹裡的做法。 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* 橫式遮罩：蓋過其他一切 */
 .rotate-mask {
   position: fixed;
@@ -818,33 +847,33 @@ body:has(.overlay:not([hidden])) #tap-hint {
   font-size: 1.3rem;
   font-weight: 800;
 }
-@media (orientation: landscape) and (max-height: 500px) {
+/* pointer: coarse 不是保險條款，是必要條件：桌機把視窗拉矮（或筆電開半螢幕）就同時滿足
+   landscape 與 max-height: 500px，整個遊戲會被「請轉直畫面」蓋掉——而桌機使用者轉不了。
+   coarse 讀的是**主要**輸入裝置，所以帶觸控螢幕的筆電（主要輸入仍是觸控板）不會誤中；
+   平板橫著拿仍然會中，那正是要蓋的情況。 */
+@media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
   .rotate-mask {
     display: flex;
   }
 }
 
-/* prefers-reduced-motion：跳過動畫與過場，直接顯示結果（設計文件 §7）*/
+/* prefers-reduced-motion：跳過動畫與過場，直接顯示結果（設計文件 §7）。
+   這裡曾經是兩份逐一列出的選擇器名單，改成全域規則有兩個理由，別改回去：
+   1. `animation: none` 的元素**不會發 animationend**，而 grid.js（格子的 .pop）與 main.js
+      的 playOnce（.pop／.shake）都是靠那個事件把 class 拆掉的——名單版等於讓那些 class 永久殘留。
+      `0.01ms` 一樣看不見，但動畫確實跑完、事件照常送到，兩邊的清理程式碼不必為這個模式分岔。
+   2. 名單要靠人記得維護：新增一個有 transition 的元件就得回來補一筆，漏了不會有任何報錯，
+      而漏掉的代價正好落在最需要它的人身上。
+   iteration-count 要一起夾成 1，否則 .gate-hint／.loading-text 的 infinite pulse 會用
+   0.01ms 的週期狂跑。 */
 @media (prefers-reduced-motion: reduce) {
-  .cell.pop,
-  #btn-claim.pop,
-  .preview.shake,
-  .shake,
-  .tutorial,
-  .card,
-  .loading-text,
-  .gate-hint {
-    animation: none;
+  /* biome-ignore-start lint/complexity/noImportantStyles: 通用選擇器的特異性是 0，不加 !important 就會輸給每一條元件規則——而那些正是它要蓋掉的東西 */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  .chip,
-  .hint-btn,
-  .level-btn,
-  .btn-primary,
-  .wheel-letter,
-  .wheel-shuffle,
-  .speak-btn,
-  .clear-word-chip,
-  .cell {
-    transition: none;
-  }
+  /* biome-ignore-end lint/complexity/noImportantStyles: 見上 */
 }
