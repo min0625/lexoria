@@ -15,11 +15,52 @@ const $ = (id) => document.getElementById(id);
 // 播一次動畫 class，播完就拆掉：留著的話切到關卡選擇（screen 用 hidden → display:none）
 // 再切回來會讓 CSS 動畫整個重播，看起來像按鈕自己動了一下。
 // 先移除→強制回流→加回，否則同一個 class 還在時動畫不會重播。
+const animating = new WeakMap(); // el → 上一次播放的 { cls, ac }（見下）
 function playOnce(el, cls) {
+  // 元素現在沒有 box（所屬 screen 是 hidden → display:none）→ 整個不播：加上 class 也不會啟動
+  // 動畫，animationend／animationcancel 都不會來，class 會殘留到下次切回畫面才莫名其妙播一次
+  // ——正是這支函式存在的理由。實際走得到：倒數在關卡選擇畫面歸零時的 #btn-claim.pop，
+  // 以及金幣在主畫面被蓋著時進帳的 #coin-count.bump（updateCoins 的註解只提到 #coin-count-b，
+  // 但兩顆藥丸各自都有輪到被 display:none 的時候）。
+  if (!el.getClientRects().length) return;
+  // 重播前先拆掉上一次的監聽：下面的 remove + 回流會讓還在播的那次發出 animationcancel。
+  // abort 只擋得掉舊 handler，擋不掉事件本身——事件是下一幀才送到、而且是送到「元素」上，
+  // 那時新的 handler 已經掛好，一樣會收到（下面 off 的第一行就是為這個而寫）。
+  // 拆之前要**自己把舊 class 卸掉**，而且記的是 class 不只是 controller：同一顆鈕會收到兩種
+  // 動畫（#btn-claim 冷卻中點擊播 shake、倒數歸零播 pop），只 abort 的話 .shake 就沒人拆了——
+  // pop 播完移除自己後 #btn-claim.pop 的高特異性一消失，.shake 規則接手讓按鈕再抖一次，
+  // 而且從此永久留著，每次從關卡選擇切回來都重播一次。
+  const prev = animating.get(el);
+  if (prev) {
+    el.classList.remove(prev.cls);
+    prev.ac.abort();
+  }
   el.classList.remove(cls);
   void el.offsetWidth;
   el.classList.add(cls);
-  el.addEventListener('animationend', () => el.classList.remove(cls), { once: true });
+  // animationcancel 也要收：動畫播到一半被切走（畫面 hidden → display:none）時來的是它、
+  // 不是 animationend，只聽後者等於把 class 留在原地，正是上面那段要避免的事。
+  // 兩顆共用一個 AbortController 而不是各自 { once: true }：先到的那顆拆掉另一顆，
+  // 否則沒觸發的那顆會一直掛著，每播一次動畫就多累積一個。
+  const ac = new AbortController();
+  animating.set(el, { cls, ac });
+  const off = (e) => {
+    // animationend／animationcancel 都會冒泡：子元素自己的動畫結束時會一路傳到這裡，
+    // 照拆等於把父層這次動畫在中途掐掉（而且靜靜地，畫面上只是「那下沒播」）。
+    if (e.target !== el) return;
+    // 重播時被取消的是**上一次**那個動畫，但它的 animationcancel 下一幀才送到元素上，
+    // 那時新的已經開始跑、handler 也換成這顆了——照拆等於新的沒播（連點提示鈕時第二下的
+    // 抖動整個不見，實測 Chromium 確認）。abort 擋不住：事件派送看的是當下掛著的監聽。
+    // 同名動畫還在跑 → 這則一定是舊的，跳過；真正該收的那種（畫面 hidden → display:none）
+    // 動畫已經沒了，判斷自然為 false。keyframes 一律與 class 同名（shake／pop／bump），
+    // 新增動畫 class 時要照這個規則命名，否則這道判斷會安靜地失效。
+    if (e.type === 'animationcancel' && el.getAnimations().some((a) => a.animationName === cls))
+      return;
+    el.classList.remove(cls);
+    ac.abort();
+  };
+  el.addEventListener('animationend', off, { signal: ac.signal });
+  el.addEventListener('animationcancel', off, { signal: ac.signal });
 }
 
 // ---- 除錯紀錄：網址帶 ?debug 才收集，設定裡多一顆「複製除錯紀錄」（非正式功能）----
@@ -98,6 +139,9 @@ $('redeem-input').placeholder = strings.redeemPlaceholder;
 $('redeem-input').setAttribute('aria-label', strings.redeemPlaceholder);
 $('btn-redeem').textContent = strings.redeemAction;
 $('hint-cost').textContent = `−${ECONOMY.hintCost}`; // 價格唯一來源是 ECONOMY（設計文件 §8）
+// aria-label 會蓋掉鈕上那個「−25」，所以價格要自己寫進去（理由見 strings.hintLabel）。
+// 在這裡設而不是寫死在 index.html：價格同樣只能有 ECONOMY 一個來源。
+$('btn-hint').setAttribute('aria-label', strings.hintLabel(ECONOMY.hintCost));
 
 // ---- 狀態 ----
 const save = loadSave();
@@ -208,10 +252,20 @@ function showScreen(name) {
   dictCard.hide();
 }
 
+let lastCoins = save.coins; // 上次刷新的金幣數，只為了分辨「變多」與「花掉」
 function updateCoins() {
   // 金幣圖示由 CSS（.chip.coin::before）畫，這裡只放數字
   $('coin-count').textContent = save.coins;
   $('coin-count-b').textContent = save.coins;
+  // 變多才彈一下（style.css .chip.bump）。實際看得到的只有 bonus 與領取這兩條：過關與兌換
+  // 進帳時，蓋滿畫面的 .overlay（半透明 + 模糊）已經在頂列上面了，而那兩張卡自己就寫著
+  // 「+10 金幣」「已兌換 N 金幣」——彈跳有資訊量的場合，剛好就是它看得見的場合，不用補救。
+  // 只播主畫面那顆：關卡選擇的 #coin-count-b 是 display:none，加了 class 也不會啟動動畫，
+  // animationend/cancel 都不會來，class 反而會殘留到下次切回來（同 playOnce 註解的坑）。
+  if (save.coins > lastCoins) playOnce($('coin-count'), 'bump');
+  lastCoins = save.coins;
+  // 買不買得起提示：先告知，不等按下去才用抖動說（style.css .hint-btn.poor）
+  $('btn-hint').classList.toggle('poor', save.coins < ECONOMY.hintCost);
 }
 
 // ---- 拼字串顯示區與提示訊息 ----
@@ -303,6 +357,13 @@ async function startLevel(id) {
   $('overlay-clear').hidden = true;
   $('overlay-tutorial').hidden = !(id === 1 && !save.settings.tutorialDone);
   showScreen('game');
+  // 重玩開場講一次「不給金幣」（UI 文件 §3）：不標的話，從關卡選擇回頭玩舊關的人要一路破完、
+  // 看到過關卡片上的同一句 replayNote 才知道。用 flashPreview 而不是在頂列常駐一個標記：
+  // 這是獎勵的事、不是關卡身分的事，而頂列是全畫面唯一會折行的一列（320px 上三位數關卡編號
+  // ＋冷卻中的「3:59」已經逼到極限），不該為只在破關那一刻才有後果的訊息花那個位置。
+  // 要在 showScreen 之後——#preview 所屬的 screen 還 hidden 時 900ms 就走完了，等於沒播。
+  // 代價：中途切走再回來的人看不到。可接受——是他自己從關卡選擇點進來的，而過關卡片會再說一次。
+  if (replay) flashPreview(strings.replayNote, 'dup');
   showTapHint(); // 要等 showScreen 之後才量得到版面；該不該出現由 showTapHint 自己判斷
   // 玩這關的期間先把下一關的檔案暖進瀏覽器快取，按「下一關」時 startLevel() 的 fetch 直接命中。
   if (id + 1 <= levelCount) prefetchLevel(id + 1);

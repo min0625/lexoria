@@ -9,6 +9,9 @@ const shareHead = (n, bonus) =>
 
 export const strings = {
   levelTitle: (n) => `第 ${n} 關`,
+  // 提示鈕的 aria-label：鈕上看得見的只有「−25」，而 aria-label 會整個蓋掉它——
+  // 不寫價格的話，讀螢幕的人按下去才發現扣了 25，而這是全遊戲唯一不可逆的花費。
+  hintLabel: (n) => `提示，花費 ${n} 金幣`,
   alreadyFound: '已找到',
   // 只給 #status 播報用：#preview 上無效字是「單字本身 + 抖動」，抖動是純視覺的，
   // 光把單字丟進 live region 等於只唸出剛拼的字，聽不出來被判無效（答對時聽到的也是同一個字）

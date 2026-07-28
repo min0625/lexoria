@@ -136,6 +136,18 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* 版面收成一欄居中（UI 文件 §2）：手機上 max-width 永遠不生效（視窗本來就更窄），
+     這條只為桌機／平板——不收邊的話關卡鈕貼最左、齒輪貼最右，中間空一大片，而轉盤
+     封頂 330px、格子封頂 56px，兩者都不會長大去填那片空白。分享出去的連結有相當比例
+     是在桌機點開的，那是第一印象。
+     480px 是轉盤直徑上限（330）＋兩側呼吸空間，不是猜的：再寬轉盤也不會變大。
+     代價：欄寬變成寬盤面（9 欄以上）的新瓶頸，桌機上格子會比以前小一點——換來的是
+     跟手機一致的版面，而手機才是主要平台。
+     .hint-btn 不受影響：它的 right 第一分支跟著轉盤走（50% + d/2 + 8px），在 W > d + 128px
+     ——轉盤封頂時即 458px——就已經贏過保底的 100% − 56px，1440px 與 480px 量到的間距同樣是
+     8px。收窄沒有把它拉近，只是讓那條保底分支離生效更遠。 */
+  max-width: 480px;
+  margin-inline: auto;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
     env(safe-area-inset-left);
 }
@@ -194,6 +206,15 @@ button {
 #btn-claim.pop {
   /* 倒數歸零翻成可領的瞬間：重用格子字母的登場動畫 */
   animation: pop 0.3s ease-out;
+}
+.chip.bump {
+  /* 金幣數字變大的瞬間彈一下（main.js updateCoins）。「+N」閃在畫面中央的 #preview，
+     金幣數字卻在最上角——整個畫面上距離最遠的兩點，不動一下沒有人會把兩者連起來。
+     只在**變多**時播：花掉金幣（提示）不該慶祝。
+     用 bump 不是 pop：pop 從 scale(0.3) 起跳，那是格子字母的**登場**動畫，套在本來就在
+     畫面上的藥丸上會讓整顆（底色、金幣圖示、數字）先縮成三成再彈回來。登場與強調是兩種
+     語彙，共用一個是省錯地方；#btn-claim.pop 逃得過只因為它同時換掉了按鈕上的字。 */
+  animation: bump 0.3s ease-out;
 }
 .chip.coin::before {
   /* 金幣圖示，跟著文字上琥珀色 */
@@ -289,6 +310,12 @@ button {
     transform: scale(1);
   }
 }
+/* pop 的「已經在畫面上」版：只放大再回來，不從無到有。用在強調既有元素（.chip.bump） */
+@keyframes bump {
+  50% {
+    transform: scale(1.15);
+  }
+}
 
 /* ---- 拼字串顯示區：高度固定預留，不跳動 ---- */
 .preview {
@@ -376,6 +403,17 @@ button {
   font-size: 0.72rem;
   color: var(--accent-ink);
   font-weight: 800;
+}
+.hint-btn.poor,
+.hint-btn.poor small {
+  /* 金幣不足：燈泡與價格一起退成次要色，按之前就看得出來買不起（同領取鈕那條——辨識問題用
+     配色解，不要留到按下去才用動畫補救）。按下去仍照舊抖動 + 「金幣不足」（設計文件 §8），
+     這只是提前告知，不是把按鈕停用。
+     兩條選擇器都要：燈泡是 background-color: currentColor + mask（.icon），跟著按鈕的
+     color 走；但 small 自己指定了 --accent-ink，不覆蓋的話價格會留在原本的琥珀色。
+     只淡前景、不動底色邊框陰影：壓暗整顆鈕會讓「提示」這個功能看起來壞了，而它只是現在買不
+     起；用 opacity 更不行，那會把價格數字一起淡到 AA 以下（同 #btn-claim.cooling 的教訓）。 */
+  color: var(--text-soft);
 }
 .wheel {
   position: relative;
@@ -865,7 +903,7 @@ body:has(.overlay:not([hidden])) #tap-hint {
 /* prefers-reduced-motion：跳過動畫與過場，直接顯示結果（設計文件 §7）。
    這裡曾經是兩份逐一列出的選擇器名單，改成全域規則有兩個理由，別改回去：
    1. `animation: none` 的元素**不會發 animationend**，而 grid.js（格子的 .pop）與 main.js
-      的 playOnce（.pop／.shake）都是靠那個事件把 class 拆掉的——名單版等於讓那些 class 永久殘留。
+      的 playOnce（.pop／.shake／.bump）都是靠那個事件把 class 拆掉的——名單版等於讓那些 class 永久殘留。
       `0.01ms` 一樣看不見，但動畫確實跑完、事件照常送到，兩邊的清理程式碼不必為這個模式分岔。
    2. 名單要靠人記得維護：新增一個有 transition 的元件就得回來補一筆，漏了不會有任何報錯，
       而漏掉的代價正好落在最需要它的人身上。
