@@ -1,11 +1,14 @@
 // 查詞卡片（設計文件 §6）：釋義 + 喇叭發音。只有已找到的字能查（由呼叫端把關）。
+// 模組層級一律用 globalThis 而非 window：瀏覽器裡兩者相同，但沒有 DOM 的執行環境（bun test）
+// 讀 window 會 ReferenceError，import 就爆——而 fitVertically 是要被測的純函式（§12）。
 import { strings } from './strings.js';
 
 // 無英文語音就隱藏喇叭鈕（§6.2）；getVoices 可能先回空陣列，要等 voiceschanged。
 let hasEnglishVoice = false;
 function refreshVoices() {
   hasEnglishVoice =
-    'speechSynthesis' in window && speechSynthesis.getVoices().some((v) => v.lang.startsWith('en'));
+    'speechSynthesis' in globalThis &&
+    speechSynthesis.getVoices().some((v) => v.lang.startsWith('en'));
 }
 // 除錯 log（見 main.js 的 dbg()），非正式功能。掛成模組層級，讓喇叭鈕跟答對自動發音
 // 兩條路徑都寫進同一份 log —— 少了「成功那條長什麼樣」的對照組，就無法判讀失敗那條。
@@ -17,7 +20,7 @@ export function setSpeechDebug(fn) {
 // 引擎是否已經真的念出過一句（見下方 unlock 的說明）
 let unlocked = false;
 
-if ('speechSynthesis' in window) {
+if ('speechSynthesis' in globalThis) {
   refreshVoices();
   speechSynthesis.addEventListener?.('voiceschanged', refreshVoices);
   // iOS Safari 的語音引擎要先真正念出過一句才會醒：在那之前 utterance 會被靜默丟棄——
@@ -61,7 +64,7 @@ if ('speechSynthesis' in window) {
 // src 標記是哪條路徑（wheel=答對自動念、btn=喇叭鈕），用來比對兩者 log 差異
 export function speak(word, src = '?') {
   log(
-    `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in window ? speechSynthesis.getVoices().length : 'n/a'}`
+    `speak(${word}) [${src}] called, hasEnglishVoice=${hasEnglishVoice}, voices=${'speechSynthesis' in globalThis ? speechSynthesis.getVoices().length : 'n/a'}`
   );
   if (!hasEnglishVoice) return false;
   speechSynthesis.cancel(); // 連續呼叫時不排隊，直接改念最新的字
@@ -87,7 +90,24 @@ export function speak(word, src = '?') {
 }
 
 export function stopSpeech() {
-  if ('speechSynthesis' in window) speechSynthesis.cancel();
+  if ('speechSynthesis' in globalThis) speechSynthesis.cancel();
+}
+
+// 卡片的垂直定位。抽成純函式的理由跟 wheel.js 的 hitIndex／applyHit 一樣（§12）：這段算式
+// 就是「卡片掉出畫面外」那個 bug 的所在，量測與寫樣式沒得測，算式可以。
+// a = 錨點的 getBoundingClientRect（前提：錨點在畫面內，它是玩家剛點到的東西），h = 卡片自然高度，
+// vh = 視窗高度。回傳保證 top >= 0 且 top + min(h, maxHeight) <= vh，也就是整張卡都在畫面內。
+// 下方放不下就翻到錨點上方（同一般 popover）；兩邊都放不下（瀏覽器縮放、大字級）取空間大的那側，
+// 由 max-height + .dict-card 的 overflow-y 讓卡片自己捲——.dict-card 因此也列進了 main.js
+// touchmove 的放行名單，不然 iOS 上捲不動。
+export function fitVertically(a, h, vh) {
+  const below = Math.max(0, vh - a.bottom - 16);
+  const above = Math.max(0, a.top - 16);
+  const useBelow = h <= below || below >= above;
+  return {
+    top: useBelow ? a.bottom + 8 : a.top - 8 - Math.min(h, above),
+    maxHeight: useBelow ? below : above,
+  };
 }
 
 export function createDictionaryCard(cardEl) {
@@ -133,10 +153,15 @@ export function createDictionaryCard(cardEl) {
     (anchorEl.closest('[aria-modal="true"]') ?? document.body).appendChild(cardEl);
     // 貼著被點的格子彈出（螢幕邊緣往內夾）
     cardEl.hidden = false;
+    cardEl.style.maxHeight = ''; // 上次夾的高度會汙染這次的量測，先還原再量
     const a = anchorEl.getBoundingClientRect();
     const w = cardEl.offsetWidth;
     cardEl.style.left = `${Math.min(Math.max(8, a.left + a.width / 2 - w / 2), window.innerWidth - w - 8)}px`;
-    cardEl.style.top = `${a.bottom + 8}px`;
+    // 上下一定要跟左右一樣夾住：釋義最長有 311 字元（WordNet 的 GAS），錨在盤面最後一列往下開
+    // 整張卡會掉出畫面底部，而 .dict-card 是 position: fixed，捲不回來也點不到。算式見 fitVertically。
+    const fit = fitVertically(a, cardEl.offsetHeight, innerHeight);
+    cardEl.style.maxHeight = `${fit.maxHeight}px`;
+    cardEl.style.top = `${fit.top}px`;
   }
 
   return { show, hide };

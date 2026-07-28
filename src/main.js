@@ -174,7 +174,7 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 // iOS 從別的 App 點連結會用內嵌 WebView（WKWebView）開，它帶了原生的「下拉關閉」手勢。
 // 那個手勢屬於外層 App，網頁 JS 無法完全停用；但多數內嵌瀏覽器是靠 WKWebView 內部
 // scrollView 在頂端往下 rubber-band 來觸發的。整頁本就是固定版面（html/body overflow: hidden），
-// 只有 .level-list 和 .card 真的要捲動（style.css 裡僅有的兩個 overflow-y: auto），於是其餘一律擋掉
+// 只有 .level-list、.card 和 .dict-card 真的要捲動（style.css 裡僅有的三個 overflow-y: auto），於是其餘一律擋掉
 // touchmove，讓 scrollView 不 rubber-band → 大幅降低下滑誤觸關閉。關卡列表放行，捲到邊界
 // 交給它自己的 overscroll-behavior: none 不外溢。多指一起擋：兩指下滑照樣 rubber-band，
 // 而縮放本來就由 gesture*／viewport 擋掉了，這裡多擋不會多吃到任何手勢。
@@ -187,7 +187,7 @@ for (const type of ['gesturestart', 'gesturechange', 'gestureend'])
 document.addEventListener(
   'touchmove',
   (e) => {
-    if (!e.target.closest('.level-list, .card, input')) e.preventDefault();
+    if (!e.target.closest('.level-list, .card, .dict-card, input')) e.preventDefault();
   },
   { passive: false }
 );

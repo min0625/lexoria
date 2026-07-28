@@ -212,7 +212,11 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
 
   // 開發期鍵盤輸入（§12）：字母鍵選字、Backspace 取消最後一個、Enter 送出。非玩家功能。
   function onKey(ev) {
-    if (ev.target.matches?.('input, textarea')) return; // 打字目標是表單欄位（如兌換碼框）就不搶
+    // 打字目標是表單欄位（如兌換碼框）就不搶；overlay 開著時也不搶——過關卡與設定卡開啟時
+    // main.js 會把焦點放進卡片本身，接鍵盤等於在遮罩底下拼字：Enter 會送出一個玩家看不見的
+    // 字（過關卡上按 Enter 就直接判定成功／失敗），字母鍵還會改動被蓋住的 #preview 與 #status
+    // 播報。沒有焦點時 target 是 body，遊戲畫面的開發用鍵盤輸入不受影響。
+    if (ev.target.closest?.('input, textarea, .overlay')) return;
     if (ev.key === 'Enter') {
       const w = word();
       selected = [];

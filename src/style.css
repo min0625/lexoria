@@ -792,6 +792,11 @@ body:has(.overlay:not([hidden])) #tap-hint {
   box-shadow: var(--shadow-lg);
   padding: 14px 18px;
   max-width: 260px;
+  /* max-height 由 dictionary-card.js 依錨點上下的可用空間寫入（那裡有完整理由）；
+     長釋義被夾住時靠這兩行自己捲，而不是溢出畫面外。
+     overscroll-behavior 同 .card／.level-list：捲到邊界不外溢到 WebView 的 scrollView（設計文件 §4）*/
+  overflow-y: auto;
+  overscroll-behavior: none;
 }
 .dict-card[hidden] {
   display: none;

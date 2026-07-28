@@ -6,6 +6,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { readdir, readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { bridge } from '../src/bridge.js';
+import { fitVertically } from '../src/dictionary-card.js';
 import { cellsOf, claimStatus, createGame, ECONOMY } from '../src/game.js';
 import { snapshotText } from '../src/grid.js';
 import { defaultSave, normalizeSave, persist } from '../src/storage.js';
@@ -322,6 +323,29 @@ test('bridge.share：三態回傳與 Windows 單欄位 payload（UI 文件 §4-D
   assert.deepEqual((await shareWith({ writes: [true], share: ok, platform: 'macOS' })).payloads, [
     { text: '文案', url: 'https://lexoria.example/' },
   ]);
+});
+
+// ---- 查詞卡定位（dictionary-card.js fitVertically）----
+// 這張卡是 position: fixed：一旦定位算式把它推出畫面，玩家既捲不到也點不到，只能重開一關。
+// 曾經只夾左右不夾上下，盤面最後一列配上長釋義（WordNet 最長 311 字元）就整段掉出底部。
+test('fitVertically：整張卡永遠留在畫面內（上下都夾）', () => {
+  const vh = 667; // 直式手機最矮的常見值（iPhone SE）；橫式由 .rotate-mask 擋掉，不必考慮
+  for (const top of [0, 8, 40, 200, 400, 520, 600, 660]) {
+    for (const h of [60, 120, 280, 700]) {
+      // h=700 比視窗還高：靠 max-height 夾住 + .dict-card 自己捲
+      const a = { top, bottom: top + 40 };
+      const { top: y, maxHeight } = fitVertically(a, h, vh);
+      assert.ok(y >= 0, `錨點 ${top} 高 ${h}：top=${y} 跑到畫面上緣外`);
+      assert.ok(y + Math.min(h, maxHeight) <= vh, `錨點 ${top} 高 ${h}：底部超出畫面`);
+    }
+  }
+});
+
+test('fitVertically：放得下就開在錨點下方，放不下才翻上去', () => {
+  const a = { top: 100, bottom: 140 };
+  assert.equal(fitVertically(a, 120, 667).top, 148); // 下方 511px 綽綽有餘 → 貼著錨點下緣
+  const low = { top: 560, bottom: 600 };
+  assert.equal(fitVertically(low, 200, 667).top, 352); // 下方只剩 51px → 翻到上方，底部貼齊 552
 });
 
 // ---- 關卡資料驗證器（設計文件 §5 步驟 6）：任何一關不合法就讓測試失敗 ----
