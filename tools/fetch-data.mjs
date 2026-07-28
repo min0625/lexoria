@@ -26,7 +26,7 @@ if (!existsSync(ecdictPath)) {
   console.log('ecdict.csv 下載完成');
 }
 
-// 字頻（wordfreq，MIT）+ 英文釋義（WordNet via NLTK）+ 中文翻譯（ECDICT + OpenCC 轉繁）→ wordinfo.json
+// 字頻（wordfreq，Apache-2.0——不是 MIT，設計文件 §14）+ 英文釋義（WordNet via NLTK）+ 中文翻譯（ECDICT + OpenCC 轉繁）→ wordinfo.json
 execFileSync(
   'uv',
   [

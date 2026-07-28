@@ -68,7 +68,7 @@
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 - 誤觸**雙指捏合縮放**會讓固定版面（html/body `overflow: hidden`）卡在錯位狀態且不易還原，兩個平台各擋一半：Android Chrome 吃 viewport 的 `maximum-scale=1, user-scalable=no`；iOS Safari 自 10 起忽略該設定，只能在 JS 對 Safari 專屬的 `gesturestart`/`gesturechange`/`gestureend` `preventDefault()`。畫面沒有需要放大來讀的內容，字級與命中區都已為手機尺寸設計，故不保留縮放。
-- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list`、`.card` 與輸入框——前兩者是樣式表裡僅有的兩個 `overflow-y: auto`（`.card` 的上限與捲動見 UI 文件 §4-D），後者的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，以 standalone 從主畫面開啟即無瀏覽器 chrome、無下拉關閉手勢——但**內嵌 WebView 裡根本沒有「加入主畫面」這個選項**，真要引導得先講「以 Safari 開啟」；而 App 內的安裝引導做過一版又拿掉了（§15 Phase 1.5-4），現在沒有任何程式在做這件事，別照這句話直接開工。
+- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list`、`.card`、`.dict-card` 與輸入框——前三者是樣式表裡僅有的三個 `overflow-y: auto`（`.card` 的上限與捲動見 UI 文件 §4-D，`.dict-card` 被夾住時才會捲，見 §4-E），最後一項的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，以 standalone 從主畫面開啟即無瀏覽器 chrome、無下拉關閉手勢——但**內嵌 WebView 裡根本沒有「加入主畫面」這個選項**，真要引導得先講「以 Safari 開啟」；而 App 內的安裝引導做過一版又拿掉了（§15 Phase 1.5-4），現在沒有任何程式在做這件事，別照這句話直接開工。
 - iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: max(1rem, 16px)`，用 padding 調高度，不要用縮字級的方式配版；寫死 `16px` 也擋得住自動縮放，但頁面已經不能捏合縮放，系統字級是玩家僅剩的放大手段，其餘字級都是 rem，唯獨輸入框寫死會變成唯一不跟著放大的元件。
 
 ## 5. 關卡資料設計
@@ -294,8 +294,9 @@ word-game/
 - **手勢與判定邏輯寫成純函式**（座標 → 命中的字母、拼出的字串 → 目標/bonus/重複/無效），與 DOM 分離，直接用 `bun test` 跑單元測試——這是唯一值得自動化的部分。
 - 關卡資料品質靠產生器內建的驗證器把關（見 §5），遊戲端不再重複驗證。
 - 「純函式」這條有一個例外：`bridge.share` 的三態回傳（UI 文件 §4-D 那張 剪貼簿 × 面板 × `AbortError` × Windows 的決策表）沒有 DOM，只吃 `navigator`／`document`，測試把兩顆全域換掉就能釘住。它值得自動化是因為改壞的症狀（送出成功卻提示失敗、按了完全沒反應）**只有真機看得出來**，而 §17 那幾條是手動驗收。
+- 同樣切出來釘住的還有查詞卡的垂直定位（`fitVertically`）：量測（`getBoundingClientRect`／`offsetHeight`）與寫樣式沒得測，中間夾邊界的那段算式可以。理由同上一條——卡片是 `position: fixed`，算錯就被推出畫面，玩家既捲不到也點不到，而桌面大視窗幾乎撞不到（UI 文件 §4-E）。
 - UI、動畫、手感用真機手動測：iOS Safari + 一台中低階 Android 是最低測試矩陣；桌面 Chrome 的觸控模擬不能取代真機。手測以 §17 的驗收清單為準。
-- 開發期在桌面支援鍵盤輸入（按字母鍵選字、Backspace 取消最後一個、Enter 送出）——不是玩家功能，是讓開發迭代不必每次用滑鼠畫圈，改邏輯後跑回歸快很多。
+- 開發期在桌面支援鍵盤輸入（按字母鍵選字、Backspace 取消最後一個、Enter 送出）——不是玩家功能，是讓開發迭代不必每次用滑鼠畫圈，改邏輯後跑回歸快很多。**輸入框與 overlay 開著時不接**：過關卡／設定卡開啟時焦點就在卡片上（UI 文件 §4-C／§4-D），接了等於在遮罩底下拼字——Enter 會送出一個玩家看不見的字、字母鍵還會改動被蓋住的預覽列與 `#status` 播報。接藍牙鍵盤的平板碰得到，不是只有開發機。
 
 ## 13. 嵌入 iOS / Android 的策略
 
@@ -466,6 +467,7 @@ Phase 1 沒有自動化 UI 測試（§12），這份清單就是驗收標準兼�
 - [ ] 已找到的字的格子按下去會縮一下，放開彈回；轉盤拖曳不受影響
 - [ ] **提示只揭示一格、整字還沒補滿**的那格：按下去**沒有縮放**、點了也沒反應（VoiceOver 也不該把它唸成 button）；同一個字被補滿的那一刻，整字的格子才一起變成可點
 - [x] 過關卡片上點目標字 → 彈出查詞卡（含完成最後一字時來不及在格子上點的那個字）
+- [ ] **長釋義 + 盤面最後一列**：第 335 關的 `GAS`（釋義 311 字元，全庫最長）點開 → 卡片翻到格子**上方**、整張都在畫面內，沒有一半在螢幕外（`position: fixed` 掉出去就再也捲不回來）；被夾住時卡片自己捲得動，iOS 上也捲得動（`.dict-card` 在 `touchmove` 放行名單裡，§4）
 - [x] 最後一關破完 → 顯示「更多關卡即將推出」，不當掉
 - [x] **開場閘門**：每次載入頁面都出現（首次進站、重新整理、分頁還原），點一下進入上次的關卡；關卡切換不會再出現。閘門是 TTS 解鎖的唯一來源，拆掉會讓純拖曳的玩家整場沒有發音（§13）
 - [x] **載入失敗時閘門自動收掉**，錯誤畫面不會被壓在底下
