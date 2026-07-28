@@ -68,7 +68,7 @@
 - 支援「滑回上一個字母 = 取消最後一個字母」（Wordscapes 的標準行為）。
 - viewport 設定：`<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">`，並用 `env(safe-area-inset-*)` 處理瀏海與 home indicator。
 - 誤觸**雙指捏合縮放**會讓固定版面（html/body `overflow: hidden`）卡在錯位狀態且不易還原，兩個平台各擋一半：Android Chrome 吃 viewport 的 `maximum-scale=1, user-scalable=no`；iOS Safari 自 10 起忽略該設定，只能在 JS 對 Safari 專屬的 `gesturestart`/`gesturechange`/`gestureend` `preventDefault()`。畫面沒有需要放大來讀的內容，字級與命中區都已為手機尺寸設計，故不保留縮放。
-- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list` 與輸入框——前者是樣式表裡唯一的 `overflow-y: auto`，後者的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，以 standalone 從主畫面開啟即無瀏覽器 chrome、無下拉關閉手勢——但**內嵌 WebView 裡根本沒有「加入主畫面」這個選項**，真要引導得先講「以 Safari 開啟」；而 App 內的安裝引導做過一版又拿掉了（§15 Phase 1.5-4），現在沒有任何程式在做這件事，別照這句話直接開工。
+- **從別的 App 點連結會用 iOS 內嵌 WebView（WKWebView）開，它帶原生「下拉關閉」手勢**，玩家在轉盤以外的區域下滑容易誤觸關閉。那手勢屬於外層 App，網頁 JS **無法完全停用**；但多數內嵌瀏覽器是靠 WKWebView 內部 scrollView 在頂端往下 rubber-band 觸發的，於是兩手緩解：(1) 全域 `touchmove` 在**非捲動區** `preventDefault()`（`main.js` 只放行 `.level-list`、`.card` 與輸入框——前兩者是樣式表裡僅有的兩個 `overflow-y: auto`（`.card` 的上限與捲動見 UI 文件 §4-D），後者的游標拖曳是原生手勢；不做「往上找可捲動祖先」的通用判斷，那要逐事件讀 `scrollHeight`／`getComputedStyle`，轉盤拖曳中每個 `touchmove` 強制一次同步 reflow），讓 scrollView 不 rubber-band；(2) 可捲動容器與 html/body 設 `overscroll-behavior: none`，捲到邊界不外溢到 WebView 的 scrollView。這是**緩解不是保證**——少數自帶 `UIPanGestureRecognizer`（`cancelsTouchesInView=false`）的內嵌瀏覽器、以及邊緣返回手勢仍擋不掉；根治只能離開內嵌瀏覽器，本站本就是 PWA，以 standalone 從主畫面開啟即無瀏覽器 chrome、無下拉關閉手勢——但**內嵌 WebView 裡根本沒有「加入主畫面」這個選項**，真要引導得先講「以 Safari 開啟」；而 App 內的安裝引導做過一版又拿掉了（§15 Phase 1.5-4），現在沒有任何程式在做這件事，別照這句話直接開工。
 - iOS 另有一種自動縮放：focus 到 `font-size < 16px` 的輸入框時會放大整個版面（`maximum-scale=1` 擋不擋得住依版本而異，不能倚賴）。輸入框一律給 `font-size: max(1rem, 16px)`，用 padding 調高度，不要用縮字級的方式配版；寫死 `16px` 也擋得住自動縮放，但頁面已經不能捏合縮放，系統字級是玩家僅剩的放大手段，其餘字級都是 rem，唯獨輸入框寫死會變成唯一不跟著放大的元件。
 
 ## 5. 關卡資料設計
@@ -188,12 +188,12 @@ function speak(word) {
   - 無效字 → 字串抖動後消失。
 - ~~Haptic（震動）在命中時給一下~~：已移除。web 的 `navigator.vibrate` 在 iOS Safari 完全不支援、Android 上 10ms 脈衝短到 LRA 馬達振不出來，實測兩邊都無感；一個永遠沒作用的設定開關比沒有更糟。Phase 2 若接上 Capacitor 原生 haptics 再視體感決定要不要加回來。
 - 主題：只做深色一套，用 CSS custom properties 定義色票；不跟隨 `prefers-color-scheme`，省掉淺色主題的對比與維護成本。
-- Web 版鎖不了螢幕方向：橫式時蓋一層「請轉直畫面」遮罩即可，不要為橫式做第二套排版。
+- Web 版鎖不了螢幕方向：橫式時蓋一層「請轉直畫面」遮罩即可，不要為橫式做第二套排版。條件要帶上 `pointer: coarse`（詳見 UI 文件「橫式遮罩」）——只寫 `landscape` + `max-height` 的話，桌機把視窗拉矮就會被遮罩蓋掉，而桌機使用者轉不了螢幕。
 - 教學：第 1 關用 3 字母 + 一次性的滑動手勢示意（手指軌跡 overlay），玩家完成第一個字就收掉、不再出現；不做多步驟教學精靈。
 - 關卡選擇：線性解鎖（最遠玩到 `currentLevel`）；已完成關卡可重玩，但不重複給金幣（獎勵已按關卡記錄）。
 - 已找到的目標字可點擊查看釋義與發音（見 §6），卡片位置貼著被點的格子彈出，點卡片外任意處關閉。
 - **沒有音效。** 曾經有 4 個短音（命中、無效字、金幣、過關），兩種實作都試過、都在 iOS 上輸給同一件事——音訊 session 的行為，完整量測與經過見 §13 的「音效的兩次嘗試與收場」。唯一的聽覺回饋是答對目標字時的 TTS 發音（§6.1），無效字有抖動動畫、bonus 有 +N 金幣動畫、過關有過關卡片，四個缺口都已經有視覺回饋。多數 iOS 遊戲在靜音模式下本來就是安靜的，這也更貼近平台慣例。別再加回來（§16）。
-- `prefers-reduced-motion` 開啟時跳過飛入/撒花動畫，直接顯示結果。
+- `prefers-reduced-motion` 開啟時跳過飛入/撒花動畫，直接顯示結果。實作是**一條全域規則**（`*, *::before, *::after` 把 `animation-duration`／`transition-duration` 夾成 `0.01ms`、`animation-iteration-count` 夾成 1），不是逐一列出選擇器的名單。兩個理由，別改回名單：(1) `animation: none` 的元素**不會發 `animationend`**，而 `grid.js`（格子的 `.pop`）與 `main.js` 的 `playOnce`（領取鈕的 `.pop`、提示鈕與領取鈕的 `.shake`）都是靠那個事件把 class 拆掉的——名單版等於讓那些 class 永久殘留，`0.01ms` 一樣看不見但動畫確實跑完、事件照常送到，兩邊的清理程式碼不必為這個模式分岔；(2) 名單要靠人記得維護，新增一個有 transition 的元件就得回來補一筆，漏了不會有任何報錯，而漏掉的代價正好落在最需要它的人身上。`iteration-count` 要一起夾，否則 infinite 的 pulse 會用 0.01ms 的週期狂跑。
 - 設定入口（齒輪按鈕）：發音開關（存檔欄位仍叫 `settings.sound`，音效移除後它只管答對時的自動發音）。
 - 關卡全數破完後顯示「更多關卡即將推出」畫面——關卡被玩完的速度比想像中快，別讓玩家點下一關時當掉。
 
@@ -475,8 +475,12 @@ Phase 1 沒有自動化 UI 測試（§12），這份清單就是驗收標準兼�
 - [ ] **Windows 桌機分享**：按［分享］→ **在跳出的系統分享面板裡挑一個目標送出**（郵件／Teams 那類會收文字的）→ 該目標收到的是完整文案＋網址，不是只有網址（機制與取捨見 UI 文件 §4-D）。**不要用 Ctrl+V 驗**：貼上讀的是剪貼簿，那條路本來就一直是完整版，貼得出來也證明不了分享面板收到了什麼。同時看一遍面板上原本「只剩網址」的目標（Facebook、「複製連結」、附近共享那類只吃 WebLink 的）**有沒有變成完全空的、或整個從面板消失**——那是這個改動唯一可能的退化
 - [ ] 按［分享］→ **在系統面板上按取消**（模擬「我的目標是網頁版聊天室／表單，不在這排 App 裡」）→ 按鈕閃出「文案已複製，可直接貼上」，且真的貼得出完整文案。**桌機**上成功分享出去之後回到頁面也該看到同一句（它不是失敗提示）——**手機不必驗這半**：分享出去會直接切到對方 App，2500ms 的提示在背景就燒完了，切回來看不到是預期行為，不是 bug
 - [ ] 同一顆按鈕在 iOS／macOS 分享到訊息、Mail：**網址預覽卡片還在**（Apple 兩邊都是把 text 與 url 當同一個 array 裡的兩個 item 送，維持分開傳就是為了那張卡，見 UI 文件 §4-D）；Android 行為不變（它本來就把兩者串成一個字串——但是用**空白**接、不是換行，所以網址前面沒有空行：那是「分享文案三條規則」第 1 條在 Android 上一直以來的已知例外，不是這次改壞的）
-- [x] 橫式 → 「請轉直畫面」遮罩
+- [ ] 橫式 → 「請轉直畫面」遮罩（**加了 `pointer: coarse` 條件後要重驗**：那條是為了擋桌機誤中，但它也擋在真機這條路上，只有實機／真的觸控裝置驗得準——桌機 DevTools 的裝置模擬不會把 `pointer` 改成 `coarse`）
+- [x] **桌機**把瀏覽器視窗拉矮到高度 < 500px → **不會**出現「請轉直畫面」遮罩（桌機使用者轉不了螢幕，這正是 `pointer: coarse` 擋掉的那條）
 - [x] `prefers-reduced-motion` 開啟 → 跳過飛入/撒花動畫，直接顯示結果
+- [ ] **VoiceOver 打開**：開設定卡 → 唸出「設定」而不是停在底下的畫面，往下滑巡覽**滑不到**卡片外的轉盤與格盤（`aria-modal`），找得到右上角［關閉］且按下去真的關掉、焦點回到齒輪鈕
+- [ ] **VoiceOver 打開**：過關 → 自動唸出「過關！ +10 金幣」（過關的慶祝全是視覺的，不唸就等於什麼都沒發生）
+- [ ] **VoiceOver 打開**：拖曳轉盤拼字期間**不會**逐字唸出 C→CA→CAT（`#preview` 不是 live region）；但拼到已找到的字時要唸出「已找到」（`#status`）
 - [x] 真機測過：iOS Safari + 一台中低階 Android（§12）
 
 Phase 1.5（PWA，§15）補的幾條——同樣只能手測，而且**只有正式站測得準**（`mise run serve` 是 http，SW 只在 localhost 例外生效，安裝到主畫面則完全測不到）：

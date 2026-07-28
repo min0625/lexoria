@@ -88,7 +88,10 @@
     </header>
     <!-- 載入提示（靜態文字，不經 strings.js——JS 下載與 levels.json 取得期間就要可見）：startLevel 建格盤時清掉 -->
     <div id="grid" class="grid-area" translate="no"><p class="loading-text">載入中…</p></div>
-    <div id="preview" class="preview" aria-live="polite"></div>
+    <!-- 拼字串顯示區刻意**不是** aria-live 區塊：showPreview 每滑過一個字母就重寫一次，
+         掛上去等於在整段拖曳期間逐字播報 C→CA→CAT。真正該播的只有 flashPreview 那幾則結果
+         訊息，那些走下面的 #status（UI 文件 §4-F 第三段）-->
+    <div id="preview" class="preview"></div>
     <div class="wheel-row">
       <button id="btn-hint" class="hint-btn" type="button" aria-label="提示"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>
       <div id="wheel" class="wheel" translate="no"></div>
@@ -120,8 +123,10 @@
   </section>
 
   <!-- C. 過關 overlay -->
+  <!-- role/aria-modal/tabindex 的完整理由見設定卡（下一個 overlay）那段註解，兩張卡同一套。
+       這張刻意不接 Escape：過關是單向流程，「點卡片外不關閉」也是同一條規則（UI 文件 §4-C）-->
   <div id="overlay-clear" class="overlay" hidden>
-    <div class="card">
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="clear-title" tabindex="-1">
       <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
       <h2 id="clear-title"></h2>
       <p id="clear-bonus"></p>
@@ -134,7 +139,17 @@
 
   <!-- D. 設定 overlay -->
   <div id="overlay-settings" class="overlay" hidden>
-    <div class="card">
+    <!-- aria-modal="true" 讓 VoiceOver 的滑動巡覽把卡片外的一切藏起來——沒有它，開著設定卡也能
+         一路滑到底下的轉盤與格盤，聽起來像沒有東西擋著。tabindex="-1" 是給 main.js 開卡時
+         focus() 用的落點（VO 會跟著唸出 aria-labelledby 指的標題，玩家才知道開了什麼）。
+         **沒有做 JS 焦點陷阱**：那對觸控輔助技術來說 aria-modal 已經等於陷阱，剩下會用 Tab
+         逃出去的只有桌面鍵盤，而桌面鍵盤在這個專案裡只服務開發迭代（UI 文件 §4-E），
+         為它寫十幾行 focus trap 不划算。真要補時是加在這裡，不是散到各個按鈕上。 -->
+    <div class="card" role="dialog" aria-modal="true" aria-labelledby="settings-title" tabindex="-1">
+      <!-- 點卡片外也能關，但那條路讀螢幕的人走不到（遮罩不可聚焦、VO 滑動巡覽碰不到），
+           開了就困在裡面；這顆是走得到的出口，不是裝飾（UI 文件 §4-D）。
+           桌面鍵盤另有 Escape（main.js），但那條只服務開發迭代，不能拿來取代這顆 -->
+      <button id="btn-settings-close" class="card-close" type="button" aria-label="關閉"><span class="icon icon-close"></span></button>
       <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
       <h2 id="settings-title"></h2>
       <!-- biome-ignore lint/a11y/noLabelWithoutControl: span 文字由 strings.js 在執行期填入，input 已是 label 的子元素 -->
@@ -176,6 +191,13 @@
        位置由 JS 量格盤下緣寫進 top。刻意沒有 hidden——aria-live 區塊要常駐才播報得到，
        收起來是靠文字清空（main.js hideTapHint + style.css #tap-hint:empty）-->
   <div id="tap-hint" class="tutorial at-grid" aria-live="polite"></div>
+
+  <!-- 狀態播報：flashPreview 的結果訊息（已找到／額外單字／金幣不足／無效字／領取金幣）只在
+       #preview 上閃 900ms，那是純視覺的。這個節點看不見，只負責讓輔助技術唸出同一句。
+       放在所有 screen 之外：screen 用 hidden 切換，live region 一旦離開無障礙樹，下次寫入就被
+       當成新插入的子樹而不播報（同 #tap-hint 的理由，UI 文件 §4-F）。role="status" 已隱含
+       aria-live="polite"，不必再寫一次。 -->
+  <p id="status" class="sr-only" role="status"></p>
 
   <!-- E. 查詞卡片（動態定位） -->
   <div id="dict-card" class="dict-card" hidden></div>
