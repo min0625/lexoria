@@ -93,7 +93,8 @@
          訊息，那些走下面的 #status（UI 文件 §4-F 第三段）-->
     <div id="preview" class="preview"></div>
     <div class="wheel-row">
-      <button id="btn-hint" class="hint-btn" type="button" aria-label="提示"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>
+      <!-- aria-label 由 main.js 從 strings.hintLabel 設（要帶上價格，而價格只有 ECONOMY 一個來源）-->
+      <button id="btn-hint" class="hint-btn" type="button"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>
       <div id="wheel" class="wheel" translate="no"></div>
     </div>
   </section>
