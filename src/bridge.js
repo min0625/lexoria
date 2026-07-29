@@ -80,10 +80,4 @@ export const bridge = {
     if (await copying) return 'copied';
     return shared ? 'shared' : 'failed';
   },
-  showAd() {
-    return Promise.resolve(); // Phase 3 接 AdMob
-  },
-  buy() {
-    return Promise.reject(); // Phase 3 接 IAP
-  },
 };

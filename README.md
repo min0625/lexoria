@@ -12,7 +12,7 @@ Wordscapes 風格的英文單字拼圖遊戲：從字母轉盤滑選字母拼出
 bun install      # 安裝 devDependencies（Biome）
 bun run serve    # 開發伺服器 http://localhost:8080（ES modules 需經 http，直接開 index.html 不行）
 bun run test     # 單元測試
-bun run lint     # Biome 靜態檢查 + 格式檢查（bun run fix 可自動修正）
+bun run lint     # Biome 靜態檢查 + 格式檢查，warning 也會擋（bun run fix 可自動修正）
 bun run check    # lint + test，prek 那個 local hook（本地與 CI 都跑它）
 ```
 
@@ -49,7 +49,7 @@ src/
   dictionary-card.js 查詢單字卡片
   storage.js        單一 key JSON 存檔（normalizeSave 壞資料一律重置）＋玩家編號 uid 產生／驗證
   redeem.js         兌換碼驗證（JWT ES256 公鑰驗簽；tools/make-code.mjs 簽發，--uid 可綁定單一玩家）
-  bridge.js         平台抽象層（存檔/分享/複製/廣告/IAP）— Phase 2 換 native 實作
+  bridge.js         平台抽象層（存檔/分享/複製）— Phase 2 換 native 實作
   strings.js        所有 UI 文案
   style.css         全站樣式
 tools/              關卡產生 pipeline（fetch-data → build-wordinfo.py → generate-levels.mjs）＋ make-code.mjs 兌換碼簽發
