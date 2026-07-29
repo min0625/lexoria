@@ -5,7 +5,7 @@
 
 node_modules/
 
-# Downloaded generator inputs (mise run fetch-data)
+# Downloaded generator inputs (bun run fetch-data)
 tools/data/
 
 # 兌換碼簽發私鑰（tools/make-code.mjs keygen）——絕不進版控
