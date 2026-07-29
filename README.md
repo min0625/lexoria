@@ -6,24 +6,29 @@ Wordscapes 風格的英文單字拼圖遊戲：從字母轉盤滑選字母拼出
 
 ## 快速開始
 
-需要 [mise](https://mise.jdx.dev/)（或自行安裝 [Bun](https://bun.sh/)）：
+建議裝 [mise](https://mise.jdx.dev/)：`mise install` 會照 [mise.toml](mise.toml) 裝好 bun、prek（釘版本）與 uv（取 latest）——CI 用 `jdx/mise-action` 讀同一份，**工具**版本只有這一個來源（hook 版本另計，釘在 `.pre-commit-config.yaml` 的 `rev:`）。只裝 [Bun](https://bun.sh/) 也跑得動下面的指令，但拿不到 prek，就沒有 git hook。指令一律走 `bun run`：
 
 ```sh
-mise run serve   # 開發伺服器 http://localhost:8080（ES modules 需經 http，直接開 index.html 不行）
-mise run test    # 單元測試（= bun test）
-mise run lint    # Biome 靜態檢查 + 格式檢查（= bun run lint；bun run fix 可自動修正）
-mise run check   # lint + test，PR Check 會跑這個（= bun run check）
+bun install      # 安裝 devDependencies（Biome）
+bun run serve    # 開發伺服器 http://localhost:8080（ES modules 需經 http，直接開 index.html 不行）
+bun run test     # 單元測試
+bun run lint     # Biome 靜態檢查 + 格式檢查（bun run fix 可自動修正）
+bun run check    # lint + test，prek 那個 local hook（本地與 CI 都跑它）
 ```
 
 跑單一測試：`bun test --test-name-pattern='<名稱>' tests/game.test.mjs`。沒有 build step。
+
+檢查一律經 [prek](https://prek.j178.dev/)：每個 clone 跑一次 `bun install` 與 `prek install` 裝好相依套件與 git hook（devcontainer 的 `post_create.sh` 已代勞），之後每次 commit 會自動跑 [.pre-commit-config.yaml](.pre-commit-config.yaml) 裡的 hook（upstream 的檔案檢查、`gitleaks` 祕密掃描，加上跑 `bun run check` 的那一個）。手動全跑 `prek run --all-files`，要跳過用 `git commit --no-verify`。PR Check 跑的也是 `prek run --all-files`，所以往後加的 hook 不必再改 workflow——但 `gitleaks` 只擋得住 commit：它的 entry 寫死 `--staged`，CI 沒有 staged 內容、掃的是空 diff 一定綠（原因與升級路徑見 CLAUDE.md，那裡也列了同一類「有跑但沒在量」的其他 hook）。
+
+另外 `pr-check.yml` 的 job `name:` 就是 ruleset 裡 required status check 的 context，**不能隨手改名**，否則 main 的 PR 會等一個永遠不會回報的檢查。
 
 ## 關卡資料
 
 `data/levels/`（每關一個 JSON 檔＋一份 `index.json` 索引）是產生出來的，**不要手改**；要改關卡就改產生器再重跑：
 
 ```sh
-mise run fetch-data  # 下載產生器輸入（ENABLE 字表、ECDICT、wordfreq、WordNet；只需跑一次，需 uv）
-mise run gen         # 重新產生 data/levels/（以關卡 id 為種子，輸出完全可重現）
+bun run fetch-data  # 下載產生器輸入（ENABLE 字表、ECDICT、wordfreq、WordNet；只需跑一次，需 uv）
+bun run gen         # 重新產生 data/levels/（以關卡 id 為種子，輸出完全可重現）
 ```
 
 前端啟動時只抓 `index.json`（僅關卡數）與當前那一關（兩者並行），其餘關卡在切換過去時才按需 `fetch`，首次載入不必等 500 關資料下載完。

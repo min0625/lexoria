@@ -401,7 +401,7 @@ export const bridge = {
 3. iOS 的 standalone 還要 `apple-mobile-web-app-capable` ＋ `apple-mobile-web-app-status-bar-style: black-translucent` 兩個私有 meta：前者舊版 iOS 才認得 `display: standalone`，少了後者則是預設的不透明淺色狀態列壓在深色底上，而且那個模式下 `safe-area-inset-top` 是 0、CSS 補不回來。`black-translucent` 讓內容延伸到狀態列底下，正好接上既有的 `viewport-fit=cover` ＋ safe-area padding。
 4. iOS 沒有 `beforeinstallprompt`，做不出「安裝」按鈕，只能靠文字教學「分享 → 加到主畫面」——這是 PWA 相對 App 最大的流失點，不要期待能靠程式解決。**「在設定卡放安裝引導」做過又拿掉了**（2026-07-27，程式碼別再寫回來）：Chrome 系攔 `beforeinstallprompt` 換一顆真按鈕、iOS 出文字步驟，二十幾行、能動、也符合上一句的結論——但擺在設定卡裡就是**淨虧**。攔那個事件必須 `preventDefault()`（否則 Chrome 自己那條橫幅照跳，兩套提示疊在一起），等於**壓掉瀏覽器本來就會做的招攬**，換成一顆沒人會打開的面板裡的按鈕；iOS 那半同理，Safari 的分享選單本來就有「加入主畫面」，我們只是幫它取了個名字。三個先決問題都答不出來：沒有後端與分析，**安裝率零可觀測**，做了也驗不了；最需要 standalone 的那群人（從 Line／FB／IG 進來、被 §4 的下滑誤觸關閉咬到的）在內嵌 WebView 裡**根本沒有**「加入主畫面」這個選項、`beforeinstallprompt` 也不會來，得先「以 Safari 開啟」才談得上安裝；而第一次進站的人沒有理由安裝，還沒喜歡上就被要求裝到主畫面是 PWA 最經典的負收益動作。要重做的前提是先有其一：能量到安裝率、或先解掉內嵌 WebView 那一段（提示「以 Safari 開啟」修的才是已回報的真痛點）。真要放，位置會是**開場閘門(I)**（每次載入必經、已在最上層、不跟「一次只開一層」打架）並且只對回訪玩家出（`firstOpenAt`／`currentLevel` 都是存檔現成欄位），不是設定卡、也不是首次進場的浮層。
 5. standalone 沒有返回鍵，關於區的外部連結（GitHub、`assets/licenses.txt`）一律 `target="_blank"`，否則玩家會被困在頁面裡回不來。
-6. 這兩個檔案在**根目錄**，而 `deploy.yml` 是逐項 `cp` 的白名單——沒加進去就整套 PWA 在正式站不存在，而且完全無聲：`sw.js` 404、`register()` 的 `.catch()` 吞掉錯誤、本機 `mise run serve` 一切正常。因為無聲，這條靠 `tests/game.test.mjs` 對著 `SHELL` 驗證 `cp` 清單，不靠人記得。
+6. 這兩個檔案在**根目錄**，而 `deploy.yml` 是逐項 `cp` 的白名單——沒加進去就整套 PWA 在正式站不存在，而且完全無聲：`sw.js` 404、`register()` 的 `.catch()` 吞掉錯誤、本機 `bun run serve` 一切正常。因為無聲，這條靠 `tests/game.test.mjs` 對著 `SHELL` 驗證 `cp` 清單，不靠人記得。
 
 ### Phase 2 — 嵌入 App
 1. Capacitor 包殼，iOS / Android 各出一個 build。
@@ -497,7 +497,7 @@ Phase 1 沒有自動化 UI 測試（§12），這份清單就是驗收標準兼�
 - [ ] **iPad／平板**（或桌機視窗拉寬）：整個畫面收成一欄置中，頂列四顆鈕沒有各自貼到螢幕兩側；提示鈕仍貼著轉盤左下、不會飄到畫面邊緣。後期大盤面（第 300 關以後）在這個欄寬下格子會比以前小一點，但沒有溢出、也沒有壓到拼字預覽列
 - [ ] 320px 寬的舊機（iPhone SE 一代）上，關卡編號進到三位數 + 領取鈕冷卻中 → 頂列會折行（**既有問題，不是這批改出來的**，見 UI 文件 §3）。這條只是記著，不擋驗收
 
-Phase 1.5（PWA，§15）補的幾條——同樣只能手測，而且**只有正式站測得準**（`mise run serve` 是 http，SW 只在 localhost 例外生效，安裝到主畫面則完全測不到）：
+Phase 1.5（PWA，§15）補的幾條——同樣只能手測，而且**只有正式站測得準**（`bun run serve` 是 http，SW 只在 localhost 例外生效，安裝到主畫面則完全測不到）：
 
 - [x] iOS 分享 →「加到主畫面」→ 從主畫面開：沒有網址列、狀態列是深色透明的、內容沒被瀏海壓到
 - [x] 主畫面圖示不是網頁截圖或裁壞的方角（iOS 吃的是 `apple-touch-icon`，manifest 的 maskable 那張要在 **Android** 上才驗得到）

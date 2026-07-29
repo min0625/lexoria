@@ -13,4 +13,4 @@
 - UI 補丁四項（2026-07-28）：金幣進帳時頂列數字彈一下、`.screen` 收成 480px 一欄（桌機／平板才生效）、金幣不足時提示鈕的燈泡與價格一起轉暗、重玩舊關時開場閃一次「重玩不再獲得金幣」。細節在 UI 文件 §2／§3（含「為什麼重玩不在頂列常駐標記」），§17 新增的 5 條待真機／VoiceOver 驗。
 - App 內的 PWA 安裝引導：2026-07-27 做過一版（Chrome 系 `beforeinstallprompt` 按鈕 + iOS 文字步驟，放在設定卡）**又整個拿掉**，程式碼已還原、別再當待辦。理由與重做前提在設計文件 §15 Phase 1.5-4（§16 有一句話版）——一句話：壓掉瀏覽器自己的招攬去換一顆沒人打得開的按鈕，而安裝率沒有分析可量。
 - Phase 2（Capacitor）**因成本暫緩、不是取消**：需要一台 Mac + Apple $99/年 + Google Play $25，且純 WebView 有 Apple 4.2 被拒風險。等有留存數據或要收錢再啟動；存檔搬遷的做法寫在設計文件 §15 Phase 2。好友邀請碼也押在這一步（要 `Device.getId()` 才成立，理由見設計文件 §16，別在網頁版重試）。
-- `mise run fetch-data` 只需跑一次（輸出在 tools/data/，已 gitignore）；之後只需 `mise run gen`。
+- `bun run fetch-data` 只需跑一次（輸出在 tools/data/，已 gitignore）；之後只需 `bun run gen`。

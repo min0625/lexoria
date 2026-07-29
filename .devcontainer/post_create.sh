@@ -10,7 +10,10 @@ sudo apt-get install -y xsel
 
 mise trust .
 
-MISE_NODE_VERIFY=0 mise install
+mise install
+
+mise exec -- bun install
+mise exec -- prek install
 
 if [[ -f ".devcontainer/post_create.local.sh" ]]; then
     source ".devcontainer/post_create.local.sh"

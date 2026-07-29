@@ -572,7 +572,7 @@ test('sw.js SHELL 與 index.html modulepreload 涵蓋所有 src 模組，且路�
   );
 });
 
-// deploy.yml 是逐項 cp 的白名單，漏掉的失敗完全無聲：本機 mise run serve 一切正常、
+// deploy.yml 是逐項 cp 的白名單，漏掉的失敗完全無聲：本機 bun run serve 一切正常、
 // bun run check 全綠，正式站卻是 sw.js 404 而 register() 的 .catch() 把它吞掉（設計文件 §15）。
 test('deploy.yml 的 cp 清單涵蓋 sw.js 與 SHELL 用到的每個根目錄項目', async () => {
   const shell = await shellPaths();
@@ -589,7 +589,7 @@ test('deploy.yml 的 cp 清單涵蓋 sw.js 與 SHELL 用到的每個根目錄項
 // `.gitignore` 吃掉整個 `*.local.*`，所以引用它的註解／文件在別人的 clone 裡就是斷鏈：
 // 句子照樣讀得通、只是指向不存在的檔案，跟 SHELL 少一條路徑一樣完全無聲（CLAUDE.md 有這條規則）。
 // 用 git ls-files 而不是自己走目錄：判準本來就是「有沒有進版控」。
-const TEXT_FILE_RE = /\.(js|mjs|md|html|css|json|toml|yml)$/;
+const TEXT_FILE_RE = /\.(js|mjs|md|html|css|json|toml|ya?ml)$/;
 // CLAUDE.md 那條規則本身寫的就是 `.local.*`，是規則不是引用——後面接萬用字元的就跳過
 const LOCAL_CITE_RE = /\.local\.[\w-]/;
 
