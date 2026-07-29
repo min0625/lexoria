@@ -274,6 +274,10 @@ function updateCoins() {
 let previewTimer = 0;
 function showPreview(word) {
   clearTimeout(previewTimer);
+  // 取消的那個 timer 同時是 #status 的清空者，所以這裡要自己補清一次：下一次拖曳在 900ms 內
+  // 開始（拼錯後馬上重試就是這樣）會走到這裡，不清的話 #status 就永久停在上一句，
+  // 而連撞兩次同樣的訊息時 textContent 沒變 → 輔助技術不會播報第二次，正是下面那段註解要避免的事。
+  $('status').textContent = '';
   const el = $('preview');
   el.className = 'preview';
   el.textContent = word;
@@ -858,6 +862,10 @@ $('gate').addEventListener('click', () => {
     showLoadError();
     return;
   }
+  // 全破的存檔 currentLevel 是 levelCount+1（一個不存在的關），上面那行閘門文案先寫的就是它——
+  // 破完 500 關的人會看到「第 501 關」，點下去卻是全破畫面。要到這裡才知道超界，所以改在這裡補寫：
+  // 此時閘門幾乎必然還蓋著（玩家還沒點），而且不必為了正確的第一印象多等 index.json 那趟 RTT。
+  if (save.currentLevel > levelCount) $('gate-level').textContent = strings.allClear;
   startLevel(save.currentLevel);
 })();
 

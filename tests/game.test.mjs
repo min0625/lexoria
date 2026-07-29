@@ -9,7 +9,15 @@ import { bridge } from '../src/bridge.js';
 import { fitVertically } from '../src/dictionary-card.js';
 import { cellsOf, claimStatus, createGame, ECONOMY } from '../src/game.js';
 import { snapshotText } from '../src/grid.js';
-import { defaultSave, normalizeSave, persist } from '../src/storage.js';
+import {
+  defaultSave,
+  formatUid,
+  isUid,
+  newUid,
+  normalizeSave,
+  normalizeUid,
+  persist,
+} from '../src/storage.js';
 import { applyHit, hitIndex, permutationAt, shuffleStep } from '../src/wheel.js';
 
 // 每關一個檔案（前端按需 fetch，見 src/main.js startLevel），測試把整批讀回來驗證。
@@ -247,6 +255,52 @@ test('normalizeSave：合法存檔保留內容並補齊缺漏 settings', () => {
   assert.deepEqual(n.settings, { sound: false, tutorialDone: false, dictHintDone: false });
   // firstOpenAt 這類額外欄位要原樣保留（loadSave 靠這點沿用舊值而非重寫成現在）
   assert.equal(normalizeSave({ ...defaultSave(), firstOpenAt: 123 }).firstOpenAt, 123);
+});
+
+// ---- 玩家編號（設計文件 §9）----
+// 純邏輯，但唯一會用力驗它的是**另一支程式**：tools/make-code.mjs 用 isUid/normalizeUid 擋玩家
+// 回報的錯字，簽發當下不擋就會發出一張沒人兌得了的碼。校驗式或字母表改壞了，最快的發現方式
+// 是「玩家說兌不了」——所以釘在這裡。固定 fixture 而非每次 newUid()：校驗碼只有 2 碼（10 bits），
+// 隨機取樣的打錯測試理論上有 1/1024 機率碰巧撞對，測試不能帶著這種機率跑。
+const UID = '4JGDS5XB1M9N';
+const UID_SHAPE = /^[0-9A-HJKMNP-TV-Z]{12}$/; // Crockford Base32：無 I/L/O/U
+
+test('uid：合法編號驗得過，打錯一碼被校驗碼擋下', () => {
+  assert.ok(isUid(UID));
+  assert.equal(isUid(`0${UID.slice(1)}`), false); // 首碼 4 → 0
+});
+
+test('uid：newUid 產出的編號自我驗證通過，且每次都不同', () => {
+  const a = newUid();
+  assert.match(a, UID_SHAPE);
+  assert.ok(isUid(a));
+  assert.notEqual(a, newUid());
+});
+
+test('uid：isUid 擋掉壞值，非字串也不能炸（存檔被手改成數字會白屏，§17）', () => {
+  for (const bad of [
+    123456789012, // RegExp.test 會先字串化而過關，接著 s.slice 就 TypeError——typeof 那關就是為它寫的
+    null,
+    undefined,
+    {},
+    '',
+    UID.slice(0, 11), // 太短
+    `${UID}0`, // 太長
+    `I${UID.slice(1)}`, // 字母表外的易混字
+  ]) {
+    assert.equal(isUid(bad), false);
+  }
+});
+
+test('uid：玩家貼回來的樣子正規化後仍驗得過（複製鈕 → make-code.mjs 的閉環）', () => {
+  // 設定卡的複製鈕給出去的就是這串（main.js 用 formatUid），make-code.mjs --uid 必須收得下
+  const shown = formatUid(UID);
+  assert.equal(shown, '4JGD-S5XB-1M9N');
+  assert.equal(normalizeUid(shown), UID);
+  assert.ok(isUid(normalizeUid(shown)));
+  // 手抄常見的走樣：小寫、前後空白、把 0/1 抄成 Crockford 排除掉的 O/I/L
+  assert.equal(normalizeUid(` ${shown.toLowerCase()} `), UID);
+  assert.equal(normalizeUid('Ol23456789AB'), '0123456789AB');
 });
 
 test('persist：寫入失敗不往外丟（loadSave 開機就寫，丟出去會白屏）', () => {

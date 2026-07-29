@@ -4,6 +4,22 @@ import { strings } from './strings.js';
 
 const LETTER_KEY = /^[a-zA-Z]$/;
 
+// 這次按鍵不該進轉盤的兩種情況（見下方 onKey）：
+//  1. 打字目標是表單欄位（如兌換碼框）——那是玩家在輸入，不是在拼字。
+//  2. 玩家根本看不到轉盤——不管是有東西整片蓋著（開場閘門、過關卡、設定卡），還是遊戲畫面
+//     整個被換掉（關卡選擇、全破畫面：keydown 掛在 window 上，換畫面不會收掉這顆 wheel，
+//     而 main.js 的 game 仍指著上一關）。接鍵盤等於在看不見的盤面上拼字：Enter 會送出一個
+//     玩家看不見的字（過關卡上直接判定成功／失敗、bonus 照樣進帳、甚至在關卡選擇畫面上
+//     疊出過關卡），字母鍵還會改動被蓋住的 #preview 與 #status 播報。
+// 第 2 點查的是「那一層還在不在」，不是 ev.target.closest('.overlay')：後者只有在焦點恰好落在
+// 卡片裡才成立（main.js 開卡時會 focus 卡片），而點過關卡的遮罩不會關卡片、只把焦點丟回 body；
+// 開場閘門更是從頭到尾沒被 focus 過，又是 screen 的兄弟節點，這兩種 closest 都找不到。
+// 不含 #overlay-tutorial：那層本來就不攔截操作（class 是 .tutorial 不是 .overlay，UI 文件 §4-F）。
+// 抽成獨立函式而非兩道 if，是為了讓 onKey 的認知複雜度留在上限內。
+const keyboardBlocked = (ev) =>
+  ev.target.closest?.('input, textarea') ||
+  document.querySelector('.gate:not([hidden]), .overlay:not([hidden]), #screen-game[hidden]');
+
 // 命中判斷：手指座標與每個字母圓心的距離 < 命中半徑（不用 elementFromPoint）。
 // 命中半徑 = 視覺半徑 × factor，但夾在「最近字母圓心間距 × 0.35」以下：
 // 3–4 顆的大間距輪盤維持寬鬆手感，6–7 顆的擁擠輪盤命中圓自動縮小，
@@ -212,11 +228,7 @@ export function createWheel(container, letters, { onChange, onSubmit }) {
 
   // 開發期鍵盤輸入（§12）：字母鍵選字、Backspace 取消最後一個、Enter 送出。非玩家功能。
   function onKey(ev) {
-    // 打字目標是表單欄位（如兌換碼框）就不搶；overlay 開著時也不搶——過關卡與設定卡開啟時
-    // main.js 會把焦點放進卡片本身，接鍵盤等於在遮罩底下拼字：Enter 會送出一個玩家看不見的
-    // 字（過關卡上按 Enter 就直接判定成功／失敗），字母鍵還會改動被蓋住的 #preview 與 #status
-    // 播報。沒有焦點時 target 是 body，遊戲畫面的開發用鍵盤輸入不受影響。
-    if (ev.target.closest?.('input, textarea, .overlay')) return;
+    if (keyboardBlocked(ev)) return;
     if (ev.key === 'Enter') {
       const w = word();
       selected = [];

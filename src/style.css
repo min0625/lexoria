@@ -165,6 +165,10 @@ button {
 .chip {
   font-family: var(--font-display);
   font-variant-numeric: tabular-nums; /* 金幣／關卡數字不跳寬 */
+  /* 中文行框比拉丁字母高 6px（實測 34 vs 40）：玩家編號那顆按下去換成「已複製」時
+     整顆藥丸會長高，卡片跟著高、overlay 垂直置中又把它往上推 3px，1.5 秒後再跳回來。
+     寫死行高讓中英文同高，順便讓純數字的金幣藥丸跟旁邊的關卡藥丸切齊。 */
+  line-height: 1.5;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -652,6 +656,12 @@ button {
   text-align: center;
   box-shadow: var(--shadow-lg);
   animation: card-in 0.22s ease-out;
+}
+/* 卡片本身是 tabindex="-1" 的程式化焦點落點（main.js 開卡時 focus，只為讓 VoiceOver 唸標題），
+   不是可 Tab 到的控制項。留著預設 outline 的話，開卡後桌面玩家一按鍵（空白鍵捲動就夠）瀏覽器
+   就切到鍵盤模式、給整張卡描一圈白框。鍵盤使用者的焦點指示仍在卡內的按鈕上，沒有損失。 */
+.card:focus {
+  outline: none;
 }
 /* 右上角關閉鈕：脫離流排，不佔標題那一行的位置。捲動時會跟著內容捲走，
    但那時遮罩已經點得到了（上面 max-height），VoiceOver 也照樣走得到這顆。 */
