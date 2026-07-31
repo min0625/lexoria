@@ -152,6 +152,13 @@ test('拼字填入交叉格後，被提示補到只剩交叉格的字也算找�
     ['ACT']
   );
   assert.equal(r.won, true);
+  // 拼字只做 empty → filled，不會把 revealed 蓋掉（§10 單向轉移）。過關卡片的
+  // ［零提示過關］徽章就是靠 revealedCells 是否為空判斷，這裡把那條前提釘住
+  assert.deepEqual(g.getState().revealedCells, ['1,1', '2,1']);
+  // 存檔再載入（重開頁面／換關回來）也要留著：還原順序若是先 fillWord 再標 revealed，
+  // 這兩格會掉成 filled、revealedCells 變空，買過提示的人重整一次就白拿徽章與「全程沒用提示」
+  const reloaded = createGame(lvl(1), g.getState());
+  assert.deepEqual(reloaded.getState().revealedCells, ['1,1', '2,1']);
 });
 
 test('claimStatus：冷卻計時、不可累積、時鐘倒轉不鎖死', () => {

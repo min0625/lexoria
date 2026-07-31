@@ -38,7 +38,8 @@ const keyOf = (cell) => `${cell.r},${cell.c}`;
  * @param saved  進行中進度 { foundWords, revealedCells, foundBonusWords }（皆為陣列）
  * @param rng    亂數來源，測試時可注入固定值
  */
-// biome-ignore lint/complexity/noExcessiveCognitiveComplexity: 16 vs 上限 15，只超一分——關卡狀態集中在單一 closure 是刻意設計（§10），不為 lint 拆散
+// 認知複雜度剛好貼著上限 15（曾經超一分，靠拿掉還原 revealedCells 時那個恆真的狀態判斷省回來）。
+// 再超的話請調整這裡的分支，不要拆函式——關卡狀態集中在單一 closure 是刻意設計（§10）。
 export function createGame(level, saved = {}, rng = Math.random) {
   const foundWords = new Set(saved.foundWords ?? []);
   const foundBonusWords = new Set(saved.foundBonusWords ?? []);
@@ -50,12 +51,17 @@ export function createGame(level, saved = {}, rng = Math.random) {
       if (!cells.has(keyOf(cell))) cells.set(keyOf(cell), { ...cell, state: 'empty' });
     }
   }
+  // revealed 一定要在 fillWord 之前還原。反過來的話，被提示揭示、之後又靠拼字補完整個字的格子
+  // 會先被 fillWord 蓋成 filled，還原迴圈就跳過它——重開一次頁面 revealedCells 就空了。畫面上
+  // 看不太出來（filled 與 revealed 只差配色），但過關卡片的［零提示過關］徽章與分享文案的
+  //「全程沒用提示」都是靠「revealedCells 是否為空」判斷的，等於買過提示的人重整一次就照樣拿到
+  //（UI 文件 §4-C）。fillWord 只動 empty，所以先標 revealed 兩邊就不會互蓋，重整前後也一致。
+  for (const key of saved.revealedCells ?? []) {
+    const cell = cells.get(key); // 上面剛建好，此時全部是 empty，不必再判狀態
+    if (cell) cell.state = 'revealed';
+  }
   for (const entry of level.words) {
     if (foundWords.has(entry.word)) fillWord(entry);
-  }
-  for (const key of saved.revealedCells ?? []) {
-    const cell = cells.get(key);
-    if (cell && cell.state === 'empty') cell.state = 'revealed';
   }
 
   function fillWord(entry) {
