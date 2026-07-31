@@ -131,10 +131,17 @@
       <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
       <h2 id="clear-title"></h2>
       <p id="clear-bonus"></p>
+      <!-- 徽章列：最多兩顆（里程碑、零提示過關），main.js onWin 用 replaceChildren() 填 <span>，
+           一顆都沒有時整列靠 :empty 收起來——replaceChildren() 不留文字節點，:empty 才成立。
+           這張卡是全遊戲最常被截圖的一幀，而卡片上其餘數字都是進度、只有這列是戰績（UI 文件 §4-C） -->
+      <p id="clear-badge" class="clear-badge"></p>
       <p id="clear-words-hint" class="clear-words-hint"></p>
       <div id="clear-words" class="clear-words"></div>
       <button id="btn-next" class="btn-primary" type="button"></button>
       <button id="btn-share-clear" class="chip" type="button"></button>
+      <!-- 截圖用的落款：截圖不帶網址列也不帶分享文案，沒有這行就看不出是哪個遊戲。
+           寫死在 HTML 不進 strings.js——這是品牌名，不隨語言變（UI 文件 §4-C） -->
+      <p class="card-brand">Lexoria</p>
     </div>
   </div>
 

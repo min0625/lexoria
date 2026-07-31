@@ -125,7 +125,8 @@ $('tutorial-text').textContent = strings.tutorial;
 $('rotate-text').textContent = strings.rotateDevice;
 $('allclear-text').textContent = strings.allClear;
 $('btn-allclear-back').textContent = strings.backToLevels;
-$('clear-title').textContent = strings.levelClear;
+// #clear-title 不在這裡填：onWin 每次都要重寫（關卡數 + 過關 + 金幣，見那裡），先寫一次只會
+// 留下一句沒有關卡數的舊文案，而它同時是卡片的 aria-labelledby 目標
 $('clear-words-hint').textContent = strings.tapWordHint;
 $('btn-next').textContent = strings.nextLevel;
 $('settings-title').textContent = strings.settings;
@@ -457,9 +458,19 @@ function onSubmit(word) {
   }
 }
 
+// 過關卡片上 bonus 那一行的文字（空字串＝整行收掉，見 style.css #clear-bonus:empty）。
+// 三選一寫成 if 而不是巢狀三元：只有最後一條路要攤平整份存檔數 bonus 字，用三元的話那筆
+// reduce 會被提到分支外、每次過關都白掃一次。
+function bonusLine(levelBonusCount) {
+  if (replay) return strings.replayNote;
+  if (levelBonusCount > 0) return strings.bonusFound(levelBonusCount);
+  const total = Object.values(save.foundBonusWords).reduce((n, ws) => n + ws.length, 0);
+  return total > 0 ? strings.bonusTotal(total) : '';
+}
+
 function onWin() {
   // 過關的慶祝感完全交給過關卡片——這裡曾經在「最後一字沒發音」時補一段 jingle（音效已移除，§13）
-  const bonusCount = game.getState().foundBonusWords.length;
+  const { foundBonusWords, revealedCells } = game.getState();
   if (!replay) {
     save.coins += ECONOMY.clearCoins;
     save.currentLevel = currentLevelId + 1;
@@ -467,10 +478,35 @@ function onWin() {
     persist(save);
   }
   updateCoins();
+  // 標題帶上關卡數（獨立一行，樣式見 .clear-level）：這張卡是最常被截圖的一幀，而截圖裡
+  // 沒有頂列（被遮罩糊掉）也沒有網址列，只寫「過關！」就說不出破的是哪一關；讀螢幕的人
+  // 聽到的也是這句（aria-labelledby），順便知道是第幾關（UI 文件 §4-C）
+  const title = `<span class="clear-level">${strings.levelTitle(currentLevelId)}</span>${strings.levelClear}`;
   $('clear-title').innerHTML = replay
-    ? strings.levelClear
-    : `${strings.levelClear} +${ECONOMY.clearCoins} <span class="icon icon-coin"></span>`;
-  $('clear-bonus').textContent = replay ? strings.replayNote : strings.bonusFound(bonusCount);
+    ? title
+    : // 金幣圖示是 CSS mask、沒有文字，不補 aria-label 的話 aria-labelledby 算出來的名字就停在
+      // 「+10」，讀螢幕的人聽不到單位——而這張卡是過關對他們唯一的通知（UI 文件 §4-C）
+      `${title} +${ECONOMY.clearCoins} <span class="icon icon-coin" role="img" aria-label="${strings.coinUnit}"></span>`;
+  // 本關 0 個 bonus 時不印「+0」，改印生涯累計——慶祝卡上印一個 0 比不印還糟，而且多半
+  // 不是玩家的問題：前 100 關的 bonus 數中位數只有 3，其中 15 關根本一個 bonus 都不存在。
+  // 累計數是全遊戲唯一「只漲不跌、又不是進度」的數字（save.foundBonusWords 早就按關卡記著，
+  // persistProgress 在拼出當下就寫進去了，所以這裡已含本關）。兩個都是 0 就整行收掉（:empty）
+  $('clear-bonus').textContent = bonusLine(foundBonusWords.length);
+  // 徽章列（0～2 個）。零提示：revealedCells 是「這關被提示揭示過的格子」，拼字只會把 empty
+  // 轉成 filled、不會蓋掉 revealed（game.js §10 的單向轉移，存檔還原的順序也守著同一條，
+  // 見 createGame 裡那段註解），所以空陣列就等於整關沒買過提示；
+  // 重玩也照給——沒用提示就是沒用提示，跟給不給金幣是兩回事。里程碑則**只給第一次**破關：
+  // 它本質是進度而非戰績，重玩再閃一次就成了可以重複領的假成就（UI 文件 §4-C）
+  const badges = [];
+  if (!replay && currentLevelId % 50 === 0) badges.push(strings.milestone(currentLevelId));
+  if (revealedCells.length === 0) badges.push(strings.noHintClear);
+  $('clear-badge').replaceChildren(
+    ...badges.map((text) => {
+      const span = document.createElement('span');
+      span.textContent = text;
+      return span;
+    })
+  );
   dictCard.hide(); // 換一批單字前先收掉舊卡片，避免錨點指向已消失的格子
   // 查詞提示要跟著收：過關卡片的背景是半透明模糊，留著會透出來，按「下一關」後還會停在
   // 上一關格盤的座標上、蓋在載入畫面上閃。過關後改由卡片的單字鈕承接「點字查解釋」（§4-C）
@@ -744,15 +780,19 @@ function wireShare(btn, label, buildText) {
 // cleared：過關卡片上那顆才報額外單字數，設定裡那顆只說在玩哪一關。
 // 字母排序後才附上：getLetters 給的是洗牌後的視覺順序（快照圖要跟畫面對得上才這樣設計），
 // 但純文字裡沒有畫面可對，未排序的話同一關分享兩次字母串就不一樣，看起來像亂碼而不是字母組。
-const levelShareText = (cleared) => () =>
-  game && wheel
-    ? strings.shareText(
-        currentLevelId,
-        [...wheel.getLetters()].sort(),
-        snapshotText(game.getCells()),
-        cleared ? game.getState().foundBonusWords.length : null
-      )
-    : null;
+const levelShareText = (cleared) => () => {
+  if (!game || !wheel) return null;
+  const s = game.getState();
+  return strings.shareText(
+    currentLevelId,
+    [...wheel.getLetters()].sort(),
+    snapshotText(game.getCells()),
+    cleared ? s.foundBonusWords.length : null,
+    // 零提示要跟著分享出去，否則那面徽章只活在截圖裡（卡片上那顆分享鈕的存在理由就是報戰績）。
+    // 設定裡那顆不報：它說的是「我正在玩第 N 關」，關還沒破，沒用提示不構成戰績
+    cleared && s.revealedCells.length === 0
+  );
+};
 wireShare($('btn-share'), strings.share, levelShareText(false));
 wireShare($('btn-share-clear'), strings.shareScore, levelShareText(true));
 // 全破畫面：startLevel 走的是 early return，game/wheel 還停在最後一關，秀那張盤面沒有意義

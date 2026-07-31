@@ -758,6 +758,48 @@ button {
   transform: translateY(1px) scale(0.98);
   box-shadow: var(--shadow-sm);
 }
+/* 關卡數獨立一行、比「過關！」小一號：同一行寫「第 500 關 過關！ +10 🪙」在 320px 上會折行，
+   而折出來的位置由字數決定（第 5 關與第 500 關折得不一樣）。仍在 #clear-title 裡面，
+   aria-labelledby 才唸得到「第 N 關」——過關對讀螢幕的人本來就只剩這句（UI 文件 §4-C）*/
+.clear-level {
+  display: block;
+  font-size: 0.62em;
+  color: var(--text-soft);
+}
+/* 徽章列：卡片上唯一「戰績」而非「進度」的一列，所以只有這裡給膠囊底，
+   截圖裡一眼看得出是成就。最多兩顆（里程碑 + 零提示），窄機上放不下就換行。
+   一顆都沒有時整列收掉——replaceChildren() 不留文字節點，:empty 才成立 */
+.clear-badge {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+.clear-badge span {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.clear-badge:empty {
+  display: none;
+}
+/* 本關沒有 bonus、生涯累計也還是 0（第一關就是這個情況）→ 整行收掉，不留空隙 */
+#clear-bonus:empty {
+  display: none;
+}
+/* 截圖落款：要看得見、但不能跟卡片上任何一句搶。gap 之外再壓一點，
+   讀起來才像落款而不是第三顆按鈕 */
+.card-brand {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+  margin-top: -6px;
+}
 .clear-words-hint {
   font-size: 0.75rem;
   color: var(--text-soft);
