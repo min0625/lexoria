@@ -3,140 +3,147 @@
    色票沿用「暖紙＋森林墨綠＋琥珀」的識別，但把預設的扁平米白做深、
    給它層次與觸感（§7 只是草案值，定案時只改這組變數即可）。 */
 :root {
-  color-scheme: dark; /* 固定深色（主文件 §19-3）：表單控件、捲軸也走深色 */
+	color-scheme: dark; /* 固定深色（主文件 §19-3）：表單控件、捲軸也走深色 */
 
-  /* 色票：深青墨字磚 + 暖珊瑚強調，鋪在深青墨黑底上。
+	/* 色票：深青墨字磚 + 暖珊瑚強調，鋪在深青墨黑底上。
      刻意放掉通用的「綠+金」預設，改一組有主張、切合「墨水/字典」主題的雙色。*/
-  --bg: #10201f; /* 深青墨黑底 */
-  --bg-tint: #16302c; /* 背景漸層的另一端（微暈染，非扁平單色）*/
-  --surface: #1b2c2b; /* 卡片／轉盤底 */
-  --surface-hi: #223634; /* 深色靠亮面差＋細邊做層次，不靠黑陰影 */
-  --grid-empty: #2a3b39; /* 未填格（凹槽）*/
-  --grid-filled: #1c8f88; /* 已填格：亮青墨。filled 與 revealed 同色（§10）；白字（大字粗體）達 AA-large */
-  --grid-filled-hi: #29a69d; /* 已填格頂端高光（僅漸層用，仍屬同一狀態）*/
-  --letter-on-fill: #ffffff;
-  --text: #e6ede9;
-  --text-soft: #9aa5a1; /* 次要文字（釋義、授權）*/
-  --line: rgb(255 255 255 / 0.09); /* 立體件的細邊框，取代硬陰影邊緣 */
-  --accent: #ff7a52; /* 亮珊瑚：選中字母底／手勢連線／強調光暈（填色與發光用）*/
-  --accent-rgb: 255 122 82; /* 同色的 RGB 分量，供半透明光暈 rgb(var(--accent-rgb)/α) */
-  --accent-ink: #ff8f63; /* 珊瑚墨色（文字用）：深底上亮珊瑚本身即達 AA */
-  --accent-soft: rgb(255 122 82 / 0.16); /* 珊瑚淡底（金幣膠囊、目前關），疊在深 surface 上 */
-  --on-accent: #3a1608; /* 珊瑚底上的字（選中字母）：深色比白字清楚，≥4.5:1 */
+	--bg: #10201f; /* 深青墨黑底 */
+	--bg-tint: #16302c; /* 背景漸層的另一端（微暈染，非扁平單色）*/
+	--surface: #1b2c2b; /* 卡片／轉盤底 */
+	--surface-hi: #223634; /* 深色靠亮面差＋細邊做層次，不靠黑陰影 */
+	--grid-empty: #2a3b39; /* 未填格（凹槽）*/
+	--grid-filled: #1c8f88; /* 已填格：亮青墨。filled 與 revealed 同色（§10）；白字（大字粗體）達 AA-large */
+	--grid-filled-hi: #29a69d; /* 已填格頂端高光（僅漸層用，仍屬同一狀態）*/
+	--letter-on-fill: #ffffff;
+	--text: #e6ede9;
+	--text-soft: #9aa5a1; /* 次要文字（釋義、授權）*/
+	--line: rgb(255 255 255 / 0.09); /* 立體件的細邊框，取代硬陰影邊緣 */
+	--accent: #ff7a52; /* 亮珊瑚：選中字母底／手勢連線／強調光暈（填色與發光用）*/
+	--accent-rgb: 255 122 82; /* 同色的 RGB 分量，供半透明光暈 rgb(var(--accent-rgb)/α) */
+	--accent-ink: #ff8f63; /* 珊瑚墨色（文字用）：深底上亮珊瑚本身即達 AA */
+	--accent-soft: rgb(
+		255 122 82 / 0.16
+	); /* 珊瑚淡底（金幣膠囊、目前關），疊在深 surface 上 */
+	--on-accent: #3a1608; /* 珊瑚底上的字（選中字母）：深色比白字清楚，≥4.5:1 */
 
-  /* depth：黑陰影在深底幾乎看不見 → 加深陰影＋用細亮邊當接觸線 */
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
-  --shadow-md: 0 2px 6px rgb(0 0 0 / 0.44), 0 1px 0 rgb(255 255 255 / 0.04) inset;
-  --shadow-lg: 0 8px 20px rgb(0 0 0 / 0.55), 0 1px 0 rgb(255 255 255 / 0.05) inset;
-  --emboss: inset 0 1px 0 rgb(255 255 255 / 0.06); /* 立體件頂端內高光 */
-  --deboss: inset 0 2px 5px rgb(0 0 0 / 0.45); /* 凹槽（未填格）*/
+	/* depth：黑陰影在深底幾乎看不見 → 加深陰影＋用細亮邊當接觸線 */
+	--shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4);
+	--shadow-md:
+		0 2px 6px rgb(0 0 0 / 0.44), 0 1px 0 rgb(255 255 255 / 0.04) inset;
+	--shadow-lg:
+		0 8px 20px rgb(0 0 0 / 0.55), 0 1px 0 rgb(255 255 255 / 0.05) inset;
+	--emboss: inset 0 1px 0 rgb(255 255 255 / 0.06); /* 立體件頂端內高光 */
+	--deboss: inset 0 2px 5px rgb(0 0 0 / 0.45); /* 凹槽（未填格）*/
 
-  /* 字型：圓體 display 給遊戲件（字磚、轉盤字、標題）＝親切、玩具感；
+	/* 字型：圓體 display 給遊戲件（字磚、轉盤字、標題）＝親切、玩具感；
      內文用乾淨系統字。全離線，不引入 CDN 字檔（主文件約束）。 */
-  --font-display: ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", system-ui, sans-serif;
-  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-display:
+		ui-rounded, "SF Pro Rounded", "Segoe UI Rounded", system-ui, sans-serif;
+	--font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 html,
 body {
-  height: 100%;
-  overflow: hidden;
-  /* 捲動不鏈接到外層：iOS 內嵌 WebView 靠 scrollView rubber-band 觸發下拉關閉（設計文件 §4）*/
-  overscroll-behavior: none;
-  color: var(--text);
-  font-family: var(--font-body);
-  /* 暖紙不是扁平單色：極淡的暖暈染做出深度，仍在同一識別內 */
-  background: radial-gradient(120% 90% at 50% -10%, var(--bg-tint), transparent 60%), var(--bg);
-  /* 避免長按選字、iOS 放大鏡、連點兩下縮放（設計文件 §4）*/
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
+	height: 100%;
+	overflow: hidden;
+	/* 捲動不鏈接到外層：iOS 內嵌 WebView 靠 scrollView rubber-band 觸發下拉關閉（設計文件 §4）*/
+	overscroll-behavior: none;
+	color: var(--text);
+	font-family: var(--font-body);
+	/* 暖紙不是扁平單色：極淡的暖暈染做出深度，仍在同一識別內 */
+	background:
+		radial-gradient(120% 90% at 50% -10%, var(--bg-tint), transparent 60%),
+		var(--bg);
+	/* 避免長按選字、iOS 放大鏡、連點兩下縮放（設計文件 §4）*/
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: transparent;
 }
 
 button {
-  font: inherit;
-  color: inherit;
-  background: none;
-  border: none;
-  cursor: pointer;
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 
 /* ---- 圖示：內嵌線性 SVG，用 mask 上色 → 吃 currentColor、自動跟主題變色，
    取代原本各平台長相不一的 emoji。全離線、無外部字檔/CDN（主文件約束）。
    -webkit-mask 是給 Phase 2 的 WKWebView。 */
 :root {
-  --i-gear: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E");
-  --i-bulb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 21h4'/%3E%3Cpath d='M12 3a6 6 0 0 0-3.5 10.9c.6.4.9 1 1 1.6l.1.5h4.8l.1-.5c.1-.6.4-1.2 1-1.6A6 6 0 0 0 12 3z'/%3E%3C/svg%3E");
-  --i-shuffle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 3 21 3 21 8'/%3E%3Cline x1='4' y1='20' x2='21' y2='3'/%3E%3Cpolyline points='21 16 21 21 16 21'/%3E%3Cline x1='15' y1='15' x2='21' y2='21'/%3E%3Cline x1='4' y1='4' x2='9' y2='9'/%3E%3C/svg%3E");
-  --i-speaker: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3C/svg%3E");
-  --i-back: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='19' y1='12' x2='5' y2='12'/%3E%3Cpolyline points='12 19 5 12 12 5'/%3E%3C/svg%3E");
-  --i-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
-  --i-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-  --i-lock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
-  --i-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 4v16l13-8z'/%3E%3C/svg%3E");
-  --i-coin: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='4.5'/%3E%3C/svg%3E");
+	--i-gear: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z'/%3E%3C/svg%3E");
+	--i-bulb: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 18h6'/%3E%3Cpath d='M10 21h4'/%3E%3Cpath d='M12 3a6 6 0 0 0-3.5 10.9c.6.4.9 1 1 1.6l.1.5h4.8l.1-.5c.1-.6.4-1.2 1-1.6A6 6 0 0 0 12 3z'/%3E%3C/svg%3E");
+	--i-shuffle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 3 21 3 21 8'/%3E%3Cline x1='4' y1='20' x2='21' y2='3'/%3E%3Cpolyline points='21 16 21 21 16 21'/%3E%3Cline x1='15' y1='15' x2='21' y2='21'/%3E%3Cline x1='4' y1='4' x2='9' y2='9'/%3E%3C/svg%3E");
+	--i-speaker: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='11 5 6 9 2 9 2 15 6 15 11 19'/%3E%3Cpath d='M19.07 4.93a10 10 0 0 1 0 14.14'/%3E%3Cpath d='M15.54 8.46a5 5 0 0 1 0 7.07'/%3E%3C/svg%3E");
+	--i-back: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='19' y1='12' x2='5' y2='12'/%3E%3Cpolyline points='12 19 5 12 12 5'/%3E%3C/svg%3E");
+	--i-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
+	--i-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+	--i-lock: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E");
+	--i-play: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23000'%3E%3Cpath d='M7 4v16l13-8z'/%3E%3C/svg%3E");
+	--i-coin: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Ccircle cx='12' cy='12' r='4.5'/%3E%3C/svg%3E");
 }
 .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  flex: none;
-  vertical-align: middle;
-  background-color: currentColor;
-  -webkit-mask: var(--i) center / contain no-repeat;
-  mask: var(--i) center / contain no-repeat;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	flex: none;
+	vertical-align: middle;
+	background-color: currentColor;
+	-webkit-mask: var(--i) center / contain no-repeat;
+	mask: var(--i) center / contain no-repeat;
 }
 .icon-gear {
-  --i: var(--i-gear);
+	--i: var(--i-gear);
 }
 .icon-bulb {
-  --i: var(--i-bulb);
-  width: 26px;
-  height: 26px;
+	--i: var(--i-bulb);
+	width: 26px;
+	height: 26px;
 }
 .icon-shuffle {
-  --i: var(--i-shuffle);
-  width: 22px;
-  height: 22px;
+	--i: var(--i-shuffle);
+	width: 22px;
+	height: 22px;
 }
 .icon-speaker {
-  --i: var(--i-speaker);
-  width: 18px;
-  height: 18px;
+	--i: var(--i-speaker);
+	width: 18px;
+	height: 18px;
 }
 .icon-back {
-  --i: var(--i-back);
+	--i: var(--i-back);
 }
 .icon-check {
-  --i: var(--i-check);
+	--i: var(--i-check);
 }
 .icon-close {
-  --i: var(--i-close);
+	--i: var(--i-close);
 }
 .icon-lock {
-  --i: var(--i-lock);
+	--i: var(--i-lock);
 }
 .icon-play {
-  --i: var(--i-play);
+	--i: var(--i-play);
 }
 .icon-coin {
-  --i: var(--i-coin);
+	--i: var(--i-coin);
 }
 
 /* ---- 畫面骨架 ---- */
 .screen {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  /* 版面收成一欄居中（UI 文件 §2）：手機上 max-width 永遠不生效（視窗本來就更窄），
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	/* 版面收成一欄居中（UI 文件 §2）：手機上 max-width 永遠不生效（視窗本來就更窄），
      這條只為桌機／平板——不收邊的話關卡鈕貼最左、齒輪貼最右，中間空一大片，而轉盤
      封頂 330px、格子封頂 56px，兩者都不會長大去填那片空白。分享出去的連結有相當比例
      是在桌機點開的，那是第一印象。
@@ -146,151 +153,151 @@ button {
      .hint-btn 不受影響：它的 right 第一分支跟著轉盤走（50% + d/2 + 8px），在 W > d + 128px
      ——轉盤封頂時即 458px——就已經贏過保底的 100% − 56px，1440px 與 480px 量到的間距同樣是
      8px。收窄沒有把它拉近，只是讓那條保底分支離生效更遠。 */
-  max-width: 480px;
-  margin-inline: auto;
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
-    env(safe-area-inset-left);
+	max-width: 480px;
+	margin-inline: auto;
+	padding: env(safe-area-inset-top) env(safe-area-inset-right)
+		env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 .screen[hidden] {
-  display: none;
+	display: none;
 }
 
 .topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 16px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 16px;
 }
 .chip {
-  font-family: var(--font-display);
-  font-variant-numeric: tabular-nums; /* 金幣／關卡數字不跳寬 */
-  /* 中文行框比拉丁字母高 6px（實測 34 vs 40）：玩家編號那顆按下去換成「已複製」時
+	font-family: var(--font-display);
+	font-variant-numeric: tabular-nums; /* 金幣／關卡數字不跳寬 */
+	/* 中文行框比拉丁字母高 6px（實測 34 vs 40）：玩家編號那顆按下去換成「已複製」時
      整顆藥丸會長高，卡片跟著高、overlay 垂直置中又把它往上推 3px，1.5 秒後再跳回來。
      寫死行高讓中英文同高，順便讓純數字的金幣藥丸跟旁邊的關卡藥丸切齊。 */
-  line-height: 1.5;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 7px 15px;
-  font-weight: 700;
-  box-shadow: var(--shadow-sm), var(--emboss);
-  transition: transform 0.12s ease;
+	line-height: 1.5;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	padding: 7px 15px;
+	font-weight: 700;
+	box-shadow: var(--shadow-sm), var(--emboss);
+	transition: transform 0.12s ease;
 }
 .chip:active {
-  transform: scale(0.94);
+	transform: scale(0.94);
 }
 .chip.coin {
-  color: var(--accent-ink); /* 琥珀墨色在淡底上達 AA（4.67:1）*/
-  background: var(--accent-soft);
-  border-color: transparent;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+	color: var(--accent-ink); /* 琥珀墨色在淡底上達 AA（4.67:1）*/
+	background: var(--accent-soft);
+	border-color: transparent;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
 }
 #btn-claim.cooling {
-  /* 領取鈕冷卻中：貼平無陰影，但保持可點——點擊會顯示剩餘時間說明。
+	/* 領取鈕冷卻中：貼平無陰影，但保持可點——點擊會顯示剩餘時間說明。
      不再用 opacity 壓暗：那會把倒數文字一起淡掉（實測 2.8:1，低於 AA 4.5:1），
      而倒數是玩家唯一能看到「還要等多久」的字。可領那顆改成實心珊瑚後，
      「淡底＋貼平 vs 實心＋凸起」已經夠對比，不必再靠透明度。*/
-  box-shadow: none;
+	box-shadow: none;
 }
 #btn-claim:not(.cooling) {
-  /* 可領取：填成實心珊瑚。旁邊的金幣數字同為 .chip.coin，淡底時兩顆長得一模一樣，
+	/* 可領取：填成實心珊瑚。旁邊的金幣數字同為 .chip.coin，淡底時兩顆長得一模一樣，
      玩家看不出這顆是能按的——辨識問題用配色解，比拿動畫去補救便宜也不吵。*/
-  background: var(--accent);
-  color: var(--on-accent);
-  /* 凸起＋珊瑚外暈：深底上唯一浮起來的實色塊，用既有的 depth 語彙說「這顆可以按」。
+	background: var(--accent);
+	color: var(--on-accent);
+	/* 凸起＋珊瑚外暈：深底上唯一浮起來的實色塊，用既有的 depth 語彙說「這顆可以按」。
      冷卻中剛好相反（box-shadow: none 貼平＝按不動），兩個狀態的觸感自己會對比出來。
      靜態陰影只在狀態切換時畫一次，不是每幀重繪的動畫。*/
-  box-shadow:
-    var(--shadow-md),
-    0 2px 12px rgb(var(--accent-rgb) / 0.35);
+	box-shadow:
+		var(--shadow-md),
+		0 2px 12px rgb(var(--accent-rgb) / 0.35);
 }
 #btn-claim.pop {
-  /* 倒數歸零翻成可領的瞬間：重用格子字母的登場動畫 */
-  animation: pop 0.3s ease-out;
+	/* 倒數歸零翻成可領的瞬間：重用格子字母的登場動畫 */
+	animation: pop 0.3s ease-out;
 }
 .chip.bump {
-  /* 金幣數字變大的瞬間彈一下（main.js updateCoins）。「+N」閃在畫面中央的 #preview，
+	/* 金幣數字變大的瞬間彈一下（main.js updateCoins）。「+N」閃在畫面中央的 #preview，
      金幣數字卻在最上角——整個畫面上距離最遠的兩點，不動一下沒有人會把兩者連起來。
      只在**變多**時播：花掉金幣（提示）不該慶祝。
      用 bump 不是 pop：pop 從 scale(0.3) 起跳，那是格子字母的**登場**動畫，套在本來就在
      畫面上的藥丸上會讓整顆（底色、金幣圖示、數字）先縮成三成再彈回來。登場與強調是兩種
      語彙，共用一個是省錯地方；#btn-claim.pop 逃得過只因為它同時換掉了按鈕上的字。 */
-  animation: bump 0.3s ease-out;
+	animation: bump 0.3s ease-out;
 }
 .chip.coin::before {
-  /* 金幣圖示，跟著文字上琥珀色 */
-  content: "";
-  width: 1.05em;
-  height: 1.05em;
-  background-color: currentColor;
-  -webkit-mask: var(--i-coin) center / contain no-repeat;
-  mask: var(--i-coin) center / contain no-repeat;
+	/* 金幣圖示，跟著文字上琥珀色 */
+	content: "";
+	width: 1.05em;
+	height: 1.05em;
+	background-color: currentColor;
+	-webkit-mask: var(--i-coin) center / contain no-repeat;
+	mask: var(--i-coin) center / contain no-repeat;
 }
 
 /* ---- 填字格：置中，佔上方剩餘空間 ---- */
 .grid-area {
-  flex: 1 1 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 0;
-  padding: 8px;
-  container-type: size; /* 讓 .grid 用 cq 單位量「實際分到的空間」而非視窗 */
+	flex: 1 1 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 0;
+	padding: 8px;
+	container-type: size; /* 讓 .grid 用 cq 單位量「實際分到的空間」而非視窗 */
 }
 /* 開站載入提示（index.html 靜態內容）：慢網下不留死畫面；boot() 完成後被 createGrid 清掉 */
 .loading-text {
-  color: var(--text-soft);
-  animation: loading-pulse 1.2s ease-in-out infinite alternate;
+	color: var(--text-soft);
+	animation: loading-pulse 1.2s ease-in-out infinite alternate;
 }
 @keyframes loading-pulse {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0.35;
-  }
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0.35;
+	}
 }
 .grid {
-  display: grid;
-  grid-template-rows: repeat(var(--rows), 1fr);
-  grid-template-columns: repeat(var(--cols), 1fr);
-  --gap: 6px;
-  gap: var(--gap);
-  /* 格子尺寸 = 實際可用寬高（扣掉格間距）取小除以行列數（設計文件 §7）。
+	display: grid;
+	grid-template-rows: repeat(var(--rows), 1fr);
+	grid-template-columns: repeat(var(--cols), 1fr);
+	--gap: 6px;
+	gap: var(--gap);
+	/* 格子尺寸 = 實際可用寬高（扣掉格間距）取小除以行列數（設計文件 §7）。
      用 cqw/cqh 而非 vw/vh：矮螢幕上 46vh 會超過 flex 分到的高度，溢出蓋住頂欄與預覽列 */
-  --cell: min(
-    (100cqw - (var(--cols) - 1) * var(--gap)) /
-    var(--cols),
-    (100cqh - (var(--rows) - 1) * var(--gap)) /
-    var(--rows),
-    56px
-  );
-  /* 總尺寸要把 gap 加回來，否則 1fr 軌道會比 --cell 小（gap 被扣兩次），
+	--cell: min(
+		(100cqw - (var(--cols) - 1) * var(--gap)) /
+		var(--cols),
+		(100cqh - (var(--rows) - 1) * var(--gap)) /
+		var(--rows),
+		56px
+	);
+	/* 總尺寸要把 gap 加回來，否則 1fr 軌道會比 --cell 小（gap 被扣兩次），
      .cell 的 font-size 也會對不上實際格寬 */
-  width: calc(var(--cell) * var(--cols) + (var(--cols) - 1) * var(--gap));
-  height: calc(var(--cell) * var(--rows) + (var(--rows) - 1) * var(--gap));
+	width: calc(var(--cell) * var(--cols) + (var(--cols) - 1) * var(--gap));
+	height: calc(var(--cell) * var(--rows) + (var(--rows) - 1) * var(--gap));
 }
 .cell {
-  font-family: var(--font-display);
-  background: var(--grid-empty);
-  border-radius: 8px;
-  box-shadow: var(--deboss); /* 未填 = 凹槽 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: calc(var(--cell) * 0.55);
-  transition: transform 0.12s ease;
+	font-family: var(--font-display);
+	background: var(--grid-empty);
+	border-radius: 8px;
+	box-shadow: var(--deboss); /* 未填 = 凹槽 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	font-size: calc(var(--cell) * 0.55);
+	transition: transform 0.12s ease;
 }
 .cell.on {
-  /* 已填 = 浮起的字磚 */
-  background: linear-gradient(var(--grid-filled-hi), var(--grid-filled));
-  color: var(--letter-on-fill);
-  box-shadow: var(--shadow-md), var(--emboss);
-  text-shadow: 0 1px 1px rgb(0 0 0 / 0.18);
+	/* 已填 = 浮起的字磚 */
+	background: linear-gradient(var(--grid-filled-hi), var(--grid-filled));
+	color: var(--letter-on-fill);
+	box-shadow: var(--shadow-md), var(--emboss);
+	text-shadow: 0 1px 1px rgb(0 0 0 / 0.18);
 }
 /* 按下去會縮一下、放開彈回——點得開查詞卡的格子才有（§6.1），同 .clear-word-chip 的手感
    （transition 在 .cell，只抄 :active 會變成按下與放開都硬切）。
@@ -298,80 +305,80 @@ button {
    格子點了沒反應，給它按壓回饋就是騙人。這只在點下去之後才回饋，教不了「可以點」；
    發現性靠 showTapHint 那句提示 */
 .cell[role]:active {
-  transform: scale(0.94);
+	transform: scale(0.94);
 }
 .cell.pop {
-  animation: pop 0.3s ease-out;
+	animation: pop 0.3s ease-out;
 }
 @keyframes pop {
-  0% {
-    transform: scale(0.3);
-  }
-  70% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
+	0% {
+		transform: scale(0.3);
+	}
+	70% {
+		transform: scale(1.15);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 /* pop 的「已經在畫面上」版：只放大再回來，不從無到有。用在強調既有元素（.chip.bump） */
 @keyframes bump {
-  50% {
-    transform: scale(1.15);
-  }
+	50% {
+		transform: scale(1.15);
+	}
 }
 
 /* ---- 拼字串顯示區：高度固定預留，不跳動 ---- */
 .preview {
-  font-family: var(--font-display);
-  height: 3.3rem; /* 固定用 rem，不用 em——避免 .dup 縮小字體時連帶縮高度造成版面跳動 */
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  color: var(--accent-ink);
-  text-shadow: 0 1px 0 var(--surface-hi);
+	font-family: var(--font-display);
+	height: 3.3rem; /* 固定用 rem，不用 em——避免 .dup 縮小字體時連帶縮高度造成版面跳動 */
+	text-align: center;
+	font-size: 1.5rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	color: var(--accent-ink);
+	text-shadow: 0 1px 0 var(--surface-hi);
 }
 .preview.dup {
-  color: var(--text-soft);
-  opacity: 0.85;
-  font-size: 1.1rem;
-  letter-spacing: 0.1em;
+	color: var(--text-soft);
+	opacity: 0.85;
+	font-size: 1.1rem;
+	letter-spacing: 0.1em;
 }
 .preview.good {
-  color: var(--accent-ink);
+	color: var(--accent-ink);
 }
 .preview.shake {
-  animation: shake 0.35s;
-  opacity: 0.7;
+	animation: shake 0.35s;
+	opacity: 0.7;
 }
 .shake {
-  animation: shake 0.35s;
+	animation: shake 0.35s;
 }
 @keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-6px);
-  }
-  75% {
-    transform: translateX(6px);
-  }
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(-6px);
+	}
+	75% {
+		transform: translateX(6px);
+	}
 }
 
 /* ---- 字母轉盤：下 1/3 拇指區。整頁的招牌件（signature）---- */
 .wheel-row {
-  --wheel-d: min(70vw, 38vh, 330px);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 0 24px;
+	--wheel-d: min(70vw, 38vh, 330px);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 0 24px;
 }
 .hint-btn {
-  /* 轉盤的左下角。兩個軸各有各的理由，要動請兩邊一起想：
+	/* 轉盤的左下角。兩個軸各有各的理由，要動請兩邊一起想：
      — 垂直靠轉盤下緣，不是正左方的水平中線：圓內接於矩形，剩下的空白全集中在四個角，而水平
        中線正是圓最寬、整個版面唯一沒有餘裕的那條線（正左方那版在 390px 上離螢幕邊與轉盤各
        只剩 4px／2.5px，320px 還會壓到圓周）。移到下緣這一帶圓半寬掉成 √(R²−d²)，橫向就有
@@ -383,137 +390,143 @@ button {
      對齊的是轉盤外框左緣而不是圓周切點：按鈕底緣與轉盤底緣齊平，最近點是它的右上角，要真的
      貼著圓弧得算 √(124R−3844)——那跟按鈕高度綁死，換個常數逼近就會在某個螢幕尺寸失手。
      代價是桌機上最近點離圓弧約 36px（轉盤 330px 封頂時），手機上圓弧本來就在旁邊，看不出差別。 */
-  position: absolute;
-  right: min(calc(50% + var(--wheel-d) / 2 + 8px), calc(100% - 56px));
-  bottom: 24px; /* 對齊轉盤下緣：絕對定位以 padding box 為準，這裡等於 .wheel-row 的 padding-bottom */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  font-size: 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 10px 12px;
-  box-shadow: var(--shadow-sm), var(--emboss);
-  transition: transform 0.12s ease;
+	position: absolute;
+	right: min(calc(50% + var(--wheel-d) / 2 + 8px), calc(100% - 56px));
+	bottom: 24px; /* 對齊轉盤下緣：絕對定位以 padding box 為準，這裡等於 .wheel-row 的 padding-bottom */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px;
+	font-size: 1.5rem;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	padding: 10px 12px;
+	box-shadow: var(--shadow-sm), var(--emboss);
+	transition: transform 0.12s ease;
 }
 .hint-btn:active {
-  transform: scale(0.94);
+	transform: scale(0.94);
 }
 .hint-btn small {
-  font-family: var(--font-display);
-  font-variant-numeric: tabular-nums;
-  font-size: 0.72rem;
-  color: var(--accent-ink);
-  font-weight: 800;
+	font-family: var(--font-display);
+	font-variant-numeric: tabular-nums;
+	font-size: 0.72rem;
+	color: var(--accent-ink);
+	font-weight: 800;
 }
 .hint-btn.poor,
 .hint-btn.poor small {
-  /* 金幣不足：燈泡與價格一起退成次要色，按之前就看得出來買不起（同領取鈕那條——辨識問題用
+	/* 金幣不足：燈泡與價格一起退成次要色，按之前就看得出來買不起（同領取鈕那條——辨識問題用
      配色解，不要留到按下去才用動畫補救）。按下去仍照舊抖動 + 「金幣不足」（設計文件 §8），
      這只是提前告知，不是把按鈕停用。
      兩條選擇器都要：燈泡是 background-color: currentColor + mask（.icon），跟著按鈕的
      color 走；但 small 自己指定了 --accent-ink，不覆蓋的話價格會留在原本的琥珀色。
      只淡前景、不動底色邊框陰影：壓暗整顆鈕會讓「提示」這個功能看起來壞了，而它只是現在買不
      起；用 opacity 更不行，那會把價格數字一起淡到 AA 以下（同 #btn-claim.cooling 的教訓）。 */
-  color: var(--text-soft);
+	color: var(--text-soft);
 }
 .wheel {
-  position: relative;
-  width: var(--wheel-d);
-  height: var(--wheel-d);
-  /* 立體圓盤：頂端受光的暖白面 */
-  background: radial-gradient(circle at 50% 34%, var(--surface-hi), var(--surface) 72%);
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  box-shadow: var(--shadow-lg), var(--emboss);
-  touch-action: none; /* 滑動不觸發捲動／下拉刷新（設計文件 §4）*/
+	position: relative;
+	width: var(--wheel-d);
+	height: var(--wheel-d);
+	/* 立體圓盤：頂端受光的暖白面 */
+	background: radial-gradient(
+		circle at 50% 34%,
+		var(--surface-hi),
+		var(--surface) 72%
+	);
+	border: 1px solid var(--line);
+	border-radius: 50%;
+	box-shadow: var(--shadow-lg), var(--emboss);
+	touch-action: none; /* 滑動不觸發捲動／下拉刷新（設計文件 §4）*/
 }
 .wheel::before {
-  /* 內圈刻線：讓它讀起來像個轉盤 */
-  content: "";
-  position: absolute;
-  inset: 9%;
-  border-radius: 50%;
-  border: 1.5px solid var(--line);
-  pointer-events: none;
+	/* 內圈刻線：讓它讀起來像個轉盤 */
+	content: "";
+	position: absolute;
+	inset: 9%;
+	border-radius: 50%;
+	border: 1.5px solid var(--line);
+	pointer-events: none;
 }
 .wheel-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
 }
 .wheel-lines polyline {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  filter: drop-shadow(0 0 5px rgb(var(--accent-rgb) / 0.5)); /* 手勢連線微發光 */
+	fill: none;
+	stroke: var(--accent);
+	stroke-width: 7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	filter: drop-shadow(
+		0 0 5px rgb(var(--accent-rgb) / 0.5)
+	); /* 手勢連線微發光 */
 }
 .wheel-letter {
-  position: absolute;
-  border-radius: 50%;
-  font-family: var(--font-display);
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: var(--text);
-  background: var(--surface-hi);
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm), var(--emboss);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none; /* 命中判斷用座標計算，不靠按鈕事件（§4）*/
-  /* 只補間 transform（合成器可獨立處理）。background / box-shadow / color 是繪製屬性，
+	position: absolute;
+	border-radius: 50%;
+	font-family: var(--font-display);
+	font-size: 1.85rem;
+	font-weight: 800;
+	color: var(--text);
+	background: var(--surface-hi);
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow-sm), var(--emboss);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none; /* 命中判斷用座標計算，不靠按鈕事件（§4）*/
+	/* 只補間 transform（合成器可獨立處理）。background / box-shadow / color 是繪製屬性，
      補間等於在轉盤的漸層底上連續重繪 120ms；快速滑過時好幾顆同時在重繪。直接切換即可。 */
-  transition: transform 0.08s ease;
+	transition: transform 0.08s ease;
 }
 .wheel-letter.selected {
-  background: var(--accent);
-  color: var(--on-accent); /* 珊瑚底上用深字，比白字清楚（AA）*/
-  border-color: transparent;
-  transform: scale(1.09);
-  box-shadow:
-    0 0 0 4px rgb(var(--accent-rgb) / 0.28),
-    var(--shadow-md);
+	background: var(--accent);
+	color: var(--on-accent); /* 珊瑚底上用深字，比白字清楚（AA）*/
+	border-color: transparent;
+	transform: scale(1.09);
+	box-shadow:
+		0 0 0 4px rgb(var(--accent-rgb) / 0.28),
+		var(--shadow-md);
 }
 .wheel-shuffle {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.55;
-  padding: 16px;
-  transition:
-    transform 0.15s ease,
-    opacity 0.15s ease;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0.55;
+	padding: 16px;
+	transition:
+		transform 0.15s ease,
+		opacity 0.15s ease;
 }
 .wheel-shuffle .icon {
-  width: 42px;
-  height: 42px;
+	width: 42px;
+	height: 42px;
 }
 .wheel-shuffle:active {
-  transform: translate(-50%, -50%) rotate(90deg);
-  opacity: 0.85;
+	transform: translate(-50%, -50%) rotate(90deg);
+	opacity: 0.85;
 }
 
 /* ---- 關卡選擇 ---- */
 .level-list {
-  flex: 1;
-  overflow-y: auto;
-  overscroll-behavior: none; /* 捲到頂/底不外溢到 WebView scrollView，避免下拉關閉（設計文件 §4）*/
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  padding: 16px;
-  align-content: start;
+	flex: 1;
+	overflow-y: auto;
+	overscroll-behavior: none; /* 捲到頂/底不外溢到 WebView scrollView，避免下拉關閉（設計文件 §4）*/
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 12px;
+	padding: 16px;
+	align-content: start;
 }
 .level-btn {
-  /* 500 顆按鈕裡同時看得到的只有十幾顆，其餘的版面與繪製（每顆各一層 .icon 的 mask）純屬白算。
+	/* 500 顆按鈕裡同時看得到的只有十幾顆，其餘的版面與繪製（每顆各一層 .icon 的 mask）純屬白算。
      省的是「每次開關卡選擇」都要付的那筆：screen 從 display:none 翻回來時 500 顆全部重新算，
      main.js 的記憶化擋得掉重建 DOM，擋不掉這一次——實測同一台機器 7.3ms → 2.8ms。
      寬度**一定要 none**，不能填實測的 80−2(border)=78：被略過的元素會進 size containment，
@@ -530,52 +543,52 @@ button {
      min-height 是保命索，不是排版：content-visibility 與 contain-intrinsic-size 是兩條獨立
      宣告，不會一起被忽略——只認得前者的瀏覽器（Chrome 111 以前不吃 contain-intrinsic-size
      的 auto 前綴）會把被略過的按鈕算成 0 高，整份清單塌掉。順便也是 48px 觸控目標下限。 */
-  content-visibility: auto;
-  contain-intrinsic-size: none auto 18px;
-  min-height: 48px;
-  line-height: 1.125;
-  font-family: var(--font-display);
-  font-variant-numeric: tabular-nums;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 14px 0;
-  font-weight: 700;
-  box-shadow: var(--shadow-sm), var(--emboss);
-  transition: transform 0.12s ease;
+	content-visibility: auto;
+	contain-intrinsic-size: none auto 18px;
+	min-height: 48px;
+	line-height: 1.125;
+	font-family: var(--font-display);
+	font-variant-numeric: tabular-nums;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 12px;
+	padding: 14px 0;
+	font-weight: 700;
+	box-shadow: var(--shadow-sm), var(--emboss);
+	transition: transform 0.12s ease;
 }
 .level-btn .icon {
-  width: 13px;
-  height: 13px;
+	width: 13px;
+	height: 13px;
 }
 .level-btn .icon-check {
-  color: var(--grid-filled);
+	color: var(--grid-filled);
 } /* 已完成：綠勾 */
 .level-btn:active {
-  transform: scale(0.94);
+	transform: scale(0.94);
 }
 .level-btn.current {
-  /* 目前關：琥珀強調，不用突兀的 outline */
-  background: var(--accent-soft);
-  border-color: var(--accent);
-  color: var(--accent-ink);
-  box-shadow:
-    0 0 0 3px rgb(var(--accent-rgb) / 0.2),
-    var(--shadow-sm);
+	/* 目前關：琥珀強調，不用突兀的 outline */
+	background: var(--accent-soft);
+	border-color: var(--accent);
+	color: var(--accent-ink);
+	box-shadow:
+		0 0 0 3px rgb(var(--accent-rgb) / 0.2),
+		var(--shadow-sm);
 }
 .level-btn:disabled {
-  /* 未解鎖：凹陷、去掉浮起感 */
-  opacity: 0.5;
-  cursor: default;
-  background: var(--grid-empty);
-  box-shadow: var(--deboss);
+	/* 未解鎖：凹陷、去掉浮起感 */
+	opacity: 0.5;
+	cursor: default;
+	background: var(--grid-empty);
+	box-shadow: var(--deboss);
 }
 .level-btn:disabled:active {
-  transform: none;
+	transform: none;
 }
 
 /* 開場閘門：蓋過所有遊戲 UI，但讓橫式遮罩(99) 蓋過它。
@@ -583,296 +596,296 @@ button {
    （UI 文件 §1 仍然沒有標題畫面）。用色與模糊跟 .overlay 同一套，只是更不透明一點，
    讓「第 N 關 · 點擊繼續」壓在盤面上仍讀得清楚。 */
 .gate {
-  position: fixed;
-  inset: 0;
-  z-index: 40;
-  border: 0;
-  background: rgb(16 32 31 / 0.82);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  font-family: var(--font-display);
+	position: fixed;
+	inset: 0;
+	z-index: 40;
+	border: 0;
+	background: rgb(16 32 31 / 0.82);
+	-webkit-backdrop-filter: blur(3px);
+	backdrop-filter: blur(3px);
+	color: var(--text);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	font-family: var(--font-display);
 }
 .gate[hidden] {
-  display: none;
+	display: none;
 }
 /* 唯一露出品牌名的畫面內位置：閘門每次載入都會經過，版面本來就是空的置中欄。
    仍然不是標題畫面——底下的「第 N 關 · 點擊繼續」比它顯眼，玩家一點就進遊戲。 */
 .gate-brand {
-  font-size: 2.6rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  color: var(--accent-ink);
+	font-size: 2.6rem;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	color: var(--accent-ink);
 }
 .gate-level {
-  font-size: 1.6rem;
-  font-weight: 800;
+	font-size: 1.6rem;
+	font-weight: 800;
 }
 .gate-hint {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-soft);
-  animation: pulse 1.6s ease-in-out infinite;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--text-soft);
+	animation: pulse 1.6s ease-in-out infinite;
 }
 
 /* ---- overlay 們（z-index 疊層順序見 UI 文件 §4）---- */
 .overlay {
-  position: fixed;
-  inset: 0;
-  background: rgb(28 22 12 / 0.5);
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 30;
+	position: fixed;
+	inset: 0;
+	background: rgb(28 22 12 / 0.5);
+	-webkit-backdrop-filter: blur(3px);
+	backdrop-filter: blur(3px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 30;
 }
 .overlay[hidden] {
-  display: none;
+	display: none;
 }
 .card {
-  position: relative; /* 關閉鈕的定位基準 */
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  padding: 26px 30px;
-  min-width: 244px;
-  max-width: min(92vw, 360px);
-  /* 卡片高過畫面時要自己捲，不能讓 overlay 的 align-items:center 把它上下裁掉：
+	position: relative; /* 關閉鈕的定位基準 */
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 20px;
+	padding: 26px 30px;
+	min-width: 244px;
+	max-width: min(92vw, 360px);
+	/* 卡片高過畫面時要自己捲，不能讓 overlay 的 align-items:center 把它上下裁掉：
      裁掉的同時遮罩也被推出畫面，只剩兩側各 4vw 的縫可以點，「點卡片外關閉」等於失效。
      展開設定卡的「關於」（六行授權文字）在小螢幕上就會這樣。用 % 而不是 vh——遮罩是
      position:fixed inset:0，高度已經是定值，vh 在 iOS 反而會跟著網址列收合對不上。 */
-  max-height: 88%;
-  overflow-y: auto;
-  overscroll-behavior: none; /* 同 .level-list：捲到邊界不外溢到 WebView scrollView（設計文件 §4）*/
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-  animation: card-in 0.22s ease-out;
+	max-height: 88%;
+	overflow-y: auto;
+	overscroll-behavior: none; /* 同 .level-list：捲到邊界不外溢到 WebView scrollView（設計文件 §4）*/
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	text-align: center;
+	box-shadow: var(--shadow-lg);
+	animation: card-in 0.22s ease-out;
 }
 /* 卡片本身是 tabindex="-1" 的程式化焦點落點（main.js 開卡時 focus，只為讓 VoiceOver 唸標題），
    不是可 Tab 到的控制項。留著預設 outline 的話，開卡後桌面玩家一按鍵（空白鍵捲動就夠）瀏覽器
    就切到鍵盤模式、給整張卡描一圈白框。鍵盤使用者的焦點指示仍在卡內的按鈕上，沒有損失。 */
 .card:focus {
-  outline: none;
+	outline: none;
 }
 /* 右上角關閉鈕：脫離流排，不佔標題那一行的位置。捲動時會跟著內容捲走，
    但那時遮罩已經點得到了（上面 max-height），VoiceOver 也照樣走得到這顆。 */
 .card-close {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 10px; /* 圖示 20px + 內距，湊滿 40px 觸控範圍 */
-  line-height: 0;
-  color: var(--text-soft);
-  transition: transform 0.12s ease;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 10px; /* 圖示 20px + 內距，湊滿 40px 觸控範圍 */
+	line-height: 0;
+	color: var(--text-soft);
+	transition: transform 0.12s ease;
 }
 .card-close:active {
-  transform: scale(0.9);
+	transform: scale(0.9);
 }
 @keyframes card-in {
-  from {
-    transform: scale(0.92) translateY(8px);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1) translateY(0);
-    opacity: 1;
-  }
+	from {
+		transform: scale(0.92) translateY(8px);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1) translateY(0);
+		opacity: 1;
+	}
 }
 .card h1,
 .card h2 {
-  font-family: var(--font-display);
-  font-weight: 800;
+	font-family: var(--font-display);
+	font-weight: 800;
 }
 .card .icon-coin {
-  color: var(--accent-ink);
-  width: 1.05em;
-  height: 1.05em;
+	color: var(--accent-ink);
+	width: 1.05em;
+	height: 1.05em;
 } /* 過關 +N 金幣 */
 .card label,
 .uid-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
 }
 .card input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
-  accent-color: var(--grid-filled); /* 開關染成綠墨，不用系統藍 */
+	width: 20px;
+	height: 20px;
+	accent-color: var(--grid-filled); /* 開關染成綠墨，不用系統藍 */
 }
 .redeem-row {
-  display: flex;
-  gap: 8px;
+	display: flex;
+	gap: 8px;
 }
 .redeem-row input {
-  flex: 1;
-  min-width: 0; /* flex 子元素預設 min-width:auto，長 token 會撐爆卡片 */
-  font: inherit;
-  /* 低於 16px 時 iOS focus 會自動放大整個版面，別改小；用 max() 而非寫死 16px，
+	flex: 1;
+	min-width: 0; /* flex 子元素預設 min-width:auto，長 token 會撐爆卡片 */
+	font: inherit;
+	/* 低於 16px 時 iOS focus 會自動放大整個版面，別改小；用 max() 而非寫死 16px，
      其他字級都是 rem，寫死會讓這顆變成唯一不跟著系統字級放大的元件（設計文件 §4）*/
-  font-size: max(1rem, 16px);
-  color: inherit;
-  background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 15px;
+	font-size: max(1rem, 16px);
+	color: inherit;
+	background: transparent;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	padding: 6px 15px;
 }
 .redeem-msg {
-  font-size: 0.8rem;
-  color: var(--text-soft);
-  margin: -6px 0 0; /* 貼近上方輸入列，抵掉卡片的 gap */
+	font-size: 0.8rem;
+	color: var(--text-soft);
+	margin: -6px 0 0; /* 貼近上方輸入列，抵掉卡片的 gap */
 }
 .about-text {
-  font-size: 0.75rem;
-  color: var(--text-soft);
-  text-align: left;
-  margin-top: 8px;
-  line-height: 1.5;
+	font-size: 0.75rem;
+	color: var(--text-soft);
+	text-align: left;
+	margin-top: 8px;
+	line-height: 1.5;
 }
 .about-text a {
-  color: var(--accent-ink); /* 珊瑚墨：≥4.5:1（AA），取代瀏覽器預設藍 */
-  text-decoration: underline;
+	color: var(--accent-ink); /* 珊瑚墨：≥4.5:1（AA），取代瀏覽器預設藍 */
+	text-decoration: underline;
 }
 .btn-primary {
-  font-family: var(--font-display);
-  background: linear-gradient(var(--grid-filled-hi), var(--grid-filled));
-  color: var(--letter-on-fill);
-  border-radius: 12px;
-  padding: 12px 24px;
-  font-weight: 800;
-  box-shadow: var(--shadow-md), var(--emboss);
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
+	font-family: var(--font-display);
+	background: linear-gradient(var(--grid-filled-hi), var(--grid-filled));
+	color: var(--letter-on-fill);
+	border-radius: 12px;
+	padding: 12px 24px;
+	font-weight: 800;
+	box-shadow: var(--shadow-md), var(--emboss);
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease;
 }
 .btn-primary:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: var(--shadow-sm);
+	transform: translateY(1px) scale(0.98);
+	box-shadow: var(--shadow-sm);
 }
 /* 關卡數獨立一行、比「過關！」小一號：同一行寫「第 500 關 過關！ +10 🪙」在 320px 上會折行，
    而折出來的位置由字數決定（第 5 關與第 500 關折得不一樣）。仍在 #clear-title 裡面，
    aria-labelledby 才唸得到「第 N 關」——過關對讀螢幕的人本來就只剩這句（UI 文件 §4-C）*/
 .clear-level {
-  display: block;
-  font-size: 0.62em;
-  color: var(--text-soft);
+	display: block;
+	font-size: 0.62em;
+	color: var(--text-soft);
 }
 /* 徽章列：卡片上唯一「戰績」而非「進度」的一列，所以只有這裡給膠囊底，
    截圖裡一眼看得出是成就。最多兩顆（里程碑 + 零提示），窄機上放不下就換行。
    一顆都沒有時整列收掉——replaceChildren() 不留文字節點，:empty 才成立 */
 .clear-badge {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
 }
 .clear-badge span {
-  background: var(--accent-soft);
-  color: var(--accent-ink);
-  border-radius: 999px;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
+	background: var(--accent-soft);
+	color: var(--accent-ink);
+	border-radius: 999px;
+	padding: 4px 12px;
+	font-size: 0.78rem;
+	font-weight: 700;
 }
 .clear-badge:empty {
-  display: none;
+	display: none;
 }
 /* 本關沒有 bonus、生涯累計也還是 0（第一關就是這個情況）→ 整行收掉，不留空隙 */
 #clear-bonus:empty {
-  display: none;
+	display: none;
 }
 /* 截圖落款：要看得見、但不能跟卡片上任何一句搶。gap 之外再壓一點，
    讀起來才像落款而不是第三顆按鈕 */
 .card-brand {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-  color: var(--text-soft);
-  margin-top: -6px;
+	font-family: var(--font-display);
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	color: var(--text-soft);
+	margin-top: -6px;
 }
 .clear-words-hint {
-  font-size: 0.75rem;
-  color: var(--text-soft);
-  margin-top: -8px;
+	font-size: 0.75rem;
+	color: var(--text-soft);
+	margin-top: -8px;
 }
 .clear-words {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 8px;
 }
 .clear-word-chip {
-  font-family: var(--font-display);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-weight: 700;
-  font-size: 0.85rem;
-  box-shadow: var(--shadow-sm), var(--emboss);
-  transition: transform 0.12s ease;
+	font-family: var(--font-display);
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	padding: 6px 14px;
+	font-weight: 700;
+	font-size: 0.85rem;
+	box-shadow: var(--shadow-sm), var(--emboss);
+	transition: transform 0.12s ease;
 }
 .clear-word-chip:active {
-  transform: scale(0.94);
+	transform: scale(0.94);
 }
 .center-screen {
-  align-items: center;
-  justify-content: center;
-  gap: 22px;
-  padding: 24px;
-  text-align: center;
+	align-items: center;
+	justify-content: center;
+	gap: 22px;
+	padding: 24px;
+	text-align: center;
 }
 .center-screen h1 {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.6rem;
+	font-family: var(--font-display);
+	font-weight: 800;
+	font-size: 1.6rem;
 }
 
 /* 教學（不攔截操作，UI 文件 §4-F）*/
 .tutorial {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 26vh;
-  text-align: center;
-  pointer-events: none;
-  z-index: 20;
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-  text-shadow: 0 1px 2px var(--bg);
-  animation: pulse 1.6s ease-in-out infinite;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 26vh;
+	text-align: center;
+	pointer-events: none;
+	z-index: 20;
+	font-family: var(--font-display);
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--text);
+	text-shadow: 0 1px 2px var(--bg);
+	animation: pulse 1.6s ease-in-out infinite;
 }
 /* 查詞提示（#tap-hint）：位置由 JS 量格盤下緣寫進 top（main.js placeTapHint），要放掉預設的 bottom。
    後期盤面會把 .grid-area 填滿（--cell 由 cqh 決定時，格盤高度剛好等於容器內容框），
    那時夾在區域下緣就一定會壓到最後一列——所以要有底：純 text-shadow 蓋不住底下的粗體字母。
    實心膠囊只包住文字（width: fit-content），小盤面時看起來仍是一句浮字。 */
 .tutorial.at-grid {
-  bottom: auto;
-  font-size: 0.95rem;
-  width: fit-content;
-  margin-inline: auto;
-  padding: 2px 12px;
-  border-radius: 999px;
-  background: var(--bg);
+	bottom: auto;
+	font-size: 0.95rem;
+	width: fit-content;
+	margin-inline: auto;
+	padding: 2px 12px;
+	border-radius: 999px;
+	background: var(--bg);
 }
 /* 空字串 = 收起來。不能用 hidden／display:none：aria-live 區塊一離開無障礙樹，下次寫入就會被
    當成新插入的子樹而不播報（main.js hideTapHint）。所以節點常駐，只把看得見的東西關掉。 */
 #tap-hint:empty {
-  padding: 0;
-  background: none;
-  animation: none;
+	padding: 0;
+	background: none;
+	animation: none;
 }
 /* 有 overlay 開著時讓路：.tutorial 是 z-index 20、.overlay 是 30，脈動文字會從半透明模糊背景
    透出來。用 opacity 而非 display 是同一個 aria-live 理由；animation 要一起關掉，否則
@@ -881,96 +894,96 @@ button {
    沒人決定過，順手用共用 selector 一起改掉就是偷渡。開場閘門(.gate) 不在這裡——閘門蓋著時
    showTapHint 根本不會寫入（main.js，理由是 aria-live 會提早播報），所以沒有東西需要藏。 */
 body:has(.overlay:not([hidden])) #tap-hint {
-  animation: none;
-  opacity: 0;
+	animation: none;
+	opacity: 0;
 }
 .tutorial[hidden] {
-  display: none;
+	display: none;
 }
 @keyframes pulse {
-  50% {
-    opacity: 0.45;
-  }
+	50% {
+		opacity: 0.45;
+	}
 }
 
 /* 查詞卡片（popover）*/
 .dict-card {
-  position: fixed;
-  z-index: 35; /* 過關卡片開著時仍可彈出查詞卡（UI 文件 §4），故蓋在 .overlay(30) 之上 */
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: var(--shadow-lg);
-  padding: 14px 18px;
-  max-width: 260px;
-  /* max-height 由 dictionary-card.js 依錨點上下的可用空間寫入（那裡有完整理由）；
+	position: fixed;
+	z-index: 35; /* 過關卡片開著時仍可彈出查詞卡（UI 文件 §4），故蓋在 .overlay(30) 之上 */
+	background: var(--surface);
+	border: 1px solid var(--line);
+	border-radius: 14px;
+	box-shadow: var(--shadow-lg);
+	padding: 14px 18px;
+	max-width: 260px;
+	/* max-height 由 dictionary-card.js 依錨點上下的可用空間寫入（那裡有完整理由）；
      長釋義被夾住時靠這兩行自己捲，而不是溢出畫面外。
      overscroll-behavior 同 .card／.level-list：捲到邊界不外溢到 WebView 的 scrollView（設計文件 §4）*/
-  overflow-y: auto;
-  overscroll-behavior: none;
+	overflow-y: auto;
+	overscroll-behavior: none;
 }
 .dict-card[hidden] {
-  display: none;
+	display: none;
 }
 .dict-card strong {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  margin-right: 8px;
+	font-family: var(--font-display);
+	font-size: 1.15rem;
+	margin-right: 8px;
 }
 .dict-card p {
-  font-size: 0.85rem;
-  margin-top: 6px;
-  line-height: 1.45;
+	font-size: 0.85rem;
+	margin-top: 6px;
+	line-height: 1.45;
 }
 .dict-card .def-zh {
-  font-size: 0.95rem;
-  color: var(--text);
+	font-size: 0.95rem;
+	color: var(--text);
 }
 .dict-card .def-en {
-  font-size: 0.8rem;
-  color: var(--text-soft);
+	font-size: 0.8rem;
+	color: var(--text-soft);
 }
 .speak-btn {
-  font-size: 1.1rem;
-  transition: transform 0.12s ease;
+	font-size: 1.1rem;
+	transition: transform 0.12s ease;
 }
 .speak-btn:active {
-  transform: scale(0.88);
+	transform: scale(0.88);
 }
 
 /* 只給輔助技術聽、畫面上看不見（#status 的結果訊息播報）。
    不能用 display: none／visibility: hidden／width: 0——那些會把節點一起移出無障礙樹，
    live region 就永遠不播了。夾成 1px 再 clip 掉是唯一還留在樹裡的做法。 */
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
 }
 
 /* 橫式遮罩：蓋過其他一切 */
 .rotate-mask {
-  position: fixed;
-  inset: 0;
-  z-index: 99;
-  background: var(--bg);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 800;
+	position: fixed;
+	inset: 0;
+	z-index: 99;
+	background: var(--bg);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-display);
+	font-size: 1.3rem;
+	font-weight: 800;
 }
 /* pointer: coarse 不是保險條款，是必要條件：桌機把視窗拉矮（或筆電開半螢幕）就同時滿足
    landscape 與 max-height: 500px，整個遊戲會被「請轉直畫面」蓋掉——而桌機使用者轉不了。
    coarse 讀的是**主要**輸入裝置，所以帶觸控螢幕的筆電（主要輸入仍是觸控板）不會誤中；
    平板橫著拿仍然會中，那正是要蓋的情況。 */
 @media (orientation: landscape) and (max-height: 500px) and (pointer: coarse) {
-  .rotate-mask {
-    display: flex;
-  }
+	.rotate-mask {
+		display: flex;
+	}
 }
 
 /* prefers-reduced-motion：跳過動畫與過場，直接顯示結果（設計文件 §7）。
@@ -983,13 +996,13 @@ body:has(.overlay:not([hidden])) #tap-hint {
    iteration-count 要一起夾成 1，否則 .gate-hint／.loading-text 的 infinite pulse 會用
    0.01ms 的週期狂跑。 */
 @media (prefers-reduced-motion: reduce) {
-  /* biome-ignore-start lint/complexity/noImportantStyles: 通用選擇器的特異性是 0，不加 !important 就會輸給每一條元件規則——而那些正是它要蓋掉的東西 */
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  /* biome-ignore-end lint/complexity/noImportantStyles: 見上 */
+	/* biome-ignore-start lint/complexity/noImportantStyles: 通用選擇器的特異性是 0，不加 !important 就會輸給每一條元件規則——而那些正是它要蓋掉的東西 */
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+	/* biome-ignore-end lint/complexity/noImportantStyles: 見上 */
 }
