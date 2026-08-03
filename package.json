@@ -1,19 +1,19 @@
 {
-  "name": "lexoria",
-  "version": "0.1.0",
-  "private": true,
-  "license": "Apache-2.0",
-  "scripts": {
-    "test": "bun test",
-    "lint": "biome check --error-on-warnings .",
-    "fix": "biome check --write .",
-    "check": "bun run lint && bun run test",
-    "serve": "bunx serve -l 8080 .",
-    "fetch-data": "bun tools/fetch-data.mjs",
-    "gen": "bun tools/generate-levels.mjs"
-  },
-  "type": "module",
-  "devDependencies": {
-    "@biomejs/biome": "^2.5.3"
-  }
+	"name": "lexoria",
+	"version": "0.1.0",
+	"private": true,
+	"license": "Apache-2.0",
+	"scripts": {
+		"test": "bun test",
+		"lint": "biome check --error-on-warnings .",
+		"fix": "biome check --write .",
+		"check": "bun run lint && bun run test",
+		"serve": "bunx serve -l 8080 .",
+		"fetch-data": "bun tools/fetch-data.mjs",
+		"gen": "bun tools/generate-levels.mjs && biome format --write data/levels"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@biomejs/biome": "^2.5.6"
+	}
 }

@@ -2,161 +2,215 @@
 // 測試現場生金鑰對簽 token（node:crypto 的 ieee-p1363 = JWT ES256 的 raw r‖s 格式），
 // 不依賴 src/redeem.js 內嵌的正式公鑰。
 
-import assert from 'node:assert/strict';
-import { generateKeyPairSync, sign } from 'node:crypto';
-import test from 'node:test';
-import { verifyCode } from '../src/redeem.js';
+import assert from "node:assert/strict";
+import { generateKeyPairSync, sign } from "node:crypto";
+import test from "node:test";
+import { verifyCode } from "../src/redeem.js";
 import {
-  defaultSave,
-  formatUid,
-  isUid,
-  newUid,
-  normalizeSave,
-  normalizeUid,
-} from '../src/storage.js';
+	defaultSave,
+	formatUid,
+	isUid,
+	newUid,
+	normalizeSave,
+	normalizeUid,
+} from "../src/storage.js";
 
-const { privateKey, publicKey } = generateKeyPairSync('ec', { namedCurve: 'prime256v1' });
-const { kty, crv, x, y } = publicKey.export({ format: 'jwk' });
+const { privateKey, publicKey } = generateKeyPairSync("ec", {
+	namedCurve: "prime256v1",
+});
+const { kty, crv, x, y } = publicKey.export({ format: "jwk" });
 const keys = { test: { kty, crv, x, y } };
 
-const b64url = (s) => Buffer.from(s).toString('base64url');
-function makeToken(payload, { kid = 'test', key = privateKey } = {}) {
-  const input = `${b64url(JSON.stringify({ alg: 'ES256', kid }))}.${b64url(JSON.stringify(payload))}`;
-  const sig = sign('sha256', Buffer.from(input), { key, dsaEncoding: 'ieee-p1363' });
-  return `${input}.${b64url(sig)}`;
+const b64url = (s) => Buffer.from(s).toString("base64url");
+function makeToken(payload, { kid = "test", key = privateKey } = {}) {
+	const input = `${b64url(JSON.stringify({ alg: "ES256", kid }))}.${b64url(JSON.stringify(payload))}`;
+	const sig = sign("sha256", Buffer.from(input), {
+		key,
+		dsaEncoding: "ieee-p1363",
+	});
+	return `${input}.${b64url(sig)}`;
 }
 
-const coinsPayload = { jti: 'jti-1', effect: { type: 'coins', amount: 50 } };
+const coinsPayload = { jti: "jti-1", effect: { type: "coins", amount: 50 } };
 
-test('redeem：有效的金幣碼', async () => {
-  const r = await verifyCode(makeToken(coinsPayload), { keys });
-  assert.deepEqual(r, { ok: true, jti: 'jti-1', effect: { type: 'coins', amount: 50 } });
+test("redeem：有效的金幣碼", async () => {
+	const r = await verifyCode(makeToken(coinsPayload), { keys });
+	assert.deepEqual(r, {
+		ok: true,
+		jti: "jti-1",
+		effect: { type: "coins", amount: 50 },
+	});
 });
 
-test('redeem：有效的跳關碼', async () => {
-  const r = await verifyCode(makeToken({ jti: 'jti-2', effect: { type: 'level', id: 7 } }), {
-    keys,
-  });
-  assert.deepEqual(r, { ok: true, jti: 'jti-2', effect: { type: 'level', id: 7 } });
+test("redeem：有效的跳關碼", async () => {
+	const r = await verifyCode(
+		makeToken({ jti: "jti-2", effect: { type: "level", id: 7 } }),
+		{
+			keys,
+		},
+	);
+	assert.deepEqual(r, {
+		ok: true,
+		jti: "jti-2",
+		effect: { type: "level", id: 7 },
+	});
 });
 
-test('redeem：payload 被竄改 → invalid', async () => {
-  const [h, , s] = makeToken(coinsPayload).split('.');
-  const forged = `${h}.${b64url(JSON.stringify({ ...coinsPayload, effect: { type: 'coins', amount: 99999 } }))}.${s}`;
-  assert.deepEqual(await verifyCode(forged, { keys }), { ok: false, reason: 'invalid' });
+test("redeem：payload 被竄改 → invalid", async () => {
+	const [h, , s] = makeToken(coinsPayload).split(".");
+	const forged = `${h}.${b64url(JSON.stringify({ ...coinsPayload, effect: { type: "coins", amount: 99999 } }))}.${s}`;
+	assert.deepEqual(await verifyCode(forged, { keys }), {
+		ok: false,
+		reason: "invalid",
+	});
 });
 
-test('redeem：kid 不在白名單 → invalid（移除 key＝整批撤銷）', async () => {
-  for (const kid of ['removed', '__proto__', 'constructor']) {
-    const r = await verifyCode(makeToken(coinsPayload, { kid }), { keys });
-    assert.deepEqual(r, { ok: false, reason: 'invalid' }, kid);
-  }
+test("redeem：kid 不在白名單 → invalid（移除 key＝整批撤銷）", async () => {
+	for (const kid of ["removed", "__proto__", "constructor"]) {
+		const r = await verifyCode(makeToken(coinsPayload, { kid }), { keys });
+		assert.deepEqual(r, { ok: false, reason: "invalid" }, kid);
+	}
 });
 
-test('redeem：別把私鑰簽的 token → invalid', async () => {
-  const other = generateKeyPairSync('ec', { namedCurve: 'prime256v1' }).privateKey;
-  const r = await verifyCode(makeToken(coinsPayload, { key: other }), { keys });
-  assert.deepEqual(r, { ok: false, reason: 'invalid' });
+test("redeem：別把私鑰簽的 token → invalid", async () => {
+	const other = generateKeyPairSync("ec", {
+		namedCurve: "prime256v1",
+	}).privateKey;
+	const r = await verifyCode(makeToken(coinsPayload, { key: other }), { keys });
+	assert.deepEqual(r, { ok: false, reason: "invalid" });
 });
 
-test('redeem：exp 過期 → expired；期限內 → ok', async () => {
-  const token = makeToken({ ...coinsPayload, exp: 1000 });
-  assert.deepEqual(await verifyCode(token, { keys, now: 1001 }), { ok: false, reason: 'expired' });
-  assert.equal((await verifyCode(token, { keys, now: 1000 })).ok, true); // 邊界：now === exp 仍有效
+test("redeem：exp 過期 → expired；期限內 → ok", async () => {
+	const token = makeToken({ ...coinsPayload, exp: 1000 });
+	assert.deepEqual(await verifyCode(token, { keys, now: 1001 }), {
+		ok: false,
+		reason: "expired",
+	});
+	assert.equal((await verifyCode(token, { keys, now: 1000 })).ok, true); // 邊界：now === exp 仍有效
 });
 
-test('redeem：jti 已兌換過 → used', async () => {
-  const r = await verifyCode(makeToken(coinsPayload), { keys, redeemed: ['jti-1'] });
-  assert.deepEqual(r, { ok: false, reason: 'used' });
+test("redeem：jti 已兌換過 → used", async () => {
+	const r = await verifyCode(makeToken(coinsPayload), {
+		keys,
+		redeemed: ["jti-1"],
+	});
+	assert.deepEqual(r, { ok: false, reason: "used" });
 });
 
-test('redeem：格式壞掉的輸入一律 invalid、不噴錯', async () => {
-  for (const bad of ['', 'abc', 'a.b', 'a.b.c', `${b64url('null')}.${b64url('null')}.AA`]) {
-    assert.deepEqual(await verifyCode(bad, { keys }), { ok: false, reason: 'invalid' }, bad);
-  }
+test("redeem：格式壞掉的輸入一律 invalid、不噴錯", async () => {
+	for (const bad of [
+		"",
+		"abc",
+		"a.b",
+		"a.b.c",
+		`${b64url("null")}.${b64url("null")}.AA`,
+	]) {
+		assert.deepEqual(
+			await verifyCode(bad, { keys }),
+			{ ok: false, reason: "invalid" },
+			bad,
+		);
+	}
 });
 
-test('redeem：effect 不合法或缺 jti → invalid（簽章正確也擋）', async () => {
-  for (const payload of [
-    { jti: 'x', effect: { type: 'coins', amount: -5 } },
-    { jti: 'x', effect: { type: 'coins', amount: 1.5 } },
-    { jti: 'x', effect: { type: 'level', id: 0 } },
-    { jti: 'x', effect: { type: 'jackpot' } },
-    { jti: 'x' },
-    { effect: { type: 'coins', amount: 5 } },
-  ]) {
-    assert.deepEqual(await verifyCode(makeToken(payload), { keys }), {
-      ok: false,
-      reason: 'invalid',
-    });
-  }
+test("redeem：effect 不合法或缺 jti → invalid（簽章正確也擋）", async () => {
+	for (const payload of [
+		{ jti: "x", effect: { type: "coins", amount: -5 } },
+		{ jti: "x", effect: { type: "coins", amount: 1.5 } },
+		{ jti: "x", effect: { type: "level", id: 0 } },
+		{ jti: "x", effect: { type: "jackpot" } },
+		{ jti: "x" },
+		{ effect: { type: "coins", amount: 5 } },
+	]) {
+		assert.deepEqual(await verifyCode(makeToken(payload), { keys }), {
+			ok: false,
+			reason: "invalid",
+		});
+	}
 });
 
 // ---- 專屬兌換碼（payload.uid）----
 
-test('redeem：專屬碼只有該玩家兌得了', async () => {
-  const uid = newUid();
-  const token = makeToken({ ...coinsPayload, uid });
-  assert.equal((await verifyCode(token, { keys, uid })).ok, true);
-  assert.deepEqual(await verifyCode(token, { keys, uid: newUid() }), {
-    ok: false,
-    reason: 'wrongUid',
-  });
-  assert.deepEqual(await verifyCode(token, { keys }), { ok: false, reason: 'wrongUid' }); // 沒帶 uid 也擋
+test("redeem：專屬碼只有該玩家兌得了", async () => {
+	const uid = newUid();
+	const token = makeToken({ ...coinsPayload, uid });
+	assert.equal((await verifyCode(token, { keys, uid })).ok, true);
+	assert.deepEqual(await verifyCode(token, { keys, uid: newUid() }), {
+		ok: false,
+		reason: "wrongUid",
+	});
+	assert.deepEqual(await verifyCode(token, { keys }), {
+		ok: false,
+		reason: "wrongUid",
+	}); // 沒帶 uid 也擋
 });
 
-test('redeem：不帶 uid 的活動碼行為不變（任何玩家都能兌）', async () => {
-  assert.equal((await verifyCode(makeToken(coinsPayload), { keys, uid: newUid() })).ok, true);
+test("redeem：不帶 uid 的活動碼行為不變（任何玩家都能兌）", async () => {
+	assert.equal(
+		(await verifyCode(makeToken(coinsPayload), { keys, uid: newUid() })).ok,
+		true,
+	);
 });
 
 // ---- 玩家編號 ----
 
-test('uid：newUid 產出必定通過 isUid', () => {
-  for (let i = 0; i < 20; i++) assert.ok(isUid(newUid()));
+test("uid：newUid 產出必定通過 isUid", () => {
+	for (let i = 0; i < 20; i++) assert.ok(isUid(newUid()));
 });
 
-test('uid：改掉任何一碼就通不過校驗', () => {
-  const uid = newUid();
-  for (let i = 0; i < uid.length; i++) {
-    const other = uid[i] === '0' ? '1' : '0';
-    assert.ok(!isUid(uid.slice(0, i) + other + uid.slice(i + 1)), `第 ${i} 碼`);
-  }
+test("uid：改掉任何一碼就通不過校驗", () => {
+	const uid = newUid();
+	for (let i = 0; i < uid.length; i++) {
+		const other = uid[i] === "0" ? "1" : "0";
+		assert.ok(!isUid(uid.slice(0, i) + other + uid.slice(i + 1)), `第 ${i} 碼`);
+	}
 });
 
-test('uid：isUid 擋掉長度不對、含易混字、亂打的字串', () => {
-  const uid = newUid();
-  for (const bad of ['', uid.slice(0, 11), `${uid}0`, `ILOU${uid.slice(4)}`, '0123456789AB']) {
-    assert.ok(!isUid(bad), bad);
-  }
+test("uid：isUid 擋掉長度不對、含易混字、亂打的字串", () => {
+	const uid = newUid();
+	for (const bad of [
+		"",
+		uid.slice(0, 11),
+		`${uid}0`,
+		`ILOU${uid.slice(4)}`,
+		"0123456789AB",
+	]) {
+		assert.ok(!isUid(bad), bad);
+	}
 });
 
-test('uid：normalizeUid 修掉小寫、連字號與 Crockford 易混字', () => {
-  const uid = newUid();
-  assert.equal(normalizeUid(formatUid(uid).toLowerCase()), uid);
-  assert.equal(normalizeUid(' o-i l '), '011');
+test("uid：normalizeUid 修掉小寫、連字號與 Crockford 易混字", () => {
+	const uid = newUid();
+	assert.equal(normalizeUid(formatUid(uid).toLowerCase()), uid);
+	assert.equal(normalizeUid(" o-i l "), "011");
 });
 
-test('存檔：uid 缺漏或壞掉都不會讓存檔重置（由 loadSave 補記）', () => {
-  // coins 必須是非預設值，否則「有沒有重置」兩種結果都是 defaultSave().coins，斷言永遠成立
-  for (const uid of [undefined, 'garbage', 123456789012, null])
-    assert.equal(normalizeSave({ ...defaultSave(), coins: 123, uid }).coins, 123, String(uid));
+test("存檔：uid 缺漏或壞掉都不會讓存檔重置（由 loadSave 補記）", () => {
+	// coins 必須是非預設值，否則「有沒有重置」兩種結果都是 defaultSave().coins，斷言永遠成立
+	for (const uid of [undefined, "garbage", 123456789012, null])
+		assert.equal(
+			normalizeSave({ ...defaultSave(), coins: 123, uid }).coins,
+			123,
+			String(uid),
+		);
 });
 
-test('uid：isUid 不會被非字串炸掉（存檔被手改成數字也不能白屏）', () => {
-  for (const bad of [123456789012, null, undefined, {}, ['0123456789AB']]) assert.ok(!isUid(bad));
+test("uid：isUid 不會被非字串炸掉（存檔被手改成數字也不能白屏）", () => {
+	for (const bad of [123456789012, null, undefined, {}, ["0123456789AB"]])
+		assert.ok(!isUid(bad));
 });
 
 // ---- 存檔欄位（redeemedCodes）----
 
-test('存檔：舊存檔沒有 redeemedCodes → 補空陣列、不重置', () => {
-  const { redeemedCodes: _, ...old } = defaultSave();
-  old.coins = 123;
-  const s = normalizeSave(old);
-  assert.deepEqual(s.redeemedCodes, []);
-  assert.equal(s.coins, 123);
+test("存檔：舊存檔沒有 redeemedCodes → 補空陣列、不重置", () => {
+	const { redeemedCodes: _, ...old } = defaultSave();
+	old.coins = 123;
+	const s = normalizeSave(old);
+	assert.deepEqual(s.redeemedCodes, []);
+	assert.equal(s.coins, 123);
 });
 
-test('存檔：redeemedCodes 不是陣列 → 整份重置', () => {
-  const s = normalizeSave({ ...defaultSave(), redeemedCodes: 'garbage' });
-  assert.deepEqual(s, defaultSave());
+test("存檔：redeemedCodes 不是陣列 → 整份重置", () => {
+	const s = normalizeSave({ ...defaultSave(), redeemedCodes: "garbage" });
+	assert.deepEqual(s, defaultSave());
 });

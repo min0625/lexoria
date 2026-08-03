@@ -28,7 +28,7 @@ bun run check    # lint + test，prek 那個 local hook（本地與 CI 都跑它
 
 ```sh
 bun run fetch-data  # 下載產生器輸入（ENABLE 字表、ECDICT、wordfreq、WordNet；只需跑一次，需 uv）
-bun run gen         # 重新產生 data/levels/（以關卡 id 為種子，輸出完全可重現）
+bun run gen         # 重新產生 data/levels/ 並套上 Biome 格式（以關卡 id 為種子，輸出完全可重現）
 ```
 
 前端啟動時只抓 `index.json`（僅關卡數）與當前那一關（兩者並行），其餘關卡在切換過去時才按需 `fetch`，首次載入不必等 500 關資料下載完。

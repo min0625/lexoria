@@ -1,81 +1,59 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "vcs": {
-    "enabled": true,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "files": {
-    "includes": ["**", "!data/levels", "!node_modules"]
-  },
-  "formatter": {
-    "enabled": true,
-    "lineWidth": 100,
-    "indentStyle": "space",
-    "indentWidth": 2
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "semicolons": "always",
-      "trailingCommas": "es5",
-      "arrowParentheses": "always",
-      "bracketSpacing": true,
-      "bracketSameLine": false
-    }
-  },
-  "linter": {
-    "enabled": true,
-    "domains": {
-      "test": "recommended"
-    },
-    "rules": {
-      "preset": "recommended",
-      "complexity": {
-        "noExcessiveCognitiveComplexity": "warn"
-      },
-      "correctness": {
-        "noGlobalDirnameFilename": "error",
-        "noProcessGlobal": "warn"
-      },
-      "performance": {
-        "noAccumulatingSpread": "warn",
-        "noAwaitInLoops": "warn",
-        "useTopLevelRegex": "warn"
-      },
-      "security": {
-        "noGlobalEval": "error"
-      },
-      "style": {
-        "noCommonJs": "error",
-        "useNodejsImportProtocol": "error",
-        "useShorthandAssign": "error",
-        "useTemplate": "error",
-        "useThrowNewError": "error",
-        "useThrowOnlyError": "error"
-      }
-    }
-  },
-  "overrides": [
-    {
-      "includes": ["tools/**", "tests/**"],
-      "linter": {
-        "rules": {
-          "complexity": {
-            "noExcessiveCognitiveComplexity": "off"
-          },
-          "performance": {
-            "noAwaitInLoops": "off"
-          }
-        }
-      }
-    }
-  ],
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
-  }
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"includes": ["**", "!skills-lock.json"]
+	},
+	"html": {
+		"formatter": {
+			"enabled": true
+		}
+	},
+	"linter": {
+		"domains": {
+			"test": "recommended"
+		},
+		"rules": {
+			"preset": "recommended",
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "warn"
+			},
+			"correctness": {
+				"noGlobalDirnameFilename": "error",
+				"noProcessGlobal": "warn",
+				"noUndeclaredVariables": "error"
+			},
+			"performance": {
+				"noAwaitInLoops": "warn",
+				"useTopLevelRegex": "warn"
+			},
+			"style": {
+				"noCommonJs": "error",
+				"useNodejsImportProtocol": "error",
+				"useShorthandAssign": "error",
+				"useTemplate": "error",
+				"useThrowNewError": "error",
+				"useThrowOnlyError": "error"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["tools/**", "tests/**"],
+			"linter": {
+				"rules": {
+					"complexity": {
+						"noExcessiveCognitiveComplexity": "off"
+					},
+					"performance": {
+						"noAwaitInLoops": "off"
+					}
+				}
+			}
+		}
+	]
 }

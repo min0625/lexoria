@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-<head>
-  <meta charset="utf-8">
-  <!-- maximum-scale/user-scalable 只有 Android 吃；iOS 從 10 起忽略它，捏合要靠 main.js 的 gesturestart（設計文件 §4） -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>Lexoria</title>
-  <meta name="description" content="Lexoria 英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。">
-  <link rel="canonical" href="https://lexoria.min0625.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Lexoria">
-  <meta property="og:description" content="從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。">
-  <meta property="og:url" content="https://lexoria.min0625.com/">
-  <meta property="og:image" content="https://lexoria.min0625.com/assets/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Lexoria 字磚 logo 與「英文單字拼圖遊戲」標語">
-  <meta property="og:locale" content="zh_TW">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="theme-color" content="#10201f">
-  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
-  <link rel="icon" type="image/png" sizes="180x180" href="assets/icon-180.png">
-  <link rel="apple-touch-icon" href="assets/icon-180.png">
-  <link rel="manifest" href="manifest.webmanifest">
-  <!-- iOS 從 manifest 讀 display:standalone 是後來才支援的，舊版只認這個私有 meta；
+	<head>
+		<meta charset="utf-8">
+		<!-- maximum-scale/user-scalable 只有 Android 吃；iOS 從 10 起忽略它，捏合要靠 main.js 的 gesturestart（設計文件 §4） -->
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+		>
+		<title>Lexoria</title>
+		<meta
+			name="description"
+			content="Lexoria 英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。"
+		>
+		<link rel="canonical" href="https://lexoria.min0625.com/">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Lexoria">
+		<meta
+			property="og:description"
+			content="從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。"
+		>
+		<meta property="og:url" content="https://lexoria.min0625.com/">
+		<meta
+			property="og:image"
+			content="https://lexoria.min0625.com/assets/og-image.png"
+		>
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta
+			property="og:image:alt"
+			content="Lexoria 字磚 logo 與「英文單字拼圖遊戲」標語"
+		>
+		<meta property="og:locale" content="zh_TW">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="theme-color" content="#10201f">
+		<link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="180x180"
+			href="assets/icon-180.png"
+		>
+		<link rel="apple-touch-icon" href="assets/icon-180.png">
+		<link rel="manifest" href="manifest.webmanifest">
+		<!-- iOS 從 manifest 讀 display:standalone 是後來才支援的，舊版只認這個私有 meta；
        少了它，加到主畫面的 iPhone 會照常帶著網址列開（standalone 全螢幕正是加它的理由） -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- 沒有這行 iOS 會給預設的不透明淺色狀態列，壓在 #10201f 的深色遊戲上方；而且那個模式下
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 沒有這行 iOS 會給預設的不透明淺色狀態列，壓在 #10201f 的深色遊戲上方；而且那個模式下
        safe-area-inset-top 是 0，.screen 的 padding 補不回來。black-translucent 讓內容延伸到
        狀態列底下，正好接上既有的 viewport-fit=cover ＋ safe-area padding -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="src/style.css">
-  <!-- 與 JS 模組並行下載關卡索引，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中）。
+		<meta
+			name="apple-mobile-web-app-status-bar-style"
+			content="black-translucent"
+		>
+		<link rel="stylesheet" href="src/style.css">
+		<!-- 與 JS 模組並行下載關卡索引，消掉 HTML→JS→fetch 的瀑布（main.js boot() 的 fetch 會直接命中）。
        關卡本體（data/levels/<id>.json）按需載入，boot() 只需要這份 { count } 就能起步。
        要排在 modulepreload 之前：同優先級的請求依文件順序派送，排在 9 支模組後面等於重新排隊 -->
-  <link rel="preload" href="data/levels/index.json" as="fetch" crossorigin>
-  <!-- 攤平模組瀑布：不預載的話瀏覽器要先抓 main.js、解析完才發現還要抓它 import 的 8 支，
+		<link rel="preload" href="data/levels/index.json" as="fetch" crossorigin>
+		<!-- 攤平模組瀑布：不預載的話瀏覽器要先抓 main.js、解析完才發現還要抓它 import 的 8 支，
        多一趟往返。全部一起宣告就同時開抓、壓成一層。
        新增/更名 src/*.js 時要一併改這裡，同 sw.js 的 SHELL
        （tests/game.test.mjs 拿 src/ 的實際檔案對這兩份清單驗證，漏了會紅） -->
-  <link rel="modulepreload" href="src/main.js">
-  <link rel="modulepreload" href="src/game.js">
-  <link rel="modulepreload" href="src/bridge.js">
-  <link rel="modulepreload" href="src/storage.js">
-  <link rel="modulepreload" href="src/grid.js">
-  <link rel="modulepreload" href="src/wheel.js">
-  <link rel="modulepreload" href="src/dictionary-card.js">
-  <link rel="modulepreload" href="src/redeem.js">
-  <link rel="modulepreload" href="src/strings.js">
-  <script type="application/ld+json">
+		<link rel="modulepreload" href="src/main.js">
+		<link rel="modulepreload" href="src/game.js">
+		<link rel="modulepreload" href="src/bridge.js">
+		<link rel="modulepreload" href="src/storage.js">
+		<link rel="modulepreload" href="src/grid.js">
+		<link rel="modulepreload" href="src/wheel.js">
+		<link rel="modulepreload" href="src/dictionary-card.js">
+		<link rel="modulepreload" href="src/redeem.js">
+		<link rel="modulepreload" href="src/strings.js">
+		<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "VideoGame",
@@ -60,159 +83,223 @@
     "image": "https://lexoria.min0625.com/assets/og-image.png"
   }
   </script>
-</head>
-<body>
-  <!-- 靜態文字（不經 strings.js）：給無 JS 的爬蟲與使用者看，執行期不會顯示 -->
-  <noscript>
-    <p>Lexoria 是英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。需要啟用 JavaScript 才能遊玩。</p>
-  </noscript>
-  <!-- I. 開場閘門：載入後蓋住全畫面，點一下才進遊戲（UI 文件 §1-I）。不是裝飾也不是標題畫面：
+	</head>
+	<body>
+		<!-- 靜態文字（不經 strings.js）：給無 JS 的爬蟲與使用者看，執行期不會顯示 -->
+		<noscript>
+			<p>
+				Lexoria
+				是英文單字拼圖遊戲：從字母轉盤滑出單字、填滿字謎盤面，關卡由易到難，附繁體中文釋義與英文發音。需要啟用
+				JavaScript 才能遊玩。
+			</p>
+		</noscript>
+		<!-- I. 開場閘門：載入後蓋住全畫面，點一下才進遊戲（UI 文件 §1-I）。不是裝飾也不是標題畫面：
        iOS Safari 的 TTS 引擎**只有 click 叫得醒**，而一次拖曳從 pointerdown 到 pointerup 不產生
        click，遊戲畫面上又沒有非點不可的按鈕——沒有這一層，純拖曳的玩家整個 page load 都聽不到
        發音，而且每次重新整理都要重來（設計文件 §13）。它曾經還兼著音效解鎖，音效移除後那半沒了，
        但 TTS 這半仍然成立。「點擊繼續」寫死在 HTML 不經 strings.js——JS 還在下載時就要看得見；
        上面的關卡數是 boot() 才填的，所以 .gate-level 先留白，別把它也當成靜態文案。 -->
-  <button id="gate" class="gate" type="button">
-    <span class="gate-brand">Lexoria</span>
-    <span id="gate-level" class="gate-level"></span>
-    <span class="gate-hint">點擊繼續</span>
-  </button>
+		<button id="gate" class="gate" type="button">
+			<span class="gate-brand">Lexoria</span>
+			<span id="gate-level" class="gate-level"></span>
+			<span class="gate-hint">點擊繼續</span>
+		</button>
 
-  <!-- A. 遊戲主畫面 -->
-  <section id="screen-game" class="screen">
-    <header class="topbar">
-      <button id="btn-level" class="chip" type="button"></button>
-      <span id="coin-count" class="chip coin"></span>
-      <button id="btn-claim" class="chip coin" type="button"></button>
-      <button id="btn-settings" class="chip" type="button" aria-label="設定"><span class="icon icon-gear"></span></button>
-    </header>
-    <!-- 載入提示（靜態文字，不經 strings.js——JS 下載與 levels.json 取得期間就要可見）：startLevel 建格盤時清掉 -->
-    <div id="grid" class="grid-area" translate="no"><p class="loading-text">載入中…</p></div>
-    <!-- 拼字串顯示區刻意**不是** aria-live 區塊：showPreview 每滑過一個字母就重寫一次，
+		<!-- A. 遊戲主畫面 -->
+		<section id="screen-game" class="screen">
+			<header class="topbar">
+				<button id="btn-level" class="chip" type="button"></button>
+				<span id="coin-count" class="chip coin"></span>
+				<button id="btn-claim" class="chip coin" type="button"></button>
+				<button id="btn-settings" class="chip" type="button" aria-label="設定">
+					<span class="icon icon-gear"></span>
+				</button>
+			</header>
+			<!-- 載入提示（靜態文字，不經 strings.js——JS 下載與 levels.json 取得期間就要可見）：startLevel 建格盤時清掉 -->
+			<div id="grid" class="grid-area" translate="no">
+				<p class="loading-text">載入中…</p>
+			</div>
+			<!-- 拼字串顯示區刻意**不是** aria-live 區塊：showPreview 每滑過一個字母就重寫一次，
          掛上去等於在整段拖曳期間逐字播報 C→CA→CAT。真正該播的只有 flashPreview 那幾則結果
          訊息，那些走下面的 #status（UI 文件 §4-F 第三段）-->
-    <div id="preview" class="preview"></div>
-    <div class="wheel-row">
-      <!-- aria-label 由 main.js 從 strings.hintLabel 設（要帶上價格，而價格只有 ECONOMY 一個來源）-->
-      <button id="btn-hint" class="hint-btn" type="button"><span class="icon icon-bulb"></span><small id="hint-cost"></small></button>
-      <div id="wheel" class="wheel" translate="no"></div>
-    </div>
-  </section>
+			<div id="preview" class="preview"></div>
+			<div class="wheel-row">
+				<!-- aria-label 由 main.js 從 strings.hintLabel 設（要帶上價格，而價格只有 ECONOMY 一個來源）-->
+				<button id="btn-hint" class="hint-btn" type="button">
+					<span class="icon icon-bulb"></span><small id="hint-cost"></small>
+				</button>
+				<div id="wheel" class="wheel" translate="no"></div>
+			</div>
+		</section>
 
-  <!-- B. 關卡選擇 -->
-  <section id="screen-levels" class="screen" hidden>
-    <header class="topbar">
-      <button id="btn-back" class="chip" type="button" aria-label="返回"><span class="icon icon-back"></span></button>
-      <span id="coin-count-b" class="chip coin"></span>
-    </header>
-    <div id="level-list" class="level-list"></div>
-  </section>
+		<!-- B. 關卡選擇 -->
+		<section id="screen-levels" class="screen" hidden>
+			<header class="topbar">
+				<button id="btn-back" class="chip" type="button" aria-label="返回">
+					<span class="icon icon-back"></span>
+				</button>
+				<span id="coin-count-b" class="chip coin"></span>
+			</header>
+			<div id="level-list" class="level-list"></div>
+		</section>
 
-  <!-- G. 全破 -->
-  <section id="screen-allclear" class="screen center-screen" hidden>
-    <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
-    <h1 id="allclear-text"></h1>
-    <button id="btn-allclear-back" class="btn-primary" type="button"></button>
-    <button id="btn-share-allclear" class="chip" type="button"></button>
-  </section>
+		<!-- G. 全破 -->
+		<section id="screen-allclear" class="screen center-screen" hidden>
+			<!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
+			<h1 id="allclear-text"></h1>
+			<button id="btn-allclear-back" class="btn-primary" type="button"></button>
+			<button id="btn-share-allclear" class="chip" type="button"></button>
+		</section>
 
-  <!-- H. 載入失敗（levels.json 取不到時由 boot() 顯示，不留白屏） -->
-  <section id="screen-error" class="screen center-screen" hidden>
-    <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
-    <h1 id="error-text"></h1>
-    <button id="btn-reload" class="btn-primary" type="button"></button>
-  </section>
+		<!-- H. 載入失敗（levels.json 取不到時由 boot() 顯示，不留白屏） -->
+		<section id="screen-error" class="screen center-screen" hidden>
+			<!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
+			<h1 id="error-text"></h1>
+			<button id="btn-reload" class="btn-primary" type="button"></button>
+		</section>
 
-  <!-- C. 過關 overlay -->
-  <!-- role/aria-modal/tabindex 的完整理由見設定卡（下一個 overlay）那段註解，兩張卡同一套。
+		<!-- C. 過關 overlay -->
+		<!-- role/aria-modal/tabindex 的完整理由見設定卡（下一個 overlay）那段註解，兩張卡同一套。
        這張刻意不接 Escape：過關是單向流程，「點卡片外不關閉」也是同一條規則（UI 文件 §4-C）-->
-  <div id="overlay-clear" class="overlay" hidden>
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="clear-title" tabindex="-1">
-      <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
-      <h2 id="clear-title"></h2>
-      <p id="clear-bonus"></p>
-      <!-- 徽章列：最多兩顆（里程碑、零提示過關），main.js onWin 用 replaceChildren() 填 <span>，
+		<div id="overlay-clear" class="overlay" hidden>
+			<div
+				class="card"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="clear-title"
+				tabindex="-1"
+			>
+				<!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
+				<h2 id="clear-title"></h2>
+				<p id="clear-bonus"></p>
+				<!-- 徽章列：最多兩顆（里程碑、零提示過關），main.js onWin 用 replaceChildren() 填 <span>，
            一顆都沒有時整列靠 :empty 收起來——replaceChildren() 不留文字節點，:empty 才成立。
            這張卡是全遊戲最常被截圖的一幀，而卡片上其餘數字都是進度、只有這列是戰績（UI 文件 §4-C） -->
-      <p id="clear-badge" class="clear-badge"></p>
-      <p id="clear-words-hint" class="clear-words-hint"></p>
-      <div id="clear-words" class="clear-words"></div>
-      <button id="btn-next" class="btn-primary" type="button"></button>
-      <button id="btn-share-clear" class="chip" type="button"></button>
-      <!-- 截圖用的落款：截圖不帶網址列也不帶分享文案，沒有這行就看不出是哪個遊戲。
+				<p id="clear-badge" class="clear-badge"></p>
+				<p id="clear-words-hint" class="clear-words-hint"></p>
+				<div id="clear-words" class="clear-words"></div>
+				<button id="btn-next" class="btn-primary" type="button"></button>
+				<button id="btn-share-clear" class="chip" type="button"></button>
+				<!-- 截圖用的落款：截圖不帶網址列也不帶分享文案，沒有這行就看不出是哪個遊戲。
            寫死在 HTML 不進 strings.js——這是品牌名，不隨語言變（UI 文件 §4-C） -->
-      <p class="card-brand">Lexoria</p>
-    </div>
-  </div>
+				<p class="card-brand">Lexoria</p>
+			</div>
+		</div>
 
-  <!-- D. 設定 overlay -->
-  <div id="overlay-settings" class="overlay" hidden>
-    <!-- aria-modal="true" 讓 VoiceOver 的滑動巡覽把卡片外的一切藏起來——沒有它，開著設定卡也能
+		<!-- D. 設定 overlay -->
+		<div id="overlay-settings" class="overlay" hidden>
+			<!-- aria-modal="true" 讓 VoiceOver 的滑動巡覽把卡片外的一切藏起來——沒有它，開著設定卡也能
          一路滑到底下的轉盤與格盤，聽起來像沒有東西擋著。tabindex="-1" 是給 main.js 開卡時
          focus() 用的落點（VO 會跟著唸出 aria-labelledby 指的標題，玩家才知道開了什麼）。
          **沒有做 JS 焦點陷阱**：那對觸控輔助技術來說 aria-modal 已經等於陷阱，剩下會用 Tab
          逃出去的只有桌面鍵盤，而桌面鍵盤在這個專案裡只服務開發迭代（UI 文件 §4-E），
          為它寫十幾行 focus trap 不划算。真要補時是加在這裡，不是散到各個按鈕上。 -->
-    <div class="card" role="dialog" aria-modal="true" aria-labelledby="settings-title" tabindex="-1">
-      <!-- 點卡片外也能關，但那條路讀螢幕的人走不到（遮罩不可聚焦、VO 滑動巡覽碰不到），
+			<div
+				class="card"
+				role="dialog"
+				aria-modal="true"
+				aria-labelledby="settings-title"
+				tabindex="-1"
+			>
+				<!-- 點卡片外也能關，但那條路讀螢幕的人走不到（遮罩不可聚焦、VO 滑動巡覽碰不到），
            開了就困在裡面；這顆是走得到的出口，不是裝飾（UI 文件 §4-D）。
            桌面鍵盤另有 Escape（main.js），但那條只服務開發迭代，不能拿來取代這顆 -->
-      <button id="btn-settings-close" class="card-close" type="button" aria-label="關閉"><span class="icon icon-close"></span></button>
-      <!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
-      <h2 id="settings-title"></h2>
-      <!-- biome-ignore lint/a11y/noLabelWithoutControl: span 文字由 strings.js 在執行期填入，input 已是 label 的子元素 -->
-      <label><span id="label-sound"></span><input type="checkbox" id="opt-sound"></label>
-      <!-- 玩家編號：點一下複製，回報給開發者才能拿專屬兌換碼 -->
-      <!-- aria-describedby：鈕上的字是編號本身，讀螢幕的人光聽一串亂碼不知道那是什麼 -->
-      <div class="uid-row"><span id="label-uid"></span><button id="btn-uid" class="chip" type="button" aria-describedby="label-uid"></button></div>
-      <!-- 邀人玩，不是設定面板的主要動作——用 chip，與旁邊的玩家編號／兌換同一層級 -->
-      <button id="btn-share" class="chip" type="button"></button>
-      <!-- 暫時隱藏：下載快照圖的程式碼保留備用（main.js / grid.js snapshotBlob），拿掉 hidden 即可復活 -->
-      <button id="btn-download" class="chip" type="button" hidden></button>
-      <div class="redeem-row">
-        <input id="redeem-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false">
-        <button id="btn-redeem" class="chip" type="button"></button>
-      </div>
-      <p id="redeem-msg" class="redeem-msg" hidden></p>
-      <!-- 除錯用：只在網址帶 ?debug 時顯示，複製診斷紀錄（非正式功能） -->
-      <button id="btn-debug-copy" type="button" hidden>複製除錯紀錄</button>
-      <details><summary id="label-about"></summary>
-        <p class="about-text">Lexoria v0.1.0<br>
-        © 2026 Lexoria · <a href="https://github.com/min0625/lexoria" target="_blank" rel="noopener">github.com/min0625/lexoria</a><br>
-        Definitions: WordNet® (Princeton University) — used under the WordNet License.<br>
-        Chinese translations: ECDICT by Linwei (MIT License), converted with OpenCC (Apache-2.0).<br>
-        Word list: ENABLE (public domain).<br>
-        Word frequency data: wordfreq by Robyn Speer (Apache-2.0) — build-time only.</p>
-        <!-- WordNet 與 MIT 都要求「授權條文隨副本散布」，只寫授權名稱不算數：關卡 JSON 內嵌了兩者的釋義文字。
+				<button
+					id="btn-settings-close"
+					class="card-close"
+					type="button"
+					aria-label="關閉"
+				>
+					<span class="icon icon-close"></span>
+				</button>
+				<!-- biome-ignore lint/a11y/useHeadingContent: 文字由 strings.js 在執行期填入 -->
+				<h2 id="settings-title"></h2>
+				<!-- biome-ignore lint/a11y/noLabelWithoutControl: span 文字由 strings.js 在執行期填入，input 已是 label 的子元素 -->
+				<label
+					><span id="label-sound"></span>
+					<input type="checkbox" id="opt-sound"></label
+				>
+				<!-- 玩家編號：點一下複製，回報給開發者才能拿專屬兌換碼 -->
+				<!-- aria-describedby：鈕上的字是編號本身，讀螢幕的人光聽一串亂碼不知道那是什麼 -->
+				<div class="uid-row">
+					<span id="label-uid"></span
+					><button
+						id="btn-uid"
+						class="chip"
+						type="button"
+						aria-describedby="label-uid"
+					></button>
+				</div>
+				<!-- 邀人玩，不是設定面板的主要動作——用 chip，與旁邊的玩家編號／兌換同一層級 -->
+				<button id="btn-share" class="chip" type="button"></button>
+				<!-- 暫時隱藏：下載快照圖的程式碼保留備用（main.js / grid.js snapshotBlob），拿掉 hidden 即可復活 -->
+				<button id="btn-download" class="chip" type="button" hidden></button>
+				<div class="redeem-row">
+					<input
+						id="redeem-input"
+						type="text"
+						autocomplete="off"
+						autocapitalize="off"
+						spellcheck="false"
+					>
+					<button id="btn-redeem" class="chip" type="button"></button>
+				</div>
+				<p id="redeem-msg" class="redeem-msg" hidden></p>
+				<!-- 除錯用：只在網址帶 ?debug 時顯示，複製診斷紀錄（非正式功能） -->
+				<button id="btn-debug-copy" type="button" hidden>複製除錯紀錄</button>
+				<details>
+					<summary id="label-about"></summary>
+					<p class="about-text">
+						Lexoria v0.1.0<br>
+						© 2026 Lexoria ·
+						<a
+							href="https://github.com/min0625/lexoria"
+							target="_blank"
+							rel="noopener"
+							>github.com/min0625/lexoria</a
+						><br>
+						Definitions: WordNet® (Princeton University) — used under the
+						WordNet License.<br>
+						Chinese translations: ECDICT by Linwei (MIT License), converted with
+						OpenCC (Apache-2.0).<br>
+						Word list: ENABLE (public domain).<br>
+						Word frequency data: wordfreq by Robyn Speer (Apache-2.0) —
+						build-time only.
+					</p>
+					<!-- WordNet 與 MIT 都要求「授權條文隨副本散布」，只寫授權名稱不算數：關卡 JSON 內嵌了兩者的釋義文字。
              條文全文放同站的 assets/licenses.txt（deploy 有 cp assets/，Phase 2 也會一起打包進 app），
              關於區只留連結——連的是自家副本而不是上游 repo，離線照樣打得開，才算數（設計文件 §14）。 -->
-        <p class="about-text"><a href="assets/licenses.txt" target="_blank" rel="noopener">License texts (WordNet, ECDICT)</a></p>
-      </details>
-    </div>
-  </div>
+					<p class="about-text">
+						<a href="assets/licenses.txt" target="_blank" rel="noopener"
+							>License texts (WordNet, ECDICT)</a
+						>
+					</p>
+				</details>
+			</div>
+		</div>
 
-  <!-- F. 教學 overlay（不攔截操作） -->
-  <div id="overlay-tutorial" class="tutorial" hidden>
-    <p id="tutorial-text"></p>
-  </div>
-  <!-- 查詞提示（UI 文件 §4-F 第二段）：跟上面的滑字教學各一個節點，理由見 main.js showTapHint。
+		<!-- F. 教學 overlay（不攔截操作） -->
+		<div id="overlay-tutorial" class="tutorial" hidden>
+			<p id="tutorial-text"></p>
+		</div>
+		<!-- 查詞提示（UI 文件 §4-F 第二段）：跟上面的滑字教學各一個節點，理由見 main.js showTapHint。
        位置由 JS 量格盤下緣寫進 top。刻意沒有 hidden——aria-live 區塊要常駐才播報得到，
        收起來是靠文字清空（main.js hideTapHint + style.css #tap-hint:empty）-->
-  <div id="tap-hint" class="tutorial at-grid" aria-live="polite"></div>
+		<div id="tap-hint" class="tutorial at-grid" aria-live="polite"></div>
 
-  <!-- 狀態播報：flashPreview 的結果訊息（已找到／額外單字／金幣不足／無效字／領取金幣）只在
+		<!-- 狀態播報：flashPreview 的結果訊息（已找到／額外單字／金幣不足／無效字／領取金幣）只在
        #preview 上閃 900ms，那是純視覺的。這個節點看不見，只負責讓輔助技術唸出同一句。
        放在所有 screen 之外：screen 用 hidden 切換，live region 一旦離開無障礙樹，下次寫入就被
        當成新插入的子樹而不播報（同 #tap-hint 的理由，UI 文件 §4-F）。role="status" 已隱含
        aria-live="polite"，不必再寫一次。 -->
-  <p id="status" class="sr-only" role="status"></p>
+		<p id="status" class="sr-only" role="status"></p>
 
-  <!-- E. 查詞卡片（動態定位） -->
-  <div id="dict-card" class="dict-card" hidden></div>
+		<!-- E. 查詞卡片（動態定位） -->
+		<div id="dict-card" class="dict-card" hidden></div>
 
-  <!-- 橫式遮罩（純 CSS media query 顯示） -->
-  <div id="rotate-mask" class="rotate-mask"><p id="rotate-text"></p></div>
+		<!-- 橫式遮罩（純 CSS media query 顯示） -->
+		<div id="rotate-mask" class="rotate-mask"><p id="rotate-text"></p></div>
 
-  <script type="module" src="src/main.js"></script>
-</body>
+		<script type="module" src="src/main.js"></script>
+	</body>
 </html>
