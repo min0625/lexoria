@@ -969,11 +969,21 @@ $("gate").addEventListener("click", () => {
 // 裡只有 SHELL、沒有任何關卡——裝完就斷網重開會拿到載入失敗畫面。clients.claim() 接管時把
 // startLevel() 那兩趟（當前關 + 下一關）補回來，這趟才真的離線可玩：只補當前關的話，玩家
 // 破完這關按「下一關」還是會撞上載入失敗。之後的載入本來就被接管，只有推新版 sw.js 時
-// （skipWaiting + claim）才會再觸發一次，成本是重抓兩個 1–2KB 的關卡檔。
+// （skipWaiting + claim）才會再觸發一次，成本是重抓兩個 1–2KB 的關卡檔。這兩趟只是讓玩家「馬上」
+// 有得玩，真正的離線靠下面那句叫 SW 把 500 關全部補進快取（sw.js 的 warmLevels）。
+// 由頁面觸發而不是 SW 自己在 activate 做，理由在 sw.js：activate 的 waitUntil 沒結束前
+// fetch 事件會被排隊，補 2MB 等於讓 App 卡住。
+const requestLevelWarm = () =>
+	navigator.serviceWorker?.controller?.postMessage("warm-levels");
+
 addEventListener("load", () => {
 	navigator.serviceWorker?.register("sw.js").catch(() => {});
+	// 回訪時 controller 早就在了，controllerchange 不會再觸發，補關卡要靠這一次呼叫。
+	// SHELL 這時已經在快取裡，所以不跟首次安裝的預快取搶頻寬。
+	requestLevelWarm();
 	navigator.serviceWorker?.addEventListener("controllerchange", () => {
 		prefetchLevel(currentLevelId);
 		if (currentLevelId + 1 <= levelCount) prefetchLevel(currentLevelId + 1);
+		requestLevelWarm(); // 首次安裝：這時 SHELL 才剛預快取完，接著補關卡
 	});
 });

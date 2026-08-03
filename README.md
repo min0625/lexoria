@@ -40,7 +40,7 @@ bun run gen         # 重新產生 data/levels/ 並套上 Biome 格式（以關�
 ```
 index.html          畫面骨架（<section> 以 hidden 切換，無 router）
 manifest.webmanifest  PWA：主畫面圖示、standalone 全螢幕、直式鎖定（Android；iOS 不吃，見設計文件 §15）
-sw.js               service worker：全站 stale-while-revalidate，離線可開
+sw.js               service worker：全站 stale-while-revalidate，離線可開；並在背景把全部關卡補進快取
 src/
   main.js           唯一接線點：wheel → game.submit(word) → 結果分派給 grid/HUD/發音
   game.js           關卡狀態與規則，純邏輯無 DOM（可單元測試）；經濟數值在 ECONOMY
